@@ -17,13 +17,11 @@ const Description = styled.p`
   line-height: 158%;
 `;
 
-const Title = ({data}) => {
+const Title = ({ data }) => {
   const { title, date, description } = data
   return (
     <div className="main__special-offer special-offer">
-      <ArticleTitle>
-        {title}
-      </ArticleTitle>
+      <ArticleTitle>{title}</ArticleTitle>
       <Date>
         {date}
       </Date>
@@ -32,6 +30,6 @@ const Title = ({data}) => {
       </Description>
     </div>
   )
-}
+};
 
-export default Title
+export default Title;
