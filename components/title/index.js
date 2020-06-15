@@ -18,18 +18,14 @@ const Description = styled.p`
 `;
 
 const Title = ({ data }) => {
-  const { title, date, description } = data
+  const { title, date, description } = data;
   return (
     <div className="main__special-offer special-offer">
       <ArticleTitle>{title}</ArticleTitle>
-      <Date>
-        {date}
-      </Date>
-      <Description>
-        {description}
-      </Description>
+      <Date>{date}</Date>
+      <Description>{description}</Description>
     </div>
-  )
+  );
 };
 
 export default Title;

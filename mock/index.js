@@ -22,7 +22,7 @@ export default {
     },
     imageNormal: {
       src: 'public/img/article-normal.png',
-      title: 'Подпись к картинке'
+      subtitle: 'Подпись к картинке'
     },
     sidebarArticleUp: {
       image: 'public/img/article-note.png',
@@ -64,17 +64,17 @@ export default {
         description: 'строка, имеющая определенное значение'
       }
     ],
-    expense: {
-      image: '',
+    sectionNote: {
+      icon: '',
       description: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано
         с высокой стоимостью инструмента и, как следствие, небольшой аудиторией.
         А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки.`
     },
-    workspace: {
+    imageBig: {
       image: '',
       title: 'Подпись к картинке'
     },
-    sidebarArticleDown: {
+    sidebarArticleMiddle: {
       title: 'Как написать запрос для Checkmarx SAST',
       subtitle: 'Читай также',
       icon: ''
@@ -109,12 +109,12 @@ export default {
          решение как есть, из коробки. /getTransaction – на вход принимает id транзакции
           и выдает инфу по ней, id принимает.`
     },
-    sidebarNoteSettings: {
+    sidebarArticleBottom: {
       icon: '',
       title: 'Какое-то уточнение',
       description: `А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки.`
     },
-    notes: [
+    noteWithPictures: [
       {
         image: '',
         title: 'Not exploitabl',
