@@ -1,56 +1,34 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import TitleH5 from 'elements/TitleH5';
+import Subtitle from 'elements/Subtitle';
 
-const TitleH2 = styled.h2`
-  font-weight: 800;
-  font-size: 54px;
-  line-height: 130%;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-`;
-
-const TitleH3 = styled.h3`
-  margin-bottom: 40px;
-`;
-
-const Text = styled.p`
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 158%;
+const Blockquote = styled.blockquote`
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 120%;
 `;
 
 const Quote = props => {
   const {
-    data: { title, text },
-    size
+    data: { img, name, company, text }
   } = props;
   return (
     <section className="main__special-offer special-offer">
-      {title && (
-        <>
-          {size === 'h3' ? (
-            <TitleH3>{title}</TitleH3>
-          ) : (
-            <TitleH2>{title}</TitleH2>
-          )}
-        </>
-      )}
-      <Text>{text}</Text>
+      <Blockquote>{text}</Blockquote>
+      <div>
+        <img src={img} alt={name} />
+        <div>
+          <Subtitle content={company} />
+          <TitleH5 content={name} />
+        </div>
+      </div>
     </section>
   );
 };
 
 Quote.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    text: PropTypes.string
-  }).isRequired,
-  size: PropTypes.string
-};
-
-Quote.defaultProps = {
-  size: 'h2'
+  data: PropTypes.objectOf(PropTypes.string).isRequired
 };
 
 export default Quote;

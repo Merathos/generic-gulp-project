@@ -1,56 +1,23 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Note from 'components/Note';
 
-const TitleH2 = styled.h2`
-  font-weight: 800;
-  font-size: 54px;
-  line-height: 130%;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-`;
-
-const TitleH3 = styled.h3`
-  margin-bottom: 40px;
-`;
-
-const Text = styled.p`
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 158%;
+const Container = styled.section`
+  display: flex;
 `;
 
 const Articles = props => {
-  const {
-    data: { title, text },
-    size
-  } = props;
+  const { data } = props;
   return (
-    <section className="main__special-offer special-offer">
-      {title && (
-        <>
-          {size === 'h3' ? (
-            <TitleH3>{title}</TitleH3>
-          ) : (
-            <TitleH2>{title}</TitleH2>
-          )}
-        </>
-      )}
-      <Text>{text}</Text>
-    </section>
+    <Container>
+      <Note position="left" data={data[0]} />
+      <Note position="right" data={data[1]} />
+    </Container>
   );
 };
 
 Articles.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    text: PropTypes.string
-  }).isRequired,
-  size: PropTypes.string
-};
-
-Articles.defaultProps = {
-  size: 'h2'
+  data: PropTypes.shape.isRequired
 };
 
 export default Articles;
