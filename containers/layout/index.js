@@ -1,14 +1,11 @@
-import cx from 'classnames'
 import { Header, Footer } from 'containers'
+
+import mock from 'mock/index';
 
 const Layout = ({parentSelector, children}) => {
   return (
-    <div
-      className={cx("pagewrapper", {
-        [`${parentSelector}`]: parentSelector
-      })}
-    >
-      <Header />
+    <div>
+      <Header links={mock.header} />
       {children}
       <Footer />
     </div>

@@ -1,4 +1,18 @@
 export default {
+  header: [
+    {
+      title: 'О компании',
+      href: 'about'
+    },
+    {
+      title: 'Вакансии',
+      href: 'vacansies'
+    },
+    {
+      title: 'Проекты',
+      href: 'projects'
+    }
+  ],
   article: {
     mainTitle: {
       title: 'Как написать запрос для Checkmarx SAST и найти крутые уязвимости',

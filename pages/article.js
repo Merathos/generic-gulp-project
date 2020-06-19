@@ -1,6 +1,7 @@
 import { initializeStore } from 'lib/redux';
 import { initializeApollo } from 'lib/apollo';
 import { Layout } from 'containers';
+import styled from 'styled-components';
 import {
   Title,
   Paragraph,
@@ -16,9 +17,18 @@ import {
 
 import mock from 'mock/index';
 
-function articlePage() {
-  return (
-    <Layout>
+const Container = styled.article`
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 420px) {
+    max-width: 315px;
+  }
+`;
+
+const articlePage = () => (
+  <Layout>
+    <Container>
       <Title data={mock.article.mainTitle} />
       <Paragraph data={mock.article.introduction} />
       <Media type="img" data={mock.article.imageNormal} />
@@ -48,9 +58,9 @@ function articlePage() {
       <Feedback data={mock.article.feedback} />
       <Comments data={mock.article.comments} />
       <Articles data={mock.article.articles} />
-    </Layout>
-  );
-};
+    </Container>
+  </Layout>
+);
 
 export async function getStaticProps() {
   const reduxStore = initializeStore()
