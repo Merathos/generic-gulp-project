@@ -1,32 +1,34 @@
-import { initializeApollo } from '../lib/apollo'
-import Layout from '../components/Layout'
-import Submit from '../components/Submit'
-import PostList, {
-  ALL_POSTS_QUERY,
-  allPostsQueryVars,
-} from '../components/PostList'
+import { useMemo } from 'react'
+import { ApolloClient } from 'apollo-client'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { HttpLink } from 'apollo-link-http'
 
-const ApolloPage = () => (
-  <Layout>
-    <Submit />
-    <PostList />
-  </Layout>
-)
+let apolloClient
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo()
-
-  await apolloClient.query({
-    query: ALL_POSTS_QUERY,
-    variables: allPostsQueryVars,
+function createApolloClient() {
+  return new ApolloClient({
+    ssrMode: typeof window === 'undefined',
+    link: new HttpLink({
+      uri: 'https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn',
+      credentials: 'same-origin',
+    }),
+    cache: new InMemoryCache(),
   })
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-    unstable_revalidate: 1,
-  }
 }
 
-export default ApolloPage
+export function initializeApollo(initialState = null) {
+  const _apolloClient = apolloClient ?? createApolloClient()
+
+  if (initialState) {
+    _apolloClient.cache.restore(initialState)
+  }
+  if (typeof window === 'undefined') return _apolloClient
+  if (!apolloClient) apolloClient = _apolloClient
+
+  return _apolloClient
+}
+
+export function useApollo(initialState) {
+  const store = useMemo(() => initializeApollo(initialState), [initialState])
+  return store
+}

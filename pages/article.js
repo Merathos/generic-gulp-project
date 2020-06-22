@@ -21,7 +21,7 @@ const Container = styled.article`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     max-width: 315px;
   }
 `;
