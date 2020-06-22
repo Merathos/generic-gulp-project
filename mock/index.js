@@ -221,5 +221,21 @@ export default {
         title: 'Как написать запрос для Checkmarx SAST'
       }
     ]
+  },
+  footer: {
+    copyright: 'DINS © — зарегистрированный товарный знак ООО «Нордиджи». 2020',
+
+    social: {
+      hh: 'https://www.google.com/',
+      youtube: 'https://www.google.com/',
+      instagram: 'https://www.google.com/',
+      linkedin: 'https://www.google.com/',
+      vk: 'https://www.google.com/'
+    },
+    suscribe: 'Подписаться на вакансии',
+    labour: {
+      link: 'https://www.dins.ru/downloads/2019.11.28-SP-SOUT.pdf?v=1592826998',
+      text: 'Оценка условий труда'
+    }
   }
 };

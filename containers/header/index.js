@@ -48,7 +48,7 @@ const Element = styled.li`
   margin-left: 40px;
 `;
 
-const Header = ({ links }) => (
+const Header = ({ data: links }) => (
   <StyledHeader>
     <StyledLogo />
     <List>

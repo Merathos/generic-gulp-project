@@ -15,6 +15,21 @@ const GlobalStyle = createGlobalStyle`
     color: #201F2A;
     font-weight: 500;
   }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 export default function App({ Component, pageProps }) {

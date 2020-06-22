@@ -9,3 +9,4 @@ export { default as Comments } from './Comments';
 export { default as Articles } from './Articles';
 export { default as Quote } from './Quote';
 export { default as Note } from './Note';
+export { default as Social } from './Social';

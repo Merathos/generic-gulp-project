@@ -2,12 +2,12 @@ import { Header, Footer } from 'containers'
 
 import mock from 'mock/index';
 
-const Layout = ({parentSelector, children}) => {
+const Layout = ({ children }) => {
   return (
     <div>
-      <Header links={mock.header} />
+      <Header data={mock.header} />
       {children}
-      <Footer />
+      <Footer data={mock.footer}  />
     </div>
   )
 }
