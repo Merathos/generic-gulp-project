@@ -7,9 +7,9 @@ const Layout = ({ children }) => {
     <div>
       <Header data={mock.header} />
       {children}
-      <Footer data={mock.footer}  />
+      <Footer data={mock.footer} />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

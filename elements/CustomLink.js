@@ -12,8 +12,8 @@ const Styled = styled.p`
   text-decoration: none;
 `;
 
-const CustomLink = ({ href, content }) => (
-  <Styled>
+const CustomLink = ({ href, content, className }) => (
+  <Styled className={className}>
     <Link href={href}>{content}</Link>
   </Styled>
 );

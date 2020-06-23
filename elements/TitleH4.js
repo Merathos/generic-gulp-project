@@ -5,6 +5,8 @@ const Styled = styled.h4`
   line-height: 120%;
 `;
 
-const TitleH4 = ({ content }) => <Styled>{content}</Styled>;
+const TitleH4 = ({ content, className }) => (
+  <Styled className={className}>{content}</Styled>
+);
 
 export default TitleH4;

@@ -1,23 +1,16 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Subtitle from 'elements/Subtitle';
 
-const TitleH2 = styled.h2`
-  font-weight: 800;
-  font-size: 54px;
-  line-height: 130%;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-`;
+const Text = styled(Subtitle)`
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 100px;
 
-const TitleH3 = styled.h3`
-  margin-bottom: 40px;
-`;
-
-const Text = styled.p`
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 158%;
+  @media screen and (max-width: 420px) {
+    margin-top: 5px;
+    margin-bottom: 100px;
+  }
 `;
 
 const Media = props => {
@@ -26,7 +19,7 @@ const Media = props => {
     type
   } = props;
   return (
-    <section className="main__special-offer special-offer">
+    <section>
       {type === 'img' ? (
         <img src={src} alt={subtitle} />
       ) : (
@@ -34,7 +27,7 @@ const Media = props => {
           <track kind="captions" src={src} />
         </video>
       )}
-      <Text>{subtitle}</Text>
+      <Text content={subtitle} />
     </section>
   );
 };

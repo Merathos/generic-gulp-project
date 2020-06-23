@@ -5,6 +5,8 @@ const Styled = styled.h5`
   line-height: 131%;
 `;
 
-const TitleH5 = ({ content }) => <Styled>{content}</Styled>;
+const TitleH5 = ({ content, className }) => (
+  <Styled className={className}>{content}</Styled>
+);
 
 export default TitleH5;

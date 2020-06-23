@@ -6,8 +6,15 @@ const Styled = styled.p`
   line-height: 134%;
   color: #201f2a;
   opacity: 0.5;
+
+  @media screen and (max-width: 420px) {
+    font-size: 10px;
+    line-height: 131%;
+  }
 `;
 
-const Subtitle = ({ content }) => <Styled>{content}</Styled>;
+const Subtitle = ({ content, className }) => (
+  <Styled className={className}>{content}</Styled>
+);
 
 export default Subtitle;

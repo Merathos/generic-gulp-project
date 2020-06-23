@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Logo from 'public/images/logo.svg';
-import Menu from 'public/images/menu.svg';
+import Menu from 'public/icons/menu.svg';
 import CustomLink from 'elements/CustomLink';
 
 const StyledHeader = styled.header`
@@ -34,14 +34,16 @@ const Button = styled.button`
   margin-left: 102px;
 `;
 
-const List = styled.ul`
-  display: flex;
+const Nav = styled.nav`
   margin: 0 0 0 auto;
-  list-style: none;
 
   @media screen and (max-width: 420px) {
     display: none;
   }
+`;
+
+const List = styled.ul`
+  display: flex;
 `;
 
 const Element = styled.li`
@@ -51,13 +53,15 @@ const Element = styled.li`
 const Header = ({ data: links }) => (
   <StyledHeader>
     <StyledLogo />
-    <List>
-      {links.map(el => (
-        <Element>
-          <CustomLink href={`/${el.href}`} content={el.title} />
-        </Element>
-      ))}
-    </List>
+    <Nav>
+      <List>
+        {links.map(el => (
+          <Element>
+            <CustomLink href={`/${el.href}`} content={el.title} />
+          </Element>
+        ))}
+      </List>
+    </Nav>
     <Button>
       <Menu />
     </Button>

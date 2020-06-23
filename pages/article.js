@@ -17,7 +17,7 @@ import {
 
 import mock from 'mock/index';
 
-const Container = styled.article`
+const Container = styled.main`
   max-width: 1200px;
   margin: 0 auto;
 
@@ -26,37 +26,86 @@ const Container = styled.article`
   }
 `;
 
+const Article = styled.article`
+  margin-right: 92px;
+  max-width: 854px;
+
+  @media screen and (max-width: 420px) {
+    margin-right: 0;
+  }
+`;
+
+const Grid = styled.div`
+  display: flex;
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+  }
+`;
+
+const Aside = styled.aside`
+  max-width: 254px;
+
+  @media screen and (max-width: 420px) {
+    max-width: 100%;
+  }
+`;
+
 const articlePage = () => (
   <Layout>
     <Container>
       <Title data={mock.article.mainTitle} />
-      <Paragraph data={mock.article.introduction} />
-      <Media type="img" data={mock.article.imageNormal} />
-      <SidebarArticle type="picture" data={mock.article.sidebarArticleUp} />
-      <List position="row" data={mock.article.features} />
-      <Paragraph data={mock.article.definitions} />
-      <List position="row" data={mock.article.reductions} />
-      <SectionNote data={mock.article.sectionNote} />
-      <Media type="img" size="big" data={mock.article.imageBig} />
-      <List position="column" marker="circle" data={mock.article.list} />
-      <SidebarArticle
-        type="default"
-        data={mock.article.sidebarArticleMiddle}
-      />
-      <Media type="img" data={mock.article.interface} />
-      <Paragraph size="h3" data={mock.article.cmx} />
-      <SidebarArticle
-        type="icon"
-        data={mock.article.sidebarArticleBottom}
-      />
-      <SectionNote data={mock.article.noteWithPictures} />
-      <Paragraph size="h2" data={mock.article.text} />
-      <List position="column" marker="number" data={mock.article.listNumbers} />
-      <Media type="video" data={mock.article.video} />
-      <List position="row" data={mock.article.listIcons} />
-      <Quote data={mock.article.listIcons} />
-      <Feedback data={mock.article.feedback} />
-      <Comments data={mock.article.comments} />
+      <Grid>
+        <Article>
+          <Paragraph size="h2" data={mock.article.introduction} />
+        </Article>
+        <Aside>
+          <SidebarArticle type="picture" data={mock.article.sidebarArticleUp} />
+        </Aside>
+      </Grid>
+      <Article>
+        <Media type="img" data={mock.article.imageNormal} />
+        <List position="row" data={mock.article.features} />
+        <Paragraph size="h2" data={mock.article.definitions} />
+        <List position="row" type="blue" data={mock.article.reductions} />
+        <SectionNote data={mock.article} />
+      </Article>
+      <Media type="img" data={mock.article.imageBig} />
+      <Grid>
+        <Article>
+          <List position="column" type="ellipse" data={mock.article.list} />
+          <Media type="img" data={mock.article.interface} />
+        </Article>
+        <Aside>
+          <SidebarArticle
+            type="default"
+            data={mock.article.sidebarArticleMiddle}
+          />
+        </Aside>
+      </Grid>
+      <Grid>
+        <Article>
+          <Paragraph size="h3" data={mock.article.cmx} />
+          <List data={mock.article.noteWithPictures} />
+          <Paragraph size="h2" data={mock.article.text} />
+          <List
+            position="column"
+            marker="number"
+            data={mock.article.listNumbers}
+          />
+          <Media type="video" data={mock.article.video} />
+          <List position="row" data={mock.article.listIcons} />
+          <Quote data={mock.article.listIcons} />
+          <Feedback data={mock.article.feedback} />
+          <Comments data={mock.article.comments} />
+        </Article>
+        <Aside>
+          <SidebarArticle
+            type="icon"
+            data={mock.article.sidebarArticleBottom}
+          />
+        </Aside>
+      </Grid>
       <Articles data={mock.article.articles} />
     </Container>
   </Layout>
