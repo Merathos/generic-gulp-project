@@ -87,14 +87,14 @@ const articlePage = () => (
         <Article>
           <Paragraph size="h3" data={mock.article.cmx} />
           <List data={mock.article.noteWithPictures} />
-          <Paragraph size="h2" data={mock.article.text} />
+          <Paragraph size="h2" data={mock.article} />
           <List
             position="column"
-            marker="number"
+            type="number"
             data={mock.article.listNumbers}
           />
           <Media type="video" data={mock.article.video} />
-          <List position="row" data={mock.article.listIcons} />
+          <List type="icons" position="row" data={mock.article.listIcons} />
           <Quote data={mock.article.listIcons} />
           <Feedback data={mock.article.feedback} />
           <Comments data={mock.article.comments} />

@@ -15,7 +15,7 @@ const Text = styled(Subtitle)`
 
 const Media = props => {
   const {
-    data: { subtitle, src },
+    data: { subtitle, src, srcPoster },
     type
   } = props;
   return (
@@ -23,7 +23,7 @@ const Media = props => {
       {type === 'img' ? (
         <img src={src} alt={subtitle} />
       ) : (
-        <video>
+        <video poster={srcPoster}>
           <track kind="captions" src={src} />
         </video>
       )}

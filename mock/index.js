@@ -144,8 +144,9 @@ export default {
       А может быть просто мало кто заморачивается тонкой настройкой и используют
        решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
     video: {
-      src: '',
-      subtitle: 'Подпись к видео'
+      src: '/images/video.png',
+      subtitle: 'Подпись к видео',
+      srcPoster: '/images/video.png'
     },
     listNumbers: [
       {
@@ -167,16 +168,16 @@ export default {
     ],
     listIcons: [
       {
-        icon: '',
-        subtitle: 'Cтрока, имеющая определенное значение'
+        icon: 'ec-fire',
+        text: 'Cтрока, имеющая определенное значение'
       },
       {
-        icon: '',
-        subtitle: 'Checkmarx SAST query language'
+        icon: 'ec-fire',
+        text: 'Checkmarx SAST query language'
       },
       {
-        icon: '',
-        subtitle: 'строка, имеющая определенное значение'
+        icon: 'ec-fire',
+        text: 'строка, имеющая определенное значение'
       }
     ],
     quote: {
