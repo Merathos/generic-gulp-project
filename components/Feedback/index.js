@@ -4,19 +4,42 @@ import Text from 'elements/Text';
 import TitleH3 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
 
+const Img = styled.img`
+  max-width: 404px;
+  margin-right: 70px;
+`;
+
+const StyledText = styled.p`
+  font-size: 18px;
+  line-height: 158%;
+`;
+
+const Section = styled.section`
+  display: flex;
+  margin-bottom: 90px;
+  align-items: flex-end;
+
+  @media screen and (max-width: 420px) {
+    flex-wrap: wrap;
+  }
+`;
+
 const Feedback = props => {
   const {
-    data: { img, name, company, text }
+    data: { src, src_mob, name, company, text }
   } = props;
   return (
-    <section>
-      <img src={img} alt={name}/>
+    <Section>
+      <picture>
+        <source srcSet={src} type="image/png" media="(min-width: 420px)" />
+        <img src={src_mob} alt={name} />
+      </picture>
       <div>
         <Subtitle content={company} />
-        <TitleH3>{name}</TitleH3>
-        <Text content={text}/>
+        <TitleH3 content={name} />
+        <StyledText>{text}</StyledText>
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -4,23 +4,39 @@ import Text from 'elements/Text';
 import TitleH5 from 'elements/TitleH5';
 
 const Block = styled.div`
-  text-align: ${props => props.align || 'left'};
+  display: flex;
+  align-items: ${props => props.align || 'flex-start'};
+  flex-direction: column;
 `;
 
 const Card = styled.div`
   background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a;
   padding: 40px;
+  border-radius: 12px;
+`;
+
+const Img = styled.img`
+  width: 49px;
+  margin-right: 14px;
+`;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 const Comment = props => {
   const {
-    data: { img, text, name },
+    data: { src, text, name },
     position
   } = props;
   return (
     <Block align={position}>
-      <img src={img} alt={name} />
-      <TitleH5 content={text} />
+      <Container>
+        <Img src={src} alt={name} />
+        <TitleH5 content={name} />
+      </Container>
       <Card>
         <Text content={text} />
       </Card>

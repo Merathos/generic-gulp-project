@@ -8,5 +8,7 @@ export { default as Feedback } from './Feedback';
 export { default as Comments } from './Comments';
 export { default as Articles } from './Articles';
 export { default as Quote } from './Quote';
-export { default as Note } from './Note';
+export { default as NoteLeft } from './NoteLeft';
+export { default as NoteRight } from './NoteRight';
 export { default as Social } from './Social';
+export { default as Slider } from './Slider';

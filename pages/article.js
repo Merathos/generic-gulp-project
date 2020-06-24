@@ -12,7 +12,8 @@ import {
   Quote,
   Feedback,
   Comments,
-  Articles
+  Articles,
+  Slider
 } from 'components';
 
 import mock from 'mock/index';
@@ -74,7 +75,7 @@ const articlePage = () => (
       <Grid>
         <Article>
           <List position="column" type="ellipse" data={mock.article.list} />
-          <Media type="img" data={mock.article.interface} />
+          <Slider type="img" data={mock.article.slider} />
         </Article>
         <Aside>
           <SidebarArticle
@@ -95,7 +96,7 @@ const articlePage = () => (
           />
           <Media type="video" data={mock.article.video} />
           <List type="icons" position="row" data={mock.article.listIcons} />
-          <Quote data={mock.article.listIcons} />
+          <Quote data={mock.article.quote} />
           <Feedback data={mock.article.feedback} />
           <Comments data={mock.article.comments} />
         </Article>

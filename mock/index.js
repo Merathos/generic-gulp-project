@@ -39,7 +39,7 @@ export default {
       subtitle: 'Подпись к картинке'
     },
     sidebarArticleUp: {
-      image: 'public/img/article-note.png',
+      image: '/images/article.png',
       title: 'Заголовок',
       description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
     то мы предложим поможем с переездом.`,
@@ -108,10 +108,6 @@ export default {
         настройки мейлбокса. Не проверяет что mailboxid принадлежит пользователю;`
       }
     ],
-    interface: {
-      image: '',
-      subtitle: 'Подпись к картинке'
-    },
     cmx: {
       title: 'CMx',
       text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx
@@ -183,12 +179,13 @@ export default {
     quote: {
       text: `В компании я работаю около трех лет. Начинал с позиции разработчика,
        тимлидом работаю последние три месяца.`,
-      img: '',
+      src: '/images/quote.png',
       name: 'Иван Иванов',
       company: 'Динс'
     },
     feedback: {
-      img: '',
+      src: '/images/feedback-foto.png',
+      src_mob: '/images/feedback-foto-mob.png',
       name: 'Иван Иванов',
       company: 'Компания Динс',
       text: `При таком подходе, в результате, имеем в лучшем случае, относительно
@@ -198,27 +195,48 @@ export default {
     comments: [
       {
         text: `Привет! Расскажи, как давно ты работаешь в Dins?`,
-        img: '',
+        src: '/images/user-pic-1.png',
         name: 'Настя'
       },
       {
-        text: `В компании я работаю около трех лет. Начинал с позиции разработчика, тимлидом работаю последние три месяца.`,
-        img: '',
+        text: `В компании я работаю около трех лет. Начинал с позиции разработчика,
+         тимлидом работаю последние три месяца. В IT я уже более 10 лет, но со Sсala,
+          кстати, начал плотно общаться только в этой компании. Мне это нравится: я люблю
+           использовать хорошие инструменты для работы, а Sсala благодаря типизации и другим
+            особенностям позволяет минимизировать количество возможных ошибок.`,
+        src: '/images/user-pic-2.png',
         name: 'Иван Иванов'
       }
     ],
     articles: [
       {
         subtitle: 'Предыдущая статья',
-        img: 'assets/image-24.png',
+        src: '/images/article.png',
         title: 'Как написать запрос для Checkmarx SAST'
       },
       {
         subtitle: 'Следующая статья',
-        img: 'assets/image-24.png',
+        src: '/images/article.png',
         title: 'Как написать запрос для Checkmarx SAST'
       }
-    ]
+    ],
+    slider: {
+      subtitle: 'Подпись к картинке',
+      pictures: [
+        {
+          src: '/images/slider-1.png',
+          alt: 'Image'
+        },
+        {
+          src: '/images/slider-1.png',
+          alt: 'Image'
+        },
+        {
+          src: '/images/slider-1.png',
+          alt: 'Image'
+        }
+      ]
+    }
   },
   footer: {
     copyright: 'DINS © — зарегистрированный товарный знак ООО «Нордиджи». 2020',

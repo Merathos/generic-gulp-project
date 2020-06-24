@@ -17,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: #201F2A;
     font-weight: 500;
+    display: block;
+    cursor: pointer;
   }
 
   p {
@@ -34,14 +36,18 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  h1, h2, h3, h4, h4 {
+  h1, h2, h3, h4, h5 {
     margin: 0;
     font-weight: 800;
   }
 
-  img {
+  img, video {
     width: 100%;
     height: auto;
+  }
+
+  blockquote {
+    margin: 0;
   }
 `;
 
