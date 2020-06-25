@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 
 const Styled = styled.div`
   width: 57px;
@@ -11,10 +10,10 @@ const Styled = styled.div`
   align-items: center;
 `;
 
-const CustomLink = ({ href, content, className }) => (
+const Icon = ({ name, className }) => (
   <Styled className={className}>
-    <Link href={href}>{content}</Link>
+    <span className={`ec ${name}`} />
   </Styled>
 );
 
-export default CustomLink;
+export default Icon;

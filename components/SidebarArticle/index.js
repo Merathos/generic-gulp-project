@@ -2,97 +2,46 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import TitleH4 from 'elements/TitleH4';
+import TitleH5 from 'elements/TitleH5';
 import Subtitle from 'elements/Subtitle';
-import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
-import GreenArrowRight from 'public/icons/green-arrow-right.svg';
+import ArrowLeft from 'public/icons/arrow-left.svg';
 
-const Title = styled.h3`
+const Title = styled(TitleH4)`
   margin-bottom: 40px;
+`;
+
+const H5 = styled(TitleH5)`
+  margin-bottom: 12px;
 `;
 
 const Section = styled.section`
   text-align: left;
 `;
 
-const Description = styled.p`
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 158%;
-`;
-
-const Img = styled.img`
-  max-width: 120px;
-  margin-bottom: 30px;
-
-  @media screen and (max-width: 420px) {
-    max-width: 74px;
-    margin-right: 20px;
-    margin-bottom: 0;
-  }
-`;
-
-const H4 = styled(TitleH4)`
-  margin-bottom: 12px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 8px;
-  }
-`;
-
-const StyledLink = styled.a`
-  width: 20px;
-  height: 15px;
-  display: block;
-  margin-right: 20px;
-`;
-
-const Arrows = styled.div`
-  display: flex;
-`;
-
-const Text = styled(Subtitle)`
-  margin-bottom: 40px;
-`;
-
 const SidebarArticle = props => {
   const {
-    data: { image, title, subtitle, description, icon },
+    data: { title, subtitle, description },
     type
   } = props;
   return (
     <Section>
       {
         {
-          'picture': (
-            <>
-              <Img src={image} alt={title} />
-              <H4 content={title} />
-              <Text content={description} />
-              <Arrows>
-                <Link href="/about">
-                  <StyledLink>
-                    <GreenArrowLeft />
-                  </StyledLink>
-                </Link>
-                <Link href="/about">
-                <StyledLink>
-                  <GreenArrowRight />
-                </StyledLink>
-                </Link>
-              </Arrows>
-            </>
-          ),
           'icon': (
             <>
-              <Title>{title}</Title>
-              <Description>{description}</Description>
+              <H5 content={title} />
+              <Subtitle content={description} />
             </>
           ),
           'default': (
             <>
-              <Subtitle>{subtitle}</Subtitle>
-              <Title>{title}</Title>
-              <Link href="/about">{icon}</Link>
+              <Subtitle content={subtitle} />
+              <Title content={title} />
+              <Link href="/about">
+                <a>
+                  <ArrowLeft />
+                </a>
+              </Link>
             </>
           )
         }[type]

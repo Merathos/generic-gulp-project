@@ -13,7 +13,8 @@ import {
   Feedback,
   Comments,
   Articles,
-  Slider
+  Slider,
+  SidebarSlider
 } from 'components';
 
 import mock from 'mock/index';
@@ -53,7 +54,7 @@ const Aside = styled.aside`
 `;
 
 const articlePage = () => (
-  <Layout>
+  <Layout backButton>
     <Container>
       <Title data={mock.article.mainTitle} />
       <Grid>
@@ -61,7 +62,7 @@ const articlePage = () => (
           <Paragraph size="h2" data={mock.article.introduction} />
         </Article>
         <Aside>
-          <SidebarArticle type="picture" data={mock.article.sidebarArticleUp} />
+          <SidebarSlider data={mock.article.sidebarSlider} />
         </Aside>
       </Grid>
       <Article>
@@ -69,7 +70,7 @@ const articlePage = () => (
         <List position="row" data={mock.article.features} />
         <Paragraph size="h2" data={mock.article.definitions} />
         <List position="row" type="blue" data={mock.article.reductions} />
-        <SectionNote data={mock.article} />
+        <SectionNote data={mock.article.sectionNote} />
       </Article>
       <Media type="img" data={mock.article.imageBig} />
       <Grid>

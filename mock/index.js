@@ -38,13 +38,26 @@ export default {
       src: '/images/article-normal.png',
       subtitle: 'Подпись к картинке'
     },
-    sidebarArticleUp: {
-      image: '/images/article.png',
-      title: 'Заголовок',
-      description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-    то мы предложим поможем с переездом.`,
-      icon: ''
-    },
+    sidebarSlider: [
+      {
+        image: '/images/article.png',
+        title: 'Заголовок',
+        description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
+          то мы предложим поможем с переездом.`,
+      },
+      {
+        image: '/images/article.png',
+        title: 'Заголовок',
+        description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
+          то мы предложим поможем с переездом.`,
+      },
+      {
+        image: '/images/article.png',
+        title: 'Заголовок',
+        description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
+          то мы предложим поможем с переездом.`,
+      }
+    ],
     features: [
       {
         title: 'Not exploitabl',
@@ -87,8 +100,7 @@ export default {
     },
     sidebarArticleMiddle: {
       title: 'Как написать запрос для Checkmarx SAST',
-      subtitle: 'Читай также',
-      icon: ''
+      subtitle: 'Читайте также',
     },
     list: [
       {
@@ -117,7 +129,6 @@ export default {
           и выдает инфу по ней, id принимает.`
     },
     sidebarArticleBottom: {
-      icon: '',
       title: 'Какое-то уточнение',
       description: `А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки.`
     },
@@ -238,6 +249,20 @@ export default {
       ]
     }
   },
+  socialSticker: [
+    {
+      title: 'twitter',
+      link: 'https://www.google.com/'
+    },
+    {
+      title: 'facebook',
+      link: 'https://www.google.com/'
+    },
+    {
+      title: 'vk',
+      link: 'https://www.google.com/'
+    }
+  ],
   footer: {
     copyright: 'DINS © — зарегистрированный товарный знак ООО «Нордиджи». 2020',
 

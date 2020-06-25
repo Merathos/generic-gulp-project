@@ -3,13 +3,15 @@ import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 import { useStore } from '../lib/redux';
 import { useApollo } from '../lib/apollo';
+
 import '../styles/emoji.min.css';
+import '../styles/fonts.css';
+import '../styles/reset.css';
 
 const GlobalStyle = createGlobalStyle`
   body {
     color: #201F2A;
     font-family: 'TT Norms', 'Arial', sans-serif;
-    margin: 0;
     font-weight: 500;
   }
 
@@ -21,33 +23,18 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  p {
-    margin: 0;
-  }
-
   button {
     border: none;
     background-color: transparent;
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   h1, h2, h3, h4, h5 {
-    margin: 0;
     font-weight: 800;
   }
 
   img, video {
     width: 100%;
     height: auto;
-  }
-
-  blockquote {
-    margin: 0;
   }
 `;
 

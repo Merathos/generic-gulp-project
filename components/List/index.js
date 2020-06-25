@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Paragraph } from 'components';
+import Subtitle from 'elements/Subtitle';
 
 const Section = styled.section`
   margin-bottom: 110px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
+  }
+`;
+
+const Img = styled.img`
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 20px;
   }
 `;
 
@@ -105,6 +114,7 @@ const Emoji = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 `;
 
 
@@ -127,7 +137,7 @@ const List = props => {
             <NormalList position={position}>
               {data.map(el => (
                 <Element>
-                  {el.src && <img src={el.src} alt={el.title} />}
+                  {el.src && <Img src={el.src} alt={el.title} />}
                   <Paragraph size="h3" data={el} />
                 </Element>
               ))}
@@ -137,7 +147,7 @@ const List = props => {
             <MarkerList position={position}>
               {data.map(el => (
                 <ElementEllipse>
-                  {el.image && <img src={el.image} alt={el.title} />}
+                  {el.image && <Img src={el.image} alt={el.title} />}
                   <Paragraph size="h3" data={el} />
                 </ElementEllipse>
               ))}
@@ -161,12 +171,7 @@ const List = props => {
                   <Emoji>
                     <span className={`ec ${el.icon}`} />
                   </Emoji>
-                  <Paragraph
-                    size="h3"
-                    data={el}
-                    color="#2F8ED9"
-                    opacity="0.5"
-                  />
+                  <Subtitle content={el.text} />
                 </Element>
               ))}
             </BlueList>

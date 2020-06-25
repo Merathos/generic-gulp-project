@@ -14,11 +14,13 @@ const Text = styled.p`
 `;
 
 const Section = styled.section`
-  padding: 40px 0 42px 87px;
+  padding: 40px 0 42px;
   border-top: 2px solid rgba(31, 32, 42, 0.1);
   border-bottom: 2px solid rgba(31, 32, 42, 0.1);
-  position: relative;
   margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
   @media screen and (max-width: 420px) {
     padding: 74px 30px 30px;
@@ -26,19 +28,20 @@ const Section = styled.section`
   }
 `;
 
-const Emoji = styled.span`
-  width: 57px;
-  height: 57px;
+const Emoji = styled.div`
   background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
   border-radius: 50%;
+  margin-right: 30px;
+  padding: 20px;
 `;
 
-const SectionNote = props => {
-  const { sectionNote } = props;
+const SectionNote = ({ data }) => {
   return (
     <Section>
-      <Emoji class="ec ec-fire" />
-      <Text>{sectionNote}</Text>
+      <Emoji>
+        <span className="ec ec-fire" />
+      </Emoji>
+      <Text>{data}</Text>
     </Section>
   );
 };

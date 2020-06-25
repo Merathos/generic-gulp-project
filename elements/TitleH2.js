@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Styled = styled.h2`
-  font-weight: 700;
   font-size: 54px;
   line-height: 130%;
   letter-spacing: 0.03em;

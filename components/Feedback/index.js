@@ -5,7 +5,7 @@ import TitleH3 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
 
 const Img = styled.img`
-  max-width: 404px;
+  width: 404px;
   margin-right: 70px;
 `;
 
@@ -32,7 +32,7 @@ const Feedback = props => {
     <Section>
       <picture>
         <source srcSet={src} type="image/png" media="(min-width: 420px)" />
-        <img src={src_mob} alt={name} />
+        <Img src={src_mob} alt={name} />
       </picture>
       <div>
         <Subtitle content={company} />
