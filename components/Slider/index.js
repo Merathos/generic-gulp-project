@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Subtitle from 'elements/Subtitle';
 
+
 const Text = styled(Subtitle)`
   margin-top: 20px;
   text-align: center;

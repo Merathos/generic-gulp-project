@@ -5,6 +5,8 @@ import TitleH4 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
 import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
 import GreenArrowRight from 'public/icons/green-arrow-right.svg';
+import { useRef, useCallback } from 'react';
+import Swiper from 'react-id-swiper';
 
 const Article = styled.article`
   @media screen and (max-width: 420px) {
@@ -32,10 +34,9 @@ const H4 = styled(TitleH4)`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled.button`
   width: 20px;
-  height: 15px;
-  display: block;
+  height: 20px;
   margin-right: 20px;
 `;
 
@@ -67,11 +68,26 @@ const List = styled.ul`
 `;
 
 const SidebarSlider = props => {
+  const ref = useRef(null);
+
+  const goNext = () => {
+    if (ref.current !== null && ref.current.swiper !== null) {
+      ref.current.swiper.slideNext();
+    }
+  };
+
+  const goPrev = () => {
+    if (ref.current !== null && ref.current.swiper !== null) {
+      ref.current.swiper.slidePrev();
+    }
+  };
+
   const { data } = props;
+
   return (
     <Article>
       <div>
-        <List>
+        <Swiper ref={ref}>
           {data.map((el, i) => (
             <Element key={i}>
               <Img src={el.image} alt={el.alt} />
@@ -81,19 +97,15 @@ const SidebarSlider = props => {
               </div>
             </Element>
           ))}
-        </List>
+        </Swiper>
       </div>
       <Arrows>
-        <Link href="/about">
-          <StyledLink>
-            <GreenArrowLeft />
-          </StyledLink>
-        </Link>
-        <Link href="/about">
-        <StyledLink>
+        <StyledLink onClick={goPrev}>
+          <GreenArrowLeft />
+        </StyledLink>
+        <StyledLink onClick={goNext}>
           <GreenArrowRight />
         </StyledLink>
-        </Link>
       </Arrows>
     </Article>
   );
