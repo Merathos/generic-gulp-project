@@ -33,7 +33,7 @@ const Media = props => {
 };
 
 Media.propTypes = {
-  data: PropTypes.objectOf({
+  data: PropTypes.shape({
     subtitle: PropTypes.string,
     text: PropTypes.string
   }).isRequired,
@@ -41,7 +41,7 @@ Media.propTypes = {
 };
 
 Media.defaultProps = {
-  type: 'h2'
+  type: 'img'
 };
 
 export default Media;

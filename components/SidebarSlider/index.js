@@ -72,8 +72,8 @@ const SidebarSlider = props => {
     <Article>
       <div>
         <List>
-          {data.map(el => (
-            <Element>
+          {data.map((el, i) => (
+            <Element key={i}>
               <Img src={el.image} alt={el.alt} />
               <div>
                 <H4 content={el.title} />

@@ -36,10 +36,10 @@ const Paragraph = props => {
     data: { title, text },
     size,
     color,
-    opacity,
+    opacity
   } = props;
   return (
-    <section className="main__special-offer special-offer">
+    <section>
       {title && (
         <>
           {size === 'h3' ? (
@@ -55,10 +55,7 @@ const Paragraph = props => {
 };
 
 Paragraph.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    text: PropTypes.string
-  }).isRequired,
+  data: PropTypes.shape.isRequired,
   size: PropTypes.string
 };
 

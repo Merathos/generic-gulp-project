@@ -49,8 +49,8 @@ const Slider = props => {
     <section>
       <Wrapper>
         <List>
-          {pictures.map(el => (
-            <Element>
+          {pictures.map((el, i) => (
+            <Element key={i}>
               <Img src={el.src} alt={el.alt} />
             </Element>
           ))}
@@ -62,15 +62,7 @@ const Slider = props => {
 };
 
 Slider.propTypes = {
-  data: PropTypes.objectOf({
-    subtitle: PropTypes.string,
-    text: PropTypes.string
-  }).isRequired,
-  type: PropTypes.string
-};
-
-Slider.defaultProps = {
-  type: 'h2'
+  data: PropTypes.object.isRequired,
 };
 
 export default Slider;

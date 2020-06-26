@@ -17,11 +17,11 @@ const Link = styled.a`
 
 const SocialSticker = ({ data, className }) => (
   <List className={className}>
-    {data.map(el => (
-      <li>
+    {data.map((el, i) => (
+      <li key={i}>
         <Link href={el.link}>
         {
-        {
+          {
             'twitter': (
               <Twitter />
             ),

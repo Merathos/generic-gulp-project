@@ -54,7 +54,8 @@ const SidebarArticle = props => {
 SidebarArticle.propTypes = {
   data: PropTypes.objectOf({
     title: PropTypes.string,
-    text: PropTypes.string
+    subtitle: PropTypes.string,
+    description: PropTypes.string,
   }).isRequired,
   type: PropTypes.string
 };

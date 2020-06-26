@@ -55,8 +55,8 @@ const Header = ({ data: links }) => (
     <StyledLogo />
     <Nav>
       <List>
-        {links.map(el => (
-          <Element>
+        {links.map((el, i) => (
+          <Element key={i}>
             <CustomLink href={`/${el.href}`} content={el.title} />
           </Element>
         ))}

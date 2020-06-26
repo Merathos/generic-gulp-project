@@ -73,15 +73,11 @@ const ElementEllipse = styled.li`
 `;
 
 const ElementNumber = styled.li`
-  padding-left: 40px;
   position: relative;
   display: flex;
 
   @media screen and (max-width: 420px) {
-
-    &::before {
-      left: 0;
-    }
+    padding-left: 0;
   }
 `;
 
@@ -109,7 +105,7 @@ const Number = styled.span`
   line-height: 120%;
 
   @media screen and (max-width: 420px) {
-    margin-right: 0;
+    margin-right: 10px;
   }
 `;
 
@@ -133,8 +129,8 @@ const List = props => {
         {
           blue: (
             <BlueList position={position}>
-              {data.map(el => (
-                <BlueElement>
+              {data.map((el, i) => (
+                <BlueElement key={i}>
                   <Paragraph size="h3" data={el} color="#2F8ED9" opacity="0.5" />
                 </BlueElement>
               ))}
@@ -142,8 +138,8 @@ const List = props => {
           ),
           'normal': (
             <NormalList position={position}>
-              {data.map(el => (
-                <Element>
+              {data.map((el, i) => (
+                <Element key={i}>
                   {el.src && <Img src={el.src} alt={el.title} />}
                   <Paragraph size="h3" data={el} />
                 </Element>
@@ -152,8 +148,8 @@ const List = props => {
           ),
           'ellipse': (
             <MarkerList position={position}>
-              {data.map(el => (
-                <ElementEllipse>
+              {data.map((el, i) => (
+                <ElementEllipse key={i}>
                   {el.image && <Img src={el.image} alt={el.title} />}
                   <Paragraph size="h3" data={el} />
                 </ElementEllipse>
@@ -162,9 +158,9 @@ const List = props => {
           ),
           'number': (
             <MarkerList position={position}>
-              {data.map(el => (
-                <ElementNumber>
-                  <Number>{`0${data.indexOf(el) + 1}`}</Number>
+              {data.map((el, i) => (
+                <ElementNumber key={i}>
+                  <Number>{`0${i + 1}`}</Number>
                   {el.image && <img src={el.image} alt={el.title} />}
                   <Paragraph size="h3" data={el} />
                 </ElementNumber>
@@ -173,9 +169,9 @@ const List = props => {
           ),
           'icons': (
             <BlueList position={position}>
-              {data.map(el => (
+              {data.map((el, i) => (
                 <BlueElement>
-                  <Emoji>
+                  <Emoji key={i}>
                     <span className={`ec ${el.icon}`} />
                   </Emoji>
                   <Subtitle content={el.text} />
@@ -190,10 +186,7 @@ const List = props => {
 };
 
 List.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    text: PropTypes.string
-  }).isRequired,
+  data: PropTypes.array.isRequired,
   position: PropTypes.string,
   type: PropTypes.string
 };

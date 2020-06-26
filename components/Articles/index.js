@@ -23,7 +23,7 @@ const Articles = props => {
 };
 
 Articles.propTypes = {
-  data: PropTypes.shape.isRequired
+  data: PropTypes.array.isRequired
 };
 
 export default Articles;
