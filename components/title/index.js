@@ -17,7 +17,7 @@ const Date = styled(Subtitle)`
   margin-bottom: 80px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 40px;
+    margin-bottom: 40px ;
   }
 `;
 
