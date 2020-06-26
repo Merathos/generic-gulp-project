@@ -95,6 +95,13 @@ const Element = styled.li`
   }
 `;
 
+const BlueElement = styled.li`
+  @media screen and (max-width: 420px) {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+`;
+
 const Number = styled.span`
   color: #2F8ED9;
   margin-right: 20px;
@@ -127,9 +134,9 @@ const List = props => {
           blue: (
             <BlueList position={position}>
               {data.map(el => (
-                <Element>
+                <BlueElement>
                   <Paragraph size="h3" data={el} color="#2F8ED9" opacity="0.5" />
-                </Element>
+                </BlueElement>
               ))}
             </BlueList>
           ),
@@ -167,12 +174,12 @@ const List = props => {
           'icons': (
             <BlueList position={position}>
               {data.map(el => (
-                <Element>
+                <BlueElement>
                   <Emoji>
                     <span className={`ec ${el.icon}`} />
                   </Emoji>
                   <Subtitle content={el.text} />
-                </Element>
+                </BlueElement>
               ))}
             </BlueList>
           )

@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Text from 'elements/Text';
-import TitleH3 from 'elements/TitleH4';
+import TitleH3 from 'elements/TitleH3';
 import Subtitle from 'elements/Subtitle';
 
 const Img = styled.img`
   width: 404px;
   margin-right: 70px;
+
+  @media screen and (max-width: 1024px) {
+    margin-right: 0;
+    width: 200px;
+    margin-bottom: 20px;
+  }
 `;
 
 const StyledText = styled.p`
@@ -21,6 +26,7 @@ const Section = styled.section`
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 `;
 

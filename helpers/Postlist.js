@@ -23,7 +23,7 @@ export const allPostsQueryVars = {
   first: 10,
 }
 
-export default function PostList() {
+export default function Postlist() {
   const { loading, error, data, fetchMore, networkStatus } = useQuery(
     ALL_POSTS_QUERY,
     {

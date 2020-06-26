@@ -16,6 +16,7 @@ const H5 = styled(TitleH5)`
 
 const Section = styled.section`
   text-align: left;
+  margin-bottom: 50px;
 `;
 
 const SidebarArticle = props => {

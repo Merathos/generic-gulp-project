@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Text = styled.p`
-  margin-bottom: 40px;
   font-size: 20px;
   line-height: 158%;
   font-weight: bold;
@@ -23,8 +22,9 @@ const Section = styled.section`
   align-items: flex-start;
 
   @media screen and (max-width: 420px) {
-    padding: 74px 30px 30px;
+    padding: 20px 0 30px;
     margin-bottom: 50px;
+    flex-direction: column;
   }
 `;
 
@@ -33,6 +33,11 @@ const Emoji = styled.div`
   border-radius: 50%;
   margin-right: 30px;
   padding: 20px;
+
+  @media screen and (max-width: 420px) {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
 `;
 
 const SectionNote = ({ data }) => {

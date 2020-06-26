@@ -13,6 +13,11 @@ const Blockquote = styled.blockquote`
   font-size: 34px;
   line-height: 120%;
   margin-bottom: 60px;
+
+  @media screen and (max-width: 420px) {
+    font-size: 22px;
+    line-height: 120%;
+  }
 `;
 
 const Span = styled.span`
@@ -20,6 +25,10 @@ const Span = styled.span`
   font-size: 54px;
   color: #2F8ED9;
   margin-right: 30px;
+
+  @media screen and (max-width: 420px) {
+    margin-right: 20px;
+  }
 `;
 
 const Container = styled.div`

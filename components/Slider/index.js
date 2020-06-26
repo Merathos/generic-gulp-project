@@ -15,29 +15,19 @@ const Text = styled(Subtitle)`
 
 const Wrapper = styled.div`
   text-align: center;
-
-  @media screen and (max-width: 420px) {
-    margin-top: 5px;
-    margin-bottom: 100px;
-  }
 `;
 
 const Element = styled.li`
   text-align: center;
-
-  @media screen and (max-width: 420px) {
-    margin-top: 5px;
-    margin-bottom: 100px;
-  }
 `;
 
 const List = styled.ul`
   display: flex;
   overflow-x: scroll;
+  margin-bottom: 16px;
 
   @media screen and (max-width: 420px) {
-    margin-top: 5px;
-    margin-bottom: 100px;
+    margin-bottom: 8px;
   }
 `;
 
@@ -46,8 +36,8 @@ const Img = styled.img`
   margin-right: 40px;
 
   @media screen and (max-width: 420px) {
-    margin-top: 5px;
-    margin-bottom: 100px;
+    width: 301px;
+    margin-right: 12px;
   }
 `;
 

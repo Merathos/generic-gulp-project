@@ -7,6 +7,7 @@ const Block = styled.div`
   display: flex;
   align-items: ${props => props.align || 'flex-start'};
   flex-direction: column;
+  margin-bottom: 14px;
 `;
 
 const Card = styled.div`

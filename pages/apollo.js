@@ -3,15 +3,15 @@
 // import { InMemoryCache } from 'apollo-cache-inmemory';
 // import { HttpLink } from 'apollo-link-http';
 import { initializeApollo } from '../lib/apollo';
-import PostList, {
+import Postlist, {
   ALL_POSTS_QUERY,
   allPostsQueryVars,
-} from 'helpers/PostList'
+} from 'helpers/Postlist'
 
 let apolloClient;
 
 const ApolloPage = () => (
-  <PostList />
+  <Postlist />
 )
 
 export async function getStaticProps() {
