@@ -9,7 +9,7 @@ const Text = styled(Subtitle)`
 
   @media screen and (max-width: 420px) {
     margin-top: 5px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 `;
 

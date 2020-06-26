@@ -8,8 +8,8 @@ const Styled = styled.p`
   opacity: 0.5;
 
   @media screen and (max-width: 420px) {
-    font-size: 10px;
-    line-height: 131%;
+    font-size: 14px;
+    line-height: 134%;
   }
 `;
 

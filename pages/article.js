@@ -26,6 +26,10 @@ const Container = styled.main`
   @media screen and (max-width: 420px) {
     max-width: 315px;
   }
+
+  @media screen and (max-width: 240px) {
+    max-width: 280px;
+  }
 `;
 
 const Article = styled.article`
@@ -40,7 +44,7 @@ const Article = styled.article`
 const Grid = styled.div`
   display: flex;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;

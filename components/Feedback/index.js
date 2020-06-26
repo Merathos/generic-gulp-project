@@ -19,8 +19,8 @@ const Section = styled.section`
   margin-bottom: 90px;
   align-items: flex-end;
 
-  @media screen and (max-width: 420px) {
-    flex-wrap: wrap;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
   }
 `;
 

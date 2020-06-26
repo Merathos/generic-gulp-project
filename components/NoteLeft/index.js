@@ -9,14 +9,16 @@ const Card = styled.div`
   background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a;
   padding: 30px 30px 65px;
   display: flex;
-  width: 580px;
   box-sizing: border-box;
   justify-content: ${props => props.position || 'flex-start'};
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
-    flex-direction:column;
+    display: none;
   }
+`;
+
+const H4 = styled(TitleH4)`
+  min-width: 221px;
 `;
 
 const Img = styled.img`
@@ -54,7 +56,7 @@ const NoteLeft = props => {
         <Img src={src} alt={title} />
         <Wrapper>
           <Subtitle content={subtitle} />
-          <TitleH4 content={title} />
+          <H4 content={title} />
         </Wrapper>
       </Container>
     </Card>

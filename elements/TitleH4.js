@@ -3,6 +3,10 @@ import styled from 'styled-components';
 const Styled = styled.h4`
   font-size: 24px;
   line-height: 120%;
+
+  @media screen and (max-width: 420px) {
+    font-size: 16px;
+  }
 `;
 
 const TitleH4 = ({ content, className }) => (

@@ -6,18 +6,10 @@ import Subtitle from 'elements/Subtitle';
 import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
 import GreenArrowRight from 'public/icons/green-arrow-right.svg';
 
-const Title = styled.h3`
-  margin-bottom: 40px;
-`;
-
-const Section = styled.section`
-  text-align: left;
-`;
-
-const Description = styled.p`
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 158%;
+const Article = styled.article`
+  @media screen and (max-width: 420px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const Img = styled.img`
@@ -25,7 +17,8 @@ const Img = styled.img`
   margin-bottom: 30px;
 
   @media screen and (max-width: 420px) {
-    max-width: 74px;
+    width: 74px;
+    height: 74px;
     margin-right: 20px;
     margin-bottom: 0;
   }
@@ -48,6 +41,10 @@ const StyledLink = styled.a`
 
 const Arrows = styled.div`
   display: flex;
+
+  @media screen and (max-width: 420px) {
+    padding-left: 94px;
+  }
 `;
 
 const Text = styled(Subtitle)`
@@ -56,6 +53,12 @@ const Text = styled(Subtitle)`
 
 const Element = styled.li`
   min-width: 254px;
+
+  @media screen and (max-width: 420px) {
+    display: flex;
+    justify-content: space-between;
+    min-width: 315px;
+  }
 `;
 
 const List = styled.ul`
@@ -66,14 +69,16 @@ const List = styled.ul`
 const SidebarSlider = props => {
   const { data } = props;
   return (
-    <article>
+    <Article>
       <div>
         <List>
           {data.map(el => (
             <Element>
               <Img src={el.image} alt={el.alt} />
-              <H4 content={el.title} />
-              <Text content={el.description} />
+              <div>
+                <H4 content={el.title} />
+                <Text content={el.description} />
+              </div>
             </Element>
           ))}
         </List>
@@ -90,7 +95,7 @@ const SidebarSlider = props => {
         </StyledLink>
         </Link>
       </Arrows>
-    </article>
+    </Article>
   );
 };
 
