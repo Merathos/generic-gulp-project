@@ -14,3 +14,4 @@ export { default as Social } from './Social';
 export { default as Slider } from './Slider';
 export { default as SocialSticker } from './SocialSticker';
 export { default as SidebarSlider } from './SidebarSlider';
+export { default as GreyTitle } from './GreyTitle';

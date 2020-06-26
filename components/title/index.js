@@ -38,7 +38,7 @@ const Description = styled.p`
 const Title = ({ data }) => {
   const { title, date, description } = data;
   return (
-    <div className="main__special-offer special-offer">
+    <div>
       <ArticleTitle>{title}</ArticleTitle>
       <Date content={date} />
       <Description>{description}</Description>

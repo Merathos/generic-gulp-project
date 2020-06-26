@@ -8,9 +8,14 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  background-color: #F7F8F9;
   background-image: url('/images/yellow-rectangle.svg');
   background-repeat: no-repeat;
   background-position: 40% top;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
 
   @media (max-width: 420px) {
     padding: 30px;

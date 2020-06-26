@@ -249,6 +249,21 @@ export default {
       ]
     }
   },
+  vacancy: {
+    mainTitle: {
+      title: `Java developer (Big Data team)`,
+      subtitle1: `English Speaking Team`,
+      subtitle2: `Стажировка`,
+      button1: `Отправить резюме`,
+      button2: `Порекомендовать друга`,
+      stackTitle: `Technology stack:`,
+      technologies: `Spark, Hadoop (HDFS, YARN), Apache Flume, HP Vertica, MongoDB,
+      different data formats (Avro, Parquet, etc).`,
+      projectTitle: `Проект:`,
+      project: `Technology stack: Spark, Hadoop (HDFS, YARN), Apache Flume,
+      HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`
+    }
+  },
   socialSticker: [
     {
       title: 'twitter',
