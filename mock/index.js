@@ -304,114 +304,114 @@ export default {
           text: `Experience with cloud-based infrastructure (AWS).`
         }
       ]
-    }
-  },
-  extraRequirements: {
-    title: `Desired Qualifications`,
-    text: `You will become a part of Big Data team at large
-     US-based international company, leader in enterprise VoIP
-      communication solutions, messaging and video conferencing.
-       The team is primarily focusing on developing software for
-        processing large amounts of data and performing various
-         maintenance and data mining tasks using Hadoop ecosystem.
+    },
+    qualifications: {
+      title: `Desired Qualifications`,
+      text: `You will become a part of Big Data team at large
+      US-based international company, leader in enterprise VoIP
+        communication solutions, messaging and video conferencing.
+        The team is primarily focusing on developing software for
+          processing large amounts of data and performing various
+          maintenance and data mining tasks using Hadoop ecosystem.
 
-    Technology stack includes Spark, Hadoop (HDFS, YARN), Apache
-     Flume, HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`
-  },
-  conditions: {
-    title: `Conditions`,
-    list: [
+      Technology stack includes Spark, Hadoop (HDFS, YARN), Apache
+      Flume, HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`
+    },
+    conditions: {
+      title: `Conditions`,
+      list: [
+        {
+          icon: ``,
+          text: `28 day vacation 100% paid in accordance with the current salary`
+        },
+        {
+          icon: ``,
+          text: `Business trips to foreign branch offices (the USA, China) and further work H1-B`
+        },
+        {
+          icon: ``,
+          text: `Corporate training programs, English language `
+        },
+        {
+          icon: ``,
+          text: `Job placement and payment of salary take place according to the labor codey`
+        },
+        {
+          icon: ``,
+          text: `Nonresident applicants are granted Relocation Bonus`
+        },
+        {
+          icon: ``,
+          text: `28 day vacation 100% paid in accordance with the current salary`
+        },
+        {
+          icon: ``,
+          text: `Sick leaves 100% paid.`
+        }
+      ]
+    },
+    steps: [
       {
-        icon: ``,
-        text: `28 day vacation 100% paid in accordance with the current salary`
+        title: `Знакомство с рекрутером и вакансией`,
+        text: `Расскажем о вакансии, зададим несколько вопросов об опыте и договоримся о дате собеседования.`,
+        subtitle: ``
       },
       {
-        icon: ``,
-        text: `Business trips to foreign branch offices (the USA, China) and further work H1-B`
+        title: `Интервью с рекрутером и техническим специалистом `,
+        text: `Познакомимся, зададим вопросы об опыте работы и технических знаниях, расскажем о проекте.`,
+        subtitle: `1,5-2 часа`
       },
       {
-        icon: ``,
-        text: `Corporate training programs, English language `
-      },
-      {
-        icon: ``,
-        text: `Job placement and payment of salary take place according to the labor codey`
-      },
-      {
-        icon: ``,
-        text: `Nonresident applicants are granted Relocation Bonus`
-      },
-      {
-        icon: ``,
-        text: `28 day vacation 100% paid in accordance with the current salary`
-      },
-      {
-        icon: ``,
-        text: `Sick leaves 100% paid.`
+        title: `Финальная встреча с руководителем департамента`,
+        text: `Познакомим с будущим руководителем, подробнее расскажем о проекте,
+        поговорим о предстоящих задачах и ожиданиях, зададим уточняющие вопросы.`,
+        subtitle: `30 мин-1 час`
       }
-    ]
-  },
-  steps: [
-    {
-      title: `Знакомство с рекрутером и вакансией`,
-      text: `Расскажем о вакансии, зададим несколько вопросов об опыте и договоримся о дате собеседования.`,
-      subtitle: ``
+    ],
+    application: {
+      title: `Откликнуться на вакансию`,
+      button1: `Отправить резюме`,
+      button2: `Порекомендовать друга`
     },
-    {
-      title: `Интервью с рекрутером и техническим специалистом `,
-      text: `Познакомимся, зададим вопросы об опыте работы и технических знаниях, расскажем о проекте.`,
-      subtitle: `1,5-2 часа`
+    vacancies: [
+      {
+        title: `Java developer (Big Data team)`,
+        text: `Стек: Java, Redis, Kafka, MongoDB, Docker, ELK, TICK. Сервис базируется в AWS и Private Cloud.`
+      },
+      {
+        title: `Java developer (Big Data team)`,
+        text: `We are looking for a talented and energetic team leader to head our Integration Team.`
+      }
+    ],
+    sidebarSlider: [
+      {
+        image: `/images/article.png`,
+        title: `Заголовок`,
+        description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
+          то мы предложим поможем с переездом.`,
+      },
+      {
+        image: `/images/article.png`,
+        title: `Заголовок`,
+        description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
+          то мы предложим поможем с переездом.`,
+      },
+      {
+        image: `/images/article.png`,
+        title: `Заголовок`,
+        description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
+          то мы предложим поможем с переездом.`,
+      }
+    ],
+    sidebarArticle: {
+      title: `Релокация`,
+      subtitle: `Если вы проживаете в другом городе или стране,
+      но хотите работать у нас, то мы предложим поможем с переездом.`,
     },
-    {
-      title: `Финальная встреча с руководителем департамента`,
-      text: `Познакомим с будущим руководителем, подробнее расскажем о проекте,
-       поговорим о предстоящих задачах и ожиданиях, зададим уточняющие вопросы.`,
-      subtitle: `30 мин-1 час`
+    map: {
+      title: `Офисы на карте`,
+      coords: ``
     }
-  ],
-  application: {
-    title: `Откликнуться на вакансию`,
-    button1: `Отправить резюме`,
-    button2: `Порекомендовать друга`
-  },
-  vacancies: [
-    {
-      title: `Java developer (Big Data team)`,
-      text: `Стек: Java, Redis, Kafka, MongoDB, Docker, ELK, TICK. Сервис базируется в AWS и Private Cloud.`
-    },
-    {
-      title: `Java developer (Big Data team)`,
-      text: `We are looking for a talented and energetic team leader to head our Integration Team.`
-    }
-  ],
-  sidebarSlider: [
-    {
-      image: `/images/article.png`,
-      title: `Заголовок`,
-      description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-        то мы предложим поможем с переездом.`,
-    },
-    {
-      image: `/images/article.png`,
-      title: `Заголовок`,
-      description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-        то мы предложим поможем с переездом.`,
-    },
-    {
-      image: `/images/article.png`,
-      title: `Заголовок`,
-      description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-        то мы предложим поможем с переездом.`,
-    }
-  ],
-  sidebarArticle: {
-    title: `Релокация`,
-    subtitle: `Если вы проживаете в другом городе или стране,
-     но хотите работать у нас, то мы предложим поможем с переездом.`,
-  },
-  map: {
-    title: `Офисы на карте`,
-    coords: ``
   },
   socialSticker: [
     {

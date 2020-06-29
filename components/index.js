@@ -20,3 +20,4 @@ export { default as Application } from './Application';
 export { default as SliderVacancy } from './SliderVacancy';
 export { default as Requirements } from './Requirements';
 export { default as Conditions } from './Conditions';
+export { default as Advert } from './Advert';

@@ -75,7 +75,7 @@ const vacancyPage = () => (
           <List type="ellipse" position="column" data={mock.vacancy.requirements.list} /> */}
         </Article>
         <Aside>
-          <SidebarSlider data={mock.vacancy.requirements} />
+          <SidebarSlider data={mock.vacancy.sidebarSlider} />
         </Aside>
       </Grid>
       <Grid>
@@ -88,13 +88,13 @@ const vacancyPage = () => (
           <SidebarArticle data={mock.vacancy.qualifications} />
         </Aside>
       </Grid>
-      <Paragraph size="h2" data={mock.article.definitions} />
-      <Conditions />
+      <Paragraph size="h2" data={mock.vacancy.qualifications} />
+      <Conditions data={mock.vacancy.conditions} />
       {/* <List position="row" type="icon" data={mock.article.reductions} /> */}
       <SliderVacancy data={mock.vacancy.steps} />
       <Application data={mock.vacancy.application} />
       <Map data={mock.vacancy.map} />
-      <Articles data={mock.vacancy.articles} />
+      <Articles type="vacancy" data={mock.vacancy.vacancies} />
     </Container>
   </Layout>
 );

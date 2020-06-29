@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NoteLeft from '/components/NoteLeft';
-import NoteRight from '/components/NoteRight';
+import TitleH2 from '/elements/TitleH2';
+import { List } from 'components';
 
-const Container = styled.section`
-  display: flex;
-  justify-content: space-between;
+const Section = styled.section`
+  /* display: flex;
+  justify-content: space-between; */
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -15,15 +15,15 @@ const Container = styled.section`
 const Requirements = props => {
   const { data } = props;
   return (
-    <Container>
-      <NoteLeft data={data[0]} />
-      <NoteRight data={data[1]} />
-    </Container>
+    <Section>
+      <TitleH2 content={data.title} />
+      <List type="ellipse" position="column" data={data.list} />
+    </Section>
   );
 };
 
 Requirements.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.shape.isRequired
 };
 
 export default Requirements;
