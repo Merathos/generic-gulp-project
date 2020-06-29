@@ -23,7 +23,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 const StyledSocialSticker = styled(SocialSticker)`
   position: absolute;
   right: 0;
-  top: 440px;
+  top: 10%;
 
   @media screen and (max-width: 420px) {
     display: none;
