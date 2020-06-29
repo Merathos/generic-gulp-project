@@ -11,7 +11,7 @@ const Block = styled.div`
 `;
 
 const Card = styled.div`
-  background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a;
+  background: #F7F8F9;
   padding: 40px;
   border-radius: 12px;
 `;

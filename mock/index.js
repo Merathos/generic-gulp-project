@@ -157,18 +157,15 @@ export default {
     },
     listNumbers: [
       {
-        number: `01`,
         text: `/getTransaction – на вход принимает id транзакции и выдает инфу
          по ней, id принимает как строку, и передает ее в getTransactionInfo(transactionId)
           =>getTransactionInfo (transactoinId) – делает конкат transactionId к SQL запросу (то есть получается SQL инъекция);`
       },
       {
-        inumber: `02`,
         text: `/getSecureSettings — на вход принимает также userId и mailboxId
          и выдает настройки мейлбокса. НО проверяет что mailboxid принадлежит пользователю.`
       },
       {
-        number: `03`,
         text: `/getSettings — на вход принимает userId и mailboxId – и выдает
         настройки мейлбокса. Не проверяет что mailboxid принадлежит пользователю;`
       }
@@ -263,11 +260,14 @@ export default {
       project: `Technology stack: Spark, Hadoop (HDFS, YARN), Apache Flume,
       HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`
     },
-    intro: `You will become a part of Big Data team at large US-based
-     international company, leader in enterprise VoIP communication solutions,
-      messaging and video conferencing. The team is primarily focusing on developing
-       software for processing large amounts of data and performing various maintenance
-        and data mining tasks using Hadoop ecosystem.`,
+    intro: {
+      title: ``,
+      text: `You will become a part of Big Data team at large US-based
+      international company, leader in enterprise VoIP communication solutions,
+       messaging and video conferencing. The team is primarily focusing on developing
+        software for processing large amounts of data and performing various maintenance
+         and data mining tasks using Hadoop ecosystem.`
+    },
     requirements: {
       title: `Skills & Requirements`,
       list: [
@@ -373,16 +373,19 @@ export default {
       button1: `Отправить резюме`,
       button2: `Порекомендовать друга`
     },
-    vacancies: [
-      {
-        title: `Java developer (Big Data team)`,
-        text: `Стек: Java, Redis, Kafka, MongoDB, Docker, ELK, TICK. Сервис базируется в AWS и Private Cloud.`
-      },
-      {
-        title: `Java developer (Big Data team)`,
-        text: `We are looking for a talented and energetic team leader to head our Integration Team.`
-      }
-    ],
+    vacancies: {
+      title: `Вакансии в ЭТОЙ категории`,
+      catalog: [
+        {
+          title: `Java developer (Big Data team)`,
+          text: `Стек: Java, Redis, Kafka, MongoDB, Docker, ELK, TICK. Сервис базируется в AWS и Private Cloud.`
+        },
+        {
+          title: `Java developer (Big Data team)`,
+          text: `We are looking for a talented and energetic team leader to head our Integration Team.`
+        }
+      ]
+    },
     sidebarSlider: [
       {
         image: `/images/article.png`,

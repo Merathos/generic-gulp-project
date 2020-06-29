@@ -4,7 +4,6 @@ import Subtitle from 'elements/Subtitle';
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
 
-
 const Text = styled(Subtitle)`
   margin-top: 20px;
   text-align: center;
@@ -52,14 +51,14 @@ const SliderVacancy = props => {
 
   return (
     <Section>
-      <Swiper ref={ref}>
+      {/* <Swiper ref={ref}>
         {pictures.map((el, i) => (
           <Element key={i}>
             <Img src={el.src} alt={el.alt} />
           </Element>
         ))}
       </Swiper>
-      <Text content={subtitle} />
+      <Text content={subtitle} /> */}
     </Section>
   );
 };

@@ -27,6 +27,23 @@ const Section = styled.section`
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 50px;
+  }
+`;
+
+const StyledSubtitle = styled(Subtitle)`
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 7px;
+  }
+`;
+
+const H3 = styled(TitleH3)`
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 10px;
   }
 `;
 
@@ -41,8 +58,8 @@ const Feedback = props => {
         <Img src={src_mob} alt={name} />
       </picture>
       <div>
-        <Subtitle content={company} />
-        <TitleH3 content={name} />
+        <StyledSubtitle content={company} />
+        <H3 content={name} />
         <StyledText>{text}</StyledText>
       </div>
     </Section>

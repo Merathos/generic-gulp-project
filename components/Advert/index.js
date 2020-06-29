@@ -4,21 +4,19 @@ import TitleH3 from 'elements/TitleH3';
 import Text from 'elements/Text';
 import Button from 'elements/Button';
 import Link from 'next/link';
+import ArrowRight from 'public/icons/arrow-right.svg';
 
 const Section = styled.section`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 200px 0;
-  margin-bottom: 160px;
+  max-width: 380px;
 
-  @media screen and (max-width: 420px) {
+  /* @media screen and (max-width: 420px) {
     padding-top: 60px;
     max-width: 315px;
   }
 
   @media screen and (max-width: 240px) {
     max-width: 280px;
-  }
+  } */
 `;
 
 // const Text = styled.p`

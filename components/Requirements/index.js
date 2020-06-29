@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import TitleH2 from '/elements/TitleH2';
-import { List } from 'components';
+import { MarkerList } from 'components';
 
 const Section = styled.section`
   /* display: flex;
@@ -12,12 +12,20 @@ const Section = styled.section`
   }
 `;
 
+const H2 = styled(TitleH2)`
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 30px;
+  }
+`;
+
 const Requirements = props => {
-  const { data } = props;
+  const { data, type } = props;
   return (
     <Section>
-      <TitleH2 content={data.title} />
-      <List type="ellipse" position="column" data={data.list} />
+      <H2 content={data.title} />
+      <MarkerList type={type} data={data.list} />
     </Section>
   );
 };

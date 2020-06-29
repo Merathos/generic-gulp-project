@@ -15,8 +15,6 @@ import {
   Application
 } from 'components';
 
-import Text from 'elements/Text';
-
 import mock from 'mock/index';
 
 const Container = styled.main`
@@ -47,6 +45,7 @@ const Article = styled.article`
 
 const Grid = styled.div`
   display: flex;
+  justify-content: space-between;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -67,12 +66,10 @@ const vacancyPage = () => (
       <GreyTitle data={mock.vacancy.mainTitle} />
     </GreyContainer>
     <Container>
-      <Text bold="700" content={mock.vacancy.intro} />
+      <Paragraph bold="700" data={mock.vacancy.intro} />
       <Grid>
         <Article>
-          <Requirements data={mock.vacancy.requirements} />
-          {/* <TitleH2 data={mock.vacancy.requirements.title} />
-          <List type="ellipse" position="column" data={mock.vacancy.requirements.list} /> */}
+          <Requirements type="ellipse" data={mock.vacancy.requirements} />
         </Article>
         <Aside>
           <SidebarSlider data={mock.vacancy.sidebarSlider} />
@@ -80,17 +77,16 @@ const vacancyPage = () => (
       </Grid>
       <Grid>
         <Article>
-          <Requirements data={mock.vacancy.extraRequirements} />
-          {/* <TitleH2 data={mock.vacancy.requirements.title} />
-          <List  type="ellipse" position="column" data={mock.vacancy.requirements.list} /> */}
+          <Requirements type="number" data={mock.vacancy.extraRequirements} />
         </Article>
         <Aside>
-          <SidebarArticle data={mock.vacancy.qualifications} />
+          <SidebarArticle data={mock.vacancy.sidebarArticle} />
         </Aside>
       </Grid>
-      <Paragraph size="h2" data={mock.vacancy.qualifications} />
-      <Conditions data={mock.vacancy.conditions} />
-      {/* <List position="row" type="icon" data={mock.article.reductions} /> */}
+      <Article>
+        <Paragraph size="h2" data={mock.vacancy.qualifications} />
+        <Conditions data={mock.vacancy.conditions} />
+      </Article>
       <SliderVacancy data={mock.vacancy.steps} />
       <Application data={mock.vacancy.application} />
       <Map data={mock.vacancy.map} />

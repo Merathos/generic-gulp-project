@@ -21,3 +21,5 @@ export { default as SliderVacancy } from './SliderVacancy';
 export { default as Requirements } from './Requirements';
 export { default as Conditions } from './Conditions';
 export { default as Advert } from './Advert';
+export { default as IconsList } from './IconsList';
+export { default as MarkerList } from './MarkerList';

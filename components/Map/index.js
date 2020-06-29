@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NoteLeft from '/components/NoteLeft';
-import NoteRight from '/components/NoteRight';
+import TitleH2 from '/elements/TitleH2';
 
-const Container = styled.section`
-  display: flex;
-  justify-content: space-between;
+const Section = styled.section`
+  margin-bottom: 160px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-  }
+  } */
 `;
 
 const Map = props => {
   const { data } = props;
   return (
-    <Container>
-      <NoteLeft data={data[0]} />
-      <NoteRight data={data[1]} />
-    </Container>
+    <Section>
+      <TitleH2 content={data.title} />
+      <div>
+        Map will be here
+      </div>
+    </Section>
   );
 };
 

@@ -1,24 +1,23 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NoteLeft from '/components/NoteLeft';
-import NoteRight from '/components/NoteRight';
+import TitleH2 from '/elements/TitleH2';
+import { IconsList } from 'components';
 
-const Container = styled.section`
-  display: flex;
-  justify-content: space-between;
+const H2 = styled(TitleH2)`
+  margin-bottom: 100px;
 
   @media screen and (max-width: 1024px) {
-    flex-direction: column;
+    margin-bottom: 60px;
   }
 `;
 
 const Conditions = props => {
   const { data } = props;
   return (
-    <Container>
-      <NoteLeft data={data[0]} />
-      <NoteRight data={data[1]} />
-    </Container>
+    <section>
+      <H2 content={data.title} />
+      <IconsList data={data.list} />
+    </section>
   );
 };
 

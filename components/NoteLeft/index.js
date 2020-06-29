@@ -6,15 +6,15 @@ import TitleH4 from 'elements/TitleH4';
 import ArrowLeft from 'public/icons/arrow-left.svg';
 
 const Card = styled.div`
-  /* background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a; */
-  background-color: #fafafa;
-  padding: 30px 30px 65px;
+  background-color: #F7F8F9;
+  padding: 30px 100px 65px 30px;
   display: flex;
   box-sizing: border-box;
   justify-content: ${props => props.position || 'flex-start'};
   background-image: url('/images/blue-rectangle.svg');
   background-repeat: no-repeat;
   background-position: 20px bottom;
+  min-height: 280px;
 
   @media screen and (max-width: 420px) {
     display: none;
@@ -33,16 +33,22 @@ const Img = styled.img`
 const Container = styled.div`
   display: flex;
   align-items: center;
+  padding-top: 25px;
 `;
 
 const Wrapper = styled.div`
   max-width: 244px;
 `;
+
 const StyledLink = styled.a`
   width: 38px;
   height: 38px;
   margin-right: 16px;
   display: block;
+`;
+
+const StyledSubtitle = styled(Subtitle)`
+  margin-bottom: 8px;
 `;
 
 const NoteLeft = props => {
@@ -59,7 +65,7 @@ const NoteLeft = props => {
       <Container>
         <Img src={src} alt={title} />
         <Wrapper>
-          <Subtitle content={subtitle} />
+          <StyledSubtitle content={subtitle} />
           <H4 content={title} />
         </Wrapper>
       </Container>
