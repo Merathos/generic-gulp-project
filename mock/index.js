@@ -262,7 +262,12 @@ export default {
       projectTitle: `Проект:`,
       project: `Technology stack: Spark, Hadoop (HDFS, YARN), Apache Flume,
       HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`
-    }
+    },
+    intro: `You will become a part of Big Data team at large US-based
+     international company, leader in enterprise VoIP communication solutions,
+      messaging and video conferencing. The team is primarily focusing on developing
+       software for processing large amounts of data and performing various maintenance
+        and data mining tasks using Hadoop ecosystem.`
   },
   socialSticker: [
     {

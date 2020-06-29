@@ -6,11 +6,15 @@ import TitleH4 from 'elements/TitleH4';
 import ArrowLeft from 'public/icons/arrow-left.svg';
 
 const Card = styled.div`
-  background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a;
+  /* background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a; */
+  background-color: #fafafa;
   padding: 30px 30px 65px;
   display: flex;
   box-sizing: border-box;
   justify-content: ${props => props.position || 'flex-start'};
+  background-image: url('/images/blue-rectangle.svg');
+  background-repeat: no-repeat;
+  background-position: 20px bottom;
 
   @media screen and (max-width: 420px) {
     display: none;

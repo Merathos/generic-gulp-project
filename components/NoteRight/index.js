@@ -6,17 +6,23 @@ import TitleH4 from 'elements/TitleH4';
 import ArrowRight from 'public/icons/arrow-right.svg';
 
 const Card = styled.div`
-  background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a;
-  padding: 30px 30px 65px;
+  /* background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a; */
+  background-color: #fafafa;
+  padding: 30px 30px 65px 85px;
   display: flex;
   box-sizing: border-box;
   justify-content: flex-end;
   align-items: flex-start;
+  background-image: url('/images/yellow-circle.svg');
+  background-repeat: no-repeat;
+  background-position: 40px bottom;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 30px;
     flex-direction: column-reverse;
-    padding-bottom: 40px;
+    background-position: left 10px;
+    padding: 30px 30px 40px;
+    background-image: url('/images/blue-rectangle-mobile.svg');
   }
 `;
 
@@ -57,7 +63,7 @@ const StyledLink = styled.a`
 `;
 
 const H4 = styled(TitleH4)`
-  max-width: 221px;
+  min-width: 221px;
 `;
 
 const NoteRight = props => {

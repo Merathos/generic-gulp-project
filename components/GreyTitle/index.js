@@ -48,7 +48,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   margin-top: 60px;
-  margin-bottom: 200px;
 
   /* @media screen and (max-width: 420px) {
     margin-bottom: 40px ;

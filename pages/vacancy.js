@@ -17,6 +17,8 @@ import {
   SidebarSlider
 } from 'components';
 
+import Text from 'elements/Text';
+
 import mock from 'mock/index';
 
 const Container = styled.main`
@@ -69,7 +71,7 @@ const vacancyPage = () => (
     <Container>
       <Grid>
         <Article>
-          <Paragraph size="h2" data={mock.article.introduction} />
+          <Text bold="700" content={mock.vacancy.intro} />
         </Article>
         <Aside>
           <SidebarSlider data={mock.article.sidebarSlider} />

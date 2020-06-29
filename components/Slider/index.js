@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Subtitle from 'elements/Subtitle';
+import Swiper from 'react-id-swiper';
+import { useRef } from 'react';
 
 
 const Text = styled(Subtitle)`
@@ -14,21 +16,20 @@ const Text = styled(Subtitle)`
   }
 `;
 
-const Wrapper = styled.div`
-  text-align: center;
-`;
-
-const Element = styled.li`
-  text-align: center;
-`;
-
-const List = styled.ul`
-  display: flex;
-  overflow-x: scroll;
+const Element = styled.div`
   margin-bottom: 16px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 8px;
+  }
+`;
+
+const Section = styled.section`
+  margin-bottom: 130px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+    width: 300px;
   }
 `;
 
@@ -43,22 +44,23 @@ const Img = styled.img`
 `;
 
 const Slider = props => {
+
+  const ref = useRef(null);
   const {
     data: { subtitle, pictures }
   } = props;
+
   return (
-    <section>
-      <Wrapper>
-        <List>
-          {pictures.map((el, i) => (
-            <Element key={i}>
-              <Img src={el.src} alt={el.alt} />
-            </Element>
-          ))}
-        </List>
-      </Wrapper>
+    <Section>
+      <Swiper ref={ref}>
+        {pictures.map((el, i) => (
+          <Element key={i}>
+            <Img src={el.src} alt={el.alt} />
+          </Element>
+        ))}
+      </Swiper>
       <Text content={subtitle} />
-    </section>
+    </Section>
   );
 };
 

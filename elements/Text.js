@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
 const Styled = styled.p`
-  font-size: 18px;
+  font-size: 24px;
   line-height: 158%;
+  font-weight: ${props => props.bold || 500};
 
   @media screen and (max-width: 420px) {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 158%;
   }
 `;
 
-const TitleH5 = ({ content, className }) => (
-  <Styled className={className}>{content}</Styled>
+const Text = ({ content, className, bold }) => (
+  <Styled className={className} bold={bold}>{content}</Styled>
 );
 
-export default TitleH5;
+export default Text;
