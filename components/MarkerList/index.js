@@ -43,6 +43,7 @@ const ElementEllipse = styled.li`
 `;
 
 const ElementNumber = styled.li`
+  padding-left: 30px;
   position: relative;
   display: flex;
   margin-bottom: 30px;
@@ -57,7 +58,7 @@ const Number = styled.span`
   color: #2F8ED9;
   margin-right: 20px;
   font-size: 18px;
-  line-height: 120%;
+  line-height: 32px;
 
   @media screen and (max-width: 420px) {
     margin-right: 10px;

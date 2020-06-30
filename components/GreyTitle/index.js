@@ -68,6 +68,10 @@ const StyledButton = styled(Button)`
   margin-right: 20px;
 `;
 
+const H1 = styled(TitleH1)`
+  max-width: 870px;
+`;
+
 const GreyTitle = ({ data }) => {
   const {
     subtitle1,
@@ -86,7 +90,7 @@ const GreyTitle = ({ data }) => {
         <StyledSubtitle content={subtitle1} />
         <Subtitle content={subtitle2} />
       </Wrapper>
-      <TitleH1 content={title} />
+      <H1 content={title} />
       <Text>
         <Bold>{stackTitle}</Bold>
         {technologies}
