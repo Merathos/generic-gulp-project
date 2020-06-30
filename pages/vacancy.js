@@ -88,7 +88,9 @@ const vacancyPage = () => (
         <Conditions data={mock.vacancy.conditions} />
       </Article>
       <SliderVacancy data={mock.vacancy.steps} />
-      <Application data={mock.vacancy.application} />
+    </Container>
+    <Application data={mock.vacancy.application} />
+    <Container>
       <Map data={mock.vacancy.map} />
       <Articles type="vacancy" data={mock.vacancy.vacancies} />
     </Container>

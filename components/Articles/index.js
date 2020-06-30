@@ -17,11 +17,28 @@ const Container = styled.section`
 const Wrapper = styled.section`
   padding-left: 350px;
 
-
-  /* @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  } */
+  @media screen and (max-width: 1024px) {
+    padding-left: 0;
+  }
 `;
+
+const H2 = styled(TitleH2)`
+  margin-bottom: 90px;
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 0;
+  }
+`;
+
+const AdvertsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
 
 const Articles = props => {
   const { data, type } = props;
@@ -34,9 +51,11 @@ const Articles = props => {
         </>
       ) : (
         <Wrapper>
-          <TitleH2 content={data.title} />
-          <Advert data={data.catalog[0]} />
-          <Advert data={data.catalog[1]} />
+          <H2 content={data.title} />
+          <AdvertsWrapper>
+            <Advert data={data.catalog[0]} />
+            <Advert data={data.catalog[1]} />
+          </AdvertsWrapper>
         </Wrapper>
       )}
     </Container>

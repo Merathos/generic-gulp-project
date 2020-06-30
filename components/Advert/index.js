@@ -54,25 +54,27 @@ const Container = styled.div`
   } */
 `;
 
-const StyledSubtitle = styled(Subtitle)`
-  margin-right: 20px;
+const StyledText = styled(Text)`
+  margin-bottom: 45px;
 
-  /* @media screen and (max-width: 420px) {
-    margin-bottom: 80px;
-    font-size: 16px;
-    line-height: 158%;
-  } */
+  @media screen and (max-width: 420px) {
+    margin-bottom: 30px;
+  }
 `;
 
-const StyledButton = styled(Button)`
-  margin-right: 20px;
+const H3 = styled(TitleH3)`
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 14px;
+  }
 `;
 
 const Advert = ({ data }) => {
   return (
     <Section>
-      <TitleH3 content={data.title} />
-      <Text content={data.text} />
+      <H3 content={data.title} />
+      <StyledText content={data.text} />
       <Link href="/about">
         <a>
           <ArrowRight />
