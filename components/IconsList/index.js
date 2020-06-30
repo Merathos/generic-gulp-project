@@ -11,9 +11,14 @@ const Section = styled.section`
 `;
 
 const List = styled.ul`
-  display: flex;};
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  } 
 `;
 
 const Emoji = styled.div`
@@ -27,24 +32,18 @@ const Emoji = styled.div`
   margin-bottom: 15px;
 `;
 
-const Element = styled.li`
-  max-width: 240px;
-  margin-bottom: 60px;
-`;
-
-
 const IconsList = props => {
   const { data } = props;
   return (
     <Section>
       <List>
         {data.map((el, i) => (
-          <Element>
+          <li>
             <Emoji key={i}>
               <span className={`ec ${el.icon}`} />
             </Emoji>
             <Subtitle content={el.text} />
-          </Element>
+          </li>
         ))}
       </List>
     </Section>

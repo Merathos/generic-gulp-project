@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
   background-position: 40% top;
   position: absolute;
   width: 100%;
+  box-sizing: border-box;
 
   @media (max-width: 420px) {
     padding: 30px;

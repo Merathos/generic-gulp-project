@@ -15,9 +15,10 @@ const Text = styled(Subtitle)`
 
 const Element = styled.div`
   margin-right: 20px;
-  max-width: 460px;
+  width: 420px;
   padding-right: 130px;
   position: relative;
+  box-sizing: border-box;
   
   &:before {
     content: '';
@@ -33,6 +34,7 @@ const Element = styled.div`
   @media screen and (max-width: 420px) {
     margin-right: 15px;
     padding-right: 30px;
+    width: 320px;
   }
 `;
 
@@ -42,7 +44,7 @@ const Section = styled.section`
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
-    width: 1200px;
+    width: 320px;
   }
 `;
 

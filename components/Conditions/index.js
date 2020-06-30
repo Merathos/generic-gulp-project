@@ -11,13 +11,21 @@ const H2 = styled(TitleH2)`
   }
 `;
 
+const Section = styled.section`
+  margin-bottom: 160px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 120px;
+  }
+`;
+
 const Conditions = props => {
   const { data } = props;
   return (
-    <section>
+    <Section>
       <H2 content={data.title} />
       <IconsList data={data.list} />
-    </section>
+    </Section>
   );
 };
 

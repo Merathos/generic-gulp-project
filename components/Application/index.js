@@ -17,21 +17,31 @@ const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  /* @media screen and (max-width: 420px) {
-    margin-bottom: 40px ;
-  } */
+  @media screen and (max-width: 420px) {
+    max-width: 315px;
+  }
+
+  @media screen and (max-width: 240px) {
+    max-width: 280px;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
 
-  /* @media screen and (max-width: 420px) {
-    margin-bottom: 40px ;
-  } */
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const StyledButton = styled(Button)`
   margin-right: 20px;
+
+  @media screen and (max-width: 420px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const H2 = styled(TitleH2)`

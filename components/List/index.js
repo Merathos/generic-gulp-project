@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Paragraph } from 'components';
+import TitleH3 from 'elements/TitleH3';
+import Text from 'elements/Text';
 
 const Section = styled.section`
   margin-bottom: 110px;
@@ -20,7 +21,6 @@ const Img = styled.img`
 
 const NormalList = styled.ul`
   display: flex;
-  flex-direction: ${(props) => props.position || 'row'};
   justify-content: space-between;
 
   @media screen and (max-width: 420px) {
@@ -29,15 +29,28 @@ const NormalList = styled.ul`
 `;
 
 const BlueList = styled.ul`
-  display: flex;
-  flex-direction: ${(props) => props.position || 'row'};
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
 
-  @media screen and (max-width: 420px) {
-    flex-wrap: wrap;
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
   }
 `;
+
+const BlueTitle = styled(TitleH3)`
+  color: #2F8ED9;
+  margin-bottom: 13px;
+`; 
+
+const BlueText = styled(Text)`
+  opacity: 0.5;
+`; 
+
+const H3 = styled(TitleH3)`
+  margin-bottom: 30px;
+`; 
 
 const Element = styled.li`
   width: 384px;
@@ -49,13 +62,6 @@ const Element = styled.li`
   }
 `;
 
-const BlueElement = styled.li`
-  @media screen and (max-width: 420px) {
-    width: 50%;
-    margin-bottom: 30px;
-  }
-`;
-
 const List = props => {
   const { data, type } = props;
   return (
@@ -63,9 +69,10 @@ const List = props => {
       {type === 'blue' ? (
         <BlueList>
           {data.map((el, i) => (
-            <BlueElement key={i}>
-              <Paragraph size="h3" data={el} color="#2F8ED9" opacity="0.5" />
-            </BlueElement>
+            <li key={i}>
+              <BlueTitle content={el.title} />
+              <BlueText content={el.text} />
+            </li>
           ))}
         </BlueList>
       ) : (
@@ -73,7 +80,8 @@ const List = props => {
           {data.map((el, i) => (
             <Element key={i}>
               {el.src && <Img src={el.src} alt={el.title} />}
-              <Paragraph size="h3" data={el} />
+              <H3 content={el.title} />
+              <Text content={el.text} />
             </Element>
           ))}
         </NormalList>

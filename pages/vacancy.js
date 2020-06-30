@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {
   GreyTitle,
   Paragraph,
-  SidebarArticle,
+  SidebarRelocation,
   Articles,
   SliderVacancy,
   SidebarSlider,
@@ -46,6 +46,7 @@ const Article = styled.article`
 const Grid = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -80,7 +81,7 @@ const vacancyPage = () => (
           <Requirements type="number" data={mock.vacancy.extraRequirements} />
         </Article>
         <Aside>
-          <SidebarArticle data={mock.vacancy.sidebarArticle} />
+          <SidebarRelocation data={mock.vacancy.sidebarArticle} />
         </Aside>
       </Grid>
       <Article>

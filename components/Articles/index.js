@@ -26,6 +26,7 @@ const H2 = styled(TitleH2)`
   margin-bottom: 90px;
 
   @media screen and (max-width: 1024px) {
+    margin-bottom: 50px;
     padding-left: 0;
   }
 `;
