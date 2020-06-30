@@ -11,6 +11,9 @@ const StyledHeader = styled.header`
   background-image: url('/images/yellow-rectangle.svg');
   background-repeat: no-repeat;
   background-position: 40% top;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
 
   @media (max-width: 420px) {
     padding: 30px;

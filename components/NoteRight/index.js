@@ -6,8 +6,7 @@ import TitleH4 from 'elements/TitleH4';
 import ArrowRight from 'public/icons/arrow-right.svg';
 
 const Card = styled.div`
-  /* background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a; */
-  background-color: #fafafa;
+  background-color: #F7F8F9;
   padding: 30px 30px 65px 85px;
   display: flex;
   box-sizing: border-box;
@@ -16,13 +15,14 @@ const Card = styled.div`
   background-image: url('/images/yellow-circle.svg');
   background-repeat: no-repeat;
   background-position: 40px bottom;
+  min-height: 280px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 30px;
-    flex-direction: column-reverse;
     background-position: left 10px;
     padding: 30px 30px 40px;
     background-image: url('/images/blue-rectangle-mobile.svg');
+    min-height: 0;
   }
 `;
 
@@ -40,10 +40,12 @@ const Img = styled.img`
 const Container = styled.div`
   display: flex;
   align-items: center;
+  padding-top: 25px;
 
   @media screen and (max-width: 420px) {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 0;
   }
 `;
 
@@ -66,6 +68,10 @@ const H4 = styled(TitleH4)`
   min-width: 221px;
 `;
 
+const StyledSubtitle = styled(Subtitle)`
+  margin-bottom: 8px;
+`;
+
 const NoteRight = props => {
   const {
     data: { src, subtitle, title }
@@ -75,7 +81,7 @@ const NoteRight = props => {
       <Container>
         <Img src={src} alt={title} />
         <Wrapper>
-          <Subtitle content={subtitle} />
+          <StyledSubtitle content={subtitle} />
           <H4 content={title} />
         </Wrapper>
       </Container>

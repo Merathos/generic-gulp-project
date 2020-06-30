@@ -14,7 +14,9 @@ import {
   Comments,
   Articles,
   Slider,
-  SidebarSlider
+  SidebarSlider,
+  IconsList,
+  MarkerList
 } from 'components';
 
 import mock from 'mock/index';
@@ -79,7 +81,7 @@ const articlePage = () => (
       <Media type="img" data={mock.article.imageBig} />
       <Grid>
         <Article>
-          <List position="column" type="ellipse" data={mock.article.list} />
+          <MarkerList type="ellipse" data={mock.article.list} />
           <Slider type="img" data={mock.article.slider} />
         </Article>
         <Aside>
@@ -94,13 +96,9 @@ const articlePage = () => (
           <Paragraph size="h3" data={mock.article.cmx} />
           <List data={mock.article.noteWithPictures} />
           <Paragraph size="h2" data={mock.article} />
-          <List
-            position="column"
-            type="number"
-            data={mock.article.listNumbers}
-          />
+          <MarkerList type="number" data={mock.article.listNumbers} />
           <Media type="video" data={mock.article.video} />
-          <List type="icons" position="row" data={mock.article.listIcons} />
+          <IconsList data={mock.article.listIcons} />
           <Quote data={mock.article.quote} />
           <Feedback data={mock.article.feedback} />
           <Comments data={mock.article.comments} />
@@ -112,7 +110,7 @@ const articlePage = () => (
           />
         </Aside>
       </Grid>
-      <Articles data={mock.article.articles} />
+      <Articles type="article" data={mock.article.articles} />
     </Container>
   </Layout>
 );

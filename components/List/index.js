@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Paragraph } from 'components';
-import Subtitle from 'elements/Subtitle';
+import TitleH3 from 'elements/TitleH3';
+import Text from 'elements/Text';
 
 const Section = styled.section`
   margin-bottom: 110px;
@@ -21,7 +21,6 @@ const Img = styled.img`
 
 const NormalList = styled.ul`
   display: flex;
-  flex-direction: ${(props) => props.position || 'row'};
   justify-content: space-between;
 
   @media screen and (max-width: 420px) {
@@ -30,56 +29,28 @@ const NormalList = styled.ul`
 `;
 
 const BlueList = styled.ul`
-  display: flex;
-  flex-direction: ${(props) => props.position || 'row'};
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
 
-  @media screen and (max-width: 420px) {
-    flex-wrap: wrap;
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
   }
 `;
 
-const MarkerList = styled.ul`
-  display: flex;
-  flex-direction: ${(props) => props.position || 'row'};
-  justify-content: space-between;
+const BlueTitle = styled(TitleH3)`
+  color: #2F8ED9;
+  margin-bottom: 13px;
+`; 
 
-  @media screen and (max-width: 420px) {
-    flex-wrap: wrap;
-  }
-`;
+const BlueText = styled(Text)`
+  opacity: 0.5;
+`; 
 
-const ElementEllipse = styled.li`
-  padding-left: 90px;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    background-image: url('icons/ellipse.svg');
-    width: 12px;
-    height: 12px;
-    left: 30px;
-    top: 10px;
-  }
-
-  @media screen and (max-width: 420px) {
-    padding-left: 25px;
-
-    &::before {
-      left: 0;
-    }
-  }
-`;
-
-const ElementNumber = styled.li`
-  position: relative;
-  display: flex;
-
-  @media screen and (max-width: 420px) {
-    padding-left: 0;
-  }
-`;
+const H3 = styled(TitleH3)`
+  margin-bottom: 30px;
+`; 
 
 const Element = styled.li`
   width: 384px;
@@ -91,108 +62,40 @@ const Element = styled.li`
   }
 `;
 
-const BlueElement = styled.li`
-  @media screen and (max-width: 420px) {
-    width: 50%;
-    margin-bottom: 30px;
-  }
-`;
-
-const Number = styled.span`
-  color: #2F8ED9;
-  margin-right: 20px;
-  font-size: 18px;
-  line-height: 120%;
-
-  @media screen and (max-width: 420px) {
-    margin-right: 10px;
-  }
-`;
-
-const Emoji = styled.div`
-  width: 57px;
-  height: 57px;
-  background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-`;
-
-
 const List = props => {
-  const { data, position, type } = props;
+  const { data, type } = props;
   return (
     <Section>
-      {
-        {
-          blue: (
-            <BlueList position={position}>
-              {data.map((el, i) => (
-                <BlueElement key={i}>
-                  <Paragraph size="h3" data={el} color="#2F8ED9" opacity="0.5" />
-                </BlueElement>
-              ))}
-            </BlueList>
-          ),
-          'normal': (
-            <NormalList position={position}>
-              {data.map((el, i) => (
-                <Element key={i}>
-                  {el.src && <Img src={el.src} alt={el.title} />}
-                  <Paragraph size="h3" data={el} />
-                </Element>
-              ))}
-            </NormalList>
-          ),
-          'ellipse': (
-            <MarkerList position={position}>
-              {data.map((el, i) => (
-                <ElementEllipse key={i}>
-                  {el.image && <Img src={el.image} alt={el.title} />}
-                  <Paragraph size="h3" data={el} />
-                </ElementEllipse>
-              ))}
-            </MarkerList>
-          ),
-          'number': (
-            <MarkerList position={position}>
-              {data.map((el, i) => (
-                <ElementNumber key={i}>
-                  <Number>{`0${i + 1}`}</Number>
-                  {el.image && <img src={el.image} alt={el.title} />}
-                  <Paragraph size="h3" data={el} />
-                </ElementNumber>
-              ))}
-            </MarkerList>
-          ),
-          'icons': (
-            <BlueList position={position}>
-              {data.map((el, i) => (
-                <BlueElement>
-                  <Emoji key={i}>
-                    <span className={`ec ${el.icon}`} />
-                  </Emoji>
-                  <Subtitle content={el.text} />
-                </BlueElement>
-              ))}
-            </BlueList>
-          )
-        }[type]
-      }
+      {type === 'blue' ? (
+        <BlueList>
+          {data.map((el, i) => (
+            <li key={i}>
+              <BlueTitle content={el.title} />
+              <BlueText content={el.text} />
+            </li>
+          ))}
+        </BlueList>
+      ) : (
+        <NormalList>
+          {data.map((el, i) => (
+            <Element key={i}>
+              {el.src && <Img src={el.src} alt={el.title} />}
+              <H3 content={el.title} />
+              <Text content={el.text} />
+            </Element>
+          ))}
+        </NormalList>
+      )}
     </Section>
   );
 };
 
 List.propTypes = {
   data: PropTypes.array.isRequired,
-  position: PropTypes.string,
   type: PropTypes.string
 };
 
 List.defaultProps = {
-  position: 'row',
   type: 'normal'
 };
 

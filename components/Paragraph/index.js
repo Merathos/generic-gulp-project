@@ -23,11 +23,14 @@ const H3 = styled(TitleH3)`
 `;
 
 const Description = styled(Text)`
-  margin-bottom: 50px;
   opacity: ${props => props.opacity || '1'};
+`;
+
+const Section = styled.section`
+  margin-bottom: 160px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -36,10 +39,11 @@ const Paragraph = props => {
     data: { title, text },
     size,
     color,
-    opacity
+    opacity,
+    bold
   } = props;
   return (
-    <section>
+    <Section>
       {title && (
         <>
           {size === 'h3' ? (
@@ -49,8 +53,8 @@ const Paragraph = props => {
           )}
         </>
       )}
-      <Description content={text} opacity={opacity} />
-    </section>
+      <Description bold={bold} content={text} opacity={opacity} />
+    </Section>
   );
 };
 

@@ -5,11 +5,13 @@ const ArticleTitle = styled.h1`
   font-size: 84px;
   line-height: 86px;
   margin-bottom: 50px;
+  padding-top: 200px;
 
   @media screen and (max-width: 420px) {
     font-size: 32px;
     line-height: 31px;
     margin-bottom: 50px;
+    padding-top: 110px;
   }
 `;
 

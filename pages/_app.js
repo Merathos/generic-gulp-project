@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     color: #201F2A;
     font-family: 'TT Norms', 'Arial', sans-serif;
     font-weight: 500;
+    overflow-x: hidden;
   }
 
   a {
