@@ -33,6 +33,7 @@ const Bold = styled.b`
 const Wrapper = styled.div`
   display: flex;
   margin-bottom: 17px;
+  align-items: center;
 
   @media screen and (max-width: 420px) {
     display: none;
@@ -67,12 +68,19 @@ const H1 = styled(TitleH1)`
   max-width: 870px;
 `;
 
+const Span = styled.span`
+  margin-right: 10px;
+  font-size: 22px;
+`;
+
 const StyledText = styled(Text)`
   display: inline;
 `;
 
 const GreyTitle = ({ data }) => {
   const {
+    icon1,
+    icon2,
     subtitle1,
     subtitle2,
     title,
@@ -86,8 +94,8 @@ const GreyTitle = ({ data }) => {
   return (
     <Section>
       <Wrapper>
-        <StyledSubtitle content={subtitle1} />
-        <Subtitle content={subtitle2} />
+        <Span className={`ec ${icon1}`} /><StyledSubtitle content={subtitle1} />
+        <Span className={`ec ${icon2}`} /><Subtitle content={subtitle2} />
       </Wrapper>
       <H1 content={title} />
       <TextBlock>

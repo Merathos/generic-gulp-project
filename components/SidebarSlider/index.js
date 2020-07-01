@@ -8,8 +8,14 @@ import { useRef } from 'react';
 import Swiper from 'react-id-swiper';
 
 const Article = styled.article`
+  padding-top: 30px;
+  background-image: url('backgrounds/grey-square-sidebar.png');
+  background-repeat: no-repeat;
+  background-position: 70% 0;
+
   @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    background-position: 0 0;
   }
 `;
 
@@ -60,11 +66,6 @@ const Element = styled.div`
     min-width: 315px;
   }
 `;
-
-// const List = styled.ul`
-//   display: flex;
-//   overflow-x: hidden;
-// `;
 
 const SidebarSlider = props => {
   const ref = useRef(null);

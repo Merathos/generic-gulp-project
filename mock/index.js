@@ -249,6 +249,8 @@ export default {
   vacancy: {
     mainTitle: {
       title: `Java developer (Big Data team)`,
+      icon1: `ec-earth-americas`,
+      icon2: `ec-mortar-board`,
       subtitle1: `English Speaking Team`,
       subtitle2: `Стажировка`,
       button1: `Отправить резюме`,

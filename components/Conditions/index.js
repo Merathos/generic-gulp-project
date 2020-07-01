@@ -13,9 +13,25 @@ const H2 = styled(TitleH2)`
 
 const Section = styled.section`
   margin-bottom: 160px;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 365px;
+    height: 385px;
+    position: absolute;
+    top: -5%;
+    right: -115%;
+    z-index: 2;
+    background-image: url('backgrounds/vacancy-middle.png');
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 120px;
+
+    &::after {
+      display: none;
+    }
   }
 `;
 

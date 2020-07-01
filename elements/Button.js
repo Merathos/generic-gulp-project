@@ -8,6 +8,11 @@ const Accent = styled.button`
   border-radius: 8px;
   padding: 22px 32px 26px;
   color: #FFFFFF;
+
+  @media screen and (max-width: 420px) {
+    font-size: 12px;
+    line-height: 120%;
+  }
 `;
 
 const Default = styled.button`
@@ -19,6 +24,11 @@ const Default = styled.button`
   box-sizing: border-box;
   border-radius: 8px;
   padding: 22px 32px 26px;
+
+  @media screen and (max-width: 420px) {
+    font-size: 12px;
+    line-height: 120%;
+  }
 `;
 
 const Button = ({ type = "default", content, className }) => (

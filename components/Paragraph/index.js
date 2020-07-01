@@ -28,6 +28,7 @@ const Description = styled(Text)`
 
 const Section = styled.section`
   margin-bottom: 160px;
+  max-width: 854px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 80px;

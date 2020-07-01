@@ -6,10 +6,15 @@ const Section = styled.section`
   background-color: #F7F8F9;
   margin-bottom: 160px;
   padding: 160px 0 180px;
+  background-image: url('backgrounds/application.png');
+  background-repeat: no-repeat;
+  background-position: 105% center;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 80px;
     padding: 80px 0 80px;
+    background-size: 50%;
+    background-position: 150% center;
   }
 `;
 

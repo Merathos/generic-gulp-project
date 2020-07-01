@@ -30,8 +30,16 @@ const Container = styled.main`
   }
 `;
 
-const GreyContainer = styled.main`
-  background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
+const GreyContainer = styled.div`
+  background-color: #F7F8F9;
+  background-image: url('backgrounds/vacancy-grey-title.svg');
+  background-repeat: no-repeat;
+  background-position: 118% 298%;
+
+  @media screen and (max-width: 420px) {
+    background-size: 50% 50%;
+    background-position: 150% 120%;
+  }
 `;
 
 const Article = styled.article`

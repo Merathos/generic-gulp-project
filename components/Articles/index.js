@@ -16,9 +16,25 @@ const Container = styled.section`
 
 const Wrapper = styled.section`
   padding-left: 350px;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 480px;
+    height: 530px;
+    position: absolute;
+    top: 0;
+    left: -30%;
+    z-index: 2;
+    background-image: url('backgrounds/vacancy-bottom.png');
+  }
 
   @media screen and (max-width: 1024px) {
     padding-left: 0;
+  }
+
+  &::before {
+    display: none;
   }
 `;
 
