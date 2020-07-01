@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Icon from 'elements/Icon';
 
 const Text = styled.p`
   font-size: 20px;
@@ -17,35 +18,22 @@ const Section = styled.section`
   border-top: 2px solid rgba(31, 32, 42, 0.1);
   border-bottom: 2px solid rgba(31, 32, 42, 0.1);
   margin-bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 57px 1fr;
+  grid-column-gap: 30px;
 
   @media screen and (max-width: 420px) {
     padding: 20px 0 30px;
-    margin-bottom: 50px;
-    flex-direction: column;
-  }
-`;
-
-const Emoji = styled.div`
-  background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
-  border-radius: 50%;
-  margin-right: 30px;
-  padding: 20px;
-
-  @media screen and (max-width: 420px) {
-    padding: 15px;
-    margin-bottom: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 43px 1fr;
+    grid-row-gap: 12px;
   }
 `;
 
 const SectionNote = ({ data }) => {
   return (
     <Section>
-      <Emoji>
-        <span className="ec ec-fire" />
-      </Emoji>
+      <Icon name="ec-fire" />
       <Text>{data}</Text>
     </Section>
   );

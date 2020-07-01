@@ -15,7 +15,8 @@ const Article = styled.article`
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
-    background-position: 0 0;
+    background-position: 10% 0;
+    background-size: 70px 65px;
   }
 `;
 

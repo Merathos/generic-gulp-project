@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Subtitle from 'elements/Subtitle';
+import Icon from 'elements/Icon';
 
 const Section = styled.section`
   margin-bottom: 110px;
@@ -21,14 +22,7 @@ const List = styled.ul`
   } 
 `;
 
-const Emoji = styled.div`
-  width: 57px;
-  height: 57px;
-  background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Emoji = styled(Icon)`
   margin-bottom: 15px;
 `;
 
@@ -38,10 +32,8 @@ const IconsList = props => {
     <Section>
       <List>
         {data.map((el, i) => (
-          <li>
-            <Emoji key={i}>
-              <span className={`ec ${el.icon}`} />
-            </Emoji>
+          <li key={i}>
+            <Emoji name={el.icon} />
             <Subtitle content={el.text} />
           </li>
         ))}

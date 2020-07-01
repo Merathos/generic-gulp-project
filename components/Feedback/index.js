@@ -23,11 +23,18 @@ const Section = styled.section`
   display: flex;
   margin-bottom: 90px;
   align-items: flex-end;
+  background-image: url('backgrounds/circle.png');
+  background-repeat: no-repeat;
+  background-position: 310px top;
+  padding-top: 90px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 50px;
+    background-size: 112px 112px;
+    background-position: 140px top;
+    padding-top: 60px;
   }
 `;
 
