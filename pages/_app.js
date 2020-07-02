@@ -1,12 +1,10 @@
-import { ApolloProvider } from '@apollo/react-hooks';
-import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
-import { useStore } from '../lib/redux';
-import { useApollo } from '../lib/apollo';
 
 import '../styles/emoji.min.css';
 import '../styles/fonts.css';
 import '../styles/reset.css';
+
+const Layout = ({ children }) => <div className="layout">{children}</div>
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -49,15 +47,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState);
-  const apolloClient = useApollo(pageProps.initialApolloState);
-
   return (
-    <Provider store={store}>
-      <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
-        <GlobalStyle />
-      </ApolloProvider>
-    </Provider>
+    <Layout>
+      <Component {...pageProps} />
+      <GlobalStyle />
+    </Layout>
   );
 }
