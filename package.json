@@ -9,10 +9,7 @@
     "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "dependencies": {
-    "@apollo/react-components": "^4.0.0-beta.1",
     "@apollo/react-hooks": "^3.1.5",
-    "@apollo/react-ssr": "^4.0.0-beta.1",
-    "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "1.6.3",
     "apollo-client": "2.6.4",
     "apollo-link-http": "1.5.16",
@@ -23,7 +20,6 @@
     "isomorphic-unfetch": "^3.0.0",
     "mapbox-gl": "^1.11.0",
     "next": "latest",
-    "next-apollo": "^4.0.1",
     "next-with-apollo": "^5.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
