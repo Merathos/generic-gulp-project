@@ -1,4 +1,7 @@
+import App from 'next/app';
 import { createGlobalStyle } from 'styled-components';
+import { ApolloProvider } from '@apollo/react-hooks';
+import withData from 'lib/apollo-client';
 
 import '../styles/emoji.min.css';
 import '../styles/fonts.css';
@@ -46,11 +49,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default function App({ Component, pageProps }) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-      <GlobalStyle />
-    </Layout>
-  );
+class MyApp extends App {
+  render() {
+    const { Component, pageProps, apollo } = this.props;
+
+    return (
+      <ApolloProvider client={apollo}>
+        <Layout>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </Layout>
+      </ApolloProvider>
+    )
+  }
 }
+
+export default withData(MyApp);

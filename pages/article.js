@@ -18,7 +18,6 @@ import {
   MarkerList
 } from 'components';
 import { ALL_CHARACTERS } from 'graphql/allCharacters';
-import { withApollo } from 'lib/apollo'
 
 import mock from 'mock/index';
 
@@ -123,4 +122,4 @@ const articlePage = () => {
 );
 }
 
-export default withApollo(articlePage);
+export default articlePage;

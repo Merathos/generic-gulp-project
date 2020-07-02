@@ -14,7 +14,6 @@ import {
   Application
 } from 'components';
 import { ALL_CHARACTERS } from 'graphql/allCharacters';
-import { withApollo } from 'lib/apollo'
 
 import mock from 'mock/index';
 
@@ -78,18 +77,8 @@ const catalogPage = () => {
 
   return (
     <Layout backButton>
-      <h1>
-        <h3>Setting up Apollo GraphQL in Next.js with Server Side Rendering</h3>
-      </h1>
-      <div>
-        {data.characters.results.map(el => (
-          <ul key={el.id}>
-            <li>{el.name}</li>
-          </ul>
-        ))}
-      </div>
     </Layout>
   );
 };
 
-export default withApollo(catalogPage);
+export default catalogPage;

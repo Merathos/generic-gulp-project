@@ -1,5 +1,4 @@
-import { initializeStore } from 'lib/redux';
-import { initializeApollo } from 'lib/apollo';
+import { useQuery } from "@apollo/react-hooks";
 import { Layout } from 'containers';
 import styled from 'styled-components';
 import {
@@ -14,6 +13,7 @@ import {
   Map,
   Application
 } from 'components';
+import { ALL_CHARACTERS } from 'graphql/allCharacters';
 
 import mock from 'mock/index';
 
@@ -69,7 +69,13 @@ const Aside = styled.aside`
   }
 `;
 
-const vacancyPage = () => (
+const vacancyPage = () => {
+  const { loading, error, data } = useQuery(ALL_CHARACTERS);
+
+  if (error) return <h1>Error</h1>;
+  if (loading) return <h1>Loading...</h1>;
+
+  return (
   <Layout backButton>
     <GreyContainer>
       <GreyTitle data={mock.vacancy.mainTitle} />
@@ -104,20 +110,7 @@ const vacancyPage = () => (
       <Articles type="vacancy" data={mock.vacancy.vacancies} />
     </Container>
   </Layout>
-);
-
-export async function getStaticProps() {
-  const reduxStore = initializeStore()
-  const apolloClient = initializeApollo()
-
-  return {
-    props: {
-      initialReduxState: reduxStore.getState(),
-      initialApolloState: apolloClient.cache.extract(),
-    },
-    unstable_revalidate: 1
-  }
+  )
 };
-
 
 export default vacancyPage;
