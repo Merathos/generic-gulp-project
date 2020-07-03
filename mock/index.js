@@ -13,6 +13,51 @@ export default {
       href: `projects`
     }
   ],
+  catalog: {
+    mainTitle: ``,
+    filter: {
+      fields: [
+        {
+          title: `Категории`,
+          list: [
+            `QA`, `DevOps`, `Management`, `UX/UI and design`, `HR and Finance`,
+            `Architect and Analyst`, `Product and Project management`, `Telco`,
+            `Network`, `Security` , `DBA` , `Sys Admin`, `AI`, `BigData`, `Other`
+          ]
+        },
+        {
+          title: `Технологии`,
+          list: [
+            `Java`, `C++`, `Erlang`, `JavaScript`, `Node.JS`, `Scala`, `Python`,
+            `RocksDB`, `MongoDB`, `Cassandra`, `Oracle`, `Vertica`, `Neo4J`, `Hadoop`,
+            `VMWare`, `Kubernetes`, `DDC`, `Marathon`, `Terraform`, `CloudFoundry`,
+            `Amazon`, `AWS`, `Google GCP`, `Zabbix`, `Influx`, `Elasticsearch`, `Git`,
+            `Mercurial`, `Jenkins`, `GitLab`, `GridGain`, `Coherence`, `Rabbit`, `Kafka`,
+            `ZeroMQ`
+          ]
+        },
+        {
+          title: `Проект`,
+          list: [
+            `Contact Center`, `Platform A`, `Platform D`, `Analytics`, `Telco`, `Billing`,
+            `RCV (Video-conference)`, `Core`, `SWAT`, `Relies IT`, `Features`, `AI`, `CRM SPB`,
+            `Glip`, `Deployment`, `SysOps`, `Lab`
+          ]
+        }
+      ],
+      internship: `Стажировки`,
+      english: `English Speaking Team`,
+      discard: `Сбросить фильтр`
+    },
+    cards: [
+
+    ],
+    search: `Введите название вакансии`,
+    article: {
+      text: `Отправь резюме, и мы свяжемся с тобой, если появится подходящая позиция.`,
+      button: `Отправить`
+    }
+  },
   article: {
     mainTitle: {
       title: `Как написать запрос для Checkmarx SAST и найти крутые уязвимости`,

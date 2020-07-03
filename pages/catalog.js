@@ -1,18 +1,8 @@
 import { Layout } from 'containers';
 import { useQuery } from "@apollo/react-hooks";
 import styled from 'styled-components';
-import {
-  GreyTitle,
-  Paragraph,
-  SidebarRelocation,
-  Articles,
-  SliderVacancy,
-  SidebarSlider,
-  Requirements,
-  Conditions,
-  Map,
-  Application
-} from 'components';
+import { Title, Cards, SidebarArticle } from 'components';
+import { Search, Filter } from 'forms';
 import { ALL_CHARACTERS } from 'graphql/allCharacters';
 
 import mock from 'mock/index';
@@ -27,18 +17,6 @@ const Container = styled.main`
 
   @media screen and (max-width: 240px) {
     max-width: 280px;
-  }
-`;
-
-const GreyContainer = styled.div`
-  background-color: #F7F8F9;
-  background-image: url('backgrounds/vacancy-grey-title.svg');
-  background-repeat: no-repeat;
-  background-position: 118% 298%;
-
-  @media screen and (max-width: 420px) {
-    background-size: 50% 50%;
-    background-position: 150% 120%;
   }
 `;
 
@@ -77,6 +55,19 @@ const catalogPage = () => {
 
   return (
     <Layout backButton>
+      <Container>
+        <Grid>
+          <Article>
+            <Title data={mock.catalog.mainTitle} />
+            <Search data={mock.catalog.search} />
+            <Cards data={mock.catalog.cards} />
+          </Article>
+          <Aside>
+            <Filter data={mock.catalog.filter} />
+            <SidebarArticle type="button" data={mock.catalog.article} />
+          </Aside>
+        </Grid>
+      </Container>
     </Layout>
   );
 };
