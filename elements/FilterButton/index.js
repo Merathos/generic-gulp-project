@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Subtitle from 'elements/Subtitle';
-import { Dropdown, FilterButton, Checkbox } from 'elements';
+import { useState } from 'react';
 
 // const ArticleTitle = styled.h1`
 //   font-size: 84px;
@@ -38,17 +37,34 @@ import { Dropdown, FilterButton, Checkbox } from 'elements';
 //   }
 // `;
 
-const Search = ({ name }) => {
+const FilterButton = props => {
+  const { title, list } = props;
+  const [opened, setOpened] = useState(false);
+
+  const openDropdown = () => {
+    if (opened) {
+      setOpened(false);
+    } else {
+      setOpened(true);
+    }
+  };
+
   return (
-    <form action="" method="get">
-      <input
-        name="search"
-        placeholder={name}
-        type="search"
-      />
-      <button type="submit">Поиск</button>
-    </form>
+    <div>
+      <button type="button" onClick={() => openDropdown()}>
+        {title}
+      </button>
+      {opened && (
+        <div>
+          {list.map((el, i) => (
+            <button type="button" onClick={() => console.log('request')}>
+              {el}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 
-export default Search;
+export default FilterButton;

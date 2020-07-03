@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     background-color: transparent;
     outline: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
   }
 
   h1, h2, h3, h4, h5 {

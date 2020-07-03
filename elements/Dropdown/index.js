@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import { Wrapper, Title, List, Item } from './styles';
 
 // const ArticleTitle = styled.h1`
 //   font-size: 84px;
@@ -38,7 +39,9 @@ import { useState } from 'react';
 // `;
 
 const Dropdown = props => {
-  const { category: title, list } = props;
+  const {
+    data: { title, list }
+  } = props;
   const [opened, setOpened] = useState(false);
 
   const openDropdown = () => {
@@ -50,20 +53,22 @@ const Dropdown = props => {
   };
 
   return (
-    <div>
-      <button type="button" onClick={() => openDropdown()}>
+    <Wrapper>
+      <Title type="button" onClick={() => openDropdown()}>
         {title}
-      </button>
+      </Title>
       {opened && (
-        <div>
+        <List>
           {list.map((el, i) => (
-            <button type="button" onClick={() => console.log('request')}>
-              {el}
-            </button>
+            <Item>
+              <button type="button" onClick={() => console.log(el)}>
+                {el}
+              </button>
+            </Item>
           ))}
-        </div>
+        </List>
       )}
-    </div>
+    </Wrapper>
   );
 };
 

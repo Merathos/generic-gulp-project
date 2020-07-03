@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Subtitle from 'elements/Subtitle';
-import { Dropdown, FilterButton, Checkbox } from 'elements';
+import { useState } from 'react';
 
 // const ArticleTitle = styled.h1`
 //   font-size: 84px;
@@ -38,17 +37,17 @@ import { Dropdown, FilterButton, Checkbox } from 'elements';
 //   }
 // `;
 
-const Search = ({ name }) => {
+const Checkbox = props => {
+  const { name } = props;
+
   return (
-    <form action="" method="get">
-      <input
-        name="search"
-        placeholder={name}
-        type="search"
-      />
-      <button type="submit">Поиск</button>
-    </form>
+    <>
+      <label htmlFor={name}>
+        <input type="checkbox" id={name} />
+        {name}
+      </label>
+    </>
   );
 };
 
-export default Search;
+export default Checkbox;

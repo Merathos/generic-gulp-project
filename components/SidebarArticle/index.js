@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Button from 'elements/Button';
 import Subtitle from 'elements/Subtitle';
 import ArrowLeft from 'public/icons/arrow-left.svg';
-import { Section, Title, StyledText, H5 } from './styles';
+import { Section, Title, Text, H5 } from './styles';
 
 const SidebarArticle = props => {
   const {
@@ -33,7 +33,7 @@ const SidebarArticle = props => {
           ),
           'button': (
             <>
-              <StyledText content={text} />
+              <Text>{text}</Text>
               <Button type="accent" content={button} />
             </>
           )
@@ -44,11 +44,7 @@ const SidebarArticle = props => {
 };
 
 SidebarArticle.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    description: PropTypes.string,
-  }).isRequired,
+  data: PropTypes.object.isRequired,
   type: PropTypes.string
 };
 

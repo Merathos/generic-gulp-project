@@ -14,7 +14,7 @@ export default {
     }
   ],
   catalog: {
-    mainTitle: ``,
+    mainTitle: `Вакансии`,
     filter: {
       fields: [
         {

@@ -1,7 +1,8 @@
 import { Layout } from 'containers';
 import { useQuery } from "@apollo/react-hooks";
 import styled from 'styled-components';
-import { Title, Cards, SidebarArticle } from 'components';
+import { Cards, SidebarArticle } from 'components';
+import { TitleH1 } from 'elements';
 import { Search, Filter } from 'forms';
 import { ALL_CHARACTERS } from 'graphql/allCharacters';
 
@@ -21,18 +22,19 @@ const Container = styled.main`
 `;
 
 const Article = styled.article`
-  margin-right: 92px;
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
-    margin-right: 0;
+    /* margin-right: 0; */
   }
 `;
 
 const Grid = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  flex-direction: row-reverse;
+  padding-top: 200px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -41,9 +43,18 @@ const Grid = styled.div`
 
 const Aside = styled.aside`
   max-width: 254px;
+  margin-right: 90px;
 
   @media screen and (max-width: 420px) {
     max-width: 100%;
+  }
+`;
+
+const Title = styled(TitleH1)`
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 30px;
   }
 `;
 
@@ -58,7 +69,7 @@ const catalogPage = () => {
       <Container>
         <Grid>
           <Article>
-            <Title data={mock.catalog.mainTitle} />
+            <Title content={mock.catalog.mainTitle} />
             <Search data={mock.catalog.search} />
             <Cards data={mock.catalog.cards} />
           </Article>
