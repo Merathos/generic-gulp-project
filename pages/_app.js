@@ -1,13 +1,12 @@
-import App from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { ApolloProvider } from '@apollo/react-hooks';
-import withData from 'lib/apollo-client';
+import { Provider } from 'react-redux';
+import { useStore } from '../lib/redux';
+import { useApollo } from '../lib/apollo';
 
 import '../styles/emoji.min.css';
 import '../styles/fonts.css';
 import '../styles/reset.css';
-
-const Layout = ({ children }) => <div className="layout">{children}</div>
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -30,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     outline: none;
     width: 100%;
-    text-align: left;
     cursor: pointer;
   }
 
@@ -52,19 +50,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps, apollo } = this.props;
+export default function App({ Component, pageProps }) {
+  const store = useStore(pageProps.initialReduxState);
+  const apolloClient = useApollo(pageProps.initialApolloState);
 
-    return (
-      <ApolloProvider client={apollo}>
-        <Layout>
-          <Component {...pageProps} />
-          <GlobalStyle />
-        </Layout>
+  return (
+    <Provider store={store}>
+      <ApolloProvider client={apolloClient}>
+        <Component {...pageProps} />
+        <GlobalStyle />
       </ApolloProvider>
-    )
-  }
+    </Provider>
+  );
 }
-
-export default withData(MyApp);

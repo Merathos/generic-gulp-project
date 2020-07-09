@@ -1,10 +1,8 @@
 import { Layout } from 'containers';
-import { useQuery } from "@apollo/react-hooks";
 import styled from 'styled-components';
 import { Cards, SidebarArticle } from 'components';
 import { TitleH1 } from 'elements';
 import { Search, Filter } from 'forms';
-import { ALL_CHARACTERS } from 'graphql/allCharacters';
 
 import mock from 'mock/index';
 
@@ -32,7 +30,7 @@ const Article = styled.article`
 const Grid = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row-reverse;
   padding-top: 200px;
 
@@ -59,11 +57,6 @@ const Title = styled(TitleH1)`
 `;
 
 const catalogPage = () => {
-  const { loading, error, data } = useQuery(ALL_CHARACTERS);
-
-  if (error) return <h1>Error</h1>;
-  if (loading) return <h1>Loading...</h1>;
-
   return (
     <Layout backButton>
       <Container>
