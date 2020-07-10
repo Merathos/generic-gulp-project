@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Subtitle from 'elements/Subtitle';
-import { Dropdown, FilterButton, Checkbox } from 'elements';
+import { Field, Form, Submit } from './styles';
+import SearchIcon from 'public/icons/search.svg';
+import { useState } from 'react';
 
 // const ArticleTitle = styled.h1`
 //   font-size: 84px;
@@ -38,16 +40,35 @@ import { Dropdown, FilterButton, Checkbox } from 'elements';
 //   }
 // `;
 
-const Search = ({ name }) => {
+const Search = ({ data }) => {
+  const [value, setValue] = useState('');
+
+  const handleChange = e => {
+    setValue(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('поиск: ' + value);
+    setSubmitted(submitted.push(value));
+  }
+
   return (
-    <form action="" method="get">
-      <input
+    <>
+    <Form onSubmit={e => handleSubmit(e)}>
+      <Field
         name="search"
-        placeholder={name}
+        placeholder={data}
         type="search"
+        value={value}
+        onChange={e => handleChange(e)}
       />
-      <button type="submit">Поиск</button>
-    </form>
+      <Submit type="submit" aria-label="Поиск">
+        <SearchIcon />
+      </Submit>
+    </Form>
+    </>
   );
 };
 

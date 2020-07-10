@@ -50,7 +50,24 @@ export default {
       discard: `Сбросить фильтр`
     },
     cards: [
-
+      {
+        title: `Java developer (Big Data team)`,
+        text: `Стек: Java, Redis, Kafka, MongoDB, Docker,
+         ELK, TICK. Сервис базируется в AWS и Private Cloud.`
+      },
+      {
+        title: `Java developer (Big Data team)`,
+        text: `We are looking for a talented and energetic team leader to head our Integration Team.`
+      },
+      {
+        title: `Java developer (Big Data team)`,
+        text: `People and technical management the team (up to 6 members)`
+      },
+      {
+        title: `QA Intern (Performance team)`,
+        text: `Команда RCV занимается разработкой сервиса видео-конференций
+         нового поколения, построенного с использованием WebRTC, качество...`
+      }
     ],
     search: `Введите название вакансии`,
     article: {

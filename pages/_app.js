@@ -28,9 +28,9 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     background-color: transparent;
     outline: none;
-    width: 100%;
     cursor: pointer;
     text-align: left;
+    font-family: inherit;
   }
 
   h1, h2, h3, h4, h5 {

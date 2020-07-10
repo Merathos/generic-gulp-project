@@ -9,9 +9,11 @@ import mock from 'mock/index';
 const Container = styled.main`
   max-width: 1200px;
   margin: 0 auto;
+  /* display: flex; */
 
   @media screen and (max-width: 420px) {
     max-width: 315px;
+    /* flex-direction: column; */
   }
 
   @media screen and (max-width: 240px) {
@@ -45,6 +47,7 @@ const Aside = styled.aside`
 
   @media screen and (max-width: 420px) {
     max-width: 100%;
+    margin-right: 0;
   }
 `;
 

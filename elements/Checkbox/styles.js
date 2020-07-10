@@ -26,7 +26,6 @@ export const Wrapper = styled.div.attrs(props => ({
 
   @media screen and (max-width: 420px) {
     margin-bottom: 0;
-    margin-right: 24px;
     font-size: 14px;
     line-height: 134%;
   }

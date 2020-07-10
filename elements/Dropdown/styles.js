@@ -8,6 +8,7 @@ export const Title = styled.button.attrs(props => ({
   font-size: 20px;
   line-height: 134%;
   text-align: left;
+  width: 100%;
 
   &::after {
     content: '';
@@ -29,7 +30,7 @@ export const Title = styled.button.attrs(props => ({
 `;
 
 export const Item = styled.li.attrs(props =>({
-  active: props.active ? '#53B443;' : '#201F2A;',
+  active: props.active ? '#53B443;' : '#201F2A;', // wrong opacity
   dot: props.active ? 'block' : 'none'
 }))`
   font-size: 16px;
