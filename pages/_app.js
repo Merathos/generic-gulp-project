@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     width: 100%;
     cursor: pointer;
+    text-align: left;
   }
 
   h1, h2, h3, h4, h5 {
@@ -39,6 +40,20 @@ const GlobalStyle = createGlobalStyle`
   img, video {
     width: 100%;
     height: auto;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"]{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
   }
 
   .swiper-wrapper {

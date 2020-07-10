@@ -1,48 +1,12 @@
-import styled from 'styled-components';
 import { useState } from 'react';
-import { Wrapper, Title, List, Item } from './styles';
-
-// const ArticleTitle = styled.h1`
-//   font-size: 84px;
-//   line-height: 86px;
-//   margin-bottom: 50px;
-//   padding-top: 200px;
-
-//   @media screen and (max-width: 420px) {
-//     font-size: 32px;
-//     line-height: 31px;
-//     margin-bottom: 50px;
-//     padding-top: 110px;
-//   }
-// `;
-
-// const Date = styled(Subtitle)`
-//   margin-bottom: 80px;
-
-//   @media screen and (max-width: 420px) {
-//     margin-bottom: 40px ;
-//   }
-// `;
-
-// const Description = styled.p`
-//   font-weight: 700;
-//   font-size: 24px;
-//   line-height: 158%;
-//   max-width: 854px;
-//   margin-bottom: 160px;
-
-//   @media screen and (max-width: 420px) {
-//     margin-bottom: 80px;
-//     font-size: 16px;
-//     line-height: 158%;
-//   }
-// `;
+import { Title, Item } from './styles';
 
 const Dropdown = props => {
   const {
     data: { title, list }
   } = props;
   const [opened, setOpened] = useState(false);
+  const [checked, setChecked] = useState('');
 
   const openDropdown = () => {
     if (opened) {
@@ -53,22 +17,28 @@ const Dropdown = props => {
   };
 
   return (
-    <Wrapper>
-      <Title type="button" onClick={() => openDropdown()}>
+    <li>
+      <Title type="button" onClick={() => openDropdown()} active={opened}>
         {title}
       </Title>
       {opened && (
-        <List>
+        <ul>
           {list.map((el, i) => (
-            <Item>
-              <button type="button" onClick={() => console.log(el)}>
+            <Item key={i} active={checked === el}>
+              <label htmlFor={el}>
+                <input
+                  type="radio" // checkbox?
+                  name={title}
+                  id={el}
+                  onChange={() => setChecked(el)}
+                />
                 {el}
-              </button>
+              </label>
             </Item>
           ))}
-        </List>
+        </ul>
       )}
-    </Wrapper>
+    </li>
   );
 };
 
