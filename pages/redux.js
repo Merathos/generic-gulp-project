@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { initializeStore } from '../lib/redux'
+import { initializeStore } from '../lib/store'
 import useInterval from '../lib/useInterval'
 import Layout from '../fake-components/Layout'
 import Clock from '../fake-components/Clock'

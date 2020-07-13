@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
-import { useStore } from '../lib/redux';
+import { useStore } from '../lib/store';
 import { useApollo } from '../lib/apollo';
 
 import '../styles/emoji.min.css';
