@@ -5,10 +5,14 @@ export const Wrapper = styled.section`
   flex-direction: column;
 `;
 
-export const Container= styled.div`
+export const Container = styled.div`
   @media screen and (max-width: 420px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+`;
+
+export const List = styled.ul`
+  margin-bottom: 25px;
 `;

@@ -60,3 +60,12 @@ export const Item = styled.li.attrs(props =>({
     padding-left: 12px;
   }
 `;
+
+export const List = styled.ul`
+  height: 180px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    opacity: 0;
+  }
+`;

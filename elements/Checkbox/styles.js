@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div.attrs(props => ({
-  checkbox: props.checked
-    ? "url('icons/checked.svg')" // wrong icon
-    : "url('icons/checkbox.svg')"
+  checkbox: props.checked ? "url('icons/checked.svg')" : 'none',
+  color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)'
 }))`
   margin-bottom: 28px;
   font-weight: 500;
@@ -21,7 +20,10 @@ export const Wrapper = styled.div.attrs(props => ({
     top: 50%;
     transform: translateY(-50%);
     background-image: ${props => props.checkbox};
+    background-position: center center;
     background-repeat: no-repeat;
+    border: 2px solid rgba(31, 32, 42, 0.3);
+    border-color: ${props => props.color};
   }
 
   @media screen and (max-width: 420px) {

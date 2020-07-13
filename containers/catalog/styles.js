@@ -15,17 +15,16 @@ export const Container = styled.main`
 `;
 
 export const Article = styled.article`
-  max-width: 854px;
+  width: 100%;
+  order: -2;
 `;
 
 export const Grid = styled.div`
-  display: flex;
-  justify-content: flex-end;
   align-items: flex-start;
-  flex-direction: row-reverse;
   padding-top: 200px;
 
   @media screen and (max-width: 1024px) {
+    display: flex;
     flex-direction: column;
   }
 `;
@@ -33,10 +32,12 @@ export const Grid = styled.div`
 export const Aside = styled.aside`
   max-width: 254px;
   margin-right: 90px;
+  float: left;
 
   @media screen and (max-width: 420px) {
     max-width: 100%;
     margin-right: 0;
+    float: none;
   }
 `;
 

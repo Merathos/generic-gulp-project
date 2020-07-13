@@ -22,7 +22,7 @@ const Search = ({ data }) => {
       <Field
         name="search"
         placeholder={data}
-        type="search"
+        type="text"
         value={value}
         onChange={e => handleChange(e)}
       />

@@ -6,15 +6,15 @@ const Catalog = ({ data }) => {
   return (
     <Container>
       <Grid>
-        <Article>
-          <Title content={data.mainTitle} />
-          <Search data={data.search} />
-          <Cards data={data.cards} />
-        </Article>
         <Aside>
           <Filter data={data.filter} />
           <SidebarArticle type="button" data={data.article} />
         </Aside>
+        <Article>
+          <Title content={data.mainTitle} />
+          <Search data={data.search} />
+        </Article>
+        <Cards data={data.cards} />
       </Grid>
     </Container>
   );

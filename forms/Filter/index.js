@@ -1,5 +1,5 @@
 import { Dropdown, FilterButton, Checkbox } from 'elements';
-import { Wrapper, Container } from './styles';
+import { Wrapper, Container, List } from './styles';
 
 const Filter = props => {
   const {
@@ -7,11 +7,11 @@ const Filter = props => {
   } = props;
   return (
     <Wrapper>
-      <ul>
+      <List>
         {fields.map((el, i) => (
           <Dropdown key={i} data={el} />
         ))}
-      </ul>
+      </List>
       <Container>
         <Checkbox name={internship} />
         <Checkbox name={english} />
