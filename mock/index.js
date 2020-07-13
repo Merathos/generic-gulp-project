@@ -23,7 +23,8 @@ export default {
             `QA`, `DevOps`, `Management`, `UX/UI and design`, `HR and Finance`,
             `Architect and Analyst`, `Product and Project management`, `Telco`,
             `Network`, `Security` , `DBA` , `Sys Admin`, `AI`, `BigData`, `Other`
-          ]
+          ],
+          multi: false
         },
         {
           title: `Технологии`,
@@ -33,8 +34,9 @@ export default {
             `VMWare`, `Kubernetes`, `DDC`, `Marathon`, `Terraform`, `CloudFoundry`,
             `Amazon`, `AWS`, `Google GCP`, `Zabbix`, `Influx`, `Elasticsearch`, `Git`,
             `Mercurial`, `Jenkins`, `GitLab`, `GridGain`, `Coherence`, `Rabbit`, `Kafka`,
-            `ZeroMQ`
-          ]
+            `ZeroMQ,`
+          ],
+          multi: true
         },
         {
           title: `Проект`,
@@ -42,7 +44,8 @@ export default {
             `Contact Center`, `Platform A`, `Platform D`, `Analytics`, `Telco`, `Billing`,
             `RCV (Video-conference)`, `Core`, `SWAT`, `Relies IT`, `Features`, `AI`, `CRM SPB`,
             `Glip`, `Deployment`, `SysOps`, `Lab`
-          ]
+          ],
+          multi: true
         }
       ],
       internship: `Стажировки`,

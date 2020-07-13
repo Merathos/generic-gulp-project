@@ -1,9 +1,7 @@
-import styled from 'styled-components';
-import Subtitle from 'elements/Subtitle';
-import { Field, Form, Submit } from './styles';
 import SearchIcon from 'public/icons/search.svg';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
+import { Field, Form, Submit } from './styles';
 
 const Search = ({ data }) => {
   const [value, setValue] = useState('');
@@ -20,7 +18,6 @@ const Search = ({ data }) => {
   }
 
   return (
-    <>
     <Form onSubmit={e => handleSubmit(e)}>
       <Field
         name="search"
@@ -33,7 +30,6 @@ const Search = ({ data }) => {
         <SearchIcon />
       </Submit>
     </Form>
-    </>
   );
 };
 
