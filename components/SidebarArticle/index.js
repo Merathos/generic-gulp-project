@@ -1,27 +1,13 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import TitleH4 from 'elements/TitleH4';
-import TitleH5 from 'elements/TitleH5';
+import Button from 'elements/Button';
 import Subtitle from 'elements/Subtitle';
 import ArrowLeft from 'public/icons/arrow-left.svg';
-
-const Title = styled(TitleH4)`
-  margin-bottom: 40px;
-`;
-
-const H5 = styled(TitleH5)`
-  margin-bottom: 12px;
-`;
-
-const Section = styled.section`
-  text-align: left;
-  margin-bottom: 50px;
-`;
+import { Section, Title, Text, H5 } from './styles';
 
 const SidebarArticle = props => {
   const {
-    data: { title, subtitle, description },
+    data: { title, subtitle, description, text, button },
     type
   } = props;
   return (
@@ -44,6 +30,12 @@ const SidebarArticle = props => {
                 </a>
               </Link>
             </>
+          ),
+          'button': (
+            <>
+              <Text>{text}</Text>
+              <Button type="accent" content={button} />
+            </>
           )
         }[type]
       }
@@ -52,11 +44,7 @@ const SidebarArticle = props => {
 };
 
 SidebarArticle.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    description: PropTypes.string,
-  }).isRequired,
+  data: PropTypes.object.isRequired,
   type: PropTypes.string
 };
 

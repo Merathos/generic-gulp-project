@@ -24,3 +24,4 @@ export { default as Advert } from './Advert';
 export { default as IconsList } from './IconsList';
 export { default as MarkerList } from './MarkerList';
 export { default as SidebarRelocation } from './SidebarRelocation';
+export { default as Cards } from './Cards';

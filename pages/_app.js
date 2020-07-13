@@ -1,6 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
-import { createGlobalStyle } from 'styled-components';
 import { useStore } from '../lib/redux';
 import { useApollo } from '../lib/apollo';
 
@@ -28,6 +28,9 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     background-color: transparent;
     outline: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
   }
 
   h1, h2, h3, h4, h5 {
@@ -37,6 +40,20 @@ const GlobalStyle = createGlobalStyle`
   img, video {
     width: 100%;
     height: auto;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"]{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
   }
 
   .swiper-wrapper {
