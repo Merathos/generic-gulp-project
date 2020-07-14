@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Title = styled.button.attrs(props => ({
-  transform: props.active ? 'rotate(-180deg) translateY(50%)' : 'translateY(-50%)'
+  transform: props.active
+    ? 'rotate(-180deg) translateY(50%)'
+    : 'translateY(-50%)'
 }))`
   padding: 15px 0;
   position: relative;
@@ -29,28 +31,17 @@ export const Title = styled.button.attrs(props => ({
   }
 `;
 
-export const Item = styled.li.attrs(props =>({
-  active: props.active ? '#53B443;' : '#201F2A;', // wrong opacity
-  dot: props.active ? 'block' : 'none'
-}))`
+export const Item = styled.li`
   font-size: 16px;
   line-height: 190%;
   opacity: 0.5;
-  color: ${props => props.active};
-  position: relative;
-  padding-left: 20px;
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    top: 50%;
-    left: 0;
-    background-color: #53B443;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    display: ${props => props.dot};
+  input:checked ~ label {
+    color: #53B443;
+  
+    &::after {
+      display: block;
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -67,5 +58,23 @@ export const List = styled.ul`
 
   &::-webkit-scrollbar {
     opacity: 0;
+  }
+`;
+
+export const Label = styled.label`
+  position: relative;
+  padding-left: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 50%;
+    left: 0;
+    background-color: #53B443;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: none;
   }
 `;

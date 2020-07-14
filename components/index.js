@@ -25,3 +25,4 @@ export { default as IconsList } from './IconsList';
 export { default as MarkerList } from './MarkerList';
 export { default as SidebarRelocation } from './SidebarRelocation';
 export { default as Cards } from './Cards';
+export { default as Dropdown } from './Dropdown';

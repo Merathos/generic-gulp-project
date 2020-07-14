@@ -1,4 +1,5 @@
-import { Dropdown, FilterButton, Checkbox } from 'elements';
+import { FilterButton, Checkbox } from 'elements';
+import { Dropdown } from 'components';
 import { Wrapper, Container, List } from './styles';
 
 const Filter = props => {

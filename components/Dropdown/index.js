@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Title, Item, List } from './styles';
+import { Title, Item, List, Label } from './styles';
 
 const Dropdown = props => {
   const {
@@ -20,7 +20,7 @@ const Dropdown = props => {
 
   const handleChange = el => {
     setChecked(el);
-    dispatch({ type: 'CATALOG_FILTER', payload: el });
+    dispatch({ type: 'CATALOG_FILTER', payload: checked });
   };
 
   return (
@@ -31,21 +31,20 @@ const Dropdown = props => {
       {opened && (
         <List>
           {list.map((el, i) => (
-            <Item key={i} active={checked === el}>
-              <label htmlFor={el}>
-                <input
-                  type="radio"
-                  name={title}
-                  id={el}
-                  onChange={() => handleChange(el)}
-                />
-                {el}
-              </label>
+            <Item key={i}>
+              <input
+                type={multi ? 'checkbox' : 'radio'}
+                name={multi ? el : title}
+                id={el}
+                defaultChecked={false}
+                onChange={() => handleChange(el)}
+              />
+              <Label htmlFor={el}>{el}</Label>
             </Item>
           ))}
         </List>
       )}
-    </ul>  
+    </ul>
   );
 };
 
