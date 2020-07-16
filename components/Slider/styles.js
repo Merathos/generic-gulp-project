@@ -21,7 +21,7 @@ export const Element = styled.div`
 `;
 
 export const Section = styled.section`
-  margin-bottom: 130px;
+  margin-bottom: 100px;
   cursor: pointer;
 
   @media screen and (max-width: 420px) {

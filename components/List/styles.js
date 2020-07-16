@@ -3,7 +3,7 @@ import TitleH3 from 'elements/TitleH3';
 import Text from 'elements/Text';
 
 export const Section = styled.section`
-  margin-bottom: 110px;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;

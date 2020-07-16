@@ -12,8 +12,8 @@ const Styled = styled.h2`
   }
 `;
 
-const TitleH3 = ({ content, className }) => (
+const TitleH2 = ({ content, className }) => (
   <Styled className={className}>{content}</Styled>
 );
 
-export default TitleH3;
+export default TitleH2;

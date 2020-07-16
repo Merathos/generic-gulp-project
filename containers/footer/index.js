@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Social } from 'components';
 
 const StyledFooter = styled.footer`
-  padding: 200px 46px 46px;
+  padding: 220px 46px 46px;
   display: flex;
   align-items: flex-end;
 

@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import Comment from 'components/Comment';
 
 const Section = styled.section`
-  margin-bottom: 160px;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const Comments = props => {

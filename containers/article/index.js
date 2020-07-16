@@ -14,6 +14,7 @@ import {
   IconsList,
   MarkerList
 } from 'components';
+import { Section } from 'containers';
 import { Container, Wrapper, Grid, Aside } from './styles';
 
 const Article = ({ data }) => {
@@ -22,34 +23,31 @@ const Article = ({ data }) => {
       <Title data={data.mainTitle} />
       <Grid>
         <Wrapper>
-          <Paragraph size="h2" data={data.introduction} />
+          <Section>
+            <Paragraph size="h2" data={data.introduction} margin="100px" />
+            <Media type="img" data={data.imageNormal} decoration />
+            <List position="row" data={data.features} />
+          </Section>
+          <Section>
+            <Paragraph size="h2" data={data.definitions} margin="100px" />
+            <List position="row" type="blue" data={data.reductions} />
+          </Section>
+          <SectionNote data={data.sectionNote} />
         </Wrapper>
         <Aside>
           <SidebarSlider data={data.sidebarSlider} />
         </Aside>
       </Grid>
-      <Wrapper>
-        <Media type="img" data={data.imageNormal} decoration />
-        <List position="row" data={data.features} />
-        <Paragraph size="h2" data={data.definitions} />
-        <List position="row" type="blue" data={data.reductions} />
-        <SectionNote data={data.sectionNote} />
-      </Wrapper>
+
       <Media type="img" data={data.imageBig} />
+
       <Grid>
         <Wrapper>
           <MarkerList type="ellipse" data={data.list} />
           <Slider type="img" data={data.slider} />
-        </Wrapper>
-        <Aside>
-          <SidebarArticle type="default" data={data.sidebarArticleMiddle} />
-        </Aside>
-      </Grid>
-      <Grid>
-        <Wrapper>
-          <Paragraph size="h3" data={data.cmx} />
+          <Paragraph size="h3" data={data.cmx} margin="100px" />
           <List data={data.noteWithPictures} />
-          <Paragraph size="h2" data={data} margin="60px" />
+          <Paragraph size="h2" data={data} margin="100px" />
           <MarkerList type="number" data={data.listNumbers} />
           <Media type="video" data={data.video} />
           <IconsList data={data.listIcons} />
@@ -58,9 +56,11 @@ const Article = ({ data }) => {
           <Comments data={data.comments} />
         </Wrapper>
         <Aside>
+          <SidebarArticle type="default" data={data.sidebarArticleMiddle} />
           <SidebarArticle type="icon" data={data.sidebarArticleBottom} />
         </Aside>
       </Grid>
+
       <Articles type="article" data={data.articles} />
     </Container>
   );

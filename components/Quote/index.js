@@ -5,7 +5,11 @@ import Subtitle from 'elements/Subtitle';
 
 const Section = styled.section`
   display: flex;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const Blockquote = styled.blockquote`

@@ -27,6 +27,7 @@ const Section = styled.section`
     grid-template-columns: 1fr;
     grid-template-rows: 43px 1fr;
     grid-row-gap: 12px;
+    margin-bottom: 50px;
   }
 `;
 

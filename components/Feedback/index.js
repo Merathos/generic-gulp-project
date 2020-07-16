@@ -21,7 +21,7 @@ const StyledText = styled.p`
 
 const Section = styled.section`
   display: flex;
-  margin-bottom: 90px;
+  margin-bottom: 100px;
   align-items: flex-end;
   background-image: url('backgrounds/circle.png');
   background-repeat: no-repeat;
