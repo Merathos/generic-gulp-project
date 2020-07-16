@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'TT Norms', 'Arial', sans-serif;
     font-weight: 500;
     overflow-x: hidden;
+    font-variant-ligatures: none;
   }
 
   a {

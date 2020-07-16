@@ -1,25 +1,14 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Subtitle from 'elements/Subtitle';
-
-const Text = styled(Subtitle)`
-  margin-top: 20px;
-  text-align: center;
-  margin-bottom: 100px;
-
-  @media screen and (max-width: 420px) {
-    margin-top: 5px;
-    margin-bottom: 50px;
-  }
-`;
+import { Section, Text } from './styles';
 
 const Media = props => {
   const {
     data: { subtitle, src, srcPoster },
-    type
+    type,
+    decoration
   } = props;
   return (
-    <section>
+    <Section decoration={decoration}>
       {type === 'img' ? (
         <img src={src} alt={subtitle} />
       ) : (
@@ -28,7 +17,7 @@ const Media = props => {
         </video>
       )}
       <Text content={subtitle} />
-    </section>
+    </Section>
   );
 };
 

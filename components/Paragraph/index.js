@@ -27,7 +27,7 @@ const Description = styled(Text)`
 `;
 
 const Section = styled.section`
-  margin-bottom: 160px;
+  margin-bottom: ${props => props.margin || "160px"};
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
@@ -41,10 +41,11 @@ const Paragraph = props => {
     size,
     color,
     opacity,
-    bold
+    bold,
+    margin
   } = props;
   return (
-    <Section>
+    <Section margin={margin}>
       {title && (
         <>
           {size === 'h3' ? (

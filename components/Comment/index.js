@@ -1,31 +1,6 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Text from 'elements/Text';
 import TitleH5 from 'elements/TitleH5';
-
-const Block = styled.div`
-  display: flex;
-  align-items: ${props => props.align || 'flex-start'};
-  flex-direction: column;
-  margin-bottom: 14px;
-`;
-
-const Card = styled.div`
-  background: #F7F8F9;
-  padding: 40px;
-  border-radius: 12px;
-`;
-
-const Img = styled.img`
-  width: 49px;
-  margin-right: 14px;
-`;
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-`;
+import { Block, Container, Img, Card, Text } from './styles';
 
 const Comment = props => {
   const {
@@ -39,7 +14,7 @@ const Comment = props => {
         <TitleH5 content={name} />
       </Container>
       <Card>
-        <Text content={text} />
+        <Text>{text}</Text>
       </Card>
     </Block>
   );

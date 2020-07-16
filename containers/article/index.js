@@ -29,7 +29,7 @@ const Article = ({ data }) => {
         </Aside>
       </Grid>
       <Wrapper>
-        <Media type="img" data={data.imageNormal} />
+        <Media type="img" data={data.imageNormal} decoration />
         <List position="row" data={data.features} />
         <Paragraph size="h2" data={data.definitions} />
         <List position="row" type="blue" data={data.reductions} />
@@ -49,7 +49,7 @@ const Article = ({ data }) => {
         <Wrapper>
           <Paragraph size="h3" data={data.cmx} />
           <List data={data.noteWithPictures} />
-          <Paragraph size="h2" data={data} />
+          <Paragraph size="h2" data={data} margin="60px" />
           <MarkerList type="number" data={data.listNumbers} />
           <Media type="video" data={data.video} />
           <IconsList data={data.listIcons} />

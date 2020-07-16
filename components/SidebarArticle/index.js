@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Button from 'elements/Button';
 import Subtitle from 'elements/Subtitle';
-import ArrowLeft from 'public/icons/arrow-left.svg';
+import ArrowRight from 'public/icons/arrow-right.svg';
 import { Section, Title, Text, H5 } from './styles';
 
 const SidebarArticle = props => {
@@ -26,7 +26,7 @@ const SidebarArticle = props => {
               <Title content={title} />
               <Link href="/about">
                 <a>
-                  <ArrowLeft />
+                  <ArrowRight />
                 </a>
               </Link>
             </>
