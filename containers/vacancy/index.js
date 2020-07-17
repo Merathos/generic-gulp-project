@@ -10,6 +10,7 @@ import {
   Map,
   Application
 } from 'components';
+import { SectionGroup } from 'containers';
 import { Container, Article, Grid, GreyContainer, Aside } from './styles';
 
 const Vacancy = ({ data }) => {
@@ -18,34 +19,44 @@ const Vacancy = ({ data }) => {
       <GreyContainer>
         <GreyTitle data={data.mainTitle} />
       </GreyContainer>
+
       <Container>
         <Paragraph bold="700" data={data.intro} />
         <Grid>
           <Article>
-            <Requirements type="ellipse" data={data.requirements} />
+            <SectionGroup>
+              <Requirements type="ellipse" data={data.requirements} />
+            </SectionGroup>
+            <SectionGroup>
+              <Requirements type="number" data={data.extraRequirements} />
+            </SectionGroup>
+            <SectionGroup>
+              <Paragraph size="h2" data={data.qualifications} />
+            </SectionGroup>
+            <SectionGroup>
+              <Conditions data={data.conditions} />
+            </SectionGroup>
           </Article>
           <Aside>
             <SidebarSlider data={data.sidebarSlider} />
-          </Aside>
-        </Grid>
-        <Grid>
-          <Article>
-            <Requirements type="number" data={data.extraRequirements} />
-          </Article>
-          <Aside>
             <SidebarRelocation data={data.sidebarArticle} />
           </Aside>
         </Grid>
-        <Article>
-          <Paragraph size="h2" data={data.qualifications} />
-          <Conditions data={data.conditions} />
-        </Article>
-        <SliderVacancy data={data.steps} />
+
+        <SectionGroup>
+          <SliderVacancy data={data.steps} />
+        </SectionGroup>
       </Container>
+
       <Application data={data.application} />
+
       <Container>
-        <Map data={data.map} />
-        <Articles type="vacancy" data={data.vacancies} />
+        <SectionGroup>
+          <Map data={data.map} />
+        </SectionGroup>
+        <SectionGroup>
+          <Articles type="vacancy" data={data.vacancies} />
+        </SectionGroup>       
       </Container>
     </>
   );

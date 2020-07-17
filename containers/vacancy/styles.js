@@ -37,7 +37,7 @@ export const Article = styled.article`
 export const Grid = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -46,8 +46,10 @@ export const Grid = styled.div`
 
 export const Aside = styled.aside`
   max-width: 254px;
+  padding-top: 60px;
 
   @media screen and (max-width: 420px) {
     max-width: 100%;
+    padding-top: 0;
   }
 `;

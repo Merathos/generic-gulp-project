@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Section = styled.section`
-  margin-bottom: 110px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
-  }
-`;
-
 const Img = styled.img`
   margin-bottom: 40px;
 
@@ -79,7 +71,7 @@ const Text = styled.p`
 const MarkerList = props => {
   const { data, type } = props;
   return (
-    <Section>
+    <>
       {type === 'ellipse' ? (
         <ul>
           {data.map((el, i) => (
@@ -100,7 +92,7 @@ const MarkerList = props => {
           ))}
         </ul>
       )}
-    </Section>
+    </>
   );
 };
 

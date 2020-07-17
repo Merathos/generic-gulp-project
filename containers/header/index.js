@@ -4,7 +4,7 @@ import Menu from 'public/icons/menu.svg';
 import CustomLink from 'elements/CustomLink';
 
 const StyledHeader = styled.header`
-  padding: 34px 48px 34px 46px;
+  padding: 34px 45px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;

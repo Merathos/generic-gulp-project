@@ -1,11 +1,12 @@
 import { Title, Wrapper } from './styles';
 
-const Section = ({ children, margin }) => {
+const SectionGroup = ({ children }) => {
   return (
     <Wrapper>
+      {/* <Title content={title} /> */}
       {children}
     </Wrapper>
   );s
 };
 
-export default Section;
+export default SectionGroup;

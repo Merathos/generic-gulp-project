@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import TitleH4 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
-import ArrowLeft from 'public/icons/arrow-left.svg';
+import ArrowRight from 'public/icons/arrow-right.svg';
 
 const H4 = styled(TitleH4)`
   margin-bottom: 30px;
@@ -47,7 +47,7 @@ const SidebarRelocation = props => {
       <StyledSubtitle content={subtitle} />
       <Link href="/about">
         <a>
-          <ArrowLeft />
+          <ArrowRight />
         </a>
       </Link>
     </Section>

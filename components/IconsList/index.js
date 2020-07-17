@@ -4,7 +4,7 @@ import Subtitle from 'elements/Subtitle';
 import Icon from 'elements/Icon';
 
 const Section = styled.section`
-  margin-bottom: 110px;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;

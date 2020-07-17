@@ -1,10 +1,14 @@
 import styled from 'styled-components';
-import { TitleH2 } from 'elements';
 
-export const Wrapper = styled.section`
-  padding-top: 60px;
-`;
+export const Wrapper = styled.section.attrs(props => ({
+  marginDesktop: props.vacancy && '160px',
+  marginMobile: props.vacancy && '80px',
+  marginDesktop: props.article && '100px',
+  marginMobile: props.article && '50px',
+}))`
+  margin-bottom: ${props => props.marginDesktop || '160px' };
 
-export const Title = styled(TitleH2)`
-  margin-bottom: 40px;
+  @media screen and (max-width: 420px) {
+    margin-bottom: ${props => props.marginMobile || '80px' };
+  }
 `;

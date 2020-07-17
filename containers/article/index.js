@@ -14,7 +14,7 @@ import {
   IconsList,
   MarkerList
 } from 'components';
-import { Section } from 'containers';
+import { SectionGroup } from 'containers';
 import { Container, Wrapper, Grid, Aside } from './styles';
 
 const Article = ({ data }) => {
@@ -23,15 +23,15 @@ const Article = ({ data }) => {
       <Title data={data.mainTitle} />
       <Grid>
         <Wrapper>
-          <Section>
+          <SectionGroup>
             <Paragraph size="h2" data={data.introduction} margin="100px" />
             <Media type="img" data={data.imageNormal} decoration />
             <List position="row" data={data.features} />
-          </Section>
-          <Section>
+          </SectionGroup>
+          <SectionGroup>
             <Paragraph size="h2" data={data.definitions} margin="100px" />
             <List position="row" type="blue" data={data.reductions} />
-          </Section>
+          </SectionGroup>
           <SectionNote data={data.sectionNote} />
         </Wrapper>
         <Aside>

@@ -27,11 +27,11 @@ const Description = styled(Text)`
 `;
 
 const Section = styled.section`
-  margin-bottom: ${props => props.margin || "160px"};
+  margin-bottom: ${props => props.margin || "100px"};
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
 `;
 
