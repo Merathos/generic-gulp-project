@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Title, Item, List, Label } from './styles';
 
 const Dropdown = props => {
@@ -9,6 +9,7 @@ const Dropdown = props => {
   const [opened, setOpened] = useState(false);
   const [checked, setChecked] = useState('');
   const dispatch = useDispatch();
+  const filterArray = useSelector(state => state.filter);
 
   const openDropdown = () => {
     if (opened) {
@@ -37,6 +38,7 @@ const Dropdown = props => {
                 name={multi ? el : title}
                 id={el}
                 onChange={() => handleChange(el)}
+                disabled={filterArray.indexOf(el) === -1 ? false : true}
               />
               <Label htmlFor={el}>{el}</Label>
             </Item>
