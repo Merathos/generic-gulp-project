@@ -20,7 +20,7 @@ const Dropdown = props => {
 
   const handleChange = el => {
     setChecked(el);
-    dispatch({ type: 'CATALOG_FILTER', payload: checked });
+    dispatch({ type: 'CATALOG_FILTER', payload: el });
   };
 
   return (
@@ -36,7 +36,6 @@ const Dropdown = props => {
                 type={multi ? 'checkbox' : 'radio'}
                 name={multi ? el : title}
                 id={el}
-                defaultChecked={false}
                 onChange={() => handleChange(el)}
               />
               <Label htmlFor={el}>{el}</Label>

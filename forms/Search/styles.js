@@ -4,10 +4,9 @@ export const Form = styled.form`
   border-bottom: 1px solid #201F2A;
   display: flex;
   padding: 25px 0;
-  margin-bottom: 90px;
+  margin-bottom: 10px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 32px;
     padding: 16px 0;
   }
 `;
@@ -30,4 +29,21 @@ export const Field = styled.input`
 
 export const Submit = styled.button`
   width: 20px;
+`;
+
+export const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Element = styled.li`
+  margin-right: 22px;
+`;
+
+export const Section = styled.section`
+    margin-bottom: 85px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 30px;
+  }
 `;

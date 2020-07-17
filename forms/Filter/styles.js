@@ -13,6 +13,6 @@ export const Container = styled.div`
   }
 `;
 
-export const List = styled.ul`
+export const List = styled.div`
   margin-bottom: 25px;
 `;

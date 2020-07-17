@@ -1,70 +1,34 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 
-// const ArticleTitle = styled.h1`
-//   font-size: 84px;
-//   line-height: 86px;
-//   margin-bottom: 50px;
-//   padding-top: 200px;
+const Button = styled.button`
+  opacity: 0.5;
+  font-size: 16px;
+  line-height: 131%;
+  position: relative;
+  align-self: flex-start;
+  padding-right: 16px;
 
-//   @media screen and (max-width: 420px) {
-//     font-size: 32px;
-//     line-height: 31px;
-//     margin-bottom: 50px;
-//     padding-top: 110px;
-//   }
-// `;
+  &::after {
+    content: '';
+    background-image: url('icons/close-filter.svg');
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0%;
+  }
 
-// const Date = styled(Subtitle)`
-//   margin-bottom: 80px;
+  @media screen and (max-width: 420px) {
+    font-size: 14px;
+    line-height: 190%;
+  }
+`;
 
-//   @media screen and (max-width: 420px) {
-//     margin-bottom: 40px ;
-//   }
-// `;
-
-// const Description = styled.p`
-//   font-weight: 700;
-//   font-size: 24px;
-//   line-height: 158%;
-//   max-width: 854px;
-//   margin-bottom: 160px;
-
-//   @media screen and (max-width: 420px) {
-//     margin-bottom: 80px;
-//     font-size: 16px;
-//     line-height: 158%;
-//   }
-// `;
-
-const FilterButton = props => {
-  const { title, list } = props;
-  const [opened, setOpened] = useState(false);
-
-  const openDropdown = () => {
-    if (opened) {
-      setOpened(false);
-    } else {
-      setOpened(true);
-    }
-  };
-
-  return (
-    <div>
-      <button type="button" onClick={() => openDropdown()}>
-        {title}
-      </button>
-      {opened && (
-        <div>
-          {list.map((el, i) => (
-            <button type="button" onClick={() => console.log('request')}>
-              {el}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+const FilterButton = ({ name, handleChange }) => (
+  <Button type="button" onClick={() => handleChange()}>
+    {name}
+  </Button>
+);
 
 export default FilterButton;
