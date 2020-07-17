@@ -8,7 +8,7 @@ export const Article = styled.article`
   background-position: 70% 0;
   margin-bottom: 110px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     background-position: 10% 0;
     background-size: 70px 65px;
     width: 300px;
@@ -20,7 +20,7 @@ export const Img = styled.img`
   max-width: 120px;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     width: 74px;
     height: 74px;
     margin-right: 20px;
@@ -31,7 +31,7 @@ export const Img = styled.img`
 export const H4 = styled(TitleH4)`
   margin-bottom: 12px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 8px;
   }
 `;
@@ -45,7 +45,7 @@ export const StyledLink = styled.button`
 export const Arrows = styled.div`
   display: flex;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     padding-left: 94px;
   }
 `;
@@ -57,7 +57,7 @@ export const Text = styled(Subtitle)`
 export const Element = styled.div`
   min-width: 254px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
     min-width: 315px;

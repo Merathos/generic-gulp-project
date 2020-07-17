@@ -5,14 +5,6 @@ import ReactMapGL, { Marker } from 'react-map-gl';
 import { Component } from 'react';
 import MarkerIcon from 'public/icons/marker.svg';
 
-const Section = styled.section`
-  margin-bottom: 160px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 80px;
-  }
-`;
-
 const H2 = styled(TitleH2)`
   margin-bottom: 75px;
 
@@ -42,7 +34,7 @@ class Map extends Component {
 
   render() {
     return (
-      <Section>
+      <>
         <H2 content={this.props.data.title} />
         <Container>
           <ReactMapGL
@@ -69,7 +61,7 @@ class Map extends Component {
             </Marker>
           </ReactMapGL>
         </Container>
-     </Section>
+     </>
     );
   }
 }

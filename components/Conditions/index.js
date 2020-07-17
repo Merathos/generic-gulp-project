@@ -11,8 +11,8 @@ const H2 = styled(TitleH2)`
   }
 `;
 
-const Section = styled.section`
-  margin-bottom: 160px;
+const Section = styled.div`
+  margin-bottom: 100px;
   position: relative;
 
   &::after {
@@ -26,8 +26,8 @@ const Section = styled.section`
     background-image: url('backgrounds/vacancy-middle.png');
   }
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 120px;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 50px;
 
     &::after {
       display: none;

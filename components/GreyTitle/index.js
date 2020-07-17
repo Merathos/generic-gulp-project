@@ -5,18 +5,19 @@ import Button from 'elements/Button';
 import Text from 'elements/Text';
 
 const Section = styled.section`
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 200px 0;
+  padding: 200px 50px;
   margin-bottom: 160px;
 
   @media screen and (max-width: 420px) {
-    padding: 110px 0 64px;
+    padding: 110px 30px 64px;
     max-width: 315px;
     margin-bottom: 80px;
   }
 
-  @media screen and (max-width: 240px) {
+  @media screen and (max-width: 340px) {
+    padding: 110px 20px 64px;
     max-width: 280px;
   }
 `;

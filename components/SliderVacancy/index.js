@@ -38,12 +38,10 @@ const Element = styled.div`
   }
 `;
 
-const Section = styled.section`
-  margin-bottom: 130px;
+const Section = styled.div`
   width: 1600px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
     width: 320px;
   }
 `;
