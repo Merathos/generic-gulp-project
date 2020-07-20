@@ -39,3 +39,8 @@ export const Img = styled.img`
     margin-right: 12px;
   }
 `;
+
+export const Title = styled.p`
+  opacity: 0.5;
+  margin-top: 20px;
+`;

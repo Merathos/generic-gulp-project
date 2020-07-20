@@ -1,8 +1,12 @@
-// import { Section, H3, StyledText } from './styles';
+import { Title } from './styles';
+import { Slider } from 'components';
 
-const Gallery = ({ data }) => {
+const Gallery = ({ data, data: { title } }) => {
   return (
-    <div />
+    <>
+      <Title content={title} />
+      <Slider data={data} />
+    </>
   );
 };
 

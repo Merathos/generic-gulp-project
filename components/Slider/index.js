@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
-import { Section, Element, Img, Text } from './styles';
+import { Section, Element, Img, Text, Title } from './styles';
 
 const Slider = props => {
   const ref = useRef(null);
@@ -15,10 +15,11 @@ const Slider = props => {
         {pictures.map((el, i) => (
           <Element key={i}>
             <Img src={el.src} alt={el.alt} />
+            {el.title && <Title>{el.title}</Title>}
           </Element>
         ))}
       </Swiper>
-      <Text content={subtitle} />
+      {subtitle && <Text content={subtitle} />}
     </Section>
   );
 };
