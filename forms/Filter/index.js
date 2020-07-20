@@ -1,7 +1,7 @@
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown } from 'components';
-import { Wrapper, Container, List } from './styles';
 import { useDispatch } from 'react-redux';
+import { Wrapper, Container, List } from './styles';
 
 const Filter = props => {
   const dispatch = useDispatch();
@@ -19,7 +19,10 @@ const Filter = props => {
         <Checkbox name={internship} />
         <Checkbox name={english} />
       </Container>
-      <FilterButton name={discard} handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })} />
+      <FilterButton
+        name={discard}
+        handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
+      />
     </Wrapper>
   );
 };
