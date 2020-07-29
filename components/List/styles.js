@@ -10,8 +10,21 @@ export const Section = styled.section`
   }
 `;
 
-export const Img = styled.img`
+export const Wrapper = styled.div`
   margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 147px;
+    height: 147px;
+    border-radius: 50%;
+    left: -75px;
+    top: -75px;
+    background-color: #f7F8F9;
+    z-index: -1;
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 20px;
@@ -52,8 +65,10 @@ export const H3 = styled(TitleH3)`
 `; 
 
 export const Element = styled.li`
-  width: 384px;
-  margin-right: 60px;
+  max-width: 364px;
+
+  &:not(:last-child)
+    margin-right: 60px;
 
   @media screen and (max-width: 420px) {
     width: 100%;

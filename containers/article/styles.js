@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-  max-width: 1100px;
+  max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
 
@@ -34,9 +34,9 @@ export const Grid = styled.div`
 `;
 
 export const Aside = styled.aside`
-  max-width: 254px;
+  width: 254px;
 
   @media screen and (max-width: 420px) {
-    max-width: 100%;
+    width: 100%;
   }
 `;

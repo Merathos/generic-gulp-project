@@ -8,7 +8,7 @@ import {
   H3,
   BlueTitle,
   Element,
-  Img
+  Wrapper
 } from './styles';
 
 const List = props => {
@@ -28,7 +28,11 @@ const List = props => {
         <NormalList>
           {data.map((el, i) => (
             <Element key={i}>
-              {el.src && <Img src={el.src} alt={el.title} />}
+              {el.src && (
+                <Wrapper>
+                  <img src={el.src} alt={el.title} />
+                </Wrapper>
+              )}
               <H3 content={el.title} />
               <NormalText>{el.text}</NormalText>
             </Element>

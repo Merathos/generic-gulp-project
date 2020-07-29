@@ -4,9 +4,11 @@ import TitleH2 from '/elements/TitleH2';
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
+    margin-bottom: 50px;
   }
 `;
 
