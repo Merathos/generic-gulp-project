@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import Link from 'next/link';
-import ArrowRight from 'public/icons/arrow-right.svg';
-import { Section, H3, StyledText } from './styles';
+import { Section, H3, StyledText, ArrowRight } from './styles';
 
 const Advert = ({ data }) => {
+  const [hover, setHovered] = useState(false);
+
   return (
-    <Section>
+    <Section
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <H3 content={data.title} />
-      <StyledText content={data.text} />
+      <StyledText>{data.text}</StyledText>
       <Link href="/about">
-        <a>
-          <ArrowRight />
-        </a>
+        <ArrowRight hovered={hover} />
       </Link>
     </Section>
   );

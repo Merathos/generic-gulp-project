@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Styled = styled.h3`
   font-size: 34px;
   line-height: 120%;
+  font-weight: 600;
 
   @media screen and (max-width: 420px) {
     font-size: 22px;

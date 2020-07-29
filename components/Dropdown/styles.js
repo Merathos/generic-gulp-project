@@ -61,6 +61,22 @@ export const List = styled.ul`
   }
 `;
 
+export const Wrapper = styled.div`
+  position: relative;
+  padding-bottom: 20px;
+  
+  &::after {
+    content: '';
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(360deg, #FFFFFF 49.12%, rgba(255, 255, 255, 0) 121.93%);
+  }
+`;
+
 export const Label = styled.label`
   position: relative;
   padding-left: 20px;

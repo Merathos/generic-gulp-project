@@ -30,7 +30,9 @@ const Vacancy = ({ data }) => {
             <SectionGroup>
               <Requirements type="number" data={data.extraRequirements} />
             </SectionGroup>
-            <Paragraph size="h2" data={data.qualifications} />
+            <SectionGroup>
+              <Paragraph size="h2" data={data.qualifications} />
+            </SectionGroup>
             <SectionGroup>
               <Conditions data={data.conditions} />
             </SectionGroup>

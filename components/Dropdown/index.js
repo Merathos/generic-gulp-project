@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Title, Item, List, Label } from './styles';
+import { Title, Item, List, Label, Wrapper } from './styles';
 
 const Dropdown = props => {
   const {
@@ -30,20 +30,22 @@ const Dropdown = props => {
         {title}
       </Title>
       {opened && (
-        <List>
-          {list.map((el, i) => (
-            <Item key={i}>
-              <input
-                type={multi ? 'checkbox' : 'radio'}
-                name={multi ? el : title}
-                id={el}
-                onChange={() => handleChange(el)}
-                disabled={filterArray.indexOf(el) === -1 ? false : true}
-              />
-              <Label htmlFor={el}>{el}</Label>
-            </Item>
-          ))}
-        </List>
+        <Wrapper>
+          <List>
+            {list.map((el, i) => (
+              <Item key={i}>
+                <input
+                  type={multi ? 'checkbox' : 'radio'}
+                  name={multi ? el : title}
+                  id={el}
+                  onChange={() => handleChange(el)}
+                  disabled={filterArray.indexOf(el) === -1 ? false : true}
+                />
+                <Label htmlFor={el}>{el}</Label>
+              </Item>
+            ))}
+          </List>
+        </Wrapper>
       )}
     </ul>
   );
