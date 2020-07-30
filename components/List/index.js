@@ -20,7 +20,7 @@ const List = props => {
           {data.map((el, i) => (
             <li key={i}>
               <BlueTitle content={el.title} />
-              <BlueText content={el.text} />
+              <BlueText>{el.text}</BlueText>
             </li>
           ))}
         </BlueList>

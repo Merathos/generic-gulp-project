@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import TitleH3 from 'elements/TitleH3';
-import Text from 'elements/Text';
 
 export const Section = styled.section`
   margin-bottom: 100px;
@@ -56,8 +55,15 @@ export const BlueTitle = styled(TitleH3)`
   margin-bottom: 13px;
 `; 
 
-export const BlueText = styled(Text)`
+export const BlueText = styled.p`
   opacity: 0.5;
+  font-size: 18px;
+  line-height: 131%;
+
+  @media screen and (max-width: 420px) {
+    font-size: 14px;
+    line-height: 131%;
+  }
 `; 
 
 export const H3 = styled(TitleH3)`

@@ -1,39 +1,5 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import TitleH2 from 'elements/TitleH2';
-import TitleH3 from 'elements/TitleH3';
-import Text from 'elements/Text';
-
-const H2 = styled(TitleH2)`
-  margin-bottom: 40px;
-  color: ${props => props.color || '#201F2A'};
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 20px;
-  }
-`;
-
-const H3 = styled(TitleH3)`
-  margin-bottom: 30px;
-  color: ${props => props.color || '#201F2A'};
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 15px;
-  }
-`;
-
-const Description = styled(Text)`
-  opacity: ${props => props.opacity || '1'};
-`;
-
-const Section = styled.section`
-  margin-bottom: ${props => props.margin || "100px"};
-  max-width: 854px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
-  }
-`;
+import { Section, H3, H2, Description } from './styles';
 
 const Paragraph = props => {
   const {
@@ -42,10 +8,11 @@ const Paragraph = props => {
     color,
     opacity,
     bold,
-    margin
+    margin,
+    padding
   } = props;
   return (
-    <Section margin={margin}>
+    <Section margin={margin} padding={size}>
       {title && (
         <>
           {size === 'h3' ? (
@@ -55,7 +22,9 @@ const Paragraph = props => {
           )}
         </>
       )}
-      <Description bold={bold} content={text} opacity={opacity} />
+      <Description bold={bold} opacity={opacity}>
+        {text}
+      </Description>
     </Section>
   );
 };

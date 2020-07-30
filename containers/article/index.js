@@ -14,7 +14,7 @@ import {
   IconsList,
   MarkerList
 } from 'components';
-import { SectionGroup } from 'containers';
+import { SectionGroup, Section } from 'containers';
 import { Container, Wrapper, Grid, Aside } from './styles';
 
 const Article = ({ data }) => {
@@ -43,12 +43,16 @@ const Article = ({ data }) => {
 
       <Grid>
         <Wrapper>
-          <MarkerList type="ellipse" data={data.list} />
+          <Section>
+            <MarkerList type="ellipse" data={data.list} />
+          </Section>
           <Slider type="img" data={data.slider} />
           <Paragraph size="h3" data={data.cmx} margin="100px" />
           <List data={data.noteWithPictures} />
           <Paragraph size="h2" data={data} margin="100px" />
-          <MarkerList type="number" data={data.listNumbers} />
+          <Section>
+            <MarkerList type="number" data={data.listNumbers} />
+          </Section>
           <Media type="video" data={data.video} />
           <IconsList data={data.listIcons} />
           <Quote data={data.quote} />
