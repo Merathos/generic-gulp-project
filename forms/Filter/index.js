@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,6 +8,15 @@ const Filter = props => {
   const dispatch = useDispatch();
   const internship_state = useSelector(state => state.internship);
   const english_state = useSelector(state => state.english);
+  const [opened, setOpened] = useState('');
+
+  const openDropdown = e => {
+    if (opened === e) {
+      setOpened('');
+    } else {
+      setOpened(e);
+    }
+  };
 
   const {
     data: { fields, internship, english, discard }
@@ -15,7 +25,13 @@ const Filter = props => {
     <Wrapper>
       <List>
         {fields.map((el, i) => (
-          <Dropdown key={i} data={el} />
+          <Dropdown
+            key={i}
+            data={el}
+            handleOpen={() => openDropdown(el.title)}
+            opened={opened === el.title}
+            handleChange={e => dispatch({ type: 'CATALOG_FILTER', payload: e })}
+          />
         ))}
       </List>
       <Container>

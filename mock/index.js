@@ -56,7 +56,17 @@ export default {
       {
         title: `Java developer (Big Data team)`,
         text: `Стек: Java, Redis, Kafka, MongoDB, Docker,
-         ELK, TICK. Сервис базируется в AWS и Private Cloud.`
+         ELK, TICK. Сервис базируется в AWS и Private Cloud.`,
+        features: [
+          {
+            icon: `ec-earth-americas`,
+            title: `English Speaking Team`
+          },
+          {
+            icon: `ec-mortar-board`,
+            title: `Стажировка`
+          }
+        ]
       },
       {
         title: `Java developer (Big Data team)`,
@@ -585,7 +595,17 @@ export default {
       different data formats (Avro, Parquet, etc).`,
       projectTitle: `Проект:`,
       project: `Technology stack: Spark, Hadoop (HDFS, YARN), Apache Flume,
-      HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`
+      HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`,
+      features: [
+        {
+          icon: `ec-earth-americas`,
+          title: `English Speaking Team`
+        },
+        {
+          icon: `ec-mortar-board`,
+          title: `Стажировка`
+        }
+      ]
     },
     intro: {
       title: ``,

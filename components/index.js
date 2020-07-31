@@ -32,3 +32,4 @@ export { default as Animation } from './Animation';
 export { default as Gallery } from './Gallery';
 export { default as GreyHeader } from './GreyHeader';
 export { default as GreyFooter } from './GreyFooter';
+export { default as Features } from './Features';

@@ -7,6 +7,7 @@ export const Section = styled.div`
 
   &:hover {
     color: #53B443;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 420px) {
