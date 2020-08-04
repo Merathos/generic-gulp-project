@@ -4,10 +4,6 @@ import { Provider } from 'react-redux';
 import { useStore } from '../lib/store';
 import { useApollo } from '../lib/apollo';
 
-import '../styles/emoji.min.css';
-import '../styles/fonts.css';
-import '../styles/reset.css';
-
 const GlobalStyle = createGlobalStyle`
   body {
     color: #201F2A;

@@ -1,4 +1,4 @@
-import Document from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -24,5 +24,33 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <link rel="font" href="/fonts/TTNorms-Medium.woff" as="font" />
+          <link rel="font" href="/fonts/TTNorms-Medium.eot" as="font" />
+          <link rel="font" href="/fonts/TTNorms-Medium.ttf" as="font" />
+
+          <link rel="font" href="/fonts/TTNorms-Bold.woff" as="font" />
+          <link rel="font" href="/fonts/TTNorms-Bold.eot" as="font" />
+          <link rel="font" href="/fonts/TTNorms-Bold.ttf" as="font" />
+
+          <link rel="font" href="/fonts/TTNorms-ExtraBold.woff" as="font" />
+          <link rel="font" href="/fonts/TTNorms-ExtraBold.eot" as="font" />
+          <link rel="font" href="/fonts/TTNorms-ExtraBold.ttf" as="font" />
+
+          <link rel="stylesheet" href="../styles/reset.css" />
+          <link rel="stylesheet" href="../styles/emoji.min.css" />
+          <link rel="stylesheet" href="../styles/fonts.css" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
