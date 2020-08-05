@@ -26,7 +26,7 @@ const About = ({ data }) => {
       </Container>
 
       <GreyContainer>
-        <GreyFooter data={data.intro} />
+        <GreyFooter data={data.greyFooter} />
       </GreyContainer>
     </>
   );

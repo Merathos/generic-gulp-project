@@ -17,12 +17,12 @@ const SidebarArticle = props => {
             <SectionIcon>
               <StyledIcon name={icon} />
               <H5 content={title} />
-              <Subtitle content={description} />
+              <Subtitle>{description}</Subtitle>
             </SectionIcon>
           ),
           'default': (
             <Section>
-              <Subtitle content={subtitle} />
+              <Subtitle>{subtitle}</Subtitle>
               <Title content={title} />
               <Link href="/about">
                 <a>

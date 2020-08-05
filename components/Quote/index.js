@@ -16,7 +16,7 @@ const Quote = props => {
           <Img src={src} alt={name} />
           <div>
             <TitleH5 content={name} />
-            <Subtitle content={company} />
+            <Subtitle>{company}</Subtitle>
           </div>
         </Container>
       </Blockquote>

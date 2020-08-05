@@ -6,7 +6,7 @@ const Features = ({ data }) => (
     {data.map((el, i) => (
       <Item key={i}>
         <Span className={`ec ${el.icon}`} />
-        <Subtitle content={el.title} />
+        <Subtitle>{el.title}</Subtitle>
       </Item>
     ))}
   </Container>

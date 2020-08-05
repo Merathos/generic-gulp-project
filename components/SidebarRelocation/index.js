@@ -44,7 +44,7 @@ const SidebarRelocation = props => {
   return (
     <Section>
       <H4 content={title} />
-      <StyledSubtitle content={subtitle} />
+      <StyledSubtitle>{subtitle}</StyledSubtitle>
       <Link href="/about">
         <a>
           <ArrowRight />

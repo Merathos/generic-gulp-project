@@ -5,6 +5,7 @@ const StyledFooter = styled.footer`
   padding: 120px 46px 46px;
   display: flex;
   align-items: flex-end;
+  background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
 
   @media (max-width: 420px) {
     padding: 50px 64px;
@@ -56,21 +57,22 @@ const Link = styled.a`
   line-height: 144.2%;
 `;
 
-
 const Footer = ({
   data: {
     labour: { link, text },
     suscribe,
     social,
     copyright
-  }
+  },
+  grey,
+  suscribtion
 }) => (
-  <StyledFooter>
+  <StyledFooter grey={grey}>
     <Container>
       <FooterText>{copyright}</FooterText>
       <Link href={link}>{text}</Link>
     </Container>
-    <Button>{suscribe}</Button>
+    {suscribtion && <Button>{suscribe}</Button>}
     <Social links={social} />
   </StyledFooter>
 );

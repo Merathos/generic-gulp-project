@@ -65,7 +65,7 @@ const Feedback = props => {
         <Img src={src_mob} alt={name} />
       </picture>
       <div>
-        <StyledSubtitle content={company} />
+        <StyledSubtitle>{company}</StyledSubtitle>
         <H3 content={name} />
         <StyledText>{text}</StyledText>
       </div>

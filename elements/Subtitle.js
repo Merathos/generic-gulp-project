@@ -13,8 +13,8 @@ const Styled = styled.p`
   }
 `;
 
-const Subtitle = ({ content, className }) => (
-  <Styled className={className}>{content}</Styled>
+const Subtitle = ({ children, className }) => (
+  <Styled className={className}>{children}</Styled>
 );
 
 export default Subtitle;

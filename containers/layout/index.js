@@ -30,7 +30,7 @@ const StyledSocialSticker = styled(SocialSticker)`
   }
 `;
 
-const Layout = ({ children, backButton }) => {
+const Layout = ({ children, backButton, greyFooter }) => {
   return (
     <Wrapper>
       <Header data={mock.header} />
@@ -41,7 +41,7 @@ const Layout = ({ children, backButton }) => {
       )}
       <StyledSocialSticker data={mock.socialSticker} />
       {children}
-      <Footer data={mock.footer} />
+      <Footer data={mock.footer} grey={greyFooter} />
     </Wrapper>
   );
 };

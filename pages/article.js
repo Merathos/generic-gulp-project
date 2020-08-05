@@ -4,10 +4,10 @@ import mock from 'mock/index';
 
 const articlePage = () => {
   return (
-  <Layout backButton>
-    <Article data={mock.article}  />
-  </Layout>
-);
+    <Layout backButton subscription>
+      <Article data={mock.article} />
+    </Layout>
+  );
 }
 
 export default articlePage;

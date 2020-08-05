@@ -20,7 +20,7 @@ const NoteRight = props => {
       <Container>
         <Img src={src} alt={title} />
         <Wrapper>
-          <StyledSubtitle content={subtitle} />
+          <StyledSubtitle>{subtitle}</StyledSubtitle>
           <H4 content={title} />
         </Wrapper>
       </Container>

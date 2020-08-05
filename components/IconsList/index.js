@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Subtitle from 'elements/Subtitle';
-import Icon from 'elements/Icon';
+import { Icon, Subtitle } from 'elements';
 
 const Section = styled.section`
   margin-bottom: 100px;
@@ -34,7 +33,7 @@ const IconsList = props => {
         {data.map((el, i) => (
           <li key={i}>
             <Emoji name={el.icon} />
-            <Subtitle content={el.text} />
+            <Subtitle>{el.text}</Subtitle>
           </li>
         ))}
       </List>

@@ -6,7 +6,7 @@ export { default as TitleH5 } from './TitleH5';
 export { default as Text } from './Text';
 export { default as Button } from './Button';
 export { default as Subtitle } from './Subtitle';
-export { default as Icon } from './Icon';
 export { default as CustomLink } from './CustomLink';
 export { default as Checkbox } from './Checkbox';
 export { default as FilterButton } from './FilterButton';
+export { default as Icon } from './Icon';
