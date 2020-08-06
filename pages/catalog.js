@@ -8,11 +8,11 @@ import PostList, {
   allPostsQueryVars,
 } from '../fake-components/PostList';
 
-const catalogPage = props => {
+const catalogPage = ({ vacancies }) => {
   // const { vacancies } = useQuery(GET_CONTENT);
   return (
     <Layout backButton>
-      <Catalog data={mock.catalog} vacancies={props.vacancies} />
+      <Catalog data={mock.catalog} vacancies={vacancies} />
     </Layout>
   );
 };
@@ -20,15 +20,14 @@ const catalogPage = props => {
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
-  const vacancies = await apolloClient.query({
+  const { data: { vacancies } } = await apolloClient.query({
     query: GET_CONTENT
   });
 
   return {
     props: {
-      vacancies: apolloClient.cache.extract()
-    },
-    unstable_revalidate: 1
+      vacancies
+    }
   };
 }
 
