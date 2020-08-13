@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
 
   @media (max-width: 420px) {
-    padding: 50px 64px;
+    padding: 50px 0;
     flex-direction: column-reverse;
     text-align: center;
     align-items: center;
@@ -73,7 +73,7 @@ const Footer = ({
       <Link href={link}>{text}</Link>
     </Container>
     {suscribtion && <Button>{suscribe}</Button>}
-    <Social links={social} />
+    <Social grey={grey} links={social} />
   </StyledFooter>
 );
 

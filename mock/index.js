@@ -638,13 +638,33 @@ export default {
   footer: {
     copyright: `DINS © — зарегистрированный товарный знак ООО «Нордиджи». 2020`,
 
-    social: {
-      hh: `https://www.google.com/`,
-      youtube: `https://www.google.com/`,
-      instagram: `https://www.google.com/`,
-      linkedin: `https://www.google.com/`,
-      vk: `https://www.google.com/`
-    },
+    social: [
+      {
+        link: `https://www.google.com/`,
+        title: `hh`,
+        picture: `/icons/hh.svg`
+      },
+      {
+        link: `https://www.google.com/`,
+        title: `youtube`,
+        picture: `/icons/youtube.svg`
+      },
+      {
+        link: `https://www.google.com/`,
+        title: `instagram`,
+        picture: `/icons/instagram.svg`
+      },
+      {
+        link: `https://www.google.com/`,
+        title: `linkedin`,
+        picture: `/icons/in.svg`
+      },
+      {
+        link: `https://www.google.com/`,
+        title: `vk`,
+        picture: `/icons/vk.svg`
+      }
+    ],
     suscribe: `Подписаться на вакансии`,
     labour: {
       link: `https://www.dins.ru/downloads/2019.11.28-SP-SOUT.pdf?v=1592826998`,

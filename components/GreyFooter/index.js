@@ -6,11 +6,11 @@ const GreyFooter = ({ data }) => {
     <S.Section>
       <S.List>
         {data.map((el, i) => (
-          <li key={i}>
+          <S.Element key={i}>
             <S.Title>{el.title}</S.Title>
             <S.Text>{el.text}</S.Text>
             <ArrowRight />
-          </li>
+          </S.Element >
         ))}
       </S.List>
     </S.Section>
