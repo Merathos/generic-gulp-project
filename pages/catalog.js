@@ -1,18 +1,34 @@
-import { Layout, Catalog } from 'containers';
+import { Layout } from 'containers';
 import { useQuery } from '@apollo/react-hooks';
 import mock from 'mock/index';
-import { GET_CONTENT } from 'graphql/query';
-import { initializeApollo } from '../lib/apollo';
-import PostList, {
-  ALL_POSTS_QUERY,
-  allPostsQueryVars,
-} from '../fake-components/PostList';
+import { GET_CONTENT, GET_FILTER_SEARCH } from 'graphql/query';
+import { initializeApollo } from 'lib/apollo';
+import { Cards, SidebarArticle } from 'components';
+import { Search, Filter } from 'forms';
+import {
+  Container,
+  Article,
+  Grid,
+  Title,
+  Aside
+} from './styles/catalog.styles';
 
 const catalogPage = ({ vacancies }) => {
-  // const { vacancies } = useQuery(GET_CONTENT);
   return (
     <Layout backButton>
-      <Catalog data={mock.catalog} vacancies={vacancies} />
+      <Container>
+        <Grid>
+          <Aside>
+            <Filter data={mock.catalog.filter} />
+            <SidebarArticle type="button" data={mock.catalog.article} />
+          </Aside>
+          <Article>
+            <Title content={mock.catalog.mainTitle} />
+            <Search data={mock.catalog.search} />
+          </Article>
+          <Cards data={vacancies} />
+        </Grid>
+      </Container>
     </Layout>
   );
 };
@@ -20,7 +36,9 @@ const catalogPage = ({ vacancies }) => {
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
-  const { data: { vacancies } } = await apolloClient.query({
+  const {
+    data: { vacancies }
+  } = await apolloClient.query({
     query: GET_CONTENT
   });
 

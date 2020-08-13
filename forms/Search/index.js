@@ -1,8 +1,8 @@
 import SearchIcon from 'public/icons/search.svg';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { Field, Form, Submit, List, Element, Section } from './styles';
+import { useDispatch, useSelector } from 'react-redux';
 import { FilterButton } from 'elements';
+import { Field, Form, Submit, List, Element, Section } from './styles';
 
 const Search = ({ data }) => {
   const [value, setValue] = useState('');
@@ -34,11 +34,17 @@ const Search = ({ data }) => {
         </Submit>
       </Form>
       <List>
-        {filterArray.length !== 0 && filterArray.map((el, i) => (
+        {filterArray.length !== 0 && (
+          filterArray.map((el, i) => (
           <Element key={i}>
-            <FilterButton name={el} handleChange={() => dispatch({ type: 'CLEAR_FILTER', payload: el })} />
+              <FilterButton
+                name={el}
+                handleChange={() =>
+                  dispatch({ type: 'CLEAR_FILTER', payload: el })
+                }
+              />
           </Element>
-          ))}
+          )))}
       </List>
     </Section>
   );
