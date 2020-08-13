@@ -98,7 +98,7 @@ const SliderVacancy = ({ data }) => {
           <Element key={i}>
             <Number>{`0${i + 1}`}</Number>
             <Title>{el.title}</Title>
-            <Text content={el.text} />
+            <Text>{el.text}</Text>
             {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
           </Element>
         ))}

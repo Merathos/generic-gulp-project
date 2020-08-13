@@ -16,7 +16,7 @@ const Media = props => {
           <track kind="captions" src={src} />
         </video>
       )}
-      <Text content={subtitle} />
+      <Text>{subtitle}</Text>
     </Section>
   );
 };

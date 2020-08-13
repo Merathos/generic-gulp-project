@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.section`
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
@@ -15,9 +15,10 @@ export const Container = styled.main`
     padding: 0 20px;
   }
 `;
+
 export const GreyContainer = styled.div`
   background-color: #F7F8F9;
-  background-image: url('backgrounds/vacancy-grey-title.svg');
+  /* background-image: url('backgrounds/about-grey-title.svg'); */
   background-repeat: no-repeat;
   background-position: 118% 298%;
 

@@ -11,8 +11,8 @@ const Styled = styled.p`
   }
 `;
 
-const Text = ({ content, className, bold }) => (
-  <Styled className={className} bold={bold}>{content}</Styled>
+const Text = ({ children, className, bold }) => (
+  <Styled className={className} bold={bold}>{children}</Styled>
 );
 
 export default Text;

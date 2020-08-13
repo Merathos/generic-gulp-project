@@ -28,14 +28,14 @@ const GreyTitle = ({ data }) => {
       <Wrapper>
         <Features data={features} />
       </Wrapper>
-      <H1 content={title} />
+      <H1>{title}</H1>
       <TextBlock>
         <Bold>{stackTitle}</Bold>
-        <StyledText content={technologies} />
+        <StyledText>{technologies}</StyledText>
       </TextBlock>
       <TextBlock>
         <Bold>{projectTitle}</Bold>
-        <StyledText content={project} />
+        <StyledText>{project}</StyledText>
       </TextBlock>
       <Container>
         <StyledButton type="accent" content={button1} />

@@ -23,7 +23,7 @@ const catalogPage = ({ vacancies }) => {
             <SidebarArticle type="button" data={mock.catalog.article} />
           </Aside>
           <Article>
-            <Title content={mock.catalog.mainTitle} />
+            <Title>{mock.catalog.mainTitle}</Title>
             <Search data={mock.catalog.search} />
           </Article>
           <Cards data={vacancies} />

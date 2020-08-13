@@ -19,7 +19,7 @@ const Slider = props => {
           </Element>
         ))}
       </Swiper>
-      {subtitle && <Text content={subtitle} />}
+      {subtitle && <Text>{subtitle}</Text>}
     </Section>
   );
 };

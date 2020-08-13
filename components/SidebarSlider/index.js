@@ -30,7 +30,7 @@ const SidebarSlider = props => {
             <Img src={el.image} alt={el.alt} />
             <div>
               <H4 content={el.title} />
-              <Text content={el.description} />
+              <Text>{el.description}</Text>
             </div>
           </Element>
         ))}

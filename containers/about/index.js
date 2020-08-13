@@ -11,9 +11,11 @@ import { Container, GreyContainer } from './styles';
 
 const About = ({ data }) => {
   return (
-    <>
+    <main>
       <GreyContainer>
-        <GreyHeader data={data.intro} />
+        <Container>
+          <GreyHeader data={data.intro} />
+        </Container>
       </GreyContainer>
 
       <Container>
@@ -28,7 +30,7 @@ const About = ({ data }) => {
       <GreyContainer>
         <GreyFooter data={data.greyFooter} />
       </GreyContainer>
-    </>
+    </main>
   );
 };
 

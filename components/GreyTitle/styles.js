@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import { TitleH1, Button, Text } from 'elements';
 
 export const Section = styled.section`
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 200px 50px;
   margin-bottom: 160px;
 
   @media screen and (max-width: 420px) {
     padding: 110px 30px 64px;
-    max-width: 315px;
+    max-width: 375px;
     margin-bottom: 80px;
   }
 
   @media screen and (max-width: 340px) {
     padding: 110px 20px 64px;
-    max-width: 280px;
+    max-width: 320px;
   }
 `;
 
