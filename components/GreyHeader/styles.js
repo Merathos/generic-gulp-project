@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { TitleH1, TitleH3, Text, SmallText } from 'elements';
+import { TitleH3, Text } from 'elements';
+import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const Grid = styled.div`
   display: flex;
@@ -38,14 +39,6 @@ export const Paragraph = styled(Text)`
   }
 `;
 
-export const Title = styled(TitleH1)`
-  /* display: flex;
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  } */
-`;
-
 export const Features = styled.ul`
   display: flex;
   justify-content: space-between;
@@ -55,20 +48,12 @@ export const Features = styled.ul`
   }
 `;
 
-// export const List = styled.div`
-//   display: flex;
-
-//   @media screen and (max-width: 1024px) {
-//     flex-direction: column;
-//   }
-// `;
-
-export const ListText = styled(SmallText)`
-  /* display: flex;
+export const Logo = styled(MagicQuadrant)`
+  margin-bottom: 20px;
 
   @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  } */
+    margin-bottom: 8px;
+  }
 `;
 
 export const ListTitle = styled(TitleH3)`

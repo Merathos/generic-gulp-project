@@ -2,7 +2,9 @@
 
 const Animation = ({ data }) => {
   return (
-    <div />
+    <div>
+      animation
+    </div>
   );
 };
 

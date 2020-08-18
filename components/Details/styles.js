@@ -11,6 +11,7 @@ export const Section = styled.section`
     @media screen and (max-width: 420px) {
       grid-template-columns: 1fr;
       grid-gap: 80px;
+      padding-top: 80px;
 }
 `;
 
