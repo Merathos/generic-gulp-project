@@ -6,3 +6,4 @@ export { default as Vacancy } from './vacancy';
 export { default as Section } from './section';
 export { default as SectionGroup } from './section-group';
 export { default as About } from './about';
+export { default as Contacts } from './contacts';

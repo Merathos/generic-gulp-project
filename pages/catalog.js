@@ -1,7 +1,6 @@
 import { Layout } from 'containers';
-import { useQuery } from '@apollo/react-hooks';
 import mock from 'mock/index';
-import { GET_CONTENT, GET_FILTER_SEARCH } from 'graphql/query';
+import { GET_CONTENT } from 'graphql/query';
 import { initializeApollo } from 'lib/apollo';
 import { Cards, SidebarArticle } from 'components';
 import { Search, Filter } from 'forms';
@@ -11,7 +10,7 @@ import {
   Grid,
   Title,
   Aside
-} from '../lib/styles/catalog.styles';
+} from '../public/styles/catalog.styles';
 
 const catalogPage = ({ vacancies }) => {
   return (
