@@ -38,8 +38,8 @@ const GreyTitle = ({ data }) => {
         <StyledText>{project}</StyledText>
       </TextBlock>
       <Container>
-        <StyledButton type="accent" content={button1} />
-        <Button content={button2} />
+        <StyledButton type="accent">{button1}</StyledButton>
+        <Button>{button2}</Button>
       </Container>
     </Section>
   );

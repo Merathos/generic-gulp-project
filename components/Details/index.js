@@ -10,7 +10,7 @@ const Details = ({ data: { block1, block2 } }) => {
         <S.Text>{block1.text}</S.Text>
         <S.List>
           {block1.list.map((el, i) => (
-            <S.Element>
+            <S.Element key={i}>
               <S.StyledIcon name={el.icon} />
               <span>{el.title}</span>
             </S.Element>
@@ -24,7 +24,7 @@ const Details = ({ data: { block1, block2 } }) => {
         <S.Text>{block2.text}</S.Text>
         <S.Links>
           {block2.links.map((el, i) => (
-            <S.LinkElement>
+            <S.LinkElement key={i}>
               <S.Link href={el.link}>
                 {el.title}
               </S.Link>

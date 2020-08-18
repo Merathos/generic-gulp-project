@@ -39,7 +39,7 @@ const Advert = props => {
       onMouseLeave={() => setHovered(false)}
     >
       {features && <Features data={features} />}
-      <H3 content={name} />
+      <H3>{name}</H3>
       <StyledText>{descr}</StyledText>
       <Link href="/about">
         <ArrowRight hovered={hover} />

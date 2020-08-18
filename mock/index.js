@@ -631,12 +631,12 @@ export default {
       title: `Вакансии в ЭТОЙ категории`,
       catalog: [
         {
-          title: `Java developer (Big Data team)`,
-          text: `Стек: Java, Redis, Kafka, MongoDB, Docker, ELK, TICK. Сервис базируется в AWS и Private Cloud.`
+          name: `Java developer (Big Data team)`,
+          descr: `Стек: Java, Redis, Kafka, MongoDB, Docker, ELK, TICK. Сервис базируется в AWS и Private Cloud.`
         },
         {
-          title: `Java developer (Big Data team)`,
-          text: `We are looking for a talented and energetic team leader to head our Integration Team.`
+          name: `Java developer (Big Data team)`,
+          descr: `We are looking for a talented and energetic team leader to head our Integration Team.`
         }
       ]
     },

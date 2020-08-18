@@ -34,7 +34,7 @@ const SidebarArticle = props => {
           'button': (
             <SectionButton>
               <Text>{text}</Text>
-              <Button type="accent" content={button} />
+              <Button type="accent">{button}</Button>
             </SectionButton>
           )
         }[type]

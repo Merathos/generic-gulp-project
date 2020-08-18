@@ -69,8 +69,8 @@ const Application = ({ data }) => {
       <Wrapper>
         <H2 content={title} />
         <Container>
-          <StyledButton type="accent" content={button1} />
-          <Button content={button2} />
+          <StyledButton type="accent">{button1}</StyledButton>
+          <Button>{button2}</Button>
         </Container>
       </Wrapper>
     </Section>
