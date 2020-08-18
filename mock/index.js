@@ -346,7 +346,56 @@ export default {
       sidebar: `RingCentral – Лидер Gartner UCaaS Magic Quadrant в течение последних 5 лет (июль, 2019)`
     },
     details: {
-
+      block1: {
+        title: `Что мы делаем`,
+        text: `Очень много всего. Решение, в разработке которого участвуем, содержит большой набор
+         функций. Сюда входят:`,
+        list: [
+          {
+            icon: `ec-earth-americas`,
+            title: `облачная телефония`
+          },
+          {
+            icon: `ec-earth-americas`,
+            title: `видеоконференции`
+          },
+          {
+            icon: `ec-earth-americas`,
+            title: `факс`
+          },
+          {
+            icon: `ec-earth-americas`,
+            title: `контактный центр`
+          },
+          {
+            icon: `ec-earth-americas`,
+            title: `корпоративный чат`
+          },
+          {
+            icon: `ec-earth-americas`,
+            title: `и много е другое`
+          }
+        ],
+        subtitle: `Еще больше о проектах и командах, которые развивают эту функциональность. `,
+        button: `Узнать подробнее`
+      },
+      block2: {
+        title: `Обмен опытом`,
+        text: `DINS — сообщество увлеченных инженеров.
+        Для нас важна возможность обмениваться накопленным опытом и знаниями с другими специалистами. 
+        Поэтому мы пишем в блог на Habr, организуем внутренние Tech Party и ежеквартальные митапы DINS IT EVENING, поддерживаем IT-сообщества Петербурга и участвуем в масштабных IT-конференциях. `,
+        links: [
+          {
+          title: `IT EVENING`,
+          link: `/events`
+        },
+        {
+          title: `Habr`,
+          link: `/habr`
+        }
+      ],
+        picture: `/images/about-details.png`,
+      }
     },
     animation: {
 

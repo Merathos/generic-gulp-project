@@ -31,18 +31,18 @@ const Default = styled.button`
   }
 `;
 
-const Button = ({ type = "default", content, className }) => (
+const Button = ({ type = "default", children, className }) => (
   <>
   {
     {
       'accent': (
-        <Accent type="button" className={className}>
-          {content}
+        <Accent htmlType="button" className={className}>
+          {children}
         </Accent>
       ),
       'default': (
-        <Default type="button" className={className}>
-          {content}
+        <Default htmlType="button" className={className}>
+          {children}
         </Default>
       )
     }[type]

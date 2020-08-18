@@ -11,7 +11,7 @@ import {
   Grid,
   Title,
   Aside
-} from './styles/catalog.styles';
+} from '../lib/styles/catalog.styles';
 
 const catalogPage = ({ vacancies }) => {
   return (
