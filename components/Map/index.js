@@ -1,25 +1,8 @@
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import TitleH2 from '/elements/TitleH2';
+import * as S from './styles';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { Component } from 'react';
 import MarkerIcon from 'public/icons/marker.svg';
-
-const H2 = styled(TitleH2)`
-  margin-bottom: 75px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 40px;
-  }
-`;
-
-const Container = styled.div`
-  height: 460px;
-
-  @media screen and (max-width: 1024px) {
-    height: 200px;
-  }
-`;
+import { Metro } from 'components';
 
 class Map extends Component {
   state = {
@@ -33,10 +16,17 @@ class Map extends Component {
   };
 
   render() {
+    const { data } = this.props;
     return (
       <>
-        <H2 content={this.props.data.title} />
-        <Container>
+        <S.H2 content={this.props.data.title} />
+        {data.location && (
+          <div>
+            <span>{data.location}</span>
+            <span>{data.adress}</span>
+          </div>
+        )}
+        <S.Container>
           <ReactMapGL
             mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxApiAccessToken="pk.eyJ1IjoibXlha2ltZW5rbyIsImEiOiJjazV2NGs5bDQwOHBhM25sYjdoejN5YmlhIn0.jrA7S2ccVQ6ZuC3tU9wCbQ"
@@ -60,7 +50,17 @@ class Map extends Component {
               <MarkerIcon />
             </Marker>
           </ReactMapGL>
-        </Container>
+        </S.Container>
+        {data.stations && (
+          <ul>
+            {data.stations.map((el, i) => (
+              <li key={i}>
+               <Metro data={el} />
+              </li>
+              ))
+            }
+          </ul>
+        )}
      </>
     );
   }

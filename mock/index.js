@@ -677,13 +677,13 @@ export default {
       те, кто хочет созидать и создавать полезный продукт для миллионов людей во всем мире.`,
       list: [
         {
-          icon: ``,
-          data: `+7 (812) 740-77-61`,
+          icon: `ec-earth-americas`,
+          title: `+7 (812) 740-77-61`,
           subtitle: `Телефон для связи`
         },
         {
-          icon: ``,
-          data: `jobs@dins.ru`,
+          icon: `ec-earth-americas`,
+          title: `jobs@dins.ru`,
           subtitle: `E-mail для резюме`
         }
       ]

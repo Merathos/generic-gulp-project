@@ -33,3 +33,4 @@ export { default as Gallery } from './Gallery';
 export { default as GreyHeader } from './GreyHeader';
 export { default as GreyFooter } from './GreyFooter';
 export { default as Features } from './Features';
+export { default as Metro } from './Metro';

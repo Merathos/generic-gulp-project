@@ -1,24 +1,30 @@
 import {
-  Title,
-  Paragraph,
-  Media,
-  List,
-  SidebarArticle,
-  SectionNote,
-  Quote,
-  Feedback,
-  Comments,
-  Articles,
-  Slider,
-  SidebarSlider,
-  IconsList,
-  MarkerList
+  Details,
+  Values,
+  Animation,
+  Gallery,
+  GreyHeader,
+  GreyFooter,
+  Map
 } from 'components';
-import { SectionGroup, Section } from 'containers';
-import { Container, Wrapper, Grid, Aside } from './styles';
+import { SectionGroup } from 'containers';
+import { Container, GreyContainer } from './styles';
 
 const Contacts = ({ data }) => {
-  return (<div />
+  return (
+    <main>
+      <GreyContainer>
+        <Container>
+          <GreyHeader data={data.mainTitle} />
+        </Container>
+      </GreyContainer>
+
+      <Container>
+        {data.offices.map((el, i) => (
+          <SectionGroup><Map key={i} data={el} /></SectionGroup>
+        ))}
+      </Container>
+    </main>
   );
 };
 

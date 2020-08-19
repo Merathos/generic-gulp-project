@@ -40,8 +40,9 @@ export const Paragraph = styled(Text)`
 `;
 
 export const Features = styled.ul`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 100px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -66,7 +67,7 @@ export const ListTitle = styled(TitleH3)`
 `;
 
 export const Element = styled.li`
-  max-width: 270px;
+  max-width: 300px;
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 30px;
