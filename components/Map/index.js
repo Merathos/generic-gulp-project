@@ -21,10 +21,10 @@ class Map extends Component {
       <>
         <S.H2 content={this.props.data.title} />
         {data.location && (
-          <div>
+          <S.Wrapper>
             <span>{data.location}</span>
             <span>{data.adress}</span>
-          </div>
+          </S.Wrapper>
         )}
         <S.Container>
           <ReactMapGL
@@ -52,14 +52,14 @@ class Map extends Component {
           </ReactMapGL>
         </S.Container>
         {data.stations && (
-          <ul>
+          <S.List>
             {data.stations.map((el, i) => (
               <li key={i}>
                <Metro data={el} />
               </li>
               ))
             }
-          </ul>
+          </S.List>
         )}
      </>
     );
