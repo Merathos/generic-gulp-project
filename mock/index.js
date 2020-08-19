@@ -696,7 +696,7 @@ export default {
         stations: [
           {
             title: `Нарвская`,
-            image: `/images/narv.png`,
+            image: `/images/red-line.png`,
             subtitle: `Можно добраться пешком за 15 минут или на автобусах: 2, 6, К-1, К-6, К-195 и К-306.`
           },
           {
@@ -712,7 +712,7 @@ export default {
           },
           {
             title: `Сенная площадь, Спасская, Садовая`,
-            image: `/images/narv.png`,
+            image: `/images/red-line.png`,
             subtitle: `Автобусы: 49, К-195 — 
             от Садовой д. 39 или 1 — 
             от наб. Канала Грибоедова д. 56.`
@@ -726,7 +726,7 @@ export default {
         stations: [
           {
             title: `Елизаровская`,
-            image: `/images/narv.png`,
+            image: `/images/elnik.png`,
             subtitle: `Можно добраться пешком за 10 минут.`
           }
         ]
@@ -781,6 +781,7 @@ export default {
     labour: {
       link: `https://www.dins.ru/downloads/2019.11.28-SP-SOUT.pdf?v=1592826998`,
       text: `Оценка условий труда`
-    }
+    },
+    nimaxText: 'Сделали в'
   }
 };

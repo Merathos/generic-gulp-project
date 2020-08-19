@@ -22,7 +22,7 @@ class Map extends Component {
         <S.H2 content={this.props.data.title} />
         {data.location && (
           <S.Wrapper>
-            <span>{data.location}</span>
+            <S.Place>{data.location}</S.Place>
             <span>{data.adress}</span>
           </S.Wrapper>
         )}

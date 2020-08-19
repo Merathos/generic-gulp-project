@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
-  margin: 0 0 0 auto;
 
   @media (max-width: 420px) {
     margin: 0;

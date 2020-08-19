@@ -26,6 +26,13 @@ export const List = styled.ul`
   grid-gap: 60px;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.p`
   margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 158%;
+`;
+
+export const Place = styled.span`
+  margin-right: 20px;
+  opacity: 0.5;
 `;
