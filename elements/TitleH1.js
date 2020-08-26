@@ -10,6 +10,7 @@ const Styled = styled.h2`
   @media screen and (max-width: 420px) {
     font-size: 32px;
     line-height: 134%;
+    margin-bottom: 20px;
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  padding: 120px 46px 46px;
+  padding: 220px 46px 46px;
   display: flex;
   align-items: flex-end;
   background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};

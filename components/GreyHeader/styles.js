@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH3, Text } from 'elements';
+import { TitleH3, Text, Icon } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const Grid = styled.div`
@@ -15,7 +15,7 @@ export const Grid = styled.div`
 `;
 
 export const Wrapper = styled.article`
-  margin-right: 92px;
+  margin-right: 160px;
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
@@ -28,6 +28,7 @@ export const Aside = styled.aside`
 
   @media screen and (max-width: 420px) {
     width: 100%;
+    margin-top: 80px;
   }
 `;
 
@@ -44,8 +45,10 @@ export const Features = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
+  @media screen and (max-width: 420px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
   }
 `;
 
@@ -67,10 +70,17 @@ export const ListTitle = styled(TitleH3)`
 `;
 
 export const Element = styled.li`
-  max-width: 300px;
+  min-width: 300px;
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: 30px;
     max-width: auto;
+    display: flex;
+  }
+`;
+export const StyledIcon = styled(Icon)`
+  margin-bottom: 30px;
+  @media screen and (max-width: 1024px) {
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 `;

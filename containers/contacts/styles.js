@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
+export const Container = styled.section`
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
@@ -25,5 +25,6 @@ export const GreyContainer = styled.div`
   @media screen and (max-width: 420px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
+    margin-bottom: 50px;
   }
 `;

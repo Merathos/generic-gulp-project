@@ -3,11 +3,17 @@ import { TitleH2 } from 'elements';
 
 export const Wrapper = styled.section`
   padding-top: 60px;
-  margin-bottom: 100px;
+
+  &:not(:last-child) {
+    margin-bottom: 100px;
+  }
 
   @media screen and (max-width: 420px) {
     padding-top: 30px;
-    margin-bottom: 50px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
   }
 `;
 

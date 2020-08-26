@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Styled = styled.div`
   width: 57px;
   height: 57px;
-  background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
+  background: ${props => (props.white ? '#fff' : '#F7F8F9')};
   border-radius: 50%;
   display: flex;
   justify-content: center;

@@ -6,7 +6,7 @@ const SectionGroup = ({ children }) => {
       {/* <Title content={title} /> */}
       {children}
     </Wrapper>
-  );s
+  );
 };
 
 export default SectionGroup;

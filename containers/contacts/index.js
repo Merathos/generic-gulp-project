@@ -13,11 +13,9 @@ const Contacts = ({ data }) => {
 
       <Container>
         {data.offices.map((el, i) => (
-          <li key={i}>
-            <SectionGroup>
-              <Map key={i} data={el} />
-            </SectionGroup>
-          </li>
+          <SectionGroup key={i}>
+            <Map key={i} data={el} />
+          </SectionGroup>
         ))}
       </Container>
     </main>
