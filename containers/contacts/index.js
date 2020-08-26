@@ -1,12 +1,4 @@
-import {
-  Details,
-  Values,
-  Animation,
-  Gallery,
-  GreyHeader,
-  GreyFooter,
-  Map
-} from 'components';
+import { GreyHeader, Map } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer } from './styles';
 
@@ -22,7 +14,9 @@ const Contacts = ({ data }) => {
       <Container>
         {data.offices.map((el, i) => (
           <li key={i}>
-            <SectionGroup><Map key={i} data={el} /></SectionGroup>
+            <SectionGroup>
+              <Map key={i} data={el} />
+            </SectionGroup>
           </li>
         ))}
       </Container>

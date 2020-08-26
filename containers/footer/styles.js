@@ -18,7 +18,6 @@ export const StyledFooter = styled.footer`
 
 export const Container = styled.div`
   width: 265px;
-  margin-right: 150px;
 
   @media (max-width: 420px) {
     margin-right: 0;
@@ -62,4 +61,10 @@ export const Span = styled.span`
   line-height: 18px;
   opacity: 0.6;
   margin-right: 6px;
+`;
+
+export const Block = styled.div`
+  @media (max-width: 420px) {
+    display: none;
+  }
 `;

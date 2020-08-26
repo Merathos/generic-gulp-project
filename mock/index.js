@@ -696,23 +696,23 @@ export default {
         stations: [
           {
             title: `Нарвская`,
-            image: `/images/red-line.png`,
+            image: `/images/red-line.svg`,
             subtitle: `Можно добраться пешком за 15 минут или на автобусах: 2, 6, К-1, К-6, К-195 и К-306.`
           },
           {
             title: `Технологический институт`,
-            image: `/images/narv.png`,
+            image: `/images/red-blue-line.svg`,
             subtitle: `Автобусы: К-90, К-115 и К-177 — от 1-й Красноармейской.`
           },
           {
             title: `Балтийская`,
-            image: `/images/narv.png`,
+            image: `/images/red-line.svg`,
             subtitle: `Можно добраться пешком 
             за 15 минут.`
           },
           {
             title: `Сенная площадь, Спасская, Садовая`,
-            image: `/images/red-line.png`,
+            image: `/images/three-lines.svg`,
             subtitle: `Автобусы: 49, К-195 — 
             от Садовой д. 39 или 1 — 
             от наб. Канала Грибоедова д. 56.`
@@ -726,7 +726,7 @@ export default {
         stations: [
           {
             title: `Елизаровская`,
-            image: `/images/elnik.png`,
+            image: `/images/green-line.svg`,
             subtitle: `Можно добраться пешком за 10 минут.`
           }
         ]

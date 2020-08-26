@@ -22,10 +22,10 @@ const Footer = ({
     {suscribtion && <Button>{suscribe}</Button>}
     <Social grey={grey} links={social} />
     {nimax && (
-      <div>
+      <S.Block>
         <S.Span>{nimaxText}</S.Span>
         <LogoNimax />
-      </div>
+      </S.Block>
       )}
   </S.StyledFooter>
 );

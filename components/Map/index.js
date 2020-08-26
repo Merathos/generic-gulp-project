@@ -55,10 +55,9 @@ class Map extends Component {
           <S.List>
             {data.stations.map((el, i) => (
               <li key={i}>
-               <Metro data={el} />
+                <Metro data={el} />
               </li>
-              ))
-            }
+            ))}
           </S.List>
         )}
      </>
