@@ -1,7 +1,7 @@
 import { Subtitle, SmallText, TitleH1 } from 'elements';
 import * as S from './styles';
 
-const GreyHeader = ({ data: { title, text, list, sidebar } }) => {
+const GreyHeader = ({ data: { title, text, list, sidebar: { subtitle, picture } } }) => {
   return (
     <S.Grid>
       <S.Wrapper>
@@ -20,11 +20,14 @@ const GreyHeader = ({ data: { title, text, list, sidebar } }) => {
           ))}
         </S.Features>
       </S.Wrapper>
-      {sidebar && (
+      {subtitle && (
         <S.Aside>
           <S.Logo />
-          <Subtitle>{sidebar}</Subtitle>
+          <Subtitle>{subtitle}</Subtitle>
         </S.Aside>
+      )}
+      {picture && (
+        <img src={picture} alt="" />
       )}
     </S.Grid>
   );

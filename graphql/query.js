@@ -12,6 +12,14 @@ export const GET_CONTENT = gql`
   }
 `;
 
+export const GET_RELOCATION_BLOGS = gql`
+  query getRelocationBlogs {
+    blogs(is_relocation: true) {
+      id
+    }
+  }
+`;
+
 export const GET_FILTER_SEARCH = gql`
   query getSearch($value: String) {
     vacancies(filter: { search: $value }) {
