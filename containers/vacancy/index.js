@@ -48,7 +48,7 @@ const Vacancy = ({ data }) => {
         </SectionGroup>
       </Container>
 
-      <Application data={data.application} />
+      <Application data={data.application} decor />
 
       <Container>
         <SectionGroup>

@@ -1,8 +1,7 @@
 import {
-  Details,
-  Values,
-  Animation,
-  Gallery,
+  List,
+  Application,
+  Blogs,
   GreyHeader,
   GreyFooter,
   Map
@@ -20,7 +19,17 @@ const Relocation = ({ data, blogs }) => {
       </GreyContainer>
 
       <Container>
-        <SectionGroup />
+        <SectionGroup>
+          {/* <List data={data.advantages} /> */}
+        </SectionGroup>
+      </Container>
+
+        <Application data={data.promo}  />
+
+      <Container>
+        <SectionGroup>
+          <Blogs data={blogs} />
+        </SectionGroup>
         <Map data={data.map} />
       </Container>
 
