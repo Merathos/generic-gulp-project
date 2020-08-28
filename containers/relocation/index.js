@@ -8,6 +8,7 @@ import {
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer } from './styles';
+import mock from '../../mock';
 
 const Relocation = ({ data, blogs }) => {
   return (
@@ -24,13 +25,15 @@ const Relocation = ({ data, blogs }) => {
         </SectionGroup>
       </Container>
 
-        <Application data={data.promo}  />
+      <Application data={data.promo} />
 
       <Container>
         <SectionGroup>
-          <Blogs data={blogs} />
+          <Blogs mock={data.blogs} back={blogs} />
         </SectionGroup>
-        <Map data={data.map} />
+        <SectionGroup>
+          <Map data={data.map} />
+        </SectionGroup>
       </Container>
 
       <GreyContainer>

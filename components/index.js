@@ -35,3 +35,4 @@ export { default as GreyFooter } from './GreyFooter';
 export { default as Features } from './Features';
 export { default as Metro } from './Metro';
 export { default as Blogs } from './Blogs';
+export { default as BlogsCard } from './BlogsCard';

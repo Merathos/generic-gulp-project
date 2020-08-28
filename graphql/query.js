@@ -15,7 +15,14 @@ export const GET_CONTENT = gql`
 export const GET_RELOCATION_BLOGS = gql`
   query getRelocationBlogs {
     blogs(is_relocation: true) {
-      id
+      preview {
+        path {
+          original
+        }
+      }
+      slug
+      title
+      created_at
     }
   }
 `;

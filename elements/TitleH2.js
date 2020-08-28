@@ -12,8 +12,8 @@ const Styled = styled.h2`
   }
 `;
 
-const TitleH2 = ({ content, className }) => (
-  <Styled className={className}>{content}</Styled>
+const TitleH2 = ({ children, className }) => (
+  <Styled className={className}>{children}</Styled>
 );
 
 export default TitleH2;

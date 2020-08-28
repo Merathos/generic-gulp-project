@@ -4,11 +4,9 @@ import { Subtitle } from 'elements';
 export const Section = styled.section`
   background-color: #F7F8F9;
   padding-top: 160px;
-  padding-bottom: 120px;
 
   @media screen and (max-width: 420px) {
     padding-top: 80px;
-    padding-bottom: 0;
   }
 `;
 

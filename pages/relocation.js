@@ -5,7 +5,7 @@ import { initializeApollo } from 'lib/apollo';
 
 const relocationPage = ({ blogs }) => {
   return (
-    <Layout backButton>
+    <Layout backButton greyFooter>
       <Relocation data={mock.relocation} blogs={blogs} />
     </Layout>
   );

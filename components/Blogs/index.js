@@ -1,12 +1,22 @@
-import NoteLeft from '/components/NoteLeft';
-import NoteRight from '/components/NoteRight';
-import { Advert } from 'components';
-import { Container, Block, H2, AdvertsWrapper } from './styles';
+import { BlogsCard, SectionNote } from 'components';
+import * as S from './styles';
 
-
-const Blogs = props => {
+const Blogs = ({ mock, back }) => {
+  const { title, text, note } = mock;
   return (
-    <div />
+    <>
+      <S.Title>{title}</S.Title>
+      <S.StyledText>{text}</S.StyledText>
+      <ul>
+        {back &&
+          back.map((el, i) => (
+            <li key={i}>
+              <BlogsCard data={el} />
+            </li>
+        ))}
+      </ul>
+      <SectionNote data={note} />
+    </>
   );
 };
 
