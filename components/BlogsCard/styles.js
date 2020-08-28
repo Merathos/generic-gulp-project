@@ -6,11 +6,6 @@ export const Wrapper = styled.a`
   padding: 40px 40px 0;
   max-width: 350px;
   box-sizing: border-box;
-
-  /* @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    margin-bottom: 50px;
-  } */
 `;
 
 export const Title = styled(TitleH4)`

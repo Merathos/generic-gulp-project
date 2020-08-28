@@ -1,5 +1,5 @@
 import {
-  List,
+  Advantages,
   Application,
   Blogs,
   GreyHeader,
@@ -8,7 +8,6 @@ import {
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer } from './styles';
-import mock from '../../mock';
 
 const Relocation = ({ data, blogs }) => {
   return (
@@ -21,7 +20,7 @@ const Relocation = ({ data, blogs }) => {
 
       <Container>
         <SectionGroup>
-          {/* <List data={data.advantages} /> */}
+          <Advantages data={data.advantages} />
         </SectionGroup>
       </Container>
 
