@@ -49,6 +49,7 @@ export const Features = styled.ul`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-gap: 30px;
+    margin-bottom: 30px;
   }
 `;
 

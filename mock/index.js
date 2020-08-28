@@ -503,10 +503,7 @@ export default {
           text: `Поможем в поиске жилья`
         }
       ],
-      sidebar: {
-        picture: `/images/relocate-header.jpg`,
-        decorations: ``
-      }
+      picture: `/images/relocate-header.jpg`
     },
     advantages: {
       title: `В петербурге здорово`,
