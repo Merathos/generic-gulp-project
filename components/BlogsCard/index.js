@@ -1,19 +1,26 @@
+import moment from 'moment';
+import Link from 'next/link';
 import * as S from './styles';
 
-const Blogs = ({ data }) => {
+const Blogs = ({ data, background }) => {
   const {
     title,
     slug,
-    preview: { path: { original } },
+    preview: {
+      path: { original }
+    },
     created_at
   } = data;
-  console.log(original);
   return (
-    <S.Wrapper>
-      <S.StyledSubtitle>{created_at}</S.StyledSubtitle>
-      <S.Title>{title}</S.Title>
-      <img src={original} alt={title} />
-    </S.Wrapper>
+    <Link href={`blogs/${slug}`}>
+      <S.Wrapper background={background}>
+        <S.StyledSubtitle>
+          {moment(created_at).format('DD.MM.yyyy')}
+        </S.StyledSubtitle>
+        <S.Title>{title}</S.Title>
+        <S.Picture src={original} alt={title} />
+      </S.Wrapper>
+    </Link>
   );
 };
 

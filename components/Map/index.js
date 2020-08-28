@@ -19,7 +19,7 @@ class Map extends Component {
     const { data } = this.props;
     return (
       <>
-        <S.H2 content={this.props.data.title} />
+        <S.H2>{this.props.data.title}</S.H2>
         {data.location && (
           <S.Wrapper>
             <S.Place>{data.location}</S.Place>

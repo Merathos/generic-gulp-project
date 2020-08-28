@@ -10,8 +10,8 @@ const Styled = styled.h4`
   }
 `;
 
-const TitleH4 = ({ content, className }) => (
-  <Styled className={className}>{content}</Styled>
+const TitleH4 = ({ children, className }) => (
+  <Styled className={className}>{children}</Styled>
 );
 
 export default TitleH4;

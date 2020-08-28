@@ -1,35 +1,32 @@
 import styled from 'styled-components';
-import { TitleH2, Text, Subtitle } from 'elements';
+import { TitleH4, Subtitle } from 'elements';
 
 export const Wrapper = styled.a`
-  /* display: flex;
-  justify-content: space-between;
-  margin-bottom: 100px;
+  background-color: ${props => props.background || 'transparent'};
+  padding: 40px 40px 0;
+  max-width: 350px;
+  box-sizing: border-box;
 
-  @media screen and (max-width: 1024px) {
+  /* @media screen and (max-width: 1024px) {
     flex-direction: column;
     margin-bottom: 50px;
   } */
 `;
 
-export const Title = styled(TitleH2)`
-  margin-bottom: 40px;
+export const Title = styled(TitleH4)`
+  margin-bottom: 80px;
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 `;
 
-export const StyledText = styled(Text)`
-  margin-bottom: 40px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 20px;
-  }
-`;
-
-
-export const StyledSubtitle = styled(Subtitle)`
+export const StyledSubtitle = styled.p`
   opacity: 0.5;
   margin-bottom: 4px;
+`;
+
+export const Picture = styled.img`
+  max-width: 190px;
+  margin-left: 80px;
 `;
