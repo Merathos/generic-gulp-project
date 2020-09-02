@@ -8,3 +8,4 @@ export { default as SectionGroup } from './section-group';
 export { default as About } from './about';
 export { default as Contacts } from './contacts';
 export { default as Relocation } from './relocation';
+export { default as Internship } from './internship';

@@ -7,12 +7,12 @@ const Values = props => {
   } = props;
   return (
     <>
-      <Title content={title} />
+      <Title>{title}</Title>
       <List>
         {items.map((el, i) => (
           <li key={i}>
             <StyledIcon name={el.icon} />
-            <H4 content={el.title} />
+            <H4>{el.title}</H4>
             <Subtitle>{el.text}</Subtitle>
           </li>
         ))}

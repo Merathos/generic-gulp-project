@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const GET_CONTENT = gql`
+export const GET_VACANCIES = gql`
   query getVacancies {
     vacancies(limit: 10) {
       name

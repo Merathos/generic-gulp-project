@@ -1,6 +1,6 @@
 import { Layout } from 'containers';
 import mock from 'mock/index';
-import { GET_CONTENT } from 'graphql/query';
+import { GET_VACANCIES } from 'graphql/query';
 import { initializeApollo } from 'lib/apollo';
 import { Cards, SidebarArticle } from 'components';
 import { Search, Filter } from 'forms';
@@ -38,7 +38,7 @@ export async function getStaticProps() {
   const {
     data: { vacancies }
   } = await apolloClient.query({
-    query: GET_CONTENT
+    query: GET_VACANCIES
   });
 
   return {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Subtitle } from 'elements';
 
 export const Section = styled.section`
-  background-color: #F7F8F9;
+  /* background-color: #F7F8F9; */
   padding-top: 160px;
 
   @media screen and (max-width: 420px) {

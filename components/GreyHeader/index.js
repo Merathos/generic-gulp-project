@@ -7,7 +7,7 @@ const GreyHeader = ({ data: { title, text, list, sidebar, picture } }) => {
       <S.Wrapper>
         <TitleH1>{title}</TitleH1>
         <S.Paragraph>{text}</S.Paragraph>
-        <S.Features>
+        {list && <S.Features>
           {list.map((el, i) => (
             <S.Element key={i}>
               {el.icon && <S.StyledIcon name={el.icon} white />}
@@ -19,6 +19,7 @@ const GreyHeader = ({ data: { title, text, list, sidebar, picture } }) => {
             </S.Element>
           ))}
         </S.Features>
+        }
       </S.Wrapper>
       {sidebar && (
         <S.Aside>
