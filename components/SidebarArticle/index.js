@@ -1,12 +1,21 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { Button, Subtitle, Icon } from 'elements';
+import { Button, Subtitle } from 'elements';
 import ArrowRight from 'public/icons/arrow-right.svg';
-import { Section, SectionIcon, SectionButton, Title, Text, H5, StyledIcon } from './styles';
+import {
+  Section,
+  SectionIcon,
+  SectionButton,
+  Title,
+  Text,
+  H5,
+  StyledIcon,
+  Image,
+  Aside
+} from './styles';
 
 const SidebarArticle = props => {
   const {
-    data: { title, subtitle, description, text, button, icon },
+    data: { title, subtitle, description, text, button, icon, picture },
     type
   } = props;
   return (
@@ -36,20 +45,18 @@ const SidebarArticle = props => {
               <Text>{text}</Text>
               <Button type="accent">{button}</Button>
             </SectionButton>
+          ),
+          'image': (
+            <Aside>
+              <Image src={picture} alt={title} />
+              <Title>{title}</Title>
+              <Subtitle>{text}</Subtitle>
+            </Aside>
           )
         }[type]
       }
     </>
   );
-};
-
-SidebarArticle.propTypes = {
-  data: PropTypes.object.isRequired,
-  type: PropTypes.string
-};
-
-SidebarArticle.defaultProps = {
-  type: 'default'
 };
 
 export default SidebarArticle;

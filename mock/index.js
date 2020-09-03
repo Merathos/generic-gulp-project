@@ -583,7 +583,7 @@ export default {
         `Оставить заявку`,
         `Смотреть вакансии`
       ],
-      picture: ``
+      picture: `/images/intern-header-desktop.jpg`
     },
     about: {
       title: `О стажировке`,
@@ -632,7 +632,7 @@ export default {
         `и многое другое`
       ],
       sidebar: {
-        picture: ``,
+        picture: `/images/intern-info.png`,
         title: `450+ тыс компаний`,
         text: `Из США, Канады
         и Великобритании выбирают платформу для бизнес-

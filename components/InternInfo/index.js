@@ -1,19 +1,21 @@
-import { Card } from 'elements';
+import { SidebarArticle } from 'components';
 import * as S from './styles';
 
 const InternInfo = ({ data }) => {
-  const { title, list } = data;
+  const { title, text, list, sidebar } = data;
   return (
-    <>
-      <S.Title>{title}</S.Title>
-      <S.List>
-        {list.map((el, i) => (
-          <li key={i}>
-            <Card data={el} />
-          </li>
-        ))}
-      </S.List>
-    </>
+    <S.Container>
+      <div>
+        <S.Title>{title}</S.Title>
+        <S.StyledText>{text}</S.StyledText>
+        <S.List>
+          {list.map((el, i) => (
+            <S.Item key={i}>{el}</S.Item>
+          ))}
+        </S.List>
+      </div>
+      <SidebarArticle type="image" data={sidebar} />
+    </S.Container>
   );
 };
 

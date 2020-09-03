@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
     color: #201F2A;
     font-family: 'TT Norms', 'Arial', sans-serif;
     font-weight: 500;
+    font-size: 20px;
+    line-height: 158%;
     overflow-x: hidden;
     font-variant-ligatures: none;
   }
@@ -65,6 +67,13 @@ const GlobalStyle = createGlobalStyle`
 
   .swiper-container {
     overflow: hidden;
+  }
+
+  
+  @media screen and (max-width: 420px) {
+    body {
+      font-size: 14px;
+    }
   }
 `;
 

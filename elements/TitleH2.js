@@ -8,7 +8,6 @@ const Styled = styled.h2`
 
   @media screen and (max-width: 420px) {
     font-size: 28px;
-    line-height: 130%;
   }
 `;
 

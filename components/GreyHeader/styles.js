@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH3, Text, Icon } from 'elements';
+import { TitleH3, Text, Icon, Button } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const Grid = styled.div`
@@ -83,5 +83,20 @@ export const StyledIcon = styled(Icon)`
   @media screen and (max-width: 1024px) {
     margin-right: 20px;
     margin-bottom: 0;
+  }
+`;
+
+export const StyledButton = styled(Button)`
+  margin-right: 40px;
+  @media screen and (max-width: 1024px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+`;
+
+export const ButtonsWrapper = styled.div`
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
