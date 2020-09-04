@@ -3,6 +3,10 @@ import { TitleH2, TitleH4, Icon } from 'elements';
 
 export const Title = styled(TitleH2)`
   margin-bottom: 100px;
+
+  @media (max-width: 420px) {
+    margin-bottom: 50px;
+  } 
 `;
 
 export const H4 = styled(TitleH4)`

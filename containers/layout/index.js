@@ -34,14 +34,14 @@ const Layout = ({ children, backButton, greyFooter, subscription, nimax }) => {
   return (
     <Wrapper>
       <Header data={mock.header} />
+      {children}
+      <Footer data={mock.footer} grey={greyFooter} subscription={subscription} nimax={nimax} />
+      <StyledSocialSticker data={mock.socialSticker} />
       {backButton && (
         <a>
           <StyledArrowLeft onClick={() => Router.back()} />
         </a>
       )}
-      <StyledSocialSticker data={mock.socialSticker} />
-      {children}
-      <Footer data={mock.footer} grey={greyFooter} subscription={subscription} nimax={nimax} />
     </Wrapper>
   );
 };

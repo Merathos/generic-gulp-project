@@ -43,9 +43,7 @@ const Vacancy = ({ data }) => {
           </Aside>
         </Grid>
 
-        <SectionGroup>
-          <SliderVacancy data={data.steps} />
-        </SectionGroup>
+        <SliderVacancy data={data.steps} />
       </Container>
 
       <Application data={data.application} decor />

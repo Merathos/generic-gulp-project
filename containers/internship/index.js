@@ -8,39 +8,42 @@ import {
   SliderVacancy
 } from 'components';
 import { SectionGroup } from 'containers';
-import { Container, GreyContainer } from './styles';
+import { Container, GreyContainer, GreyWrapper } from './styles';
 
 const Internship = ({ data, vacancies }) => {
   return (
     <main>
-      <GreyContainer>
+      <GreyWrapper>
         <Container>
           <GreyHeader data={data.intro} />
         </Container>
-      </GreyContainer>
+      </GreyWrapper>
 
       <Container>
         <SectionGroup>
           <InternInfo data={data.info} />
         </SectionGroup>
-        <Values data={data.values} />
+        <SectionGroup>
+          <Values data={data.values} />
+        </SectionGroup>
+        <div />
       </Container>
 
       <GreyContainer>
         <Container>
-          <SliderVacancy data={data.steps} />
+          <SliderVacancy data={data.steps} background="#F7F8F9" />
         </Container>
       </GreyContainer>
+
       <Container>
         <SectionGroup>
           <InternVacancies mock={data.vacancies} back={vacancies} />
         </SectionGroup>
       </Container>
+
       <Application data={data.apply} />
 
-      <Container>
-        <GreyFooter data={data.greyFooter} />
-      </Container>
+      <GreyFooter data={data.greyFooter} />
     </main>
   );
 };

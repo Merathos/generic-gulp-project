@@ -98,5 +98,12 @@ export const ButtonsWrapper = styled.div`
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+export const Picture = styled.img`
+  @media screen and (max-width: 420px) {
+    margin-top: 30px;
   }
 `;

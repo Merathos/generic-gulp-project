@@ -12,7 +12,7 @@ const Accent = styled.a`
 
   @media screen and (max-width: 420px) {
     font-size: 12px;
-    line-height: 120%;
+    line-height: 56px;
   }
 `;
 
@@ -30,7 +30,7 @@ const Default = styled.a`
 
   @media screen and (max-width: 420px) {
     font-size: 12px;
-    line-height: 120%;
+    line-height: 56px;
   }
 `;
 

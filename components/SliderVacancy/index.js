@@ -1,114 +1,27 @@
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Subtitle from 'elements/Subtitle';
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
-import TitleH2 from 'elements/TitleH2';
+import * as S from './styles';
 
-const Text = styled(Subtitle)`
-  margin-bottom: 37px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const Element = styled.div`
-  margin-right: 20px;
-  width: 420px;
-  padding-right: 130px;
-  position: relative;
-  box-sizing: border-box;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #2F8ED9;
-    top: 10px;
-    left: 0;
-    z-index: -2;
-  }
-
-  @media screen and (max-width: 420px) {
-    margin-right: 15px;
-    padding-right: 30px;
-    width: 320px;
-  }
-`;
-
-const Section = styled.div`
-  width: 1600px;
-
-  @media screen and (max-width: 420px) {
-    width: 320px;
-  }
-`;
-
-const Number = styled.span`
-  display: block;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 120%;
-  color: #2F8ED9;
-  z-index: 2;
-  margin-bottom: 40px;
-  background-color: #fff;
-  padding-right: 20px;
-  width: 20px;
-
-  @media screen and (max-width: 420px) {
-    width: 301px;
-    margin-right: 12px;
-  }
-`;
-
-const Title = styled.p`
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 120%;
-  margin-bottom: 16px;
-
-  @media screen and (max-width: 420px) {
-    font-size: 16px;
-    line-height: 120%;
-    margin-bottom: 8px;
-  }
-`;
-
-const H2 = styled(TitleH2)`
-  max-width: 520px;
-  margin-bottom: 80px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const SliderVacancy = ({ data }) => {
+const SliderVacancy = ({ data, background }) => {
   const ref = useRef(null);
   const { title, list } = data;
 
   return (
-    <Section>
-      <H2>{title}</H2>
+    <S.Section>
+      <S.H2>{title}</S.H2>
       <Swiper ref={ref}>
         {list.map((el, i) => (
-          <Element key={i}>
-            <Number>{`0${i + 1}`}</Number>
-            <Title>{el.title}</Title>
-            <Text>{el.text}</Text>
+          <S.Element key={i}>
+            <S.Number background={background}>{`0${i + 1}`}</S.Number>
+            <S.Title>{el.title}</S.Title>
+            <S.Text>{el.text}</S.Text>
             {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
-          </Element>
+          </S.Element>
         ))}
       </Swiper>
-    </Section>
+    </S.Section>
   );
-};
-
-SliderVacancy.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default SliderVacancy;
