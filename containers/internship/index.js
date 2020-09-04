@@ -24,9 +24,18 @@ const Internship = ({ data, vacancies }) => {
           <InternInfo data={data.info} />
         </SectionGroup>
         <Values data={data.values} />
-        <InternVacancies mock={data.vacancies} back={vacancies} />
       </Container>
-      <SliderVacancy data={data.steps} />
+
+      <GreyContainer>
+        <Container>
+          <SliderVacancy data={data.steps} />
+        </Container>
+      </GreyContainer>
+      <Container>
+        <SectionGroup>
+          <InternVacancies mock={data.vacancies} back={vacancies} />
+        </SectionGroup>
+      </Container>
       <Application data={data.apply} />
 
       <Container>

@@ -1,18 +1,25 @@
-import { Card } from 'elements';
+import Link from 'next/link';
+import { Button } from 'elements';
+import { Advert } from 'components';
 import * as S from './styles';
 
-const InternVacancies = ({ data }) => {
-  // const { title, list } = data;
+const InternVacancies = ({ mock, back }) => {
+  const { title, button } = mock;
   return (
     <>
-      {/* <S.Title>{title}</S.Title>
-      <S.List>
-        {list.map((el, i) => (
+      <S.Title>{title}</S.Title>
+      {back && (
+        <S.List>
+          {back.map((el, i) => (
           <li key={i}>
-            <Card data={el} />
+            <Advert data={el} />
           </li>
-        ))}
-      </S.List> */}
+          ))}
+        </S.List>
+      )}
+      <Link href="/catalog">
+        <Button>{button}</Button>
+      </Link>
     </>
   );
 };

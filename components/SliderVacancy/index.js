@@ -92,7 +92,7 @@ const SliderVacancy = ({ data }) => {
 
   return (
     <Section>
-      <H2 content={title} />
+      <H2>{title}</H2>
       <Swiper ref={ref}>
         {list.map((el, i) => (
           <Element key={i}>
