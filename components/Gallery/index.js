@@ -1,11 +1,11 @@
-import { Title } from './styles';
 import { Slider } from 'components';
+import { Title } from './styles';
 
-const Gallery = ({ data, data: { title } }) => {
+const Gallery = ({ data: { title, subtitle, pictures } }) => {
   return (
     <>
       <Title content={title} />
-      <Slider data={data} />
+      <Slider pictures={pictures} subtitle={subtitle} />
     </>
   );
 };

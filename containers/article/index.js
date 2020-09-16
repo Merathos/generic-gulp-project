@@ -46,7 +46,11 @@ const Article = ({ data }) => {
           <Section>
             <MarkerList type="ellipse" data={data.list} />
           </Section>
-          <Slider type="img" data={data.slider} />
+          <Slider
+            type="img"
+            pictures={data.slider.pictures}
+            subtitle={data.slider.subtitle}
+          />
           <Paragraph size="h3" data={data.cmx} margin="100px" />
           <List data={data.noteWithPictures} />
           <Paragraph size="h2" data={data} margin="100px" />
