@@ -11,7 +11,7 @@ const SliderVacancy = ({ data, background }) => {
     <S.Section>
       <S.H2>{title}</S.H2>
       <Swiper ref={ref}>
-        {list.map((el, i) => (
+        {list && list.map((el, i) => (
           <S.Element key={i}>
             <S.Number background={background}>{`0${i + 1}`}</S.Number>
             <S.Title>{el.title}</S.Title>

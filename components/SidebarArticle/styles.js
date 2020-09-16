@@ -22,9 +22,9 @@ export const Section = styled.div`
 `;
 
 export const SectionIcon = styled.div`
-  @media screen and (max-width: 420px) {
+  /* @media screen and (max-width: 420px) {
     display: none;
-  }
+  } */
 `;
 
 export const SectionButton = styled.div`

@@ -3,11 +3,11 @@ import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
 import { Section, Element, Img, Text, Title } from './styles';
 
-const Slider = props => {
+const Slider = ({ subtitle, pictures }) => {
   const ref = useRef(null);
-  const {
-    data: { subtitle, pictures }
-  } = props;
+  // const {
+  //   data: { subtitle, pictures }
+  // } = props;
 
   return (
     <Section>

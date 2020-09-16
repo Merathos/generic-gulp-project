@@ -25,7 +25,7 @@ const SidebarArticle = props => {
           'icon': (
             <SectionIcon>
               <StyledIcon name={icon} />
-              <H5 content={title} />
+              <H5>{title}</H5>
               <Subtitle>{description}</Subtitle>
             </SectionIcon>
           ),

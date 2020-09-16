@@ -6,8 +6,8 @@ const Styled = styled.h5`
   font-weight: 600;
 `;
 
-const TitleH5 = ({ content, className }) => (
-  <Styled className={className}>{content}</Styled>
+const TitleH5 = ({ children, className }) => (
+  <Styled className={className}>{children}</Styled>
 );
 
 export default TitleH5;

@@ -5,7 +5,9 @@ import {
   GreyHeader,
   GreyFooter,
   InternInfo,
-  SliderVacancy
+  SliderVacancy,
+  InternAbout,
+  Slider
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer, GreyWrapper } from './styles';
@@ -22,6 +24,12 @@ const Internship = ({ data, vacancies }) => {
       <Container>
         <SectionGroup>
           <InternInfo data={data.info} />
+        </SectionGroup>
+        <SectionGroup>
+          <InternAbout data={data.about} />
+        </SectionGroup>
+        <SectionGroup>
+          <Slider pictures={data.pictures} />
         </SectionGroup>
         <SectionGroup>
           <Values data={data.values} />
