@@ -21,7 +21,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 `;
 
 const StyledSocialSticker = styled(SocialSticker)`
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 600px;
 
@@ -30,12 +30,23 @@ const StyledSocialSticker = styled(SocialSticker)`
   }
 `;
 
-const Layout = ({ children, backButton, greyFooter, subscription, nimax }) => {
+const Layout = ({
+  children,
+  backButton,
+  greyFooter,
+  subscription,
+  nimax = true
+}) => {
   return (
     <Wrapper>
       <Header data={mock.header} />
       {children}
-      <Footer data={mock.footer} grey={greyFooter} subscription={subscription} nimax={nimax} />
+      <Footer
+        data={mock.footer}
+        grey={greyFooter}
+        subscription={subscription}
+        nimax={nimax}
+      />
       <StyledSocialSticker data={mock.socialSticker} />
       {backButton && (
         <a>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Text } from 'elements';
 
 export const Section = styled.section`
   display: flex;
@@ -9,7 +10,7 @@ export const Section = styled.section`
   }
 `;
 
-export const Blockquote = styled.blockquote`
+export const Block = styled.div`
   font-weight: bold;
   font-size: 34px;
   line-height: 120%;
@@ -40,4 +41,8 @@ export const Container = styled.div`
 export const Img = styled.img`
   width: 67px;
   margin-right: 14px;
+`;
+
+export const Description = styled(Text)`
+  margin-top: 35px;
 `;
