@@ -9,4 +9,4 @@ export { default as About } from './about';
 export { default as Contacts } from './contacts';
 export { default as Relocation } from './relocation';
 export { default as Internship } from './internship';
-export { default as Story } from './Story';
+export { default as Story } from './story';
