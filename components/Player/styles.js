@@ -4,11 +4,40 @@ export const Block = styled.div`
   display: flex;
 `;
 
-export const Wrapper = styled.p`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
 export const Button = styled.button`
   margin-right: 20px;
+`;
+
+export const Label = styled.span`
+  font-weight: 700;
+  font-size: 18px;
+`;
+
+export const Bar = styled.div`
+  height: 4px;
+  width: 170px;
+  background-color: rgb(47, 142, 217, 0.1);
+`;
+
+export const Progress = styled.div`
+  height: 4px;
+  background-color: #2F8ED9;
+  width: 0;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 18px;
+    height: 8px;
+    background-color: #2F8ED9;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 `;
