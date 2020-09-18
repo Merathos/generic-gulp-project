@@ -1,7 +1,16 @@
+import { Player } from 'components';
 import { Subtitle, SmallText, TitleH1, Button } from 'elements';
 import * as S from './styles';
 
-const GreyHeader = ({ data: { title, text, list, sidebar, picture, buttons } }) => {
+const GreyHeader = ({
+  title,
+  text,
+  list,
+  sidebar,
+  picture,
+  buttons,
+  audio
+}) => {
   return (
     <S.Grid>
       <S.Wrapper>
@@ -10,14 +19,14 @@ const GreyHeader = ({ data: { title, text, list, sidebar, picture, buttons } }) 
         {list && <S.Features>
           {list.map((el, i) => (
             <S.Element key={i}>
-              {el.icon && <S.StyledIcon name={el.icon} white />}
-              <div>
-                <S.ListTitle>{el.title}</S.ListTitle>
-                <SmallText>{el.text}</SmallText>
-                {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
-              </div>
-            </S.Element>
-          ))}
+                {el.icon && <S.StyledIcon name={el.icon} white />}
+                <div>
+                  <S.ListTitle>{el.title}</S.ListTitle>
+                  <SmallText>{el.text}</SmallText>
+                  {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
+                </div>
+              </S.Element>
+            ))}
           </S.Features>
         }
         {buttons && (
@@ -26,6 +35,7 @@ const GreyHeader = ({ data: { title, text, list, sidebar, picture, buttons } }) 
             <Button>{buttons[1]}</Button>
           </S.ButtonsWrapper>
         )}
+        {audio && <Player src={audio} />}
       </S.Wrapper>
       {sidebar && (
         <S.Aside>

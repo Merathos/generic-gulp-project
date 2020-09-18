@@ -2,12 +2,17 @@ import { Media, List, Quote, Slider, GreyFooter, GreyHeader } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer, Wrapper } from './styles';
 
-const Story = ({ data }) => {
+const Story = ({ data, back }) => {
   return (
     <main>
       <GreyContainer>
         <Container>
-          <GreyHeader data={data.intro} />
+          <GreyHeader
+            title={back.title}
+            text={back.description}
+            picture={back.detail.path.normal}
+            audio={back.audio}
+          />
         </Container>
       </GreyContainer>
 

@@ -40,3 +40,4 @@ export { default as Advantages } from './Advantages';
 export { default as InternInfo } from './InternInfo';
 export { default as InternVacancies } from './InternVacancies';
 export { default as InternAbout } from './InternAbout';
+export { default as Player } from './Player';

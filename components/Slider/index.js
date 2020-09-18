@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
 import { Section, Element, Img, Text, Title } from './styles';
@@ -22,10 +21,6 @@ const Slider = ({ subtitle, pictures }) => {
       {subtitle && <Text>{subtitle}</Text>}
     </Section>
   );
-};
-
-Slider.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default Slider;
