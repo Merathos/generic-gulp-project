@@ -5,7 +5,6 @@ import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 export const Grid = styled.div`
   display: flex;
   padding-top: 240px;
-  padding-bottom: 100px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -15,7 +14,6 @@ export const Grid = styled.div`
 `;
 
 export const Wrapper = styled.article`
-  margin-right: 160px;
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
@@ -105,5 +103,34 @@ export const ButtonsWrapper = styled.div`
 export const Picture = styled.img`
   @media screen and (max-width: 420px) {
     margin-top: 30px;
+  }
+`;
+
+export const Block = styled.div`
+  position: relative;
+  width: 340px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url('/backgrounds/our-people.svg');
+    width: 330px;
+    height: 330px;
+    bottom: 40px;
+    right: -200px;
+    z-index: 2;
+  }
+
+  &:hover::after {
+    animation: 5s linear infinite rotation;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;

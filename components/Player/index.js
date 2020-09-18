@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Icon } from 'elements';
 import * as S from './styles';
 
-const Player = ({ src}) => {
+const Player = ({ src }) => {
   const ref = useRef(null);
 
   return (

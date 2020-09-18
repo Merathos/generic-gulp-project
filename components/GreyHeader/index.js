@@ -43,7 +43,11 @@ const GreyHeader = ({
           <Subtitle>{sidebar.subtitle}</Subtitle>
         </S.Aside>
       )}
-      {picture && <S.Picture src={picture} alt={title} />}
+      {picture && (
+        <S.Block>
+          <S.Picture src={picture} alt={title} />
+        </S.Block>
+      )}
     </S.Grid>
   );
 };
