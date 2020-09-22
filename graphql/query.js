@@ -54,3 +54,23 @@ export const GET_BLOG_CONTENT = gql`
     }
   }
 `;
+
+export const GET_BLOG_LIST = gql`
+  query getBlogList {
+    blogs {
+      slug
+      title
+      created_at
+      audio
+      content
+      description
+      summary
+      type
+      detail {
+        path(width: 300) {
+          normal
+        }
+      }
+    }
+  }
+`;
