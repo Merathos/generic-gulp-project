@@ -122,7 +122,7 @@ export const Block = styled.div`
   }
 
   &:hover::after {
-    animation: 5s linear infinite rotation;
+    animation: 1.5s linear infinite rotation;
   }
 
   @keyframes rotation {

@@ -40,11 +40,13 @@ const Player = ({ src }) => {
           )}
         </S.Button>
         <S.Wrapper>
-          <S.Label>Послушать рассказ</S.Label>
-          <S.Bar>
-            <S.Progress ref={refProgress} />
-          </S.Bar>
-          <span>6:13</span>
+          {pause && <S.Label>Послушать рассказ</S.Label>}
+          <S.Scale pause={pause}>
+            <S.Bar>
+              <S.Progress ref={refProgress} />
+            </S.Bar>
+          </S.Scale>
+          <S.Span>6:13</S.Span>
         </S.Wrapper>
       </S.Block>
     </>
