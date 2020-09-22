@@ -2,7 +2,7 @@ import moment from 'moment';
 import Link from 'next/link';
 import * as S from './styles';
 
-const Blogs = ({ data, background }) => {
+const BlogsCard = ({ data, background }) => {
   const {
     title,
     slug,
@@ -24,4 +24,4 @@ const Blogs = ({ data, background }) => {
   );
 };
 
-export default Blogs;
+export default BlogsCard;

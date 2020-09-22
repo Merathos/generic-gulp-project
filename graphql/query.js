@@ -61,15 +61,15 @@ export const GET_BLOG_LIST = gql`
       slug
       title
       created_at
-      audio
-      content
-      description
       summary
       type
-      detail {
+      preview {
         path(width: 300) {
           normal
         }
+      }
+      category {
+        name
       }
     }
   }

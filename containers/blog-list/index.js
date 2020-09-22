@@ -8,7 +8,7 @@ const BlogList = ({ data, back }) => {
       <S.Container>
         <S.Title>{data.mainTitle}</S.Title>
         <Tabs tabs={data.filterTabs} handleClick={e => console.log(e)} />
-        {/* <GridArticles /> */}
+        <GridArticles articles={back} />
       </S.Container>
     </main>
   );
