@@ -8,6 +8,7 @@ export const Container = styled.section`
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
+    overflow: hidden;
   }
 
   @media screen and (max-width: 240px) {
@@ -18,15 +19,12 @@ export const Container = styled.section`
 
 export const GreyWrapper = styled.div`
   background-color: #F7F8F9;
-  /* background-image: url('backgrounds/about-grey-title.svg');
-  background-repeat: no-repeat;
-  background-position: 118% 298%; */
   margin-bottom: 100px;
+  padding-bottom: 240px;
 
   @media screen and (max-width: 420px) {
-    /* background-size: 50% 50%;
-    background-position: 150% 120%; */
     margin-bottom: 50px;
+    padding-bottom: 0;
   }
 `;
 

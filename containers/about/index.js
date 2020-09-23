@@ -14,7 +14,11 @@ const About = ({ data }) => {
     <main>
       <GreyContainer>
         <Container>
-          <GreyHeader data={data.intro} />
+          <GreyHeader
+            title={data.intro.title}
+            text={data.intro.text}
+            list={data.intro.list}
+            sidebar={data.intro.sidebar} />
         </Container>
       </GreyContainer>
 

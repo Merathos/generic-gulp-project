@@ -17,7 +17,11 @@ const Internship = ({ data, vacancies }) => {
     <main>
       <GreyWrapper>
         <Container>
-          <GreyHeader data={data.intro} />
+          <GreyHeader
+            title={data.intro.title}
+            text={data.intro.text}
+            buttons={data.intro.buttons}
+            picture={data.intro.picture} />
         </Container>
       </GreyWrapper>
 

@@ -42,6 +42,7 @@ export const Features = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 420px) {
     grid-template-columns: 1fr;
@@ -62,6 +63,7 @@ export const Logo = styled(MagicQuadrant)`
 export const ListTitle = styled(TitleH3)`
   color: #2F8ED9;
   margin-bottom: 12px;
+  white-space: nowrap;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 10px;
@@ -69,13 +71,11 @@ export const ListTitle = styled(TitleH3)`
 `;
 
 export const Element = styled.li`
-  min-width: 300px;
-
   @media screen and (max-width: 1024px) {
-    max-width: auto;
     display: flex;
   }
 `;
+
 export const StyledIcon = styled(Icon)`
   margin-bottom: 30px;
   @media screen and (max-width: 1024px) {
@@ -132,5 +132,17 @@ export const Block = styled.div`
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+
+    &::after {
+      width: 160px;
+      height: 160px;
+      background-size: 160px 160px;
+      bottom: 20px;
+      right: 0;
+  }
   }
 `;

@@ -24,4 +24,8 @@ export const StyledSubtitle = styled.p`
 export const Picture = styled.img`
   max-width: 190px;
   margin-left: 80px;
+
+  @media screen and (max-width: 420px) {
+    margin-left: 0;
+  }
 `;

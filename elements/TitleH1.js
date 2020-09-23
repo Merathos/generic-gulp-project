@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Styled = styled.h2`
+const Styled = styled.h1`
   font-size: 90px;
   line-height: 100px;
   letter-spacing: 0.01em;

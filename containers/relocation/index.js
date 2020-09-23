@@ -14,7 +14,11 @@ const Relocation = ({ data, blogs }) => {
     <main>
       <GreyContainer>
         <Container>
-          <GreyHeader data={data.intro} />
+          <GreyHeader
+            title={data.intro.title}
+            text={data.intro.text}
+            list={data.intro.list}
+            picture={data.intro.picture} />
         </Container>
       </GreyContainer>
 

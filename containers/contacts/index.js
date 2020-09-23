@@ -7,7 +7,10 @@ const Contacts = ({ data }) => {
     <main>
       <GreyContainer>
         <Container>
-          <GreyHeader data={data.mainTitle} />
+          <GreyHeader
+            title={data.mainTitle.title}
+            text={data.mainTitle.text}
+            list={data.mainTitle.list} />
         </Container>
       </GreyContainer>
 
