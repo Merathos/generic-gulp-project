@@ -76,9 +76,18 @@ export const GET_BLOG_LIST = gql`
 `;
 
 export const GET_BLOG_CATEGORIES = gql`
-  query getBlogList {
-    blogs(categories: "tradicii") {
+  query getBlogCategories($categories: [String]) {
+    blogs(categories: $categories) {
+      slug
       title
+      created_at
+      summary
+      type
+      preview {
+        path(width: 350) {
+          normal
+        }
+      }
       category {
         name
       }

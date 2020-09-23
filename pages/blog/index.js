@@ -7,7 +7,7 @@ import mock from 'mock/index';
 const blogPage = ({ blogs }) => {
   return (
     <Layout backButton>
-      <BlogList data={mock.blogList} back={blogs} />
+      <BlogList mock={mock.blogList} back={blogs} />
     </Layout>
   );
 };
