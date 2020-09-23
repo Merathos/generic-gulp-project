@@ -74,3 +74,14 @@ export const GET_BLOG_LIST = gql`
     }
   }
 `;
+
+export const GET_BLOG_CATEGORIES = gql`
+  query getBlogList {
+    blogs(categories: "tradicii") {
+      title
+      category {
+        name
+      }
+    }
+  }
+`;

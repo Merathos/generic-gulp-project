@@ -1,7 +1,20 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  @media screen and (max-width: 1024px) {
+    overflow-x: hidden;
+  }
+`;
+
 export const List = styled.ul`
   display: flex;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 50px;
+    width: 2000px;
+    overflow-x: scroll;
+  }
 `;
 
 export const Item = styled.li`

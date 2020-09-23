@@ -42,3 +42,4 @@ export { default as InternVacancies } from './InternVacancies';
 export { default as InternAbout } from './InternAbout';
 export { default as Player } from './Player';
 export { default as GridArticles } from './GridArticles';
+export { default as ArticleCard } from './ArticleCard';
