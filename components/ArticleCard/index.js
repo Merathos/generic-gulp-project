@@ -14,7 +14,7 @@ const ArticleCard = ({ data }) => {
     category
   } = data;
   return (
-    <Link href={`blogs/${slug}`}>
+    <Link href={`articles/${slug}`}>
       <S.Wrapper>
         {normal && <S.Picture src={normal} alt={title} />}
         <S.StyledSubtitle>

@@ -36,8 +36,8 @@ export const GET_FILTER_SEARCH = gql`
 `;
 
 export const GET_BLOG_CONTENT = gql`
-  query getBlogContent {
-    blogs(slug: "svoboda-vybirat") {
+  query getBlogContent($slug: String) {
+    blogs(slug: $slug) {
       slug
       title
       created_at

@@ -12,7 +12,7 @@ const BlogsCard = ({ data, background }) => {
     created_at
   } = data;
   return (
-    <Link href={`blogs/${slug}`}>
+    <Link href={`articles/${slug}`}>
       <S.Wrapper background={background}>
         <S.StyledSubtitle>
           {moment(created_at).format('DD.MM.yyyy')}

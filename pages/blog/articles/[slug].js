@@ -12,13 +12,35 @@ const storyPage = ({ blogs }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
   const apolloClient = initializeApollo();
 
   const {
     data: { blogs }
   } = await apolloClient.query({
     query: GET_BLOG_CONTENT
+  });
+
+  const paths = blogs.map(el => ({
+    params: { slug: el.slug }
+  }));
+
+  return {
+    paths,
+    fallback: false
+  };
+}
+
+export async function getStaticProps(context) {
+  const apolloClient = initializeApollo();
+
+  const {
+    data: { blogs }
+  } = await apolloClient.query({
+    query: GET_BLOG_CONTENT,
+    variables: {
+      slug: context.params.slug
+    }
   });
 
   return {
