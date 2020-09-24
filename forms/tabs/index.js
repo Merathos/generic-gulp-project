@@ -1,21 +1,22 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as S from './styles';
 
-const Tabs = ({ tabs, handleClick }) => (
-  <S.Wrapper>
-    <S.List>
-      {tabs.map((el, i) => (
-        <S.Item key={i}>
-          <input
-            type="radio"
-            name="filter-tabs"
-            id={el}
-            onChange={() => handleClick(el)}
-          />
-          <S.Label htmlFor={el}>{el}</S.Label>
-        </S.Item>
-      ))}
-    </S.List>
-  </S.Wrapper>
-);
+const Tabs = ({ tabs }) => {
+  const { query } = useRouter();
+  return (
+    <S.Wrapper>
+      <S.List>
+        {tabs.map((el, i) => (
+          <S.Item key={i}>
+            <Link href={`/blog/${encodeURIComponent(el.slug)}`}>
+              <S.Label activeLink={query.slug === el.slug}>{el.title}</S.Label>
+            </Link>
+          </S.Item>
+        ))}
+      </S.List>
+    </S.Wrapper>
+  );
+}
 
 export default Tabs;

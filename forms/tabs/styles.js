@@ -20,20 +20,15 @@ export const List = styled.ul`
 export const Item = styled.li`
   margin-right: 12px;
 
-  input:checked ~ label {
-    background: #53B443;
-    color: #fff;
-  }
-
   @media screen and (max-width: 420px) {
     margin-right: 10px;
   }
 `;
 
-export const Label = styled.label`
-  cursor: pointer;
+export const Label = styled.a`
   padding: 4px 8px;
-  background: #F7F8F9;
+  background: ${props => (props.activeLink ? '#53B443' : '#F7F8F9')};
+  color: ${props => (props.activeLink ? '#fff' : 'inherit')};
   font-size: 16px;
   line-height: 21px;
   border-radius: 4px;

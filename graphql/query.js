@@ -55,26 +55,6 @@ export const GET_BLOG_CONTENT = gql`
   }
 `;
 
-export const GET_BLOG_LIST = gql`
-  query getBlogList {
-    blogs {
-      slug
-      title
-      created_at
-      summary
-      type
-      preview {
-        path(width: 300) {
-          normal
-        }
-      }
-      category {
-        name
-      }
-    }
-  }
-`;
-
 export const GET_BLOG_CATEGORIES = gql`
   query getBlogCategories($categories: [String]) {
     blogs(categories: $categories) {

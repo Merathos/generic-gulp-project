@@ -422,7 +422,34 @@ export default {
   blogList: {
     mainTitle: `Блог`,
     filterTabs: [
-      `Наши люди`, `Обмен знаниями`, `Традиции`, `Жизнь офиса`, `Обучение`, `Благотворительность`, `Забота о природе` 
+      {
+        title: `Наши люди`,
+        slug: `nashi-lyudi`
+      },
+      {
+        title: `Обмен знаниями`,
+        slug: `obmen-znaniyami`
+      },
+      {
+        title: `Традиции`,
+        slug: `tradicii`
+      },
+      {
+        title: `Жизнь офиса`,
+        slug: `zhizn-ofisa`
+      },
+      {
+        title: `Обучение`,
+        slug: `obuchenie`
+      },
+      {
+        title: `Благотворительность`,
+        slug: `charity`
+      },
+      {
+        title: `Забота о природе`,
+        slug: `zabota-o-prirode`
+      }
     ]
   },
   about: {
