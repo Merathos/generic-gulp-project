@@ -1,16 +1,5 @@
 import styled from 'styled-components';
-import { TitleH1 } from 'elements';
-
-export const Section = styled.section`
-  /* @media screen and (max-width: 420px) {
-    max-width: 375px;
-    padding: 0 30px;
-  } */
-`;
-
-// export const Title = styled(TitleH1)`
-//   margin-bottom: 40px;
-// `;
+import { TitleH4, SmallText } from 'elements';
 
 export const List = styled.ul`
   display: flex;
@@ -23,17 +12,50 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 33%;
-
-  &:first-child {
-    width: 66%;
-  }
+  margin-bottom: 80px;
 
   @media (max-width: 420px) {
-    width: 100%;
+    margin-bottom: 40px;
+  }
+`;
 
-    &:first-child {
-      width: 100%;
-    }
+export const Main = styled.a`
+  background-color: ${props => props.background || 'transparent'};
+  padding: 60px 40px 40px;
+  box-sizing: border-box;
+  display: flex;
+  width: 770px;
+  align-items: flex-end;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`;
+
+export const Title = styled(TitleH4)`
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const Text = styled(SmallText)`
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 50px;
+  }
+`;
+
+export const StyledSubtitle = styled.p`
+  opacity: 0.5;
+  margin-bottom: 4px;
+`;
+
+export const Picture = styled.img`
+  margin-left: 40px;
+
+  @media screen and (max-width: 1024px) {
+    margin-left: 0;
   }
 `;

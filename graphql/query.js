@@ -63,6 +63,7 @@ export const GET_BLOG_CATEGORIES = gql`
       created_at
       summary
       type
+      is_highlight
       preview {
         path(width: 350) {
           normal
