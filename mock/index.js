@@ -377,15 +377,13 @@ export default {
     greyFooter: [
       {
         title: `Вакансии`,
-        text: `Тебе интересна компания и близки наши ценности? Откликайся на открытые позиции в этом разделе.`
-      },
-      {
-        title: `IT evenings`,
-        text: `Присоединяйся к ежеквартальным встречам DINS IT EVENING. `
-      },
-      {
-        title: `Блог`,
-        text: `Читай наш блог, чтобы узнать последние новости из жизни компании.`
+        text: `Тебе интересна компания и близки наши ценности? Откликайся на открытые позиции в этом разделе.`,
+        preview: {
+          path: {
+            normal: `https://api.develop.dins.d.nimax.ru/storage/resize/nsp/454x632_nSpHijPA21CBvKNPuQo1K7GHaELcu7jmRSZlO8zp.jpeg`
+          }
+        },
+        slug: 'q',
       }
     ]
   },

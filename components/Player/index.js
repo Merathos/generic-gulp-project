@@ -30,15 +30,9 @@ const Player = ({ src }) => {
       </audio>
       <S.Block>
         <S.Button
-          type="button"
+          name={pause ? 20 : 38}
           onClick={() => (pause ? playPlayer() : pausePlayer())}
-        >
-          {pause ? (
-            <Icon name="ec-loud-sound" white />
-          ) : (
-            <Icon name="ec-pause-button" white />
-          )}
-        </S.Button>
+        />
         <S.Wrapper>
           {pause && <S.Label>Послушать рассказ</S.Label>}
           <S.Scale pause={pause}>

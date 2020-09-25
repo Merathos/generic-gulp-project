@@ -17,7 +17,7 @@ export const GET_RELOCATION_BLOGS = gql`
     blogs(is_relocation: true) {
       preview {
         path {
-          original
+          normal
         }
       }
       slug
@@ -50,6 +50,16 @@ export const GET_BLOG_CONTENT = gql`
         path(width: 300) {
           normal
         }
+      }
+      related {
+        preview {
+          path {
+            normal
+          }
+        }
+        slug
+        title
+        created_at
       }
     }
   }

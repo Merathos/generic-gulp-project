@@ -13,6 +13,21 @@ export const Wrapper = styled.div`
 
 export const Button = styled.button`
   margin-right: 20px;
+  width: 57px;
+  height: 57px;
+  background-color: #fff;
+  background-image: ${props => `url('/emodzi/${props.name}.png')`};
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 420px) {
+    width: 43px;
+    height: 43px;
+  }
 `;
 
 export const Label = styled.span`

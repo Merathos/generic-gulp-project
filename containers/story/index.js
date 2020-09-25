@@ -41,7 +41,7 @@ const Story = ({ data, back }) => {
       </Container>
 
       <GreyContainer>
-        <GreyFooter data={data.greyFooter} />
+        <GreyFooter data={data.greyFooter} type="blog" />
       </GreyContainer>
     </main>
   );
