@@ -52,36 +52,6 @@ export default {
       english: `English Speaking Team`,
       discard: `Сбросить фильтр`
     },
-    cards: [
-      {
-        title: `Java developer (Big Data team)`,
-        text: `Стек: Java, Redis, Kafka, MongoDB, Docker,
-         ELK, TICK. Сервис базируется в AWS и Private Cloud.`,
-        features: [
-          {
-            icon: `ec-earth-americas`,
-            title: `English Speaking Team`
-          },
-          {
-            icon: `ec-mortar-board`,
-            title: `Стажировка`
-          }
-        ]
-      },
-      {
-        title: `Java developer (Big Data team)`,
-        text: `We are looking for a talented and energetic team leader to head our Integration Team.`
-      },
-      {
-        title: `Java developer (Big Data team)`,
-        text: `People and technical management the team (up to 6 members)`
-      },
-      {
-        title: `QA Intern (Performance team)`,
-        text: `Команда RCV занимается разработкой сервиса видео-конференций
-         нового поколения, построенного с использованием WebRTC, качество...`
-      }
-    ],
     search: `Введите название вакансии`,
     article: {
       text: `Отправь резюме, и мы свяжемся с тобой, если появится подходящая позиция.`,
@@ -204,7 +174,7 @@ export default {
           и выдает инфу по ней, id принимает.`
     },
     sidebarArticleBottom: {
-      icon: `ec-fire`,
+      icon: `26`,
       title: `Какое-то уточнение`,
       description: `А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки.`
     },
@@ -484,27 +454,27 @@ export default {
          функций. Сюда входят:`,
         list: [
           {
-            icon: `ec-earth-americas`,
+            icon: 25,
             title: `облачная телефония`
           },
           {
-            icon: `ec-earth-americas`,
+            icon: 22,
             title: `видеоконференции`
           },
           {
-            icon: `ec-earth-americas`,
+            icon: 21,
             title: `факс`
           },
           {
-            icon: `ec-earth-americas`,
+            icon: 24,
             title: `контактный центр`
           },
           {
-            icon: `ec-earth-americas`,
+            icon: 23,
             title: `корпоративный чат`
           },
           {
-            icon: `ec-earth-americas`,
+            icon: 15,
             title: `и много е другое`
           }
         ],
@@ -536,40 +506,40 @@ export default {
       title: `В DINS мы ценим`,
       items: [
         {
-          icon: `ec-earth-americas`,
+          icon: 1,
           title: `Технические навыки`,
           text: `Накопленный опыт и высокий уровень профессионализма помогают нашим инженерам
            создавать надежные, удобные и функциональные решения.`
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 2,
           title: `Ответственность`,
           text: `Качество нашей работы напрямую влияет на успех тысяч компаний
           по всему миру. Поэтому мы не можем допустить даже малейших перебоев
           в работе сервиса и обеспечиваем его доступность на уровне 99,999 %.`
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 3,
           title: `Инициативу`,
           text: `Мы верим, что неравнодушие и увлеченность наших инженеров позволяют платформе, в
            развитии которой мы участвуем, занимать лидирующие позиции на рынке. Поэтому в DINS есть все условия,
             чтобы проявлять инициативу, предлагать новые решения или инструменты.`
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 4,
           title: `Командную работу`,
           text: `DINS — команда профессионалов, которые работают сообща ради отличного результата. 
           Мы ценим умение слышать своих коллег и находить общий язык друг с другом. `
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 5,
           title: `Открытость`,
           text: `У нас принято свободно делиться идеями и мыслями, обсуждать задачи
           и давать обратную связь. Остаемся честными и на уровне компании: менеджеры всегда открыто говорят
           о приоритетах и перспективах развития организации. `
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 6,
           title: `Самое главное`,
           text: `Мы любим свое дело, получаем удовольствие и радость как
           от результатов, так и от самого процесса. И да, мы каждый день пользуемся решением,
@@ -625,11 +595,11 @@ export default {
       мы поможем тебе переехать.`,
       list: [
         {
-          icon: `ec-earth-americas`,
+          icon: 16,
           text: `Предоставим Relocation Bonus`
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 17,
           text: `Поможем в поиске жилья`
         }
       ],
@@ -721,7 +691,7 @@ export default {
        до уровня квалифицированного специалиста. Ты сам выбираешь направление,
         в котором хочешь развиваться, а мы тебе в этом поможем!`,
       sidebar: {
-        icon: `ec-earth-americas`,
+        icon: 26,
         title: `Стажировка длится 6 месяцев`,
         description: `По результатам прохождения стажировки ты можешь получить
          приглашение на постоянную работу в DINS.`
@@ -774,19 +744,19 @@ export default {
       title: `Мы предлагаем`,
       items: [
         {
-          icon: `ec-earth-americas`,
+          icon: 14,
           title: `График`,
           text: `Стажеры работают от 30 часов 
           в неделю. Ты сможешь совмещать работу с учебой и полностью погрузиться в процессы. `
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 15,
           title: `Поддержка и развитие`,
           text: `Помогаем на всем пути: у тебя будет ментор, который будет следить за твоим прогрессом,
            и команда инженеров, которые всегда поддержат.`
         },
         {
-          icon: `ec-earth-americas`,
+          icon: 13,
           title: `Зарплата`,
           text: `Оформим трудовой договор 
           на 6 месяцев и гарантируем оплату труда. По результатам стажировки возможно оформление в штат!`
@@ -842,8 +812,6 @@ export default {
   vacancy: {
     mainTitle: {
       title: `Java developer (Big Data team)`,
-      icon1: `ec-earth-americas`,
-      icon2: `ec-mortar-board`,
       subtitle1: `English Speaking Team`,
       subtitle2: `Стажировка`,
       button1: `Отправить резюме`,
@@ -856,11 +824,11 @@ export default {
       HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`,
       features: [
         {
-          icon: `ec-earth-americas`,
+          icon: 19,
           title: `English Speaking Team`
         },
         {
-          icon: `ec-mortar-board`,
+          icon: 18,
           title: `Стажировка`
         }
       ]

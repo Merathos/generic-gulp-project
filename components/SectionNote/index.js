@@ -34,7 +34,7 @@ const Section = styled.section`
 const SectionNote = ({ data }) => {
   return (
     <Section>
-      <Icon name="ec-fire" />
+      <Icon name="26" />
       <Text>{data}</Text>
     </Section>
   );

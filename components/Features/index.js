@@ -1,5 +1,5 @@
 import { Subtitle } from 'elements';
-import { Container, Span, Item } from './styles';
+import { Container, Item, Icon } from './styles';
 
 const Features = ({ data }) => (
   <Container>
@@ -7,7 +7,7 @@ const Features = ({ data }) => (
       if (el.flag) {
         return (
           <Item key={i}>
-            <Span className={`ec ${el.icon}`} />
+            <Icon name={el.icon} />
             <Subtitle>{el.title}</Subtitle>
           </Item>
         );

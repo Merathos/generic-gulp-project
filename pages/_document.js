@@ -43,7 +43,6 @@ export default class MyDocument extends Document {
           <link rel="font" href="/fonts/TTNorms-ExtraBold.ttf" as="font" />
 
           <link rel="stylesheet" href="../styles/reset.css" />
-          <link rel="stylesheet" href="../styles/emoji.min.css" />
           <link rel="stylesheet" href="../styles/fonts.css" />
         </Head>
         <body>

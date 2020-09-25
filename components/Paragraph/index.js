@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Section, H3, H2, Description } from './styles';
 
 const Paragraph = props => {
@@ -8,8 +7,7 @@ const Paragraph = props => {
     color,
     opacity,
     bold,
-    margin,
-    padding
+    margin
   } = props;
   return (
     <Section margin={margin} padding={size}>
@@ -27,15 +25,6 @@ const Paragraph = props => {
       </Description>
     </Section>
   );
-};
-
-Paragraph.propTypes = {
-  data: PropTypes.shape.isRequired,
-  size: PropTypes.string
-};
-
-Paragraph.defaultProps = {
-  size: 'h2'
 };
 
 export default Paragraph;

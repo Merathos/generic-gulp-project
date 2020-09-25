@@ -1,9 +1,7 @@
-import { Styled, Span } from './styles';
+import * as S from './styles';
 
 const Icon = ({ name, className, white }) => (
-  <Styled className={className} white={white}>
-    <Span className={`ec ${name}`} />
-  </Styled>
+  <S.Styled className={className} white={white} name={name} />
 );
 
 export default Icon;

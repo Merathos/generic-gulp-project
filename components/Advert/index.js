@@ -17,17 +17,17 @@ const Advert = props => {
 
   const features = [
     {
-      icon: `ec-earth-americas`,
+      icon: 19,
       title: `English Speaking Team`,
-      flag: is_english_speaking_team,
+      flag: is_english_speaking_team
     },
     {
-      icon: `ec-mortar-board`,
+      icon: 18,
       title: `Стажировка`,
       flag: is_internship
     },
     {
-      icon: `ec-mortar-board`,
+      icon: 26,
       title: `Релокация`,
       flag: is_relocation
     }

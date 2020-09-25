@@ -32,7 +32,7 @@ const SidebarArticle = props => {
           'default': (
             <Section>
               <Subtitle>{subtitle}</Subtitle>
-              <Title content={title} />
+              <Title>{title}</Title>
               <Link href="/about">
                 <a>
                   <ArrowRight />
