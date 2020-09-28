@@ -85,3 +85,11 @@ export const GET_BLOG_CATEGORIES = gql`
     }
   }
 `;
+
+export const GET_TEAM_CATEGORIES = gql`
+  query getTeamCategories($stack: [String]) {
+    teams(stacks: $stack) {
+      slug
+    }
+  }
+`;
