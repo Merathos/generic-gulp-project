@@ -26,10 +26,12 @@ export const Main = styled.a`
   display: flex;
   width: 770px;
   align-items: flex-end;
+  min-height: 430px;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
     flex-direction: column;
+    min-height: 390px;
   }
 `;
 
