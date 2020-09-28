@@ -1,6 +1,17 @@
+import { min } from 'moment';
 import { useRef, useState } from 'react';
-import { Icon } from 'elements';
 import * as S from './styles';
+
+const fromSecToDuration = (duration) => {
+  const min = Math.round(duration/60);
+  let sec = Math.round(duration % 60);
+
+  if  (sec < 10) {
+    sec = '0' + sec;
+  }
+
+  return `${min}:${sec}`;
+}
 
 const Player = ({ src }) => {
   const ref = useRef(null);
@@ -24,7 +35,7 @@ const Player = ({ src }) => {
         onTimeUpdate={() =>
         refProgress.current.style.width = `${Math.round(177 / ref.current.duration  * ref.current.currentTime)}px`}>
         <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          src={src}
           type="audio/mpeg"
         />
       </audio>
@@ -40,7 +51,7 @@ const Player = ({ src }) => {
               <S.Progress ref={refProgress} />
             </S.Bar>
           </S.Scale>
-          <S.Span>6:13</S.Span>
+        <S.Span>{ref.current && fromSecToDuration(ref.current.duration)}</S.Span>
         </S.Wrapper>
       </S.Block>
     </>

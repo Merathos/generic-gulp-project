@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Subtitle } from 'elements';
 
 export const Section = styled.section`
-  /* background-color: #F7F8F9; */
   padding-top: 160px;
 
   @media screen and (max-width: 420px) {
@@ -30,7 +29,6 @@ export const Title = styled.h3`
 
 export const List = styled.ul`
   display: flex;
-  justify-content: space-between;
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
@@ -44,6 +42,14 @@ export const List = styled.ul`
   @media screen and (max-width: 240px) {
     max-width: 320px;
     padding: 0 20px;
+  }
+`;
+
+export const Card = styled.li`
+  margin-right: 80px;
+
+  @media screen and (max-width: 420px) {
+    margin-right: 10px;
   }
 `;
 

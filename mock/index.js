@@ -373,19 +373,7 @@ export default {
           Вот этот процесс поиска нового знания доставляет мне большое удовольствие, как и общение с людьми
            из моей команды, которые тоже кайфуют от этого.`
       }
-    },
-    greyFooter: [
-      {
-        title: `Вакансии`,
-        text: `Тебе интересна компания и близки наши ценности? Откликайся на открытые позиции в этом разделе.`,
-        preview: {
-          path: {
-            normal: `https://api.develop.dins.d.nimax.ru/storage/resize/nsp/454x632_nSpHijPA21CBvKNPuQo1K7GHaELcu7jmRSZlO8zp.jpeg`
-          }
-        },
-        slug: 'q',
-      }
-    ]
+    }
   },
   blogList: {
     mainTitle: `Блог`,
