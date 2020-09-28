@@ -47,7 +47,7 @@ export const GET_BLOG_CONTENT = gql`
       summary
       type
       detail {
-        path(width: 300) {
+        path {
           normal
         }
       }
@@ -60,6 +60,11 @@ export const GET_BLOG_CONTENT = gql`
         slug
         title
         created_at
+      }
+      detail_mobile {
+        path(width: 300) {
+          normal
+        }
       }
     }
   }

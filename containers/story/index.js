@@ -1,4 +1,4 @@
-import { Media, List, Quote, Slider, GreyFooter, GreyHeader } from 'components';
+import { Media, List, Quote, Slider, GreyFooter, BlogHeader } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer, Wrapper } from './styles';
 
@@ -7,11 +7,12 @@ const Story = ({ data, back }) => {
     <main>
       <GreyContainer>
         <Container>
-          <GreyHeader
+          <BlogHeader
             title={back.title}
             text={back.description}
             picture={back.detail.path.normal}
             audio={back.audio}
+            mobPicture={back.detail_mobile && back.detail_mobile.path.normal}
           />
         </Container>
       </GreyContainer>

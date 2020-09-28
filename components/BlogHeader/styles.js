@@ -5,58 +5,32 @@ import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 export const Grid = styled.div`
   display: flex;
   padding-top: 240px;
+  margin-bottom: 100px;
+  align-items: center;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     padding-top: 110px;
-    padding-bottom: 80px;
+    padding-bottom: 0;
+    margin-bottom: 50px;
   }
 `;
 
 export const Wrapper = styled.article`
   max-width: 854px;
+  padding-bottom: 100px;
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
-  }
-`;
-
-export const Aside = styled.aside`
-  width: 254px;
-
-  @media screen and (max-width: 420px) {
-    width: 100%;
-    margin-top: 80px;
+    padding-bottom: 60px;
   }
 `;
 
 export const Paragraph = styled(Text)`
-  margin-bottom: 140px;
+  margin-bottom: 90px;
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 60px;
-  }
-`;
-
-export const Features = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 100px;
-  margin-bottom: 100px;
-
-  @media screen and (max-width: 420px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 30px;
-    margin-bottom: 30px;
-  }
-`;
-
-export const Logo = styled(MagicQuadrant)`
-  margin-bottom: 20px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 8px;
   }
 `;
 
@@ -81,22 +55,6 @@ export const StyledIcon = styled(Icon)`
   @media screen and (max-width: 1024px) {
     margin-right: 20px;
     margin-bottom: 0;
-  }
-`;
-
-export const StyledButton = styled(Button)`
-  margin-right: 40px;
-  @media screen and (max-width: 1024px) {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-`;
-
-export const ButtonsWrapper = styled.div`
-  @media screen and (max-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 `;
 
