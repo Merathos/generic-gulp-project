@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import TitleH2 from '/elements/TitleH2';
 import { MarkerList } from 'components';
 
@@ -19,10 +18,6 @@ const Requirements = props => {
       <MarkerList type={type} data={data.list} />
     </>
   );
-};
-
-Requirements.propTypes = {
-  data: PropTypes.shape.isRequired
 };
 
 export default Requirements;

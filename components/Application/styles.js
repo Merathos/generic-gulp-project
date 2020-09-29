@@ -40,27 +40,30 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  padding-top: 40px;
-  grid-area: d;
+// export const Container = styled.div`
+//   display: flex;
+//   padding-top: 40px;
+//   grid-area: d;
 
-  @media screen and (max-width: 420px) {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0;
-    padding: 0;
-  }
-`;
+//   @media screen and (max-width: 420px) {
+//     flex-direction: column;
+//     align-items: flex-start;
+//     margin-top: 0;
+//     padding: 0;
+//   }
+// `;
 
 export const StyledButton = styled(Button)`
-  &:not(:last-child) {
-    margin-right: 20px;
+  margin-top: 40px;
+  grid-area: d;
+  margin-right: 20px;
+  max-width: 230px;
+  box-sizing: border-box;
 
-    @media screen and (max-width: 420px) {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
+  @media screen and (max-width: 420px) {
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
 `;
 

@@ -12,7 +12,7 @@ export const Container = styled.ul`
 export const Icon = styled.div`
   margin-right: 10px;
   font-size: 22px;
-  background-image: ${props => `url('emodzi/${props.name}.png')`};
+  background-image: ${props => `url('/emodzi/${props.name}.png')`};
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 22px;

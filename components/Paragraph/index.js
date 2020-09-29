@@ -14,9 +14,9 @@ const Paragraph = props => {
       {title && (
         <>
           {size === 'h3' ? (
-            <H3 content={title} color={color} />
+            <H3 color={color}>{title}</H3>
           ) : (
-            <H2 content={title} color={color} />
+            <H2 color={color}>{title}</H2>
           )}
         </>
       )}

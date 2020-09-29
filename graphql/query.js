@@ -8,6 +8,33 @@ export const GET_VACANCIES = gql`
       is_internship
       is_relocation
       descr
+      slug
+    }
+  }
+`;
+
+export const GET_VACANCY_CONTENT = gql`
+  query getVacancyContent($slug: String) {
+    vacancies(slug: $slug) {
+      name
+      is_english_speaking_team
+      is_internship
+      is_relocation
+      descr
+      slug
+    	content
+    	category {
+    	  id
+    	}
+    	project {
+    	  name
+    	}
+    	stacks {
+        name
+      }
+    	recruiters {
+        name
+      }
     }
   }
 `;

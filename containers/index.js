@@ -12,3 +12,4 @@ export { default as Internship } from './internship';
 export { default as Story } from './story';
 export { default as BlogList } from './blog-list';
 export { default as TeamList } from './team-list';
+export { default as VacanciesList } from './catalog';

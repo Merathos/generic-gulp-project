@@ -26,6 +26,7 @@ export const TextBlock = styled.p`
 
 export const Bold = styled.b`
   font-weight: 800;
+  margin-right: 5px;
 `;
 
 export const Wrapper = styled.div`
@@ -36,24 +37,8 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  margin-top: 60px;
-
-  @media screen and (max-width: 420px) {
-    margin-top: 50px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
 export const StyledButton = styled(Button)`
-  margin-right: 20px;
-
-  @media screen and (max-width: 420px) {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+  margin-top: 40px;
 `;
 
 export const H1 = styled(TitleH1)`

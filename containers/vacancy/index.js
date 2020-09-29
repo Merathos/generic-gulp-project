@@ -1,5 +1,5 @@
 import {
-  GreyTitle,
+  VacancyHeader,
   Paragraph,
   SidebarRelocation,
   Articles,
@@ -13,11 +13,11 @@ import {
 import { SectionGroup } from 'containers';
 import { Container, Article, Grid, GreyContainer, Aside } from './styles';
 
-const Vacancy = ({ data }) => {
+const Vacancy = ({ data, back }) => {
   return (
     <>
       <GreyContainer>
-        <GreyTitle data={data.mainTitle} />
+        <VacancyHeader data={back} />
       </GreyContainer>
 
       <Container>
@@ -54,7 +54,7 @@ const Vacancy = ({ data }) => {
         </SectionGroup>
         <SectionGroup>
           <Articles type="vacancy" data={data.vacancies} />
-        </SectionGroup>       
+        </SectionGroup>
       </Container>
     </>
   );

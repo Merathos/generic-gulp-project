@@ -11,7 +11,8 @@ const Advert = props => {
       descr,
       is_english_speaking_team,
       is_relocation,
-      is_internship
+      is_internship,
+      slug
     }
   } = props;
 
@@ -34,17 +35,17 @@ const Advert = props => {
   ];
 
   return (
-    <Section
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {features && <Features data={features} />}
-      <H3>{name}</H3>
-      <StyledText>{descr}</StyledText>
-      <Link href="/about">
+    <Link href={`vacancies/${slug}`}>
+      <Section
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {features && <Features data={features} />}
+        <H3>{name}</H3>
+        <StyledText>{descr}</StyledText>
         <ArrowRight hovered={hover} />
-      </Link>
-    </Section>
+      </Section>
+    </Link>
   );
 };
 
