@@ -22,7 +22,7 @@ export const Wrapper = styled.article`
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
-    padding-bottom: 60px;
+    padding-bottom: 0;
   }
 `;
 
@@ -59,8 +59,9 @@ export const StyledIcon = styled(Icon)`
 `;
 
 export const Picture = styled.img`
+  margin-left: 50px;
   @media screen and (max-width: 420px) {
-    margin-top: 30px;
+    margin-left: 0;
   }
 `;
 

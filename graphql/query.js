@@ -79,6 +79,11 @@ export const GET_BLOG_CATEGORIES = gql`
       summary
       type
       is_highlight
+      highlight_image {
+        path {
+          normal
+        }
+      }
       preview {
         path(width: 350) {
           normal

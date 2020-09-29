@@ -2,13 +2,7 @@ import { Player } from 'components';
 import { TitleH1 } from 'elements';
 import * as S from './styles';
 
-const BlogHeader = ({
-  title,
-  text,
-  picture,
-  audio,
-  mobPicture
-}) => {
+const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
   return (
     <S.Grid>
       <S.Wrapper>
@@ -20,7 +14,9 @@ const BlogHeader = ({
         <S.Block>
           <S.Picture
             src={picture}
-            srcSet={mobPicture ? `${mobPicture} 420w, ${picture}` : ''} alt={title} />
+            srcSet={mobPicture ? `${mobPicture} 420w, ${picture}` : ''}
+            alt={title}
+          />
         </S.Block>
       )}
     </S.Grid>

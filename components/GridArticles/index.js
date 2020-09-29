@@ -14,7 +14,10 @@ const GridArticles = ({ articles }) => (
                   <S.Title>{el.title}</S.Title>
                   <S.Text>{el.summary}</S.Text>
                 </div>
-                <S.Picture src={el.preview.path.normal} alt={el.title} />
+                <S.Picture
+                  src={el.highlight_image.path.normal}
+                  alt={el.title}
+                />
               </S.Main>
             </Link>
           )}
