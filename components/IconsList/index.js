@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { Icon, Subtitle } from 'elements';
 
 const Section = styled.section`
@@ -39,10 +38,6 @@ const IconsList = props => {
       </List>
     </Section>
   );
-};
-
-IconsList.propTypes = {
-  data: PropTypes.array.isRequired,
 };
 
 export default IconsList;

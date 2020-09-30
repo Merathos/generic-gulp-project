@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     'd b'
     '. b';
   grid-column-gap: 170px;
-  background-image: ${props => props.decor ? "url('backgrounds/application.png')" : 'none'};
+  background-image: ${props => props.decor ? "url('/backgrounds/application.png')" : 'none'};
   background-repeat: no-repeat;
   background-position: 105% center;
   padding: 160px 50px 180px;
@@ -39,19 +39,6 @@ export const Wrapper = styled.div`
     grid-column-gap: 0;
   }
 `;
-
-// export const Container = styled.div`
-//   display: flex;
-//   padding-top: 40px;
-//   grid-area: d;
-
-//   @media screen and (max-width: 420px) {
-//     flex-direction: column;
-//     align-items: flex-start;
-//     margin-top: 0;
-//     padding: 0;
-//   }
-// `;
 
 export const StyledButton = styled(Button)`
   margin-top: 40px;

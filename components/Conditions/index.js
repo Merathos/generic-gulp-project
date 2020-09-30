@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import TitleH2 from '/elements/TitleH2';
 import { IconsList } from 'components';
 
@@ -43,10 +42,6 @@ const Conditions = props => {
       <IconsList data={data.list} />
     </Section>
   );
-};
-
-Conditions.propTypes = {
-  data: PropTypes.array.isRequired
 };
 
 export default Conditions;

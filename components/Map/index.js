@@ -1,8 +1,10 @@
-import * as S from './styles';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { Component } from 'react';
+import { connect } from 'react-redux';
+
 import MarkerIcon from 'public/icons/marker.svg';
 import { Metro } from 'components';
+import * as S from './styles';
 
 class Map extends Component {
   state = {
@@ -16,10 +18,10 @@ class Map extends Component {
   };
 
   render() {
-    const { data } = this.props;
+    const { data, english } = this.props;
     return (
       <>
-        <S.H2>{this.props.data.title}</S.H2>
+        <S.H2>{english ? 'Our offices' : 'Офисы на карте'}</S.H2>
         {data.location && (
           <S.Wrapper>
             <S.Place>{data.location}</S.Place>
@@ -65,4 +67,8 @@ class Map extends Component {
   }
 }
 
-export default Map;
+const mapStateToProps = state => ({
+  english: state.english
+});
+
+export default connect(mapStateToProps)(Map);

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Comment from 'components/Comment';
 
 const Section = styled.section`
@@ -18,10 +17,6 @@ const Comments = props => {
       <Comment position="flex-end" data={data[1]} />
     </Section>
   );
-};
-
-Comments.propTypes = {
-  data: PropTypes.array.isRequired
 };
 
 export default Comments;

@@ -1,11 +1,9 @@
-import PropTypes from 'prop-types';
-import NoteLeft from '/components/NoteLeft';
-import NoteRight from '/components/NoteRight';
-import { Advert } from 'components';
+import { useSelector } from 'react-redux';
+import { NoteLeft, NoteRight, Advert } from 'components';
 import { Container, Block, H2, AdvertsWrapper } from './styles';
 
-
 const Articles = props => {
+  const english = useSelector(state => state.english);
   const { data, type } = props;
   return (
     <Container>
@@ -16,7 +14,11 @@ const Articles = props => {
         </>
       ) : (
         <Block>
-          <H2>{data.title}</H2>
+          <H2>
+            {english
+              ? 'Vacancies in this category'
+              : 'Вакансии в этой категории'}
+          </H2>
           <AdvertsWrapper>
             <Advert data={data.catalog[0]} />
             <Advert data={data.catalog[1]} />
@@ -25,11 +27,6 @@ const Articles = props => {
       )}
     </Container>
   );
-};
-
-Articles.propTypes = {
-  data: PropTypes.array.isRequired,
-  type: PropTypes.string
 };
 
 export default Articles;

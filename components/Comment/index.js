@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import TitleH5 from 'elements/TitleH5';
 import { Block, Container, Img, Card, Text } from './styles';
 
@@ -18,15 +17,6 @@ const Comment = props => {
       </Card>
     </Block>
   );
-};
-
-Comment.propTypes = {
-  data: PropTypes.objectOf(PropTypes.string).isRequired,
-  position: PropTypes.string
-};
-
-Comment.defaultProps = {
-  position: 'left'
 };
 
 export default Comment;

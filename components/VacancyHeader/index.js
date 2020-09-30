@@ -1,4 +1,4 @@
-
+import { useSelector } from 'react-redux';
 import { Features } from 'components';
 import {
   Section,
@@ -11,6 +11,7 @@ import {
 } from './styles';
 
 const VacancyHeader = ({ data }) => {
+  const english = useSelector(state => state.english);
   const {
     name,
     stacks,
@@ -54,7 +55,9 @@ const VacancyHeader = ({ data }) => {
         <Bold>Проект:</Bold>
         <StyledText>{project.name}</StyledText>
       </TextBlock>
-      <StyledButton type="accent">Отправить резюме</StyledButton>
+      <StyledButton type="accent">
+        {english ? 'Send CV' : 'Отправить резюме'}
+      </StyledButton>
     </Section>
   );
 };

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import {
   Section,
   NormalList,
@@ -41,15 +40,6 @@ const List = props => {
       )}
     </Section>
   );
-};
-
-List.propTypes = {
-  data: PropTypes.array.isRequired,
-  type: PropTypes.string
-};
-
-List.defaultProps = {
-  type: 'normal'
 };
 
 export default List;

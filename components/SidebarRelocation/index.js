@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import TitleH4 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
@@ -52,14 +51,6 @@ const SidebarRelocation = props => {
       </Link>
     </Section>
   );
-};
-
-SidebarRelocation.propTypes = {
-  data: PropTypes.objectOf({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    description: PropTypes.string,
-  }).isRequired
 };
 
 export default SidebarRelocation;

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
 import GreenArrowRight from 'public/icons/green-arrow-right.svg';
 import { useRef } from 'react';

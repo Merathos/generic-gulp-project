@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import TitleH3 from 'elements/TitleH3';
 import Subtitle from 'elements/Subtitle';
 
@@ -71,10 +70,6 @@ const Feedback = props => {
       </div>
     </Section>
   );
-};
-
-Feedback.propTypes = {
-  data: PropTypes.objectOf(PropTypes.string).isRequired
 };
 
 export default Feedback;

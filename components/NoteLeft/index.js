@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import ArrowLeft from 'public/icons/arrow-left.svg';
 import {
@@ -31,10 +30,6 @@ const NoteLeft = props => {
       </Container>
     </Card>
   );
-};
-
-NoteLeft.propTypes = {
-  data: PropTypes.objectOf(PropTypes.string).isRequired
 };
 
 export default NoteLeft;

@@ -36,7 +36,7 @@ const Vacancy = ({ data, back }) => {
             </SectionGroup>
             <SectionGroup>
               <Requirements
-                type="ellipse"
+                type="number"
                 data={{
                   title: content[3].data.text,
                   list: content[4].data.items

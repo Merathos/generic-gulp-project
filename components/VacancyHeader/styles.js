@@ -19,7 +19,7 @@ export const Section = styled.section`
   }
 `;
 
-export const TextBlock = styled.p`
+export const TextBlock = styled.div`
   max-width: 627px;
   margin-bottom: 20px;
 `;

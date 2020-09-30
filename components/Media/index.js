@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Section, Text } from './styles';
 
 const Media = props => {
@@ -19,18 +18,6 @@ const Media = props => {
       <Text>{subtitle}</Text>
     </Section>
   );
-};
-
-Media.propTypes = {
-  data: PropTypes.shape({
-    subtitle: PropTypes.string,
-    text: PropTypes.string
-  }).isRequired,
-  type: PropTypes.string
-};
-
-Media.defaultProps = {
-  type: 'img'
 };
 
 export default Media;
