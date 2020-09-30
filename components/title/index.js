@@ -42,7 +42,7 @@ const Title = ({ data }) => {
   return (
     <div>
       <ArticleTitle>{title}</ArticleTitle>
-      <Date content={date} />
+      <Date>{date}</Date>
       <Description>{description}</Description>
     </div>
   );

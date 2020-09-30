@@ -21,7 +21,7 @@ const NoteRight = props => {
         <Img src={src} alt={title} />
         <Wrapper>
           <StyledSubtitle>{subtitle}</StyledSubtitle>
-          <H4 content={title} />
+          <H4>{title}</H4>
         </Wrapper>
       </Container>
       <Link href="/about">

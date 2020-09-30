@@ -16,7 +16,7 @@ const Articles = props => {
         </>
       ) : (
         <Block>
-          <H2 content={data.title} />
+          <H2>{data.title}</H2>
           <AdvertsWrapper>
             <Advert data={data.catalog[0]} />
             <Advert data={data.catalog[1]} />

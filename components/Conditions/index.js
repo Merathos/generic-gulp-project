@@ -39,7 +39,7 @@ const Conditions = props => {
   const { data } = props;
   return (
     <Section>
-      <H2 content={data.title} />
+      <H2>{data.title}</H2>
       <IconsList data={data.list} />
     </Section>
   );

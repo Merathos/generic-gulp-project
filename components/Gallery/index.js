@@ -4,7 +4,7 @@ import { Title } from './styles';
 const Gallery = ({ data: { title, subtitle, pictures } }) => {
   return (
     <>
-      <Title content={title} />
+      <Title>{title}</Title>
       <Slider pictures={pictures} subtitle={subtitle} />
     </>
   );

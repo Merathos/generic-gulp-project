@@ -66,7 +66,7 @@ const Feedback = props => {
       </picture>
       <div>
         <StyledSubtitle>{company}</StyledSubtitle>
-        <H3 content={name} />
+        <H3>{name}</H3>
         <StyledText>{text}</StyledText>
       </div>
     </Section>

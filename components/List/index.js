@@ -19,7 +19,7 @@ const List = props => {
         <BlueList>
           {data.map((el, i) => (
             <li key={i}>
-              <BlueTitle content={el.title} />
+              <BlueTitle>{el.title}</BlueTitle>
               <BlueText>{el.text}</BlueText>
             </li>
           ))}
@@ -33,7 +33,7 @@ const List = props => {
                   <img src={el.src} alt={el.title} />
                 </Wrapper>
               )}
-              <H3 content={el.title} />
+              <H3>{el.title}</H3>
               <NormalText>{el.text}</NormalText>
             </Element>
           ))}

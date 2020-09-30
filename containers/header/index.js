@@ -62,7 +62,7 @@ const Header = ({ data: links }) => (
       <List>
         {links.map((el, i) => (
           <Element key={i}>
-            <CustomLink href={`/${el.href}`} content={el.title} />
+            <CustomLink href={`/${el.href}`}>{el.title}</CustomLink>
           </Element>
         ))}
       </List>

@@ -11,7 +11,7 @@ const Comment = props => {
     <Block align={position}>
       <Container>
         <Img src={src} alt={name} />
-        <TitleH5 content={name} />
+        <TitleH5>{name}</TitleH5>
       </Container>
       <Card>
         <Text>{text}</Text>

@@ -1,9 +1,17 @@
+import { useDispatch } from 'react-redux';
 import { Layout, Vacancy } from 'containers';
 import { initializeApollo } from 'lib/apollo';
 import { GET_VACANCY_CONTENT } from 'graphql/query';
 import mock from 'mock/index';
 
 const vacancyPage = ({ vacancies }) => {
+  const dispatch = useDispatch();
+
+  dispatch({
+    type: 'LANGUAGE',
+    payload: vacancies[0].is_english_speaking_team
+  });
+
   return (
     <Layout backButton>
       <Vacancy data={mock.vacancy} back={vacancies[0]} />

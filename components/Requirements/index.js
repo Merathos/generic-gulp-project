@@ -14,7 +14,7 @@ const Requirements = props => {
   const { data, type } = props;
   return (
     <>
-      <H2 content={data.title} />
+      <H2>{data.title}</H2>
       <MarkerList type={type} data={data.list} />
     </>
   );
