@@ -127,6 +127,13 @@ export const GET_TEAM_CATEGORIES = gql`
   query getTeamCategories($stack: [String]) {
     teams(stacks: $stack) {
       slug
+      name
+      image {
+        path(width: 350) {
+          normal
+        }
+      }
+      summary
     }
   }
 `;

@@ -44,3 +44,4 @@ export { default as Player } from './Player';
 export { default as GridArticles } from './GridArticles';
 export { default as ArticleCard } from './ArticleCard';
 export { default as BlogHeader } from './BlogHeader';
+export { default as TeamCard } from './TeamCard';

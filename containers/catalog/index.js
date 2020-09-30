@@ -14,7 +14,7 @@ const VacanciesList = ({ data, back }) => {
           <S.Title>{data.mainTitle}</S.Title>
           <Search data={data.search} />
         </S.Article>
-        <Cards data={back} />
+        <Cards data={back} type="vacancies" />
       </S.Grid>
     </S.Container>
   );

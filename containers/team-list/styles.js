@@ -22,3 +22,30 @@ export const Container = styled.div`
 export const Title = styled(TitleH1)`
   margin-bottom: 40px;
 `;
+
+export const Article = styled.article`
+  width: 100%;
+  order: -2;
+`;
+
+export const Grid = styled.div`
+  align-items: flex-start;
+  padding-top: 200px;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const Aside = styled.aside`
+  max-width: 254px;
+  margin-right: 90px;
+  float: left;
+
+  @media screen and (max-width: 420px) {
+    max-width: 100%;
+    margin-right: 0;
+    float: none;
+  }
+`;

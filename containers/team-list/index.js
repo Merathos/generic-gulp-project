@@ -1,17 +1,21 @@
-import { useState } from 'react';
-import { useLazyQuery } from '@apollo/react-hooks';
-import { GridArticles } from 'components';
-import { GET_BLOG_CATEGORIES } from 'graphql/query';
-import { Tabs } from 'forms';
+import { Cards } from 'components';
+import { Filter } from 'forms';
 import * as S from './styles';
 
 const TeamList = ({ mock, back }) => {
   return (
     <main>
       <S.Container>
-        <S.Title>{mock.mainTitle}</S.Title>
-        {/* <Tabs tabs={mock.filterTabs} /> */}
-        {/* <GridArticles articles={back} /> */}
+        <S.Grid>
+          <S.Aside>
+            {/* <Filter data={mock.filter} /> */}
+          </S.Aside>
+          <S.Article>
+            <S.Title>{mock.mainTitle}</S.Title>
+            <Cards data={back} />
+          </S.Article>
+          <Cards data={back} type="teams" />
+        </S.Grid>
       </S.Container>
     </main>
   );

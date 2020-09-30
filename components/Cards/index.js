@@ -1,14 +1,14 @@
-import { Advert } from 'components';
+import { Advert, TeamCard } from 'components';
 import { List } from './styles';
 
 const Cards = props => {
-  const { data } = props;
+  const { data, type } = props;
   return (
     <section>
       <List>
         {data.map((el, i) => (
           <li key={i}>
-            <Advert data={el} />
+            {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}
           </li>
         ))}
       </List>
