@@ -830,74 +830,6 @@ export default {
     ]
   },
   vacancy: {
-    mainTitle: {
-      title: `Java developer (Big Data team)`,
-      subtitle1: `English Speaking Team`,
-      subtitle2: `Стажировка`,
-      button1: `Отправить резюме`,
-      button2: `Порекомендовать друга`,
-      stackTitle: `Technology stack:`,
-      technologies: `Spark, Hadoop (HDFS, YARN), Apache Flume, HP Vertica, MongoDB,
-      different data formats (Avro, Parquet, etc).`,
-      projectTitle: `Проект:`,
-      project: `Technology stack: Spark, Hadoop (HDFS, YARN), Apache Flume,
-      HP Vertica, MongoDB, different data formats (Avro, Parquet, etc).`,
-      features: [
-        {
-          icon: 19,
-          title: `English Speaking Team`
-        },
-        {
-          icon: 18,
-          title: `Стажировка`
-        }
-      ]
-    },
-    intro: {
-      title: ``,
-      text: `You will become a part of Big Data team at large US-based
-      international company, leader in enterprise VoIP communication solutions,
-       messaging and video conferencing. The team is primarily focusing on developing
-        software for processing large amounts of data and performing various maintenance
-         and data mining tasks using Hadoop ecosystem.`
-    },
-    requirements: {
-      title: `Skills & Requirements`,
-      list: [
-        {
-          text: `Solid Java knowledge (collections, serialization, multi-threading, lambda expressions, etc).`
-        },
-        {
-          text: `Solid experience in working with databases (ANSI SQL).`
-        },
-        {
-          text: `Understanding of computer algorithms and data structures.`
-        },
-        {
-          text: `Ability to quickly learn and understand new technologies.`
-        }
-      ]
-    },
-    extraRequirements: {
-      title: `Would Be a Plus`,
-      list: [
-        {
-          text: `Hands-on experience with Hadoop, Spark or Kafka.`
-        },
-        {
-          text: `Scala.`
-        },
-        {
-          text: `Hands-on experience with designing ETL processes.`
-        },
-        {
-          text: `Confident user of Linux.`
-        },
-        {
-          text: `Experience with cloud-based infrastructure (AWS).`
-        }
-      ]
-    },
     qualifications: {
       title: `Desired Qualifications`,
       text: `You will become a part of Big Data team at large
@@ -914,31 +846,31 @@ export default {
       title: `Conditions`,
       list: [
         {
-          icon: `ec-fire`,
+          icon: 26,
           text: `28 day vacation 100% paid in accordance with the current salary`
         },
         {
-          icon: `ec-lock`,
+          icon: 26,
           text: `Business trips to foreign branch offices (the USA, China) and further work H1-B`
         },
         {
-          icon: `ec-purple-heart`,
+          icon: 26,
           text: `Corporate training programs, English language `
         },
         {
-          icon: `ec-fire`,
+          icon: 26,
           text: `Job placement and payment of salary take place according to the labor codey`
         },
         {
-          icon: `ec-lock`,
+          icon: 26,
           text: `Nonresident applicants are granted Relocation Bonus`
         },
         {
-          icon: `ec-speech-balloon`,
+          icon: 26,
           text: `28 day vacation 100% paid in accordance with the current salary`
         },
         {
-          icon: `ec-fire`,
+          icon: 26,
           text: `Sick leaves 100% paid.`
         }
       ]

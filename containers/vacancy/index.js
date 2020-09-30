@@ -14,6 +14,7 @@ import { SectionGroup } from 'containers';
 import { Container, Article, Grid, GreyContainer, Aside } from './styles';
 
 const Vacancy = ({ data, back }) => {
+  const content = JSON.parse(back.content);
   return (
     <>
       <GreyContainer>
@@ -21,14 +22,26 @@ const Vacancy = ({ data, back }) => {
       </GreyContainer>
 
       <Container>
-        <Paragraph bold="700" data={data.intro} />
+        <Paragraph bold="700" data={{ text: content[0].data.text }} />
         <Grid>
           <Article>
             <SectionGroup>
-              <Requirements type="ellipse" data={data.requirements} />
+              <Requirements
+                type="ellipse"
+                data={{
+                  title: content[1].data.text,
+                  list: content[2].data.items
+                }}
+              />
             </SectionGroup>
             <SectionGroup>
-              <Requirements type="number" data={data.extraRequirements} />
+              <Requirements
+                type="ellipse"
+                data={{
+                  title: content[3].data.text,
+                  list: content[4].data.items
+                }}
+              />
             </SectionGroup>
             <SectionGroup>
               <Paragraph size="h2" data={data.qualifications} />

@@ -77,7 +77,7 @@ const MarkerList = props => {
           {data.map((el, i) => (
             <ElementEllipse key={i}>
               {el.image && <Img src={el.image} alt={el.title} />}
-              <Text>{el.text}</Text>
+              <Text>{el.text || el}</Text>
             </ElementEllipse>
           ))}
         </ul>

@@ -4,7 +4,7 @@ export const Styled = styled.div`
   width: 57px;
   height: 57px;
   background-color: ${props => (props.white ? '#fff' : '#F7F8F9')};
-  background-image: ${props => `url('emodzi/${props.name}.png')`};
+  background-image: ${props => `url('/emodzi/${props.name}.png')`};
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 50%;
