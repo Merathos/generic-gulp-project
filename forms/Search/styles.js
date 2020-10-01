@@ -34,6 +34,7 @@ export const Submit = styled.button`
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  min-height: 32px;
 `;
 
 export const Element = styled.li`
@@ -41,7 +42,7 @@ export const Element = styled.li`
 `;
 
 export const Section = styled.section`
-    margin-bottom: 85px;
+  margin-bottom: 85px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 30px;

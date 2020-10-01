@@ -29,7 +29,6 @@ export const Article = styled.article`
 `;
 
 export const Grid = styled.div`
-  align-items: flex-start;
   padding-top: 200px;
 
   @media screen and (max-width: 1024px) {
@@ -48,4 +47,10 @@ export const Aside = styled.aside`
     margin-right: 0;
     float: none;
   }
+`;
+
+export const Tags = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 32px;
 `;

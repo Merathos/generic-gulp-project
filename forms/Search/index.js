@@ -44,7 +44,7 @@ const Search = ({ data }) => {
                 }
               />
           </Element>
-          )))}
+        )))}
       </List>
     </Section>
   );

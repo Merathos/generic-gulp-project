@@ -411,36 +411,17 @@ export default {
   teamList: {
     mainTitle: `Команды`,
     filterTitle: 'Технологии',
-    filter: [
-      {
-        title: `Наши люди`,
-        slug: `nashi-lyudi`
-      },
-      {
-        title: `Обмен знаниями`,
-        slug: `obmen-znaniyami`
-      },
-      {
-        title: `Традиции`,
-        slug: `tradicii`
-      },
-      {
-        title: `Жизнь офиса`,
-        slug: `zhizn-ofisa`
-      },
-      {
-        title: `Обучение`,
-        slug: `obuchenie`
-      },
-      {
-        title: `Благотворительность`,
-        slug: `charity`
-      },
-      {
-        title: `Забота о природе`,
-        slug: `zabota-o-prirode`
-      }
-    ]
+    filter: {
+      title: `Технологии`,
+      list: [
+        `Java`, `C++`, `Erlang`, `JavaScript`, `Node.JS`, `Scala`, `Python`,
+        `RocksDB`, `MongoDB`, `Cassandra`, `Oracle`, `Vertica`, `Neo4J`, `Hadoop`,
+        `VMWare`, `Kubernetes`, `DDC`, `Marathon`, `Terraform`, `CloudFoundry`,
+        `Amazon`, `AWS`, `Google GCP`, `Zabbix`, `Influx`, `Elasticsearch`, `Git`,
+        `Mercurial`, `Jenkins`, `GitLab`, `GridGain`, `Coherence`, `Rabbit`, `Kafka`,
+        `ZeroMQ,`
+      ]
+    }
   },
   about: {
     intro: {
