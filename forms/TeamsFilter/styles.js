@@ -44,6 +44,10 @@ export const List = styled.ul`
   &::-webkit-scrollbar {
     opacity: 0;
   }
+
+  @media screen and (max-width: 420px) {
+    max-height: 200px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -65,6 +69,7 @@ export const Wrapper = styled.div`
 export const Label = styled.label`
   position: relative;
   padding-left: 20px;
+  cursor: pointer;
 
   &::after {
     content: '';
