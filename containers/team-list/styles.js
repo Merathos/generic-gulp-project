@@ -21,6 +21,14 @@ export const Container = styled.div`
 
 export const Title = styled(TitleH1)`
   margin-bottom: 40px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 0;
+  }
+`;
+
+export const Element = styled.li`
+  margin-right: 22px;
 `;
 
 export const Article = styled.article`
@@ -29,9 +37,8 @@ export const Article = styled.article`
 `;
 
 export const Grid = styled.div`
-  padding-top: 200px;
-
   @media screen and (max-width: 1024px) {
+    padding-top: 110px;
     display: flex;
     flex-direction: column;
   }
@@ -53,4 +60,9 @@ export const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
   min-height: 32px;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 80px;
+  }
 `;

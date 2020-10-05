@@ -32,6 +32,25 @@ export const List = styled.ul`
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
+  justify-content: space-between;
+
+  @media screen and (max-width: 420px) {
+    max-width: 375px;
+    padding: 0 30px;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 240px) {
+    max-width: 320px;
+    padding: 0 20px;
+  }
+`;
+
+export const ListBlog = styled.ul`
+  display: flex;
+  max-width: 1200px;
+  padding: 0 45px;
+  margin: 0 auto;
 
   @media screen and (max-width: 420px) {
     max-width: 375px;

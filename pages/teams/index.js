@@ -4,7 +4,7 @@ import { initializeApollo } from 'lib/apollo';
 
 import mock from 'mock/index';
 
-const blogPage = ({ teams }) => {
+const teamsPage = ({ teams }) => {
   return (
     <Layout backButton>
       <TeamList mock={mock.teamList} back={teams} />
@@ -28,4 +28,4 @@ export async function getStaticProps() {
   };
 }
 
-export default blogPage;
+export default teamsPage;

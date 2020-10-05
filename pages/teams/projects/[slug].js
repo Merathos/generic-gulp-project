@@ -1,13 +1,13 @@
-import { Layout, TeamList } from 'containers';
-import { GET_TEAM_CATEGORIES } from 'graphql/query';
+import { Layout, Project } from 'containers';
+import { GET_TEAM_CONTENT, GET_TEAM_CATEGORIES } from 'graphql/query';
 import { initializeApollo } from 'lib/apollo';
 
 import mock from 'mock/index';
 
-const blogPage = ({ teams }) => {
+const projectPage = ({ teams }) => {
   return (
     <Layout backButton>
-      <div />
+      <Project data={mock.project} teams={teams[0]} />
     </Layout>
   );
 };
@@ -36,9 +36,9 @@ export async function getStaticProps(context) {
   const {
     data: { teams }
   } = await apolloClient.query({
-    query: GET_TEAM_CATEGORIES,
+    query: GET_TEAM_CONTENT,
     variables: {
-      stack: context.params.slug
+      slug: context.params.slug
     }
   });
 
@@ -49,4 +49,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export default blogPage;
+export default projectPage;

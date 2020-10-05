@@ -5,7 +5,8 @@ import * as S from './styles';
 
 const TeamsFilter = props => {
   const {
-    data: { title, list }
+    data: { title, list },
+    handleChange
   } = props;
   const filterArray = useSelector(state => state.filter);
 
@@ -19,7 +20,7 @@ const TeamsFilter = props => {
               type="checkbox"
               name={el}
               id={el}
-              onChange={() => console.log(el)}
+              onChange={() => handleChange(el)}
               disabled={filterArray.indexOf(el) !== -1}
             />
             <S.Label htmlFor={el}>{el}</S.Label>
