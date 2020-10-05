@@ -6,13 +6,13 @@ const GreyFooter = ({ data, type }) => {
   return (
     <S.Section>
       {type === 'blog' ? (
-        <S.List>
+        <S.ListBlog>
           {data.map((el, i) => (
             <S.Card key={i}>
               <BlogsCard data={el} background="#fff" />
-            </S.Card >
+            </S.Card>
           ))}
-        </S.List>
+        </S.ListBlog>
       ) : (
         <S.List>
           {data.map((el, i) => (

@@ -137,3 +137,12 @@ export const GET_TEAM_CATEGORIES = gql`
     }
   }
 `;
+
+export const GET_TEAM_CONTENT = gql`
+  query getTeamContent($slug: String) {
+    teams(slug: $slug) {
+      name
+      description
+    }
+  }
+`;
