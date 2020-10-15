@@ -5,7 +5,7 @@ import { initializeApollo } from 'lib/apollo';
 
 const internshipPage = ({ vacancies }) => {
   return (
-    <Layout backButton>
+    <Layout>
       <Internship data={mock.internship} vacancies={vacancies} />
     </Layout>
   );

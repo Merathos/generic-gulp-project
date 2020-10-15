@@ -1132,29 +1132,24 @@ export default {
 
     social: [
       {
-        link: `https://www.google.com/`,
-        title: `hh`,
-        picture: `/icons/hh.svg`
+        link: `https://spb.hh.ru/employer/168307`,
+        title: `hh`
       },
       {
-        link: `https://www.google.com/`,
-        title: `linkedin`,
-        picture: `/icons/in.svg`
+        link: `https://www.linkedin.com/company/dino-systems`,
+        title: `linkedin`
       },
       {
-        link: `https://www.google.com/`,
-        title: `youtube`,
-        picture: `/icons/youtube.svg`
+        link: `https://www.youtube.com/channel/UCmJYB3hvbF3AlVh9HFeXX3A`,
+        title: `youtube`
       },
       {
-        link: `https://www.google.com/`,
-        title: `vk`,
-        picture: `/icons/vk.svg`
+        link: `https://vk.com/dins_spb`,
+        title: `vk`
       },
       {
-        link: `https://www.google.com/`,
-        title: `instagram`,
-        picture: `/icons/instagram.svg`
+        link: `https://www.instagram.com/dins_team/`,
+        title: `instagram`
       }
     ],
     suscribe: `Подписаться на вакансии`,
