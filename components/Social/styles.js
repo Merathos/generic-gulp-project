@@ -36,4 +36,13 @@ export const SocialLink = styled.a`
       fill: #fff;
     }
   }
+
+  &:active {
+    background-color: ${props =>
+      props.color === 'blue' ? '#2079BF' : '#EC381A'};
+
+    path {
+      fill: #fff;
+    }
+  }
 `;

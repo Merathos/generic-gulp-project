@@ -5,13 +5,11 @@ import * as S from './styles';
 const Footer = ({
   data: {
     labour: { link, text },
-    suscribe,
     social,
     copyright,
     nimaxText
   },
   grey,
-  suscribtion,
   nimax
 }) => (
   <S.StyledFooter grey={grey}>
@@ -19,14 +17,13 @@ const Footer = ({
       <S.FooterText>{copyright}</S.FooterText>
       <S.Link href={link}>{text}</S.Link>
     </S.Container>
-    {suscribtion && <Button>{suscribe}</Button>}
     <Social grey={grey} links={social} />
     {nimax && (
       <S.Block>
         <S.Span>{nimaxText}</S.Span>
         <LogoNimax />
       </S.Block>
-      )}
+    )}
   </S.StyledFooter>
 );
 
