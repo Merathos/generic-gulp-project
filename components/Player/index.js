@@ -1,8 +1,7 @@
-import { min } from 'moment';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import * as S from './styles';
 
-const fromSecToDuration = (duration) => {
+const fromSecToDuration = duration => {
   const min = Math.round(duration/60);
   let sec = Math.round(duration % 60);
 
@@ -14,26 +13,36 @@ const fromSecToDuration = (duration) => {
 }
 
 const Player = ({ src }) => {
-  const ref = useRef(null);
+  const refPlayer = useRef(null);
   const refProgress = useRef(null);
   const [pause, setPause] = useState(true);
+  const [audioDuration, setAudioDuration] = useState(0);
+
+  useEffect(() => {
+    setAudioDuration(fromSecToDuration(refPlayer.current.duration));
+  }, []);
 
   const playPlayer = () => {
-    ref.current.play();
+    refPlayer.current.play();
     setPause(false);
   };
 
   const pausePlayer = () => {
-    ref.current.pause();
+    refPlayer.current.pause();
     setPause(true);
+  };
+
+  const handleUpdate = () => {
+    refProgress.current.style.width = `${Math.round(177 / refPlayer.current.duration * refPlayer.current.currentTime)}px`;
+    // setAudioDuration(Math.round(refPlayer.current.currentTime));
   };
 
   return (
     <>
       <audio
-        ref={ref}
-        onTimeUpdate={() =>
-        refProgress.current.style.width = `${Math.round(177 / ref.current.duration  * ref.current.currentTime)}px`}>
+        ref={refPlayer}
+        onTimeUpdate={() => handleUpdate()}
+        >
         <source
           src={src}
           type="audio/mpeg"
@@ -51,7 +60,7 @@ const Player = ({ src }) => {
               <S.Progress ref={refProgress} />
             </S.Bar>
           </S.Scale>
-        <S.Span>{ref.current && fromSecToDuration(ref.current.duration)}</S.Span>
+          <S.Span>{audioDuration}</S.Span>
         </S.Wrapper>
       </S.Block>
     </>

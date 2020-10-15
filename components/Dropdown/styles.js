@@ -55,8 +55,10 @@ export const Item = styled.li`
 export const List = styled.ul`
   height: 180px;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
 
-  &::-webkit-scrollbar {
+  &::-webkit-scrollbar {   /* Chrome */
     opacity: 0;
   }
 `;
@@ -80,6 +82,9 @@ export const Wrapper = styled.div`
 export const Label = styled.label`
   position: relative;
   padding-left: 20px;
+  display: flex;
+  font-size: 16px;
+  line-height: 190%;
 
   &::after {
     content: '';
