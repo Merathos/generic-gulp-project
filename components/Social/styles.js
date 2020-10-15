@@ -14,10 +14,6 @@ export const Element = styled.li`
   }
 `;
 
-export const Img = styled.img`
-  width: 14px;
-`;
-
 export const SocialLink = styled.a`
   width: 38px;
   height: 38px;
@@ -33,6 +29,10 @@ export const SocialLink = styled.a`
   }
 
   &:hover {
-    background-color: #2F8ED9;
+    background-color: #FB5235;
+
+    path {
+      fill: #fff;
+    }
   }
 `;
