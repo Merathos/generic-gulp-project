@@ -1138,23 +1138,23 @@ export default {
       },
       {
         link: `https://www.google.com/`,
-        title: `youtube`,
-        picture: `/icons/youtube.svg`
-      },
-      {
-        link: `https://www.google.com/`,
-        title: `instagram`,
-        picture: `/icons/instagram.svg`
-      },
-      {
-        link: `https://www.google.com/`,
         title: `linkedin`,
         picture: `/icons/in.svg`
       },
       {
         link: `https://www.google.com/`,
+        title: `youtube`,
+        picture: `/icons/youtube.svg`
+      },
+      {
+        link: `https://www.google.com/`,
         title: `vk`,
         picture: `/icons/vk.svg`
+      },
+      {
+        link: `https://www.google.com/`,
+        title: `instagram`,
+        picture: `/icons/instagram.svg`
       }
     ],
     suscribe: `Подписаться на вакансии`,

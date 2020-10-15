@@ -9,7 +9,11 @@ const Social = ({ links, grey }) => (
   <S.List>
     {links.map((el, i) => (
       <S.Element key={i}>
-        <S.SocialLink href={el.link} grey={grey}>
+        <S.SocialLink
+          href={el.link}
+          grey={grey}
+          color={el.title === 'vk' || el.title === 'linkedin' ? 'blue' : 'red'}
+        >
           {
             {
               'youtube': (

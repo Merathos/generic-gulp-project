@@ -29,7 +29,8 @@ export const SocialLink = styled.a`
   }
 
   &:hover {
-    background-color: #FB5235;
+    background-color: ${props =>
+      props.color === 'blue' ? '#2F8ED9' : '#FB5235'};
 
     path {
       fill: #fff;
