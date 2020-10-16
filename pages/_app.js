@@ -23,6 +23,15 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  a:hover,
+  a:focus {
+    color: #53B443;
+  }
+
+  a:active {
+    color: #339722;
+  }
+
   ul {
     margin: 0;
     padding: 0;

@@ -4,7 +4,7 @@ import mock from 'mock/index';
 
 const aboutPage = () => {
   return (
-    <Layout backButton greyFooter>
+    <Layout greyFooter>
       <About data={mock.about} />
     </Layout>
   );

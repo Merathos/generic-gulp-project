@@ -4,7 +4,7 @@ import mock from 'mock/index';
 
 const contactsPage = () => {
   return (
-    <Layout backButton nimax>
+    <Layout nimax>
       <Contacts data={mock.contacts} />
     </Layout>
   );

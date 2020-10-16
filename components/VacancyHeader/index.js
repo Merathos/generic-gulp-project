@@ -18,7 +18,7 @@ const VacancyHeader = ({ data }) => {
     is_relocation,
     is_internship,
     is_english_speaking_team,
-    project
+    team
   } = data;
 
   const features = [
@@ -47,13 +47,13 @@ const VacancyHeader = ({ data }) => {
       <H1>{name}</H1>
       <TextBlock>
         <Bold>Technology Stack:</Bold>
-        {stacks.map(el => (
-          <StyledText>{el.name}</StyledText>
+        {stacks.map((el, i) => (
+          <StyledText key={i}>{el.name}</StyledText>
         ))}
       </TextBlock>
       <TextBlock>
         <Bold>Проект:</Bold>
-        <StyledText>{project.name}</StyledText>
+        <StyledText>{team && team.name}</StyledText>
       </TextBlock>
       <StyledButton type="accent">
         {english ? 'Send CV' : 'Отправить резюме'}

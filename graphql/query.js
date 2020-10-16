@@ -26,7 +26,7 @@ export const GET_VACANCY_CONTENT = gql`
     	category {
     	  id
     	}
-    	project {
+    	team {
     	  name
     	}
     	stacks {
