@@ -1,66 +1,45 @@
-import { useRef, useState, useEffect } from 'react';
+import ReactPlayer from 'react-player';
+import { useRef, useState } from 'react';
+import { fromSecToDuration, restOfDuration } from 'helpers';
 import * as S from './styles';
-
-const fromSecToDuration = duration => {
-  const min = Math.round(duration/60);
-  let sec = Math.round(duration % 60);
-
-  if  (sec < 10) {
-    sec = '0' + sec;
-  }
-
-  return `${min}:${sec}`;
-}
 
 const Player = ({ src }) => {
   const refPlayer = useRef(null);
   const refProgress = useRef(null);
-  const [pause, setPause] = useState(true);
+  const [play, setPlay] = useState(false);
   const [audioDuration, setAudioDuration] = useState(0);
 
-  useEffect(() => {
-    setAudioDuration(fromSecToDuration(refPlayer.current.duration));
-  }, []);
-
-  const playPlayer = () => {
-    refPlayer.current.play();
-    setPause(false);
+  const togglePlayer = () => {
+    setPlay(!play);
   };
 
-  const pausePlayer = () => {
-    refPlayer.current.pause();
-    setPause(true);
-  };
-
-  const handleUpdate = () => {
-    refProgress.current.style.width = `${Math.round(177 / refPlayer.current.duration * refPlayer.current.currentTime)}px`;
-    // setAudioDuration(Math.round(refPlayer.current.currentTime));
+  const handleUpdate = e => {
+    refProgress.current.style.width = `${Math.round(177 * e.played)}px`;
+    setAudioDuration(restOfDuration(audioDuration));
   };
 
   return (
     <>
-      <audio
+      <ReactPlayer
+        type="audio/mpeg"
+        playing={play}
         ref={refPlayer}
-        onTimeUpdate={() => handleUpdate()}
-        >
-        <source
-          src={src}
-          type="audio/mpeg"
-        />
-      </audio>
+        url={src}
+        width="0"
+        height="0"
+        onProgress={e => play && handleUpdate(e)}
+        onDuration={e => !play && setAudioDuration(e)}
+      />
       <S.Block>
-        <S.Button
-          name={pause ? 20 : 38}
-          onClick={() => (pause ? playPlayer() : pausePlayer())}
-        />
+        <S.Button name={play ? 38 : 20} onClick={() => togglePlayer()} />
         <S.Wrapper>
-          {pause && <S.Label>Послушать рассказ</S.Label>}
-          <S.Scale pause={pause}>
+          {!play && <S.Label>Послушать рассказ</S.Label>}
+          <S.Scale pause={!play}>
             <S.Bar>
               <S.Progress ref={refProgress} />
             </S.Bar>
           </S.Scale>
-          <S.Span>{audioDuration}</S.Span>
+          <S.Span>{fromSecToDuration(audioDuration)}</S.Span>
         </S.Wrapper>
       </S.Block>
     </>

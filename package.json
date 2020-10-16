@@ -24,6 +24,7 @@
     "react-dom": "^16.11.0",
     "react-id-swiper": "^4.0.0",
     "react-map-gl": "^5.2.8",
+    "react-player": "^2.6.2",
     "react-redux": "^7.2.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "2.13.8",
