@@ -81,7 +81,7 @@ export const Block = styled.div`
   }
 
   &:hover::after {
-    animation: 1s ease infinite rotation;
+    animation: 1s ease-in-out infinite rotation;
   }
 
   @keyframes rotation {
