@@ -24,14 +24,17 @@ export const GET_VACANCY_CONTENT = gql`
       slug
     	content
     	category {
-    	  id
+        id
+        image {
+          path {
+            normal
+          }
+        }
     	}
     	team {
     	  name
     	}
-    	stacks {
-        name
-      }
+    	technology_stacks
     	recruiters {
         name
       }

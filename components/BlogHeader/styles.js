@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { TitleH3, Text, Icon, Button } from 'elements';
-import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
+import { TitleH3, Text, Icon } from 'elements';
 
 export const Grid = styled.div`
   display: flex;

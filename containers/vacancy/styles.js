@@ -18,14 +18,11 @@ export const Container = styled.main`
 
 export const GreyContainer = styled.div`
   background-color: #F7F8F9;
-  background-image: url('/backgrounds/vacancy-grey-title.svg');
-  background-repeat: no-repeat;
-  background-position: 118% 298%;
   overflow-x: hidden;
+  margin-bottom: 160px;
 
   @media screen and (max-width: 420px) {
-    background-size: 50% 50%;
-    background-position: 150% 120%;
+    margin-bottom: 80px;
   }
 `;
 
