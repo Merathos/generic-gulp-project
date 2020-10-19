@@ -78,6 +78,19 @@ export const Block = styled.div`
     bottom: 40px;
     right: -200px;
     z-index: 2;
+
+    @media (max-width: 1360px) {
+      right: 50%;
+      bottom: -100%;
+    }
+
+    @media (max-width: 420px) {
+      width: 120px;
+      height: 120px;
+      background-size: 120px 120px;
+      bottom: 20px;
+      right: 0;
+    }
   }
 
   &:hover::after {
@@ -95,13 +108,5 @@ export const Block = styled.div`
 
   @media screen and (max-width: 420px) {
     width: 100%;
-
-    &::after {
-      width: 120px;
-      height: 120px;
-      background-size: 120px 120px;
-      bottom: 20px;
-      right: 0;
-  }
   }
 `;

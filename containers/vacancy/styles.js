@@ -21,6 +21,7 @@ export const GreyContainer = styled.div`
   background-image: url('/backgrounds/vacancy-grey-title.svg');
   background-repeat: no-repeat;
   background-position: 118% 298%;
+  overflow-x: hidden;
 
   @media screen and (max-width: 420px) {
     background-size: 50% 50%;
