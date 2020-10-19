@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background-image: url('/images/yellow-rectangle.svg');
+  background-image: ${props => (props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`)};
   background-repeat: no-repeat;
   background-position: 40% top;
   position: absolute;
@@ -55,8 +55,8 @@ const Element = styled.li`
   margin-left: 40px;
 `;
 
-const Header = ({ data: links }) => (
-  <StyledHeader>
+const Header = ({ data: links, plain }) => (
+  <StyledHeader plain={plain}>
     <StyledLogo />
     <Nav>
       <List>

@@ -35,11 +35,12 @@ const Layout = ({
   backButton,
   greyFooter,
   subscription,
+  plainHeader = false,
   nimax = true
 }) => {
   return (
     <Wrapper>
-      <Header data={mock.header} />
+      <Header data={mock.header} plain={plainHeader} />
       {children}
       <Footer
         data={mock.footer}
