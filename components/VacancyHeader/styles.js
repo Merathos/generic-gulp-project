@@ -5,12 +5,12 @@ export const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   padding: 200px 50px;
-  margin-bottom: 160px;
+  display: flex;
+  align-items: center;
 
   @media screen and (max-width: 420px) {
     padding: 110px 30px 64px;
     max-width: 375px;
-    margin-bottom: 80px;
   }
 
   @media screen and (max-width: 340px) {
@@ -47,4 +47,11 @@ export const H1 = styled(TitleH1)`
 
 export const StyledText = styled(Text)`
   display: inline;
+`;
+
+export const Picture = styled.img`
+  margin-left: 50px;
+  @media screen and (max-width: 420px) {
+    margin-left: 0;
+  }
 `;
