@@ -1,8 +1,9 @@
-import { Layout } from 'containers';
+import { Layout, Main } from 'containers';
 
 const mainPage = () => {
     return (
         <Layout greyFooter plainHeader>
+            <Main />
         </Layout>
     );
 };
