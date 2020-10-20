@@ -1,38 +1,38 @@
-import SearchIcon from 'public/icons/search.svg';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FilterButton } from 'elements';
-import { Field, Form, Submit, List, Element, Section } from './styles';
+import SearchIcon from 'public/icons/search.svg';
+import { Field, Block, Submit, List, Element, Section } from './styles';
 
-const Search = ({ data }) => {
+const Search = props => {
+  const { placeholder, handleSearch } = props;
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const filterArray = useSelector(state => state.filter);
 
-  const handleChange = e => {
-    setValue(e.target.value);
-    console.log(e.target.value);
-  };
-
-  const handleSubmit = e => {
+  const handleSearchSubmit = e => {
     e.preventDefault();
-    dispatch({ type: 'CATALOG_SEARCH', payload: value });
-  }
+    handleSearch(value);
+  };
 
   return (
     <Section>
-      <Form onSubmit={e => handleSubmit(e)}>
+      <Block>
         <Field
           name="search"
-          placeholder={data}
+          placeholder={placeholder}
           type="text"
           value={value}
-          onChange={e => handleChange(e)}
+          onChange={e => setValue(e.target.value)}
         />
-        <Submit type="submit" aria-label="Поиск">
+        <Submit
+          type="button"
+          aria-label="Поиск"
+          onClick={e => handleSearchSubmit(e)}
+        >
           <SearchIcon />
         </Submit>
-      </Form>
+      </Block>
       <List>
         {filterArray.length !== 0 && (
           filterArray.map((el, i) => (
@@ -40,8 +40,7 @@ const Search = ({ data }) => {
               <FilterButton
                 name={el}
                 handleChange={() =>
-                  dispatch({ type: 'CLEAR_FILTER', payload: el })
-                }
+                  dispatch({ type: 'CLEAR_FILTER', payload: el })}
               />
           </Element>
         )))}

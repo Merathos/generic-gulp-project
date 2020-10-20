@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
+export const Block = styled.div`
   border-bottom: 1px solid #201F2A;
   display: flex;
   padding: 25px 0;
@@ -44,7 +44,7 @@ export const Element = styled.li`
 export const Section = styled.section`
   margin-bottom: 85px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 30px;
   }
 `;

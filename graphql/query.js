@@ -60,7 +60,12 @@ export const GET_RELOCATION_BLOGS = gql`
 export const GET_FILTER_SEARCH = gql`
   query getSearch($value: String) {
     vacancies(filter: { search: $value }) {
-      id
+      name
+      is_english_speaking_team
+      is_internship
+      is_relocation
+      descr
+      slug
     }
   }
 `;
