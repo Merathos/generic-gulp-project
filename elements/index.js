@@ -12,3 +12,4 @@ export { default as FilterButton } from './FilterButton';
 export { default as Icon } from './Icon';
 export { default as SmallText } from './SmallText';
 export { default as Card } from './Card';
+export { default as EventsCheckbox } from './EventsCheckbox';

@@ -1158,5 +1158,27 @@ export default {
       text: `Оценка условий труда`
     },
     nimaxText: 'Сделали в'
+  },
+  events: {
+    mainTitle: `IT Evenings`,
+    filterFields: [
+        {
+          name: `DevOps`,
+          color: `#2F8ED9`
+        },
+        {
+          name: `Java`,
+          color: `#FB5235`
+        },
+        {
+          name: `JavaScript`,
+          color: `#FEB251`
+        },
+        {
+          name: `QA`,
+          color: `#53B443`
+        }
+    ],
+    discard: `Сбросить фильтр`
   }
 };
