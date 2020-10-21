@@ -35,6 +35,7 @@ const Layout = ({
   backButton,
   greyFooter,
   subscription,
+  isVisible = true,
   plainHeader = false,
   nimax = true
 }) => {
@@ -48,7 +49,7 @@ const Layout = ({
         subscription={subscription}
         nimax={nimax}
       />
-      <StyledSocialSticker data={mock.socialSticker} />
+      {isVisible && <StyledSocialSticker data={mock.socialSticker} />}
       {backButton && (
         <a>
           <StyledArrowLeft onClick={() => Router.back()} />

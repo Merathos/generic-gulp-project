@@ -20,20 +20,61 @@ export default {
         {
           title: `Категории`,
           list: [
-            `QA`, `DevOps`, `Management`, `UX/UI and design`, `HR and Finance`,
-            `Architect and Analyst`, `Product and Project management`, `Telco`,
-            `Network`, `Security` , `DBA` , `Sys Admin`, `AI`, `BigData`, `Other`
+            `QA`,
+            `DevOps`,
+            `Management`,
+            `UX/UI and design`,
+            `HR and Finance`,
+            `Architect and Analyst`,
+            `Product and Project management`,
+            `Telco`,
+            `Network`,
+            `Security`,
+            `DBA`,
+            `Sys Admin`,
+            `AI`,
+            `BigData`,
+            `Other`
           ],
           multi: false
         },
         {
           title: `Технологии`,
           list: [
-            `Java`, `C++`, `Erlang`, `JavaScript`, `Node.JS`, `Scala`, `Python`,
-            `RocksDB`, `MongoDB`, `Cassandra`, `Oracle`, `Vertica`, `Neo4J`, `Hadoop`,
-            `VMWare`, `Kubernetes`, `DDC`, `Marathon`, `Terraform`, `CloudFoundry`,
-            `Amazon`, `AWS`, `Google GCP`, `Zabbix`, `Influx`, `Elasticsearch`, `Git`,
-            `Mercurial`, `Jenkins`, `GitLab`, `GridGain`, `Coherence`, `Rabbit`, `Kafka`,
+            `Java`,
+            `C++`,
+            `Erlang`,
+            `JavaScript`,
+            `Node.JS`,
+            `Scala`,
+            `Python`,
+            `RocksDB`,
+            `MongoDB`,
+            `Cassandra`,
+            `Oracle`,
+            `Vertica`,
+            `Neo4J`,
+            `Hadoop`,
+            `VMWare`,
+            `Kubernetes`,
+            `DDC`,
+            `Marathon`,
+            `Terraform`,
+            `CloudFoundry`,
+            `Amazon`,
+            `AWS`,
+            `Google GCP`,
+            `Zabbix`,
+            `Influx`,
+            `Elasticsearch`,
+            `Git`,
+            `Mercurial`,
+            `Jenkins`,
+            `GitLab`,
+            `GridGain`,
+            `Coherence`,
+            `Rabbit`,
+            `Kafka`,
             `ZeroMQ,`
           ],
           multi: true
@@ -41,9 +82,23 @@ export default {
         {
           title: `Проект`,
           list: [
-            `Contact Center`, `Platform A`, `Platform D`, `Analytics`, `Telco`, `Billing`,
-            `RCV (Video-conference)`, `Core`, `SWAT`, `Relies IT`, `Features`, `AI`, `CRM SPB`,
-            `Glip`, `Deployment`, `SysOps`, `Lab`
+            `Contact Center`,
+            `Platform A`,
+            `Platform D`,
+            `Analytics`,
+            `Telco`,
+            `Billing`,
+            `RCV (Video-conference)`,
+            `Core`,
+            `SWAT`,
+            `Relies IT`,
+            `Features`,
+            `AI`,
+            `CRM SPB`,
+            `Glip`,
+            `Deployment`,
+            `SysOps`,
+            `Lab`
           ],
           multi: true
         }
@@ -88,19 +143,19 @@ export default {
         image: `/images/article.png`,
         title: `Заголовок`,
         description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-          то мы предложим поможем с переездом.`,
+          то мы предложим поможем с переездом.`
       },
       {
         image: `/images/article.png`,
         title: `Заголовок`,
         description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-          то мы предложим поможем с переездом.`,
+          то мы предложим поможем с переездом.`
       },
       {
         image: `/images/article.png`,
         title: `Заголовок`,
         description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-          то мы предложим поможем с переездом.`,
+          то мы предложим поможем с переездом.`
       }
     ],
     features: [
@@ -145,7 +200,7 @@ export default {
     },
     sidebarArticleMiddle: {
       title: `Как написать запрос для Checkmarx SAST`,
-      subtitle: `Читайте также`,
+      subtitle: `Читайте также`
     },
     list: [
       {
@@ -414,11 +469,40 @@ export default {
     filter: {
       title: `Технологии`,
       list: [
-        `Java`, `C++`, `Erlang`, `JavaScript`, `Node.JS`, `Scala`, `Python`,
-        `RocksDB`, `MongoDB`, `Cassandra`, `Oracle`, `Vertica`, `Neo4J`, `Hadoop`,
-        `VMWare`, `Kubernetes`, `DDC`, `Marathon`, `Terraform`, `CloudFoundry`,
-        `Amazon`, `AWS`, `Google GCP`, `Zabbix`, `Influx`, `Elasticsearch`, `Git`,
-        `Mercurial`, `Jenkins`, `GitLab`, `GridGain`, `Coherence`, `Rabbit`, `Kafka`,
+        `Java`,
+        `C++`,
+        `Erlang`,
+        `JavaScript`,
+        `Node.JS`,
+        `Scala`,
+        `Python`,
+        `RocksDB`,
+        `MongoDB`,
+        `Cassandra`,
+        `Oracle`,
+        `Vertica`,
+        `Neo4J`,
+        `Hadoop`,
+        `VMWare`,
+        `Kubernetes`,
+        `DDC`,
+        `Marathon`,
+        `Terraform`,
+        `CloudFoundry`,
+        `Amazon`,
+        `AWS`,
+        `Google GCP`,
+        `Zabbix`,
+        `Influx`,
+        `Elasticsearch`,
+        `Git`,
+        `Mercurial`,
+        `Jenkins`,
+        `GitLab`,
+        `GridGain`,
+        `Coherence`,
+        `Rabbit`,
+        `Kafka`,
         `ZeroMQ,`
       ]
     }
@@ -489,20 +573,18 @@ export default {
         Поэтому мы пишем в блог на Habr, организуем внутренние Tech Party и ежеквартальные митапы DINS IT EVENING, поддерживаем IT-сообщества Петербурга и участвуем в масштабных IT-конференциях. `,
         links: [
           {
-          title: `IT EVENING`,
-          link: `/events`
-        },
-        {
-          title: `Habr`,
-          link: `/habr`
-        }
-      ],
-        picture: `/images/about-details.png`,
+            title: `IT EVENING`,
+            link: `/events`
+          },
+          {
+            title: `Habr`,
+            link: `/habr`
+          }
+        ],
+        picture: `/images/about-details.png`
       }
     },
-    animation: {
-
-    },
+    animation: {},
     values: {
       title: `В DINS мы ценим`,
       items: [
@@ -640,7 +722,7 @@ export default {
           на любой вкус обеспечен.`,
           image: `/images/spb-5.jpg`
         }
-      ],
+      ]
     },
     promo: {
       title: `Хочу в Dins`,
@@ -680,10 +762,7 @@ export default {
       title: `Стажировка`,
       text: `Приглашаем студентов старших курсов и магистратуры, аспирантов и выпускников
        технических вузов на оплачиваемую стажировку. `,
-      buttons: [
-        `Оставить заявку`,
-        `Смотреть вакансии`
-      ],
+      buttons: [`Оставить заявку`, `Смотреть вакансии`],
       picture: `/images/intern-header-desktop.jpg`
     },
     about: {
@@ -1025,25 +1104,25 @@ export default {
         image: `/images/article.png`,
         title: `Заголовок`,
         description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-          то мы предложим поможем с переездом.`,
+          то мы предложим поможем с переездом.`
       },
       {
         image: `/images/article.png`,
         title: `Заголовок`,
         description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-          то мы предложим поможем с переездом.`,
+          то мы предложим поможем с переездом.`
       },
       {
         image: `/images/article.png`,
         title: `Заголовок`,
         description: `Если вы проживаете в другом городе или стране, но хотите работать у нас,
-          то мы предложим поможем с переездом.`,
+          то мы предложим поможем с переездом.`
       }
     ],
     sidebarArticle: {
       title: `Релокация`,
       subtitle: `Если вы проживаете в другом городе или стране,
-      но хотите работать у нас, то мы предложим поможем с переездом.`,
+      но хотите работать у нас, то мы предложим поможем с переездом.`
     },
     map: {
       title: `Офисы на карте`,
@@ -1158,5 +1237,45 @@ export default {
       text: `Оценка условий труда`
     },
     nimaxText: 'Сделали в'
+  },
+  intro: {
+    title: 'Работай в DINS',
+    text:
+      'Мы участвуем в разработке UCaaS-платформы для бизнеса. Она помогает компаниям управлять всеми коммуникациями:',
+    communicationsList: [
+      'Корпоративный чат',
+      'Видеоконференции',
+      'Облачная телефония',
+      'Контактный центр',
+      'Факс'
+    ],
+    buttonText: 'Присоединиться к команде',
+    portraits: [
+      {
+        isMain: true,
+        src: `/images/intro-portrait-1.png`,
+        bgColor: '#FB5235',
+        quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
+        name: 'Александр / Тимлид'
+      },
+      {
+        src: `/images/intro-portrait-2.png`,
+        bgColor: '#53B443',
+        quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
+        name: 'Александра / Тимлид'
+      },
+      {
+        src: `/images/intro-portrait-3.png`,
+        bgColor: '#2F8ED9',
+        quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
+        name: 'Александр / Тимлид'
+      },
+      {
+        src: `/images/intro-portrait-3.png`,
+        bgColor: '#FEB251',
+        quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
+        name: 'Александр / Тимлид'
+      }
+    ]
   }
 };
