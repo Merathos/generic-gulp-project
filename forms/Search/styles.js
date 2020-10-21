@@ -21,6 +21,20 @@ export const Field = styled.input`
   font-family: inherit;
   outline: none;
 
+  &:hover,
+  &:active {
+    opacity: 1;
+    color: #201F2A;
+  }
+
+  &:focus ~ button {
+    background: #FB5235;
+
+    svg path {
+      stroke: #fff;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 134%;
@@ -28,7 +42,25 @@ export const Field = styled.input`
 `;
 
 export const Submit = styled.button`
-  width: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-left: 10px;
+  
+  &:active {
+    background: #EC381A;
+
+    svg path {
+      stroke: #fff;
+    }
+  }
+
+  /* @media screen and (max-width: 420px) {
+    margin-left: 4px;
+  } */
 `;
 
 export const List = styled.ul`

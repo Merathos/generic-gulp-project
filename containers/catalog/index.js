@@ -43,7 +43,7 @@ const VacanciesList = ({ data, back }) => {
         <S.Article>
           <S.Title>{data.mainTitle}</S.Title>
           <Search
-            data={data.search}
+            placeholder={data.search}
             handleSearch={searchValue => handleSearch(searchValue)}
           />
         </S.Article>
