@@ -9,12 +9,21 @@ const Filter = props => {
   const internship_state = useSelector(state => state.internship);
   const english_state = useSelector(state => state.english);
   const [opened, setOpened] = useState('');
+  const filterArray = useSelector(state => state.filter);
 
   const openDropdown = e => {
     if (opened === e) {
       setOpened('');
     } else {
       setOpened(e);
+    }
+  };
+
+  const handleCheckbox = e => {
+    if (filterArray.indexOf(e) === -1) {
+      dispatch({ type: 'CATALOG_FILTER', payload: e });
+    } else {
+      dispatch({ type: 'CLEAR_FILTER', payload: e });
     }
   };
 
@@ -30,7 +39,10 @@ const Filter = props => {
             data={el}
             handleOpen={() => openDropdown(el.title)}
             opened={opened === el.title}
-            handleChange={e => dispatch({ type: 'CATALOG_FILTER', payload: e })}
+            handleChangeCheckbox={e => handleCheckbox(e)}
+            handleChangeRadio={e =>
+              dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e })
+            }
           />
         ))}
       </List>

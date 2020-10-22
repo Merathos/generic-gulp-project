@@ -1,39 +1,47 @@
 import { useSelector } from 'react-redux';
-import { Title, Item, List, Label, Wrapper } from './styles';
+import { Checkbox, RadioButton } from 'elements';
+import { Title, Item, List, Wrapper } from './styles';
 
 const Dropdown = props => {
   const {
     data: { title, list, multi },
     opened,
     handleOpen,
-    handleChange,
+    handleChangeCheckbox,
+    handleChangeRadio,
   } = props;
   const filterArray = useSelector(state => state.filter);
+  const categories = useSelector(state => state.categories);
 
   return (
-    <ul>
+    <>
       <Title type="button" onClick={() => handleOpen()} active={opened}>
         {title}
       </Title>
-      {opened && (
-        <Wrapper>
-          <List>
-            {list.map((el, i) => (
-              <Item key={i}>
-                <input
-                  type={multi ? 'checkbox' : 'radio'}
-                  name={multi ? el : title}
-                  id={el}
-                  onChange={() => handleChange(el)}
-                  disabled={filterArray.indexOf(el) !== -1}
+      <Wrapper style={{ display: opened ? 'block' : 'none' }}>
+        <List>
+          {list.map((el, i) => (
+            <Item key={i}>
+              {multi ? (
+                <Checkbox
+                  name={el}
+                  handleChange={() => handleChangeCheckbox(el)}
+                  type="dropdown"
+                  checked={filterArray.indexOf(el) !== -1}
                 />
-                <Label htmlFor={el}>{el}</Label>
-              </Item>
-            ))}
-          </List>
-        </Wrapper>
-      )}
-    </ul>
+              ) : (
+                <RadioButton
+                  name={title}
+                  handleChange={e => handleChangeRadio(e)}
+                  value={el}
+                  checked={categories === el}
+                />
+              )}
+            </Item>
+          ))}
+        </List>
+      </Wrapper>
+    </>
   );
 };
 

@@ -56,6 +56,7 @@ export const List = styled.ul`
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE 10+ */
   scrollbar-width: none; /* Firefox */
+  padding-bottom: 15px;
 
   &::-webkit-scrollbar {   /* Chrome */
     opacity: 0;
@@ -78,23 +79,3 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Label = styled.label`
-  position: relative;
-  padding-left: 20px;
-  display: flex;
-  font-size: 16px;
-  line-height: 20px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    top: 50%;
-    left: 0;
-    background-color: #53B443;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    display: none;
-  }
-`;

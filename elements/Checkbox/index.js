@@ -1,28 +1,36 @@
-import { useState } from 'react';
-import { Wrapper } from './styles';
+import { Wrapper, Label, DropLabel } from './styles';
 
 const Checkbox = props => {
-  const [isChecked, setChecked] = useState(false);
-  const { name, handleChange } = props;
-
-  const changeCheckbox = () => {
-    setChecked(!isChecked);
-    handleChange();
-  };
+  const { name, handleChange, type, checked_state } = props;
 
   return (
-    <Wrapper checked={isChecked}>
-      <label htmlFor={name}>
-        <input
-          type="checkbox"
-          value={name}
-          id={name}
-          onChange={() => changeCheckbox()}
-          checked={isChecked}
-        />
-        {name}
-      </label>
-    </Wrapper>
+    <>
+      {type === 'dropdown' ? (
+        <>
+          <input
+            type="checkbox"
+            id={name}
+            onChange={() => handleChange()}
+            checked={checked_state}
+          />
+          <DropLabel htmlFor={name} checked={checked_state}>
+            {name}
+          </DropLabel>
+        </>
+      ) : (
+        <Wrapper>
+          <input
+            type="checkbox"
+            id={name}
+            onChange={() => handleChange()}
+            checked={checked_state}
+          />
+          <Label htmlFor={name} checked={checked_state}>
+            {name}
+          </Label>
+        </Wrapper>
+      )}
+    </>
   );
 };
 
