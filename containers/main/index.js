@@ -1,15 +1,27 @@
-import { Container } from "./styles";
+import Intro from '../intro';
+import { Container, GreyContainer } from './styles';
 
-const Main = () => {
+const Main = ({ data }) => {
   return (
-    <Container>
-      {/*<Offer />*/}
-      {/*<Infographics />*/}
-      {/*<AboutUs />*/}
-      {/*<PersonalStory />*/}
-      {/*<Teams />*/}
-      {/*<Vacancies />*/}
-    </Container>
+    <main>
+      <GreyContainer>
+        <Container>
+          {/*<Head>*/}
+          {/*  <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/}
+          {/*</Head>*/}
+          <Intro data={data} />
+        </Container>
+      </GreyContainer>
+      <Container>{/*<Infographics />*/}</Container>
+      <Container>{/*<AboutUs />*/}</Container>
+      <GreyContainer>
+        <Container>{/*<PersonalStory />*/}</Container>
+      </GreyContainer>
+      <Container>{/*<Teams />*/}</Container>
+      <GreyContainer>
+        <Container>{/*<Vacancies />*/}</Container>
+      </GreyContainer>
+    </main>
   );
 };
 
