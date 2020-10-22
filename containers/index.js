@@ -15,3 +15,4 @@ export { default as TeamList } from './team-list';
 export { default as VacanciesList } from './catalog';
 export { default as Project } from './project';
 export { default as Main } from './main';
+export { default as Events } from './events';
