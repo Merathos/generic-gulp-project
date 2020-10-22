@@ -8,8 +8,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background-image: ${props =>
-    props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
+  background-image: ${props => props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
   background-repeat: no-repeat;
   background-position: 40% top;
   position: absolute;
