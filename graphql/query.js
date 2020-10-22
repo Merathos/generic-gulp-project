@@ -58,9 +58,16 @@ export const GET_RELOCATION_BLOGS = gql`
 `;
 
 export const GET_FILTER_SEARCH = gql`
-  query getSearch($value: String) {
-    vacancies(filter: { search: $value }) {
-      id
+  query getSearch {
+    vacancies(filter: {
+      search: $search
+    }) {
+      name
+      is_english_speaking_team
+      is_internship
+      is_relocation
+      descr
+      slug
     }
   }
 `;

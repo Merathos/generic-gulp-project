@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
+export const Block = styled.div`
   border-bottom: 1px solid #201F2A;
   display: flex;
   padding: 25px 0;
@@ -21,6 +21,20 @@ export const Field = styled.input`
   font-family: inherit;
   outline: none;
 
+  &:hover,
+  &:active {
+    opacity: 1;
+    color: #201F2A;
+  }
+
+  &:focus ~ button {
+    background: #FB5235;
+
+    svg path {
+      stroke: #fff;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 134%;
@@ -28,23 +42,24 @@ export const Field = styled.input`
 `;
 
 export const Submit = styled.button`
-  width: 20px;
-`;
-
-export const List = styled.ul`
+  width: 45px;
+  height: 45px;
   display: flex;
-  flex-wrap: wrap;
-  min-height: 32px;
-`;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-left: 10px;
+  background: #EC381A;
 
-export const Element = styled.li`
-  margin-right: 22px;
-`;
+  svg path {
+    stroke: #fff;
+  }
 
-export const Section = styled.section`
-  margin-bottom: 85px;
+  &:disabled {
+    background: transparent;
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+    svg path {
+      stroke: #201F2A;
+    }
   }
 `;

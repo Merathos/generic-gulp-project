@@ -48,3 +48,4 @@ export { default as TeamCard } from './TeamCard';
 export { default as Mailing } from './Mailing';
 export { default as EventCard } from './EventCard';
 export { default as EventList } from './EventList';
+export { default as Tags } from './Tags';

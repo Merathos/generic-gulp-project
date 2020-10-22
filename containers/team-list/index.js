@@ -1,14 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
-import { Cards } from 'components';
-import { FilterButton } from 'elements';
+import { useDispatch } from 'react-redux';
+import { Cards, Tags } from 'components';
 import { TeamsFilter } from 'forms';
 import * as S from './styles';
 
 const TeamList = ({ mock, back }) => {
-  const filterArray = useSelector(state => state.filter);
   const dispatch = useDispatch();
-  const router = useRouter();
 
   return (
     <main>
@@ -24,19 +20,7 @@ const TeamList = ({ mock, back }) => {
           </S.Aside>
           <S.Article>
             <S.Title>{mock.mainTitle}</S.Title>
-            {/* to do - make component */}
-            <S.Tags>
-              {filterArray.length !== 0 && 
-                filterArray.map((el, i) => (
-                <S.Element key={i}>
-                    <FilterButton
-                      name={el}
-                      handleChange={() =>
-                        dispatch({ type: 'CLEAR_FILTER', payload: el })}
-                    />
-                  </S.Element>
-              ))}
-            </S.Tags>
+            <Tags />
           </S.Article>
           <Cards data={back} type="teams" />
         </S.Grid>
