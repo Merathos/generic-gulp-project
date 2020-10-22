@@ -28,6 +28,11 @@ export const Label = styled.label`
   font-size: 20px;
   line-height: 26.8px;
 
+  @media (max-width: 910px) {
+    font-size: 14px;
+    line-height: 18.76px;
+  }
+
   &::before {
     content: '';
     box-sizing: border-box;

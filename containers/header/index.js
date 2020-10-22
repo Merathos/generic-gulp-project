@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background-image: ${props => (props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`)};
+  background-image: ${props => props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
   background-repeat: no-repeat;
   background-position: 40% top;
   position: absolute;
@@ -42,6 +42,13 @@ const Button = styled.button`
 const Nav = styled.nav`
   margin: 0 0 0 auto;
 
+  @media screen and (max-width: 720px) {
+    ${props =>
+      props.plain && {
+        display: 'none'
+      }}
+  }
+
   @media screen and (max-width: 420px) {
     display: none;
   }
@@ -58,7 +65,7 @@ const Element = styled.li`
 const Header = ({ data: links, plain }) => (
   <StyledHeader plain={plain}>
     <StyledLogo />
-    <Nav>
+    <Nav plain={plain}>
       <List>
         {links.map((el, i) => (
           <Element key={i}>

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { EventsCheckbox, FilterButton } from 'elements';
-import { Wrapper, List, Item } from "./styles";
+import { EventsCheckbox } from 'elements';
+import { Wrapper, List, Item, ResetFilter } from "./styles";
 
 const EventsFilter = (props) => {
   const {
@@ -30,12 +30,9 @@ const EventsFilter = (props) => {
         </Item>
       ))}
       </List>
-      <FilterButton
-        name={discard}
-        handleChange={() => {
-          setCheckedItems({});
-        }}
-      />
+      <ResetFilter type="button" onClick={() => setCheckedItems({})}>
+        {discard}
+      </ResetFilter>
     </Wrapper>
   );
 };

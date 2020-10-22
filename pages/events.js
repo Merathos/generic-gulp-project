@@ -3,7 +3,7 @@ import mock from 'mock/index';
 
 const eventsPage = () => {
     return (
-        <Layout plainHeader>
+        <Layout plainHeader isVisible={false} showFooter={false}>
             <Events data={mock.events} />
         </Layout>
     );

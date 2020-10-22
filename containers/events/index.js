@@ -1,21 +1,36 @@
-import { Main, Container, Grid, Aside, Title, ContentWrapper, Tags } from "./styles";
+import * as S from './styles';
 import { EventsFilter } from 'forms';
+import { FilterButton } from 'elements';
+import { Mailing, EventList } from 'components';
 
 const Events = ({data}) => {
   return (
-    <Main>
-      <Container>
-        <Grid>
-          <Aside>
+    <S.Main>
+      <S.Container>
+        <S.Grid>
+          <S.Title>{data.mainTitle}</S.Title>
+          <S.Aside>
             <EventsFilter data={data} />
-          </Aside>
-          <ContentWrapper>
-            <Title>{data.mainTitle}</Title>
-            {/* <Tags><li>Some tag</li></Tags> */}
-          </ContentWrapper>
-        </Grid>
-      </Container>
-    </Main>
+            <Mailing data={data.mailing} />
+          </S.Aside>
+          <S.ContentWrapper>
+            <S.Tags>
+              {data.tags.map((el, i) => (
+                <S.Tag key={i}>
+                  <FilterButton
+                    name={el}
+                    handleChange={() => {}}
+                  />
+                </S.Tag>
+              ))}
+            </S.Tags>
+            <EventList cards={data.cards.active} />
+            <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
+            <EventList cards={data.cards.completed} completed={true} />
+          </S.ContentWrapper>
+        </S.Grid>
+      </S.Container>
+    </S.Main>
     );
 };
 
