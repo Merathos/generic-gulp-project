@@ -1,53 +1,57 @@
-import { useLazyQuery } from '@apollo/react-hooks';
-import { useState } from 'react';
+import { useQuery } from '@apollo/react-hooks'
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { GET_FILTER_SEARCH } from 'graphql/query';
-import { Cards, SidebarArticle } from 'components';
+import { Cards, SidebarArticle, Tags } from 'components';
 import { Search, Filter } from 'forms';
 import * as S from './styles';
 
-const VacanciesList = ({ data, back }) => {
-  const router = useRouter();
+const VacanciesList = ({ data: mock, back }) => {
   const [value, setValue] = useState('');
-  const [cards, setCards] = useState(back);
-  const [makeSearchRequest, { data: dataSearch }] = useLazyQuery(
+  const router = useRouter();
+  const { loading, error, data, fetchMore, networkStatus } = useQuery(
     GET_FILTER_SEARCH,
     {
       variables: {
-        value
-      }
+        search: value,
+      },
+      // Setting this value to true will make the component rerender when
+      // the "networkStatus" changes, so we are able to know if it is fetching
+      // more data
+      notifyOnNetworkStatusChange: true,
     }
   );
+  const _refetch = useQuery(GET_FILTER_SEARCH).refetch;
 
-  if (dataSearch && dataSearch.vacancies) {
-    setCards(dataSearch.vacancies);
-  }
+  const refetch = useCallback(() => {
+    setTimeout(() => _refetch({
+      variables: {
+        search: value,
+      }
+    }), 0);
+  }, [_refetch]);
 
   const handleSearch = searchValue => {
     setValue(searchValue);
-    router.push({
-      query: {
-        search: searchValue
-      }
-    });
-    makeSearchRequest();
+    refetch();
   };
 
   return (
     <S.Container>
       <S.Grid>
         <S.Aside>
-          <Filter data={data.filter} />
-          <SidebarArticle type="button" data={data.article} />
+          <Filter data={mock.filter} />
+          <SidebarArticle type="button" data={mock.article} />
         </S.Aside>
         <S.Article>
-          <S.Title>{data.mainTitle}</S.Title>
+          <S.Title>{mock.mainTitle}</S.Title>
           <Search
-            placeholder={data.search}
-            handleSearch={searchValue => handleSearch(searchValue)}
+            placeholder={mock.search}
+            handleSearch={search => handleSearch(search)}
           />
+          <Tags />
         </S.Article>
-        <Cards data={cards.length === 0 ? [] : cards} type="vacancies" />
+        <Cards data={back} type="vacancies" />
       </S.Grid>
     </S.Container>
   );

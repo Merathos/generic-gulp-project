@@ -49,34 +49,17 @@ export const Submit = styled.button`
   align-items: center;
   border-radius: 8px;
   margin-left: 10px;
-  
-  &:active {
-    background: #EC381A;
+  background: #EC381A;
 
-    svg path {
-      stroke: #fff;
-    }
+  svg path {
+    stroke: #fff;
   }
 
-  /* @media screen and (max-width: 420px) {
-    margin-left: 4px;
-  } */
-`;
+  &:disabled {
+    background: transparent;
 
-export const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 32px;
-`;
-
-export const Element = styled.li`
-  margin-right: 22px;
-`;
-
-export const Section = styled.section`
-  margin-bottom: 85px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 30px;
+    svg path {
+      stroke: #201F2A;
+    }
   }
 `;
