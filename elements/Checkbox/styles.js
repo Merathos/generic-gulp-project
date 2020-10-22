@@ -1,15 +1,25 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div.attrs(props => ({
-  checkbox: props.checked ? "url('icons/checked.svg')" : 'none',
-  color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)'
-}))`
+export const Wrapper = styled.div`
   margin-bottom: 28px;
   font-weight: 500;
   font-size: 20px;
   line-height: 134%;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 134%;
+  }
+`;
+
+export const Label = styled.label.attrs(props => ({
+  checkbox: props.checked ? "url('icons/checked.svg')" : 'none',
+  color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)'
+}))`
   padding-left: 30px;
   position: relative;
+  cursor: pointer;
 
   &::before {
     content: '';
@@ -25,10 +35,25 @@ export const Wrapper = styled.div.attrs(props => ({
     border: 2px solid rgba(31, 32, 42, 0.3);
     border-color: ${props => props.color};
   }
+`;
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 134%;
+export const DropLabel = styled.label`
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  font-size: 16px;
+  line-height: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 50%;
+    left: 0;
+    background-color: #53B443;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: none;
   }
 `;

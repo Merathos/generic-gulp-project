@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/react-hooks'
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
+
 import { GET_FILTER_SEARCH } from 'graphql/query';
 import { Cards, SidebarArticle, Tags } from 'components';
 import { Search, Filter } from 'forms';

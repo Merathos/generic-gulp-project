@@ -15,19 +15,29 @@ const Element = styled.li`
 const Tags = () => {
   const dispatch = useDispatch();
   const filterArray = useSelector(state => state.filter);
+  const categories = useSelector(state => state.categories);
 
   return (
     <List>
       {filterArray.length !== 0 && (
         filterArray.map((el, i) => (
-        <Element key={i}>
+          <Element key={i}>
             <FilterButton
               name={el}
               handleChange={() =>
                 dispatch({ type: 'CLEAR_FILTER', payload: el })}
             />
+          </Element>
+        )))
+      }
+      {categories && (
+        <Element>
+          <FilterButton
+            name={categories}
+            handleChange={() => dispatch({ type: 'CLEAR_FILTER_CATEGORIES' })}
+          />
         </Element>
-      )))}
+      )}
     </List>
   )
 }
