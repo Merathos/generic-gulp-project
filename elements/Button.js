@@ -4,15 +4,16 @@ const Accent = styled.a`
   font-weight: bold;
   font-size: 18px;
   line-height: 70px;
-  background: #FB5235;
+  background: #fb5235;
   border-radius: 8px;
   padding: 0 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   display: inline-block;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 640px) {
     font-size: 12px;
     line-height: 56px;
+    ${props => props.behavior === 'disappear' && `display:none`}
   }
 `;
 
@@ -20,7 +21,7 @@ const Default = styled.a`
   font-weight: bold;
   font-size: 18px;
   line-height: 70px;
-  color: #FB5235;
+  color: #fb5235;
   border: 2px solid rgba(32, 31, 42, 0.1);
   box-sizing: border-box;
   border-radius: 8px;
@@ -34,22 +35,18 @@ const Default = styled.a`
   }
 `;
 
-const Button = ({ type = "default", children, className }) => (
+const Button = ({ type = 'default', behavior, children, className }) => (
   <>
-  {
     {
-      'accent': (
-        <Accent className={className}>
-          {children}
-        </Accent>
-      ),
-      'default': (
-        <Default className={className}>
-          {children}
-        </Default>
-      )
-    }[type]
-  }
+      {
+        accent: (
+          <Accent className={className} behavior={behavior}>
+            {children}
+          </Accent>
+        ),
+        default: <Default className={className}>{children}</Default>
+      }[type]
+    }
   </>
 );
 
