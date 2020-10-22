@@ -32,9 +32,8 @@ export const Title = styled.button.attrs(props => ({
 `;
 
 export const Item = styled.li`
-  font-size: 16px;
-  line-height: 190%;
   opacity: 0.5;
+  margin-bottom: 10px;
 
   input:checked ~ label {
     color: #53B443;
@@ -84,7 +83,7 @@ export const Label = styled.label`
   padding-left: 20px;
   display: flex;
   font-size: 16px;
-  line-height: 190%;
+  line-height: 20px;
 
   &::after {
     content: '';

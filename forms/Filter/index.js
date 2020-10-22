@@ -38,16 +38,12 @@ const Filter = props => {
         <Checkbox
           name={internship}
           checked_state={internship_state}
-          handleChange={value =>
-            dispatch({ type: 'CATALOG_INTERNSHIP', payload: value })
-          }
+          handleChange={() => dispatch({ type: 'CATALOG_INTERNSHIP' })}
         />
         <Checkbox
           name={english}
           checked_state={english_state}
-          handleChange={value =>
-            dispatch({ type: 'CATALOG_ENGLISH', payload: value })
-          }
+          handleChange={() => dispatch({ type: 'CATALOG_ENGLISH' })}
         />
       </Container>
       <FilterButton

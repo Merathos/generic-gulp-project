@@ -6,7 +6,7 @@ const Dropdown = props => {
     data: { title, list, multi },
     opened,
     handleOpen,
-    handleChange
+    handleChange,
   } = props;
   const filterArray = useSelector(state => state.filter);
 

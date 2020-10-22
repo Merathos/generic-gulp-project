@@ -1,23 +1,24 @@
+import { useState } from 'react';
 import { Wrapper } from './styles';
 
 const Checkbox = props => {
-  const { name, checked_state, handleChange } = props;
+  const [isChecked, setChecked] = useState(false);
+  const { name, handleChange } = props;
 
-  const changeCheckbox = e => {
-    const {
-      target: { checked }
-    } = e;
-    handleChange(checked);
+  const changeCheckbox = () => {
+    setChecked(!isChecked);
+    handleChange();
   };
 
   return (
-    <Wrapper checked={checked_state}>
+    <Wrapper checked={isChecked}>
       <label htmlFor={name}>
         <input
           type="checkbox"
+          value={name}
           id={name}
-          onChange={evt => changeCheckbox(evt)}
-          checked={checked_state}
+          onChange={() => changeCheckbox()}
+          checked={isChecked}
         />
         {name}
       </label>
