@@ -3,20 +3,24 @@ import { TitleH2, Button } from 'elements';
 
 export const Container = styled.div`
   background-color: #ffffff;
-  padding-top: 37px;
-  padding-bottom: 182px;
-  background-image: url('backgrounds/confirmation-left.svg'), 
-                    url('backgrounds/confirmation-right.svg');
-  background-position: left 0, right 100%;
-  background-repeat: no-repeat, no-repeat;
-  
   @media (max-width: 768px) {
     top: 0;
     height: 100vh;
+  }
+`;
+export const Wrapper = styled.div`
+  padding-top: 37px;
+  padding-bottom: 182px;
+  background-image: url('backgrounds/confirmation-left.svg'),
+    url('backgrounds/confirmation-right.svg');
+  background-position: left 0 top 7px, right 100%;
+  background-repeat: no-repeat, no-repeat;
+  @media (max-width: 768px) {
     padding-top: 22px;
-    padding-bottom: 70px;
-    background-size: 40% 50%;
-    background-position: left -10%, right -30px  top 95%;
+    min-height: 655px;
+    padding-bottom: 0;
+    background-size: 49%, 30%;
+    background-position: left 0 top -10px, right 0 top 460px;
   }
 `;
 
@@ -70,7 +74,6 @@ export const Btn = styled.button`
   }
 
   &:hover {
-    color: #53B443;
+    color: #53b443;
   }
-
 `;
