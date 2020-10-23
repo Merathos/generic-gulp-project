@@ -4,7 +4,7 @@ import mock from 'mock/index';
 const mainPage = () => {
   return (
     <Layout greyFooter plainHeader isVisible={false}>
-      <Main data={mock.intro} />
+      <Main data={mock.main} />
     </Layout>
   );
 };
