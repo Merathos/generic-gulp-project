@@ -18,3 +18,4 @@ export { default as Main } from './main';
 export { default as Events } from './events';
 export { default as Intro } from './intro';
 export { default as Infographics } from './infographics';
+export { default as NewsModal } from './news-modal';

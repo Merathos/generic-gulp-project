@@ -14,3 +14,5 @@ export { default as SmallText } from './SmallText';
 export { default as Card } from './Card';
 export { default as EventsCheckbox } from './EventsCheckbox';
 export { default as RadioButton } from './RadioButton';
+export { default as TextInput } from './TextInput';
+export { default as CloseBtn } from './CloseBtn';

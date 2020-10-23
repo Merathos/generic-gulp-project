@@ -2,13 +2,13 @@ import * as S from './styles';
 
 const Mailing = (props) => {
   const {
-    data: { link, linkHref, text }
+    data: { link, text }, onClick
   } = props;
   
   return (
     <S.Container>
       <S.Text>
-        <S.Link href={linkHref}>{link}</S.Link>
+        <S.Link onClick={onClick}>{link}</S.Link>
         {text}
       </S.Text>
     </S.Container>

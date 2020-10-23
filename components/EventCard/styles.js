@@ -221,7 +221,14 @@ export const Location = styled.p`
 `;
 
 export const Link = styled.a`
+  display: block;
+  height: max-content;
+  max-width: 470px;
+  padding-bottom: 30px;
+
   @media (max-width: 910px) {
+    padding-bottom: 0;
     width: 100%;
+    max-width: 100%;
   }
 `;

@@ -1485,5 +1485,29 @@ export default {
         },
       ],
     },
+    newsModal: {
+      mainTitle: 'Хочу получать новости о мероприятиях DINs',
+      contact: {
+        title: 'Оставь  контактные данные',
+        inputs: ['Фамилия *', 'Имя *', 'Email *']
+      },
+      directions: {
+        title: 'Выбери направления мероприятий, про которые хочешь знать',
+        question: 'Какие направления в IT тебе интересны? *',
+        inputs: ['Development', 'Big Data', 'QA ', 'QA Automation', 'DevOps ']
+      },
+      agreement: {
+        dataText: 'Подтверждаю свое согласие на ',
+        dataLink: ' обработку персональных данных',
+        dataHref: '#',
+        mailing: 'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®'
+      },
+      buttonText: 'Отправить заявку',
+      confirmation: {
+        title: 'Спасибо!',
+        text: 'Теперь ты будешь в курсе всех самых свежих мероприятий DINS!',
+        btnText: 'Хорошо'
+      }
+    },
   },
 };
