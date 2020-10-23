@@ -1,4 +1,4 @@
-import Intro from '../intro';
+import { Infographics, Intro } from 'containers';
 import { Container, GreyContainer } from './styles';
 
 const Main = ({ data }) => {
@@ -9,10 +9,12 @@ const Main = ({ data }) => {
           {/*<Head>*/}
           {/*  <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/}
           {/*</Head>*/}
-          <Intro data={data} />
+          <Intro data={data.intro} />
         </Container>
       </GreyContainer>
-      <Container>{/*<Infographics />*/}</Container>
+      <Container>
+        <Infographics data={data.infographics} />
+      </Container>
       <Container>{/*<AboutUs />*/}</Container>
       <GreyContainer>
         <Container>{/*<PersonalStory />*/}</Container>

@@ -1,7 +1,6 @@
-import MarkerList from '../../components/MarkerList';
+import { MarkerList, PortraitSlider } from 'components';
 import Button from '../../elements/Button';
 import * as S from './styles';
-import PortraitSlider from '../../components/PortraitSlider';
 
 const Intro = ({ data }) => {
   return (

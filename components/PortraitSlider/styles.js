@@ -12,6 +12,16 @@ export const Element = styled.div`
 
   @media screen and (max-width: 420px) {
     padding-bottom: 56px;
+
+    ::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 420px;
+      height: 56px;
+      background-color: #ffffff;
+    }
   }
 `;
 
@@ -52,6 +62,7 @@ export const QuoteBlock = styled.div`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
   }
 `;
 

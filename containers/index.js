@@ -16,3 +16,5 @@ export { default as VacanciesList } from './catalog';
 export { default as Project } from './project';
 export { default as Main } from './main';
 export { default as Events } from './events';
+export { default as Intro } from './intro';
+export { default as Infographics } from './infographics';
