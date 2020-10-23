@@ -9,13 +9,10 @@ export const Container = styled.div`
                     url('backgrounds/confirmation-right.svg');
   background-position: left 0, right 100%;
   background-repeat: no-repeat, no-repeat;
-
-  @media (max-width: 900px) {
-    top: 0;
-    min-height: 655px;
-  }
   
   @media (max-width: 768px) {
+    top: 0;
+    height: 100vh;
     padding-top: 22px;
     padding-bottom: 70px;
     background-size: 40% 50%;
