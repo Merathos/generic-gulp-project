@@ -1248,7 +1248,7 @@ export default {
         'Видеоконференции',
         'Облачная телефония',
         'Контактный центр',
-        'Факс'
+        'Факс',
       ],
       buttonText: 'Присоединиться к команде',
       portraits: [
@@ -1257,27 +1257,27 @@ export default {
           src: `/images/intro-portrait-1.png`,
           bgColor: '#FB5235',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александр / Тимлид'
+          name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-2.png`,
           bgColor: '#53B443',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александра / Тимлид'
+          name: 'Александра / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
           bgColor: '#2F8ED9',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александр / Тимлид'
+          name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
           bgColor: '#FEB251',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александр / Тимлид'
-        }
-      ]
+          name: 'Александр / Тимлид',
+        },
+      ],
     },
     infographics: {
       titles: ['Создавай', `высокo${'\u00AD'}нагруженный популярный сервис`],
@@ -1285,35 +1285,92 @@ export default {
         {
           name: 'centers-quantity',
           title: 'Дата-центров на 4 континентах',
-          value: '17'
+          value: '17',
         },
         {
           name: 'accessibility',
           title: 'Доступность сервиса',
-          value: '99,999%'
+          value: '99,999%',
         },
         {
           name: 'subscribers',
           title: 'Абонентов',
-          value: '>1,8 млн'
+          value: '>1,8 млн',
         },
         {
           name: 'calls-quantity',
           title: 'Звонков одновременно',
-          value: '>100 тыс'
+          value: '>100 тыс',
         },
         {
           name: 'iterations-quantity',
           title: 'Интеграций по API',
-          value: '>1400'
+          value: '>1400',
         },
         {
           name: 'changes-quantity',
           title: 'Изменений на продакшн в день',
-          value: '>120'
-        }
-      ]
-    }
+          value: '>120',
+        },
+      ],
+    },
+    aboutCompany: {
+      benefits: [
+        {
+          title: 'Комфортные условия',
+          explanation:
+            'Современный офис, фрукты и завтраки на кухне, выбор техники, языковые курсы, спортивный зал, ДМС с первого рабочего дня. ',
+          details: 'Подробнее',
+        },
+        {
+          title: 'Релокация',
+          explanation:
+            'Поможем переехать в Санкт-Петербург: выплатим бонус и подскажем, куда обратиться по поводу жилья. ',
+          details: 'Подробнее',
+        },
+        {
+          title: 'Стажировки',
+          explanation:
+            'Официальное оформление и зарплата, реальные задачи и поддержка на протяжении всей стажировки.  ',
+          details: 'Подробнее',
+        },
+      ],
+      showEvent: true,
+      bannersData: {
+        event: {
+          name: 'JаVa Evening',
+          date: '29 мая 19:30-21:30',
+          buttonText: 'Зарегистрироваться',
+        },
+        blogLinksData: {
+          link1: {
+            buttonText: 'Перейти в блог ',
+            image: '/images/banner-picture-man.png',
+            bg: '/backgrounds/banner-green-square.png',
+          },
+          link2: {
+            buttonText: 'Перейти в блог ',
+            image: '/images/banner-picture-woman.png',
+            bg: '/backgrounds/banner-circle-with-square.png',
+          },
+        },
+      },
+      blogLinkDefault: 'link1',
+      pictures: [
+        {
+          src: `/images/gallery-2.jpg`,
+        },
+        {
+          src: `/images/gallery-1.jpg`,
+        },
+        {
+          src: `/images/gallery-2.jpg`,
+        },
+        {
+          src: `/images/gallery-1.jpg`,
+        },
+      ],
+    },
   },
   events: {
     mainTitle: `IT Evenings`,
@@ -1489,25 +1546,26 @@ export default {
       mainTitle: 'Хочу получать новости о мероприятиях DINs',
       contact: {
         title: 'Оставь  контактные данные',
-        inputs: ['Фамилия *', 'Имя *', 'Email *']
+        inputs: ['Фамилия *', 'Имя *', 'Email *'],
       },
       directions: {
         title: 'Выбери направления мероприятий, про которые хочешь знать',
         question: 'Какие направления в IT тебе интересны? *',
-        inputs: ['Development', 'Big Data', 'QA ', 'QA Automation', 'DevOps ']
+        inputs: ['Development', 'Big Data', 'QA ', 'QA Automation', 'DevOps '],
       },
       agreement: {
         dataText: 'Подтверждаю свое согласие на ',
         dataLink: ' обработку персональных данных',
         dataHref: '#',
-        mailing: 'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®'
+        mailing:
+          'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
       },
       buttonText: 'Отправить заявку',
       confirmation: {
         title: 'Спасибо!',
         text: 'Теперь ты будешь в курсе всех самых свежих мероприятий DINS!',
-        btnText: 'Хорошо'
-      }
+        btnText: 'Хорошо',
+      },
     },
   },
 };
