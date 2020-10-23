@@ -56,3 +56,4 @@ export { default as SatelliteFigure } from './SatelliteFigure';
 export { default as UsersFigure } from './UsersFigure';
 export { default as IterationsFigure } from './IterationsFigure';
 export { default as UploadFigure } from './UploadFigure';
+export { default as Tags } from './Tags';
