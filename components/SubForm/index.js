@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const SubForm = ( { 
   data: {mainTitle, contact, directions, 
-    agreement, buttonText }, closeModal, showConfirm}) => {
+    agreement, buttonText }, closeModal, showSuccess}) => {
 
   const [checkedEls, setCheckedEls] = useState({});
 
@@ -66,7 +66,8 @@ const SubForm = ( {
             />
             <S.StyledButton type="submit" onClick={(e) => {
               e.preventDefault();
-                showConfirm();
+              closeModal();
+              showSuccess();
             }}>{buttonText}</S.StyledButton>
           </S.BottomWrap>
         </S.FormSection>

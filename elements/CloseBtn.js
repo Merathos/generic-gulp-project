@@ -18,7 +18,7 @@ margin-bottom: 75px;
 `;
 
 const CloseBtn = ({ className, onClick }) => (
-  <Styled type="text" 
+  <Styled type="button" 
     className={className}
     aria-label="Закрыть" 
     onClick={onClick}

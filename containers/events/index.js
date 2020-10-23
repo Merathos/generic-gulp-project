@@ -2,7 +2,7 @@ import * as S from './styles';
 import { EventsFilter } from 'forms';
 import { FilterButton } from 'elements';
 import { Mailing, EventList } from 'components';
-import { NewsModal } from 'containers';
+import { NewsModal, SuccessModal } from 'containers';
 
 const Events = ({data}) => {
   const [modalIsOpen,setIsOpen] = React.useState(false);
@@ -13,6 +13,16 @@ const Events = ({data}) => {
 
   function closeModal(){
     setIsOpen(false);
+  }
+
+  const [successIsShown,setSuccessIsShown] = React.useState(false);
+
+  function showSuccess() {
+    setSuccessIsShown(true);
+  }
+
+  function closeSuccess(){
+    setSuccessIsShown(false);
   }
 
   return (
@@ -41,7 +51,15 @@ const Events = ({data}) => {
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>
-      <NewsModal data={data.newsModal} modalIsOpen={modalIsOpen} closeModal={closeModal} />
+      <NewsModal data={data.newsModal} 
+                modalIsOpen={modalIsOpen} 
+                closeModal={closeModal} 
+                showSuccess={showSuccess} 
+      />
+      <SuccessModal data={data.newsModal.confirmation} 
+                    successIsShown={successIsShown} 
+                    closeSuccess={closeSuccess}
+      />
     </S.Main>
     );
 };
