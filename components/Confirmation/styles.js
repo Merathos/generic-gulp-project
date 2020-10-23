@@ -2,11 +2,7 @@ import styled from 'styled-components';
 import { TitleH2, Button } from 'elements';
 
 export const Container = styled.div`
-  position: relative;
-  top: 203px;
   background-color: #ffffff;
-  max-width: 900px;
-  margin: 0 auto;
   padding-top: 37px;
   padding-bottom: 182px;
   background-image: url('backgrounds/confirmation-left.svg'), 
@@ -79,4 +75,5 @@ export const Btn = styled.button`
   &:hover {
     color: #53B443;
   }
+
 `;

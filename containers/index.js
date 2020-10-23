@@ -17,3 +17,4 @@ export { default as Project } from './project';
 export { default as Main } from './main';
 export { default as Events } from './events';
 export { default as NewsModal } from './news-modal';
+export { default as SuccessModal } from './success-modal';
