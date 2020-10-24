@@ -1,29 +1,12 @@
-import * as S from './styles';
 import { EventsFilter } from 'forms';
-import { FilterButton } from 'elements';
-import { Mailing, EventList } from 'components';
+import { Mailing, EventList, EventsTags } from 'components';
 import { NewsModal, SuccessModal } from 'containers';
+import { useState } from 'react';
+import * as S from './styles';
 
-const Events = ({data}) => {
-  const [modalIsOpen,setIsOpen] = React.useState(false);
-  
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal(){
-    setIsOpen(false);
-  }
-
-  const [successIsShown,setSuccessIsShown] = React.useState(false);
-
-  function showSuccess() {
-    setSuccessIsShown(true);
-  }
-
-  function closeSuccess(){
-    setSuccessIsShown(false);
-  }
+const Events = ({ data, eventCategories, events, pageSlug }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [successIsShown, setSuccessIsShown] = useState(false);
 
   return (
     <S.Main>
@@ -31,37 +14,35 @@ const Events = ({data}) => {
         <S.Grid>
           <S.Title>{data.mainTitle}</S.Title>
           <S.Aside>
-            <EventsFilter data={data} />
-            <Mailing data={data.mailing} onClick={openModal} />
+            <EventsFilter
+              data={data}
+              eventCategories={eventCategories}
+              pageSlug={pageSlug}
+              resetButtonText={data.resetButtonText}
+            />
+            <Mailing data={data.mailing} onClick={() => setIsOpen(true)} />
           </S.Aside>
           <S.ContentWrapper>
-            <S.Tags>
-              {data.tags.map((el, i) => (
-                <S.Tag key={i}>
-                  <FilterButton
-                    name={el}
-                    handleChange={() => {}}
-                  />
-                </S.Tag>
-              ))}
-            </S.Tags>
+            <EventsTags eventCategories={eventCategories} pageSlug={pageSlug} />
             <EventList cards={data.cards.active} />
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
-            <EventList cards={data.cards.completed} completed={true} />
+            <EventList cards={data.cards.completed} completed />
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>
-      <NewsModal data={data.newsModal} 
-                modalIsOpen={modalIsOpen} 
-                closeModal={closeModal} 
-                showSuccess={showSuccess} 
+      <NewsModal
+        data={data.newsModal}
+        modalIsOpen={modalIsOpen}
+        closeModal={() => setIsOpen(false)}
+        showSuccess={() => setSuccessIsShown(true)}
       />
-      <SuccessModal data={data.newsModal.confirmation} 
-                    successIsShown={successIsShown} 
-                    closeSuccess={closeSuccess}
+      <SuccessModal
+        data={data.newsModal.confirmation}
+        successIsShown={successIsShown}
+        closeSuccess={() => setSuccessIsShown(false)}
       />
     </S.Main>
-    );
+  );
 };
 
 export default Events;

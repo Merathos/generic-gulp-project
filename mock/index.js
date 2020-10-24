@@ -1248,7 +1248,7 @@ export default {
         'Видеоконференции',
         'Облачная телефония',
         'Контактный центр',
-        'Факс'
+        'Факс',
       ],
       buttonText: 'Присоединиться к команде',
       portraits: [
@@ -1257,27 +1257,27 @@ export default {
           src: `/images/intro-portrait-1.png`,
           bgColor: '#FB5235',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александр / Тимлид'
+          name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-2.png`,
           bgColor: '#53B443',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александра / Тимлид'
+          name: 'Александра / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
           bgColor: '#2F8ED9',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александр / Тимлид'
+          name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
           bgColor: '#FEB251',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
-          name: 'Александр / Тимлид'
-        }
-      ]
+          name: 'Александр / Тимлид',
+        },
+      ],
     },
     infographics: {
       titles: ['Создавай', `высокo${'\u00AD'}нагруженный популярный сервис`],
@@ -1285,229 +1285,34 @@ export default {
         {
           name: 'centers-quantity',
           title: 'Дата-центров на 4 континентах',
-          value: '17'
+          value: '17',
         },
         {
           name: 'accessibility',
           title: 'Доступность сервиса',
-          value: '99,999%'
+          value: '99,999%',
         },
         {
           name: 'subscribers',
           title: 'Абонентов',
-          value: '>1,8 млн'
+          value: '>1,8 млн',
         },
         {
           name: 'calls-quantity',
           title: 'Звонков одновременно',
-          value: '>100 тыс'
+          value: '>100 тыс',
         },
         {
           name: 'iterations-quantity',
           title: 'Интеграций по API',
-          value: '>1400'
+          value: '>1400',
         },
         {
           name: 'changes-quantity',
           title: 'Изменений на продакшн в день',
-          value: '>120'
-        }
-      ]
-    }
-  },
-  events: {
-    mainTitle: `IT Evenings`,
-    completedTitle: `Прошедшие мероприятия`,
-    filterFields: [
-      {
-        name: `DevOps`,
-        color: `#2F8ED9`,
-      },
-      {
-        name: `Java`,
-        color: `#FB5235`,
-      },
-      {
-        name: `JavaScript`,
-        color: `#FEB251`,
-      },
-      {
-        name: `QA`,
-        color: `#53B443`,
-      },
-    ],
-    discard: `Сбросить фильтр`,
-    mailing: {
-      link: `Подпишись на рассылку `,
-      linkHref: `#`,
-      text: ` и будь в курсе наших мероприятий`,
-    },
-    tags: [`Java`, `DevOps`],
-    cards: {
-      active: [
-        {
-          type: `QA Evening`,
-          color: `#53B443`,
-          date: { day: `11.04`, time: `Начало в 18:00` },
-          status: { img: `icons/online.png`, name: `Онлайн` },
-          topics: [
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-                {
-                  img: `images/speaker2.png`,
-                  name: `Александр Калошин`,
-                  job: `DINS`,
-                },
-              ],
-            },
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-              ],
-            },
-          ],
-          location: `Мероприятие проводится онлайн`,
-        },
-        {
-          type: `JS Evening`,
-          color: `#FEB251`,
-          date: { day: `11.04`, time: `Начало в 18:00` },
-          status: { img: `icons/streaming.png`, name: `Идет трансляция` },
-          topics: [
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-                {
-                  img: `images/speaker2.png`,
-                  name: `Александр Калошин`,
-                  job: `DINS`,
-                },
-              ],
-            },
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-              ],
-            },
-          ],
-          location: `Старо-Петергофский проспект 19. Офис DINS`,
+          value: '>120',
         },
       ],
-      completed: [
-        {
-          type: `JаVa Evening`,
-          color: `#FB5235`,
-          date: { day: `11.04`, time: `Начало в 18:00` },
-          status: { img: `icons/recording.png`, name: `Есть запись` },
-          topics: [
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-                {
-                  img: `images/speaker2.png`,
-                  name: `Александр Калошин`,
-                  job: `DINS`,
-                },
-              ],
-            },
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-              ],
-            },
-          ],
-          location: `Старо-Петергофский проспект 19. Офис DINS`,
-        },
-        {
-          type: `QA Evening`,
-          color: `#53B443`,
-          date: { day: `11.04.19`, time: `Начало в 18:00` },
-          status: { img: `icons/recording.png`, name: `Есть запись` },
-          topics: [
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-                {
-                  img: `images/speaker2.png`,
-                  name: `Александр Калошин`,
-                  job: `DINS`,
-                },
-              ],
-            },
-            {
-              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
-              speakers: [
-                {
-                  img: `images/speaker1.png`,
-                  name: `Вячеслав Швецов`,
-                  job: `DINS`,
-                },
-              ],
-            },
-          ],
-          location: `Старо-Петергофский проспект 19. Офис DINS`,
-        },
-      ],
-    },
-    newsModal: {
-      mainTitle: 'Хочу получать новости о мероприятиях DINs',
-      contact: {
-        title: 'Оставь  контактные данные',
-        inputs: ['Фамилия *', 'Имя *', 'Email *']
-      },
-      directions: {
-        title: 'Выбери направления мероприятий, про которые хочешь знать',
-        question: 'Какие направления в IT тебе интересны? *',
-        inputs: ['Development', 'Big Data', 'QA ', 'QA Automation', 'DevOps ']
-      },
-      agreement: {
-        dataText: 'Подтверждаю свое согласие на ',
-        dataLink: ' обработку персональных данных',
-        dataHref: '#',
-        mailing: 'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®'
-      },
-      buttonText: 'Отправить заявку',
-      confirmation: {
-        title: 'Спасибо!',
-        text: 'Теперь ты будешь в курсе всех самых свежих мероприятий DINS!',
-        btnText: 'Хорошо'
-      }
     },
   },
 };

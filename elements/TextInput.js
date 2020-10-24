@@ -18,14 +18,21 @@ const Styled = styled.input`
     line-height: 22.12px;
   }
 
+  &:hover {
+    ::placeholder {
+      color: #201f2a;
+    }
+  }
+
   &:focus {
-    border-bottom: 1px solid rgba(32, 31, 42, 1);
+    border-bottom: 1px solid #5faf52;
   }
 `;
 
 const TextInput = ({ placeholder, className }) => (
-  <Styled type="text" 
-    className={className} 
+  <Styled
+    type="text"
+    className={className}
     placeholder={placeholder}
     name={placeholder}
     required

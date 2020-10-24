@@ -25,8 +25,8 @@ const Button = styled.button`
   }
 `;
 
-const FilterButton = ({ name, handleChange }) => (
-  <Button type="button" onClick={() => handleChange()}>
+const FilterButton = ({ name, onClick }) => (
+  <Button type="button" onClick={() => onClick()}>
     {name}
   </Button>
 );

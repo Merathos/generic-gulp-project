@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { TitleH1 } from 'elements';
 
 export const Main = styled.main`
-  background-image: url('backgrounds/events-left.svg'), url('backgrounds/events-right.svg');
+  background-image: url('backgrounds/events-left.svg'),
+    url('backgrounds/events-right.svg');
   background-position: left 520px, right 70px;
   background-repeat: no-repeat, no-repeat;
 
@@ -32,8 +33,8 @@ export const Grid = styled.div`
     grid-template-columns: minmax(210px, 312px) 865px;
     grid-column-gap: 20px;
     grid-template-areas:
-    "sidebar   mainTitle"
-    "sidebar   content";
+      'sidebar   mainTitle'
+      'sidebar   content';
   }
 
   @media (max-width: 1199px) {
@@ -97,7 +98,7 @@ export const Title = styled(TitleH1)`
 
 export const CompletedTitle = styled.h2`
   margin-bottom: 25px;
-  
+
   font-size: 90px;
   line-height: 100px;
   letter-spacing: 0.01em;
@@ -122,21 +123,3 @@ export const CompletedTitle = styled.h2`
     letter-spacing: 0.01em;
   }
 `;
-
-export const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 32px;
-  margin-bottom: 63px;
-  padding-left: 5px;
-
-  @media (max-width: 1199px) {
-    display: none;
-  }
-`;
-
-export const Tag = styled.li`
-  margin-right: 22px;
-`;
-
-
