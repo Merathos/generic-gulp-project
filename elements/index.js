@@ -16,3 +16,4 @@ export { default as EventsCheckbox } from './EventsCheckbox';
 export { default as RadioButton } from './RadioButton';
 export { default as TextInput } from './TextInput';
 export { default as CloseBtn } from './CloseBtn';
+export { default as SmartText } from './SmartText';

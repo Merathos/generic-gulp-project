@@ -59,3 +59,5 @@ export { default as UploadFigure } from './UploadFigure';
 export { default as Tags } from './Tags';
 export { default as SubForm } from './SubForm';
 export { default as Confirmation } from './Confirmation';
+export { default as EventHeader } from './EventHeader';
+export { default as Schedule } from './Schedule';

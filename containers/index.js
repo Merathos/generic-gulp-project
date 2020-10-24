@@ -20,3 +20,4 @@ export { default as Intro } from './intro';
 export { default as Infographics } from './infographics';
 export { default as NewsModal } from './news-modal';
 export { default as SuccessModal } from './success-modal';
+export { default as EventDetails } from './event-details';
