@@ -48,4 +48,8 @@ export const SliderWrapper = styled.div`
     padding-bottom: 80px;
     padding-top: 30px;
   }
+
+  @media screen and (max-width: 420px) {
+    margin-left: 30px;
+  }
 `;

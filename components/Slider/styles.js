@@ -39,20 +39,24 @@ export const Img = styled.img`
   width: 706px;
   margin-right: 40px;
 
+  @media screen and (max-width: 420px) {
+    width: 301px;
+    margin-right: 12px;
+  }
+
   ${props =>
     props.hasControls &&
     css`
       width: auto;
       height: 100%;
       object-fit: cover;
-      max-width: 80vw;
+      max-width: 90vw;
       vertical-align: bottom;
-    `};
 
-  @media screen and (max-width: 420px) {
-    width: 301px;
-    margin-right: 12px;
-  }
+      @media screen and (max-width: 420px) {
+        width: 315px;
+      }
+    `}
 `;
 
 export const Title = styled.p`
