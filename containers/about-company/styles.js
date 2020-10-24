@@ -15,19 +15,21 @@ export const H2 = styled(TitleH2)`
     margin-bottom: 60px;
   }
 
-  @media screen and (max-width: 960px) {
-    font-size: 40px;
-  }
-
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 1024px) {
     margin-left: 60px;
     margin-right: 60px;
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: 40px;
   }
 
   @media screen and (max-width: 420px) {
     font-size: 28px;
     line-height: 130%;
     margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 `;
 

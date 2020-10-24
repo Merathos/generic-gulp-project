@@ -6,7 +6,9 @@ export const Container = styled.section`
   margin-right: 120px;
   margin-left: 120px;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
+    margin-left: 60px;
+    margin-right: 60px;
     margin-bottom: 30px;
   }
 
@@ -20,7 +22,7 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -30,7 +32,7 @@ export const ListItem = styled.li`
   flex-direction: column;
   width: 43%;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
@@ -42,7 +44,7 @@ export const H3 = styled(TitleH3)`
   font-weight: 700;
   margin-bottom: 4px;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     margin-bottom: 11px;
   }
@@ -54,6 +56,11 @@ export const H3 = styled(TitleH3)`
     line-height: 120%;
     box-sizing: border-box;
   }
+
+  @media screen and (max-width: 420px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 export const Text = styled.p`
@@ -62,7 +69,7 @@ export const Text = styled.p`
   line-height: 134%;
   margin-bottom: 50px;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -74,6 +81,11 @@ export const Text = styled.p`
     line-height: 160%;
     box-sizing: border-box;
   }
+
+  @media screen and (max-width: 420px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 export const Link = styled.a`
@@ -83,7 +95,7 @@ export const Link = styled.a`
   font-weight: 700;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 60px;
   }
 
@@ -93,5 +105,10 @@ export const Link = styled.a`
     margin-bottom: 40px;
     font-size: 14px;
     line-height: 160%;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 `;
