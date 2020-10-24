@@ -44,14 +44,9 @@ export const Img = styled.img`
     css`
       width: auto;
       height: 100%;
-
-      @media screen and (max-width: 640px) {
-        max-width: 450px;
-      }
-
-      @media screen and (max-width: 560px) {
-        max-width: 380px;
-      }
+      object-fit: cover;
+      max-width: 80vw;
+      vertical-align: bottom;
     `};
 
   @media screen and (max-width: 420px) {
