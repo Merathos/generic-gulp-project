@@ -1,4 +1,4 @@
-import { BenefitsBanner } from 'components';
+import { EventBanner, BlogsBanner } from 'components';
 import { Container, List, ListItem, H3, Text, Link } from './styles';
 
 const BenefitsList = ({ data }) => {
@@ -15,11 +15,14 @@ const BenefitsList = ({ data }) => {
           </ListItem>
         ))}
         <ListItem key={'banner'}>
-          <BenefitsBanner
-            data={bannersData}
-            showEvent={showEvent}
-            blogLinkType={blogLinkDefault}
-          />
+          {showEvent ? (
+            <EventBanner data={bannersData.event} />
+          ) : (
+            <BlogsBanner
+              data={bannersData.blogLinksData}
+              blogLinkType={blogLinkDefault}
+            />
+          )}
         </ListItem>
       </List>
     </Container>

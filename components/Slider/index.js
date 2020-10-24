@@ -24,19 +24,15 @@ const Slider = ({ subtitle, pictures, hasControls }) => {
     },
     renderPrevButton: () => {
       return (
-        <>
-          <PrevButton className="swiper-button-prev" hasControls={hasControls}>
-            <ArrowPrev />
-          </PrevButton>
-        </>
+        <PrevButton className="swiper-button-prev" hasControls={hasControls}>
+          <ArrowPrev />
+        </PrevButton>
       );
     },
     renderNextButton: () => (
-      <>
-        <NextButton className="swiper-button-next" hasControls={hasControls}>
-          <ArrowNext />
-        </NextButton>
-      </>
+      <NextButton className="swiper-button-next" hasControls={hasControls}>
+        <ArrowNext />
+      </NextButton>
     ),
   };
 
