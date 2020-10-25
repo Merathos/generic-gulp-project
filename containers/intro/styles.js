@@ -18,6 +18,10 @@ export const Container = styled.section`
   @media screen and (max-width: 720px) {
     flex-direction: column;
     justify-content: flex-start;
+    padding-left: 30px;
+  }
+
+  @media screen and (max-width: 420px) {
     padding-left: 0;
   }
 `;

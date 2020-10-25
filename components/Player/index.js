@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { fromSecToDuration, restOfDuration } from 'helpers';
 import * as S from './styles';
 
-const Player = ({ src }) => {
+const Player = ({ src, withDynamic = false }) => {
   const refPlayer = useRef(null);
   const refProgress = useRef(null);
   const [play, setPlay] = useState(false);
@@ -31,15 +31,22 @@ const Player = ({ src }) => {
         onDuration={e => !play && setAudioDuration(e)}
       />
       <S.Block>
-        <S.Button name={play ? 38 : 20} onClick={() => togglePlayer()} />
+        <S.Button
+          name={play ? 38 : withDynamic ? 30 : 20}
+          onClick={() => togglePlayer()}
+        />
         <S.Wrapper>
-          {!play && <S.Label>Послушать рассказ</S.Label>}
+          {!play && (
+            <S.Label withDynamic={withDynamic}>Послушать рассказ</S.Label>
+          )}
           <S.Scale pause={!play}>
             <S.Bar>
               <S.Progress ref={refProgress} />
             </S.Bar>
           </S.Scale>
-          <S.Span>{fromSecToDuration(audioDuration)}</S.Span>
+          <S.Span withDynamic={withDynamic}>
+            {fromSecToDuration(audioDuration)}
+          </S.Span>
         </S.Wrapper>
       </S.Block>
     </>

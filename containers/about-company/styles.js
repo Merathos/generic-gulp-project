@@ -44,8 +44,8 @@ export const SliderWrapper = styled.div`
   }
 
   @media screen and (max-width: 720px) {
-    height: 232px;
-    padding-bottom: 80px;
+    height: auto;
+    padding-bottom: 0;
     padding-top: 30px;
   }
 

@@ -1371,7 +1371,49 @@ export default {
         },
       ],
     },
+    hasStories: true,
   },
+  stories: [
+    {
+      title: `История Саши`,
+      text: `Алексей — Scala Teamlead в DINS. Он занимается программированием и может
+       точно сказать, что его работа — любимая. Почему так, Алексей делится в этой статье.`,
+      button: `Послушать рассказ`,
+      audio: {
+        src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
+        title: `Послушать рассказ`,
+        time: `10:30`,
+      },
+      picture: `/images/story-portrait.png`,
+      linkText: `Читать полностью`,
+    },
+    {
+      title: `История Маши`,
+      text: `Мария — Scala Teamlead в DINS. Она занимается программированием и может
+       точно сказать, что ее работа — любимая. Почему так, Мария делится в этой статье.`,
+      button: `Послушать рассказ`,
+      audio: {
+        src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
+        title: `Послушать рассказ`,
+        time: `10:30`,
+      },
+      picture: `/images/intro-portrait-2.png`,
+      linkText: `Читать полностью`,
+    },
+    {
+      title: `История Пети`,
+      text: `Петр — Scala Teamlead в DINS. Он занимается программированием и может
+       точно сказать, что его работа — любимая. Почему так, Петр, полный нескрываемого восхищения и удовольствия, делится в этой статье.`,
+      button: `Послушать рассказ`,
+      audio: {
+        src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
+        title: `Послушать рассказ`,
+        time: `10:30`,
+      },
+      picture: `/images/intro-portrait-3.png`,
+      linkText: `Читать полностью`,
+    },
+  ],
   events: {
     mainTitle: `IT Evenings`,
     completedTitle: `Прошедшие мероприятия`,
