@@ -1,9 +1,9 @@
-import { Infographics, Intro } from 'containers';
-import { Container, GreyContainer } from './styles';
+import { Infographics, Intro, AboutCompany } from 'containers';
+import { Main as MainContainer, Container, GreyContainer } from './styles';
 
 const Main = ({ data }) => {
   return (
-    <main>
+    <MainContainer>
       <GreyContainer>
         <Container>
           {/*<Head>*/}
@@ -15,7 +15,9 @@ const Main = ({ data }) => {
       <Container>
         <Infographics data={data.infographics} />
       </Container>
-      <Container>{/*<AboutUs />*/}</Container>
+      <Container>
+        <AboutCompany data={data.aboutCompany} />
+      </Container>
       <GreyContainer>
         <Container>{/*<PersonalStory />*/}</Container>
       </GreyContainer>
@@ -23,7 +25,7 @@ const Main = ({ data }) => {
       <GreyContainer>
         <Container>{/*<Vacancies />*/}</Container>
       </GreyContainer>
-    </main>
+    </MainContainer>
   );
 };
 

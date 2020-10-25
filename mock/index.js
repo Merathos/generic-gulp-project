@@ -1314,6 +1314,63 @@ export default {
         },
       ],
     },
+    aboutCompany: {
+      benefits: [
+        {
+          title: 'Комфортные условия',
+          explanation:
+            'Современный офис, фрукты и завтраки на кухне, выбор техники, языковые курсы, спортивный зал, ДМС с первого рабочего дня. ',
+          details: 'Подробнее',
+        },
+        {
+          title: 'Релокация',
+          explanation:
+            'Поможем переехать в Санкт-Петербург: выплатим бонус и подскажем, куда обратиться по поводу жилья. ',
+          details: 'Подробнее',
+        },
+        {
+          title: 'Стажировки',
+          explanation:
+            'Официальное оформление и зарплата, реальные задачи и поддержка на протяжении всей стажировки.  ',
+          details: 'Подробнее',
+        },
+      ],
+      showEvent: true,
+      bannersData: {
+        event: {
+          name: 'JаVa Evening',
+          date: '29 мая 19:30-21:30',
+          buttonText: 'Зарегистрироваться',
+        },
+        blogLinksData: {
+          link1: {
+            buttonText: 'Перейти в блог ',
+            image: '/images/banner-picture-man.png',
+            bg: '/backgrounds/banner-green-square.png',
+          },
+          link2: {
+            buttonText: 'Перейти в блог ',
+            image: '/images/banner-picture-woman.png',
+            bg: '/backgrounds/banner-circle-with-square.png',
+          },
+        },
+      },
+      blogLinkDefault: 'link1',
+      pictures: [
+        {
+          src: `/images/gallery-2.jpg`,
+        },
+        {
+          src: `/images/gallery-1.jpg`,
+        },
+        {
+          src: `/images/gallery-2.jpg`,
+        },
+        {
+          src: `/images/gallery-1.jpg`,
+        },
+      ],
+    },
   },
   events: {
     mainTitle: `IT Evenings`,

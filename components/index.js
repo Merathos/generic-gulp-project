@@ -61,3 +61,6 @@ export { default as SubForm } from './SubForm';
 export { default as Confirmation } from './Confirmation';
 export { default as EventHeader } from './EventHeader';
 export { default as Schedule } from './Schedule';
+export { default as BlogsBanner } from './BlogsBanner';
+export { default as EventBanner } from './EventBanner';
+export { default as BenefitsList } from './BenefitsList';
