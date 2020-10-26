@@ -62,3 +62,4 @@ export { default as Confirmation } from './Confirmation';
 export { default as BlogsBanner } from './BlogsBanner';
 export { default as EventBanner } from './EventBanner';
 export { default as BenefitsList } from './BenefitsList';
+export { default as ArticleContent } from './ArticleContent';

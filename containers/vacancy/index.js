@@ -8,13 +8,15 @@ import {
   Requirements,
   Conditions,
   Map,
-  Application
+  Application,
+  ArticleContent
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, Article, Grid, GreyContainer, Aside } from './styles';
 
 const Vacancy = ({ data, back }) => {
   const content = JSON.parse(back.content);
+ // console.log(content);
   return (
     <>
       <GreyContainer>
@@ -22,7 +24,8 @@ const Vacancy = ({ data, back }) => {
       </GreyContainer>
 
       <Container>
-        <Paragraph bold="700" data={{ text: content[0].data.text }} />
+       <ArticleContent content={content} />
+        {/* <Paragraph bold="700" data={{ text: content[0].data.text }} />
         <Grid>
           <Article>
             <SectionGroup>
@@ -56,7 +59,7 @@ const Vacancy = ({ data, back }) => {
           </Aside>
         </Grid>
 
-        <SliderVacancy data={data.steps} />
+        <SliderVacancy data={data.steps} /> */}
       </Container>
 
       <Application data={data.application} decor />

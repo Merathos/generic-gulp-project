@@ -12,27 +12,31 @@ const Advert = props => {
       is_english_speaking_team,
       is_relocation,
       is_internship,
-      slug
+      slug,
     }
   } = props;
 
-  const features = [
-    {
-      icon: 19,
-      title: `English Speaking Team`,
-      flag: is_english_speaking_team
-    },
-    {
-      icon: 18,
-      title: `Стажировка`,
-      flag: is_internship
-    },
-    {
-      icon: 26,
-      title: `Релокация`,
-      flag: is_relocation
-    }
-  ];
+  let features = [];
+
+  if (is_english_speaking_team || is_relocation || is_internship) {
+    features = [
+      {
+        icon: 19,
+        title: `English Speaking Team`,
+        flag: is_english_speaking_team,
+      },
+      {
+        icon: 18,
+        title: `Стажировка`,
+        flag: is_internship,
+      },
+      {
+        icon: 26,
+        title: `Релокация`,
+        flag: is_relocation,
+      }
+    ];
+  }
 
   return (
     <Link href={`vacancies/${slug}`}>
@@ -40,7 +44,7 @@ const Advert = props => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {features && <Features data={features} />}
+        {features.length !== 0 && <Features data={features} />}
         <H3>{name}</H3>
         <StyledText>{descr}</StyledText>
         <ArrowRight hovered={hover} />
