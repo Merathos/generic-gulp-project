@@ -1,11 +1,20 @@
 import * as S from './styles';
 import { EventHeader, Schedule } from 'components';
+import { EventRecap, Speakers, EventsSlider } from 'containers';
 
-const EventDetails = ({ data }) => {
+const EventDetails = ({ data, cards }) => {
+  const { isActive } = data;
+
   return (
     <main>
       <EventHeader data={data} />
-      <Schedule description={data.description} schedule={data.schedule} />
+      {isActive ? (
+        <Schedule description={data.description} schedule={data.schedule} />
+      ) : (
+        <EventRecap data={data.eventRecap} />
+      )}
+      <Speakers data={data.speakers} />
+      <EventsSlider cards={cards.active} />
     </main>
   );
 };

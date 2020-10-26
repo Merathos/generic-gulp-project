@@ -12,8 +12,9 @@ import {
   Slider,
   SidebarSlider,
   IconsList,
-  MarkerList
+  MarkerList,
 } from 'components';
+
 import { SectionGroup, Section } from 'containers';
 import { Container, Wrapper, Grid, Aside } from './styles';
 

@@ -5,7 +5,7 @@ import { EventDetails } from 'containers';
 const EventPage = () => {
   return (
     <Layout plainHeader backButton>
-      <EventDetails data={mock.events.eventDetails} />
+      <EventDetails data={mock.events.eventDetails} cards={mock.events.cards} />
     </Layout>
   );
 };

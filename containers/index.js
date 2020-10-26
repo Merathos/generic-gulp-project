@@ -22,3 +22,6 @@ export { default as AboutCompany } from './about-company';
 export { default as NewsModal } from './news-modal';
 export { default as SuccessModal } from './success-modal';
 export { default as EventDetails } from './event-details';
+export { default as EventRecap } from './event-recap';
+export { default as Speakers } from './speakers';
+export { default as EventsSlider } from './events-slider';

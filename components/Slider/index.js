@@ -12,7 +12,7 @@ import {
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 
-const Slider = ({ subtitle, pictures, hasControls }) => {
+const Slider = ({ subtitle, pictures, hasControls, isSmall }) => {
   const ref = useRef(null);
 
   const params = {
@@ -24,13 +24,21 @@ const Slider = ({ subtitle, pictures, hasControls }) => {
     },
     renderPrevButton: () => {
       return (
-        <PrevButton className="swiper-button-prev" hasControls={hasControls}>
+        <PrevButton
+          className="swiper-button-prev"
+          hasControls={hasControls}
+          isSmall={isSmall}
+        >
           <ArrowPrev />
         </PrevButton>
       );
     },
     renderNextButton: () => (
-      <NextButton className="swiper-button-next" hasControls={hasControls}>
+      <NextButton
+        className="swiper-button-next"
+        hasControls={hasControls}
+        isSmall={isSmall}
+      >
         <ArrowNext />
       </NextButton>
     ),
@@ -41,8 +49,13 @@ const Slider = ({ subtitle, pictures, hasControls }) => {
       <Swiper ref={ref} {...params}>
         {pictures.map((el, i) => (
           <Element key={i} hasControls={hasControls}>
-            <Img src={el.src} alt={el.alt} hasControls={hasControls} />
-            {el.title && <Title>{el.title}</Title>}
+            <Img
+              src={el.src}
+              alt={el.alt}
+              hasControls={hasControls}
+              isSmall={isSmall}
+            />
+            {el.title && <Title isSmall={isSmall}>{el.title}</Title>}
           </Element>
         ))}
       </Swiper>

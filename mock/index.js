@@ -1569,7 +1569,7 @@ export default {
     },
     eventDetails: {
       type: `JavaScript EVENING`,
-      isActive: true,
+      isActive: false,
       bgImg: `backgrounds/javascript.svg`,
       status: { img: `icons/online.png`, name: `Online` },
       date: { day: `29 мая,`, time: `19:30-21:30` },
@@ -1618,6 +1618,53 @@ export default {
           },
         ],
       },
+      eventRecap: [
+        {
+          title: `Как мы собираем логи Nginx в ClickHouse`,
+          video: {
+            src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+            srcPoster: `images/event-details1.jpg`,
+          },
+          text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
+          list: [
+            {
+              text: `/getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает как строку, и передает ее в getTransactionInfo(transactionId) =>getTransactionInfo(transactoinId) – делает конкат transactionId к SQL запросу (то есть получается SQL инъекция);`,
+            },
+            {
+              text: `/getSecureSettings — на вход принимает также userId и mailboxId и выдает настройки мейлбокса. НО проверяет что mailboxid принадлежит пользователю;`,
+            },
+            {
+              text: `/getSettings — на вход принимает userId и mailboxId – и выдает настройки мейлбокса. Не проверяет что mailboxid принадлежит пользователю.`,
+            },
+          ],
+        },
+        {
+          title: `Как (не)правильно использовать REST Assured `,
+          video: {
+            src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+            srcPoster: `images/event-details2.jpg`,
+          },
+          text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
+          photos: [
+            {
+              src: `images/event-details1.jpg`,
+              title: `Подпись к картинке 3`,
+            },
+            {
+              src: `images/event-details2.jpg`,
+              title: `Подпись к картинке 4`,
+            },
+            {
+              src: `images/gallery-1.jpg`,
+              title: `Подпись к картинке`,
+            },
+            {
+              src: `images/gallery-2.jpg`,
+              title: `Подпись к картинке 2`,
+            },
+          ],
+        },
+      ],
     },
   },
 };

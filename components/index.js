@@ -64,3 +64,4 @@ export { default as Schedule } from './Schedule';
 export { default as BlogsBanner } from './BlogsBanner';
 export { default as EventBanner } from './EventBanner';
 export { default as BenefitsList } from './BenefitsList';
+export { default as SpeakerCard } from './SpeakerCard';

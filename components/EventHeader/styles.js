@@ -186,5 +186,7 @@ export const StyledButton = styled(Button)`
   @media (max-width: 768px) {
     margin-top: 35px;
     width: 191px;
+    font-size: 12px;
+    line-height: 56px;
   }
 `;

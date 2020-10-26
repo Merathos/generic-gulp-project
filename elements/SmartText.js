@@ -18,6 +18,10 @@ const Button = styled.a`
   letter-spacing: -0.06em;
   align-items: center;
   color: #53b443;
+
+  &:hover {
+    color: #339722;
+  }
 `;
 
 const Icon = styled.svg`
