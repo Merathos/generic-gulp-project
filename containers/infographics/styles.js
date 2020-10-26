@@ -37,6 +37,11 @@ export const H2 = styled(TitleH2)`
     }
   }
 
+  @media screen and (max-width: 720px) {
+    font-size: 28px;
+    line-height: 130%;
+  }
+
   @media screen and (max-width: 420px) {
     hyphens: manual;
     margin-left: 30px;

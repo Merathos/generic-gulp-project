@@ -77,7 +77,52 @@ const GlobalStyle = createGlobalStyle`
   .swiper-container {
     overflow: hidden;
   }
+  
+  .ReactModal__Body--open {
+    overflow: hidden;
+    margin-right: 17px;
+  }
 
+  .newsModal {
+    top: 40px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    position: absolute;
+    overflow: auto;
+    outline: none;
+
+    @media (max-width: 1199px) {
+      top: 0;
+      bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  .successModal {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    position: absolute;
+    overflow: visible;
+    outline: none;
+
+    @media (max-width: 768px) {
+      top: 0;
+      transform: translateY(0);
+      bottom: 0;
+    }
+  }
   
   @media screen and (max-width: 420px) {
     body {

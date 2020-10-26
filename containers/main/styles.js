@@ -1,4 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const Main = styled.main`
+  background: url('/backgrounds/grey-triangle.png') no-repeat right 2000px;
+
+  @media screen and (max-width: 1024px) {
+    background-image: none;
+  }
+`;
 
 export const Container = styled.section`
   max-width: 1440px;

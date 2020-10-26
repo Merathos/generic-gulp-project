@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+
   input:checked ~ label {
     color: ${props => props.color};
 
@@ -27,6 +31,7 @@ export const Label = styled.label`
   padding-left: 30px;
   font-size: 20px;
   line-height: 26.8px;
+  font-weight: 500;
 
   @media (max-width: 910px) {
     font-size: 14px;

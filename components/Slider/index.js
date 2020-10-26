@@ -1,19 +1,47 @@
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
-import { Section, Element, Img, Text, Title } from './styles';
+import {
+  Section,
+  Element,
+  Img,
+  Text,
+  Title,
+  NextButton,
+  PrevButton,
+} from './styles';
+import ArrowPrev from '../../public/icons/arrow-prev.svg';
+import ArrowNext from '../../public/icons/arrow-next.svg';
 
-const Slider = ({ subtitle, pictures }) => {
+const Slider = ({ subtitle, pictures, hasControls }) => {
   const ref = useRef(null);
-  // const {
-  //   data: { subtitle, pictures }
-  // } = props;
+
+  const params = {
+    slidesPerView: 'auto',
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    renderPrevButton: () => {
+      return (
+        <PrevButton className="swiper-button-prev" hasControls={hasControls}>
+          <ArrowPrev />
+        </PrevButton>
+      );
+    },
+    renderNextButton: () => (
+      <NextButton className="swiper-button-next" hasControls={hasControls}>
+        <ArrowNext />
+      </NextButton>
+    ),
+  };
 
   return (
-    <Section>
-      <Swiper ref={ref}>
+    <Section hasControls={hasControls}>
+      <Swiper ref={ref} {...params}>
         {pictures.map((el, i) => (
-          <Element key={i}>
-            <Img src={el.src} alt={el.alt} />
+          <Element key={i} hasControls={hasControls}>
+            <Img src={el.src} alt={el.alt} hasControls={hasControls} />
             {el.title && <Title>{el.title}</Title>}
           </Element>
         ))}
