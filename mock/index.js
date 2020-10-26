@@ -1372,6 +1372,7 @@ export default {
       ],
     },
     hasStories: true,
+    hasTeams: true,
   },
   stories: [
     {
@@ -1412,6 +1413,133 @@ export default {
       },
       picture: `/images/intro-portrait-3.png`,
       linkText: `Читать полностью`,
+    },
+  ],
+  teams: [
+    {
+      name: 'Contact Center',
+      summary:
+        'Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с использованием WebRTC, качество...',
+      image: {
+        path: {
+          normal: '/images/team-1.jpg',
+        },
+      },
+      slug: 'contact-center',
+    },
+    {
+      name: 'RCV (Video-conference)',
+      summary:
+        'Команда RCV занимается поддержкой и развитием одноименного сервиса - Global CI. Сервис предоставляет возможность ранней верификации...',
+      image: {
+        path: {
+          normal: '/images/team-2.png',
+        },
+      },
+      slug: 'rcv-video-conference',
+    },
+    {
+      name: 'Platform A',
+      summary:
+        'В команде Platform А мы разрабатываем публичный REST API для Unified Communications сервиса и специализируемся на способах...',
+      image: {
+        path: {
+          normal: '/images/team-3.jpg',
+        },
+      },
+      slug: 'platform-a',
+    },
+  ],
+  vacancies: [
+    {
+      name: 'Junior SQL Developer',
+      isEnglishSpeakingTeam: false,
+      isInternship: true,
+      isRelocation: false,
+      descr: 'SQL Developer',
+      slug: 'junior-sql-developer-4',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Node.js Developer (Collaboration Tool)',
+      isEnglishSpeakingTeam: true,
+      isInternship: false,
+      isRelocation: true,
+      descr: 'Node.js Developer',
+      slug: 'node-js-developer-collaboration-tool-4',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Java developer (Big Data team)',
+      isEnglishSpeakingTeam: true,
+      isInternship: false,
+      isRelocation: true,
+      descr: 'Java developer',
+      slug: 'java-developer-big-data-team-4',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Junior SQL Developer',
+      isEnglishSpeakingTeam: false,
+      isInternship: true,
+      isRelocation: false,
+      descr: 'SQL Developer',
+      slug: 'junior-sql-developer-3',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Node.js Developer (Collaboration Tool)',
+      isEnglishSpeakingTeam: true,
+      isInternship: false,
+      isRelocation: true,
+      descr: 'Node.js Developer',
+      slug: 'node-js-developer-collaboration-tool-3',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Java developer (Big Data team)',
+      isEnglishSpeakingTeam: true,
+      isInternship: false,
+      isRelocation: true,
+      descr: 'Java developer',
+      slug: 'java-developer-big-data-team-3',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Junior SQL Developer',
+      isEnglishSpeakingTeam: false,
+      isInternship: true,
+      isRelocation: false,
+      descr: 'SQL Developer',
+      slug: 'junior-sql-developer-2',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Node.js Developer (Collaboration Tool)',
+      isEnglishSpeakingTeam: true,
+      isInternship: false,
+      isRelocation: true,
+      descr: 'Node.js Developer',
+      slug: 'node-js-developer-collaboration-tool-2',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Java developer (Big Data team)',
+      isEnglishSpeakingTeam: true,
+      isInternship: false,
+      isRelocation: true,
+      descr: 'Java developer',
+      slug: 'java-developer-big-data-team-2',
+      __typename: 'Vacancy',
+    },
+    {
+      name: 'Junior SQL Developer',
+      isEnglishSpeakingTeam: false,
+      isInternship: true,
+      isRelocation: false,
+      descr: 'SQL Developer',
+      slug: 'junior-sql-developer-1',
+      __typename: 'Vacancy',
     },
   ],
   events: {

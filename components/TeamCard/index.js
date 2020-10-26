@@ -5,7 +5,8 @@ import { Section, H3, StyledText, ArrowRight, Picture } from './styles';
 const TeamCard = props => {
   const [hover, setHovered] = useState(false);
   const {
-    data: { name, slug, summary, image }
+    data: { name, slug, summary, image },
+    isMain = false,
   } = props;
 
   return (
@@ -13,10 +14,11 @@ const TeamCard = props => {
       <Section
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        isMain={isMain}
       >
-        <Picture src={image && image.path.normal} alt={name} />
-        <H3>{name}</H3>
-        <StyledText>{summary}</StyledText>
+        <Picture src={image && image.path.normal} alt={name} isMain={isMain} />
+        <H3 isMain={isMain}>{name}</H3>
+        <StyledText isMain={isMain}>{summary}</StyledText>
         <ArrowRight hovered={hover} />
       </Section>
     </Link>
