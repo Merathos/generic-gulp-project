@@ -38,5 +38,6 @@ export const List = styled.ul`
 
   @media screen and (max-width: 1360px) {
     justify-content: flex-start;
+    gap: 20px;
   }
 `;
