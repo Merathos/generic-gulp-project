@@ -1,11 +1,12 @@
 import Swiper from 'react-id-swiper';
 import { Player } from 'components';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import ArrowPrev from 'public/icons/arrow-prev.svg';
 import ArrowNext from 'public/icons/arrow-next.svg';
 import * as S from './styles';
 
 const PersonalStoriesSlider = ({ data }) => {
+  const [activeSlide, setActiveSlide] = useState(1);
   const ref = useRef(null);
 
   const params = {
@@ -35,6 +36,16 @@ const PersonalStoriesSlider = ({ data }) => {
         {...params}
         on={{
           slideChange: function() {
+            let activeIndex = ref.current.swiper.activeIndex;
+
+            if (activeIndex === 0) {
+              activeIndex = data.length;
+            }
+            if (activeIndex > data.length) {
+              activeIndex = 1;
+            }
+            setActiveSlide(activeIndex);
+
             if (ref.current.swiper.isEnd) {
               ref.current.swiper.loopDestroy();
               ref.current.swiper.loopCreate();
@@ -51,7 +62,11 @@ const PersonalStoriesSlider = ({ data }) => {
             <S.TextWrapper>
               <S.Title>{story.title}</S.Title>
               <S.Text>{story.text}</S.Text>
-              <Player withDynamic={true} src={story.audio.src} />
+              <Player
+                isPaused={activeSlide !== index + 1}
+                withDynamic={true}
+                src={story.audio.src}
+              />
               <S.Link>{story.linkText}</S.Link>
             </S.TextWrapper>
             <S.ImageWrapper>

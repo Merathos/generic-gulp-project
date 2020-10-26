@@ -1,9 +1,9 @@
 import ReactPlayer from 'react-player';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { fromSecToDuration, restOfDuration } from 'helpers';
 import * as S from './styles';
 
-const Player = ({ src, withDynamic = false }) => {
+const Player = ({ src, isPaused, withDynamic = false }) => {
   const refPlayer = useRef(null);
   const refProgress = useRef(null);
   const [play, setPlay] = useState(false);
@@ -17,6 +17,12 @@ const Player = ({ src, withDynamic = false }) => {
     refProgress.current.style.width = `${Math.round(177 * e.played)}px`;
     setAudioDuration(restOfDuration(audioDuration));
   };
+
+  useEffect(() => {
+    if (isPaused) {
+      setPlay(false);
+    }
+  });
 
   return (
     <>
