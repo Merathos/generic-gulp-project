@@ -8,6 +8,9 @@ export const List = styled.ul`
 
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 420px) {
     grid-gap: 30px;
     margin-top: 30px;
   }

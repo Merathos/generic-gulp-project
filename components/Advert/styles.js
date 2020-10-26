@@ -21,7 +21,7 @@ export const StyledText = styled.p`
   margin-bottom: 45px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 14px;
     line-height: 152%;
   }

@@ -38,6 +38,7 @@ export const GET_VACANCY_CONTENT = gql`
     	recruiters {
         name
       }
+      id
     }
   }
 `;
