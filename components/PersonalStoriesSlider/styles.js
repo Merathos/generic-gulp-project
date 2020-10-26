@@ -27,6 +27,7 @@ export const TextWrapper = styled.div`
   @media screen and (max-width: 420px) {
     margin-left: 30px;
     margin-right: 30px;
+    width: calc(100% - 60px);
     height: 65%;
     margin-bottom: -15%;
   }
@@ -65,10 +66,6 @@ export const Text = styled.p`
     font-size: 16px;
     line-height: 160%;
     margin-bottom: 30px;
-  }
-
-  @media screen and (max-width: 420px) {
-    width: 75%;
   }
 `;
 
@@ -125,7 +122,7 @@ export const ImageWrapper = styled.div`
 
     @media screen and (max-width: 720px) {
       bottom: 110px;
-      left: -50px;
+      left: max(-100vw + 120px + 100%, -50px);
       width: 200px;
       height: 200px;
     }
