@@ -1569,7 +1569,7 @@ export default {
     },
     eventDetails: {
       type: `JavaScript EVENING`,
-      isActive: false,
+      isActive: true,
       bgImg: `backgrounds/javascript.svg`,
       status: { img: `icons/online.png`, name: `Online` },
       date: { day: `29 мая,`, time: `19:30-21:30` },

@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { EventHeader, Schedule } from 'components';
-import { EventRecap, Speakers, EventsSlider } from 'containers';
+import { EventRecap, Speakers, EventsSlider, EventReg } from 'containers';
 
 const EventDetails = ({ data, cards }) => {
   const { isActive } = data;
@@ -13,6 +13,7 @@ const EventDetails = ({ data, cards }) => {
       ) : (
         <EventRecap data={data.eventRecap} />
       )}
+      <EventReg />
       <Speakers data={data.speakers} />
       <EventsSlider cards={cards.active} />
     </main>
