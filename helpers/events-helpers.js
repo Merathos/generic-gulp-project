@@ -25,3 +25,13 @@ export function checkActiveCategories(arr, slug) {
     return false;
   }
 }
+
+const EVENTS_STATUS_IMAGES = {
+  online: 'icons/online.png',
+  streaming: 'icons/streaming.png',
+  record: 'icons/recording.png',
+};
+
+export function getStatusImage(slug) {
+  return EVENTS_STATUS_IMAGES[slug];
+}

@@ -2,16 +2,16 @@ import { EventCard } from 'components';
 import { List, Item } from './styles';
 
 const EventList = props => {
-  const { cards, completed } = props;
+  const { events } = props;
 
   return (
-      <List>
-        {cards.map((el, i) => (
-          <Item key={i}>
-            <EventCard card={el} completed={completed} />
-          </Item>
-        ))}
-      </List>
+    <List>
+      {events.map(event => (
+        <Item key={event.id}>
+          <EventCard event={event} completed={false} />
+        </Item>
+      ))}
+    </List>
   );
 };
 

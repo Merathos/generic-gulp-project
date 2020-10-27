@@ -16,7 +16,7 @@ const eventsPage = ({ event_categories, events }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
 
   const {
@@ -28,6 +28,7 @@ export async function getStaticProps() {
     data: { events },
   } = await apolloClient.query({
     query: GET_EVENTS,
+    variables: { categories: query.categories },
   });
 
   return {
@@ -35,7 +36,6 @@ export async function getStaticProps() {
       event_categories,
       events,
     },
-    revalidate: 1,
   };
 }
 

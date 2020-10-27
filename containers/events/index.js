@@ -7,26 +7,39 @@ import * as S from './styles';
 const Events = ({ data, eventCategories, events, pageSlug }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [successIsShown, setSuccessIsShown] = useState(false);
-
+  console.log(events);
   return (
     <S.Main>
       <S.Container>
         <S.Grid>
           <S.Title>{data.mainTitle}</S.Title>
           <S.Aside>
-            <EventsFilter
-              data={data}
-              eventCategories={eventCategories}
-              pageSlug={pageSlug}
-              resetButtonText={data.resetButtonText}
-            />
+            {eventCategories && (
+              <EventsFilter
+                data={data}
+                eventCategories={eventCategories}
+                pageSlug={pageSlug}
+                resetButtonText={data.resetButtonText}
+              />
+            )}
             <Mailing data={data.mailing} onClick={() => setIsOpen(true)} />
           </S.Aside>
           <S.ContentWrapper>
-            <EventsTags eventCategories={eventCategories} pageSlug={pageSlug} />
-            <EventList cards={data.cards.active} />
+            {eventCategories && (
+              <EventsTags
+                eventCategories={eventCategories}
+                pageSlug={pageSlug}
+              />
+            )}
+            {events && <EventList cards={data.cards.active} events={events} />}
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
-            <EventList cards={data.cards.completed} completed />
+            {/* {events && (
+              <EventList
+                cards={data.cards.completed}
+                events={events}
+                completed
+              />
+            )} */}
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>

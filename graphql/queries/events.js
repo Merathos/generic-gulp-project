@@ -46,6 +46,8 @@ export const GET_EVENTS = gql`
         id
         speaker {
           id
+          name
+          company
           image {
             id
             path {
