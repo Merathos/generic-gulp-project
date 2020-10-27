@@ -1,5 +1,5 @@
 import {
-  GreyHeader,
+  TeamsHeader,
   GreyFooter
 } from 'components';
 import { SectionGroup } from 'containers';
@@ -10,7 +10,12 @@ const Project = ({ data, teams }) => {
     <main>
       <GreyWrapper>
         <Container>
-          <GreyHeader title={teams.name} text={teams.description} />
+          <TeamsHeader
+            title={teams.name}
+            text={teams.description}
+            stack={teams.technology_stacks}
+         //   picture={teams.detail_image.path.normal}
+         />
         </Container>
       </GreyWrapper>
 

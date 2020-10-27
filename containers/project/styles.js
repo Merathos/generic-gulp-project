@@ -20,7 +20,7 @@ export const Container = styled.section`
 export const GreyWrapper = styled.div`
   background-color: #F7F8F9;
   margin-bottom: 100px;
-  padding-bottom: 240px;
+  padding-bottom: 160px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;

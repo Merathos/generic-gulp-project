@@ -9,7 +9,7 @@ const TeamCard = props => {
   } = props;
 
   return (
-    <Link href={`teams/projects/${slug}`}>
+    <Link href={`teams/${slug}`}>
       <Section
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

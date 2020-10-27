@@ -3,6 +3,7 @@ import { Subtitle } from 'elements';
 
 export const Section = styled.section`
   padding-top: 160px;
+  background-color: #F7F8F9;
 
   @media screen and (max-width: 420px) {
     padding-top: 80px;
