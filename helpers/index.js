@@ -8,7 +8,11 @@ import {
   Conditions,
   Map,
   Application,
+  Media,
+  MarkerList
 } from 'components';
+
+import { TitleH2, TitleH3 } from 'elements';
 
 export const fromSecToDuration = duration => {
   const min = parseInt(duration / 60);
@@ -33,38 +37,39 @@ export const renderContent = props => {
   {console.log(props)}
     {
       {
-       // 'h2': <Paragraph bold="700" data={el} />,
-        'h3': (
-          <></>
-        ),
-        'paragraph': <Paragraph bold="700" data={data.text} />,
-        'image': (
-          <></>
-        ),
-        'columns': (
-          <></>
-        ),
-        'factoids': (
-          <></>
-        ),
-        'marker': (
-          <></>
-        ),
-        'link': (
-          <></>
-        ),
-        'note': (
-          <></>
-        ),
+
+          header:
+            data.level === 2 ? (
+              <TitleH2>{data.text}</TitleH2>
+            ) : (
+              <TitleH3>{data.text}</TitleH3>
+          ),
+          paragraph: <Paragraph bold="700" data={data} />,
+          list:
+            data.style === 'ordered' ? (
+              <MarkerList data={data.items} />
+            ) : (
+              <MarkerList type="ellipse" data={data.items} />
+            ),
+          image: <></>, //<Media type="img" data={data} decoration />,
+          columns: (
+            <></>
+          ),
+          factoids: (
+            <></>
+          ),
+          'marker': (
+            <></>
+          ),
+          'link': (
+            <></>
+          ),
+          'note': (
+            <></>
+          ),
         'imageBig': (
           <></>
-        ),
-        'markerList': (
-          <></>
-        ),
-        'numberList': (
-          <></>
-        ),
+        ), 
         'asideBlock': (
           <></>
         ),
