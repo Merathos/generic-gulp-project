@@ -2,6 +2,7 @@ import { TeamsHeader, GreyFooter, ArticleContent } from 'components';
 import { Container, GreyWrapper } from './styles';
 
 const Project = ({ data, teams }) => {
+  const content = JSON.parse(teams.content);
   return (
     <main>
       <GreyWrapper>
@@ -16,7 +17,7 @@ const Project = ({ data, teams }) => {
       </GreyWrapper>
 
       <Container>
-        {/* <ArticleContent content={teams.content} /> */}
+        {Object.keys(content).length !==0 && <ArticleContent content={content.blocks} />}
       </Container>
 
       <GreyFooter data={data.greyFooter} />
