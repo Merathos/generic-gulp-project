@@ -23,10 +23,6 @@ export const ListItem = styled.li`
   margin-right: 10px;
   margin-bottom: 10px;
 
-  @media screen and (max-width: 1200px) {
-    min-width: 45%;
-  }
-
   @media screen and (max-width: 600px) {
     margin-bottom: 20px;
 
