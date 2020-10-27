@@ -24,7 +24,7 @@ export const TextWrapper = styled.div`
     width: 100%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
     margin-left: 30px;
     margin-right: 30px;
     width: calc(100% - 60px);
@@ -83,7 +83,7 @@ export const Link = styled.a`
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
     font-size: 14px;
     line-height: 160%;
   }
@@ -127,7 +127,7 @@ export const ImageWrapper = styled.div`
       height: 200px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 600px) {
       bottom: 70px;
       left: -100px;
     }
@@ -154,7 +154,7 @@ export const ImageWrapper = styled.div`
     margin-top: 0;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
     height: 345px;
   }
 `;
@@ -176,7 +176,7 @@ export const Img = styled.img`
     width: auto;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
     height: 270px;
     width: 218px;
     object-fit: cover;

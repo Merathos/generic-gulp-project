@@ -10,7 +10,7 @@ export const Container = styled.section`
     padding-right: 60px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
     padding-left: 0;
     padding-right: 0;
   }
