@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { TitleH2 } from 'elements';
 
 export const Container = styled.div`
-  padding: 165px 100px 160px 125px;
+  padding: 160px 100px 220px 125px;
 
   @media screen and (max-width: 1024px) {
-    padding: 100px 60px 60px;
+    padding: 100px 60px 80px;
   }
 
   @media screen and (max-width: 420px) {
-    padding: 80px 30px 40px;
+    padding: 80px 30px 80px;
   }
 `;
 
@@ -31,13 +31,20 @@ export const Title = styled(TitleH2)`
 `;
 
 export const List = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 75px;
 
-  @media screen and (max-width: 1360px) {
-    justify-content: flex-start;
-    gap: 20px;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
   }
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const ListItem = styled.li`
+  display: flex;
 `;

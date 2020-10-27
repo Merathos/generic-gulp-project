@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { TitleH2 } from 'elements';
 
 export const Container = styled.div`
-  padding: 155px 120px 0 120px;
+  padding: 160px 120px 0 120px;
 
   @media screen and (max-width: 1024px) {
     padding: 100px 60px 0 60px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 720px) {
     padding: 80px 30px 0;
   }
 `;

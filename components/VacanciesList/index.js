@@ -9,7 +9,7 @@ import {
 const VacanciesList = ({ data }) => {
   const categoriesMap = data.reduce((result, element) => {
     result[element.category] = !result[element.category]
-      ? 10
+      ? 10 //should be 1 but 10 for 2-digits number for the layout
       : result[element.category] + 1;
     return result;
   }, {});

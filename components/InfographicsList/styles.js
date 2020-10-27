@@ -9,7 +9,6 @@ export const List = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   width: 70%;
-  margin-bottom: 120px;
 
   @media screen and (max-width: 1360px) {
     width: 90%;

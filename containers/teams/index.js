@@ -1,5 +1,5 @@
 import { TeamCard } from 'components';
-import { Container, Title, List } from './styles';
+import { Container, Title, List, ListItem } from './styles';
 
 const title = 'Команды';
 
@@ -9,9 +9,9 @@ const Teams = ({ data }) => {
       <Title>{title}</Title>
       <List>
         {data.map((team, index) => (
-          <li key={index}>
+          <ListItem key={index}>
             <TeamCard data={team} isMain={true} />
-          </li>
+          </ListItem>
         ))}
       </List>
     </Container>

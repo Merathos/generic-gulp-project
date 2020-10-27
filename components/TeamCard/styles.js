@@ -8,11 +8,8 @@ export const Section = styled.div`
   ${props =>
     props.isMain &&
     css`
-      margin-bottom: 60px;
-
-      @media screen and (max-width: 864px) {
-        margin-bottom: 30px;
-      }
+      display: flex;
+      flex-direction: column;
     `}
 
   &:hover {
@@ -21,14 +18,14 @@ export const Section = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    margin-bottom: ${props => (props.isMain ? '40px' : '30px')};
+    margin-bottom: ${props => (props.isMain ? '0' : '30px')};
   }
 `;
 
 export const StyledText = styled.p`
   font-size: 18px;
   line-height: 27px;
-  margin-bottom: 45px;
+  margin-bottom: ${props => (props.isMain ? '40px' : '45px')};
 
   @media screen and (max-width: 420px) {
     margin-bottom: ${props => (props.isMain ? '20px' : '30px')};
@@ -68,10 +65,16 @@ export const ArrowRight = styled.a.attrs(props => ({
   height: 38px;
   background-image: ${props => props.image};
   transition: background-image 200ms ease;
+
+  ${props =>
+    props.isMain &&
+    css`
+      margin-top: auto;
+    `}
 `;
 
 export const Picture = styled.img`
-  margin-bottom: ${props => (props.isMain ? '15px' : '30px')};
+  margin-bottom: 30px;
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 20px;

@@ -9,14 +9,10 @@ export const Block = styled.div`
   ${props =>
     props.isMain &&
     css`
-      width: 60vw;
+      width: 856px;
 
-      @media screen and (max-width: 720px) {
-        width: 80vw;
-      }
-
-      @media screen and (max-width: 420px) {
-        width: 85vw;
+      @media screen and (max-width: 1024px) {
+        width: 100%;
       }
     `};
 

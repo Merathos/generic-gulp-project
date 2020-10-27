@@ -3,7 +3,7 @@ import mock from 'mock/index';
 
 const mainPage = () => {
   return (
-    <Layout greyFooter plainHeader isVisible={false}>
+    <Layout greyFooter plainHeader smallPadding={true} isVisible={false}>
       <Main data={mock.main} storiesData={mock.stories} teams={mock.teams} />
     </Layout>
   );

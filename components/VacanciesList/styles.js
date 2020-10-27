@@ -5,11 +5,7 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin-top: 105px;
-  max-width: 60vw;
-
-  @media screen and (max-width: 1200px) {
-    max-width: 80vw;
-  }
+  max-width: 856px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;

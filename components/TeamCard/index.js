@@ -16,10 +16,10 @@ const TeamCard = props => {
         onMouseLeave={() => setHovered(false)}
         isMain={isMain}
       >
-        <Picture src={image && image.path.normal} alt={name} isMain={isMain} />
+        <Picture src={image && image.path.normal} alt={name} />
         <H3 isMain={isMain}>{name}</H3>
         <StyledText isMain={isMain}>{summary}</StyledText>
-        <ArrowRight hovered={hover} />
+        <ArrowRight isMain={isMain} hovered={hover} />
       </Section>
     </Link>
   );
