@@ -17,7 +17,7 @@ export const List = styled.ul`
   @media screen and (max-width: 720px) {
     justify-content: flex-start;
     width: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 45px;
   }
 `;
 

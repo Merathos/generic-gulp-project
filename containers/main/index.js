@@ -6,6 +6,7 @@ import {
   Teams,
   Vacancies,
 } from 'containers';
+import { RunningText } from '../../components';
 import { Main as MainContainer, Container, GreyContainer } from './styles';
 
 const Main = ({ data, storiesData, teams }) => {
@@ -18,6 +19,9 @@ const Main = ({ data, storiesData, teams }) => {
       </GreyContainer>
       <Container>
         <Infographics data={data.infographics} />
+      </Container>
+      <Container>
+        <RunningText data={data.technologies} />
       </Container>
       <Container>
         <AboutCompany data={data.aboutCompany} />

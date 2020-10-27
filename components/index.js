@@ -64,3 +64,4 @@ export { default as EventBanner } from './EventBanner';
 export { default as BenefitsList } from './BenefitsList';
 export { default as PersonalStoriesSlider } from './PersonalStoriesSlider';
 export { default as VacanciesList } from './VacanciesList';
+export { default as RunningText } from './RunningText';
