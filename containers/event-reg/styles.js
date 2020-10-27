@@ -8,4 +8,12 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   margin-bottom: 160px;
+  padding: 135px 0;
+  padding-bottom: 160px;
+  background-color: #f7f8f9;
+
+  @media (max-width: 768px) {
+    padding-top: 56px;
+    padding-bottom: 47px;
+  }
 `;

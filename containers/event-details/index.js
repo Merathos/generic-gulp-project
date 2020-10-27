@@ -13,8 +13,8 @@ const EventDetails = ({ data, cards }) => {
       ) : (
         <EventRecap data={data.eventRecap} />
       )}
-      <EventReg />
       <Speakers data={data.speakers} />
+      <EventReg />
       <EventsSlider cards={cards.active} />
     </main>
   );
