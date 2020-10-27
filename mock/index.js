@@ -6,11 +6,11 @@ export default {
     },
     {
       title: `Вакансии`,
-      href: `catalog`,
+      href: `vacancies`,
     },
     {
       title: `Команды`,
-      href: `team`,
+      href: `teams`,
     },
   ],
   catalog: {

@@ -27,7 +27,7 @@ const Dropdown = props => {
                   name={el}
                   handleChange={() => handleChangeCheckbox(el)}
                   type="dropdown"
-                  checked={filterArray.indexOf(el) !== -1}
+                  checked_state={filterArray.indexOf(el) !== -1}
                 />
               ) : (
                 <RadioButton

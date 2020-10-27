@@ -63,3 +63,4 @@ export { default as BlogsBanner } from './BlogsBanner';
 export { default as EventBanner } from './EventBanner';
 export { default as BenefitsList } from './BenefitsList';
 export { default as ArticleContent } from './ArticleContent';
+export { default as TeamsHeader } from './TeamsHeader';

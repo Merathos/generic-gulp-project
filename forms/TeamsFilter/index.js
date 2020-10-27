@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import { FilterButton, Checkbox } from 'elements';
-import { useDispatch, useSelector } from 'react-redux';
+import { Checkbox } from 'elements';
+import { useSelector } from 'react-redux';
 import * as S from './styles';
 
 const TeamsFilter = props => {
   const {
     data: { title, list },
-    handleChange
+    handleChange,
   } = props;
   const filterArray = useSelector(state => state.filter);
 
@@ -16,14 +15,12 @@ const TeamsFilter = props => {
       <S.List>
         {list.map((el, i) => (
           <S.Item key={i}>
-            <input
-              type="checkbox"
+            <Checkbox
               name={el}
-              id={el}
-              onChange={() => handleChange(el)}
-              disabled={filterArray.indexOf(el) !== -1}
+              handleChange={() => handleChange(el)}
+              type="dropdown"
+              checked_state={filterArray.indexOf(el) !== -1}
             />
-            <S.Label htmlFor={el}>{el}</S.Label>
           </S.Item>
         ))}
       </S.List>
