@@ -12,7 +12,7 @@ const Element = styled.li`
   margin-right: 22px;
 `;
 
-const Tags = () => {
+const Tags = ({ handleChangeFilter }) => {
   const dispatch = useDispatch();
   const filterArray = useSelector(state => state.filter);
   const categories = useSelector(state => state.categories);
@@ -24,8 +24,7 @@ const Tags = () => {
           <Element key={i}>
             <FilterButton
               name={el}
-              handleChange={() =>
-                dispatch({ type: 'CLEAR_FILTER', payload: el })}
+              handleChange={() => handleChangeFilter(el)}
             />
           </Element>
         )))

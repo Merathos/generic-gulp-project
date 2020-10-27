@@ -1,8 +1,4 @@
-import {
-  TeamsHeader,
-  GreyFooter
-} from 'components';
-import { SectionGroup } from 'containers';
+import { TeamsHeader, GreyFooter, ArticleContent } from 'components';
 import { Container, GreyWrapper } from './styles';
 
 const Project = ({ data, teams }) => {
@@ -20,7 +16,7 @@ const Project = ({ data, teams }) => {
       </GreyWrapper>
 
       <Container>
-        <SectionGroup>{data.content}</SectionGroup>
+        {/* <ArticleContent content={teams.content} /> */}
       </Container>
 
       <GreyFooter data={data.greyFooter} />
