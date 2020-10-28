@@ -1,6 +1,12 @@
 import * as S from './styles';
 import { EventHeader, Schedule } from 'components';
-import { EventRecap, Speakers, EventsSlider, EventReg } from 'containers';
+import {
+  EventRecap,
+  Speakers,
+  EventsSlider,
+  EventReg,
+  EventStream,
+} from 'containers';
 
 const EventDetails = ({ data, cards }) => {
   const { isActive } = data;
@@ -13,8 +19,9 @@ const EventDetails = ({ data, cards }) => {
       ) : (
         <EventRecap data={data.eventRecap} />
       )}
+      {isActive && <EventStream data={data.stream} />}
       <Speakers data={data.speakers} />
-      <EventReg />
+      {isActive && <EventReg />}
       <EventsSlider cards={cards.active} />
     </main>
   );

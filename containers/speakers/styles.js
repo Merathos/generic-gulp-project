@@ -47,7 +47,7 @@ export const Item = styled.li`
       background-position: left top;
       background-size: 75px 75px;
       top: 134px;
-      right: -33px;
+      right: -30px;
     }
   }
 
@@ -55,11 +55,11 @@ export const Item = styled.li`
     &::after {
       background-image: url('backgrounds/speaker-card2.svg');
       top: 19px;
-      right: -40px;
+      right: -37px;
 
       @media (max-width: 768px) {
         top: 10px;
-        right: -26px;
+        right: -23px;
       }
     }
   }

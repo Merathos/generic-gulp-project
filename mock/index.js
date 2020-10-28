@@ -1665,6 +1665,14 @@ export default {
           ],
         },
       ],
+      stream: {
+        title: `Прямая трансляция`,
+        msg: `Трансляция начнется в 19:30 и будет доступна на странице`,
+        video: {
+          src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
+          srcPoster: `images/event-details1.jpg`,
+        },
+      },
     },
   },
 };

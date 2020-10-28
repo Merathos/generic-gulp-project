@@ -1,5 +1,4 @@
 import * as S from './styles';
-import { useEffect } from 'react';
 import InnerHTML from 'dangerously-set-html-content';
 
 const EventReg = props => {
