@@ -17,7 +17,7 @@ const RunningText = ({ data }) => {
 
   const animate = time => {
     if (previousTimeRef.current !== undefined && isHovered === false) {
-      setStep(prevStep => (prevStep > 261.7 ? 0 : prevStep + 0.08));
+      setStep(prevStep => (prevStep > 214 ? 0 : prevStep + 0.08));
     }
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animate);
@@ -34,7 +34,7 @@ const RunningText = ({ data }) => {
         <path
           id="curve"
           fill="transparent"
-          d="M 0 100 Q 50 100 75 75 Q 150 25 225 75 Q 300 125 375 75 Q 400 50 450 50"
+          d="M 0 100 Q 50 125 125 75 Q 200 25 275 75 Q 350 125 425 75 Q 500 25 550 25 "
         />
         <text width="1440" fill="#feb251">
           <textPath

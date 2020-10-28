@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   svg {
     width: 250%;
-    margin-left: -40%;
+    margin-left: -58%;
     margin-top: -265px;
   }
 
