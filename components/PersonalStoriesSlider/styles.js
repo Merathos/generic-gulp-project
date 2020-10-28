@@ -28,7 +28,7 @@ export const TextWrapper = styled.div`
     margin-left: 30px;
     margin-right: 30px;
     width: calc(100% - 60px);
-    height: 65%;
+    height: 80%;
     margin-bottom: -15%;
   }
 `;
@@ -127,8 +127,8 @@ export const ImageWrapper = styled.div`
       height: 200px;
     }
 
-    @media screen and (max-width: 600px) {
-      bottom: 70px;
+    @media screen and (max-width: 420px) {
+      bottom: 0;
       left: -100px;
     }
   }
@@ -154,8 +154,8 @@ export const ImageWrapper = styled.div`
     margin-top: 0;
   }
 
-  @media screen and (max-width: 600px) {
-    height: 345px;
+  @media screen and (max-width: 420px) {
+    height: 45%;
   }
 `;
 

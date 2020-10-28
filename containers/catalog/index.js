@@ -1,5 +1,5 @@
-import { useQuery } from '@apollo/react-hooks'
-import { useState, useEffect, useCallback } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 import { GET_FILTER_SEARCH } from 'graphql/query';
@@ -25,11 +25,15 @@ const VacanciesList = ({ data: mock, back }) => {
   const _refetch = useQuery(GET_FILTER_SEARCH).refetch;
 
   const refetch = useCallback(() => {
-    setTimeout(() => _refetch({
-      variables: {
-        search: value,
-      }
-    }), 0);
+    setTimeout(
+      () =>
+        _refetch({
+          variables: {
+            search: value,
+          },
+        }),
+      0
+    );
   }, [_refetch]);
 
   const handleSearch = searchValue => {
@@ -49,6 +53,7 @@ const VacanciesList = ({ data: mock, back }) => {
           <Search
             placeholder={mock.search}
             handleSearch={search => handleSearch(search)}
+            initialValue={router.query.search}
           />
           <Tags />
         </S.Article>

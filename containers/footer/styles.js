@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledFooter = styled.footer`
   padding: 220px 46px 46px;
@@ -6,6 +6,14 @@ export const StyledFooter = styled.footer`
   align-items: flex-end;
   background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
   justify-content: space-between;
+
+  ${props =>
+    props.smallPadding &&
+    css`
+      @media screen and (max-width: 600px) {
+        padding-top: 120px;
+      }
+    `}
 
   @media (max-width: 420px) {
     padding: 50px 0;
@@ -40,7 +48,7 @@ export const FooterText = styled.p`
 export const Button = styled.button`
   border: none;
   background-color: transparent;
-  color: #FB5235;
+  color: #fb5235;
   font-weight: bold;
   font-size: 18px;
   line-height: 120%;

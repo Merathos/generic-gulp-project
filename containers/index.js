@@ -22,3 +22,5 @@ export { default as AboutCompany } from './about-company';
 export { default as PersonalStories } from './personal-stories';
 export { default as NewsModal } from './news-modal';
 export { default as SuccessModal } from './success-modal';
+export { default as Teams } from './teams';
+export { default as Vacancies } from './vacancies';

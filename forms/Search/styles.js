@@ -1,13 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Block = styled.div`
-  border-bottom: 1px solid #201F2A;
+  border-bottom: 1px solid #201f2a;
   display: flex;
-  padding: 25px 0;
+  padding: ${props => (props.isMain ? '0' : '25px 0')};
   margin-bottom: 10px;
 
+  ${props =>
+    props.isMain &&
+    css`
+      width: 856px;
+
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+      }
+    `};
+
   @media screen and (max-width: 420px) {
-    padding: 16px 0;
+    padding: ${props => (props.isMain ? '0' : '16px 0')};
   }
 `;
 
@@ -21,14 +31,22 @@ export const Field = styled.input`
   font-family: inherit;
   outline: none;
 
+  ${props =>
+    props.isMain &&
+    css`
+      background-color: transparent;
+      padding-top: 0;
+      padding-bottom: 25px;
+    `};
+
   &:hover,
   &:active {
     opacity: 1;
-    color: #201F2A;
+    color: #201f2a;
   }
 
   &:focus ~ button {
-    background: #FB5235;
+    background: #fb5235;
 
     svg path {
       stroke: #fff;
@@ -38,6 +56,12 @@ export const Field = styled.input`
   @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 134%;
+
+    ${props =>
+      props.isMain &&
+      css`
+        padding-bottom: 15px;
+      `};
   }
 `;
 
@@ -49,7 +73,7 @@ export const Submit = styled.button`
   align-items: center;
   border-radius: 8px;
   margin-left: 10px;
-  background: #EC381A;
+  background: #ec381a;
 
   svg path {
     stroke: #fff;
@@ -59,7 +83,7 @@ export const Submit = styled.button`
     background: transparent;
 
     svg path {
-      stroke: #201F2A;
+      stroke: #201f2a;
     }
   }
 `;
