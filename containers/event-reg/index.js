@@ -10,7 +10,7 @@ const EventReg = props => {
     (function () {
       return {
         "loadCSS": [
-          "http://localhost:3000/styles/timepad.css"
+          "/styles/timepad.css"
         ],
         "skipBaseCSS": false,
         "disableBootstrap": false,
