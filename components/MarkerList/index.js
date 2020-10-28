@@ -5,7 +5,7 @@ const MarkerList = props => {
   return (
     <>
       {type === 'ellipse' ? (
-        <S.List>
+        <S.List inline={inline}>
           {data.map((el, i) => (
             <S.ElementEllipse inline={inline} key={i}>
               {el.image && <S.Img src={el.image} alt={el.title} />}

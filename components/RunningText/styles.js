@@ -2,19 +2,23 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 400px;
+  height: 440px;
   margin-top: 50px;
-  margin-bottom: 28px;
-  overflow: hidden;
 
   svg {
     width: 250%;
-    margin-left: -65%;
-    margin-top: -50px;
+    margin-left: -58%;
+    margin-top: -265px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    svg {
+      margin-top: -16%;
+    }
   }
 
   @media screen and (max-width: 1200px) {
-    margin-bottom: 0;
+    height: 360px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -29,10 +33,6 @@ export const Container = styled.div`
     height: 240px;
     margin-top: 0;
     margin-bottom: 0;
-
-    svg {
-      margin-top: -20px;
-    }
   }
 
   @media screen and (max-width: 420px) {

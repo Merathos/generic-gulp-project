@@ -3,7 +3,7 @@ import TitleH2 from '../../elements/TitleH2';
 
 export const Container = styled.section`
   position: relative;
-  padding-top: 60px;
+  padding-top: 50px;
 
   @media screen and (max-width: 720px) {
     padding-top: 30px;
