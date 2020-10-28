@@ -2015,6 +2015,10 @@ export default {
           srcPoster: `images/event-details1.jpg`,
         },
       },
+      timepad: {
+        customizeID: `134610`,
+        eventID: `1464460`,
+      },
     },
   },
 };

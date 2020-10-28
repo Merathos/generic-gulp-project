@@ -21,7 +21,7 @@ const EventDetails = ({ data, cards }) => {
       )}
       {isActive && <EventStream data={data.stream} />}
       <Speakers data={data.speakers} />
-      {isActive && <EventReg />}
+      {isActive && <EventReg data={data.timepad} />}
       <EventsSlider cards={cards.active} />
     </main>
   );

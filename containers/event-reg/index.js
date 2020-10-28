@@ -2,10 +2,14 @@ import * as S from './styles';
 import InnerHTML from 'dangerously-set-html-content';
 
 const EventReg = props => {
+  const {
+    data: { customizeID, eventID },
+  } = props;
+
   const timepadForm = `
   <script id="form-script" type="text/javascript" async="async" defer="defer" charset="UTF-8"
-  src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="134610"
-  data-twf2s-event--id="1464460" data-timepad-widget-v2="event_register">
+  src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="${customizeID}"
+  data-twf2s-event--id="${eventID}" data-timepad-widget-v2="event_register">
     (function () {
       return {
         "loadCSS": [
