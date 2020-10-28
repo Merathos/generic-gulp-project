@@ -19,7 +19,7 @@ const List = props => {
           {data.map((el, i) => (
             <li key={i}>
               <BlueTitle>{el.title}</BlueTitle>
-              <BlueText>{el.text}</BlueText>
+              <BlueText>{el.describe}</BlueText>
             </li>
           ))}
         </BlueList>
@@ -27,13 +27,13 @@ const List = props => {
         <NormalList>
           {data.map((el, i) => (
             <Element key={i}>
-              {el.src && (
+              {el.imageUrl && (
                 <Wrapper>
-                  <img src={el.src} alt={el.title} />
+                  <img src={`https://api.develop.dins.d.nimax.ru/${el.imageUrl}`} alt={el.title} />
                 </Wrapper>
               )}
               <H3>{el.title}</H3>
-              <NormalText>{el.text}</NormalText>
+              <NormalText>{el.describe}</NormalText>
             </Element>
           ))}
         </NormalList>

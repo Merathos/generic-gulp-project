@@ -26,10 +26,13 @@ const SidebarSlider = props => {
       <Swiper ref={ref}>
         {data.map((el, i) => (
           <Element key={i}>
-            <Img src={el.image} alt={el.alt} />
+            <Img
+              src={`https://api.develop.dins.d.nimax.ru/${el.imageUrl}`}
+              alt={el.title}
+            />
             <div>
               <H4>{el.title}</H4>
-              <Text>{el.description}</Text>
+              <Text>{el.describe}</Text>
             </div>
           </Element>
         ))}

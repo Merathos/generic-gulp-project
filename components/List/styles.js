@@ -33,6 +33,7 @@ export const Wrapper = styled.div`
 export const NormalList = styled.ul`
   display: flex;
   justify-content: space-between;
+  max-width: 850px;
 
   @media screen and (max-width: 420px) {
     flex-direction: column;

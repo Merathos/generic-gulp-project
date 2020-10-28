@@ -9,7 +9,9 @@ import {
   Map,
   Application,
   Media,
-  MarkerList
+  MarkerList,
+  List,
+  SectionNote,
 } from 'components';
 
 import * as S from './styles';
@@ -36,43 +38,29 @@ const renderContent = props => {
               <MarkerList type="ellipse" data={data.items} />
             ),
           image: <Media type="img" data={data} />,
-          columns: (
+          factoidsWithImages: <List data={data.factoids} />,
+          factoids: <List type="blue" data={data.factoids} />,
+          note: <SectionNote data={data.text} />,
+          person: (
             <></>
           ),
-          factoids: (
+          gallery: (
             <></>
           ),
-          'marker': (
+          asideSlider: <SidebarSlider data={data.factoids} />,
+          'video': (
             <></>
           ),
-          'link': (
+          'quote': (
             <></>
           ),
-          'note': (
+          'comments': (
             <></>
           ),
-        'imageBig': (
-          <></>
-        ), 
-        'asideBlock': (
-          <></>
-        ),
-        'slider': (
-          <></>
-        ),
-        'video': (
-          <></>
-        ),
-        'quote': (
-          <></>
-        ),
-        'person': (
-          <></>
-        ),
-        'comments': (
-          <></>
-        )
-      }[type]
+          asideBlock: (
+            <></>
+          ),
+        }[type]
     }
   </>
   )

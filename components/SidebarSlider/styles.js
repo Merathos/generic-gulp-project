@@ -7,6 +7,7 @@ export const Article = styled.article`
   background-repeat: no-repeat;
   background-position: 70% 0;
   margin-bottom: 110px;
+  width: 250px;
 
   @media screen and (max-width: 1024px) {
     background-position: 10% 0;
