@@ -28,7 +28,7 @@ export const TextWrapper = styled.div`
     margin-left: 30px;
     margin-right: 30px;
     width: calc(100% - 60px);
-    height: 65%;
+    height: 80%;
     margin-bottom: -15%;
   }
 `;
@@ -128,7 +128,7 @@ export const ImageWrapper = styled.div`
     }
 
     @media screen and (max-width: 420px) {
-      bottom: 70px;
+      bottom: 0;
       left: -100px;
     }
   }
@@ -155,7 +155,7 @@ export const ImageWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    height: 345px;
+    height: 45%;
   }
 `;
 
