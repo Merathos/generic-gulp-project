@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Main = styled.main`
-  background: url('/backgrounds/grey-triangle.png') no-repeat right 2000px;
+  background: url('/backgrounds/grey-triangle.png') no-repeat right 2380px;
 
   @media screen and (max-width: 1024px) {
     background-image: none;

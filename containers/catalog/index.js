@@ -28,11 +28,15 @@ const VacanciesList = ({ data: mock, back }) => {
   const _refetch = useQuery(GET_FILTER_SEARCH).refetch;
 
   const refetch = useCallback(() => {
-    setTimeout(() => _refetch({
-      variables: {
-        search: value,
-      }
-    }), 0);
+    setTimeout(
+      () =>
+        _refetch({
+          variables: {
+            search: value,
+          },
+        }),
+      0
+    );
   }, [_refetch]);
 
   const handleSearch = filterValue => {
@@ -64,6 +68,7 @@ const VacanciesList = ({ data: mock, back }) => {
           <Search
             placeholder={mock.search}
             handleSearch={search => handleSearch(search)}
+            initialValue={router.query.search}
           />
           <Tags handleChangeFilter={el => handleClearTags(el)} />
         </S.Article>

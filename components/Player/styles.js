@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Subtitle } from 'elements';
 
 export const Block = styled.div`
@@ -34,6 +34,14 @@ export const Label = styled.span`
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
+
+  @media screen and (max-width: 420px) {
+    ${props =>
+      props.withDynamic &&
+      css`
+        font-size: 14px;
+      `}
+  }
 `;
 
 export const Bar = styled.div`
@@ -44,6 +52,14 @@ export const Bar = styled.div`
 
 export const Span = styled(Subtitle)`
   margin-top: auto;
+
+  @media screen and (max-width: 420px) {
+    ${props =>
+      props.withDynamic &&
+      css`
+        font-size: 14px;
+      `}
+  }
 `;
 
 export const Scale = styled.div`
@@ -53,7 +69,7 @@ export const Scale = styled.div`
 
 export const Progress = styled.div`
   height: 4px;
-  background-color: #2F8ED9;
+  background-color: #2f8ed9;
   width: 0;
   position: relative;
 
@@ -62,7 +78,7 @@ export const Progress = styled.div`
     content: '';
     width: 18px;
     height: 8px;
-    background-color: #2F8ED9;
+    background-color: #2f8ed9;
     right: -18px;
     top: 50%;
     transform: translateY(-50%);

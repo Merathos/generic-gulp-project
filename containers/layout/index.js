@@ -38,18 +38,22 @@ const Layout = ({
   isVisible = true,
   showFooter = true,
   plainHeader = false,
-  nimax = true
+  smallPadding = false,
+  nimax = true,
 }) => {
   return (
     <Wrapper>
       <Header data={mock.header} plain={plainHeader} />
       {children}
-      {showFooter && <Footer
-                      data={mock.footer}
-                      grey={greyFooter}
-                      subscription={subscription}
-                      nimax={nimax}
-      />}
+      {showFooter && (
+        <Footer
+          data={mock.footer}
+          grey={greyFooter}
+          smallPadding={smallPadding}
+          subscription={subscription}
+          nimax={nimax}
+        />
+      )}
       {isVisible && <StyledSocialSticker data={mock.socialSticker} />}
       {backButton && (
         <a>
