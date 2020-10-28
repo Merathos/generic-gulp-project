@@ -1,28 +1,20 @@
-import * as S from './styles';
 import { EventsFilter } from 'forms';
 import { FilterButton } from 'elements';
 import { Mailing, EventList } from 'components';
 import { NewsModal, SuccessModal } from 'containers';
+import { useState } from 'react';
+import * as S from './styles';
 
 const Events = ({ data }) => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [successIsShown, setSuccessIsShown] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
+  function toggleModal() {
+    setIsOpen(prev => !prev);
   }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  const [successIsShown, setSuccessIsShown] = React.useState(false);
-
-  function showSuccess() {
-    setSuccessIsShown(true);
-  }
-
-  function closeSuccess() {
-    setSuccessIsShown(false);
+  function toggleSuccess() {
+    setSuccessIsShown(prev => !prev);
   }
 
   return (
@@ -32,7 +24,7 @@ const Events = ({ data }) => {
           <S.Title>{data.mainTitle}</S.Title>
           <S.Aside>
             <EventsFilter data={data} />
-            <Mailing data={data.mailing} onClick={openModal} />
+            <Mailing data={data.mailing} onClick={toggleModal} />
           </S.Aside>
           <S.ContentWrapper>
             <S.Tags>
@@ -44,20 +36,20 @@ const Events = ({ data }) => {
             </S.Tags>
             <EventList cards={data.cards.active} />
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
-            <EventList cards={data.cards.completed} completed={true} />
+            <EventList cards={data.cards.completed} completed />
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>
       <NewsModal
         data={data.newsModal}
         modalIsOpen={modalIsOpen}
-        closeModal={closeModal}
-        showSuccess={showSuccess}
+        closeModal={toggleModal}
+        showSuccess={toggleSuccess}
       />
       <SuccessModal
         data={data.newsModal.confirmation}
         successIsShown={successIsShown}
-        closeSuccess={closeSuccess}
+        closeSuccess={toggleSuccess}
       />
     </S.Main>
   );
