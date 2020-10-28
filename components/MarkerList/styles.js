@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const List = styled.ul`
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+  }
+`;
+
 export const Img = styled.img`
   margin-bottom: 40px;
 

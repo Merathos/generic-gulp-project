@@ -21,7 +21,7 @@ export const StyledText = styled.p`
   margin-bottom: 45px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 14px;
     line-height: 152%;
   }
@@ -37,8 +37,8 @@ export const H3 = styled(TitleH3)`
 
 export const ArrowRight = styled.a.attrs(props => ({
   image: props.hovered
-    ? "url('icons/arrow-hover.png')"
-    : "url('icons/arrow.png')"
+    ? "url('/icons/arrow-hover.png')"
+    : "url('/icons/arrow.png')"
 }))`
   width: 38px;
   height: 38px;

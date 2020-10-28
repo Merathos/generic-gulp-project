@@ -65,3 +65,5 @@ export { default as BenefitsList } from './BenefitsList';
 export { default as PersonalStoriesSlider } from './PersonalStoriesSlider';
 export { default as VacanciesList } from './VacanciesList';
 export { default as RunningText } from './RunningText';
+export { default as ArticleContent } from './ArticleContent';
+export { default as TeamsHeader } from './TeamsHeader';

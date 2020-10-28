@@ -68,6 +68,8 @@ const GlobalStyle = createGlobalStyle`
     white-space: nowrap;
     clip-path: inset(100%);
     overflow: hidden;
+    top: -20px;
+    left: -20px;
   }
 
   .swiper-wrapper {

@@ -38,6 +38,7 @@ export const GET_VACANCY_CONTENT = gql`
     	recruiters {
         name
       }
+      id
     }
   }
 `;
@@ -151,8 +152,17 @@ export const GET_TEAM_CATEGORIES = gql`
 export const GET_TEAM_CONTENT = gql`
   query getTeamContent($slug: String) {
     teams(slug: $slug) {
-      name
+      content
       description
+      id
+      name
+      slug
+      detail_image {
+        path {
+          normal
+        }
+      }
+      technology_stacks
     }
   }
 `;

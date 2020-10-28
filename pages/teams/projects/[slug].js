@@ -6,7 +6,7 @@ import mock from 'mock/index';
 
 const projectPage = ({ teams }) => {
   return (
-    <Layout backButton>
+    <Layout backButton greyFooter>
       <Project data={mock.project} teams={teams[0]} />
     </Layout>
   );

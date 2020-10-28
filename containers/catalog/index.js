@@ -1,14 +1,17 @@
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks'
 import { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 
 import { GET_FILTER_SEARCH } from 'graphql/query';
 import { Cards, SidebarArticle, Tags } from 'components';
 import { Search, Filter } from 'forms';
+import { getNewTags } from 'helpers';
 import * as S from './styles';
 
 const VacanciesList = ({ data: mock, back }) => {
   const [value, setValue] = useState('');
+  const dispatch = useDispatch();
   const router = useRouter();
   const { loading, error, data, fetchMore, networkStatus } = useQuery(
     GET_FILTER_SEARCH,
@@ -36,10 +39,22 @@ const VacanciesList = ({ data: mock, back }) => {
     );
   }, [_refetch]);
 
-  const handleSearch = searchValue => {
-    setValue(searchValue);
+  const handleSearch = filterValue => {
+    setValue(filterValue);
     refetch();
   };
+
+  const handleClearTags = tag => {
+    dispatch({ type: 'CLEAR_FILTER', payload: tag });
+    const { pathname, query } = router;
+    router.push({
+      pathname,
+      query: {
+        ...query,
+        tags: getNewTags(router.query.tags, tag),
+      },
+    });
+  }
 
   return (
     <S.Container>
@@ -55,7 +70,7 @@ const VacanciesList = ({ data: mock, back }) => {
             handleSearch={search => handleSearch(search)}
             initialValue={router.query.search}
           />
-          <Tags />
+          <Tags handleChangeFilter={el => handleClearTags(el)} />
         </S.Article>
         <Cards data={back} type="vacancies" />
       </S.Grid>

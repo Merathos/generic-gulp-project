@@ -5,9 +5,13 @@ const Styled = styled.h2`
   line-height: 130%;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  padding-top: 60px;
+  margin-bottom: 40px;
 
   @media screen and (max-width: 420px) {
     font-size: 28px;
+    padding-top: 30px;
+    margin-bottom: 30px;
   }
 `;
 

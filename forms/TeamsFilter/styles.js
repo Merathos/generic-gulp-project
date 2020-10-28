@@ -16,9 +16,8 @@ export const Title = styled.h3`
 `;
 
 export const Item = styled.li`
-  font-size: 16px;
-  line-height: 190%;
   opacity: 0.5;
+  margin-bottom: 10px;
 
   input:checked ~ label {
     color: #53B443;
@@ -40,6 +39,13 @@ export const List = styled.ul`
   height: 450px;
   min-width: 250px;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 15px;
+
+  &::-webkit-scrollbar {   /* Chrome */
+    opacity: 0;
+  }
 
   &::-webkit-scrollbar {
     opacity: 0;
