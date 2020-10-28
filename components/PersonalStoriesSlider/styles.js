@@ -191,7 +191,7 @@ export const PrevButton = styled.button`
   width: 53px;
   height: 106px;
   padding-left: 19px;
-  padding-top: 7px;
+  padding-top: 6px;
   border-radius: 108px 0 0 108px;
   border: 2px solid #53b443;
   border-right: none;
