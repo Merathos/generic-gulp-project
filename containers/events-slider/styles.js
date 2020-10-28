@@ -7,10 +7,14 @@ export const Section = styled.section`
 
   &:active {
     cursor: grabbing;
+    @media (max-width: 768px) {
+      cursor: default;
+    }
   }
 
   @media (max-width: 768px) {
     margin-bottom: 0;
+    cursor: default;
   }
 `;
 
