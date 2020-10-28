@@ -385,6 +385,13 @@
   background-color: #ec381a !important;
 }
 
+@media (min-width: 769px) {
+  .row-text .b-reg-row,
+  .row-phone .b-reg-row {
+    position: relative !important;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 30px;

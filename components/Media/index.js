@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 
 const Media = props => {
   const {
-    data: { subtitle, src, srcPoster },
+    data: { subtitle, src, srcPoster, stream = false },
     type,
     decoration,
     hasCircle,
@@ -18,7 +18,11 @@ const Media = props => {
             url={src}
             config={{
               youtube: {
-                playerVars: { showinfo: 1, controls: 1, autoplay: 1 },
+                playerVars: {
+                  showinfo: 1,
+                  controls: 1,
+                  autoplay: `${stream ? 0 : 1}`,
+                },
               },
             }}
             light={srcPoster}

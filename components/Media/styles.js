@@ -50,7 +50,7 @@ export const Section = styled.section`
           right: -108.5px;
           top: -108.5px;
           background-color: #f7f8f9;
-          z-index: -1;
+          z-index: -5;
         }
       }
     `}
