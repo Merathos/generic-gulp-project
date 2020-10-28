@@ -17,7 +17,7 @@ const Story = ({ data, back }) => {
         </Container>
       </GreyContainer>
 
-      <Container>
+      {/* <Container>
         <Wrapper>
           <SectionGroup>
             <Quote data={data.content.part1} />
@@ -39,7 +39,7 @@ const Story = ({ data, back }) => {
             <Quote data={data.content.part4} />
           </SectionGroup>
         </Wrapper>
-      </Container>
+      </Container> */}
 
       <GreyContainer>
         <GreyFooter data={back.related} type="blog" />

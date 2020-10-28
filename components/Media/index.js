@@ -2,14 +2,17 @@ import { Section, Text } from './styles';
 
 const Media = props => {
   const {
-    data: { subtitle, src, srcPoster },
+    data: { caption: subtitle, file: src, srcPoster, stretched },
     type,
-    decoration
+    decoration,
   } = props;
   return (
-    <Section decoration={decoration}>
+    <Section decoration={decoration} stretched={stretched}>
       {type === 'img' ? (
-        <img src={src} alt={subtitle} />
+        <img
+          src={`https://api.develop.dins.d.nimax.ru/${src.url}`}
+          alt={subtitle}
+        />
       ) : (
         <video poster={srcPoster}>
           <track kind="captions" src={src} />

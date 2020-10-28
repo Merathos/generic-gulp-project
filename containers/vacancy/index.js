@@ -17,6 +17,7 @@ const Vacancy = ({ data, back }) => {
       </GreyContainer>
 
       <Container>
+        {console.log(content)}
         <ArticleContent content={content} />
       </Container>
 

@@ -14,6 +14,7 @@ export const Text = styled(Subtitle)`
 
 export const Section = styled.section`
   position: relative;
+  max-width: ${props => props.stretched ? "none" : "850px"};
 
   &::before {
     content: '';
@@ -25,7 +26,7 @@ export const Section = styled.section`
     top: -75px;
     background-color: #f7F8F9;
     z-index: -1;
-    display: ${props => props.decoration ? "block" : "none"}
+    display: ${props => props.decoration ? "block" : "none"};
   }
 
   @media screen and (max-width: 420px) {
