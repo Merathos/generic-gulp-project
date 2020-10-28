@@ -46,11 +46,13 @@ export const StyledButton = styled(Button)`
   margin-right: 20px;
   max-width: 230px;
   box-sizing: border-box;
+  text-align: center;
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 20px;
+    max-width: 180px;
   }
 `;
 

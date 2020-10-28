@@ -43,6 +43,7 @@ export const DropLabel = styled.label`
   display: flex;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
 
   &::after {
     content: '';

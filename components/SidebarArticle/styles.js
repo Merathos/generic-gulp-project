@@ -28,8 +28,11 @@ export const SectionIcon = styled.div`
 `;
 
 export const SectionButton = styled.div`
-  margin-bottom: 50px;
-  margin-top: 40px;
+  margin: 50px 0;
+
+  @media screen and (max-width: 420px) {
+    margin: 40px 0 60px;
+  }
 `;
 
 export const Text = styled.p`

@@ -7,12 +7,13 @@ const Footer = ({
     labour: { link, text },
     social,
     copyright,
-    nimaxText
+    nimaxText,
   },
   grey,
-  nimax
+  smallPadding,
+  nimax,
 }) => (
-  <S.StyledFooter grey={grey}>
+  <S.StyledFooter grey={grey} smallPadding={smallPadding}>
     <S.Container>
       <S.FooterText>{copyright}</S.FooterText>
       <S.Link href={link}>{text}</S.Link>

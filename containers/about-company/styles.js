@@ -4,6 +4,10 @@ import TitleH2 from '../../elements/TitleH2';
 export const Container = styled.section`
   position: relative;
   padding-top: 60px;
+
+  @media screen and (max-width: 720px) {
+    padding-top: 30px;
+  }
 `;
 
 export const H2 = styled(TitleH2)`
@@ -44,8 +48,8 @@ export const SliderWrapper = styled.div`
   }
 
   @media screen and (max-width: 720px) {
-    height: 232px;
-    padding-bottom: 80px;
+    height: auto;
+    padding-bottom: 0;
     padding-top: 30px;
   }
 

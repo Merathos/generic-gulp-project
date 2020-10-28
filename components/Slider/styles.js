@@ -57,6 +57,10 @@ export const Img = styled.img`
       max-width: 90vw;
       vertical-align: bottom;
 
+      @media screen and (max-width: 720px) {
+        height: 232px;
+      }
+
       @media screen and (max-width: 420px) {
         width: 315px;
       }

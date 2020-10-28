@@ -12,19 +12,20 @@ const teamsPage = ({ teams }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
 
   const {
-    data: { teams }
+    data: { teams },
   } = await apolloClient.query({
-    query: GET_TEAM_CATEGORIES
+    query: GET_TEAM_CATEGORIES,
+    variables: { stack: query.tags }
   });
 
   return {
     props: {
-      teams
-    }
+      teams,
+    },
   };
 }
 
