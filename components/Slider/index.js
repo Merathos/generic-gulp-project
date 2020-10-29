@@ -12,11 +12,7 @@ import {
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 
-<<<<<<< HEAD
-const Slider = ({ subtitle, pictures, hasControls, fromEditor }) => {
-=======
-const Slider = ({ subtitle, pictures, hasControls, isSmall }) => {
->>>>>>> master
+const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
   const ref = useRef(null);
 
   const params = {
