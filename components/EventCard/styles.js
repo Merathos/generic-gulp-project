@@ -22,6 +22,7 @@ export const TopWrapper = styled.div`
 
 export const Title = styled(TitleH2)`
   color: ${props => props.color};
+  transition: filter 0.3s ease;
 
   &:hover {
     filter: brightness(82%);

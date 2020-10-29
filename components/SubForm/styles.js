@@ -182,6 +182,7 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   align-self: flex-end;
+  transition: all 0.3s ease;
 
   @media (max-width: 768px) {
     padding: 21px 20px;
@@ -193,7 +194,9 @@ export const StyledButton = styled.button`
     align-self: flex-start;
   }
 
-  &:hover {
-    color: #53b443;
+  &:hover,
+  &:active {
+    background-color: #ec381a;
+    color: #ffffff;
   }
 `;
