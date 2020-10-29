@@ -1,52 +1,43 @@
+import React, { useMemo } from 'react';
 import { Layout, Project } from 'containers';
+import { useQuery } from '@apollo/client';
+import { getDataFromTree } from '@apollo/react-ssr';
 import { GET_TEAM_CONTENT, GET_TEAM_CATEGORIES } from 'graphql/query';
-import { initializeApollo } from 'lib/apollo';
+import withApollo from 'lib/withApollo';
 
 import mock from 'mock/index';
+import { useRouter } from 'next/router';
 
-const projectPage = ({ teams }) => {
+const ProjectPage = () => {
+  const router = useRouter();
+
+  const categoriesData = useQuery(GET_TEAM_CATEGORIES, {
+    variables: {
+      slug: router.query.slug,
+    },
+  });
+  const categories = useMemo(
+    () => (!categoriesData.loading ? categoriesData.data.teams[0] : null),
+    [categoriesData.data]
+  );
+
+  const contentData = useQuery(GET_TEAM_CONTENT, {
+    variables: {
+      slug: router.query.slug,
+    },
+  });
+  const content = useMemo(
+    () => (!contentData.loading ? contentData.data.teams[0] : null),
+    [contentData.data]
+  );
+
+  if (!categories || !content) return null;
+
   return (
     <Layout backButton greyFooter>
-      <Project data={mock.project} teams={teams[0]} />
+      <Project data={mock.project} teams={content} />
     </Layout>
   );
 };
 
-export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
-
-  const {
-    data: { teams }
-  } = await apolloClient.query({
-    query: GET_TEAM_CATEGORIES
-  });
-
-  const paths = teams.map(el => ({
-    params: { slug: el.slug }
-  }));
-  return {
-    paths,
-    fallback: false
-  };
-}
-
-export async function getStaticProps(context) {
-  const apolloClient = initializeApollo();
-
-  const {
-    data: { teams }
-  } = await apolloClient.query({
-    query: GET_TEAM_CONTENT,
-    variables: {
-      slug: context.params.slug
-    }
-  });
-
-  return {
-    props: {
-      teams
-    }
-  };
-}
-
-export default projectPage;
+export default withApollo(ProjectPage, { getDataFromTree });
