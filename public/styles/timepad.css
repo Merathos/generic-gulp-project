@@ -246,6 +246,7 @@
   top: 50%;
   transform: translateY(-50%);
   border: 2px solid rgba(31, 32, 42, 0.3);
+  transition: border 0.2s;
 }
 
 .row-multivar
@@ -272,6 +273,7 @@
   transform: translateY(-50%);
   border: 2px solid rgba(31, 32, 42, 0.3);
   border-radius: 50%;
+  transition: border 0.2s;
 }
 
 .row-radio
@@ -346,6 +348,11 @@
 
 .b-registration__accept a {
   color: #53b443;
+  transition: all 0.3s;
+}
+
+.b-registration__accept a:hover {
+  color: #339722;
 }
 
 .b-registration__accept > span::before {

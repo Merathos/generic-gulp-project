@@ -22,7 +22,13 @@ export const Wrapper = styled.div`
       transform: translateY(-50%);
       mask: url('icons/checked.svg') no-repeat 50% 50%;
       mask-size: 11px 9px;
-      background-color: ${props => props.color}; 
+      background-color: ${props => props.color};
+    }
+  }
+
+  input:hover ~ label {
+    &::before {
+      border-color: ${props => props.color};
     }
   }
 `;
@@ -48,5 +54,6 @@ export const Label = styled.label`
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid rgba(31, 32, 42, 0.3);
+    transition: all 0.3s;
   }
 `;

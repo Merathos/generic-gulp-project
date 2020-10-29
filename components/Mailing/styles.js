@@ -10,7 +10,13 @@ export const Container = styled.div`
 
 export const Link = styled.a`
   font-weight: 700;
-  color: #53B443;
+  color: #53b443;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    color: #339722;
+  }
 
   @media (max-width: 1199px) {
     display: inline-block;

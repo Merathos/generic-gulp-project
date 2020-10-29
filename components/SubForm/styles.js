@@ -8,7 +8,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-color: #ffffff;
   padding-top: 37px;
-  padding-bottom: 182px;
+  padding-bottom: 90px;
 
   @media (max-width: 768px) {
     padding-top: 22px;
@@ -21,7 +21,7 @@ export const Form = styled.form`
   margin-left: 140px;
   box-sizing: border-box;
   max-width: 880px;
-  
+
   @media (max-width: 1200px) {
     margin: 0 auto;
     padding: 30px;
@@ -41,22 +41,30 @@ export const MainTitle = styled(TitleH2)`
 `;
 
 export const FormSection = styled.fieldset`
-  margin-bottom: 60px;
+  margin-bottom: 90px;
 
   @media (max-width: 768px) {
-    margin-bottom: 25px;
+    margin-bottom: 60px;
+  }
+`;
+
+export const MultivarSection = styled(FormSection)`
+  margin-bottom: 70px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 
 export const SectionTitle = styled.h3`
-  margin-bottom: 60px;
+  margin-bottom: 33px;
   font-size: 24px;
   line-height: 28.8px;
   font-weight: 700;
   letter-spacing: normal;
 
   @media (max-width: 768px) {
-    margin-bottom: 35px;
+    margin-bottom: 5px;
     font-size: 16px;
     line-height: 19.2px;
     letter-spacing: 0.01em;
@@ -72,7 +80,7 @@ export const InputsContainer = styled.div`
 export const CheckboxContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 72px;
+  margin-bottom: 0px;
 
   @media (max-width: 768px) {
     margin-bottom: 50px;
@@ -81,11 +89,15 @@ export const CheckboxContainer = styled.div`
 `;
 
 export const Question = styled.p`
+  margin-top: 60px;
   margin-bottom: 40px;
 
   @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 38px;
     margin-bottom: 30px;
-    letter-spacing: -0.029em; 
+    letter-spacing: -0.029em;
   }
 `;
 
@@ -110,7 +122,7 @@ export const CheckBox = styled(EventsCheckbox)`
   }
 
   input:checked ~ label {
-    color: #201F2B;
+    color: #201f2b;
   }
 `;
 
@@ -133,13 +145,19 @@ export const AgreemenCheckbox = styled(EventsCheckbox)`
   }
 
   input:checked ~ label {
-    color: #201F2B;
+    color: #201f2b;
   }
 `;
 
 export const Link = styled.a`
   display: inline;
-  color: #53B443;
+  color: #53b443;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    color: #339722;
+  }
 `;
 
 export const BottomWrap = styled.div`
@@ -162,15 +180,20 @@ export const StyledButton = styled.button`
   color: #ffffff;
   display: flex;
   align-items: center;
+  justify-content: center;
   align-self: flex-end;
 
   @media (max-width: 768px) {
+    padding: 21px 20px;
+    min-width: 191px;
+    font-size: 12px;
+    line-height: 14px;
     margin-left: 0;
     margin-top: 18px;
     align-self: flex-start;
   }
 
   &:hover {
-    color: #53B443;
+    color: #53b443;
   }
 `;
