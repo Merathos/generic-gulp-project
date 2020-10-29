@@ -66,6 +66,7 @@ export const Btn = styled.button`
   color: #ffffff;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
 
   @media (max-width: 768px) {
     min-height: 56px;
@@ -73,7 +74,9 @@ export const Btn = styled.button`
     line-height: 14.4px;
   }
 
-  &:hover {
-    color: #53b443;
+  &:hover,
+  &:active {
+    background-color: #ec381a;
+    color: #ffffff;
   }
 `;

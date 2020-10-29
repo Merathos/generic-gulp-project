@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
   min-height: 300px;
   border-radius: 10px;
   padding: 60px;
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
 
   @media (max-width: 910px) {
     padding: 80px 30px;
@@ -22,6 +22,11 @@ export const TopWrapper = styled.div`
 
 export const Title = styled(TitleH2)`
   color: ${props => props.color};
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(82%);
+  }
 
   @media (max-width: 910px) {
     margin-bottom: 15px;
@@ -73,7 +78,7 @@ export const Status = styled.p`
   align-items: center;
   font-size: 18px;
   line-height: 23.58px;
-  color: ${props => props.status === `Идет трансляция` ? `#FB5235` : ``};
+  color: ${props => (props.status === `Идет трансляция` ? `#FB5235` : ``)};
 
   @media (max-width: 910px) {
     margin-top: -42px;
@@ -138,7 +143,7 @@ export const Speaker = styled.div`
   }
 `;
 
-export const Pic = styled.img`  
+export const Pic = styled.img`
   margin-right: 20px;
   width: 63px;
   height: 63px;
