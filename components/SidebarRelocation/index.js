@@ -14,7 +14,7 @@ const H4 = styled(TitleH4)`
 
 const Section = styled.section`
   text-align: left;
-  background-image: url('backgrounds/relocation.png');
+  background-image: url('/backgrounds/relocation.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 120%;

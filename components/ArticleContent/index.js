@@ -13,6 +13,7 @@ import {
   List,
   SectionNote,
   Slider,
+  Feedback
 } from 'components';
 
 import * as S from './styles';
@@ -41,9 +42,7 @@ const renderContent = props => {
           factoidsWithImages: <List data={data.factoids} />,
           factoids: <List type="blue" data={data.factoids} />,
           note: <SectionNote data={data.text} />,
-          person: (
-            <></>
-          ),
+          person: <Feedback data={data} />,
           gallery: <Slider pictures={data.factoids} fromEditor />,
           asideSlider: <SidebarSlider data={data.factoids} />,
           'video': (
@@ -56,6 +55,9 @@ const renderContent = props => {
             <></>
           ),
           asideBlock: (
+            <></>
+          ),
+          asideNote: (
             <></>
           ),
         }[type]
