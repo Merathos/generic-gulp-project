@@ -20,7 +20,6 @@ const renderContent = props => {
   const { type, data } = props;
   return (
   <>
-  {console.log(data.caption)}
     {
       {
 

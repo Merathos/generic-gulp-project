@@ -20,9 +20,7 @@ const Paragraph = props => {
           )}
         </>
       )}
-      <Description bold={bold} opacity={opacity}>
-        {text}
-      </Description>
+      <Description bold={bold} opacity={opacity} dangerouslySetInnerHTML={{__html: text}} />
     </Section>
   );
 };
