@@ -12,7 +12,11 @@ import {
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 
+<<<<<<< HEAD
 const Slider = ({ subtitle, pictures, hasControls, fromEditor }) => {
+=======
+const Slider = ({ subtitle, pictures, hasControls, isSmall }) => {
+>>>>>>> master
   const ref = useRef(null);
 
   const params = {
@@ -24,13 +28,21 @@ const Slider = ({ subtitle, pictures, hasControls, fromEditor }) => {
     },
     renderPrevButton: () => {
       return (
-        <PrevButton className="swiper-button-prev" hasControls={hasControls}>
+        <PrevButton
+          className="swiper-button-prev"
+          hasControls={hasControls}
+          isSmall={isSmall}
+        >
           <ArrowPrev />
         </PrevButton>
       );
     },
     renderNextButton: () => (
-      <NextButton className="swiper-button-next" hasControls={hasControls}>
+      <NextButton
+        className="swiper-button-next"
+        hasControls={hasControls}
+        isSmall={isSmall}
+      >
         <ArrowNext />
       </NextButton>
     ),

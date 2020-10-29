@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  margin-bottom: 100px;
+  margin-bottom: ${props => (props.inline ? '0' : '100px')};
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;

@@ -127,7 +127,7 @@ export const ImageWrapper = styled.div`
       height: 200px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 600px) {
       bottom: 0;
       left: -100px;
     }
@@ -191,7 +191,7 @@ export const PrevButton = styled.button`
   width: 53px;
   height: 106px;
   padding-left: 19px;
-  padding-top: 7px;
+  padding-top: 6px;
   border-radius: 108px 0 0 108px;
   border: 2px solid #53b443;
   border-right: none;
@@ -206,12 +206,13 @@ export const PrevButton = styled.button`
   }
 
   @media screen and (max-width: 720px) {
-    top: -40px;
+    top: -38px;
     left: -10px;
     border: none;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
+    top: -28px;
     left: 10px;
   }
 `;
@@ -243,8 +244,8 @@ export const NextButton = styled.button`
     border: none;
   }
 
-  @media screen and (max-width: 420px) {
-    top: -42px;
+  @media screen and (max-width: 600px) {
+    top: -30px;
     left: 55px;
   }
 `;
