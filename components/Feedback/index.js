@@ -22,7 +22,7 @@ const Section = styled.section`
   display: flex;
   margin-bottom: 100px;
   align-items: flex-end;
-  background-image: url('backgrounds/circle.png');
+  background-image: url('/backgrounds/circle.png');
   background-repeat: no-repeat;
   background-position: 310px top;
   padding-top: 90px;
@@ -55,18 +55,25 @@ const H3 = styled(TitleH3)`
 
 const Feedback = props => {
   const {
-    data: { src, src_mob, name, company, text }
+    data: { imageUrl, title, describe }
   } = props;
   return (
     <Section>
       <picture>
-        <source srcSet={src} type="image/png" media="(min-width: 420px)" />
-        <Img src={src_mob} alt={name} />
+        <source
+          srcSet={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
+          type="image/png"
+          media="(min-width: 420px)"
+        />
+        <Img
+          src={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
+          alt={title}
+        />
       </picture>
       <div>
-        <StyledSubtitle>{company}</StyledSubtitle>
-        <H3>{name}</H3>
-        <StyledText>{text}</StyledText>
+        <StyledSubtitle>Компания Динс</StyledSubtitle>
+        <H3>{title}</H3>
+        <StyledText>{describe}</StyledText>
       </div>
     </Section>
   );

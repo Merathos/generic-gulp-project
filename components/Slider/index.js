@@ -12,7 +12,7 @@ import {
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 
-const Slider = ({ subtitle, pictures, hasControls, isSmall }) => {
+const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
   const ref = useRef(null);
 
   const params = {
@@ -50,12 +50,15 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall }) => {
         {pictures.map((el, i) => (
           <Element key={i} hasControls={hasControls}>
             <Img
-              src={el.src}
-              alt={el.alt}
+              src={
+                fromEditor
+                  ? `https://api.develop.dins.d.nimax.ru/${el.imageUrl}`
+                  : el.src
+              }
+              alt={el.title}
               hasControls={hasControls}
-              isSmall={isSmall}
             />
-            {el.title && <Title isSmall={isSmall}>{el.title}</Title>}
+            {el.title && <Title>{el.title}</Title>}
           </Element>
         ))}
       </Swiper>

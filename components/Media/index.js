@@ -3,15 +3,30 @@ import ReactPlayer from 'react-player';
 
 const Media = props => {
   const {
-    data: { subtitle, src, srcPoster, stream = false },
+    data: {
+      subtitle,
+      src,
+      srcPoster,
+      stream = false,
+      caption,
+      file,
+      stretched,
+    },
     type,
     decoration,
     hasCircle,
   } = props;
   return (
-    <Section decoration={decoration} hasCircle={hasCircle}>
+    <Section
+      decoration={decoration}
+      hasCircle={hasCircle}
+      stretched={stretched}
+    >
       {type === 'img' ? (
-        <img src={src} alt={subtitle} />
+        <img
+          src={`https://api.develop.dins.d.nimax.ru/${file.url}`}
+          alt={caption}
+        />
       ) : (
         <VideoContainer>
           <ReactPlayer
@@ -33,6 +48,7 @@ const Media = props => {
         </VideoContainer>
       )}
       {subtitle && <Text>{subtitle}</Text>}
+      {caption && <Text>{caption}</Text>}
     </Section>
   );
 };

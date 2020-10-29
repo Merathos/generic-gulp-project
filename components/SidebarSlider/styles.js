@@ -3,10 +3,11 @@ import TitleH4 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
 
 export const Article = styled.article`
-  background-image: url('backgrounds/grey-square-sidebar.png');
+  background-image: url('/backgrounds/grey-square-sidebar.png');
   background-repeat: no-repeat;
   background-position: 70% 0;
   margin-bottom: 110px;
+  width: 250px;
 
   @media screen and (max-width: 1024px) {
     background-position: 10% 0;

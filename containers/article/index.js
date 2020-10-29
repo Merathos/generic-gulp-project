@@ -21,12 +21,11 @@ import { Container, Wrapper, Grid, Aside } from './styles';
 const Article = ({ data }) => {
   return (
     <Container>
-      <Title data={data.mainTitle} />
+      {/* <Title data={data.mainTitle} />
       <Grid>
         <Wrapper>
           <SectionGroup>
             <Paragraph size="h2" data={data.introduction} margin="100px" />
-            <Media type="img" data={data.imageNormal} decoration />
             <List position="row" data={data.features} />
           </SectionGroup>
           <SectionGroup>
@@ -58,7 +57,6 @@ const Article = ({ data }) => {
           <Section>
             <MarkerList type="number" data={data.listNumbers} />
           </Section>
-          <Media type="video" data={data.video} />
           <IconsList data={data.listIcons} />
           <Quote data={data.quote} />
           <Feedback data={data.feedback} />
@@ -70,7 +68,7 @@ const Article = ({ data }) => {
         </Aside>
       </Grid>
 
-      <Articles type="article" data={data.articles} />
+      <Articles type="article" data={data.articles} /> */}
     </Container>
   );
 };

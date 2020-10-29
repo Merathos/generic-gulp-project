@@ -14,6 +14,7 @@ export const Text = styled(Subtitle)`
 
 export const Section = styled.section`
   position: relative;
+  max-width: ${props => (props.stretched ? 'none' : '850px')};
 
   &::before {
     content: '';

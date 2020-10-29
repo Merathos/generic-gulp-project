@@ -17,6 +17,7 @@ const Project = ({ data, teams }) => {
       </GreyWrapper>
 
       <Container>
+        {console.log(content)}
         {Object.keys(content).length !==0 && <ArticleContent content={content.blocks} />}
       </Container>
 
