@@ -76,6 +76,7 @@ export const GET_FILTER_SEARCH = gql`
 export const GET_BLOG_CONTENT = gql`
   query getBlogContent($slug: String) {
     blogs(slug: $slug) {
+      type
       slug
       title
       created_at

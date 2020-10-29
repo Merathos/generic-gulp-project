@@ -1,8 +1,11 @@
-import { Media, List, Quote, Slider, GreyFooter, BlogHeader } from 'components';
-import { SectionGroup } from 'containers';
-import { Container, GreyContainer, Wrapper } from './styles';
+import { GreyFooter, BlogHeader, ArticleContent } from 'components';
+import { Container, GreyContainer } from './styles';
 
-const Story = ({ data, back }) => {
+const Story = ({ back }) => {
+  let content = {};
+  if (back.content) {
+    content = JSON.parse(back.content);
+  }
   return (
     <main>
       <GreyContainer>
@@ -17,29 +20,12 @@ const Story = ({ data, back }) => {
         </Container>
       </GreyContainer>
 
-      {/* <Container>
-        <Wrapper>
-          <SectionGroup>
-            <Quote data={data.content.part1} />
-            <Slider
-              type="img"
-              pictures={data.content.part1.pictures}
-              subtitle={data.content.part1.subtitle}
-            />
-          </SectionGroup>
-          <SectionGroup>
-            <Quote data={data.content.part2} />
-            <Media type="img" data={data.content.part2.picture} decoration />
-          </SectionGroup>
-          <SectionGroup>
-            <Quote data={data.content.part3} />
-            <List position="row" data={data.content.part3.noteWithPictures} />
-          </SectionGroup>
-          <SectionGroup>
-            <Quote data={data.content.part4} />
-          </SectionGroup>
-        </Wrapper>
-      </Container> */}
+      <Container>
+        {console.log(content)}
+        {Object.keys(content).length !== 0 && (
+          <ArticleContent content={content} />
+        )}
+      </Container>
 
       <GreyContainer>
         <GreyFooter data={back.related} type="blog" />
