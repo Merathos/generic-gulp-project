@@ -23,7 +23,7 @@ const EventDetails = ({ data, cards }) => {
         <EventStream
           data={data.stream}
           code="5qap5aO4i9A"
-          domain="https://dins.vercel.app/"
+          domain="dins-git-31-fix-chat.nimax-clients.vercel.app"
           // domain="localhost"
         />
       )}
