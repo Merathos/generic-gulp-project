@@ -23,7 +23,7 @@ const EventDetails = ({ data, cards }) => {
         <EventStream
           data={data.stream}
           code="5qap5aO4i9A"
-          domain="https://dins.vercel.app/"
+          domain="dins.vercel.app"
           // domain="localhost"
         />
       )}
