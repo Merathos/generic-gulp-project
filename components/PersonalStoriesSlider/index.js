@@ -60,8 +60,10 @@ const PersonalStoriesSlider = ({ data }) => {
         {data.map((story, index) => (
           <S.Element key={index}>
             <S.TextWrapper>
-              <S.Title>{story.title}</S.Title>
-              <S.Text>{story.text}</S.Text>
+              <S.Block>
+                <S.Title>{story.title}</S.Title>
+                <S.Text>{story.text}</S.Text>
+              </S.Block>
               <Player
                 isPaused={activeSlide !== index + 1}
                 withDynamic={true}

@@ -17,6 +17,10 @@ export const Section = styled.div`
     cursor: pointer;
   }
 
+  &:active {
+    color: #339722;
+  }
+
   @media screen and (max-width: 420px) {
     margin-bottom: ${props => (props.isMain ? '0' : '30px')};
   }
@@ -57,7 +61,9 @@ export const H3 = styled(TitleH3)`
 `;
 
 export const ArrowRight = styled.a.attrs(props => ({
-  image: props.hovered
+  image: props.isActive
+    ? "url('icons/arrow-active.png')"
+    : props.hovered
     ? "url('icons/arrow-hover.png')"
     : "url('icons/arrow.png')",
 }))`

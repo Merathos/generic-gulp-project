@@ -33,6 +33,23 @@ export const TextWrapper = styled.div`
   }
 `;
 
+export const Block = styled.div`
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #53b443;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: #339722;
+  }
+
+  @media screen and (max-width: 720px) {
+    order: -1;
+  }
+`;
+
 export const Title = styled(TitleH2)`
   margin-top: 170px;
   margin-bottom: 30px;
@@ -50,7 +67,6 @@ export const Title = styled(TitleH2)`
   }
 
   @media screen and (max-width: 720px) {
-    order: -1;
     margin-bottom: 20px;
     font-size: 32px;
   }
@@ -62,7 +78,6 @@ export const Text = styled.p`
   margin-bottom: 60px;
 
   @media screen and (max-width: 720px) {
-    order: -1;
     font-size: 16px;
     line-height: 160%;
     margin-bottom: 30px;
@@ -72,7 +87,7 @@ export const Text = styled.p`
 export const Link = styled.a`
   order: -1;
   margin-top: 75px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   font-size: 18px;
   font-weight: 700;
   line-height: 120%;
@@ -80,7 +95,6 @@ export const Link = styled.a`
 
   @media screen and (max-width: 720px) {
     margin-top: 0;
-    margin-bottom: 40px;
   }
 
   @media screen and (max-width: 600px) {
@@ -200,6 +214,12 @@ export const PrevButton = styled.button`
     fill: #53b443;
   }
 
+  &:hover {
+    svg {
+      fill: #339722;
+    }
+  }
+
   @media screen and (max-width: 900px) {
     top: 60px;
     right: 30px;
@@ -231,6 +251,12 @@ export const NextButton = styled.button`
 
   svg {
     fill: #53b443;
+  }
+
+  &:hover {
+    svg {
+      fill: #339722;
+    }
   }
 
   @media screen and (max-width: 900px) {

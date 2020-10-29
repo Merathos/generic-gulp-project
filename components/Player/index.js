@@ -7,10 +7,12 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
   const refPlayer = useRef(null);
   const refProgress = useRef(null);
   const [play, setPlay] = useState(false);
+  const [isFirstClick, setFirstClick] = useState(false);
   const [audioDuration, setAudioDuration] = useState(0);
 
   const togglePlayer = () => {
     setPlay(!play);
+    setFirstClick(true);
   };
 
   const handleUpdate = e => {
@@ -23,6 +25,18 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
       setPlay(false);
     }
   });
+
+  let codeIcon;
+
+  if (!play && withDynamic && !isFirstClick) {
+    codeIcon = 30;
+  } else if (!play && withDynamic && isFirstClick) {
+    codeIcon = 39;
+  } else if (play) {
+    codeIcon = 38;
+  } else if (!play && !withDynamic) {
+    codeIcon = 20;
+  }
 
   return (
     <>
@@ -37,15 +51,12 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
         onDuration={e => !play && setAudioDuration(e)}
       />
       <S.Block>
-        <S.Button
-          name={play ? 38 : withDynamic ? 30 : 20}
-          onClick={() => togglePlayer()}
-        />
+        <S.Button name={codeIcon} onClick={() => togglePlayer()} />
         <S.Wrapper>
-          {!play && (
-            <S.Label withDynamic={withDynamic}>Послушать рассказ</S.Label>
+          {!play && (!withDynamic || !isFirstClick) && (
+            <S.Label>Послушать рассказ</S.Label>
           )}
-          <S.Scale pause={!play}>
+          <S.Scale pause={!play} withDynamic={withDynamic && !isFirstClick}>
             <S.Bar>
               <S.Progress ref={refProgress} />
             </S.Bar>

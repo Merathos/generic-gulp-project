@@ -9,7 +9,12 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 720px) {
-    padding: 80px 30px 0;
+    padding: 80px 60px 0;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 

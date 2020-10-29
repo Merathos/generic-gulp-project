@@ -119,14 +119,14 @@ export const PrevButton = styled.button`
       border: 2px solid #53b443;
       border-right: none;
 
+      svg {
+        fill: #53b443;
+      }
+
       &:hover {
         svg {
           fill: #339722;
         }
-      }
-
-      svg {
-        fill: #53b443;
       }
 
       @media screen and (max-width: 960px) {
@@ -160,16 +160,15 @@ export const NextButton = styled.button`
       border: 2px solid #53b443;
       border-left: none;
 
+      svg {
+        fill: #53b443;
+      }
+
       &:hover {
         svg {
           fill: #339722;
         }
       }
-
-      svg {
-        fill: #53b443;
-      }
-
       @media screen and (max-width: 960px) {
         display: none;
       }

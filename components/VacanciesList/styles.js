@@ -34,6 +34,7 @@ export const ListItem = styled.li`
 
 export const VacancyLink = styled.a`
   display: flex;
+  transition: all 0.2s ease;
 `;
 
 export const VacancyQuantity = styled.span`

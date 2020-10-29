@@ -31,6 +31,20 @@ export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   width: 43%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #53b443;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: #339722;
+
+    a {
+      color: #339722;
+    }
+  }
 
   @media screen and (max-width: 1024px) {
     width: 100%;
