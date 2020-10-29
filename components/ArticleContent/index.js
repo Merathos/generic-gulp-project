@@ -12,6 +12,7 @@ import {
   MarkerList,
   List,
   SectionNote,
+  Slider,
 } from 'components';
 
 import * as S from './styles';
@@ -43,9 +44,7 @@ const renderContent = props => {
           person: (
             <></>
           ),
-          gallery: (
-            <></>
-          ),
+          gallery: <Slider pictures={data.factoids} fromEditor />,
           asideSlider: <SidebarSlider data={data.factoids} />,
           'video': (
             <></>

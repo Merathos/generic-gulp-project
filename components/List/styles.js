@@ -32,7 +32,6 @@ export const Wrapper = styled.div`
 
 export const NormalList = styled.ul`
   display: flex;
-  justify-content: space-between;
   max-width: 850px;
 
   @media screen and (max-width: 420px) {
@@ -73,9 +72,7 @@ export const H3 = styled(TitleH3)`
 
 export const Element = styled.li`
   max-width: 364px;
-
-  &:not(:last-child)
-    margin-right: 60px;
+  margin-right: 100px;
 
   @media screen and (max-width: 420px) {
     width: 100%;
