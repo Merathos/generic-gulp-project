@@ -7,16 +7,22 @@ export const Container = styled.div`
   margin: 0 auto;
 
   &::after {
-    @media (min-width: 900px) {
-      content: '';
-      position: absolute;
-      background-image: url('/backgrounds/form-bg.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 420px;
-      height: 420px;
-      top: -275px;
-      right: 0;
+    content: '';
+    position: absolute;
+    background-image: url('/backgrounds/form-bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 420px;
+    top: -275px;
+    right: 0;
+
+    @media (max-width: 900px) {
+      width: 140px;
+      height: 140px;
+      background-size: 140px 140px;
+      top: -130px;
+      right: 15px;
     }
   }
 
@@ -40,7 +46,7 @@ export const Section = styled.section`
   padding-bottom: 160px;
   background-color: #f7f8f9;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     padding-top: 56px;
     padding-bottom: 47px;
   }

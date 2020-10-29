@@ -3,6 +3,7 @@ import { TitleH2 } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 155px;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     margin-bottom: 50px;
@@ -48,8 +49,6 @@ export const Msg = styled.p`
 
 export const Chat = styled.div`
   width: 100%;
-  height: 327px;
-  background-color: lightcyan;
 
   @media (max-width: 768px) {
     box-sizing: border-box;
