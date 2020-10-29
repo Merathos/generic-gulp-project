@@ -1,5 +1,5 @@
-import * as S from './styles';
 import InnerHTML from 'dangerously-set-html-content';
+import * as S from './styles';
 
 const EventReg = props => {
   const {
@@ -149,7 +149,7 @@ const EventReg = props => {
   </label>
 
   <div class="js-reg-table-pricing b-reg-table__price-mobile{{^event.uses_multireg}} b-reg-table__price-mobile_non-multireg{{/event.uses_multireg}}">
-  <span class="js-reg-table-price">{{h_price}}</span>
+  <span class="js-reg-table-price price-mobile__custom">{{h_price}}</span>
   <span class="js-reg-table-discount b-reg-table__price-discount">{{h_discount}}</span>
   </div>
 
@@ -298,7 +298,7 @@ const EventReg = props => {
   </label>
   </div>
   </div>
-  </div> 
+  </div>
   <div class="b-registration__section section-submit b-registration__section_indent js-section-submit">
 
   <button class="b-pro-wiget__reg-button" name="submit_register" id="eventreg_submit">Зарегистрироваться</button>

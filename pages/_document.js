@@ -44,7 +44,7 @@ export default class MyDocument extends Document {
 
           <link rel="stylesheet" href="/styles/reset.css" />
           <link rel="stylesheet" href="/styles/fonts.css" />
-          <link rel="stylesheet" href="/styles/timepad.css" />
+          {/* <link rel="stylesheet" href="/styles/timepad.css" /> */}
         </Head>
         <body>
           <Main />
