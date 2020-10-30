@@ -15,7 +15,7 @@ const EventStream = props => {
         <S.Msg>{msg}</S.Msg>
       </S.Container>
       <S.StreamWrapper>
-        <Media data={video} hasCircle stream />
+        <Media data={video} hasCircle stream stretched={true} />
         <S.Chat>
           <iframe
             allowFullScreen=""

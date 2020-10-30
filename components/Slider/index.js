@@ -57,8 +57,9 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
               }
               alt={el.title}
               hasControls={hasControls}
+              isSmall={isSmall}
             />
-            {el.title && <Title>{el.title}</Title>}
+            {el.title && <Title isSmall={isSmall}>{el.title}</Title>}
           </Element>
         ))}
       </Swiper>
