@@ -6,6 +6,7 @@ import { Layout, Vacancy } from 'containers';
 import { GET_VACANCY_CONTENT } from 'graphql/query';
 import withApollo from 'lib/withApollo';
 import { getDataFromTree } from '@apollo/react-ssr';
+
 import mock from 'mock/index';
 
 const vacancyPage = () => {
