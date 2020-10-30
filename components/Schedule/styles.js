@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH2, Button } from 'elements';
+import { TitleH2, Btn } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 170px;
@@ -79,7 +79,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Title = styled.h4`
+export const Title = styled.b`
   font-size: 24px;
   line-height: 28.8px;
   font-weight: 700;
@@ -90,12 +90,12 @@ export const Title = styled.h4`
   }
 `;
 
-export const StyledButton = styled(Button)`
-  margin-top: 20px;
+export const StyledButton = styled(Btn)`
+  margin-top: 100px;
   margin-left: 117px;
 
   @media (max-width: 768px) {
+    margin-top: 60px;
     margin-left: 0;
-    padding: 0 36px;
   }
 `;

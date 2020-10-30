@@ -38,6 +38,7 @@ export const Label = styled.label`
   font-size: 20px;
   line-height: 26.8px;
   font-weight: 500;
+  cursor: pointer;
 
   @media (max-width: 910px) {
     font-size: 14px;

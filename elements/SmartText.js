@@ -2,22 +2,24 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 const Text = styled.p`
-  margin-top: 33px;
+  margin-top: 27px;
   font-size: 18px;
   line-height: 27.72px;
+  color: rgba(32, 31, 42, 0.5);
 
   @media (max-width: 768px) {
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 14px;
     line-height: 22.12px;
   }
 `;
 
 const Button = styled.a`
-  display: inline-flex;
-  letter-spacing: -0.06em;
+  display: inline-block;
   align-items: center;
+  font-size: 16px;
   color: #53b443;
+  transition: color 0.2s ease-in;
 
   &:hover {
     color: #339722;
@@ -43,7 +45,14 @@ const SmartText = ({ text, length = 215, className }) => {
   return (
     <Text className={className}>
       {showLess ? `${text.slice(0, length)}...` : text}&nbsp;
-      <Button onClick={() => setShowLess(!showLess)} showLess={showLess}>
+      <Button
+        href="#"
+        onClick={e => {
+          e.preventDefault();
+          setShowLess(!showLess);
+        }}
+        showLess={showLess}
+      >
         {showLess ? 'Читать полностью' : 'Свернуть'}
         <Icon
           showLess={showLess}

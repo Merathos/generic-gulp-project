@@ -68,8 +68,13 @@ export const VideoContainer = styled.div`
 
     &:hover {
       .react-player__play-icon {
+        transition: all 0.3 ease-in !important;
         border-color: transparent transparent transparent #339722 !important;
       }
+    }
+
+    .react-player__play-icon {
+      transition: all 0.3s ease-in;
     }
   }
 

@@ -18,7 +18,7 @@ const Schedule = ({ description, schedule }) => {
             </S.Item>
           ))}
         </S.List>
-        <S.StyledButton type="accent">Зарегистрироваться</S.StyledButton>
+        <S.StyledButton accent={true}>Зарегистрироваться</S.StyledButton>
       </S.Container>
     </S.Section>
   );

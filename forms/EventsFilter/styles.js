@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { FilterButton } from 'elements';
 
 export const Wrapper = styled.div`
-  margin-bottom: 115px;
+  margin-bottom: 112px;
 
   @media (max-width: 1199px) {
     margin-bottom: 40px;
@@ -10,15 +9,15 @@ export const Wrapper = styled.div`
 `;
 
 export const List = styled.ul`
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 `;
 
 export const Item = styled.li`
   position: relative;
-  margin-bottom: 22px;
+  margin-bottom: 27px;
 
   @media (max-width: 910px) {
-    margin-bottom: 23px;
+    margin-bottom: 28px;
   }
 `;
 
@@ -29,16 +28,23 @@ export const ResetFilter = styled.button`
   position: relative;
   align-self: flex-start;
   padding-right: 16px;
+  transition: all 0.3s ease-in;
 
   &::after {
     content: '';
     background-image: url('icons/close-filter.svg');
+    background-position: center;
+    background-repeat: no-repeat;
     width: 10px;
     height: 10px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0%;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 
   @media (max-width: 1199px) {

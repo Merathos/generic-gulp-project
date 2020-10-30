@@ -22,6 +22,10 @@ const StyledArrowLeft = styled.div`
   top: 140px;
   transition: all 0.1s ease;
 
+  @media (max-width: 1280px) {
+    left: 30px;
+  }
+
   svg {
     transition: all 0.1s ease;
   }

@@ -7,7 +7,7 @@ const SpeakerCard = props => {
 
   return (
     <S.Wrapper>
-      <S.Photo src={bigImg} alt={name} />
+      <S.Photo src={bigImg} alt={name} width="363" height="252" />
       <S.Name>{name}</S.Name>
       <S.Job>{job}</S.Job>
       <S.Text>{text}</S.Text>

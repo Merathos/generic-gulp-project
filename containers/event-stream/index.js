@@ -18,6 +18,7 @@ const EventStream = props => {
         <Media data={video} hasCircle stream stretched={true} />
         <S.Chat>
           <iframe
+            title="Youtube chat"
             allowFullScreen=""
             frameBorder="0"
             height="400px"

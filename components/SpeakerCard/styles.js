@@ -12,8 +12,10 @@ export const Photo = styled.img`
   object-fit: cover;
 
   @media (max-width: 768px) {
-    width: 315px;
-    height: 216px;
+    width: 100%;
+    height: 100%;
+    max-width: 315px;
+    max-height: 216px;
   }
 `;
 

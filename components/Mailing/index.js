@@ -1,14 +1,17 @@
 import * as S from './styles';
 
-const Mailing = (props) => {
+const Mailing = props => {
   const {
-    data: { link, text }, onClick
+    data: { link, text },
+    onClick,
   } = props;
-  
+
   return (
     <S.Container>
       <S.Text>
-        <S.Link onClick={onClick}>{link}</S.Link>
+        <S.Link type="button" onClick={onClick}>
+          {link}
+        </S.Link>
         {text}
       </S.Text>
     </S.Container>

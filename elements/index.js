@@ -17,3 +17,4 @@ export { default as RadioButton } from './RadioButton';
 export { default as TextInput } from './TextInput';
 export { default as CloseBtn } from './CloseBtn';
 export { default as SmartText } from './SmartText';
+export { default as Btn } from './Btn';
