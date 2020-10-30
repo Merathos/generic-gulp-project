@@ -1,19 +1,17 @@
 import { 
   Paragraph,
-  SidebarRelocation,
-  Articles,
-  SliderVacancy,
   SidebarSlider,
-  Requirements,
-  Conditions,
-  Map,
-  Application,
   Media,
   MarkerList,
   List,
   SectionNote,
   Slider,
-  Feedback
+  Feedback,
+  Quote,
+  Userpic,
+  Comments,
+  Video,
+  SidebarArticle,
 } from 'components';
 
 import * as S from './styles';
@@ -21,10 +19,9 @@ import * as S from './styles';
 const renderContent = props => {
   const { type, data } = props;
   return (
-  <>
-    {
+    <>
       {
-
+        {
           header:
             data.level === 2 ? (
               <S.H2>{data.text}</S.H2>
@@ -45,35 +42,26 @@ const renderContent = props => {
           person: <Feedback data={data} />,
           gallery: <Slider pictures={data.factoids} fromEditor />,
           asideSlider: <SidebarSlider data={data.factoids} />,
-          'video': (
-            <></>
-          ),
-          'quote': (
-            <></>
-          ),
-          'comments': (
-            <></>
-          ),
-          asideBlock: (
-            <></>
-          ),
-          asideNote: (
-            <></>
-          ),
+          video: <Video data={data} />,
+          quote: <Quote data={data} />,
+          comments: <Comments data={data.factoids} />,
+          asideBlock: <SidebarArticle type="default" data={data} fromEditor />,
+          asideNote: <SidebarArticle type="icon" data={data} fromEditor />,
+          user: <Userpic data={data} />,
         }[type]
-    }
-  </>
+      }
+    </>
   )
 };
 
 const ArticleContent = ({ content }) => (
   <>
     {content.length !== 0 && (
-      <S.Wrapper>
+      <ul>
         {content.map((el, index) => (
-          <S.Element key={index}>{renderContent(el)}</S.Element>
+          <li key={index}>{renderContent(el)}</li>
         ))}
-      </S.Wrapper>
+      </ul>
     )}
   </>
 );
