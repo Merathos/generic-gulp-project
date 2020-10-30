@@ -6,7 +6,7 @@ import {
   SatelliteFigure,
   UsersFigure,
   IterationsFigure,
-  UploadFigure
+  UploadFigure,
 } from 'components';
 
 const InfographicsList = ({ data }) => {
@@ -18,7 +18,7 @@ const InfographicsList = ({ data }) => {
     subscribers: <UsersFigure />,
     'calls-quantity': <SatelliteFigure />,
     'iterations-quantity': <IterationsFigure />,
-    'changes-quantity': <UploadFigure />
+    'changes-quantity': <UploadFigure />,
   };
 
   return (
@@ -26,7 +26,6 @@ const InfographicsList = ({ data }) => {
       <S.List>
         {data.map((item, index) => (
           <S.ListItem
-            as={'a'}
             key={index}
             onMouseEnter={() => changeAnimation(item.name)}
             onMouseLeave={() => changeAnimation('')}

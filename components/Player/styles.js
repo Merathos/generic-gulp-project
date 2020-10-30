@@ -64,7 +64,7 @@ export const Span = styled(Subtitle)`
 
 export const Scale = styled.div`
   padding: 14px 0;
-  display: ${props => (props.pause ? 'none' : 'block')};
+  display: ${props => (props.pause && props.withDynamic ? 'none' : 'block')};
 `;
 
 export const Progress = styled.div`

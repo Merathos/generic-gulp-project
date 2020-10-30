@@ -81,6 +81,7 @@ export const Title = styled.b`
 
 export const Date = styled.p`
   margin-bottom: 20px;
+  color: #201f2a;
 
   @media screen and (max-width: 720px) {
     margin-bottom: 40px;

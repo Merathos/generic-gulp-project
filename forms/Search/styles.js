@@ -30,6 +30,7 @@ export const Field = styled.input`
   opacity: 0.5;
   font-family: inherit;
   outline: none;
+  transition: all 0.2s ease;
 
   ${props =>
     props.isMain &&
@@ -40,7 +41,9 @@ export const Field = styled.input`
     `};
 
   &:hover,
+  &:focus,
   &:active {
+    cursor: pointer;
     opacity: 1;
     color: #201f2a;
   }
@@ -74,9 +77,14 @@ export const Submit = styled.button`
   border-radius: 8px;
   margin-left: 10px;
   background: #ec381a;
+  transition: all 0.2s ease;
 
   svg path {
     stroke: #fff;
+  }
+
+  &:active {
+    background-color: #ec381a;
   }
 
   &:disabled {

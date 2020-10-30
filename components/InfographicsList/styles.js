@@ -61,10 +61,13 @@ export const ItemValue = styled.b`
   line-height: 101%;
   font-weight: 800;
   opacity: 0.2;
+  transition: all 0.3s ease;
+  cursor: pointer;
 
   @media screen and (max-width: 1360px) {
     color: #2f8ed9;
     opacity: 1;
+    cursor: auto;
   }
 
   @media screen and (max-width: 960px) {

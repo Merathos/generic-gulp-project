@@ -105,6 +105,12 @@ export const PrevButtonMain = styled.button`
     fill: #53b443;
   }
 
+  &:hover {
+    svg {
+      fill: #339722;
+    }
+  }
+
   .inactive-slide & {
     display: none;
 
@@ -149,6 +155,12 @@ export const NextButtonMain = styled.button`
     fill: #53b443;
   }
 
+  &:hover {
+    svg {
+      fill: #339722;
+    }
+  }
+
   .inactive-slide & {
     display: none;
 
@@ -181,9 +193,14 @@ export const PrevButton = styled.button`
   position: absolute;
   bottom: 85px;
   right: 130px;
+  opacity: 0.5;
 
   svg {
     fill: #ffffff;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 
   .first-active-slide & {
@@ -213,9 +230,14 @@ export const NextButton = styled.button`
   position: absolute;
   bottom: 85px;
   right: 90px;
+  opacity: 0.5;
 
   svg {
     fill: #ffffff;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 
   .first-active-slide & {
