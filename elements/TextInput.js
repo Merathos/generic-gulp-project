@@ -29,12 +29,13 @@ const Styled = styled.input`
   }
 `;
 
-const TextInput = ({ placeholder, className }) => (
+const TextInput = ({ name, placeholder, className, reference }) => (
   <Styled
     type="text"
     className={className}
     placeholder={placeholder}
-    name={placeholder}
+    name={name}
+    ref={reference}
     required
   />
 );

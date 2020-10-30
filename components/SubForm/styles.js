@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { TitleH2 } from 'elements';
-import { EventsCheckbox } from 'elements';
+import { TitleH2, EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
   background-image: url('backgrounds/mailing-form.svg');
@@ -21,7 +20,7 @@ export const Form = styled.form`
   margin-left: 140px;
   box-sizing: border-box;
   max-width: 880px;
-  
+
   @media (max-width: 1200px) {
     margin: 0 auto;
     padding: 30px;
@@ -85,7 +84,7 @@ export const Question = styled.p`
 
   @media (max-width: 768px) {
     margin-bottom: 30px;
-    letter-spacing: -0.029em; 
+    letter-spacing: -0.029em;
   }
 `;
 
@@ -110,7 +109,7 @@ export const CheckBox = styled(EventsCheckbox)`
   }
 
   input:checked ~ label {
-    color: #201F2B;
+    color: #201f2b;
   }
 `;
 
@@ -133,13 +132,13 @@ export const AgreemenCheckbox = styled(EventsCheckbox)`
   }
 
   input:checked ~ label {
-    color: #201F2B;
+    color: #201f2b;
   }
 `;
 
 export const Link = styled.a`
   display: inline;
-  color: #53B443;
+  color: #53b443;
 `;
 
 export const BottomWrap = styled.div`
@@ -171,6 +170,6 @@ export const StyledButton = styled.button`
   }
 
   &:hover {
-    color: #53B443;
+    color: #53b443;
   }
 `;

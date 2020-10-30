@@ -153,7 +153,11 @@ export default {
     mainTitle: 'Хочу получать новости о мероприятиях DINs',
     contact: {
       title: 'Оставь  контактные данные',
-      inputs: ['Фамилия *', 'Имя *', 'Email *'],
+      inputs: [
+        { name: 'lastname', placeholder: 'Фамилия *' },
+        { name: 'name', placeholder: 'Имя *' },
+        { name: 'email', placeholder: 'Email *' },
+      ],
     },
     directions: {
       title: 'Выбери направления мероприятий, про которые хочешь знать',
@@ -161,11 +165,14 @@ export default {
       inputs: ['Development', 'Big Data', 'QA ', 'QA Automation', 'DevOps '],
     },
     agreement: {
+      name: 'personal',
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
       dataHref: '#',
-      mailing:
-        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    mailing: {
+      name: 'newsletter',
+      value: 'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
     },
     buttonText: 'Отправить заявку',
     confirmation: {

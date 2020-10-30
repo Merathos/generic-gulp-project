@@ -33,6 +33,7 @@ const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
             <Item key={item.id}>
               <EventsCheckbox
                 name={item.name}
+                value={item.name}
                 checked={isActive}
                 slug={item.slug}
                 onChange={() => handleChange(item.slug, isActive)}
