@@ -15,7 +15,6 @@ import { EventCard } from 'components';
 const EventsSlider = ({ cards }) => {
   const ref = useRef(null);
   const initialWidth = useWindowWidth();
-
   const params = {
     slidesPerView: 'auto',
     loop: false,
