@@ -106,6 +106,7 @@
   font-size: 20px;
   line-height: 31.6px;
   font-weight: 500;
+  cursor: text;
 }
 
 .b-reg-table__cell-price span {
@@ -147,8 +148,12 @@
   margin-top: 7px;
 }
 
+.js-section-selectTickets {
+  margin-bottom: 95px;
+}
+
 .contacts__title {
-  margin-top: 95px;
+  margin-top: 0;
   margin-bottom: 65px;
   font-size: 24px;
   line-height: 28.8px;
@@ -462,8 +467,12 @@
     margin-right: 0 !important;
   }
 
+  .js-section-selectTickets {
+    margin-bottom: 60px;
+  }
+
   .contacts__title {
-    margin-top: 60px;
+    margin-top: 0;
     margin-bottom: 27px;
     font-size: 16px;
     line-height: 19px;
