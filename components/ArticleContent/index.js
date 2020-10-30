@@ -13,7 +13,9 @@ import {
   List,
   SectionNote,
   Slider,
-  Feedback
+  Feedback,
+  Quote,
+  Userpic,
 } from 'components';
 
 import * as S from './styles';
@@ -48,9 +50,7 @@ const renderContent = props => {
           'video': (
             <></>
           ),
-          'quote': (
-            <></>
-          ),
+          quote: <Quote data={data} />,
           'comments': (
             <></>
           ),
@@ -60,6 +60,7 @@ const renderContent = props => {
           asideNote: (
             <></>
           ),
+          user: <Userpic data={data} />,
         }[type]
     }
   </>
