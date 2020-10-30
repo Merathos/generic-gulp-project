@@ -79,7 +79,7 @@ export const H3 = styled(TitleH3)`
 export const ArrowRight = styled.span`
   width: 38px;
   height: 38px;
-  transition: background-image 200ms ease;
+  transition: all 200ms ease;
 
   ${props =>
     props.isMain &&
