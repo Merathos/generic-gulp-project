@@ -20,10 +20,9 @@ const EventStream = props => {
           <iframe
             title="Youtube chat"
             allowFullScreen=""
-            frameBorder="0"
-            height="400px"
+            height="400"
             src={`https://www.youtube.com/live_chat?v=${code}&embed_domain=${domain}`}
-            width="100%"
+            width="1100"
           />
         </S.Chat>
       </S.StreamWrapper>
