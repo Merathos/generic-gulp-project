@@ -1,26 +1,23 @@
 import { getStatusImage } from 'helpers/events-helpers';
+import dayjs from 'dayjs';
 import * as S from './styles';
 
-const EventCard = ({ event }) => {
-  const {
-    category,
-    starts_at,
-    ends_at,
-    status,
-    programs,
-    location,
-    completed,
-  } = event;
-
-  const starts = new Date(starts_at);
-  const startsDay = starts.getDate();
-  const startsMonth = starts.getMonth() + 1;
+const EventCard = ({ event, completed }) => {
+  const { category, starts_at, ends_at, status, programs, location } = event;
 
   const renderStatus = () => {
     if (status.slug === 'offline' && location) {
       return null;
     }
     if (status.slug === 'online') {
+      return (
+        <>
+          <S.Icon src={getStatusImage(status.slug)} alt={status.name} />
+          {status.name}
+        </>
+      );
+    }
+    if (status.slug === 'streaming') {
       return (
         <>
           <S.Icon src={getStatusImage(status.slug)} alt={status.name} />
@@ -38,16 +35,11 @@ const EventCard = ({ event }) => {
           <S.Title color={category.color}>{category.name}</S.Title>
         </S.Link>
         <S.DateContainer color={category.color}>
-          <S.Date>{`${startsDay}.${
-            startsMonth < 10 ? `0${startsMonth}` : startsMonth
-          }`}</S.Date>
-          <S.Time>{Date.parse(starts_at)}</S.Time>
+          <S.Date>{dayjs(starts_at).format('DD.MM')}</S.Date>
+          <S.Time>{`Начало в ${dayjs(starts_at).format('HH.mm')}`}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
-      <S.Status status={status.name}>
-        {/* // Need to pass status if it's going */}
-        {renderStatus()}
-      </S.Status>
+      <S.Status status={status.slug}>{renderStatus()}</S.Status>
       {programs &&
         programs.map(program => (
           <S.TopicContainer key={program.id}>
@@ -67,10 +59,10 @@ const EventCard = ({ event }) => {
           </S.TopicContainer>
         ))}
       <S.BottomWrapper>
-        {completed === false ? (
-          <S.StyledButton type="accent">Зарегистрироваться</S.StyledButton>
-        ) : (
+        {completed === true ? (
           <S.StyledButton>Подробнее о прошедшем мероприятии</S.StyledButton>
+        ) : (
+          <S.StyledButton type="accent">Зарегистрироваться</S.StyledButton>
         )}
         <S.Location>
           {location ||

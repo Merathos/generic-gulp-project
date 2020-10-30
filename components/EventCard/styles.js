@@ -73,7 +73,7 @@ export const Status = styled.p`
   align-items: center;
   font-size: 18px;
   line-height: 24px;
-  color: ${props => (props.status === `Идет трансляция` ? `#FB5235` : ``)};
+  color: ${props => (props.status === 'streaming' ? `#FB5235` : ``)};
 
   @media (max-width: 910px) {
     margin-top: -42px;

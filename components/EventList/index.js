@@ -1,14 +1,12 @@
 import { EventCard } from 'components';
 import { List, Item } from './styles';
 
-const EventList = props => {
-  const { events } = props;
-
+const EventList = ({ events, completed }) => {
   return (
     <List>
       {events.map(event => (
         <Item key={event.id}>
-          <EventCard event={event} completed={false} />
+          <EventCard event={event} completed={completed} />
         </Item>
       ))}
     </List>
