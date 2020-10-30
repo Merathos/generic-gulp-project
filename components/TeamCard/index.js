@@ -10,14 +10,16 @@ const TeamCard = props => {
 
   return (
     <Link href={`teams/projects/${slug}`}>
-      <Section isMain={isMain} as={'a'}>
-        <Picture src={image && image.path.normal} alt={name} />
-        <H3 isMain={isMain}>{name}</H3>
-        <StyledText isMain={isMain}>{summary}</StyledText>
-        <ArrowRight isMain={isMain}>
-          <ArrowIcon />
-        </ArrowRight>
-      </Section>
+      <a>
+        <Section isMain={isMain}>
+          <Picture src={image && image.path.normal} alt={name} />
+          <H3 isMain={isMain}>{name}</H3>
+          <StyledText isMain={isMain}>{summary}</StyledText>
+          <ArrowRight isMain={isMain}>
+            <ArrowIcon />
+          </ArrowRight>
+        </Section>
+      </a>
     </Link>
   );
 };
