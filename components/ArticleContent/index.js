@@ -17,6 +17,7 @@ import {
   Quote,
   Userpic,
 } from 'components';
+import SidebarArticle from '../SidebarArticle';
 
 import * as S from './styles';
 
@@ -47,19 +48,13 @@ const renderContent = props => {
           person: <Feedback data={data} />,
           gallery: <Slider pictures={data.factoids} fromEditor />,
           asideSlider: <SidebarSlider data={data.factoids} />,
-          'video': (
-            <></>
-          ),
+          'video': <Media data={data} />,
           quote: <Quote data={data} />,
           'comments': (
             <></>
           ),
-          asideBlock: (
-            <></>
-          ),
-          asideNote: (
-            <></>
-          ),
+          asideBlock: <SidebarArticle type="default" data={data} fromEditor />,
+          asideNote: <SidebarArticle type="icon" data={data} fromEditor />,
           user: <Userpic data={data} />,
         }[type]
     }
