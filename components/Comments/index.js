@@ -13,8 +13,10 @@ const Comments = props => {
   const { data } = props;
   return (
     <Section>
+      {data.map((el, i) => (
+        <Comment key={i} data={el} />
+      ))}
       <Comment position="flex-start" data={data[0]} />
-      <Comment position="flex-end" data={data[1]} />
     </Section>
   );
 };

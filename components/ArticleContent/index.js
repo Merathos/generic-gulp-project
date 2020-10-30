@@ -16,6 +16,7 @@ import {
   Feedback,
   Quote,
   Userpic,
+  Comments,
 } from 'components';
 import SidebarArticle from '../SidebarArticle';
 
@@ -50,8 +51,8 @@ const renderContent = props => {
           asideSlider: <SidebarSlider data={data.factoids} />,
           'video': <Media data={data} />,
           quote: <Quote data={data} />,
-          'comments': (
-            <></>
+          comments: (
+            <Comments data={data.factoids} />
           ),
           asideBlock: <SidebarArticle type="default" data={data} fromEditor />,
           asideNote: <SidebarArticle type="icon" data={data} fromEditor />,
