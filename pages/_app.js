@@ -3,8 +3,13 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
 import { useStore } from '../lib/store';
 import { useApollo } from '../lib/apollo';
+import Head from 'next/head';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     color: #201F2A;
     font-family: 'TT Norms', 'Arial', sans-serif;
@@ -140,6 +145,9 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <ApolloProvider client={apolloClient}>
+        <Head>
+          <title>Dins</title>
+        </Head>
         <Component {...pageProps} />
         <GlobalStyle />
       </ApolloProvider>

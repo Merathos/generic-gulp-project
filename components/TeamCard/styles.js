@@ -3,7 +3,12 @@ import { TitleH3 } from 'elements';
 
 export const Section = styled.div`
   max-width: ${props => (props.isMain ? '350px' : '380px')};
-  transition: color 200ms ease;
+  transition: all 200ms ease;
+
+  svg,
+  path {
+    transition: all 200ms ease;
+  }
 
   ${props =>
     props.isMain &&
@@ -48,9 +53,9 @@ export const StyledText = styled.p`
   margin-bottom: ${props => (props.isMain ? '40px' : '45px')};
 
   @media screen and (max-width: 420px) {
-    margin-bottom: ${props => (props.isMain ? '20px' : '30px')};
+    margin-bottom: ${props => (props.isMain ? '15px' : '30px')};
     font-size: 14px;
-    line-height: 152%;
+    line-height: ${props => (props.isMain ? '160%' : '152%')};
   }
 `;
 
@@ -60,6 +65,7 @@ export const H3 = styled(TitleH3)`
   ${props =>
     props.isMain &&
     css`
+      margin-bottom: 18px;
       font-size: 24px;
       line-height: 120%;
     `}
@@ -77,15 +83,24 @@ export const H3 = styled(TitleH3)`
 `;
 
 export const ArrowRight = styled.span`
+  display: flex;
   width: 38px;
   height: 38px;
-  transition: all 200ms ease;
 
   ${props =>
     props.isMain &&
     css`
       margin-top: auto;
-    `}
+    `};
+
+  @media screen and (max-width: 420px) {
+    ${props =>
+      props.isMain &&
+      css`
+        width: 28px;
+        height: 28px;
+      `};
+  }
 `;
 
 export const Picture = styled.img`

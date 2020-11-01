@@ -2,6 +2,9 @@ import Router from 'next/router';
 import { Container, Link } from './styles';
 import { useEffect, useRef, useState } from 'react';
 
+const startOffset = 65.5;
+const endOffset = 0;
+
 const handleSearch = searchValue => {
   Router.push({
     pathname: '/vacancies',
@@ -10,14 +13,16 @@ const handleSearch = searchValue => {
 };
 
 const RunningText = ({ data }) => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(startOffset);
   const [isHovered, setHover] = useState(false);
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
   const animate = time => {
     if (previousTimeRef.current !== undefined && isHovered === false) {
-      setStep(prevStep => (prevStep > 214 ? 0 : prevStep + 0.08));
+      setStep(prevStep =>
+        prevStep <= endOffset ? startOffset : prevStep - 0.02
+      );
     }
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animate);
@@ -30,26 +35,30 @@ const RunningText = ({ data }) => {
 
   return (
     <Container>
-      <svg viewBox="0 0 550 250">
+      <svg viewBox="0 0 2100 120">
         <path
           id="curve"
           fill="transparent"
-          d="M 0 75 Q 50 100 125 50 Q 200 0 275 50 Q 350 100 425 50 Q 500 0 550 0 "
+          d="M 0 100 L 1175 50 Q 1400 100 1500 50 Q 1600 0 1700 50 Q 1800 100 1925 50 Q 2050 0 2090 10 "
         />
-        <text width="1440" fill="#feb251">
+        <text fill="#feb251">
           <textPath
-            alignmentBaseline="top"
             xlinkHref="#curve"
-            startOffset={-step + '%'}
+            startOffset={step + '%'}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
-            {[...data, ...data].map((technology, index) => (
-              <Link key={index} onClick={() => handleSearch(technology)}>
-                {technology}
-                {'       '}
-              </Link>
-            ))}
+            {[...data, ...data.slice(0, data.length / 2)].map(
+              (technology, index) => (
+                <Link
+                  dx="10"
+                  key={index}
+                  onClick={() => handleSearch(technology)}
+                >
+                  {technology}
+                </Link>
+              )
+            )}
           </textPath>
         </text>
       </svg>

@@ -13,24 +13,15 @@ const Social = ({ links, grey }) => (
           href={el.link}
           grey={grey}
           color={el.title === 'vk' || el.title === 'linkedin' ? 'blue' : 'red'}
+          aria-label={el.title}
         >
           {
             {
-              'youtube': (
-                <Yb />
-              ),
-              'hh': (
-                <Hh />
-              ),
-              'vk': (
-                <Vk />
-              ),
-              'instagram': (
-                <Insta />
-              ),
-              'linkedin': (
-                <In />
-              )
+              youtube: <Yb />,
+              hh: <Hh />,
+              vk: <Vk />,
+              instagram: <Insta />,
+              linkedin: <In />,
             }[el.title]
           }
         </S.SocialLink>

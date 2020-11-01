@@ -8,7 +8,8 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background-image: ${props => props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
+  background-image: ${props =>
+    props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
   background-repeat: no-repeat;
   background-position: 40% top;
   position: absolute;
@@ -45,7 +46,7 @@ const Nav = styled.nav`
   @media screen and (max-width: 720px) {
     ${props =>
       props.plain && {
-        display: 'none'
+        display: 'none',
       }}
   }
 
@@ -74,7 +75,7 @@ const Header = ({ data: links, plain }) => (
         ))}
       </List>
     </Nav>
-    <Button>
+    <Button aria-label="Menu">
       <Menu />
     </Button>
   </StyledHeader>

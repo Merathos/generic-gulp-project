@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.section`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 614px;
   height: 391px;
@@ -24,8 +25,8 @@ export const Container = styled.section`
     `};
 
   @media screen and (max-width: 1360px) {
-    width: 491px;
-    height: 313px;
+    height: auto;
+    width: auto;
   }
 
   @media screen and (max-width: 960px) {
@@ -39,6 +40,7 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 420px) {
+    margin-top: 22px;
     padding-right: 0;
   }
 `;
@@ -52,7 +54,7 @@ export const Link = styled.a`
   font-weight: 700;
 
   @media screen and (max-width: 420px) {
-    font-size: 28px;
+    font-size: 22px;
   }
 `;
 

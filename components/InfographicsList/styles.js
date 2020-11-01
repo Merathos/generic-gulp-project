@@ -5,9 +5,9 @@ export const Container = styled.div`
 `;
 
 export const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
   width: 70%;
 
   @media screen and (max-width: 1360px) {
@@ -15,17 +15,26 @@ export const List = styled.ul`
   }
 
   @media screen and (max-width: 720px) {
-    justify-content: flex-start;
     width: 100%;
     margin-bottom: 45px;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-left: 30px;
+    margin-right: 30px;
+    grid-gap: 26px 30px;
   }
 `;
 
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin-bottom: 80px;
+  margin-bottom: 55px;
 
   :hover {
     b {
@@ -47,11 +56,11 @@ export const ListItem = styled.li`
   }
 
   @media screen and (max-width: 600px) {
-    width: 40%;
+    margin-bottom: 15px;
+  }
 
-    :nth-child(1n) {
-      margin-left: 30px;
-    }
+  @media screen and (max-width: 420px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -62,12 +71,10 @@ export const ItemValue = styled.b`
   font-weight: 800;
   opacity: 0.2;
   transition: all 0.3s ease;
-  cursor: pointer;
 
   @media screen and (max-width: 1360px) {
     color: #2f8ed9;
     opacity: 1;
-    cursor: auto;
   }
 
   @media screen and (max-width: 960px) {
@@ -76,6 +83,7 @@ export const ItemValue = styled.b`
 
   @media screen and (max-width: 420px) {
     font-size: 22px;
+    margin-bottom: 14px;
   }
 `;
 
@@ -84,6 +92,7 @@ export const ItemTitle = styled.p`
   font-size: 20px;
   line-height: 134%;
   color: #000000;
+  white-space: pre-wrap;
 
   :first-letter {
     text-transform: lowercase;
@@ -94,6 +103,7 @@ export const ItemTitle = styled.p`
   }
 
   @media screen and (max-width: 960px) {
+    width: 100%;
     font-size: 14px;
   }
 `;

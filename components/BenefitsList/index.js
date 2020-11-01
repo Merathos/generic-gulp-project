@@ -11,10 +11,10 @@ const BenefitsList = ({ data }) => {
           <ListItem key={index}>
             <H3>{benefit.title}</H3>
             <Text>{benefit.explanation}</Text>
-            <Link>{benefit.details}</Link>
+            <Link href="#">{benefit.details}</Link>
           </ListItem>
         ))}
-        <ListItem key={'banner'}>
+        <ListItem key={'banner'} banner={true}>
           {showEvent ? (
             <EventBanner data={bannersData.event} />
           ) : (

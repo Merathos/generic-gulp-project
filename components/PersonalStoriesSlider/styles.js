@@ -25,33 +25,20 @@ export const TextWrapper = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    margin-left: 30px;
-    margin-right: 30px;
-    width: calc(100% - 60px);
+    padding: 0 30px;
+    box-sizing: border-box;
     height: 80%;
     margin-bottom: -15%;
   }
-`;
 
-export const Block = styled.div`
-  transition: all 0.2s ease;
-
-  &:hover {
-    color: #53b443;
-    cursor: pointer;
-  }
-
-  &:active {
-    color: #339722;
-  }
-
-  @media screen and (max-width: 720px) {
-    order: -1;
+  @media screen and (max-width: 420px) {
+    height: 60%;
+    margin-bottom: -5%;
   }
 `;
 
 export const Title = styled(TitleH2)`
-  margin-top: 170px;
+  margin-top: 172px;
   margin-bottom: 30px;
 
   @media screen and (max-width: 1200px) {
@@ -67,8 +54,10 @@ export const Title = styled(TitleH2)`
   }
 
   @media screen and (max-width: 720px) {
+    margin-top: 70px;
     margin-bottom: 20px;
     font-size: 32px;
+    order: -1;
   }
 `;
 
@@ -79,8 +68,9 @@ export const Text = styled.p`
 
   @media screen and (max-width: 720px) {
     font-size: 16px;
-    line-height: 160%;
+    line-height: 158%;
     margin-bottom: 30px;
+    order: -1;
   }
 `;
 
@@ -106,7 +96,7 @@ export const Link = styled.a`
 export const ImageWrapper = styled.div`
   position: relative;
   margin-top: 60px;
-  margin-right: 20px;
+  margin-right: 40px;
   align-self: flex-end;
 
   &::after {
@@ -115,7 +105,7 @@ export const ImageWrapper = styled.div`
     background-image: url('/backgrounds/our-people.svg');
     width: 380px;
     height: 380px;
-    bottom: 40px;
+    bottom: 30px;
     left: -140px;
     z-index: 2;
     transform: rotate(270deg);
@@ -145,6 +135,13 @@ export const ImageWrapper = styled.div`
       bottom: 0;
       left: -100px;
     }
+
+    @media screen and (max-width: 420px) {
+      width: 180px;
+      height: 180px;
+      left: -70px;
+      bottom: 30px;
+    }
   }
 
   &:hover::after {
@@ -169,7 +166,7 @@ export const ImageWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    height: 45%;
+    height: 55%;
   }
 `;
 
@@ -201,7 +198,7 @@ export const Img = styled.img`
 export const PrevButton = styled.button`
   position: absolute;
   top: 170px;
-  right: 40px;
+  right: 53px;
   width: 53px;
   height: 106px;
   padding-left: 19px;
@@ -209,6 +206,7 @@ export const PrevButton = styled.button`
   border-radius: 108px 0 0 108px;
   border: 2px solid #53b443;
   border-right: none;
+  background-color: #f7f8f9;
 
   svg {
     fill: #53b443;
@@ -234,13 +232,14 @@ export const PrevButton = styled.button`
   @media screen and (max-width: 600px) {
     top: -28px;
     left: 10px;
+    background-color: transparent;
   }
 `;
 
 export const NextButton = styled.button`
   position: absolute;
   top: 170px;
-  right: -13px;
+  right: 0;
   width: 53px;
   height: 106px;
   padding-left: 13px;
@@ -248,6 +247,7 @@ export const NextButton = styled.button`
   border-radius: 0 108px 108px 0;
   border: 2px solid #53b443;
   border-left: none;
+  background-color: #f7f8f9;
 
   svg {
     fill: #53b443;
@@ -273,5 +273,6 @@ export const NextButton = styled.button`
   @media screen and (max-width: 600px) {
     top: -30px;
     left: 55px;
+    background-color: transparent;
   }
 `;

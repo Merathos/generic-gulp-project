@@ -1240,9 +1240,8 @@ export default {
   },
   main: {
     intro: {
-      title: 'Работай в DINS',
-      text:
-        'Мы участвуем в разработке UCaaS-платформы для бизнеса. Она помогает компаниям управлять всеми коммуникациями:',
+      title: `Работай в${'\u00A0'}DINS`,
+      text: `Мы${'\u00A0'}участвуем в${'\u00A0'}разработке UCaaS-платформы для${'\u00A0'}бизнеса. Она помогает компаниям управлять всеми коммуникациями:`,
       communicationsList: [
         'Корпоративный чат',
         'Видеоконференции',
@@ -1255,24 +1254,44 @@ export default {
         {
           isMain: true,
           src: `/images/intro-portrait-1.png`,
-          bgColor: '#FB5235',
+          size: {
+            width: 791,
+            height: 835,
+          },
+          alt: `Портрет Александра`,
+          bgColor: '#53B443',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-2.png`,
-          bgColor: '#53B443',
+          size: {
+            width: 901,
+            height: 841,
+          },
+          alt: `Портрет Александра`,
+          bgColor: '#2F8ED9',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александра / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
-          bgColor: '#2F8ED9',
+          size: {
+            width: 759,
+            height: 864,
+          },
+          alt: `Портрет Александра`,
+          bgColor: '#FB5235',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
+          size: {
+            width: 759,
+            height: 864,
+          },
+          alt: `Портрет Александра`,
           bgColor: '#FEB251',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александр / Тимлид',
@@ -1284,12 +1303,12 @@ export default {
       infographicsData: [
         {
           name: 'centers-quantity',
-          title: 'Дата-центров на 4 континентах',
+          title: 'Дата-центров \nна 4 континентах',
           value: '17',
         },
         {
           name: 'accessibility',
-          title: 'Доступность сервиса',
+          title: 'Доступность \nсервиса',
           value: '99,999%',
         },
         {
@@ -1299,17 +1318,17 @@ export default {
         },
         {
           name: 'calls-quantity',
-          title: 'Звонков одновременно',
+          title: 'Звонков \nодновременно',
           value: '>100 тыс',
         },
         {
           name: 'iterations-quantity',
-          title: 'Интеграций по API',
+          title: 'Интеграций \nпо API',
           value: '>1400',
         },
         {
           name: 'changes-quantity',
-          title: 'Изменений на продакшн в день',
+          title: 'Изменений на \nпродакшн в день',
           value: '>120',
         },
       ],
@@ -1359,15 +1378,35 @@ export default {
       pictures: [
         {
           src: `/images/gallery-2.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 574,
+            height: 405,
+          },
         },
         {
           src: `/images/gallery-1.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 706,
+            height: 405,
+          },
         },
         {
           src: `/images/gallery-2.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 574,
+            height: 405,
+          },
         },
         {
           src: `/images/gallery-1.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 706,
+            height: 405,
+          },
         },
       ],
     },
@@ -1641,8 +1680,8 @@ export default {
   stories: [
     {
       title: `История Саши`,
-      text: `Алексей — Scala Teamlead в DINS. Он занимается программированием и может
-       точно сказать, что его работа — любимая. Почему так, Алексей делится в этой статье.`,
+      text: `Алексей${'\u00A0'}— Scala Teamlead в${'\u00A0'}DINS. Он${'\u00A0'}занимается программированием и${'\u00A0'}может
+       точно сказать, что его работа${'\u00A0'}— любимая. Почему так, Алексей делится в${'\u00A0'}этой статье.`,
       button: `Послушать рассказ`,
       audio: {
         src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
@@ -1650,12 +1689,17 @@ export default {
         time: `10:30`,
       },
       picture: `/images/story-portrait.png`,
+      size: {
+        width: 548,
+        height: 774,
+      },
+      alt: 'Фото Саши',
       linkText: `Читать полностью`,
     },
     {
       title: `История Маши`,
-      text: `Мария — Scala Teamlead в DINS. Она занимается программированием и может
-       точно сказать, что ее работа — любимая. Почему так, Мария делится в этой статье.`,
+      text: `Мария${'\u00A0'}— Scala Teamlead в${'\u00A0'}DINS. Она${'\u00A0'}занимается программированием и${'\u00A0'}может
+       точно сказать, что ее работа${'\u00A0'}— любимая. Почему так, Мария делится в${'\u00A0'}этой статье.`,
       button: `Послушать рассказ`,
       audio: {
         src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
@@ -1663,12 +1707,17 @@ export default {
         time: `10:30`,
       },
       picture: `/images/intro-portrait-2.png`,
+      size: {
+        width: 901,
+        height: 841,
+      },
+      alt: 'Фото Маши',
       linkText: `Читать полностью`,
     },
     {
       title: `История Пети`,
-      text: `Петр — Scala Teamlead в DINS. Он занимается программированием и может
-       точно сказать, что его работа — любимая. Почему так, Петр, полный нескрываемого восхищения и удовольствия, делится в этой статье.`,
+      text: `Петр${'\u00A0'}— Scala Teamlead в${'\u00A0'}DINS. Он${'\u00A0'}занимается программированием и${'\u00A0'}может
+       точно сказать, что его работа${'\u00A0'}— любимая. Почему так, Алексей делится в${'\u00A0'}этой статье.`,
       button: `Послушать рассказ`,
       audio: {
         src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
@@ -1676,14 +1725,18 @@ export default {
         time: `10:30`,
       },
       picture: `/images/intro-portrait-3.png`,
+      size: {
+        width: 7759,
+        height: 864,
+      },
+      alt: 'Фото Пети',
       linkText: `Читать полностью`,
     },
   ],
   teams: [
     {
       name: 'Contact Center',
-      summary:
-        'Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с использованием WebRTC, качество...',
+      summary: `Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с${'\u00A0'}использованием WebRTC, качество...`,
       image: {
         path: {
           normal: '/images/team-1.jpg',
@@ -1693,8 +1746,7 @@ export default {
     },
     {
       name: 'RCV (Video-conference)',
-      summary:
-        'Команда RCV занимается поддержкой и развитием одноименного сервиса - Global CI. Сервис предоставляет возможность ранней верификации...',
+      summary: `Команда RCV занимается поддержкой и${'\u00A0'}развитием одноименного сервиса${'\u00A0'}- Global CI. Сервис предоставляет возможность ранней верификации...`,
       image: {
         path: {
           normal: '/images/team-2.png',
@@ -1704,8 +1756,7 @@ export default {
     },
     {
       name: 'Platform A',
-      summary:
-        'В команде Platform А мы разрабатываем публичный REST API для Unified Communications сервиса и специализируемся на способах...',
+      summary: `В${'\u00A0'}команде Platform А${'\u00A0'}мы${'\u00A0'}разрабатываем публичный REST API для Unified Communications сервиса и${'\u00A0'}специализируемся на${'\u00A0'}способах...`,
       image: {
         path: {
           normal: '/images/team-3.jpg',

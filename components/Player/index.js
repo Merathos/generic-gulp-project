@@ -26,16 +26,16 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
     }
   });
 
-  let codeIcon;
+  let iconName;
 
   if (!play && withDynamic && !isFirstClick) {
-    codeIcon = 30;
+    iconName = 'speaker';
   } else if (!play && withDynamic && isFirstClick) {
-    codeIcon = 39;
+    iconName = 'play-and-pause';
   } else if (play) {
-    codeIcon = 38;
+    iconName = 'pause';
   } else if (!play && !withDynamic) {
-    codeIcon = 20;
+    iconName = 'play';
   }
 
   return (
@@ -51,10 +51,23 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
         onDuration={e => !play && setAudioDuration(e)}
       />
       <S.Block>
-        <S.Button name={codeIcon} onClick={() => togglePlayer()} />
+        <S.Button
+          isSpeaker={iconName === 'speaker'}
+          onClick={() => togglePlayer()}
+          type="button"
+          aria-label="Control button"
+          withDynamic={withDynamic}
+        >
+          <S.Img
+            src={`/emodzi/${iconName}.png`}
+            width="60"
+            height="60"
+            alt={iconName}
+          />
+        </S.Button>
         <S.Wrapper>
           {!play && (!withDynamic || !isFirstClick) && (
-            <S.Label>Послушать рассказ</S.Label>
+            <S.Label withDynamic={withDynamic}>Послушать рассказ</S.Label>
           )}
           <S.Scale pause={!play} withDynamic={withDynamic && !isFirstClick}>
             <S.Bar>

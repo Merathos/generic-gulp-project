@@ -28,6 +28,8 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
           className="swiper-button-prev"
           hasControls={hasControls}
           isSmall={isSmall}
+          type="button"
+          aria-label="Previous slide"
         >
           <ArrowPrev />
         </PrevButton>
@@ -38,6 +40,8 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
         className="swiper-button-next"
         hasControls={hasControls}
         isSmall={isSmall}
+        type="button"
+        aria-label="Next slide"
       >
         <ArrowNext />
       </NextButton>
@@ -55,8 +59,10 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
                   ? `https://api.develop.dins.d.nimax.ru/${el.imageUrl}`
                   : el.src
               }
-              alt={el.title}
+              alt={el.title || el.alt}
               hasControls={hasControls}
+              width={el.size.width}
+              height={el.size.height}
             />
             {el.title && <Title>{el.title}</Title>}
           </Element>
