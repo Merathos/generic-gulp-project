@@ -14,12 +14,18 @@ const Text = styled.p`
   }
 `;
 
-const Button = styled.a`
-  display: inline-block;
+const Button = styled.span`
+  display: inline-flex;
+  cursor: pointer;
   align-items: center;
   font-size: 16px;
   color: #53b443;
   transition: color 0.2s ease-in;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
 
   &:hover {
     color: #339722;
@@ -45,14 +51,7 @@ const SmartText = ({ text, length = 215, className }) => {
   return (
     <Text className={className}>
       {showLess ? `${text.slice(0, length)}...` : text}&nbsp;
-      <Button
-        href="#"
-        onClick={e => {
-          e.preventDefault();
-          setShowLess(!showLess);
-        }}
-        showLess={showLess}
-      >
+      <Button onClick={() => setShowLess(!showLess)} showLess={showLess}>
         {showLess ? 'Читать полностью' : 'Свернуть'}
         <Icon
           showLess={showLess}
