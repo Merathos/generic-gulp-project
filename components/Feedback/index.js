@@ -19,6 +19,7 @@ const StyledText = styled.p`
 `;
 
 const Section = styled.section`
+  max-width: 850px;
   display: flex;
   margin-bottom: 100px;
   align-items: flex-end;

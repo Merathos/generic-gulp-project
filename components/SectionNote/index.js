@@ -13,6 +13,7 @@ const Text = styled.p`
 `;
 
 const Section = styled.section`
+  max-width: 850px;
   padding: 40px 0 42px;
   border-top: 2px solid rgba(31, 32, 42, 0.1);
   border-bottom: 2px solid rgba(31, 32, 42, 0.1);
