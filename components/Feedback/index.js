@@ -55,7 +55,7 @@ const H3 = styled(TitleH3)`
 
 const Feedback = props => {
   const {
-    data: { imageUrl, title, describe }
+    data: { imageUrl, title, describe, subtitle }
   } = props;
   return (
     <Section>
@@ -71,7 +71,7 @@ const Feedback = props => {
         />
       </picture>
       <div>
-        <StyledSubtitle>Компания Динс</StyledSubtitle>
+        <StyledSubtitle>{subtitle}</StyledSubtitle>
         <H3>{title}</H3>
         <StyledText>{describe}</StyledText>
       </div>

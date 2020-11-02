@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { TitleH2, TitleH3 } from 'elements';
 
-export const Wrapper = styled.ul``;
-
-export const Element = styled.li``;
-
 export const H2 = styled(TitleH2)`
   padding-top: 60px;
   margin-bottom: 40px;

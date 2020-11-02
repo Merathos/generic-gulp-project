@@ -2,10 +2,14 @@ import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
 import GreenArrowRight from 'public/icons/green-arrow-right.svg';
 import { useRef } from 'react';
 import Swiper from 'react-id-swiper';
-import { Article, Element, Img, H4, Text, Arrows, StyledLink  } from './styles';
+import { Article, Element, Img, H4, Text, Arrows, StyledLink } from './styles';
 
 const SidebarSlider = props => {
   const ref = useRef(null);
+
+  const params = {
+    loop: true,
+  };
 
   const goNext = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
@@ -23,7 +27,7 @@ const SidebarSlider = props => {
 
   return (
     <Article>
-      <Swiper ref={ref}>
+      <Swiper ref={ref} {...params}>
         {data.map((el, i) => (
           <Element key={i}>
             <Img

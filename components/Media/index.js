@@ -3,11 +3,10 @@ import ReactPlayer from 'react-player';
 
 const Media = props => {
   const {
-    data: { subtitle, src, srcPoster, stream = false, caption, file },
+    data: { subtitle, src, srcPoster, stream = false, caption, file, stretched },
     type,
     decoration,
     hasCircle,
-    stretched,
   } = props;
   return (
     <Section
