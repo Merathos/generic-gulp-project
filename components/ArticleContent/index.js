@@ -38,6 +38,10 @@ const StyledSlider = styled(Slider)`
   max-width: 850px;
 `;
 
+const Wrapper = styled.aside`
+  float: right;
+`;
+
 const renderContent = props => {
   const { type, data } = props;
   return (
@@ -59,12 +63,24 @@ const renderContent = props => {
           note: <SectionNote data={data.text} />,
           person: <Feedback data={data} />,
           gallery: <StyledSlider pictures={data.factoids} fromEditor />,
-          asideSlider: <SidebarSlider data={data.factoids} />,
+          asideSlider: (
+            <Wrapper>
+              <SidebarSlider data={data.factoids} />
+            </Wrapper>
+          ),
           video: <Video data={data} />,
           quote: <Quote data={data} />,
           comments: <Comments data={data.factoids} />,
-          asideBlock: <SidebarArticle type="default" data={data} fromEditor />,
-          asideNote: <SidebarArticle type="icon" data={data} fromEditor />,
+          asideBlock: (
+            <Wrapper>
+              <SidebarArticle type="default" data={data} fromEditor />
+            </Wrapper>
+          ),
+          asideNote: (
+            <Wrapper>
+              <SidebarArticle type="icon" data={data} fromEditor />
+            </Wrapper>
+          ),
           user: <Userpic data={data} />,
         }[type]
       }
