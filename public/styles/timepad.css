@@ -106,6 +106,7 @@
   font-size: 20px;
   line-height: 31.6px;
   font-weight: 500;
+  cursor: text;
 }
 
 .b-reg-table__cell-price span {
@@ -122,6 +123,7 @@
   display: inline-flex;
   align-items: center;
   background-color: transparent !important;
+  transition: all 0.2s ease-in;
   color: #53b443 !important;
   opacity: 0.4;
 }
@@ -146,8 +148,12 @@
   margin-top: 7px;
 }
 
+.js-section-selectTickets {
+  margin-bottom: 95px;
+}
+
 .contacts__title {
-  margin-top: 95px;
+  margin-top: 0;
   margin-bottom: 65px;
   font-size: 24px;
   line-height: 28.8px;
@@ -216,6 +222,7 @@
   font-size: 20px !important;
   line-height: 26px !important;
   max-width: 870px !important;
+  font-weight: 500 !important;
 }
 
 .row-multivar {
@@ -243,10 +250,9 @@
   width: 20px;
   height: 20px;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 4px;
   border: 2px solid rgba(31, 32, 42, 0.3);
-  transition: border 0.2s;
+  transition: border 0.2s ease-in;
 }
 
 .row-multivar
@@ -268,12 +274,11 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 50%;
+  top: 4px;
   left: 0;
-  transform: translateY(-50%);
   border: 2px solid rgba(31, 32, 42, 0.3);
   border-radius: 50%;
-  transition: border 0.2s;
+  transition: border 0.2s ease-in;
 }
 
 .row-radio
@@ -291,11 +296,10 @@
   content: '';
   position: absolute;
   width: 8px;
-  height: 7px;
-  top: 50%;
+  height: 8px;
+  top: 10px;
   left: 6px;
   background-color: #53b443;
-  transform: translateY(-50%);
   border-radius: 50%;
 }
 
@@ -348,7 +352,7 @@
 
 .b-registration__accept a {
   color: #53b443;
-  transition: all 0.3s;
+  transition: all 0.2s ease-in;
 }
 
 .b-registration__accept a:hover {
@@ -364,6 +368,7 @@
   left: 0;
   top: 10px;
   border: 2px solid rgba(31, 32, 42, 0.3);
+  transition: border 0.2s ease-in;
 }
 
 .b-registration__accept
@@ -387,6 +392,7 @@
   background-color: #ec4d32 !important;
   color: #ffffff !important;
   border-radius: 8px !important;
+  transition: all 0.2s ease-in;
 }
 
 .b-pro-wiget__reg-button:hover {
@@ -445,7 +451,8 @@
   }
 
   .b-reg-table .b-reg-table__cell.b-reg-table__cell-name {
-    width: 150px !important;
+    width: 180px !important;
+    cursor: default;
   }
 
   .b-reg-table__cell-name label {
@@ -454,11 +461,15 @@
   }
 
   .b-reg-table .b-reg-table__cell.b-reg-table__cell-count {
-    margin-right: 60px !important;
+    margin-right: 0 !important;
+  }
+
+  .js-section-selectTickets {
+    margin-bottom: 60px;
   }
 
   .contacts__title {
-    margin-top: 60px;
+    margin-top: 0;
     margin-bottom: 27px;
     font-size: 16px;
     line-height: 19px;
@@ -508,6 +519,18 @@
   .row-radio .b-registration__label span {
     font-size: 14px;
     line-height: 22px;
+  }
+
+  .row-multivar .b-registration__label > span::before {
+    top: 1px;
+  }
+
+  .row-radio .b-registration__label > span::before {
+    top: 1px;
+  }
+
+  .row-radio .b-registration__label > input:checked + span::after {
+    top: 7px;
   }
 
   .b-registration__accept {
@@ -562,6 +585,7 @@
   }
 
   .price-mobile__custom {
+    margin-top: 22px;
     position: relative;
     font-size: 19px;
     line-height: 22px;

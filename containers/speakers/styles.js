@@ -5,7 +5,7 @@ export const Section = styled.section`
   margin-bottom: 100px;
 
   @media (max-width: 768px) {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
 `;
 
@@ -13,15 +13,15 @@ export const Container = styled.div`
   max-width: 1200px;
   padding: 0 30px;
   margin: 0 auto;
+
+  @media (max-width: 375px) {
+    overflow: hidden;
+  }
 `;
 
 export const List = styled.ul`
   display: flex;
   flex-flow: row wrap;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
 `;
 
 export const Item = styled.li`
@@ -64,9 +64,17 @@ export const Item = styled.li`
     }
   }
 
-  @media (max-width: 768px) {
+  &:last-child {
     margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 45px;
     max-width: 315px;
+  }
+
+  @media (max-width: 670px) {
+    margin-right: 0;
   }
 `;
 

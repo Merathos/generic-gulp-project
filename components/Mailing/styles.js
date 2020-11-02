@@ -8,10 +8,12 @@ export const Container = styled.div`
   }
 `;
 
-export const Link = styled.a`
+export const Link = styled.button`
+  font-size: 18px;
+  line-height: 21.6px;
   font-weight: 700;
   color: #53b443;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in;
 
   &:hover,
   &:active {
@@ -20,6 +22,11 @@ export const Link = styled.a`
 
   @media (max-width: 1199px) {
     display: inline-block;
+  }
+
+  @media (max-width: 910px) {
+    font-size: 14px;
+    line-height: 18.34px;
   }
 `;
 

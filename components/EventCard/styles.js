@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH2, Button } from 'elements';
+import { TitleH2, Btn } from 'elements';
 
 export const CardWrapper = styled.div`
   box-sizing: border-box;
@@ -62,10 +62,12 @@ export const Date = styled.p`
 `;
 
 export const Time = styled.p`
+  text-align: right;
   font-size: 18px;
   line-height: 23.58px;
 
   @media (max-width: 910px) {
+    text-align: left;
     font-size: 14px;
     line-height: 20.72px;
   }
@@ -87,6 +89,10 @@ export const Status = styled.p`
     width: fit-content;
     font-size: 14px;
     line-height: 20.72px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 135px;
   }
 `;
 
@@ -159,11 +165,13 @@ export const Pic = styled.img`
 export const NameWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 177px;
   padding-top: 11px;
   font-size: 18px;
   line-height: 23.58px;
 
   @media (max-width: 910px) {
+    max-width: 70%;
     padding-top: 5px;
     font-size: 14px;
     line-height: 18.34px;
@@ -192,19 +200,9 @@ export const BottomWrapper = styled.div`
   }
 `;
 
-export const StyledButton = styled(Button)`
-  height: 70px;
-  align-self: flex-end;
-
+export const StyledButton = styled(Btn)`
   @media (max-width: 910px) {
     margin-bottom: 22px;
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    min-width: 127px;
-    height: 56px;
-    font-size: 12px;
-    line-height: 56px;
   }
 `;
 
