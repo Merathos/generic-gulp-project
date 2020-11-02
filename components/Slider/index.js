@@ -62,8 +62,8 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
               alt={el.title || el.alt}
               hasControls={hasControls}
               isSmall={isSmall}
-              width={el.size.width}
-              height={el.size.height}
+              width={el.size?.width}
+              height={el.size?.height}
             />
             {el.title && <Title isSmall={isSmall}>{el.title}</Title>}
           </Element>
