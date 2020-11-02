@@ -2200,11 +2200,11 @@ export default {
     },
   },
   jobForm: {
-    title: `Java developer (Big Data team)`,
+    mainTitle: `Java developer (Big Data team)`,
     subtitle: `Откликнуться на вакансию`,
     contact: {
       title: `Оставь  контактные данные`,
-      textInputs: [
+      inputs: [
         {
           name: `surname`,
           label: `Фамилия *`,
@@ -2237,6 +2237,19 @@ export default {
         ],
       },
     },
+    cv: {
+      title: `Прикрепи резюме или ссылку`,
+      fileInput: {
+        id: 51456,
+        name: `cvFile`,
+        label: 'Прикрепить резюме',
+        fileExt: `doc, docx, pdf, rtf, TXT`,
+      },
+      textInput: {
+        name: `cvLink`,
+        label: `Ссылка на резюме`,
+      },
+    },
     agreement: {
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
@@ -2247,7 +2260,7 @@ export default {
     buttonText: 'Отправить заявку',
     confirmation: {
       title: 'Спасибо!',
-      text: 'Теперь ты будешь в курсе всех самых свежих мероприятий DINS!',
+      text: 'Мы изучим твое резюме и свяжемся с тобой в ближайшее время.',
       btnText: 'Хорошо',
     },
   },

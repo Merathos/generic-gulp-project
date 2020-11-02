@@ -75,6 +75,10 @@ export const InputsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+  }
 `;
 
 export const CheckboxContainer = styled.div`

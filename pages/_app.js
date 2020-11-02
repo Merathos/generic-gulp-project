@@ -102,6 +102,7 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     overflow: auto;
     outline: none;
+    background-color: #ffffff;
 
     @media (max-width: 1199px) {
       top: 0;

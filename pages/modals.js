@@ -2,12 +2,13 @@ import mock from 'mock/index';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { FormModal, SuccessModal } from 'containers';
+import { JobForm } from 'components';
 
 export const Container = styled.div`
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding: 200px 30px;
 `;
 
 const ModalsPreview = () => {
@@ -28,13 +29,17 @@ const ModalsPreview = () => {
         <a onClick={toggleJobModal}>Application for a job</a>
       </Container>
       <FormModal modalIsOpen={jobIsShown} closeModal={toggleJobModal}>
-        <h1>ФДЫВРОФЖДЫОПРВФДЫОВ</h1>
+        <JobForm
+          data={mock.jobForm}
+          closeModal={toggleJobModal}
+          showSuccess={toggleSuccess}
+        />
       </FormModal>
-      {/* <SuccessModal
-        data={data.newsModal.confirmation}
+      <SuccessModal
+        data={mock.jobForm.confirmation}
         successIsShown={successIsShown}
         closeSuccess={toggleSuccess}
-      /> */}
+      />
     </main>
   );
 };
