@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH1, Button } from 'elements';
+import { TitleH1, Btn } from 'elements';
 
 export const GreyHeader = styled.section`
   margin-bottom: 163px;
@@ -36,6 +36,7 @@ export const Grid = styled.div`
 export const TopWrapper = styled.div`
   margin-right: auto;
   max-width: 600px;
+  height: max-content;
 `;
 
 export const Status = styled.p`
@@ -111,9 +112,12 @@ export const SpeakersContainer = styled.div`
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 
   @media (max-width: 768px) {
+    min-width: 0;
     margin-top: 40px;
+    padding-bottom: 0;
   }
 `;
 
@@ -159,6 +163,7 @@ export const NameWrapper = styled.div`
   padding-top: 4px;
   font-size: 16px;
   line-height: 20.96px;
+  max-width: 240px;
 
   @media (max-width: 768px) {
     padding-top: 5px;
@@ -176,17 +181,10 @@ export const SpeakerJob = styled.p`
   opacity: 0.5;
 `;
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled(Btn)`
   margin-top: 100px;
-  box-sizing: border-box;
-  display: block;
-  width: 243px;
-  text-align: center;
 
   @media (max-width: 768px) {
     margin-top: 35px;
-    width: 191px;
-    font-size: 12px;
-    line-height: 56px;
   }
 `;

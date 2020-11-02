@@ -11,7 +11,12 @@ const EventHeader = props => {
         <S.Grid>
           <S.TopWrapper>
             <S.Status status={status.name}>
-              <S.Icon src={status.img} alt={status.name} />
+              <S.Icon
+                src={status.img}
+                alt={status.name}
+                width="18"
+                height="20"
+              />
               {status.name}
             </S.Status>
             <S.Type>{type}</S.Type>
@@ -27,7 +32,12 @@ const EventHeader = props => {
             <S.Title>{speakers.title}</S.Title>
             {speakers.list.map((speaker, i) => (
               <S.Speaker key={i}>
-                <S.Pic src={speaker.img} alt={speaker.name} />
+                <S.Pic
+                  src={speaker.img}
+                  alt={speaker.name}
+                  width="54"
+                  height="54"
+                />
                 <S.NameWrapper>
                   <S.SpeakerName>{speaker.name}</S.SpeakerName>
                   <S.SpeakerJob>{speaker.job}</S.SpeakerJob>
@@ -37,7 +47,7 @@ const EventHeader = props => {
           </S.SpeakersContainer>
         </S.Grid>
         {isActive ? (
-          <S.StyledButton type="accent">Зарегестрироваться</S.StyledButton>
+          <S.StyledButton accent={true}>Зарегестрироваться</S.StyledButton>
         ) : (
           <S.StyledButton>Смотреть запись</S.StyledButton>
         )}

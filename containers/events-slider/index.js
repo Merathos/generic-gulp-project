@@ -22,7 +22,7 @@ const EventsSlider = ({ cards }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    spaceBetween: 80,
+    // spaceBetween: 80,
 
     renderPrevButton: () => {
       return (

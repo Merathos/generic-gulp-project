@@ -112,8 +112,10 @@ export const NextButton = styled.button`
 export const Element = styled.div`
   width: 862px;
   flex-shrink: 0;
+  margin-right: 80px;
 
   @media (max-width: 768px) {
+    margin-right: 0;
     margin-bottom: 40px;
     width: 100%;
   }
