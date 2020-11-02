@@ -12,7 +12,12 @@ const TeamCard = props => {
     <Link href={`teams/projects/${slug}`}>
       <a>
         <Section isMain={isMain}>
-          <Picture src={image && image.path.normal} alt={name} />
+          <Picture
+            src={image && image.path.normal}
+            alt={name}
+            width="350"
+            height="194"
+          />
           <H3 isMain={isMain}>{name}</H3>
           <StyledText isMain={isMain}>{summary}</StyledText>
           <ArrowRight isMain={isMain}>

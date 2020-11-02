@@ -3,7 +3,7 @@ import TitleH3 from '../../elements/TitleH3';
 
 export const Container = styled.section`
   margin-bottom: 90px;
-  margin-right: 120px;
+  margin-right: 105px;
   margin-left: 120px;
 
   @media screen and (max-width: 1024px) {
@@ -30,21 +30,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
-  width: 43%;
-  transition: all 0.2s ease;
-
-  &:hover {
-    color: #53b443;
-    cursor: pointer;
-  }
-
-  &:active {
-    color: #339722;
-
-    a {
-      color: #339722;
-    }
-  }
+  width: ${props => (props.banner ? '57%' : '42%')};
 
   @media screen and (max-width: 1024px) {
     width: 100%;
@@ -74,6 +60,7 @@ export const H3 = styled(TitleH3)`
   @media screen and (max-width: 420px) {
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 14px;
   }
 `;
 
@@ -92,22 +79,25 @@ export const Text = styled.p`
     padding-left: 60px;
     padding-right: 60px;
     font-size: 14px;
-    line-height: 160%;
+    line-height: 158%;
     box-sizing: border-box;
   }
 
   @media screen and (max-width: 420px) {
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 18px;
   }
 `;
 
-export const Link = styled.a`
+export const Ref = styled.a`
+  margin-bottom: 102px;
   color: #53b443;
   font-size: 18px;
   line-height: 120%;
   font-weight: 700;
-  margin-bottom: 100px;
+  align-self: flex-start;
+  transition: color 0.2s ease;
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 60px;

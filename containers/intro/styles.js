@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Btn from '../../elements/Btn';
 
 export const Container = styled.section`
   display: flex;
@@ -22,6 +23,7 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 420px) {
+    padding-top: 55px;
     padding-left: 0;
   }
 `;
@@ -41,6 +43,11 @@ export const TextBlock = styled.div`
     padding-left: 30px;
     padding-right: 30px;
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-left: 0;
+    padding-right: 0;
   }
 `;
 
@@ -62,6 +69,12 @@ export const Title = styled.h1`
     font-size: 32px;
     line-height: 134%;
   }
+
+  @media screen and (max-width: 420px) {
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 export const Text = styled.p`
@@ -75,7 +88,13 @@ export const Text = styled.p`
     width: 100%;
     font-size: 16px;
     line-height: 158%;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 
@@ -91,6 +110,12 @@ export const ListBlock = styled.div`
     padding-bottom: 0;
   }
 
+  @media screen and (max-width: 420px) {
+    width: auto;
+    padding-left: 30px;
+    padding-right: 8px;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +125,11 @@ export const ListBlock = styled.div`
       flex-direction: column;
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 420px) {
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 350px) {
       max-height: none;
     }
   }
@@ -112,6 +141,22 @@ export const ListBlock = styled.div`
       margin-bottom: 10px;
       min-width: 150px;
     }
+  }
+`;
+
+export const Button = styled(Btn)`
+  max-width: 300px;
+  background-color: #ec4d32;
+  border-color: #ec4d32;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &:hover {
+    border-color: #ec381a;
+  }
+
+  @media screen and (max-width: 640px) {
+    display: none;
   }
 `;
 
@@ -134,8 +179,8 @@ export const PortraitBlock = styled.div`
     position: absolute;
     width: 480px;
     height: 480px;
-    left: 405px;
-    top: 200px;
+    left: 400px;
+    top: 250px;
     transform: rotate(30deg);
     background-color: #ffffff;
   }
@@ -150,6 +195,8 @@ export const PortraitBlock = styled.div`
   }
 
   @media screen and (max-width: 420px) {
+    max-height: 450px;
+
     &::before {
       width: 200px;
       height: 200px;

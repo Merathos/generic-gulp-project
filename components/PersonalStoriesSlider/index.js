@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import ArrowPrev from 'public/icons/arrow-prev.svg';
 import ArrowNext from 'public/icons/arrow-next.svg';
 import * as S from './styles';
+import Link from 'next/link';
 
 const PersonalStoriesSlider = ({ data }) => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -17,13 +18,21 @@ const PersonalStoriesSlider = ({ data }) => {
     },
     renderPrevButton: () => {
       return (
-        <S.PrevButton className="swiper-button-prev">
+        <S.PrevButton
+          className="swiper-button-prev"
+          type="button"
+          aria-label="Previous slide"
+        >
           <ArrowPrev />
         </S.PrevButton>
       );
     },
     renderNextButton: () => (
-      <S.NextButton className="swiper-button-next">
+      <S.NextButton
+        className="swiper-button-next"
+        type="button"
+        aria-label="Next slide"
+      >
         <ArrowNext />
       </S.NextButton>
     ),
@@ -60,19 +69,24 @@ const PersonalStoriesSlider = ({ data }) => {
         {data.map((story, index) => (
           <S.Element key={index}>
             <S.TextWrapper>
-              <S.Block>
-                <S.Title>{story.title}</S.Title>
-                <S.Text>{story.text}</S.Text>
-              </S.Block>
+              <S.Title>{story.title}</S.Title>
+              <S.Text>{story.text}</S.Text>
               <Player
                 isPaused={activeSlide !== index + 1}
                 withDynamic={true}
                 src={story.audio.src}
               />
-              <S.Link>{story.linkText}</S.Link>
+              <Link href="/" passHref>
+                <S.Link href="#">{story.linkText}</S.Link>
+              </Link>
             </S.TextWrapper>
             <S.ImageWrapper>
-              <S.Img src={story.picture} alt={story.alt} />
+              <S.Img
+                src={story.picture}
+                alt={story.alt}
+                width={story.size.width}
+                height={story.size.height}
+              />
             </S.ImageWrapper>
           </S.Element>
         ))}

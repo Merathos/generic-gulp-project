@@ -20,7 +20,6 @@ const Accent = styled.button`
   @media screen and (max-width: 640px) {
     font-size: 12px;
     line-height: 56px;
-    ${props => props.behavior === 'disappear' && `display:none`}
   }
 `;
 
@@ -52,12 +51,12 @@ const Default = styled.button`
   }
 `;
 
-const Button = ({ type = 'default', behavior, children, className }) => (
+const Button = ({ type = 'default', children, className }) => (
   <>
     {
       {
         accent: (
-          <Accent className={className} behavior={behavior}>
+          <Accent type="button" className={className}>
             {children}
           </Accent>
         ),

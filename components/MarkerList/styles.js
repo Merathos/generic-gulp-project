@@ -31,15 +31,17 @@ export const ElementEllipse = styled.li`
     width: ${props => (props.inline ? '6px' : '8px')};
     height: ${props => (props.inline ? '6px' : '8px')};
     left: ${props => (props.inline ? '0' : '30px')};
-    top: ${props => (props.inline ? '6px' : '10px')};
+    top: ${props => (props.inline ? '8px' : '10px')};
   }
 
   @media screen and (max-width: 420px) {
-    padding-left: 25px;
+    padding-left: ${props => (props.inline ? '16px' : '25px')};
     margin-bottom: 20px;
-    margin-right: ${props => (props.inline ? '25px' : '0')};
+    margin-right: 0;
 
     &::before {
+      width: ${props => (props.inline ? '4px' : '8px')};
+      height: ${props => (props.inline ? '4px' : '8px')};
       left: 0;
     }
   }

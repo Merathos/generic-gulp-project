@@ -12,15 +12,23 @@ const PortraitSlider = ({ pictures }) => {
     loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      prevEl: '.swiper-button-prev',
     },
     renderPrevButton: () => {
       return (
         <>
-          <S.PrevButtonMain className="swiper-button-prev">
+          <S.PrevButtonMain
+            className="swiper-button-prev"
+            type="button"
+            aria-label="Previous slide"
+          >
             <ArrowPrev />
           </S.PrevButtonMain>
-          <S.PrevButton className="swiper-button-prev">
+          <S.PrevButton
+            className="swiper-button-prev"
+            type="button"
+            aria-label="Previous slide"
+          >
             <ArrowPrev />
           </S.PrevButton>
         </>
@@ -28,14 +36,22 @@ const PortraitSlider = ({ pictures }) => {
     },
     renderNextButton: () => (
       <>
-        <S.NextButtonMain className="swiper-button-next">
+        <S.NextButtonMain
+          className="swiper-button-next"
+          type="button"
+          aria-label="Next slide"
+        >
           <ArrowNext />
         </S.NextButtonMain>
-        <S.NextButton className="swiper-button-next">
+        <S.NextButton
+          className="swiper-button-next"
+          type="button"
+          aria-label="Next slide"
+        >
           <ArrowNext />
         </S.NextButton>
       </>
-    )
+    ),
   };
 
   return (
@@ -55,12 +71,17 @@ const PortraitSlider = ({ pictures }) => {
               activeIndex = 1;
             }
             setActiveSlide(activeIndex);
-          }
+          },
         }}
       >
         {pictures.map((el, i) => (
           <S.Element key={i} isMain={el.isMain}>
-            <S.Img src={el.src} alt={el.alt} />
+            <S.Img
+              src={el.src}
+              alt={el.alt}
+              width={el.size.width}
+              height={el.size.height}
+            />
             {el.quote && (
               <S.QuoteBlock bgColor={el.bgColor} textColor={el.textColor}>
                 <S.Quote>{el.quote}</S.Quote>

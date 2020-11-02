@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   background: url('/backgrounds/grey-triangle.png') no-repeat right 2380px;
+  overflow: hidden;
 
   @media screen and (max-width: 1024px) {
     background-image: none;

@@ -5,7 +5,7 @@ const BenefitsBanner = ({ data }) => {
     <Container>
       <Title>{data.name}</Title>
       <Date>{data.date}</Date>
-      <EventButton type="accent">{data.buttonText}</EventButton>
+      <EventButton accent="accent">{data.buttonText}</EventButton>
     </Container>
   );
 };

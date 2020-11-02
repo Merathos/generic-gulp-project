@@ -13,22 +13,39 @@ export const Wrapper = styled.div`
 
 export const Button = styled.button`
   margin-right: 20px;
+  padding: ${props => (props.isSpeaker ? '11px 11px 13px 17px' : '15px')};
   width: 57px;
   height: 57px;
-  background-color: #fff;
-  background-image: ${props => `url('/emodzi/${props.name}.png')`};
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+
+  @media (max-width: 720px) {
+    ${props =>
+      props.withDynamic &&
+      css`
+        width: 37px;
+        height: 37px;
+        padding: 11px 11px 11px 13px;
+        margin-right: 8px;
+      `}
+  }
 
   @media (max-width: 420px) {
-    width: 43px;
-    height: 43px;
+    ${props =>
+      !props.withDynamic &&
+      css`
+        width: 43px;
+        height: 43px;
+        padding: 15px;
+        margin-right: 20px;
+      `}
   }
 `;
+
+export const Img = styled.img``;
 
 export const Label = styled.span`
   font-weight: 700;
@@ -40,6 +57,7 @@ export const Label = styled.span`
       props.withDynamic &&
       css`
         font-size: 14px;
+        line-height: 132%;
       `}
   }
 `;
@@ -58,6 +76,7 @@ export const Span = styled(Subtitle)`
       props.withDynamic &&
       css`
         font-size: 14px;
+        line-height: 132%;
       `}
   }
 `;

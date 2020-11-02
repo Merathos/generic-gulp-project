@@ -13,13 +13,14 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 420px) {
+    padding-top: 85px;
     padding-left: 30px;
     padding-right: 30px;
   }
 `;
 
 export const Title = styled(TitleH2)`
-  margin-bottom: 40px;
+  margin-bottom: 35px;
   font-size: 60px;
   line-height: 100px;
 
@@ -30,6 +31,6 @@ export const Title = styled(TitleH2)`
   @media screen and (max-width: 420px) {
     font-size: 32px;
     line-height: 134%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 `;

@@ -1,5 +1,6 @@
 import { EventBanner, BlogsBanner } from 'components';
-import { Container, List, ListItem, H3, Text, Link } from './styles';
+import { Container, List, ListItem, H3, Text, Ref } from './styles';
+import Link from 'next/link';
 
 const BenefitsList = ({ data }) => {
   const { benefits, showEvent, bannersData, blogLinkDefault } = data;
@@ -11,10 +12,12 @@ const BenefitsList = ({ data }) => {
           <ListItem key={index}>
             <H3>{benefit.title}</H3>
             <Text>{benefit.explanation}</Text>
-            <Link>{benefit.details}</Link>
+            <Link href="/" passHref>
+              <Ref>{benefit.details}</Ref>
+            </Link>
           </ListItem>
         ))}
-        <ListItem key={'banner'}>
+        <ListItem key={'banner'} banner={true}>
           {showEvent ? (
             <EventBanner data={bannersData.event} />
           ) : (

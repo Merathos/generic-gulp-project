@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 440px;
+  height: 400px;
+  margin-top: 70px;
+  transform: translateZ(0);
 
   svg {
-    width: 250%;
-    margin-left: -58%;
+    width: 700%;
+    margin-left: -504%;
   }
 
   @media screen and (max-width: 1200px) {
@@ -26,26 +28,20 @@ export const Container = styled.div`
 
   @media screen and (max-width: 420px) {
     height: 150px;
-    margin-top: 5px;
+    margin-top: 14px;
     margin-bottom: 35px;
   }
 `;
 
-export const Link = styled.a`
-  font-size: 10px;
+export const Link = styled.tspan`
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
   color: #feb251;
-  white-space: pre;
+  transition: all 0.3s ease;
 
   :hover {
     opacity: 0.8;
-  }
-
-  @media screen and (max-width: 600px) {
-    font-size: 12px;
-  }
-
-  @media screen and (max-width: 420px) {
-    font-size: 15px;
+    cursor: pointer;
   }
 `;

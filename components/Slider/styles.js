@@ -64,6 +64,11 @@ export const Img = styled.img`
       @media screen and (max-width: 420px) {
         width: 315px;
       }
+
+      @media screen and (max-width: 350px) {
+        height: 180px;
+        width: auto;
+      }
     `}
 
   ${props =>
@@ -120,6 +125,7 @@ export const PrevButton = styled.button`
       border-right: none;
 
       svg {
+        transition: fill 0.3s ease;
         fill: #53b443;
       }
 
@@ -161,6 +167,7 @@ export const NextButton = styled.button`
       border-left: none;
 
       svg {
+        transition: fill 0.3s ease;
         fill: #53b443;
       }
 

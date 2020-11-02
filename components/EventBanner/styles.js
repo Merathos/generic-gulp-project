@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from '../../elements/Button';
+import Btn from '../../elements/Btn';
 
 export const Container = styled.section`
   position: relative;
@@ -7,9 +7,9 @@ export const Container = styled.section`
   flex-direction: column;
   width: 394px;
   height: 301px;
-  margin-top: 20px;
+  margin-top: 25px;
   background-color: #f7f8f9;
-  padding: 60px 240px 70px 60px;
+  padding: 56px 220px 70px 56px;
 
   ::before {
     content: '';
@@ -34,7 +34,9 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 1360px) {
-    width: 70%;
+    width: auto;
+    height: auto;
+    padding-right: 160px;
   }
 
   @media screen and (max-width: 960px) {
@@ -45,6 +47,9 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 420px) {
+    margin-top: 22px;
+    min-height: 286px;
+
     ::before {
       bottom: 55px;
       right: 20px;
@@ -88,8 +93,10 @@ export const Date = styled.p`
   }
 `;
 
-export const EventButton = styled(Button)`
+export const EventButton = styled(Btn)`
   align-self: flex-start;
   margin-top: auto;
   z-index: 1;
+  background-color: #fb5235;
+  border-color: #fb5235;
 `;

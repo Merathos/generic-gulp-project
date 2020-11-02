@@ -35,15 +35,14 @@ export const Field = styled.input`
   ${props =>
     props.isMain &&
     css`
-      background-color: transparent;
-      padding-top: 0;
+      padding-top: 5px;
       padding-bottom: 25px;
+      background-color: transparent;
     `};
 
   &:hover,
   &:focus,
   &:active {
-    cursor: pointer;
     opacity: 1;
     color: #201f2a;
   }
@@ -64,6 +63,7 @@ export const Field = styled.input`
       props.isMain &&
       css`
         padding-bottom: 15px;
+        padding-top: 10px;
       `};
   }
 `;
@@ -80,6 +80,7 @@ export const Submit = styled.button`
   transition: all 0.2s ease;
 
   svg path {
+    transition: all 0.2s ease;
     stroke: #fff;
   }
 
@@ -92,6 +93,20 @@ export const Submit = styled.button`
 
     svg path {
       stroke: #201f2a;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    ${props =>
+      props.isMain &&
+      css`
+        width: 30px;
+        height: 30px;
+      `};
+
+    svg {
+      width: 18px;
+      height: 18px;
     }
   }
 `;
