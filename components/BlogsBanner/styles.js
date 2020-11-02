@@ -45,7 +45,7 @@ export const Container = styled.section`
   }
 `;
 
-export const Link = styled.a`
+export const Ref = styled.a`
   width: 50%;
   margin-bottom: 40px;
   align-self: flex-end;

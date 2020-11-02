@@ -1,4 +1,5 @@
 import { List, ListItem, VacancyQuantity, VacancyTitle } from './styles';
+import Link from 'next/link';
 
 const VacanciesList = ({ data }) => {
   const categoriesMap = data.reduce((result, element) => {
@@ -15,7 +16,9 @@ const VacanciesList = ({ data }) => {
       {categories.map((category, index) => (
         <ListItem key={index}>
           <VacancyQuantity>{categoriesMap[category]}</VacancyQuantity>
-          <VacancyTitle href="#">{category}</VacancyTitle>
+          <Link href="/" passHref>
+            <VacancyTitle>{category}</VacancyTitle>
+          </Link>
         </ListItem>
       ))}
     </List>

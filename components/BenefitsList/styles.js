@@ -90,7 +90,7 @@ export const Text = styled.p`
   }
 `;
 
-export const Link = styled.a`
+export const Ref = styled.a`
   margin-bottom: 102px;
   color: #53b443;
   font-size: 18px;

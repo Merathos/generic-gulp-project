@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import ArrowPrev from 'public/icons/arrow-prev.svg';
 import ArrowNext from 'public/icons/arrow-next.svg';
 import * as S from './styles';
+import Link from 'next/link';
 
 const PersonalStoriesSlider = ({ data }) => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -75,7 +76,9 @@ const PersonalStoriesSlider = ({ data }) => {
                 withDynamic={true}
                 src={story.audio.src}
               />
-              <S.Link href="#">{story.linkText}</S.Link>
+              <Link href="/" passHref>
+                <S.Link href="#">{story.linkText}</S.Link>
+              </Link>
             </S.TextWrapper>
             <S.ImageWrapper>
               <S.Img
