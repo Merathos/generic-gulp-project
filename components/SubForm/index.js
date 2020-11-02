@@ -26,7 +26,7 @@ const SubForm = ({
           <S.SectionTitle>{contact.title}</S.SectionTitle>
           <S.InputsContainer>
             {contact.inputs.map((el, i) => (
-              <TextInput key={i} name={el} />
+              <TextInput key={i} name={el.name} label={el.label} />
             ))}
           </S.InputsContainer>
         </S.FormSection>

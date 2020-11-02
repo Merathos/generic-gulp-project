@@ -1939,7 +1939,23 @@ export default {
       mainTitle: 'Хочу получать новости о мероприятиях DINs',
       contact: {
         title: 'Оставь  контактные данные',
-        inputs: ['Фамилия *', 'Имя *', 'Email *'],
+        inputs: [
+          {
+            name: `surname`,
+            label: `Фамилия *`,
+            required: true,
+          },
+          {
+            name: `name`,
+            label: `Имя *`,
+            required: true,
+          },
+          {
+            name: `email`,
+            label: `Email *`,
+            required: true,
+          },
+        ],
       },
       directions: {
         title: 'Выбери направления мероприятий, про которые хочешь знать',
@@ -2181,6 +2197,58 @@ export default {
         customizeID: `134610`,
         eventID: `1464460`,
       },
+    },
+  },
+  jobForm: {
+    title: `Java developer (Big Data team)`,
+    subtitle: `Откликнуться на вакансию`,
+    contact: {
+      title: `Оставь  контактные данные`,
+      textInputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `phone`,
+          type: `number`,
+          label: `Телефон *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+      select: {
+        placeholder: `Предпочтительный способ связи`,
+        options: [
+          { value: 'phone', label: 'Телефон' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' },
+          { value: 'telegram', label: 'Telegram' },
+        ],
+      },
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Отправить заявку',
+    confirmation: {
+      title: 'Спасибо!',
+      text: 'Теперь ты будешь в курсе всех самых свежих мероприятий DINS!',
+      btnText: 'Хорошо',
     },
   },
 };

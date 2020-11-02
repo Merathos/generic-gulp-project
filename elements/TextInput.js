@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-flow: column-reverse;
@@ -10,6 +11,14 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     margin-bottom: 0;
+  }
+
+  p {
+    position: absolute;
+    bottom: -31px;
+    left: 0;
+    font-size: 16px;
+    line-height: 21px;
   }
 
   input {
@@ -84,18 +93,25 @@ const Wrapper = styled.div`
   }
 `;
 
-const TextInput = ({ name, className }) => {
+const TextInput = ({
+  type = 'text',
+  name,
+  label,
+  className,
+  required = true,
+}) => {
   return (
     <Wrapper className={className}>
+      <p>Фамилия не может содержать цифры</p>
       <input
-        type="text"
+        type={type}
         placeholder=" "
         name={name}
         id={name}
         autoComplete="off"
-        required
+        required={required}
       />
-      <label htmlFor={name}>{name}</label>
+      <label htmlFor={name}>{label}</label>
     </Wrapper>
   );
 };

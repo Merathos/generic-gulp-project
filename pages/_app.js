@@ -90,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 17px;
   }
 
-  .newsModal {
+  .formModal {
     top: 40px;
     bottom: 40px;
     left: 0;
