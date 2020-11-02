@@ -144,6 +144,10 @@ export const PrevButtonMain = styled.button`
     right: 20%;
   }
 
+  @media screen and (max-width: 800px) {
+    right: 28%;
+  }
+
   @media screen and (max-width: 720px) {
     top: 4px;
     right: 52px;
@@ -190,6 +194,10 @@ export const NextButtonMain = styled.button`
 
   @media screen and (max-width: 860px) {
     right: 12%;
+  }
+
+  @media screen and (max-width: 800px) {
+    right: 20%;
   }
 
   @media screen and (max-width: 720px) {
