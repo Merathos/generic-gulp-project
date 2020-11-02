@@ -15,7 +15,7 @@ export const Card = styled.div`
   background: #F7F8F9;
   padding: 40px;
   border-radius: 12px;
-  min-width: 600px;
+  width: 670px;
   
   @media screen and (max-width: 420px) {
     min-width: 100%;
