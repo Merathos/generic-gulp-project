@@ -21,6 +21,15 @@ export const Button = styled.button`
   align-items: center;
   background-color: #ffffff;
   border-radius: 50%;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 
   @media (max-width: 720px) {
     ${props =>
@@ -28,7 +37,7 @@ export const Button = styled.button`
       css`
         width: 37px;
         height: 37px;
-        padding: 11px 11px 11px 13px;
+        padding: ${props => (props.isSpeaker ? '11px 11px 11px 13px' : '11px')};
         margin-right: 8px;
       `}
   }

@@ -64,7 +64,7 @@ export const Title = styled.h1`
     width: 70%;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 720px) {
     width: 100%;
     font-size: 32px;
     line-height: 134%;
@@ -121,16 +121,19 @@ export const ListBlock = styled.div`
     flex-wrap: wrap;
 
     @media screen and (max-width: 1024px) {
-      max-height: 100px;
-      flex-direction: column;
+      max-width: 84%;
+    }
+
+    @media screen and (max-width: 720px) {
+      max-width: 100%;
     }
 
     @media screen and (max-width: 420px) {
       justify-content: space-between;
     }
 
-    @media screen and (max-width: 350px) {
-      max-height: none;
+    @media screen and (max-width: 360px) {
+      flex-direction: column;
     }
   }
 
@@ -138,8 +141,23 @@ export const ListBlock = styled.div`
     min-width: 165px;
 
     @media screen and (max-width: 1024px) {
+      width: 42%;
+      margin-right: 10px;
       margin-bottom: 10px;
-      min-width: 150px;
+      min-width: 130px;
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 46%;
+      box-sizing: border-box;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      width: 100%;
     }
   }
 `;
