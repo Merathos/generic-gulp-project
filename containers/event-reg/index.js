@@ -323,15 +323,20 @@ const EventReg = props => {
   const questionTpl = `
   <script type="text/mustache" id="questionTplMy">
   <div class="row-fluid row-{{{type}}}">
-  <div class="control-group b-reg-row {{#meta.dadata}}js-dadata{{/meta.dadata}}" data-formname="{{formname}}" data-tag="{{{tag}}}" data-type="{{{type}}}">
-  <label class="b-unit__text b-registration__question">
-  {{{name}}} {{#mandatory}}<span class="b-registration__question_mandatory">*</span>{{/mandatory}}
-  </label>
+
+  <div class="control-group b-reg-row input-wrapper {{#meta.dadata}}js-dadata{{/meta.dadata}}" data-formname="{{formname}}" data-tag="{{{tag}}}" data-type="{{{type}}}">
+
   {{#text}}
-  <div class="b-input-block i-question-control">
-  <input type="text" name="{{formname}}" class="span12 b-input" autocomplete="nein" value="{{{value}}}" placeholder="{{{name}}} *">
-  </div>
+  <input type="text" name="{{formname}}" class="span12 b-input input-input" autocomplete="nein" value="{{{value}}}" placeholder="{{{name}}} *">
   {{/text}}
+
+  {{#phone}}
+  <input type="text" name="{{formname}}" placeholder="{{{name}}} *" data-phone-verify="{{formname}}" class="js-tpphone {{#uses_phone_verify}}js-verify-phone{{/uses_phone_verify}} span12 b-input input-input" value="{{{value}}}">
+  {{/phone}}
+
+  <label class="b-unit__text b-registration__question">
+  {{{name}}} {{#mandatory}}*{{/mandatory}}
+  </label>
 
   {{#bigtext}}
   <div class="b-input-block i-question-control">
@@ -405,13 +410,6 @@ const EventReg = props => {
   data-crop="disabled" />
   </div>
   {{/upload}}
-
-
-  {{#phone}}
-  <div class="b-input-block i-question-control">
-  <input type="text" name="{{formname}}" placeholder="{{{name}}} *" data-phone-verify="{{formname}}" class="js-tpphone {{#uses_phone_verify}}js-verify-phone{{/uses_phone_verify}} span12 b-input" value="{{{value}}}">
-  </div>
-  {{/phone}}
 
   {{#description}}<span class="help-block b-registration__question_comment">{{{description}}}</span>{{/description}}
   </div>
