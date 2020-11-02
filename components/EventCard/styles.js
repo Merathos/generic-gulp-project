@@ -165,12 +165,13 @@ export const Pic = styled.img`
 export const NameWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 240px;
+  max-width: 177px;
   padding-top: 11px;
   font-size: 18px;
   line-height: 23.58px;
 
   @media (max-width: 910px) {
+    max-width: 70%;
     padding-top: 5px;
     font-size: 14px;
     line-height: 18.34px;
