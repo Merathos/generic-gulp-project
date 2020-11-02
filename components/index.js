@@ -70,3 +70,5 @@ export { default as VacanciesList } from './VacanciesList';
 export { default as RunningText } from './RunningText';
 export { default as ArticleContent } from './ArticleContent';
 export { default as TeamsHeader } from './TeamsHeader';
+export { default as Userpic } from './Userpic';
+export { default as Video } from './Video';
