@@ -127,10 +127,9 @@ export const PrevButton = styled.button`
       svg {
         transition: fill 0.3s ease;
         fill: #53b443;
-      }
 
-      &:hover {
-        svg {
+        &:hover,
+        &:active {
           fill: #339722;
         }
       }
@@ -169,13 +168,13 @@ export const NextButton = styled.button`
       svg {
         transition: fill 0.3s ease;
         fill: #53b443;
-      }
 
-      &:hover {
-        svg {
+        &:hover,
+        &:active {
           fill: #339722;
         }
       }
+
       @media screen and (max-width: 960px) {
         display: none;
       }

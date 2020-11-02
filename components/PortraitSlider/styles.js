@@ -64,11 +64,14 @@ export const QuoteBlock = styled.div`
     padding: 20px 25px 25px 20px;
   }
 
+  @media screen and (max-width: 720px) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   @media screen and (max-width: 420px) {
     position: relative;
     margin-top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 2;
   }
 `;
@@ -114,10 +117,9 @@ export const PrevButtonMain = styled.button`
   svg {
     transition: fill 0.3s ease;
     fill: #53b443;
-  }
 
-  &:hover {
-    svg {
+    &:hover,
+    &:active {
       fill: #339722;
     }
   }
@@ -125,28 +127,26 @@ export const PrevButtonMain = styled.button`
   .inactive-slide & {
     display: none;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 960px) {
       display: block;
     }
   }
 
-  @media screen and (max-width: 864px) {
-    top: 10px;
-  }
-
-  @media screen and (max-width: 640px) {
-    top: 30px;
-  }
-
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 960px) {
+    top: 0;
+    right: 10%;
+    padding-top: 0;
+    height: 16px;
     border: none;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 860px) {
+    right: 20%;
+  }
+
+  @media screen and (max-width: 720px) {
     top: 4px;
     right: 52px;
-    padding-top: 0;
-    height: 16px;
   }
 `;
 
@@ -165,10 +165,9 @@ export const NextButtonMain = styled.button`
   svg {
     transition: fill 0.3s ease;
     fill: #53b443;
-  }
 
-  &:hover {
-    svg {
+    &:hover,
+    &:active {
       fill: #339722;
     }
   }
@@ -176,28 +175,26 @@ export const NextButtonMain = styled.button`
   .inactive-slide & {
     display: none;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 960px) {
       display: block;
     }
   }
 
-  @media screen and (max-width: 864px) {
-    top: 10px;
-  }
-
-  @media screen and (max-width: 640px) {
-    top: 30px;
-  }
-
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 960px) {
+    top: 0;
+    right: 2%;
+    padding-top: 0;
+    height: 16px;
     border: none;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 860px) {
+    right: 12%;
+  }
+
+  @media screen and (max-width: 720px) {
     top: 4px;
     right: 8px;
-    padding-top: 0;
-    height: 16px;
   }
 `;
 
@@ -212,7 +209,8 @@ export const PrevButton = styled.button`
     fill: #ffffff;
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     opacity: 1;
   }
 
@@ -226,15 +224,6 @@ export const PrevButton = styled.button`
   }
 
   @media screen and (max-width: 960px) {
-    left: 300px;
-  }
-
-  @media screen and (max-width: 864px) {
-    left: 260px;
-    bottom: 55px;
-  }
-
-  @media screen and (max-width: 420px) {
     display: none;
   }
 `;
@@ -250,7 +239,8 @@ export const NextButton = styled.button`
     fill: #ffffff;
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     opacity: 1;
   }
 
@@ -264,15 +254,6 @@ export const NextButton = styled.button`
   }
 
   @media screen and (max-width: 960px) {
-    left: 340px;
-  }
-
-  @media screen and (max-width: 864px) {
-    left: 300px;
-    bottom: 55px;
-  }
-
-  @media screen and (max-width: 420px) {
     display: none;
   }
 `;

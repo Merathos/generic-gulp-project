@@ -4,8 +4,8 @@ export const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 614px;
-  height: 391px;
+  min-width: 614px;
+  min-height: 391px;
   margin-top: 20px;
   background-color: #f7f8f9;
   padding: 40px 40px 0;
@@ -25,8 +25,8 @@ export const Container = styled.section`
     `};
 
   @media screen and (max-width: 1360px) {
-    height: auto;
-    width: auto;
+    min-height: auto;
+    min-width: auto;
   }
 
   @media screen and (max-width: 960px) {
