@@ -38,6 +38,10 @@ export const Field = styled.input`
       padding-top: 5px;
       padding-bottom: 25px;
       background-color: transparent;
+      
+      @media screen and (max-width: 1024px) {
+        padding-top: 10px;
+        padding-bottom: 15px;
     `};
 
   &:hover,
@@ -62,8 +66,7 @@ export const Field = styled.input`
     ${props =>
       props.isMain &&
       css`
-        padding-bottom: 15px;
-        padding-top: 10px;
+        padding-bottom: 10px;
       `};
   }
 `;
@@ -71,6 +74,7 @@ export const Field = styled.input`
 export const Submit = styled.button`
   width: 45px;
   height: 45px;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
