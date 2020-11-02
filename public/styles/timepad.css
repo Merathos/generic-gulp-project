@@ -625,7 +625,7 @@
 .row-text input[type='text']:focus + label,
 .row-phone input[type='text']:not(:placeholder-shown) + label,
 .row-phone input[type='text']:focus + label {
-  transform: translate(-3px, -2.125rem) scale(0.9);
+  transform: translate(-3px, -1.8rem) scale(0.9);
   color: rgba(32, 31, 42, 0.5);
 }
 
@@ -654,6 +654,13 @@
   color: rgba(32, 31, 42, 0.5);
 }
 
+.text-error {
+  font-size: 18px !important;
+  line-height: 24px !important;
+  position: relative;
+  top: -30px;
+}
+
 @media (max-width: 768px) {
   .row-text .b-registration__question,
   .row-phone .b-registration__question {
@@ -662,10 +669,9 @@
     line-height: 16px !important;
   }
 
-  .row-text input[type='text']:not(:placeholder-shown) + label,
-  .row-text input[type='text']:focus + label,
-  .row-phone input[type='text']:not(:placeholder-shown) + label,
-  .row-phone input[type='text']:focus + label {
-    transform: translate(-3px, -1.75rem) scale(0.9);
+  .text-error {
+    font-size: 10px !important;
+    line-height: 16px !important;
+    top: -15px;
   }
 }
