@@ -20,7 +20,9 @@ const Quote = props => {
             </div>
           </Container>
         )}
-        {description && <Description>{description}</Description>}
+        {description && (
+          <Description dangerouslySetInnerHTML={{ __html: description }} />
+        )}
       </Block>
     </Section>
   );

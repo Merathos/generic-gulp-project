@@ -8,6 +8,15 @@ export const Block = styled.div`
 
   &:nth-child(even) {
     align-items: flex-end;
+
+    & > div {
+      flex-direction: row-reverse;
+    }
+
+    img {
+      margin-right: 0;
+      margin-left: 14px;
+    }
   }
 `;
 

@@ -39,7 +39,12 @@ const StyledSlider = styled(Slider)`
 `;
 
 const Wrapper = styled.aside`
-  float: right;
+  position: absolute;
+  right: 0;
+
+  @media screen and (max-width: 420px) {
+    position: static;
+  }
 `;
 
 const renderContent = props => {
