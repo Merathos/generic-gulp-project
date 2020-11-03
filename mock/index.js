@@ -2064,6 +2064,7 @@ export default {
         video: {
           src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
           srcPoster: `images/event-details1.jpg`,
+          stretched: true,
         },
       },
       timepad: {
@@ -2175,6 +2176,7 @@ export default {
         video: {
           src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
           srcPoster: `images/event-details1.jpg`,
+          stretched: true,
         },
       },
       timepad: {

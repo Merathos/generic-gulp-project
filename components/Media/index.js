@@ -3,11 +3,20 @@ import ReactPlayer from 'react-player';
 
 const Media = props => {
   const {
-    data: { subtitle, src, srcPoster, stream = false, caption, file, stretched },
+    data: {
+      subtitle,
+      src,
+      srcPoster,
+      stream = false,
+      caption,
+      file,
+      stretched,
+    },
     type,
     decoration,
     hasCircle,
   } = props;
+
   return (
     <Section
       decoration={decoration}
@@ -32,7 +41,9 @@ const Media = props => {
                 },
               },
             }}
-            light={'https://api.develop.dins.d.nimax.ru//storage/images/zpQbYFjH42sG4nMjqID7ASCCbg9OGSV4IfiRIdzQ.jpeg'}
+            light={
+              'https://api.develop.dins.d.nimax.ru//storage/images/zpQbYFjH42sG4nMjqID7ASCCbg9OGSV4IfiRIdzQ.jpeg'
+            }
             className="react-player"
             width="100%"
             height="100%"
