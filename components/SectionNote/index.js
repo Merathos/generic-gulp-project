@@ -35,7 +35,7 @@ const SectionNote = ({ data }) => {
   return (
     <Section>
       <Icon name="26" />
-      <Text>{data}</Text>
+      <Text dangerouslySetInnerHTML={{ __html: data }} />
     </Section>
   );
 };

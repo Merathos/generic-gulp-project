@@ -26,7 +26,7 @@ export const Description = styled.p`
 `;
 
 export const Section = styled.section`
-  margin-bottom: 22px;
+  margin-bottom: 100px;
   max-width: 854px;
   padding-top: ${props => (props.padding === 'h3' ? '30px' : '0')};
 
