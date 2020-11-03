@@ -210,6 +210,8 @@ export const PrevButton = styled.button`
   position: absolute;
   bottom: 85px;
   right: 130px;
+  width: 19px;
+  height: 19px;
   opacity: 0.5;
   transition: all 0.3s ease;
 
@@ -240,6 +242,8 @@ export const NextButton = styled.button`
   position: absolute;
   bottom: 85px;
   right: 90px;
+  width: 19px;
+  height: 19px;
   opacity: 0.5;
   transition: all 0.3s ease;
 

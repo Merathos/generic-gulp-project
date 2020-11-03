@@ -32,6 +32,7 @@ export const TextBlock = styled.div`
   width: 65%;
   padding-top: 54px;
   margin-right: -15%;
+  z-index: 2;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
