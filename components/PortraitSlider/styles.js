@@ -145,7 +145,7 @@ export const PrevButtonMain = styled.button`
   }
 
   @media screen and (max-width: 800px) {
-    right: 28%;
+    right: 30%;
   }
 
   @media screen and (max-width: 720px) {
