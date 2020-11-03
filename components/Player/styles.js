@@ -37,7 +37,7 @@ export const Button = styled.button`
       css`
         width: 37px;
         height: 37px;
-        padding: ${props => (props.isSpeaker ? '11px 11px 11px 13px' : '11px')};
+        padding: ${props => (props.isSpeaker ? '9px 11px 11px 13px' : '11px')};
         margin-right: 8px;
       `}
   }
