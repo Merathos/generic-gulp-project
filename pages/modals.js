@@ -2,7 +2,7 @@ import mock from 'mock/index';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { FormModal, SuccessModal } from 'containers';
-import { JobForm, InternForm } from 'components';
+import { JobForm, InternForm, MailingForm } from 'components';
 
 export const Container = styled.div`
   width: 100%;
@@ -23,10 +23,20 @@ const ModalsPreview = () => {
   const [successIsShown, setSuccessIsShown] = useState(false);
 
   const [jobIsShown, setjobIsShown] = useState(false);
+  const [jobv2IsShown, setjobv2IsShown] = useState(false);
   const [interntIsShown, setInterntIsShown] = useState(false);
+  const [mailingIsShown, setMailingIsShown] = useState(false);
 
   function toggleJobModal() {
     setjobIsShown(prev => !prev);
+  }
+
+  function toggleJobv2Modal() {
+    setjobv2IsShown(prev => !prev);
+  }
+
+  function toggleMailingModal() {
+    setMailingIsShown(prev => !prev);
   }
 
   function toggleInternModal() {
@@ -42,6 +52,8 @@ const ModalsPreview = () => {
       <Container>
         <a onClick={toggleJobModal}>Application for a job</a>
         <a onClick={toggleInternModal}>Application for an interntship</a>
+        <a onClick={toggleJobv2Modal}>Application without a specific job</a>
+        <a onClick={toggleMailingModal}>Application for mailing</a>
       </Container>
       <FormModal modalIsOpen={jobIsShown} closeModal={toggleJobModal}>
         <JobForm
@@ -54,6 +66,21 @@ const ModalsPreview = () => {
         <InternForm
           data={mock.internForm}
           closeModal={toggleInternModal}
+          showSuccess={toggleSuccess}
+        />
+      </FormModal>
+      <FormModal modalIsOpen={jobv2IsShown} closeModal={toggleJobv2Modal}>
+        <JobForm
+          data={mock.jobFormV2}
+          closeModal={toggleJobv2Modal}
+          showSuccess={toggleSuccess}
+          noVacancy={true}
+        />
+      </FormModal>
+      <FormModal modalIsOpen={mailingIsShown} closeModal={toggleMailingModal}>
+        <MailingForm
+          data={mock.mailingForm}
+          closeModal={toggleMailingModal}
           showSuccess={toggleSuccess}
         />
       </FormModal>

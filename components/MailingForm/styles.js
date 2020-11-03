@@ -30,23 +30,6 @@ export const Form = styled.form`
   }
 `;
 
-export const Fade = styled.div`
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
-  z-index: 10;
-
-  ${props =>
-    props.isOpen &&
-    css`
-      display: block;
-    `};
-`;
-
 export const TitleWrap = styled.div`
   margin-left: 140px;
   max-width: 880px;
@@ -59,32 +42,15 @@ export const TitleWrap = styled.div`
 `;
 
 export const MainTitle = styled(TitleH2)`
-  max-width: 550px;
+  max-width: 900px;
   margin-bottom: 21px;
 
   @media (max-width: 768px) {
     max-width: 330px;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
     font-size: 32px;
     line-height: 42.88px;
     letter-spacing: 0.01em;
-  }
-
-  ${props =>
-    props.noVacancy &&
-    css`
-      max-width: 730px;
-    `}
-`;
-
-export const Subtitle = styled.p`
-  font-size: 22px;
-  line-height: 31px;
-  max-width: 550px;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-    line-height: 25px;
   }
 `;
 
@@ -97,7 +63,7 @@ export const FormSection = styled.fieldset`
 `;
 
 export const SubmitSection = styled(FormSection)`
-  margin-top: 100px;
+  margin-top: 90px;
 
   @media (max-width: 768px) {
     margin-top: 80px;
@@ -126,34 +92,6 @@ export const InputsContainer = styled.div`
 
   @media (max-width: 1199px) {
     flex-direction: column;
-  }
-`;
-
-export const SelectContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-
-  @media (max-width: 1199px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  @media (max-width: 768px) {
-    margin-top: 10px;
-  }
-`;
-
-export const FileWrapper = styled.div`
-  margin-top: 30px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-
-  @media (max-width: 768px) {
-    margin-top: 40px;
   }
 `;
 

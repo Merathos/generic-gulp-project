@@ -2406,4 +2406,105 @@ export default {
       btnText: 'Хорошо',
     },
   },
+  jobFormV2: {
+    mainTitle: `хочу работать в DINS`,
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `phone`,
+          type: `number`,
+          label: `Телефон *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+      select: {
+        placeholder: `Предпочтительный способ связи`,
+        options: [
+          { value: 'phone', label: 'Телефон' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' },
+          { value: 'telegram', label: 'Telegram' },
+        ],
+      },
+    },
+    cv: {
+      title: `Прикрепи резюме или ссылку`,
+      fileInput: {
+        id: 51456,
+        name: `cvFile`,
+        label: 'Прикрепить резюме',
+        fileExt: `doc, docx, pdf, rtf, TXT`,
+      },
+      textInput: {
+        name: `cvLink`,
+        label: `Ссылка на резюме`,
+      },
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Отправить заявку',
+    confirmation: {
+      title: 'Спасибо!',
+      text:
+        'Мы изучим твою заявку и свяжемся, если появится подходящая позиция.',
+      btnText: 'Хорошо',
+    },
+  },
+  mailingForm: {
+    mainTitle: `Подпишись на нашу рассылку и узнавай о\u00A0вакансиях первым`,
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Подписаться',
+    confirmation: {
+      title: 'Спасибо!',
+      text: 'Теперь ты будешь получать рассылку DINS.',
+      btnText: 'Хорошо',
+    },
+  },
 };
