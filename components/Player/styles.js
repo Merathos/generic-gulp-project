@@ -3,6 +3,7 @@ import { Subtitle } from 'elements';
 
 export const Block = styled.div`
   display: flex;
+  align-items: flex-start;
 `;
 
 export const Wrapper = styled.div`
@@ -61,7 +62,7 @@ export const Label = styled.span`
   font-size: 18px;
   line-height: 32px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 720px) {
     ${props =>
       props.withDynamic &&
       css`
@@ -80,7 +81,7 @@ export const Bar = styled.div`
 export const Span = styled(Subtitle)`
   margin-top: auto;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 720px) {
     ${props =>
       props.withDynamic &&
       css`
