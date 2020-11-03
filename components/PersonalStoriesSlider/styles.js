@@ -171,6 +171,8 @@ export const ImageWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
+    display: flex;
+    align-items: flex-end;
     height: 55%;
   }
 `;
