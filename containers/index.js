@@ -30,3 +30,4 @@ export { default as EventReg } from './event-reg';
 export { default as EventStream } from './event-stream';
 export { default as Teams } from './teams';
 export { default as Vacancies } from './vacancies';
+export { default as OpenedMenu } from './opened-menu';

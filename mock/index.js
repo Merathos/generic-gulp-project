@@ -13,6 +13,29 @@ export default {
       href: `teams`,
     },
   ],
+  headerMenu: {
+    menuList: [
+      { title: 'О компании' },
+      { title: 'IT Evenings' },
+      { title: 'Команды' },
+      { title: 'Блог' },
+      { title: 'Вакансии', isSpecial: true },
+      { title: 'Релокация' },
+      { title: 'Стажировки' },
+      { title: 'Контакты' },
+    ],
+    contacts: ['phoneNumber', 'email'],
+    contact: {
+      phoneNumber: {
+        title: 'Телефон для связи',
+        value: '+7(812)740-77-61',
+      },
+      email: {
+        title: 'E-mail',
+        value: 'jobs@dins.ru',
+      },
+    },
+  },
   catalog: {
     mainTitle: `Вакансии`,
     filter: {
@@ -1237,6 +1260,7 @@ export default {
       text: `Оценка условий труда`,
     },
     nimaxText: 'Сделали в',
+    producersText: 'Дизайн и разработка',
   },
   main: {
     intro: {
