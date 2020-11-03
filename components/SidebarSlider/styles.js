@@ -61,6 +61,6 @@ export const Element = styled.div`
   @media screen and (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
-    min-width: 315px;
+    min-width: 300px;
   }
 `;

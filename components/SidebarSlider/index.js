@@ -8,6 +8,7 @@ const SidebarSlider = props => {
   const ref = useRef(null);
 
   const params = {
+    slidesPerView: 1,
     loop: true,
   };
 

@@ -3,11 +3,11 @@ import { Text } from 'elements';
 
 export const Section = styled.section`
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   max-width: 850px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 `;
 

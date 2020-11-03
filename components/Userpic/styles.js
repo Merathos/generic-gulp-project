@@ -9,7 +9,7 @@ export const Block = styled.div`
 
   @media screen and (max-width: 420px) {
     font-size: 22px;
-    padding: 30px 0 45px 40px;
+    padding: 30px 0 45px 50px;
     line-height: 120%;
   }
 `;

@@ -69,6 +69,10 @@ export const BlueText = styled.p`
 
 export const H3 = styled(TitleH3)`
   margin-bottom: 30px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 10px;
+  }
 `; 
 
 export const Element = styled.li`
@@ -91,5 +95,6 @@ export const NormalText = styled.p`
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 158%;
+    margin-bottom: 30px;
   }
 `;

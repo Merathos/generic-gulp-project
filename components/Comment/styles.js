@@ -29,6 +29,7 @@ export const Card = styled.div`
   @media screen and (max-width: 420px) {
     min-width: 100%;
     box-sizing: border-box;
+    width: 100%;
   }
 `;
 
