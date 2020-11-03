@@ -326,6 +326,7 @@ const EventReg = props => {
 
   <div class="control-group b-reg-row input-wrapper {{#meta.dadata}}js-dadata{{/meta.dadata}}" data-formname="{{formname}}" data-tag="{{{tag}}}" data-type="{{{type}}}">
 
+  <div class="b-input-block i-question-control">
   {{#text}}
   <input type="text" name="{{formname}}" class="span12 b-input input-input" autocomplete="nein" value="{{{value}}}" placeholder="{{{name}}} *">
   {{/text}}
@@ -337,6 +338,7 @@ const EventReg = props => {
   <label class="b-unit__text b-registration__question">
   {{{name}}} {{#mandatory}}*{{/mandatory}}
   </label>
+  </div>
 
   {{#bigtext}}
   <div class="b-input-block i-question-control">
