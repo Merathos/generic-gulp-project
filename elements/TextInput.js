@@ -73,7 +73,7 @@ const Wrapper = styled.div`
   }
 
   input:placeholder-shown + label {
-    max-width: 66.66%;
+    max-width: 76.66%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

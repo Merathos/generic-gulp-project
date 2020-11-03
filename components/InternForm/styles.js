@@ -59,26 +59,15 @@ export const TitleWrap = styled.div`
 `;
 
 export const MainTitle = styled(TitleH2)`
-  max-width: 550px;
+  max-width: 880px;
   margin-bottom: 21px;
 
   @media (max-width: 768px) {
     max-width: 330px;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
     font-size: 32px;
     line-height: 42.88px;
     letter-spacing: 0.01em;
-  }
-`;
-
-export const Subtitle = styled.p`
-  font-size: 22px;
-  line-height: 31px;
-  max-width: 550px;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-    line-height: 25px;
   }
 `;
 
@@ -117,6 +106,7 @@ export const InputsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: flex-start;
 
   @media (max-width: 1199px) {
     flex-direction: column;
@@ -128,6 +118,8 @@ export const SelectContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+  max-width: 410px;
+  flex-direction: column;
 
   @media (max-width: 1199px) {
     flex-direction: column;
@@ -137,6 +129,95 @@ export const SelectContainer = styled.div`
   @media (max-width: 768px) {
     margin-top: 10px;
   }
+`;
+
+export const CheckboxContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 0px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+`;
+
+export const Question = styled.p`
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 38px;
+    margin-bottom: 30px;
+    letter-spacing: -0.029em;
+  }
+`;
+
+export const CheckBox = styled(EventsCheckbox)`
+  margin-right: 27px;
+  margin-bottom: 27px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  label {
+    @media (max-width: 910px) {
+      font-size: 20px;
+      line-height: 26.8px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 22.12px;
+    }
+  }
+
+  input:checked ~ label {
+    color: #201f2b;
+  }
+`;
+
+export const TechContainer = styled(InputsContainer)`
+  margin-top: 32px;
+`;
+
+export const MonthContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 410px;
+
+  @media (max-width: 1199px) {
+    margin-bottom: 50px;
+  }
+`;
+
+export const TimeContainer = styled(MonthContainer)`
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const TermsQuestion = styled.p`
+  max-width: 390px;
+  font-size: 20px;
+  line-height: 26px;
+
+  @media (max-width: 768px) {
+    max-width: 290px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.029em;
+  }
+`;
+
+export const RadioContainer = styled.div`
+  margin-top: 40px;
+  display: flex;
+  flex-flow: row wrap;
 `;
 
 export const FileWrapper = styled.div`

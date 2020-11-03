@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
   margin-bottom: 10px;
   z-index: 15;
 
+  @media (max-width: 768px) {
+    min-height: 58px;
+  }
+
   .react-select-container {
     width: 100%;
   }
@@ -20,6 +24,10 @@ export const Wrapper = styled.div`
     border-bottom: 1px solid rgba(32, 31, 42, 0.5);
     border-radius: 0;
     padding-bottom: 8px;
+
+    @media (max-width: 768px) {
+      padding-bottom: 2px;
+    }
 
     &:hover {
       border-color: #5faf52;
@@ -48,6 +56,10 @@ export const Wrapper = styled.div`
   .react-select__value-container {
     padding-left: 0;
     font-size: 18px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   .react-select__placeholder {
@@ -61,12 +73,20 @@ export const Wrapper = styled.div`
     font-size: 20px;
     line-height: 31px;
     top: 70%;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   .react-select__input {
     position: relative;
     top: 9px;
     font-size: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
 
     input {
       font: inherit;

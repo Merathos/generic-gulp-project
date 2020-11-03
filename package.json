@@ -27,6 +27,7 @@
     "next": "^9.5.3",
     "next-with-apollo": "^5.1.0",
     "react": "^16.11.0",
+    "react-autosize-textarea": "^7.1.0",
     "react-dom": "^16.11.0",
     "react-google-recaptcha": "^2.1.0",
     "react-id-swiper": "^4.0.0",

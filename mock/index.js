@@ -2264,4 +2264,146 @@ export default {
       btnText: 'Хорошо',
     },
   },
+  internForm: {
+    mainTitle: 'Заявка на\u00A0стажировку',
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `birthDate`,
+          label: `Дата рождения *`,
+          required: true,
+        },
+        {
+          name: `phone`,
+          type: `number`,
+          label: `Телефон *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+      select: {
+        placeholder: `Предпочтительный способ связи`,
+        options: [
+          { value: 'phone', label: 'Телефон' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' },
+          { value: 'telegram', label: 'Telegram' },
+        ],
+      },
+    },
+    education: {
+      title: `Образование`,
+      inputs: [
+        {
+          name: `university`,
+          label: `ВУЗ *`,
+          required: true,
+        },
+        {
+          name: `faculty`,
+          label: `Факультет / направление обучения *`,
+          required: true,
+        },
+        {
+          name: `course`,
+          label: `Курс*`,
+          required: true,
+        },
+      ],
+    },
+    terms: {
+      title: `Условия стажировки`,
+      direction: {
+        question: `Какие направления в IT тебе интересны? *`,
+        inputs: [`Development`, `Big Data`, `QA `, `QA Automation`, `DevOps`],
+      },
+      tech: [
+        {
+          label: `С какими технологиями тебе хотелось бы работать? *`,
+          placeholder: `Введите технологии`,
+          name: `techWish`,
+        },
+        {
+          label: `Какие технологии приходилось использовать на практике или изучать? * `,
+          placeholder: `Введите технологии`,
+          name: `techExp`,
+        },
+      ],
+      startingMonth: {
+        question: `С какого месяца сможешь начать проходить стажировку? *`,
+        placeholder: `Месяц`,
+        options: [
+          { value: 'january', label: 'Январь' },
+          { value: 'february', label: 'Февраль' },
+          { value: 'march', label: 'Март' },
+          { value: 'april', label: 'Апрель' },
+          { value: 'may', label: 'Май' },
+          { value: 'june', label: 'Июнь' },
+          { value: 'july', label: 'Июль' },
+          { value: 'august', label: 'Август' },
+          { value: 'september', label: 'Сентябрь' },
+          { value: 'october', label: 'Октябрь' },
+          { value: 'nobember', label: 'Ноябрь' },
+          { value: 'december', label: 'Декабрь' },
+        ],
+      },
+      time: {
+        question: `Сколько часов в неделю ты готов стажироваться? *`,
+        inputs: [
+          {
+            name: `time`,
+            value: `30`,
+            label: `30 часов`,
+          },
+          {
+            name: `time`,
+            value: `40`,
+            label: `40 часов`,
+          },
+        ],
+      },
+    },
+    cv: {
+      title: `Прикрепи резюме или ссылку`,
+      fileInput: {
+        id: 51456,
+        name: `cvFile`,
+        label: 'Прикрепить резюме',
+        fileExt: `doc, docx, pdf, rtf, TXT`,
+      },
+      textInput: {
+        name: `cvLink`,
+        label: `Ссылка на резюме`,
+      },
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Отправить заявку',
+    confirmation: {
+      title: 'Спасибо!',
+      text:
+        'Мы изучим твою заявку и свяжемся по указанным контактам, если появится подходящая позиция.',
+      btnText: 'Хорошо',
+    },
+  },
 };

@@ -28,6 +28,12 @@ const Label = styled.label`
     margin-right: 20px;
     width: 57px;
     height: 57px;
+
+    @media (max-width: 768px) {
+      margin-right: 14px;
+      width: 40px;
+      height: 40px;
+    }
   }
 
   span {
@@ -37,6 +43,13 @@ const Label = styled.label`
     line-height: 27px;
     font-weight: 700;
     color: #53b443;
+    transition: all 0.2s ease-in;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2px;
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 `;
 
@@ -45,6 +58,10 @@ const Container = styled.div`
   flex-direction: column;
   max-width: 200px;
   padding-top: 5px;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 const FileExt = styled.p`
@@ -52,6 +69,11 @@ const FileExt = styled.p`
   line-height: 19px;
   opacity: 0.5;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
 `;
 
 const FileInput = ({ id, name, label, fileExt }) => {
