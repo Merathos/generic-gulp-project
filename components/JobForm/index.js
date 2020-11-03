@@ -69,6 +69,38 @@ const JobForm = ({
             <TextInput name={cv.textInput.name} label={cv.textInput.label} cv />
           </S.FileWrapper>
         </S.FormSection>
+        <S.SubmitSection>
+          <S.AgreemenCheckbox
+            name={agreement.dataText}
+            checked={checkedEls[agreement.dataText]}
+            onChange={handleCheckbox}
+            color={'#53B443'}
+          >
+            <S.Link href={agreement.dataHref} target="_blank">
+              {agreement.dataLink}
+            </S.Link>
+          </S.AgreemenCheckbox>
+          <S.AgreemenCheckbox
+            name={agreement.mailing}
+            checked={checkedEls[agreement.mailing]}
+            onChange={handleCheckbox}
+            color={'#53B443'}
+          />
+          <S.BottomWrap>
+            <ReCAPTCHA sitekey="Your client site key" onChange={() => {}} />
+            <S.StyledButton
+              type="submit"
+              accent={true}
+              onClick={e => {
+                e.preventDefault();
+                closeModal();
+                showSuccess();
+              }}
+            >
+              {buttonText}
+            </S.StyledButton>
+          </S.BottomWrap>
+        </S.SubmitSection>
       </S.Form>
     </S.Container>
   );

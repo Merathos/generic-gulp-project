@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
-import { TitleH2 } from 'elements';
+import { TitleH2, Btn } from 'elements';
 import { EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
   background-image: url('backgrounds/mailing-form.svg');
-  background-position: right top 380px;
+  background-position: right top 540px;
   background-repeat: no-repeat;
   background-color: #ffffff;
   padding-top: 37px;
@@ -19,8 +19,6 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   position: relative;
-  padding-bottom: 300px;
-
   margin-top: 110px;
   margin-left: 140px;
   box-sizing: border-box;
@@ -64,7 +62,7 @@ export const MainTitle = styled(TitleH2)`
 
   @media (max-width: 768px) {
     max-width: 330px;
-    margin-bottom: 60px;
+    margin-bottom: 15px;
     font-size: 32px;
     line-height: 42.88px;
     letter-spacing: 0.01em;
@@ -75,6 +73,11 @@ export const Subtitle = styled.p`
   font-size: 22px;
   line-height: 31px;
   max-width: 550px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 25px;
+  }
 `;
 
 export const FormSection = styled.fieldset`
@@ -83,6 +86,10 @@ export const FormSection = styled.fieldset`
   @media (max-width: 768px) {
     margin-bottom: 60px;
   }
+`;
+
+export const SubmitSection = styled(FormSection)`
+  margin-top: 100px;
 `;
 
 export const SectionTitle = styled.h3`
@@ -115,6 +122,11 @@ export const SelectContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const FileWrapper = styled.div`
@@ -123,4 +135,65 @@ export const FileWrapper = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-end;
+`;
+
+export const AgreemenCheckbox = styled(EventsCheckbox)`
+  margin-bottom: 20px;
+
+  label {
+    font-size: 18px;
+    line-height: 21.6px;
+
+    @media (max-width: 910px) {
+      font-size: 20px;
+      line-height: 26.8px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 22.12px;
+    }
+  }
+
+  input:checked ~ label {
+    color: #201f2b;
+  }
+`;
+
+export const Link = styled.a`
+  display: inline;
+  color: #53b443;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    color: #339722;
+  }
+`;
+
+export const BottomWrap = styled.div`
+  display: flex;
+  margin-top: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const StyledButton = styled(Btn)`
+  margin-left: 30px;
+  margin-bottom: 4px;
+  align-self: flex-end;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 18px;
+    align-self: flex-start;
+  }
+
+  &:hover,
+  &:active {
+    background-color: #ec381a;
+    color: #ffffff;
+  }
 `;
