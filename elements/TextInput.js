@@ -201,10 +201,20 @@ const TextInput = ({
   className,
   required = true,
   cv,
+  correct,
+  warning,
+  error,
+  errorMsg,
 }) => {
   return (
-    <Wrapper className={className} cv={cv}>
-      <p>Фамилия не может содержать цифры</p>
+    <Wrapper
+      className={className}
+      cv={cv}
+      correct={correct}
+      warning={warning}
+      error={error}
+    >
+      {errorMsg && <p>{errorMsg}</p>}
       <input
         type={type}
         placeholder=" "
