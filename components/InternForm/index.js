@@ -47,6 +47,7 @@ const InternForm = ({
                 name={el.name}
                 label={el.label}
                 type={el.type}
+                date={el.date}
               />
             ))}
             <S.SelectContainer>

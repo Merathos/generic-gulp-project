@@ -59,7 +59,7 @@ export const TitleWrap = styled.div`
 `;
 
 export const MainTitle = styled(TitleH2)`
-  max-width: 550px;
+  max-width: 730px;
   margin-bottom: 21px;
 
   @media (max-width: 768px) {
@@ -69,12 +69,6 @@ export const MainTitle = styled(TitleH2)`
     line-height: 42.88px;
     letter-spacing: 0.01em;
   }
-
-  ${props =>
-    props.noVacancy &&
-    css`
-      max-width: 730px;
-    `}
 `;
 
 export const Subtitle = styled.p`

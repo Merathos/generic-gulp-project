@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -193,39 +193,3 @@ const Wrapper = styled.div`
       }
     `};
 `;
-
-const TextInput = ({
-  type = 'text',
-  name,
-  label,
-  className,
-  required = true,
-  cv,
-  correct,
-  warning,
-  error,
-  errorMsg,
-}) => {
-  return (
-    <Wrapper
-      className={className}
-      cv={cv}
-      correct={correct}
-      warning={warning}
-      error={error}
-    >
-      {errorMsg && <p>{errorMsg}</p>}
-      <input
-        type={type}
-        placeholder=" "
-        name={name}
-        id={name}
-        autoComplete="off"
-        required={required}
-      />
-      <label htmlFor={name}>{label}</label>
-    </Wrapper>
-  );
-};
-
-export default TextInput;

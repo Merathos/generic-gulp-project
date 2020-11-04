@@ -2200,7 +2200,7 @@ export default {
     },
   },
   jobForm: {
-    mainTitle: `Java developer (Big Data team)`,
+    mainTitle: `Java developer (Big\u00A0Data\u00A0team)`,
     subtitle: `Откликнуться на вакансию`,
     contact: {
       title: `Оставь  контактные данные`,
@@ -2283,6 +2283,7 @@ export default {
           name: `birthDate`,
           label: `Дата рождения *`,
           required: true,
+          date: true,
         },
         {
           name: `phone`,

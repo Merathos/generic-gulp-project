@@ -74,7 +74,6 @@ const ModalsPreview = () => {
           data={mock.jobFormV2}
           closeModal={toggleJobv2Modal}
           showSuccess={toggleSuccess}
-          noVacancy={true}
         />
       </FormModal>
       <FormModal modalIsOpen={mailingIsShown} closeModal={toggleMailingModal}>

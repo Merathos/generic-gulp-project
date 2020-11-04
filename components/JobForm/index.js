@@ -7,7 +7,6 @@ const JobForm = ({
   data: { mainTitle, subtitle, contact, cv, agreement, buttonText },
   closeModal,
   showSuccess,
-  noVacancy,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
   const [selectValue, setSelectValue] = useState('');
@@ -28,7 +27,7 @@ const JobForm = ({
     <S.Container>
       <CloseBtn onClick={closeModal} />
       <S.TitleWrap>
-        <S.MainTitle noVacancy={noVacancy}>{mainTitle}</S.MainTitle>
+        <S.MainTitle>{mainTitle}</S.MainTitle>
         <S.Subtitle>{subtitle}</S.Subtitle>
       </S.TitleWrap>
       <S.Form action="#">
