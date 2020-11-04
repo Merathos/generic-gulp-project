@@ -3,14 +3,14 @@ import { TextInput, CloseBtn } from 'elements';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const SubForm = ({
-  data: { mainTitle, contact, directions, agreement, buttonText },
+const MailingForm = ({
+  data: { mainTitle, contact, agreement, buttonText },
   closeModal,
   showSuccess,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
 
-  const handleChange = event => {
+  const handleCheckbox = event => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
@@ -20,36 +20,28 @@ const SubForm = ({
   return (
     <S.Container>
       <CloseBtn onClick={closeModal} />
-      <S.Form action="#">
+      <S.TitleWrap>
         <S.MainTitle>{mainTitle}</S.MainTitle>
+      </S.TitleWrap>
+      <S.Form action="#">
         <S.FormSection>
           <S.SectionTitle>{contact.title}</S.SectionTitle>
           <S.InputsContainer>
             {contact.inputs.map((el, i) => (
-              <TextInput key={i} name={el.name} label={el.label} />
+              <TextInput
+                key={i}
+                name={el.name}
+                label={el.label}
+                type={el.type}
+              />
             ))}
           </S.InputsContainer>
         </S.FormSection>
-        <S.MultivarSection>
-          <S.SectionTitle>{directions.title}</S.SectionTitle>
-          <S.Question>{directions.question}</S.Question>
-          <S.CheckboxContainer>
-            {directions.inputs.map((item, i) => (
-              <S.CheckBox
-                key={i}
-                name={item}
-                checked={checkedEls[item]}
-                onChange={handleChange}
-                color={'#53B443'}
-              />
-            ))}
-          </S.CheckboxContainer>
-        </S.MultivarSection>
-        <S.FormSection>
+        <S.SubmitSection>
           <S.AgreemenCheckbox
             name={agreement.dataText}
             checked={checkedEls[agreement.dataText]}
-            onChange={handleChange}
+            onChange={handleCheckbox}
             color={'#53B443'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
@@ -59,13 +51,14 @@ const SubForm = ({
           <S.AgreemenCheckbox
             name={agreement.mailing}
             checked={checkedEls[agreement.mailing]}
-            onChange={handleChange}
+            onChange={handleCheckbox}
             color={'#53B443'}
           />
           <S.BottomWrap>
             <ReCAPTCHA sitekey="Your client site key" onChange={() => {}} />
             <S.StyledButton
               type="submit"
+              accent={true}
               onClick={e => {
                 e.preventDefault();
                 closeModal();
@@ -75,10 +68,10 @@ const SubForm = ({
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>
-        </S.FormSection>
+        </S.SubmitSection>
       </S.Form>
     </S.Container>
   );
 };
 
-export default SubForm;
+export default MailingForm;

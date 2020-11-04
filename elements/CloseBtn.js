@@ -8,6 +8,7 @@ const Styled = styled.button`
 
   svg {
     opacity: 0.3;
+    transition: all 0.2s ease-in;
   }
 
   &:hover {

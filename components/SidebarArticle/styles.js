@@ -14,14 +14,15 @@ export const H5 = styled(TitleH5)`
 `;
 
 export const Section = styled.div`
-  margin-bottom: 930px;
+  max-width: 250px;
 
-  @media screen and (max-width: 420px) {
+  /* @media screen and (max-width: 420px) {
     margin-bottom: 50px;
-  }
+  } */
 `;
 
 export const SectionIcon = styled.div`
+  max-width: 250px;
   /* @media screen and (max-width: 420px) {
     display: none;
   } */

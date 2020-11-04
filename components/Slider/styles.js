@@ -14,6 +14,7 @@ export const Text = styled(Subtitle)`
 
 export const Element = styled.div`
   margin-bottom: 16px;
+  text-align: center;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 8px;

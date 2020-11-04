@@ -1,7 +1,7 @@
 import { EventsFilter } from 'forms';
 import { FilterButton } from 'elements';
-import { Mailing, EventList } from 'components';
-import { NewsModal, SuccessModal } from 'containers';
+import { Mailing, EventList, SubForm } from 'components';
+import { FormModal, SuccessModal } from 'containers';
 import { useState } from 'react';
 import * as S from './styles';
 
@@ -40,12 +40,13 @@ const Events = ({ data }) => {
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>
-      <NewsModal
-        data={data.newsModal}
-        modalIsOpen={modalIsOpen}
-        closeModal={toggleModal}
-        showSuccess={toggleSuccess}
-      />
+      <FormModal modalIsOpen={modalIsOpen} closeModal={toggleModal}>
+        <SubForm
+          data={data.newsModal}
+          closeModal={toggleModal}
+          showSuccess={toggleSuccess}
+        />
+      </FormModal>
       <SuccessModal
         data={data.newsModal.confirmation}
         successIsShown={successIsShown}

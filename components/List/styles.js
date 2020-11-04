@@ -73,7 +73,10 @@ export const H3 = styled(TitleH3)`
 
 export const Element = styled.li`
   max-width: 364px;
-  margin-right: 100px;
+
+  &:not(:last-child) {
+    margin-right: 100px;
+  }
 
   @media screen and (max-width: 420px) {
     width: 100%;

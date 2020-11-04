@@ -18,3 +18,7 @@ export { default as TextInput } from './TextInput';
 export { default as CloseBtn } from './CloseBtn';
 export { default as SmartText } from './SmartText';
 export { default as Btn } from './Btn';
+export { default as SelectInput } from './SelectInput';
+export { default as FileInput } from './FileInput';
+export { default as SmartTextarea } from './SmartTextarea';
+export { default as RadioBtn } from './RadioBtn';

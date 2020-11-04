@@ -24,13 +24,12 @@ const storyPage = () => {
   if (!blog) return null;
 
   return (
-    <Layout backButton greyFooter>
+    <Layout backButton greyFooter={blog.type === 'history'}>
       {blog.type === 'history' ? (
         <Story back={blog} />
       ) : (
         <Article data={mock.article} back={blog} />
       )}
-      <Story back={blog} />
     </Layout>
   );
 };
