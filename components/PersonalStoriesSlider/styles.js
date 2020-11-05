@@ -82,6 +82,11 @@ export const Link = styled.a`
   font-weight: 700;
   line-height: 120%;
   color: #53b443;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #339722;
+  }
 
   @media screen and (max-width: 720px) {
     margin-top: 0;
@@ -166,6 +171,8 @@ export const ImageWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
+    display: flex;
+    align-items: flex-end;
     height: 55%;
   }
 `;
@@ -210,10 +217,10 @@ export const PrevButton = styled.button`
 
   svg {
     fill: #53b443;
-  }
+    transition: fill 0.3s ease;
 
-  &:hover {
-    svg {
+    &:hover,
+    &:active {
       fill: #339722;
     }
   }
@@ -251,10 +258,10 @@ export const NextButton = styled.button`
 
   svg {
     fill: #53b443;
-  }
+    transition: fill 0.3s ease;
 
-  &:hover {
-    svg {
+    &:hover,
+    &:active {
       fill: #339722;
     }
   }

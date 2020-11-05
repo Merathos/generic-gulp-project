@@ -55,7 +55,7 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
           isSpeaker={iconName === 'speaker'}
           onClick={() => togglePlayer()}
           type="button"
-          aria-label="Control button"
+          aria-label="Player's control button"
           withDynamic={withDynamic}
         >
           <S.Img

@@ -97,7 +97,11 @@ export const Ref = styled.a`
   line-height: 120%;
   font-weight: 700;
   align-self: flex-start;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #339722;
+  }
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 60px;

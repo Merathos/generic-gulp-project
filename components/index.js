@@ -72,6 +72,8 @@ export { default as ArticleContent } from './ArticleContent';
 export { default as TeamsHeader } from './TeamsHeader';
 export { default as Userpic } from './Userpic';
 export { default as Video } from './Video';
+export { default as MenuList } from './MenuList';
+export { default as ContactsList } from './ContactsList';
 export { default as JobForm } from './JobForm';
 export { default as InternForm } from './InternForm';
 export { default as MailingForm } from './MailingForm';

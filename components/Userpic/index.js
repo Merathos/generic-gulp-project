@@ -4,7 +4,7 @@ import { Block, Img } from './styles';
 
 const Userpic = props => {
   const {
-    data: { imageUrl, title },
+    data: { imageUrl, title, describe },
   } = props;
   return (
     <Block>
@@ -14,7 +14,7 @@ const Userpic = props => {
       />
       <div>
         <TitleH5>{title}</TitleH5>
-        <Subtitle>Динс</Subtitle>
+        <Subtitle>{describe}</Subtitle>
       </div>
     </Block>
   );

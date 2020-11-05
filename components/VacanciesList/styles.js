@@ -13,7 +13,7 @@ export const List = styled.ul`
   }
 
   @media screen and (max-width: 420px) {
-    margin-top: 48px;
+    margin-top: 52px;
   }
 `;
 

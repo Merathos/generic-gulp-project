@@ -12,7 +12,14 @@ import {
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 
-const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
+const Slider = ({
+  subtitle,
+  pictures,
+  hasControls,
+  isSmall,
+  fromEditor,
+  className,
+}) => {
   const ref = useRef(null);
 
   const params = {
@@ -49,7 +56,7 @@ const Slider = ({ subtitle, pictures, hasControls, isSmall, fromEditor }) => {
   };
 
   return (
-    <Section hasControls={hasControls}>
+    <Section hasControls={hasControls} className={className}>
       <Swiper ref={ref} {...params}>
         {pictures.map((el, i) => (
           <Element key={i} hasControls={hasControls}>

@@ -1,0 +1,65 @@
+import * as S from './styles';
+import { MenuList, ContactsList, Social } from '../../components';
+import Link from 'next/link';
+import LogoNimax from '../../public/images/logo-nimax.svg';
+import MenuClose from '../../public/icons/menu-close.svg';
+import mock from 'mock/index';
+import { useLayoutEffect } from 'react';
+
+const OpenedMenu = ({ onMenuClose }) => {
+  useLayoutEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleEscPress = evt => {
+      if (evt.keyCode === 27) {
+        onMenuClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscPress);
+
+    return () => {
+      document.body.style.overflow = originalStyle;
+      window.removeEventListener('keydown', handleEscPress);
+    };
+  }, [onMenuClose]);
+
+  return (
+    <S.Wrapper>
+      <S.Container>
+        <S.Button aria-label="Menu" onClick={onMenuClose}>
+          <MenuClose />
+        </S.Button>
+        <S.Menu>
+          <S.StyledLogo />
+          <MenuList data={mock.headerMenu.menuList} />
+          <S.CopyrightMenuBlock>
+            <S.Copyright>{mock.footer.copyright}</S.Copyright>
+            <Link href={mock.footer.labour.link} passHref>
+              <S.Ref>{mock.footer.labour.text}</S.Ref>
+            </Link>
+          </S.CopyrightMenuBlock>
+        </S.Menu>
+        <S.Contacts>
+          <ContactsList data={mock.headerMenu} />
+          <S.Socials>
+            <Social links={mock.footer.social} carryover={true} />
+          </S.Socials>
+          <S.CopyrightContactsBlock>
+            <S.Copyright>{mock.footer.copyright}</S.Copyright>
+            <Link href={mock.footer.labour.link} passHref>
+              <S.Ref>{mock.footer.labour.text}</S.Ref>
+            </Link>
+          </S.CopyrightContactsBlock>
+          <S.Producer>
+            <S.Span>{mock.footer.producersText}</S.Span>
+            <LogoNimax />
+          </S.Producer>
+        </S.Contacts>
+      </S.Container>
+    </S.Wrapper>
+  );
+};
+
+export default OpenedMenu;

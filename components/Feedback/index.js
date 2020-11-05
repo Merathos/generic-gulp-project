@@ -19,6 +19,7 @@ const StyledText = styled.p`
 `;
 
 const Section = styled.section`
+  max-width: 850px;
   display: flex;
   margin-bottom: 100px;
   align-items: flex-end;
@@ -55,7 +56,7 @@ const H3 = styled(TitleH3)`
 
 const Feedback = props => {
   const {
-    data: { imageUrl, title, describe }
+    data: { imageUrl, title, describe, subtitle }
   } = props;
   return (
     <Section>
@@ -71,7 +72,7 @@ const Feedback = props => {
         />
       </picture>
       <div>
-        <StyledSubtitle>Компания Динс</StyledSubtitle>
+        <StyledSubtitle>{subtitle}</StyledSubtitle>
         <H3>{title}</H3>
         <StyledText>{describe}</StyledText>
       </div>
