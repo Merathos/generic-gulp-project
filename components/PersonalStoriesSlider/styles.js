@@ -225,15 +225,15 @@ export const PrevButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 960px) {
     top: 60px;
     right: 30px;
+    border: none;
   }
 
   @media screen and (max-width: 720px) {
     top: -38px;
     left: -10px;
-    border: none;
   }
 
   @media screen and (max-width: 600px) {
@@ -266,15 +266,15 @@ export const NextButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 900px) {
-    top: 60px;
+  @media screen and (max-width: 960px) {
+    top: 58px;
     right: -23px;
+    border: none;
   }
 
   @media screen and (max-width: 720px) {
     top: -40px;
     left: 35px;
-    border: none;
   }
 
   @media screen and (max-width: 600px) {
