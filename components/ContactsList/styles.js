@@ -43,8 +43,12 @@ export const Term = styled.dt`
 
 export const Definition = styled.dd`
   font-size: 22px;
-  font-weight: 700;
   line-height: 26.4px;
+
+  a {
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
 
   @media screen and (max-width: 900px) {
     font-size: 16px;
