@@ -21,6 +21,9 @@ export const Container = styled.div`
 
 const ModalsPreview = () => {
   const [successIsShown, setSuccessIsShown] = useState(false);
+  const [success2IsShown, setSuccess2IsShown] = useState(false);
+  const [success3IsShown, setSuccess3IsShown] = useState(false);
+  const [success4IsShown, setSuccess4IsShown] = useState(false);
 
   const [jobIsShown, setjobIsShown] = useState(false);
   const [jobv2IsShown, setjobv2IsShown] = useState(false);
@@ -47,6 +50,18 @@ const ModalsPreview = () => {
     setSuccessIsShown(prev => !prev);
   }
 
+  function toggleSuccess2() {
+    setSuccess2IsShown(prev => !prev);
+  }
+
+  function toggleSuccess3() {
+    setSuccess3IsShown(prev => !prev);
+  }
+
+  function toggleSuccess4() {
+    setSuccess4IsShown(prev => !prev);
+  }
+
   return (
     <main>
       <Container>
@@ -66,27 +81,42 @@ const ModalsPreview = () => {
         <InternForm
           data={mock.internForm}
           closeModal={toggleInternModal}
-          showSuccess={toggleSuccess}
+          showSuccess={toggleSuccess2}
         />
       </FormModal>
       <FormModal modalIsOpen={jobv2IsShown} closeModal={toggleJobv2Modal}>
         <JobForm
           data={mock.jobFormV2}
           closeModal={toggleJobv2Modal}
-          showSuccess={toggleSuccess}
+          showSuccess={toggleSuccess3}
         />
       </FormModal>
       <FormModal modalIsOpen={mailingIsShown} closeModal={toggleMailingModal}>
         <MailingForm
           data={mock.mailingForm}
           closeModal={toggleMailingModal}
-          showSuccess={toggleSuccess}
+          showSuccess={toggleSuccess4}
         />
       </FormModal>
       <SuccessModal
         data={mock.jobForm.confirmation}
         successIsShown={successIsShown}
         closeSuccess={toggleSuccess}
+      />
+      <SuccessModal
+        data={mock.internForm.confirmation}
+        successIsShown={success2IsShown}
+        closeSuccess={toggleSuccess2}
+      />
+      <SuccessModal
+        data={mock.jobFormV2.confirmation}
+        successIsShown={success3IsShown}
+        closeSuccess={toggleSuccess3}
+      />
+      <SuccessModal
+        data={mock.mailingForm.confirmation}
+        successIsShown={success4IsShown}
+        closeSuccess={toggleSuccess4}
       />
     </main>
   );
