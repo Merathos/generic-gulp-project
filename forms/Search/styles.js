@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Block = styled.div`
+export const Form = styled.form`
   border-bottom: 1px solid #201f2a;
   display: flex;
   padding: ${props => (props.isMain ? '0' : '25px 0')};

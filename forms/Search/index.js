@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import SearchIcon from 'public/icons/search.svg';
-import { Field, Block, Submit } from './styles';
+import { Field, Form, Submit } from './styles';
 
 const Search = props => {
   const { placeholder, handleSearch, initialValue, isMain = false } = props;
   const [value, setValue] = useState(initialValue || '');
 
   return (
-    <Block isMain={isMain}>
+    <Form
+      isMain={isMain}
+      onSubmit={evt => {
+        evt.preventDefault();
+        handleSearch(value);
+      }}
+    >
       <Field
         name="search"
         placeholder={placeholder}
@@ -17,15 +23,14 @@ const Search = props => {
         isMain={isMain}
       />
       <Submit
-        type="button"
+        type="submit"
         aria-label="Поиск"
         disabled={!value}
-        onClick={() => handleSearch(value)}
         isMain={isMain}
       >
         <SearchIcon />
       </Submit>
-    </Block>
+    </Form>
   );
 };
 
