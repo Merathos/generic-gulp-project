@@ -11,7 +11,7 @@ const Userpic = props => {
       <Img background={`https://api.develop.dins.d.nimax.ru/${imageUrl}`} />
       <div>
         <TitleH5>{title}</TitleH5>
-        <Subtitle>{describe}</Subtitle>
+        <Subtitle dangerouslySetInnerHTML={{ __html: describe }} />
       </div>
     </Block>
   );

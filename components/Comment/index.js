@@ -8,14 +8,11 @@ const Comment = props => {
   return (
     <Block>
       <Container>
-        <Img
-          src={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
-          alt={title}
-        />
+        <Img background={`https://api.develop.dins.d.nimax.ru/${imageUrl}`} />
         <TitleH5>{title}</TitleH5>
       </Container>
       <Card>
-        <Text>{describe}</Text>
+        <Text dangerouslySetInnerHTML={{ __html: describe }} />
       </Card>
     </Block>
   );

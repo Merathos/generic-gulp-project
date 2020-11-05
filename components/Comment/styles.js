@@ -36,7 +36,12 @@ export const Card = styled.div`
 export const Img = styled.img`
   width: 49px;
   margin-right: 14px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  background-image: ${props => `url(${props.background})`};
+  background-position: center;
+  background-size: cover;
 `;
 
 export const Container = styled.div`
