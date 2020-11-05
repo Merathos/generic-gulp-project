@@ -1,8 +1,22 @@
 import gql from 'graphql-tag';
 
 export const GET_VACANCIES = gql`
-  query getVacancies {
-    vacancies(limit: 10) {
+  query getVacancies(
+      $search: String
+      $teams: [String]
+      $categories: [String]
+      $stacks: [String]
+      $internship: Boolean
+      $english: Boolean
+    ) {
+    vacancies(filter: {
+        search: $search
+        categories: $categories
+        teams: $teams
+        stacks: $stacks
+        is_internship: $internship
+        is_english_speaking_team: $english
+    }) {
       name
       is_english_speaking_team
       is_internship
@@ -58,20 +72,18 @@ export const GET_RELOCATION_BLOGS = gql`
   }
 `;
 
-export const GET_FILTER_SEARCH = gql`
-  query getSearch {
-    vacancies(filter: {
-      search: $search
-    }) {
-      name
-      is_english_speaking_team
-      is_internship
-      is_relocation
-      descr
-      slug
-    }
-  }
-`;
+// export const GET_FILTER_SEARCH = gql`
+//   query getSearch {
+//     vacancies() {
+//       name
+//       is_english_speaking_team
+//       is_internship
+//       is_relocation
+//       descr
+//       slug
+//     }
+//   }
+// `;
 
 export const GET_BLOG_CONTENT = gql`
   query getBlogContent($slug: String) {

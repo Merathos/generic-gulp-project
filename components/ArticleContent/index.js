@@ -94,10 +94,7 @@ const renderContent = props => {
 };
 
 const ArticleContent = ({ content }) => (
-  <>
-    {content.length !== 0 && 
-      content.map((el, index) => <div key={index}>{renderContent(el)}</div>)}
-  </>
+  <>{content.length !== 0 && content.map(el => renderContent(el))}</>
 );
 
 export default ArticleContent;

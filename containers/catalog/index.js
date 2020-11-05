@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 
-import { GET_FILTER_SEARCH } from 'graphql/query';
+// import { GET_FILTER_SEARCH } from 'graphql/query';
 import { Cards, SidebarArticle, Tags } from 'components';
 import { Search, Filter } from 'forms';
 import { getNewTags } from 'helpers';
@@ -13,35 +13,35 @@ const VacanciesList = ({ data: mock, back }) => {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const router = useRouter();
-  const { loading, error, data, fetchMore, networkStatus } = useQuery(
-    GET_FILTER_SEARCH,
-    {
-      variables: {
-        search: value,
-      },
-      // Setting this value to true will make the component rerender when
-      // the "networkStatus" changes, so we are able to know if it is fetching
-      // more data
-      notifyOnNetworkStatusChange: true,
-    }
-  );
-  const _refetch = useQuery(GET_FILTER_SEARCH).refetch;
+  // const { loading, error, data, fetchMore, networkStatus } = useQuery(
+  //   GET_FILTER_SEARCH,
+  //   {
+  //     variables: {
+  //       search: value,
+  //     },
+  //     // Setting this value to true will make the component rerender when
+  //     // the "networkStatus" changes, so we are able to know if it is fetching
+  //     // more data
+  //     notifyOnNetworkStatusChange: true,
+  //   }
+  // );
+  // const _refetch = useQuery(GET_FILTER_SEARCH).refetch;
 
-  const refetch = useCallback(() => {
-    setTimeout(
-      () =>
-        _refetch({
-          variables: {
-            search: value,
-          },
-        }),
-      0
-    );
-  }, [_refetch]);
+  // const refetch = useCallback(() => {
+  //   setTimeout(
+  //     () =>
+  //       _refetch({
+  //         variables: {
+  //           search: value,
+  //         },
+  //       }),
+  //     0
+  //   );
+  // }, [_refetch]);
 
   const handleSearch = filterValue => {
     setValue(filterValue);
-    refetch();
+    // refetch();
   };
 
   const handleClearTags = tag => {

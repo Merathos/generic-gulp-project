@@ -41,7 +41,7 @@ const StyledArrowLeft = styled.div`
     background-color: #339722;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
