@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Truncate from 'react-truncate';
 import { Section, H3, StyledText, ArrowRight, Picture } from './styles';
 import ArrowIcon from 'public/icons/arrow-right.svg';
 
@@ -19,7 +20,15 @@ const TeamCard = props => {
             height="194"
           />
           <H3 isMain={isMain}>{name}</H3>
-          <StyledText isMain={isMain}>{summary}</StyledText>
+          <StyledText isMain={isMain}>
+            {isMain ? (
+              <Truncate lines={4} ellipsis={'...'}>
+                {summary}
+              </Truncate>
+            ) : (
+              summary
+            )}
+          </StyledText>
           <ArrowRight isMain={isMain}>
             <ArrowIcon />
           </ArrowRight>
