@@ -13,7 +13,6 @@ const routeMap = {
 };
 
 const MenuList = ({ data }) => {
-  console.log(data);
   return (
     <List>
       {data.map((item, index) => (

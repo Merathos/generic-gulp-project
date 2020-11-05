@@ -27,12 +27,14 @@ export default {
     contacts: ['phoneNumber', 'email'],
     contact: {
       phoneNumber: {
-        title: 'Телефон для связи',
-        value: '+7(812)740-77-61',
+        title: 'Телефон',
+        value: '+7 (812) 740-77-61',
+        href: 'tel:+78127407761',
       },
       email: {
         title: 'E-mail',
         value: 'jobs@dins.ru',
+        href: 'mailto:jobs@dins.ru',
       },
     },
   },

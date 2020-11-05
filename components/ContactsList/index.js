@@ -6,7 +6,9 @@ const ContactsList = ({ data }) => {
       {data.contacts.map((item, index) => (
         <ListItem key={index}>
           <Term>{data.contact[item].title}</Term>
-          <Definition>{data.contact[item].value}</Definition>
+          <Definition>
+            <a href={data.contact[item].href}>{data.contact[item].value}</a>
+          </Definition>
         </ListItem>
       ))}
     </List>
