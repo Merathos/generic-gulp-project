@@ -23,6 +23,11 @@ export const Wrapper = styled.div`
       mask: url('icons/checked.svg') no-repeat 50% 50%;
       mask-size: 11px 9px;
       background-color: ${props => props.color};
+
+      @media (max-width: 768px) {
+        top: 7px;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -56,5 +61,10 @@ export const Label = styled.label`
     transform: translateY(-50%);
     border: 2px solid rgba(31, 32, 42, 0.3);
     transition: all 0.3s;
+
+    @media (max-width: 768px) {
+      top: 2px;
+      transform: translateY(0);
+    }
   }
 `;

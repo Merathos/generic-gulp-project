@@ -90,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 17px;
   }
 
-  .newsModal {
+  .formModal {
     top: 40px;
     bottom: 40px;
     left: 0;
@@ -102,6 +102,7 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     overflow: auto;
     outline: none;
+    background-color: #ffffff;
 
     @media (max-width: 1199px) {
       top: 0;

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { OpenedMenu } from 'containers';
+import CustomLink from 'elements/CustomLink';
 import Logo from 'public/images/logo.svg';
 import Menu from 'public/icons/menu.svg';
-import CustomLink from 'elements/CustomLink';
+import { useState } from 'react';
 
 const StyledHeader = styled.header`
   padding: 34px 45px;
@@ -26,6 +28,7 @@ const StyledHeader = styled.header`
 
 const StyledLogo = styled(Logo)`
   width: 85px;
+  height: 26px;
 
   @media (max-width: 420px) {
     width: 54px;
@@ -63,22 +66,38 @@ const Element = styled.li`
   margin-left: 40px;
 `;
 
-const Header = ({ data: links, plain }) => (
-  <StyledHeader plain={plain}>
-    <StyledLogo />
-    <Nav plain={plain}>
-      <List>
-        {links.map((el, i) => (
-          <Element key={i}>
-            <CustomLink href={`/${el.href}`}>{el.title}</CustomLink>
-          </Element>
-        ))}
-      </List>
-    </Nav>
-    <Button aria-label="Menu">
-      <Menu />
-    </Button>
-  </StyledHeader>
-);
+const Header = ({ data: links, plain }) => {
+  const [isMenuOpened, setMenuOpen] = useState(false);
+
+  return (
+    <StyledHeader plain={plain}>
+      <StyledLogo />
+      <Nav plain={plain}>
+        <List>
+          {links.map((el, i) => (
+            <Element key={i}>
+              <CustomLink href={`/${el.href}`}>{el.title}</CustomLink>
+            </Element>
+          ))}
+        </List>
+      </Nav>
+      <Button
+        aria-label="Menu"
+        onClick={() => {
+          setMenuOpen(true);
+        }}
+      >
+        <Menu />
+      </Button>
+      {isMenuOpened && (
+        <OpenedMenu
+          onMenuClose={() => {
+            setMenuOpen(false);
+          }}
+        />
+      )}
+    </StyledHeader>
+  );
+};
 
 export default Header;
