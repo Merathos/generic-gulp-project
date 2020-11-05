@@ -10,7 +10,7 @@ const Quote = props => {
     <Section>
       <Span>«</Span>
       <Block>
-        <blockquote>{text}</blockquote>
+        <blockquote dangerouslySetInnerHTML={{ __html: text }} />
         {name && (
           <Container>
             <Img src={src} alt={name} />

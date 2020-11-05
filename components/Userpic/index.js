@@ -8,10 +8,7 @@ const Userpic = props => {
   } = props;
   return (
     <Block>
-      <Img
-        src={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
-        alt={title}
-      />
+      <Img background={`https://api.develop.dins.d.nimax.ru/${imageUrl}`} />
       <div>
         <TitleH5>{title}</TitleH5>
         <Subtitle>{describe}</Subtitle>

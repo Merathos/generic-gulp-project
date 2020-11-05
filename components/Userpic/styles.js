@@ -14,8 +14,18 @@ export const Block = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled.div`
   width: 67px;
+  height: 67px;
   margin-right: 20px;
   border-radius: 50%;
+  background-image: ${props => `url(${props.background})`};
+  background-position: center;
+  background-size: cover;
+`;
+
+export const Crop = styled.div`
+  width: 67px;
+  height: 67px;
+  overflow: hidden;
 `;
