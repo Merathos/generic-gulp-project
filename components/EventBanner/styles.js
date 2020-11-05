@@ -5,8 +5,8 @@ export const Container = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 394px;
-  height: 301px;
+  min-width: 394px;
+  min-height: 301px;
   margin-top: 25px;
   background-color: #f7f8f9;
   padding: 56px 220px 70px 56px;
@@ -34,8 +34,8 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 1360px) {
-    width: auto;
-    height: auto;
+    min-width: auto;
+    min-height: auto;
     padding-right: 160px;
   }
 

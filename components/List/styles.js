@@ -3,6 +3,7 @@ import TitleH3 from 'elements/TitleH3';
 
 export const Section = styled.section`
   margin-bottom: 100px;
+  max-width: 850px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -72,7 +73,10 @@ export const H3 = styled(TitleH3)`
 
 export const Element = styled.li`
   max-width: 364px;
-  margin-right: 100px;
+
+  &:not(:last-child) {
+    margin-right: 100px;
+  }
 
   @media screen and (max-width: 420px) {
     width: 100%;
