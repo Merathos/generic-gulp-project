@@ -27,11 +27,11 @@ const TextInput = ({
     }
 
     if (len === 2) {
-      input.value += '/';
+      input.value += '.';
     }
 
     if (len === 5) {
-      input.value += '/';
+      input.value += '.';
     }
   };
 
