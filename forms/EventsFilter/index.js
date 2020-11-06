@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { EventsCheckbox } from 'elements';
-import { Wrapper, List, Item, ResetFilter } from "./styles";
+import { Wrapper, List, Item, ResetFilter } from './styles';
 
-const EventsFilter = (props) => {
+const EventsFilter = props => {
   const {
-    data: { filterFields, discard }
+    data: { filterFields, discard },
   } = props;
 
   const [checkedItems, setCheckedItems] = useState({});
@@ -12,25 +12,29 @@ const EventsFilter = (props) => {
   const handleChange = event => {
     setCheckedItems({
       ...checkedItems,
-      [event.target.id]: event.target.checked
+      [event.target.id]: event.target.checked,
     });
   };
 
   return (
     <Wrapper>
       <List>
-      {filterFields.map((item, i) => (
-        <Item key={i}>
-          <EventsCheckbox
-            name={item.name}
-            checked={checkedItems[item.name]}
-            onChange={handleChange}
-            color={item.color}
-          />
-        </Item>
-      ))}
+        {filterFields.map((item, i) => (
+          <Item key={i}>
+            <EventsCheckbox
+              name={item.name}
+              checked={checkedItems[item.name]}
+              onChange={handleChange}
+              color={item.color}
+            />
+          </Item>
+        ))}
       </List>
-      <ResetFilter type="button" onClick={() => setCheckedItems({})}>
+      <ResetFilter
+        type="button"
+        onClick={() => setCheckedItems({})}
+        checkedItems={checkedItems}
+      >
         {discard}
       </ResetFilter>
     </Wrapper>
