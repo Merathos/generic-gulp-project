@@ -41,6 +41,7 @@ const JobForm = ({
                 name={el.name}
                 label={el.label}
                 type={el.type}
+                phone={el.phone}
               />
             ))}
             <S.SelectContainer>

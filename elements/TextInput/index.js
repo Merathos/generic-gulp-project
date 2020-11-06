@@ -11,9 +11,10 @@ const TextInput = ({
   warning,
   error,
   errorMsg,
+  phone,
   date = false,
 }) => {
-  const onKeyPress = function(e) {
+  const handleDateMask = function(e) {
     let input = e.target;
     if (e.charCode < 47 || e.charCode > 57) {
       e.preventDefault();
@@ -35,6 +36,12 @@ const TextInput = ({
     }
   };
 
+  const handlePhoneMask = function(e) {
+    if ((e.charCode < 48 && e.charCode !== 43) || e.charCode > 57) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <Wrapper
       className={className}
@@ -51,8 +58,8 @@ const TextInput = ({
         id={name}
         autoComplete="off"
         required={required}
-        maxLength={date ? 10 : 9999}
-        onKeyPress={date ? onKeyPress : () => {}}
+        maxLength={date ? 10 : phone ? 13 : 999}
+        onKeyPress={date ? handleDateMask : phone ? handlePhoneMask : () => {}}
       />
       <label htmlFor={name}>{label}</label>
     </Wrapper>
