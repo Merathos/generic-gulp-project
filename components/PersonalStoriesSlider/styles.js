@@ -213,7 +213,6 @@ export const PrevButton = styled.button`
   border-radius: 108px 0 0 108px;
   border: 2px solid #53b443;
   border-right: none;
-  background-color: #f7f8f9;
 
   svg {
     fill: #53b443;
@@ -254,7 +253,6 @@ export const NextButton = styled.button`
   border-radius: 0 108px 108px 0;
   border: 2px solid #53b443;
   border-left: none;
-  background-color: #f7f8f9;
 
   svg {
     fill: #53b443;
