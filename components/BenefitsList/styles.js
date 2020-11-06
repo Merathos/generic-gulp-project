@@ -9,7 +9,7 @@ export const Container = styled.section`
   @media screen and (max-width: 1024px) {
     margin-left: 60px;
     margin-right: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 
   @media screen and (max-width: 720px) {
