@@ -4,17 +4,14 @@ import { Block, Img } from './styles';
 
 const Userpic = props => {
   const {
-    data: { imageUrl, title },
+    data: { imageUrl, title, describe },
   } = props;
   return (
     <Block>
-      <Img
-        src={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
-        alt={title}
-      />
+      <Img background={`https://api.develop.dins.d.nimax.ru/${imageUrl}`} />
       <div>
         <TitleH5>{title}</TitleH5>
-        <Subtitle>Динс</Subtitle>
+        <Subtitle dangerouslySetInnerHTML={{ __html: describe }} />
       </div>
     </Block>
   );

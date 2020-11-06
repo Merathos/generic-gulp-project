@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import TitleH3 from 'elements/TitleH3';
 
 export const Section = styled.section`
   margin-bottom: 100px;
+  max-width: 850px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -31,11 +31,14 @@ export const Wrapper = styled.div`
 `;
 
 export const NormalList = styled.ul`
-  display: flex;
   max-width: 850px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 100px;
 
   @media screen and (max-width: 420px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-gap: 100px;
   }
 `;
 
@@ -50,9 +53,18 @@ export const BlueList = styled.ul`
   }
 `;
 
-export const BlueTitle = styled(TitleH3)`
+export const BlueTitle = styled.b`
   color: #2F8ED9;
   margin-bottom: 13px;
+  font-size: 34px;
+  line-height: 120%;
+  font-weight: 600;
+  display: block;
+
+  @media screen and (max-width: 420px) {
+    font-size: 22px;
+    line-height: 120%;
+  }
 `; 
 
 export const BlueText = styled.p`
@@ -66,13 +78,26 @@ export const BlueText = styled.p`
   }
 `; 
 
-export const H3 = styled(TitleH3)`
+export const H3 = styled.b`
+  display: block;
   margin-bottom: 30px;
-`; 
+  font-size: 34px;
+  line-height: 120%;
+  font-weight: 600;
+
+  @media screen and (max-width: 420px) {
+    font-size: 22px;
+    line-height: 120%;
+    margin-bottom: 10px;
+  }
+`;
 
 export const Element = styled.li`
-  max-width: 364px;
-  margin-right: 100px;
+  max-width: 390px;
+
+  /* &:not(:last-child) {
+    margin-right: 100px;
+  } */
 
   @media screen and (max-width: 420px) {
     width: 100%;
@@ -87,5 +112,6 @@ export const NormalText = styled.p`
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 158%;
+    margin-bottom: 30px;
   }
 `;

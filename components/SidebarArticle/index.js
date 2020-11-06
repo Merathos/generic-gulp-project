@@ -10,7 +10,9 @@ import {
   H5,
   StyledIcon,
   Image,
-  Aside
+  Aside,
+  DefaultSubtitle,
+  DefaultTitle,
 } from './styles';
 
 const SidebarArticle = props => {
@@ -45,8 +47,8 @@ const SidebarArticle = props => {
             <Section>
               {fromEditor ? (
                 <>
-                  <Subtitle>Читайте также</Subtitle>
-                  <Title>{title}</Title>
+                  <DefaultSubtitle>Читайте также</DefaultSubtitle>
+                  <DefaultTitle>{title}</DefaultTitle>
                   <Link href={link}>
                     <a>
                       <ArrowRight />

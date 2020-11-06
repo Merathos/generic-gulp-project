@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
   margin-bottom: ${props => (props.inline ? '0' : '100px')};
+  max-width: 850px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -73,6 +74,15 @@ export const Number = styled.span`
 export const Text = styled.p`
   font-size: ${props => (props.inline ? '18px' : '20px')};
   line-height: ${props => (props.inline ? '120%' : '158%')};
+
+  ${props =>
+    props.inline &&
+    css`
+      @media screen and (max-width: 720px) {
+        font-size: 14px;
+        line-height: 158%;
+      }
+    `}
 
   @media screen and (max-width: 420px) {
     font-size: 14px;

@@ -13,6 +13,31 @@ export default {
       href: `teams`,
     },
   ],
+  headerMenu: {
+    menuList: [
+      { title: 'О компании' },
+      { title: 'IT Evenings' },
+      { title: 'Команды' },
+      { title: 'Блог' },
+      { title: 'Вакансии', isSpecial: true },
+      { title: 'Релокация' },
+      { title: 'Стажировки' },
+      { title: 'Контакты' },
+    ],
+    contacts: ['phoneNumber', 'email'],
+    contact: {
+      phoneNumber: {
+        title: 'Телефон',
+        value: '+7 (812) 740-77-61',
+        href: 'tel:+78127407761',
+      },
+      email: {
+        title: 'E-mail',
+        value: 'jobs@dins.ru',
+        href: 'mailto:jobs@dins.ru',
+      },
+    },
+  },
   catalog: {
     mainTitle: `Вакансии`,
     filter: {
@@ -1237,6 +1262,7 @@ export default {
       text: `Оценка условий труда`,
     },
     nimaxText: 'Сделали в',
+    producersText: 'Дизайн и разработка',
   },
   main: {
     intro: {
@@ -2080,6 +2106,7 @@ export default {
         video: {
           src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
           srcPoster: `images/event-details1.jpg`,
+          stretched: true,
         },
       },
       timepad: {
@@ -2191,6 +2218,7 @@ export default {
         video: {
           src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
           srcPoster: `images/event-details1.jpg`,
+          stretched: true,
         },
       },
       timepad: {

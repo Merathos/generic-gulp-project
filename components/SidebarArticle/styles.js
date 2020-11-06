@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH4, TitleH5, Icon } from '/elements';
+import { TitleH4, TitleH5, Icon, Subtitle } from '/elements';
 
 export const Title = styled(TitleH4)`
   margin-bottom: 40px;
@@ -9,12 +9,24 @@ export const Title = styled(TitleH4)`
   }
 `;
 
+export const DefaultTitle = styled(TitleH4)`
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 30px;
+  }
+`;
+
+export const DefaultSubtitle = styled(Subtitle)`
+  margin-bottom: 8px;
+`;
+
 export const H5 = styled(TitleH5)`
   margin-bottom: 12px;
 `;
 
 export const Section = styled.div`
-  margin-bottom: 930px;
+  max-width: 250px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -22,9 +34,10 @@ export const Section = styled.div`
 `;
 
 export const SectionIcon = styled.div`
-  /* @media screen and (max-width: 420px) {
-    display: none;
-  } */
+  max-width: 250px;
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+  }
 `;
 
 export const SectionButton = styled.div`
