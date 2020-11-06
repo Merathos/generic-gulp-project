@@ -7,11 +7,15 @@ export const List = styled.ul`
   margin-left: 74px;
 
   @media screen and (max-width: 1024px) {
-    margin-left: 0;
+    margin-left: 15px;
   }
 
   @media screen and (max-width: 720px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-left: 0;
   }
 `;
 
@@ -23,6 +27,10 @@ export const ListItem = styled.li`
 
   &:not(:nth-child(even)) {
     margin-right: 20px;
+  }
+
+  img {
+    margin-top: 2px;
   }
 
   @media screen and (max-width: 1200px) {
