@@ -213,7 +213,6 @@ export const PrevButton = styled.button`
   border-radius: 108px 0 0 108px;
   border: 2px solid #53b443;
   border-right: none;
-  background-color: #f7f8f9;
 
   svg {
     fill: #53b443;
@@ -225,15 +224,15 @@ export const PrevButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 960px) {
     top: 60px;
     right: 30px;
+    border: none;
   }
 
   @media screen and (max-width: 720px) {
     top: -38px;
     left: -10px;
-    border: none;
   }
 
   @media screen and (max-width: 600px) {
@@ -254,7 +253,6 @@ export const NextButton = styled.button`
   border-radius: 0 108px 108px 0;
   border: 2px solid #53b443;
   border-left: none;
-  background-color: #f7f8f9;
 
   svg {
     fill: #53b443;
@@ -266,15 +264,15 @@ export const NextButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 900px) {
-    top: 60px;
+  @media screen and (max-width: 960px) {
+    top: 58px;
     right: -23px;
+    border: none;
   }
 
   @media screen and (max-width: 720px) {
     top: -40px;
     left: 35px;
-    border: none;
   }
 
   @media screen and (max-width: 600px) {

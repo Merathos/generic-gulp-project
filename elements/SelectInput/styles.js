@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   align-items: flex-end;
   width: 100%;
   max-width: 410px;
-  min-height: 74px;
+  min-height: 78px;
   align-items: flex-end;
   margin-bottom: 10px;
   z-index: 15;
@@ -24,6 +24,7 @@ export const Wrapper = styled.div`
     border-bottom: 1px solid rgba(32, 31, 42, 0.5);
     border-radius: 0;
     padding-bottom: 8px;
+    cursor: pointer;
 
     @media (max-width: 768px) {
       padding-bottom: 2px;
@@ -59,6 +60,21 @@ export const Wrapper = styled.div`
 
     @media (max-width: 768px) {
       font-size: 14px;
+    }
+  }
+
+  .react-select__value-container--has-value + .react-select__indicators {
+    .react-select__indicator {
+      position: relative;
+      top: 11px;
+
+      @media (max-width: 768px) {
+        top: 14px;
+      }
+
+      @media (max-width: 420px) {
+        top: 8px;
+      }
     }
   }
 
@@ -109,6 +125,35 @@ export const Wrapper = styled.div`
     border: none;
     box-shadow: none;
     background-color: #f7f8f9;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(
+        360deg,
+        #f7f8f9 60%,
+        rgba(247, 248, 249, 0) 121.93%
+      );
+    }
+  }
+
+  .react-select__menu-list {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      opacity: 0;
+    }
+
+    &::-webkit-scrollbar {
+      opacity: 0;
+    }
   }
 
   .react-select__option {
@@ -119,6 +164,8 @@ export const Wrapper = styled.div`
     font-size: 16px;
     line-height: 30px;
     color: rgba(32, 31, 42, 0.5);
+    cursor: pointer;
+    transition: color 0.2s ease-in;
 
     &:hover {
       background-color: transparent;

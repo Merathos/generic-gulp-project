@@ -52,6 +52,15 @@ export const StyledText = styled.p`
   line-height: 27px;
   margin-bottom: ${props => (props.isMain ? '40px' : '45px')};
 
+  ${props =>
+    props.isMain &&
+    css`
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    `}
+
   @media screen and (max-width: 420px) {
     margin-bottom: ${props => (props.isMain ? '15px' : '30px')};
     font-size: 14px;

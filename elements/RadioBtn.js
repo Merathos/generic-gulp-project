@@ -20,6 +20,10 @@ const Label = styled.label`
     border: 2px solid rgba(31, 32, 42, 0.3);
     border-radius: 50%;
     transition: border 0.2s ease-in;
+
+    @media (max-width: 768px) {
+      top: 1px;
+    }
   }
 
   & > input:not(:disabled):not(:checked) + span:hover::before {
@@ -39,6 +43,10 @@ const Label = styled.label`
     left: 6px;
     background-color: #53b443;
     border-radius: 50%;
+
+    @media (max-width: 768px) {
+      top: 7px;
+    }
   }
 
   @media (max-width: 768px) {

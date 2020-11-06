@@ -38,6 +38,7 @@ export const Wrapper = styled.div`
     line-height: 32px;
     border: none;
     border-bottom: 1px solid rgba(32, 31, 42, 0.3);
+    border-radius: 0;
     outline: none;
     transition: all 0.2s;
     touch-action: manipulation;
@@ -113,6 +114,19 @@ export const Wrapper = styled.div`
     props.cv &&
     css`
       max-width: 547px;
+
+      input:placeholder-shown + label {
+        transform: translate(0, 37px) scale(1.1);
+      }
+
+      input:not(:placeholder-shown) + label,
+      input:focus + label {
+        transform: translate(0, 12px) scale(1);
+
+        &:hover {
+          color: rgba(32, 31, 42, 0.5);
+        }
+      }
     `};
 
   ${props =>

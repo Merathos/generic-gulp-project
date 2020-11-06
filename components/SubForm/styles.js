@@ -170,6 +170,15 @@ export const BottomWrap = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+
+    #rc-imageselect,
+    div {
+      width: 195px;
+      transform: scale(0.891);
+      -webkit-transform: scale(0.891);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+    }
   }
 `;
 
@@ -194,7 +203,7 @@ export const StyledButton = styled.button`
     font-size: 12px;
     line-height: 14px;
     margin-left: 0;
-    margin-top: 18px;
+    margin-top: -10px;
     align-self: flex-start;
   }
 

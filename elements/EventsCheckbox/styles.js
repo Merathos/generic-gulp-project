@@ -33,7 +33,9 @@ export const Wrapper = styled.div`
 
   input:hover ~ label {
     &::before {
-      border-color: ${props => props.color};
+      @media (min-width: 1000px) {
+        border-color: ${props => props.color};
+      }
     }
   }
 `;
@@ -63,7 +65,7 @@ export const Label = styled.label`
     transition: all 0.3s;
 
     @media (max-width: 768px) {
-      top: 2px;
+      top: 1px;
       transform: translateY(0);
     }
   }

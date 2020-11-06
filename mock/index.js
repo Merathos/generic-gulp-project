@@ -1765,7 +1765,7 @@ export default {
   teams: [
     {
       name: 'Contact Center',
-      summary: `Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с${'\u00A0'}использованием WebRTC, качество...`,
+      summary: `Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с${'\u00A0'}использованием WebRTC, качество разработки сервиса видео-конференций нового поколения на самом высочайшем уровне.`,
       image: {
         path: {
           normal: '/images/team-1.jpg',
@@ -1775,7 +1775,7 @@ export default {
     },
     {
       name: 'RCV (Video-conference)',
-      summary: `Команда RCV занимается поддержкой и${'\u00A0'}развитием одноименного сервиса${'\u00A0'}- Global CI. Сервис предоставляет возможность ранней верификации...`,
+      summary: `Команда RCV занимается поддержкой и${'\u00A0'}развитием одноименного сервиса${'\u00A0'}- Global CI. Сервис предоставляет возможность ранней верификации разработанного сервиса видео-конференций нового поколения.`,
       image: {
         path: {
           normal: '/images/team-2.png',
@@ -1785,7 +1785,7 @@ export default {
     },
     {
       name: 'Platform A',
-      summary: `В${'\u00A0'}команде Platform А${'\u00A0'}мы${'\u00A0'}разрабатываем публичный REST API для Unified Communications сервиса и${'\u00A0'}специализируемся на${'\u00A0'}способах...`,
+      summary: `В${'\u00A0'}команде Platform А${'\u00A0'}мы${'\u00A0'}разрабатываем публичный REST API для Unified Communications сервиса и${'\u00A0'}специализируемся на${'\u00A0'}способах наискорейшей и наиэффективнейшей разработки сервиса видео-конференций нового поколения.`,
       image: {
         path: {
           normal: '/images/team-3.jpg',
@@ -2231,7 +2231,7 @@ export default {
     },
   },
   jobForm: {
-    mainTitle: `Java developer (Big\u00A0Data\u00A0team)`,
+    mainTitle: `Java developer (Big\u00A0Data team)`,
     subtitle: `Откликнуться на вакансию`,
     contact: {
       title: `Оставь  контактные данные`,
@@ -2248,8 +2248,8 @@ export default {
         },
         {
           name: `phone`,
-          type: `number`,
           label: `Телефон *`,
+          phone: true,
           required: true,
         },
         {
@@ -2296,7 +2296,7 @@ export default {
     },
   },
   internForm: {
-    mainTitle: 'Заявка на\u00A0стажировку',
+    mainTitle: 'Заявка на стажировку',
     contact: {
       title: `Оставь  контактные данные`,
       inputs: [
@@ -2318,7 +2318,7 @@ export default {
         },
         {
           name: `phone`,
-          type: `number`,
+          phone: true,
           label: `Телефон *`,
           required: true,
         },
@@ -2455,7 +2455,7 @@ export default {
         },
         {
           name: `phone`,
-          type: `number`,
+          phone: true,
           label: `Телефон *`,
           required: true,
         },
