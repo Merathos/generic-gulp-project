@@ -8,15 +8,19 @@ export const GET_VACANCIES = gql`
       $stacks: [String]
       $internship: Boolean
       $english: Boolean
+      $limit: Int
     ) {
-    vacancies(filter: {
+    vacancies(
+      filter: {
         search: $search
         categories: $categories
         teams: $teams
         stacks: $stacks
         is_internship: $internship
         is_english_speaking_team: $english
-    }) {
+    }
+      limit: $limit
+    ) {
       name
       is_english_speaking_team
       is_internship
@@ -71,19 +75,6 @@ export const GET_RELOCATION_BLOGS = gql`
     }
   }
 `;
-
-// export const GET_FILTER_SEARCH = gql`
-//   query getSearch {
-//     vacancies() {
-//       name
-//       is_english_speaking_team
-//       is_internship
-//       is_relocation
-//       descr
-//       slug
-//     }
-//   }
-// `;
 
 export const GET_BLOG_CONTENT = gql`
   query getBlogContent($slug: String) {
