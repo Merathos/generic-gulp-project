@@ -125,6 +125,35 @@ export const Wrapper = styled.div`
     border: none;
     box-shadow: none;
     background-color: #f7f8f9;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(
+        360deg,
+        #f7f8f9 60%,
+        rgba(247, 248, 249, 0) 121.93%
+      );
+    }
+  }
+
+  .react-select__menu-list {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      opacity: 0;
+    }
+
+    &::-webkit-scrollbar {
+      opacity: 0;
+    }
   }
 
   .react-select__option {
