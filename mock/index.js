@@ -2228,7 +2228,7 @@ export default {
     },
   },
   jobForm: {
-    mainTitle: `Java developer (Big\u00A0Data\u00A0team)`,
+    mainTitle: `Java developer (Big\u00A0Data team)`,
     subtitle: `Откликнуться на вакансию`,
     contact: {
       title: `Оставь  контактные данные`,
@@ -2245,8 +2245,8 @@ export default {
         },
         {
           name: `phone`,
-          type: `number`,
           label: `Телефон *`,
+          phone: true,
           required: true,
         },
         {
@@ -2293,7 +2293,7 @@ export default {
     },
   },
   internForm: {
-    mainTitle: 'Заявка на\u00A0стажировку',
+    mainTitle: 'Заявка на стажировку',
     contact: {
       title: `Оставь  контактные данные`,
       inputs: [

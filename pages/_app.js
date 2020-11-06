@@ -114,7 +114,6 @@ const GlobalStyle = createGlobalStyle`
   .successModal {
     top: 50%;
     transform: translateY(-50%);
-    bottom: 40px;
     left: 0;
     right: 0;
     margin: 0 auto;
