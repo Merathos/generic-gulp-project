@@ -32,20 +32,25 @@ export const Menu = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 100%;
-    padding-left: 30px;
+    padding-left: 45px;
     padding-right: 30px;
     box-sizing: border-box;
   }
 
   @media screen and (max-width: 720px) {
+    padding-top: 34px;
+  }
+
+  @media screen and (max-width: 420px) {
     padding-top: 30px;
+    padding-left: 30px;
   }
 `;
 
 export const Button = styled.button`
   position: absolute;
-  top: 40px;
-  right: 42px;
+  top: 42px;
+  right: 38px;
   display: flex;
   z-index: 20;
   align-items: center;
@@ -64,22 +69,25 @@ export const Button = styled.button`
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 720px) {
-    top: 22px;
-    right: 22px;
+  @media screen and (max-width: 420px) {
+    top: 30px;
+    right: 23px;
   }
 `;
 
 export const StyledLogo = styled(Logo)`
   width: 85px;
-  height: 25px;
+  height: 26px;
   margin-bottom: 140px;
   margin-right: 50px;
 
   @media screen and (max-width: 1024px) {
-    width: 56px;
-    height: 16px;
     margin-bottom: 64px;
+  }
+
+  @media (max-width: 420px) {
+    width: 54px;
+    margin-bottom: 54px;
   }
 `;
 
@@ -193,8 +201,12 @@ export const Contacts = styled.div`
   @media screen and (max-width: 1024px) {
     width: 100%;
     margin-top: auto;
-    padding: 80px 30px 50px;
+    padding: 80px 30px 50px 60px;
     box-sizing: border-box;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-left: 30px;
   }
 `;
 
