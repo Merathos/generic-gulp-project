@@ -13,7 +13,7 @@ const Blogs = ({ mock, back }) => {
             <li key={i}>
               <BlogsCard data={el} background="#F7F8F9" />
             </li>
-        ))}s
+          ))}
       </S.List>
       <SectionNote data={note} />
     </S.Wrapper>

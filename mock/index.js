@@ -105,7 +105,7 @@ export default {
           multi: true,
         },
         {
-          title: `Проект`,
+          title: `Команды`,
           list: [
             `Contact Center`,
             `Platform A`,
@@ -1109,7 +1109,10 @@ export default {
     application: {
       title: `Откликнуться на вакансию`,
       button: `Отправить резюме`,
-      button2: `Порекомендовать друга`,
+    },
+    recruiters: {
+      title: `Остались вопросы?`,
+      text: `Пиши на почту jobs@dins.ru или нашим рекрутерам`,
     },
     vacancies: {
       title: `Вакансии в ЭТОЙ категории`,

@@ -12,8 +12,8 @@ export const Card = styled.div`
   background-position: 20px bottom;
   min-height: 240px;
 
-  @media screen and (max-width: 420px) {
-    display: none;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40px;
   }
 `;
 

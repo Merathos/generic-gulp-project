@@ -7,6 +7,11 @@ const ArticleTitle = styled.h1`
   margin-bottom: 50px;
   padding-top: 200px;
 
+  @media screen and (max-width: 768px) {
+    font-size: 54px;
+    line-height: 60px;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 32px;
     line-height: 31px;
@@ -29,6 +34,10 @@ const Description = styled.p`
   line-height: 158%;
   max-width: 854px;
   margin-bottom: 160px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 120px;
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 80px;

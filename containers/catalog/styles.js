@@ -51,3 +51,21 @@ export const Title = styled(TitleH1)`
     display: none;
   }
 `;
+
+export const Filter = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Block = styled.div`
+  @media screen and (max-width: 420px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+`;
+
+export const List = styled.div`
+  margin-bottom: 25px;
+`;

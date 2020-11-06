@@ -26,32 +26,3 @@ export const GreyContainer = styled.div`
     margin-bottom: 80px;
   }
 `;
-
-export const Article = styled.article`
-  margin-right: 92px;
-  max-width: 854px;
-
-  @media screen and (max-width: 420px) {
-    margin-right: 0;
-  }
-`;
-
-export const Grid = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  }
-`;
-
-export const Aside = styled.aside`
-  max-width: 254px;
-  padding-top: 60px;
-
-  @media screen and (max-width: 420px) {
-    max-width: 100%;
-    padding-top: 0;
-  }
-`;

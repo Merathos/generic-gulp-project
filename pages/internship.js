@@ -1,9 +1,25 @@
+import { useMemo } from 'react';
+import { useQuery } from '@apollo/client';
+import withApollo from 'lib/withApollo';
+import { getDataFromTree } from '@apollo/react-ssr';
 import { Layout, Internship } from 'containers';
 import mock from 'mock/index';
 import { GET_VACANCIES } from 'graphql/query';
-import { initializeApollo } from 'lib/apollo';
 
-const internshipPage = ({ vacancies }) => {
+const internshipPage = () => {
+  const categoriesData = useQuery(GET_VACANCIES, {
+    variables: {
+      limit: 8,
+    },
+  });
+
+  const vacancies = useMemo(
+    () => (!categoriesData.loading ? categoriesData.data.vacancies : null),
+    [categoriesData.data]
+  );
+
+  if (!vacancies) return null;
+
   return (
     <Layout>
       <Internship data={mock.internship} vacancies={vacancies} />
@@ -11,20 +27,4 @@ const internshipPage = ({ vacancies }) => {
   );
 };
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  const {
-    data: { vacancies }
-  } = await apolloClient.query({
-    query: GET_VACANCIES
-  });
-
-  return {
-    props: {
-      vacancies
-    }
-  };
-}
-
-export default internshipPage;
+export default withApollo(internshipPage, { getDataFromTree });

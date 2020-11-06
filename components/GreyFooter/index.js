@@ -2,9 +2,9 @@ import ArrowRight from 'public/icons/arrow-right.svg';
 import { BlogsCard } from 'components';
 import * as S from './styles';
 
-const GreyFooter = ({ data, type }) => {
+const GreyFooter = ({ data, type, background }) => {
   return (
-    <S.Section>
+    <S.Section background={background}>
       {type === 'blog' ? (
         <S.ListBlog>
           {data.map((el, i) => (

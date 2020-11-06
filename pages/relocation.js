@@ -1,9 +1,20 @@
+import { useMemo } from 'react';
+import { useQuery } from '@apollo/client';
+import withApollo from 'lib/withApollo';
+import { getDataFromTree } from '@apollo/react-ssr';
 import { Layout, Relocation } from 'containers';
 import mock from 'mock/index';
 import { GET_RELOCATION_BLOGS } from 'graphql/query';
-import { initializeApollo } from 'lib/apollo';
 
-const relocationPage = ({ blogs }) => {
+const relocationPage = () => {
+  const blogsData = useQuery(GET_RELOCATION_BLOGS);
+
+  const blogs = useMemo(
+    () => (!blogsData.loading ? blogsData.data.blogs : null),
+    [blogsData.data]
+  );
+
+  if (!blogs) return null;
   return (
     <Layout greyFooter>
       <Relocation data={mock.relocation} blogs={blogs} />
@@ -11,20 +22,4 @@ const relocationPage = ({ blogs }) => {
   );
 };
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  const {
-    data: { blogs }
-  } = await apolloClient.query({
-    query: GET_RELOCATION_BLOGS
-  });
-
-  return {
-    props: {
-      blogs
-    }
-  };
-}
-
-export default relocationPage;
+export default withApollo(relocationPage, { getDataFromTree });

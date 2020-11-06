@@ -53,7 +53,7 @@ const VacancyHeader = ({ data }) => {
           <StyledText>{technology_stacks}</StyledText>
         </TextBlock>
         <TextBlock>
-          <Bold>Проект:</Bold>
+          <Bold>Команда:</Bold>
           <StyledText>{team && team.name}</StyledText>
         </TextBlock>
         <StyledButton type="accent">
