@@ -5,6 +5,8 @@ const Styled = styled.button`
   margin-left: auto;
   margin-right: 37px;
   margin-bottom: 75px;
+  position: sticky;
+  top: 38px;
 
   svg {
     opacity: 0.3;

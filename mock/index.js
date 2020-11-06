@@ -2315,7 +2315,7 @@ export default {
         },
         {
           name: `phone`,
-          type: `number`,
+          phone: true,
           label: `Телефон *`,
           required: true,
         },
@@ -2452,7 +2452,7 @@ export default {
         },
         {
           name: `phone`,
-          type: `number`,
+          phone: true,
           label: `Телефон *`,
           required: true,
         },

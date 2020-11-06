@@ -2,9 +2,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   margin-bottom: 112px;
+  min-height: 250px;
 
   @media (max-width: 1199px) {
     margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 215px;
   }
 `;
 
@@ -22,6 +27,10 @@ export const Item = styled.li`
 `;
 
 export const ResetFilter = styled.button`
+  display: ${props =>
+    Object.keys(props.checkedItems).some(k => props.checkedItems[k])
+      ? 'inline-block'
+      : 'none'};
   opacity: 0.5;
   font-size: 16px;
   line-height: 131%;
@@ -47,11 +56,7 @@ export const ResetFilter = styled.button`
     opacity: 1;
   }
 
-  @media (max-width: 1199px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 420px) {
+  @media (max-width: 768px) {
     font-size: 14px;
     line-height: 190%;
   }

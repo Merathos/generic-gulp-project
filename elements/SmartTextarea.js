@@ -33,6 +33,7 @@ const StyledTextarea = styled(TextareaAutosize)`
   padding: 0;
   border: none;
   border-bottom: 1px solid rgba(32, 31, 42, 0.3);
+  border-radius: 0;
   font: inherit;
   font-size: 18px;
   line-height: 24px;
