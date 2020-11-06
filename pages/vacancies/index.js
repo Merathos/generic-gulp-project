@@ -16,8 +16,8 @@ const catalogPage = () => {
       categories: router.query.categories,
       teams: router.query.teams,
       stacks: router.query.stacks,
-      internship: router.query.internship,
-      english: router.query.english,
+      internship: Boolean(router.query.internship),
+      english: Boolean(router.query.english),
     },
   });
 
