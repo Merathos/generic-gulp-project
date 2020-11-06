@@ -4,9 +4,10 @@ import {
   Map,
   Application,
   ArticleContent,
+  Recruiters,
 } from 'components';
 import { SectionGroup } from 'containers';
-import { Container, Article, Grid, GreyContainer, Aside } from './styles';
+import { Container, GreyContainer } from './styles';
 
 const Vacancy = ({ data, back }) => {
   const content = JSON.parse(back.content);
@@ -25,6 +26,9 @@ const Vacancy = ({ data, back }) => {
 
       <Container>
         <SectionGroup>
+          <Recruiters data={data.recruiters} back={back.recruiters} decor /> 
+          </SectionGroup>
+          <SectionGroup>
           <Map data={data.map} />
         </SectionGroup>
         <SectionGroup>

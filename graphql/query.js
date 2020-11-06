@@ -55,6 +55,13 @@ export const GET_VACANCY_CONTENT = gql`
     	technology_stacks
     	recruiters {
         name
+        email
+        telegram
+        image {
+          path {
+            normal
+          }
+        }
       }
       id
     }
