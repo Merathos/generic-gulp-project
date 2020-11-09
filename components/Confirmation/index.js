@@ -6,9 +6,11 @@ const Confirmation = ({ data, closeSuccess }) => {
     <S.Container>
       <S.Wrapper>
         <CloseBtn onClick={closeSuccess} />
-        <S.Title>{data.title}</S.Title>
-        <S.Text>{data.text}</S.Text>
-        <S.Btn onClick={closeSuccess}>{data.btnText}</S.Btn>
+        <S.Content>
+          <S.Title>{data.title}</S.Title>
+          <S.Text>{data.text}</S.Text>
+          <S.Btn onClick={closeSuccess}>{data.btnText}</S.Btn>
+        </S.Content>
       </S.Wrapper>
     </S.Container>
   );

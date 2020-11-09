@@ -109,6 +109,21 @@ const GlobalStyle = createGlobalStyle`
       bottom: 0;
       padding-top: 0;
     }
+
+    &::-webkit-scrollbar {
+    width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #F7F8F9;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #53B443;
+      border-radius: 6px;
+      border: 3px solid #53B443;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: #53B443 #F7F8F9;
   }
 
   .successModal {
