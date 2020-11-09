@@ -6,20 +6,20 @@ export const Section = styled.section`
 
 export const Element = styled.div`
   position: relative;
-  display: flex;
   flex: none;
   align-self: flex-end;
+  text-align: center;
 
   @media screen and (max-width: 420px) {
-    padding-bottom: 56px;
+    align-self: flex-start;
 
     ::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -40px;
       left: 0;
       width: 420px;
-      height: 56px;
+      height: 120px;
       background-color: #ffffff;
     }
   }
@@ -27,22 +27,28 @@ export const Element = styled.div`
 
 export const Img = styled.img`
   margin-right: 40px;
+  vertical-align: bottom;
 
   @media screen and (max-width: 720px) {
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 315px;
   }
 `;
 
 export const QuoteBlock = styled.div`
   position: absolute;
-  bottom: 50px;
-  right: 40px;
+  bottom: 58px;
+  right: 50px;
   width: 57%;
   min-width: 270px;
-  padding: 40px 45px 30px 40px;
+  padding: 40px 45px 35px 40px;
   border-radius: 0 40px 40px 40px;
   background-color: ${props => (props.bgColor ? props.bgColor : `FB5235`)};
   color: ${props => (props.bgColor === '#FEB251' ? '#201F2A' : '#F7F8F9')};
+  text-align: left;
 
   @media screen and (max-width: 1024px) {
     left: 60px;
@@ -58,10 +64,14 @@ export const QuoteBlock = styled.div`
     padding: 20px 25px 25px 20px;
   }
 
-  @media screen and (max-width: 420px) {
-    bottom: 0;
+  @media screen and (max-width: 720px) {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  @media screen and (max-width: 420px) {
+    position: relative;
+    margin-top: -10px;
     z-index: 2;
   }
 `;
@@ -69,7 +79,10 @@ export const QuoteBlock = styled.div`
 export const Quote = styled.p`
   font-size: 24px;
   line-height: 36px;
-  padding-bottom: 40px;
+  margin-left: 3px;
+  padding-bottom: 35px;
+  max-height: 250px;
+  overflow: hidden;
 
   @media screen and (max-width: 864px) {
     font-size: 16px;
@@ -91,8 +104,8 @@ export const Author = styled.span`
 
 export const PrevButtonMain = styled.button`
   position: absolute;
-  bottom: 515px;
-  right: 118px;
+  bottom: 520px;
+  right: 130px;
   width: 53px;
   height: 106px;
   padding-left: 19px;
@@ -102,41 +115,49 @@ export const PrevButtonMain = styled.button`
   border-right: none;
 
   svg {
+    transition: fill 0.3s ease;
     fill: #53b443;
+
+    &:hover,
+    &:active {
+      fill: #339722;
+    }
   }
 
   .inactive-slide & {
     display: none;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 960px) {
       display: block;
     }
   }
 
-  @media screen and (max-width: 864px) {
-    top: 10px;
-  }
-
-  @media screen and (max-width: 640px) {
-    top: 30px;
-  }
-
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 960px) {
+    top: 0;
+    right: 10%;
+    padding-top: 0;
+    height: 16px;
     border: none;
   }
 
-  @media screen and (max-width: 420px) {
-    top: 30px;
-    right: 78px;
-    padding-top: 0;
-    height: 16px;
+  @media screen and (max-width: 860px) {
+    right: 20%;
+  }
+
+  @media screen and (max-width: 800px) {
+    right: 30%;
+  }
+
+  @media screen and (max-width: 720px) {
+    top: 4px;
+    right: 52px;
   }
 `;
 
 export const NextButtonMain = styled.button`
   position: absolute;
-  bottom: 515px;
-  right: 65px;
+  bottom: 520px;
+  right: 78px;
   width: 53px;
   height: 106px;
   padding-left: 13px;
@@ -146,34 +167,42 @@ export const NextButtonMain = styled.button`
   border-left: none;
 
   svg {
+    transition: fill 0.3s ease;
     fill: #53b443;
+
+    &:hover,
+    &:active {
+      fill: #339722;
+    }
   }
 
   .inactive-slide & {
     display: none;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 960px) {
       display: block;
     }
   }
 
-  @media screen and (max-width: 864px) {
-    top: 10px;
-  }
-
-  @media screen and (max-width: 640px) {
-    top: 30px;
-  }
-
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 960px) {
+    top: 0;
+    right: 2%;
+    padding-top: 0;
+    height: 16px;
     border: none;
   }
 
-  @media screen and (max-width: 420px) {
-    top: 30px;
-    right: 25px;
-    padding-top: 0;
-    height: 16px;
+  @media screen and (max-width: 860px) {
+    right: 12%;
+  }
+
+  @media screen and (max-width: 800px) {
+    right: 20%;
+  }
+
+  @media screen and (max-width: 720px) {
+    top: 4px;
+    right: 8px;
   }
 `;
 
@@ -181,9 +210,18 @@ export const PrevButton = styled.button`
   position: absolute;
   bottom: 85px;
   right: 130px;
+  width: 19px;
+  height: 19px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
 
   svg {
     fill: #ffffff;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 1;
   }
 
   .first-active-slide & {
@@ -196,15 +234,6 @@ export const PrevButton = styled.button`
   }
 
   @media screen and (max-width: 960px) {
-    left: 300px;
-  }
-
-  @media screen and (max-width: 864px) {
-    left: 260px;
-    bottom: 55px;
-  }
-
-  @media screen and (max-width: 420px) {
     display: none;
   }
 `;
@@ -213,9 +242,18 @@ export const NextButton = styled.button`
   position: absolute;
   bottom: 85px;
   right: 90px;
+  width: 19px;
+  height: 19px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
 
   svg {
     fill: #ffffff;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 1;
   }
 
   .first-active-slide & {
@@ -228,15 +266,6 @@ export const NextButton = styled.button`
   }
 
   @media screen and (max-width: 960px) {
-    left: 340px;
-  }
-
-  @media screen and (max-width: 864px) {
-    left: 300px;
-    bottom: 55px;
-  }
-
-  @media screen and (max-width: 420px) {
     display: none;
   }
 `;

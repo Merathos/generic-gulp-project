@@ -1,38 +1,49 @@
 import styled from 'styled-components';
-import { FilterButton } from 'elements';
 
 export const Wrapper = styled.div`
-  margin-bottom: 115px;
+  margin-bottom: 112px;
+  min-height: 250px;
 
   @media (max-width: 1199px) {
     margin-bottom: 40px;
   }
+
+  @media (max-width: 768px) {
+    min-height: 215px;
+  }
 `;
 
 export const List = styled.ul`
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 `;
 
 export const Item = styled.li`
   position: relative;
-  margin-bottom: 22px;
+  margin-bottom: 27px;
 
   @media (max-width: 910px) {
-    margin-bottom: 23px;
+    margin-bottom: 28px;
   }
 `;
 
 export const ResetFilter = styled.button`
+  display: ${props =>
+    Object.keys(props.checkedItems).some(k => props.checkedItems[k])
+      ? 'inline-block'
+      : 'none'};
   opacity: 0.5;
   font-size: 16px;
   line-height: 131%;
   position: relative;
   align-self: flex-start;
   padding-right: 16px;
+  transition: all 0.3s ease-in;
 
   &::after {
     content: '';
     background-image: url('icons/close-filter.svg');
+    background-position: center;
+    background-repeat: no-repeat;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -41,11 +52,11 @@ export const ResetFilter = styled.button`
     right: 0%;
   }
 
-  @media (max-width: 1199px) {
-    display: none;
+  &:hover {
+    opacity: 1;
   }
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 768px) {
     font-size: 14px;
     line-height: 190%;
   }

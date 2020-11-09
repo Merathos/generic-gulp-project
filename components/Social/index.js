@@ -5,32 +5,24 @@ import Insta from 'public/icons/instagram.svg';
 import Hh from 'public/icons/hh.svg';
 import * as S from './styles';
 
-const Social = ({ links, grey }) => (
-  <S.List>
+const Social = ({ links, grey, carryover }) => (
+  <S.List carryover={carryover}>
     {links.map((el, i) => (
-      <S.Element key={i}>
+      <S.Element key={i} carryover={carryover}>
         <S.SocialLink
           href={el.link}
           grey={grey}
           color={el.title === 'vk' || el.title === 'linkedin' ? 'blue' : 'red'}
+          aria-label={el.title}
+          carryover={carryover}
         >
           {
             {
-              'youtube': (
-                <Yb />
-              ),
-              'hh': (
-                <Hh />
-              ),
-              'vk': (
-                <Vk />
-              ),
-              'instagram': (
-                <Insta />
-              ),
-              'linkedin': (
-                <In />
-              )
+              youtube: <Yb />,
+              hh: <Hh />,
+              vk: <Vk />,
+              instagram: <Insta />,
+              linkedin: <In />,
             }[el.title]
           }
         </S.SocialLink>

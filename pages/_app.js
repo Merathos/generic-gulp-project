@@ -3,8 +3,13 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
 import { useStore } from '../lib/store';
 import { useApollo } from '../lib/apollo';
+import Head from 'next/head';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     color: #201F2A;
     font-family: 'TT Norms', 'Arial', sans-serif;
@@ -68,6 +73,8 @@ const GlobalStyle = createGlobalStyle`
     white-space: nowrap;
     clip-path: inset(100%);
     overflow: hidden;
+    top: -20px;
+    left: -20px;
   }
 
   .swiper-wrapper {
@@ -83,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 17px;
   }
 
-  .newsModal {
+  .formModal {
     top: 40px;
     bottom: 40px;
     left: 0;
@@ -95,6 +102,7 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     overflow: auto;
     outline: none;
+    background-color: #ffffff;
 
     @media (max-width: 1199px) {
       top: 0;
@@ -106,7 +114,6 @@ const GlobalStyle = createGlobalStyle`
   .successModal {
     top: 50%;
     transform: translateY(-50%);
-    bottom: 40px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -138,6 +145,9 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <ApolloProvider client={apolloClient}>
+        <Head>
+          <title>Dins</title>
+        </Head>
         <Component {...pageProps} />
         <GlobalStyle />
       </ApolloProvider>

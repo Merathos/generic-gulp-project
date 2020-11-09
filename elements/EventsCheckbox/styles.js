@@ -22,7 +22,20 @@ export const Wrapper = styled.div`
       transform: translateY(-50%);
       mask: url('icons/checked.svg') no-repeat 50% 50%;
       mask-size: 11px 9px;
-      background-color: ${props => props.color}; 
+      background-color: ${props => props.color};
+
+      @media (max-width: 768px) {
+        top: 7px;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  input:hover ~ label {
+    &::before {
+      @media (min-width: 1000px) {
+        border-color: ${props => props.color};
+      }
     }
   }
 `;
@@ -32,6 +45,7 @@ export const Label = styled.label`
   font-size: 20px;
   line-height: 26.8px;
   font-weight: 500;
+  cursor: pointer;
 
   @media (max-width: 910px) {
     font-size: 14px;
@@ -48,5 +62,11 @@ export const Label = styled.label`
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid rgba(31, 32, 42, 0.3);
+    transition: all 0.3s;
+
+    @media (max-width: 768px) {
+      top: 1px;
+      transform: translateY(0);
+    }
   }
 `;

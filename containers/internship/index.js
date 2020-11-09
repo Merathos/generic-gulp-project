@@ -55,7 +55,7 @@ const Internship = ({ data, vacancies }) => {
 
       <Application data={data.apply} />
 
-      <GreyFooter data={data.greyFooter} />
+      <GreyFooter data={data.greyFooter} background="transparent" />
     </main>
   );
 };

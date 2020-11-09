@@ -1,47 +1,135 @@
-import { useQuery } from '@apollo/react-hooks'
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
-
-import { GET_FILTER_SEARCH } from 'graphql/query';
+import { FilterButton, Checkbox } from 'elements';
+import { Dropdown } from 'components';
+import { useDispatch, useSelector } from 'react-redux';
 import { Cards, SidebarArticle, Tags } from 'components';
-import { Search, Filter } from 'forms';
+import { Search } from 'forms';
+import { getNewTags } from 'helpers';
 import * as S from './styles';
 
 const VacanciesList = ({ data: mock, back }) => {
-  const [value, setValue] = useState('');
   const router = useRouter();
-  const { loading, error, data, fetchMore, networkStatus } = useQuery(
-    GET_FILTER_SEARCH,
-    {
-      variables: {
-        search: value,
-      },
-      // Setting this value to true will make the component rerender when
-      // the "networkStatus" changes, so we are able to know if it is fetching
-      // more data
-      notifyOnNetworkStatusChange: true,
+  const { pathname, query } = router;
+  const dispatch = useDispatch();
+
+  const internship_state = useSelector(state => state.internship);
+  const english_state = useSelector(state => state.english);
+
+  const [opened, setOpened] = useState('');
+  const filterArray = useSelector(state => state.filter);
+
+  const openDropdown = e => {
+    if (opened === e) {
+      setOpened('');
+    } else {
+      setOpened(e);
     }
-  );
-  const _refetch = useQuery(GET_FILTER_SEARCH).refetch;
-
-  const refetch = useCallback(() => {
-    setTimeout(() => _refetch({
-      variables: {
-        search: value,
-      }
-    }), 0);
-  }, [_refetch]);
-
-  const handleSearch = searchValue => {
-    setValue(searchValue);
-    refetch();
   };
+
+  const handleCategories = e => {
+    router.push({
+      pathname,
+      query: {
+        ...query,
+        categories: e,
+      },
+    });
+    dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e })
+  };
+
+  const handleCheckbox = e => {
+    if (filterArray.indexOf(e) === -1) {
+      dispatch({ type: 'CATALOG_FILTER', payload: e });
+    } else {
+      dispatch({ type: 'CLEAR_FILTER', payload: e });
+    }
+  };
+
+  const handleInternship = () => {
+    router.push({
+      pathname,
+      query: {
+        ...query,
+        internship: !internship_state || '',
+      },
+    });
+    dispatch({ type: 'CATALOG_INTERNSHIP' });
+  };
+
+  const handleEnglish = () => {
+    const { pathname, query } = router;
+    router.push({
+      pathname,
+      query: {
+        ...query,
+        english: !english_state || '',
+      },
+    });
+    dispatch({ type: 'CATALOG_ENGLISH' })
+  };
+
+  const handleSearch = search => {
+    const { pathname, query } = router;
+    router.push({
+      pathname,
+      query: {
+        ...query,
+        search: getNewTags(router.query.search, search),
+      },
+    });
+  };
+
+  const handleClearTags = tag => {
+    dispatch({ type: 'CLEAR_FILTER', payload: tag });
+    const { pathname, query } = router;
+    router.push({
+      pathname,
+      query: {
+        ...query,
+        tags: getNewTags(router.query.tags, tag),
+      },
+    });
+  }
+
+  const {
+    filter: { fields, internship, english, discard }
+  } = mock;
 
   return (
     <S.Container>
       <S.Grid>
         <S.Aside>
-          <Filter data={mock.filter} />
+          <S.Filter>
+            <S.List>
+              {fields.map((el, i) => (
+                <Dropdown
+                  key={i}
+                  data={el}
+                  handleOpen={() => openDropdown(el.title)}
+                  opened={opened === el.title}
+                  handleChangeCheckbox={e => handleCheckbox(e)}
+                  handleChangeRadio={e => handleCategories(e)}
+                />
+              ))}
+            </S.List>
+            <S.Block>
+              <Checkbox
+                name={internship}
+                checked_state={internship_state}
+                handleChange={() => handleInternship()}
+              />
+              <Checkbox
+                name={english}
+                checked_state={english_state}
+                handleChange={() => handleEnglish()}
+              />
+            </S.Block>
+            <FilterButton
+              name={discard}
+              handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
+            />
+          </S.Filter>
           <SidebarArticle type="button" data={mock.article} />
         </S.Aside>
         <S.Article>
@@ -49,8 +137,9 @@ const VacanciesList = ({ data: mock, back }) => {
           <Search
             placeholder={mock.search}
             handleSearch={search => handleSearch(search)}
+            initialValue={router.query.search}
           />
-          <Tags />
+          <Tags handleChangeFilter={el => handleClearTags(el)} />
         </S.Article>
         <Cards data={back} type="vacancies" />
       </S.Grid>

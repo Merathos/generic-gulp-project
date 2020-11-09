@@ -6,13 +6,38 @@ export default {
     },
     {
       title: `Вакансии`,
-      href: `catalog`,
+      href: `vacancies`,
     },
     {
       title: `Команды`,
-      href: `team`,
+      href: `teams`,
     },
   ],
+  headerMenu: {
+    menuList: [
+      { title: 'О компании' },
+      { title: 'IT Evenings' },
+      { title: 'Команды' },
+      { title: 'Блог' },
+      { title: 'Вакансии', isSpecial: true },
+      { title: 'Релокация' },
+      { title: 'Стажировки' },
+      { title: 'Контакты' },
+    ],
+    contacts: ['phoneNumber', 'email'],
+    contact: {
+      phoneNumber: {
+        title: 'Телефон',
+        value: '+7 (812) 740-77-61',
+        href: 'tel:+78127407761',
+      },
+      email: {
+        title: 'E-mail',
+        value: 'jobs@dins.ru',
+        href: 'mailto:jobs@dins.ru',
+      },
+    },
+  },
   catalog: {
     mainTitle: `Вакансии`,
     filter: {
@@ -80,7 +105,7 @@ export default {
           multi: true,
         },
         {
-          title: `Проект`,
+          title: `Команды`,
           list: [
             `Contact Center`,
             `Platform A`,
@@ -1084,7 +1109,10 @@ export default {
     application: {
       title: `Откликнуться на вакансию`,
       button: `Отправить резюме`,
-      button2: `Порекомендовать друга`,
+    },
+    recruiters: {
+      title: `Остались вопросы?`,
+      text: `Пиши на почту jobs@dins.ru или нашим рекрутерам`,
     },
     vacancies: {
       title: `Вакансии в ЭТОЙ категории`,
@@ -1237,12 +1265,12 @@ export default {
       text: `Оценка условий труда`,
     },
     nimaxText: 'Сделали в',
+    producersText: 'Дизайн и разработка',
   },
   main: {
     intro: {
-      title: 'Работай в DINS',
-      text:
-        'Мы участвуем в разработке UCaaS-платформы для бизнеса. Она помогает компаниям управлять всеми коммуникациями:',
+      title: `Работай в${'\u00A0'}DINS`,
+      text: `Мы${'\u00A0'}участвуем в${'\u00A0'}разработке UCaaS-платформы для${'\u00A0'}бизнеса. Она помогает компаниям управлять всеми коммуникациями:`,
       communicationsList: [
         'Корпоративный чат',
         'Видеоконференции',
@@ -1255,24 +1283,44 @@ export default {
         {
           isMain: true,
           src: `/images/intro-portrait-1.png`,
-          bgColor: '#FB5235',
+          size: {
+            width: 791,
+            height: 835,
+          },
+          alt: `Портрет Александра`,
+          bgColor: '#53B443',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-2.png`,
-          bgColor: '#53B443',
+          size: {
+            width: 901,
+            height: 841,
+          },
+          alt: `Портрет Александра`,
+          bgColor: '#2F8ED9',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александра / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
-          bgColor: '#2F8ED9',
+          size: {
+            width: 759,
+            height: 864,
+          },
+          alt: `Портрет Александра`,
+          bgColor: '#FB5235',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александр / Тимлид',
         },
         {
           src: `/images/intro-portrait-3.png`,
+          size: {
+            width: 759,
+            height: 864,
+          },
+          alt: `Портрет Александра`,
           bgColor: '#FEB251',
           quote: `Надо стараться все делать хорошо: плохо оно само получится.`,
           name: 'Александр / Тимлид',
@@ -1284,12 +1332,12 @@ export default {
       infographicsData: [
         {
           name: 'centers-quantity',
-          title: 'Дата-центров на 4 континентах',
+          title: 'Дата-центров \nна 4 континентах',
           value: '17',
         },
         {
           name: 'accessibility',
-          title: 'Доступность сервиса',
+          title: 'Доступность \nсервиса',
           value: '99,999%',
         },
         {
@@ -1299,20 +1347,1196 @@ export default {
         },
         {
           name: 'calls-quantity',
-          title: 'Звонков одновременно',
+          title: 'Звонков \nодновременно',
           value: '>100 тыс',
         },
         {
           name: 'iterations-quantity',
-          title: 'Интеграций по API',
+          title: 'Интеграций \nпо API',
           value: '>1400',
         },
         {
           name: 'changes-quantity',
-          title: 'Изменений на продакшн в день',
+          title: 'Изменений на \nпродакшн в день',
           value: '>120',
         },
       ],
+    },
+    aboutCompany: {
+      benefits: [
+        {
+          title: 'Комфортные условия',
+          explanation:
+            'Современный офис, фрукты и завтраки на кухне, выбор техники, языковые курсы, спортивный зал, ДМС с первого рабочего дня. ',
+          details: 'Подробнее',
+        },
+        {
+          title: 'Релокация',
+          explanation:
+            'Поможем переехать в Санкт-Петербург: выплатим бонус и подскажем, куда обратиться по поводу жилья. ',
+          details: 'Подробнее',
+        },
+        {
+          title: 'Стажировки',
+          explanation:
+            'Официальное оформление и зарплата, реальные задачи и поддержка на протяжении всей стажировки.  ',
+          details: 'Подробнее',
+        },
+      ],
+      showEvent: true,
+      bannersData: {
+        event: {
+          name: 'JаVa Evening',
+          date: '29 мая 19:30-21:30',
+          buttonText: 'Зарегистрироваться',
+        },
+        blogLinksData: {
+          link1: {
+            buttonText: 'Перейти в блог ',
+            image: '/images/banner-picture-man.png',
+            bg: '/backgrounds/banner-green-square.png',
+          },
+          link2: {
+            buttonText: 'Перейти в блог ',
+            image: '/images/banner-picture-woman.png',
+            bg: '/backgrounds/banner-circle-with-square.png',
+          },
+        },
+      },
+      blogLinkDefault: 'link1',
+      pictures: [
+        {
+          src: `/images/gallery-2.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 574,
+            height: 405,
+          },
+        },
+        {
+          src: `/images/gallery-1.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 706,
+            height: 405,
+          },
+        },
+        {
+          src: `/images/gallery-2.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 574,
+            height: 405,
+          },
+        },
+        {
+          src: `/images/gallery-1.jpg`,
+          alt: 'У нас работа кипит',
+          size: {
+            width: 706,
+            height: 405,
+          },
+        },
+      ],
+    },
+    hasStories: true,
+    hasTeams: true,
+    vacancies: [
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'Development',
+        slug: 'junior-sql-developer-4',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'Architects and Analysts',
+        slug: 'junior-sql-developer-3',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'QA',
+        slug: 'java-developer-big-data-team-3',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'Product and Project',
+        slug: 'node-js-developer-collaboration-tool-4',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'Development',
+        slug: 'java-developer-big-data-team-4',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'Architects and Analysts',
+        slug: 'node-js-developer-collaboration-tool-3',
+        __typename: 'Vacancy',
+      },
+
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'DevOps',
+        slug: 'junior-sql-developer-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'DevOps',
+        slug: 'node-js-developer-collaboration-tool-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'Management',
+        slug: 'java-developer-big-data-team-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'Marketing',
+        slug: 'java-developer-big-data-team-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'Operations',
+        slug: 'junior-sql-developer-4',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'Management',
+        slug: 'junior-sql-developer-1',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'UX/UI and Design',
+        slug: 'junior-sql-developer-1',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'Internship',
+        slug: 'junior-sql-developer-3',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'HR and Finance',
+        slug: 'junior-sql-developer-1',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'HR and Finance',
+        slug: 'java-developer-big-data-team-3',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'HR and Finance',
+        slug: 'junior-sql-developer-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'HR and Finance',
+        slug: 'node-js-developer-collaboration-tool-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'Operations',
+        slug: 'node-js-developer-collaboration-tool-4',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'Internship',
+        slug: 'java-developer-big-data-team-4',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'Internship',
+        slug: 'node-js-developer-collaboration-tool-3',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Java developer (Big Data team)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Java developer',
+        category: 'Other',
+        slug: 'java-developer-big-data-team-3',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Junior SQL Developer',
+        isEnglishSpeakingTeam: false,
+        isInternship: true,
+        isRelocation: false,
+        descr: 'SQL Developer',
+        category: 'Other',
+        slug: 'junior-sql-developer-2',
+        __typename: 'Vacancy',
+      },
+      {
+        name: 'Node.js Developer (Collaboration Tool)',
+        isEnglishSpeakingTeam: true,
+        isInternship: false,
+        isRelocation: true,
+        descr: 'Node.js Developer',
+        category: 'Other',
+        slug: 'node-js-developer-collaboration-tool-2',
+        __typename: 'Vacancy',
+      },
+    ],
+    technologies: [
+      'Kubernetes',
+      'DDC',
+      'Marathon',
+      'Amazon AWS',
+      'Terraform',
+      'CloudFoundry',
+      'Rabbit',
+      'Google GCP',
+      'Zabbix',
+      'Git',
+      'Influx',
+      'Mercurial',
+      'Jenkins',
+      'Elasticsearch',
+      'GitLab',
+      'GridGain',
+      'Kafka',
+      'Coherence',
+      'ZeroMQ',
+    ],
+  },
+  stories: [
+    {
+      title: `История Саши`,
+      text: `Алексей${'\u00A0'}— Scala Teamlead в${'\u00A0'}DINS. Он${'\u00A0'}занимается программированием и${'\u00A0'}может
+       точно сказать, что его работа${'\u00A0'}— любимая. Почему так, Алексей делится в${'\u00A0'}этой статье.`,
+      button: `Послушать рассказ`,
+      audio: {
+        src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
+        title: `Послушать рассказ`,
+        time: `10:30`,
+      },
+      picture: `/images/story-portrait.png`,
+      size: {
+        width: 548,
+        height: 774,
+      },
+      alt: 'Фото Саши',
+      linkText: `Читать полностью`,
+    },
+    {
+      title: `История Маши`,
+      text: `Мария${'\u00A0'}— Scala Teamlead в${'\u00A0'}DINS. Она${'\u00A0'}занимается программированием и${'\u00A0'}может
+       точно сказать, что ее работа${'\u00A0'}— любимая. Почему так, Мария делится в${'\u00A0'}этой статье.`,
+      button: `Послушать рассказ`,
+      audio: {
+        src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
+        title: `Послушать рассказ`,
+        time: `10:30`,
+      },
+      picture: `/images/intro-portrait-2.png`,
+      size: {
+        width: 901,
+        height: 841,
+      },
+      alt: 'Фото Маши',
+      linkText: `Читать полностью`,
+    },
+    {
+      title: `История Пети`,
+      text: `Петр${'\u00A0'}— Scala Teamlead в${'\u00A0'}DINS. Он${'\u00A0'}занимается программированием и${'\u00A0'}может
+       точно сказать, что его работа${'\u00A0'}— любимая. Почему так, Алексей делится в${'\u00A0'}этой статье.`,
+      button: `Послушать рассказ`,
+      audio: {
+        src: `https://api.develop.dins.d.nimax.ru/storage/audio/ZNRUDlvyXvGThUDbtVbzNooA3j3PDCaBsZ6GAlPS.mp3`,
+        title: `Послушать рассказ`,
+        time: `10:30`,
+      },
+      picture: `/images/intro-portrait-3.png`,
+      size: {
+        width: 7759,
+        height: 864,
+      },
+      alt: 'Фото Пети',
+      linkText: `Читать полностью`,
+    },
+  ],
+  teams: [
+    {
+      name: 'Contact Center',
+      summary: `Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с${'\u00A0'}использованием WebRTC, качество разработки сервиса видео-конференций нового поколения на самом высочайшем уровне.`,
+      image: {
+        path: {
+          normal: '/images/team-1.jpg',
+        },
+      },
+      slug: 'contact-center',
+    },
+    {
+      name: 'RCV (Video-conference)',
+      summary: `Команда RCV занимается поддержкой и${'\u00A0'}развитием одноименного сервиса${'\u00A0'}- Global CI. Сервис предоставляет возможность ранней верификации разработанного сервиса видео-конференций нового поколения.`,
+      image: {
+        path: {
+          normal: '/images/team-2.png',
+        },
+      },
+      slug: 'rcv-video-conference',
+    },
+    {
+      name: 'Platform A',
+      summary: `В${'\u00A0'}команде Platform А${'\u00A0'}мы${'\u00A0'}разрабатываем публичный REST API для Unified Communications сервиса и${'\u00A0'}специализируемся на${'\u00A0'}способах наискорейшей и наиэффективнейшей разработки сервиса видео-конференций нового поколения.`,
+      image: {
+        path: {
+          normal: '/images/team-3.jpg',
+        },
+      },
+      slug: 'platform-a',
+    },
+  ],
+  events: {
+    mainTitle: `IT Evenings`,
+    completedTitle: `Прошедшие мероприятия`,
+    filterFields: [
+      {
+        name: `DevOps`,
+        color: `#2F8ED9`,
+      },
+      {
+        name: `Java`,
+        color: `#FB5235`,
+      },
+      {
+        name: `JavaScript`,
+        color: `#FEB251`,
+      },
+      {
+        name: `QA`,
+        color: `#53B443`,
+      },
+    ],
+    discard: `Сбросить фильтр`,
+    mailing: {
+      link: `Подпишись на рассылку `,
+      linkHref: `#`,
+      text: ` и будь в курсе наших мероприятий`,
+    },
+    tags: [`Java`, `DevOps`],
+    cards: {
+      active: [
+        {
+          type: `QA Evening`,
+          color: `#53B443`,
+          date: { day: `11.04`, time: `Начало в 18:00` },
+          status: { img: `icons/online.png`, name: `Онлайн` },
+          topics: [
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+                {
+                  img: `images/speaker2.png`,
+                  name: `Александр Калошин`,
+                  job: `DINS`,
+                },
+              ],
+            },
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+              ],
+            },
+          ],
+          location: `Мероприятие проводится онлайн`,
+        },
+        {
+          type: `JS Evening`,
+          color: `#FEB251`,
+          date: { day: `11.04`, time: `Начало в 18:00` },
+          status: { img: `icons/streaming.png`, name: `Идет трансляция` },
+          topics: [
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+                {
+                  img: `images/speaker2.png`,
+                  name: `Александр Калошин`,
+                  job: `DINS`,
+                },
+              ],
+            },
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+              ],
+            },
+          ],
+          location: `Старо-Петергофский проспект 19. Офис DINS`,
+        },
+      ],
+      completed: [
+        {
+          type: `JаVa Evening`,
+          color: `#FB5235`,
+          date: { day: `11.04`, time: `Начало в 18:00` },
+          status: { img: `icons/recording.png`, name: `Есть запись` },
+          topics: [
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+                {
+                  img: `images/speaker2.png`,
+                  name: `Александр Калошин`,
+                  job: `DINS`,
+                },
+              ],
+            },
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+              ],
+            },
+          ],
+          location: `Старо-Петергофский проспект 19. Офис DINS`,
+        },
+        {
+          type: `QA Evening`,
+          color: `#53B443`,
+          date: { day: `11.04.19`, time: `Начало в 18:00` },
+          status: { img: `icons/recording.png`, name: `Есть запись` },
+          topics: [
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+                {
+                  img: `images/speaker2.png`,
+                  name: `Александр Калошин`,
+                  job: `DINS`,
+                },
+              ],
+            },
+            {
+              title: `Эволюция систем мониторинга Prometheus и Zabbix`,
+              speakers: [
+                {
+                  img: `images/speaker1.png`,
+                  name: `Вячеслав Швецов`,
+                  job: `DINS`,
+                },
+              ],
+            },
+          ],
+          location: `Старо-Петергофский проспект 19. Офис DINS`,
+        },
+      ],
+    },
+    newsModal: {
+      mainTitle: 'Хочу получать новости о мероприятиях DINs',
+      contact: {
+        title: 'Оставь  контактные данные',
+        inputs: [
+          {
+            name: `surname`,
+            label: `Фамилия *`,
+            required: true,
+          },
+          {
+            name: `name`,
+            label: `Имя *`,
+            required: true,
+          },
+          {
+            name: `email`,
+            label: `Email *`,
+            required: true,
+          },
+        ],
+      },
+      directions: {
+        title: 'Выбери направления мероприятий, про которые хочешь знать',
+        question: 'Какие направления в IT тебе интересны? *',
+        inputs: ['Development', 'Big Data', 'QA ', 'QA Automation', 'DevOps '],
+      },
+      agreement: {
+        dataText: 'Подтверждаю свое согласие на ',
+        dataLink: ' обработку персональных данных',
+        dataHref: '#',
+        mailing:
+          'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+      },
+      buttonText: 'Отправить заявку',
+      confirmation: {
+        title: 'Спасибо!',
+        text: 'Теперь ты будешь в курсе всех самых свежих мероприятий DINS!',
+        btnText: 'Хорошо',
+      },
+    },
+    eventDetails: {
+      type: `JavaScript EVENING`,
+      isActive: true,
+      bgImg: `backgrounds/javascript.svg`,
+      status: { img: `icons/online.png`, name: `Online` },
+      date: { day: `29 мая,`, time: `19:30-21:30` },
+      location: `Санкт-Петербург. Старо-Петергофский проспект 19, БЦ «Петергофский»`,
+      speakers: {
+        title: `Спикеры`,
+        list: [
+          {
+            img: `images/speaker1.png`,
+            bigImg: `images/details-speaker.jpg`,
+            name: `Вячеслав Швецов`,
+            job: `DINS`,
+            text: `На моем опыте я больше вижу, что SAST используется скорее для соблюдения формальностей, связанных с различными требованиями со стороны заказчиков, чем для поиска реальных багов.`,
+          },
+          {
+            img: `images/speaker1.png`,
+            bigImg: `images/details-speaker.jpg`,
+            name: `Вячеслав Швецов`,
+            job: `DINS`,
+            text: `При таком подходе, в результате, имеем в лучшем случае, относительно небольшое количество «уязвимостей», которые чуть ли не автоматически прокликиваются как «not exploitable» (потому что таковыми и являются в 99.9% случаев).`,
+          },
+        ],
+      },
+      description: `На встрече, в рамках доклада про React, поговорим зачем нужен ConcurrentMode и как его использовать, познакомимся с ленивыми импортами (lazy) и компонентом для удобства их использования (Suspense). Наш гость из VK расскажет несколько историй про баги
+        и некоторые технические решения, учитывающие специфику проекта. Нас ждут не только доклады, но и наша традиционная пицца.`,
+      schedule: {
+        title: `Программа мероприятия`,
+        list: [
+          {
+            time: `19:00`,
+            name: `Сбор гостей и кофе`,
+          },
+          {
+            time: `19:30`,
+            name: `Как (не)правильно использовать REST Assured`,
+            description: `Экосистема фреймворка React всё время предлагает нам новую функциональность. Большой долгострой — это так называемый concurrent React, который по частям выходит в стабильных версиях, но в основном это — всё еще дело. Экосистема фреймворка React всё время предлагает нам новую функциональность. Большой долгострой — это так называемый concurrent React, который по частям выходит в стабильных версиях, но в основном это — всё еще дело.`,
+          },
+          {
+            time: `20:00`,
+            name: `Как мы собираем логи Nginx в ClickHouse`,
+          },
+          {
+            time: `20:30`,
+            name: `Как (не)правильно использовать REST Assured `,
+            description: `В VK очень много пользователей, поэтому часто на первый взгляд незначительный баг может оказаться неприятным. В докладе прозвучат несколько историй про баги, с которыми сталкивался спикер, про некоторые технические решения, которые необходимы с учётом специфики ВКонтакте.`,
+          },
+        ],
+      },
+      eventRecap: [
+        {
+          title: `Как мы собираем логи Nginx в ClickHouse`,
+          video: {
+            src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+            srcPoster: `images/event-details1.jpg`,
+          },
+          text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
+          list: [
+            {
+              text: `/getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает как строку, и передает ее в getTransactionInfo(transactionId) =>getTransactionInfo(transactoinId) – делает конкат transactionId к SQL запросу (то есть получается SQL инъекция);`,
+            },
+            {
+              text: `/getSecureSettings — на вход принимает также userId и mailboxId и выдает настройки мейлбокса. НО проверяет что mailboxid принадлежит пользователю;`,
+            },
+            {
+              text: `/getSettings — на вход принимает userId и mailboxId – и выдает настройки мейлбокса. Не проверяет что mailboxid принадлежит пользователю.`,
+            },
+          ],
+        },
+        {
+          title: `Как (не)правильно использовать REST Assured `,
+          video: {
+            src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+            srcPoster: `images/event-details2.jpg`,
+          },
+          text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
+          photos: [
+            {
+              src: `images/event-details1.jpg`,
+              title: `Подпись к картинке 3`,
+            },
+            {
+              src: `images/event-details2.jpg`,
+              title: `Подпись к картинке 4`,
+            },
+            {
+              src: `images/gallery-1.jpg`,
+              title: `Подпись к картинке`,
+            },
+            {
+              src: `images/gallery-2.jpg`,
+              title: `Подпись к картинке 2`,
+            },
+          ],
+        },
+      ],
+      stream: {
+        title: `Прямая трансляция`,
+        msg: `Трансляция начнется в 19:30 и будет доступна на странице`,
+        video: {
+          src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
+          srcPoster: `images/event-details1.jpg`,
+          stretched: true,
+        },
+      },
+      timepad: {
+        customizeID: `134610`,
+        eventID: `1464460`,
+      },
+    },
+    eventDetailsArch: {
+      type: `JavaScript EVENING`,
+      isActive: false,
+      bgImg: `backgrounds/javascript.svg`,
+      status: { img: `icons/online.png`, name: `Online` },
+      date: { day: `29 мая,`, time: `19:30-21:30` },
+      location: `Санкт-Петербург. Старо-Петергофский проспект 19, БЦ «Петергофский»`,
+      speakers: {
+        title: `Спикеры`,
+        list: [
+          {
+            img: `images/speaker1.png`,
+            bigImg: `images/details-speaker.jpg`,
+            name: `Вячеслав Швецов`,
+            job: `DINS`,
+            text: `На моем опыте я больше вижу, что SAST используется скорее для соблюдения формальностей, связанных с различными требованиями со стороны заказчиков, чем для поиска реальных багов.`,
+          },
+          {
+            img: `images/speaker1.png`,
+            bigImg: `images/details-speaker.jpg`,
+            name: `Вячеслав Швецов`,
+            job: `DINS`,
+            text: `При таком подходе, в результате, имеем в лучшем случае, относительно небольшое количество «уязвимостей», которые чуть ли не автоматически прокликиваются как «not exploitable» (потому что таковыми и являются в 99.9% случаев).`,
+          },
+        ],
+      },
+      description: `На встрече, в рамках доклада про React, поговорим зачем нужен ConcurrentMode и как его использовать, познакомимся с ленивыми импортами (lazy) и компонентом для удобства их использования (Suspense). Наш гость из VK расскажет несколько историй про баги
+        и некоторые технические решения, учитывающие специфику проекта. Нас ждут не только доклады, но и наша традиционная пицца.`,
+      schedule: {
+        title: `Программа мероприятия`,
+        list: [
+          {
+            time: `19:00`,
+            name: `Сбор гостей и кофе`,
+          },
+          {
+            time: `19:30`,
+            name: `Как (не)правильно использовать REST Assured`,
+            description: `Экосистема фреймворка React всё время предлагает нам новую функциональность. Большой долгострой — это так называемый concurrent React, который по частям выходит в стабильных версиях, но в основном это — всё еще дело. Экосистема фреймворка React всё время предлагает нам новую функциональность. Большой долгострой — это так называемый concurrent React, который по частям выходит в стабильных версиях, но в основном это — всё еще дело.`,
+          },
+          {
+            time: `20:00`,
+            name: `Как мы собираем логи Nginx в ClickHouse`,
+          },
+          {
+            time: `20:30`,
+            name: `Как (не)правильно использовать REST Assured `,
+            description: `В VK очень много пользователей, поэтому часто на первый взгляд незначительный баг может оказаться неприятным. В докладе прозвучат несколько историй про баги, с которыми сталкивался спикер, про некоторые технические решения, которые необходимы с учётом специфики ВКонтакте.`,
+          },
+        ],
+      },
+      eventRecap: [
+        {
+          title: `Как мы собираем логи Nginx в ClickHouse`,
+          video: {
+            src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+            srcPoster: `images/event-details1.jpg`,
+          },
+          text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
+          list: [
+            {
+              text: `/getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает как строку, и передает ее в getTransactionInfo(transactionId) =>getTransactionInfo(transactoinId) – делает конкат transactionId к SQL запросу (то есть получается SQL инъекция);`,
+            },
+            {
+              text: `/getSecureSettings — на вход принимает также userId и mailboxId и выдает настройки мейлбокса. НО проверяет что mailboxid принадлежит пользователю;`,
+            },
+            {
+              text: `/getSettings — на вход принимает userId и mailboxId – и выдает настройки мейлбокса. Не проверяет что mailboxid принадлежит пользователю.`,
+            },
+          ],
+        },
+        {
+          title: `Как (не)правильно использовать REST Assured `,
+          video: {
+            src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+            srcPoster: `images/event-details2.jpg`,
+          },
+          text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
+          photos: [
+            {
+              src: `images/event-details1.jpg`,
+              title: `Подпись к картинке 3`,
+            },
+            {
+              src: `images/event-details2.jpg`,
+              title: `Подпись к картинке 4`,
+            },
+            {
+              src: `images/gallery-1.jpg`,
+              title: `Подпись к картинке`,
+            },
+            {
+              src: `images/gallery-2.jpg`,
+              title: `Подпись к картинке 2`,
+            },
+          ],
+        },
+      ],
+      stream: {
+        title: `Прямая трансляция`,
+        msg: `Трансляция начнется в 19:30 и будет доступна на странице`,
+        video: {
+          src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
+          srcPoster: `images/event-details1.jpg`,
+          stretched: true,
+        },
+      },
+      timepad: {
+        customizeID: `134610`,
+        eventID: `1464460`,
+      },
+    },
+  },
+  jobForm: {
+    mainTitle: `Java developer (Big\u00A0Data team)`,
+    subtitle: `Откликнуться на вакансию`,
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `phone`,
+          label: `Телефон *`,
+          phone: true,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+      select: {
+        placeholder: `Предпочтительный способ связи`,
+        options: [
+          { value: 'phone', label: 'Телефон' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' },
+          { value: 'telegram', label: 'Telegram' },
+        ],
+      },
+    },
+    cv: {
+      title: `Прикрепи резюме или ссылку`,
+      fileInput: {
+        id: 51456,
+        name: `cvFile`,
+        label: 'Прикрепить резюме',
+        fileExt: `doc, docx, pdf, rtf, TXT`,
+      },
+      textInput: {
+        name: `cvLink`,
+        label: `Ссылка на резюме`,
+      },
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Отправить заявку',
+    confirmation: {
+      title: 'Спасибо!',
+      text: 'Мы изучим твое резюме и свяжемся с тобой в ближайшее время.',
+      btnText: 'Хорошо',
+    },
+  },
+  internForm: {
+    mainTitle: 'Заявка на стажировку',
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `birthDate`,
+          label: `Дата рождения *`,
+          required: true,
+          date: true,
+        },
+        {
+          name: `phone`,
+          phone: true,
+          label: `Телефон *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+      select: {
+        placeholder: `Предпочтительный способ связи`,
+        options: [
+          { value: 'phone', label: 'Телефон' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' },
+          { value: 'telegram', label: 'Telegram' },
+        ],
+      },
+    },
+    education: {
+      title: `Образование`,
+      inputs: [
+        {
+          name: `university`,
+          label: `ВУЗ *`,
+          required: true,
+        },
+        {
+          name: `faculty`,
+          label: `Факультет / направление обучения *`,
+          required: true,
+        },
+        {
+          name: `course`,
+          label: `Курс*`,
+          required: true,
+        },
+      ],
+    },
+    terms: {
+      title: `Условия стажировки`,
+      direction: {
+        question: `Какие направления в IT тебе интересны? *`,
+        inputs: [`Development`, `Big Data`, `QA `, `QA Automation`, `DevOps`],
+      },
+      tech: [
+        {
+          label: `С какими технологиями тебе хотелось бы работать? *`,
+          placeholder: `Введите технологии`,
+          name: `techWish`,
+        },
+        {
+          label: `Какие технологии приходилось использовать на практике или изучать? * `,
+          placeholder: `Введите технологии`,
+          name: `techExp`,
+        },
+      ],
+      startingMonth: {
+        question: `С какого месяца сможешь начать проходить стажировку? *`,
+        placeholder: `Месяц`,
+        options: [
+          { value: 'january', label: 'Январь' },
+          { value: 'february', label: 'Февраль' },
+          { value: 'march', label: 'Март' },
+          { value: 'april', label: 'Апрель' },
+          { value: 'may', label: 'Май' },
+          { value: 'june', label: 'Июнь' },
+          { value: 'july', label: 'Июль' },
+          { value: 'august', label: 'Август' },
+          { value: 'september', label: 'Сентябрь' },
+          { value: 'october', label: 'Октябрь' },
+          { value: 'nobember', label: 'Ноябрь' },
+          { value: 'december', label: 'Декабрь' },
+        ],
+      },
+      time: {
+        question: `Сколько часов в неделю ты готов стажироваться? *`,
+        inputs: [
+          {
+            name: `time`,
+            value: `30`,
+            label: `30 часов`,
+          },
+          {
+            name: `time`,
+            value: `40`,
+            label: `40 часов`,
+          },
+        ],
+      },
+    },
+    cv: {
+      title: `Прикрепи резюме или ссылку`,
+      fileInput: {
+        id: 51456,
+        name: `cvFile`,
+        label: 'Прикрепить резюме',
+        fileExt: `doc, docx, pdf, rtf, TXT`,
+      },
+      textInput: {
+        name: `cvLink`,
+        label: `Ссылка на резюме`,
+      },
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Отправить заявку',
+    confirmation: {
+      title: 'Спасибо!',
+      text:
+        'Мы изучим твою заявку и свяжемся по указанным контактам, если появится подходящая позиция.',
+      btnText: 'Хорошо',
+    },
+  },
+  jobFormV2: {
+    mainTitle: `хочу работать в DINS`,
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `phone`,
+          phone: true,
+          label: `Телефон *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+      select: {
+        placeholder: `Предпочтительный способ связи`,
+        options: [
+          { value: 'phone', label: 'Телефон' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' },
+          { value: 'telegram', label: 'Telegram' },
+        ],
+      },
+    },
+    cv: {
+      title: `Прикрепи резюме или ссылку`,
+      fileInput: {
+        id: 51456,
+        name: `cvFile`,
+        label: 'Прикрепить резюме',
+        fileExt: `doc, docx, pdf, rtf, TXT`,
+      },
+      textInput: {
+        name: `cvLink`,
+        label: `Ссылка на резюме`,
+      },
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Отправить заявку',
+    confirmation: {
+      title: 'Спасибо!',
+      text:
+        'Мы изучим твою заявку и свяжемся, если появится подходящая позиция.',
+      btnText: 'Хорошо',
+    },
+  },
+  mailingForm: {
+    mainTitle: `Подпишись на нашу рассылку и узнавай о\u00A0вакансиях первым`,
+    contact: {
+      title: `Оставь  контактные данные`,
+      inputs: [
+        {
+          name: `surname`,
+          label: `Фамилия *`,
+          required: true,
+        },
+        {
+          name: `name`,
+          label: `Имя *`,
+          required: true,
+        },
+        {
+          name: `email`,
+          label: `Email *`,
+          required: true,
+        },
+      ],
+    },
+    agreement: {
+      dataText: 'Подтверждаю свое согласие на ',
+      dataLink: ' обработку персональных данных',
+      dataHref: '#',
+      mailing:
+        'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
+    },
+    buttonText: 'Подписаться',
+    confirmation: {
+      title: 'Спасибо!',
+      text: 'Теперь ты будешь получать рассылку DINS.',
+      btnText: 'Хорошо',
     },
   },
 };

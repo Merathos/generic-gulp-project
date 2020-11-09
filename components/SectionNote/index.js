@@ -13,6 +13,7 @@ const Text = styled.p`
 `;
 
 const Section = styled.section`
+  max-width: 850px;
   padding: 40px 0 42px;
   border-top: 2px solid rgba(31, 32, 42, 0.1);
   border-bottom: 2px solid rgba(31, 32, 42, 0.1);
@@ -34,7 +35,7 @@ const SectionNote = ({ data }) => {
   return (
     <Section>
       <Icon name="26" />
-      <Text>{data}</Text>
+      <Text dangerouslySetInnerHTML={{ __html: data }} />
     </Section>
   );
 };

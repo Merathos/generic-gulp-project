@@ -47,10 +47,12 @@ export const H2 = styled(TitleH2)`
 `;
 
 export const AdvertsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 90px;
 
-  @media screen and (max-width: 420px) {
-    flex-direction: column;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-column-gap: 30px;
   }
 `;

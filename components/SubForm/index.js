@@ -1,9 +1,9 @@
-import { TextInput, CloseBtn } from 'elements';
+import { useMutation } from '@apollo/react-hooks';
+import { CloseBtn, TextInput } from 'elements';
+import { SET_SUBSCRIPTION } from 'graphql/mutations/subscription';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useMutation } from '@apollo/react-hooks';
 import { useForm } from 'react-hook-form';
-import { SET_SUBSCRIPTION } from 'graphql/mutations/subscription';
 import * as S from './styles';
 
 const SubForm = ({
@@ -59,7 +59,7 @@ const SubForm = ({
             ))}
           </S.InputsContainer>
         </S.FormSection>
-        <S.FormSection>
+        <S.MultivarSection>
           <S.SectionTitle>{directions.title}</S.SectionTitle>
           <S.Question>{directions.question}</S.Question>
           <S.CheckboxContainer>
@@ -74,7 +74,7 @@ const SubForm = ({
               />
             ))}
           </S.CheckboxContainer>
-        </S.FormSection>
+        </S.MultivarSection>
         <S.FormSection>
           <S.AgreemenCheckbox
             name={agreement.name}

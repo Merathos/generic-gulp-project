@@ -10,13 +10,16 @@ import {
   H5,
   StyledIcon,
   Image,
-  Aside
+  Aside,
+  DefaultSubtitle,
+  DefaultTitle,
 } from './styles';
 
 const SidebarArticle = props => {
   const {
-    data: { title, subtitle, description, text, button, icon, picture },
-    type
+    data: { title, subtitle, description, text, button, icon, picture, link },
+    type,
+    fromEditor,
   } = props;
   return (
     <>
@@ -24,20 +27,45 @@ const SidebarArticle = props => {
         {
           'icon': (
             <SectionIcon>
-              <StyledIcon name={icon} />
-              <H5>{title}</H5>
-              <Subtitle>{description}</Subtitle>
+              {fromEditor ? (
+                <>
+                  <StyledIcon name={26} />
+                  <H5>{title}</H5>
+                  <Subtitle>{text}</Subtitle>
+                </>
+              ) : (
+                <>
+                  <StyledIcon name={icon} />
+                  <H5>{title}</H5>
+                  <Subtitle>{description}</Subtitle>
+                </>
+              )
+              }
             </SectionIcon>
           ),
           'default': (
             <Section>
-              <Subtitle>{subtitle}</Subtitle>
-              <Title>{title}</Title>
-              <Link href="/about">
-                <a>
-                  <ArrowRight />
-                </a>
-              </Link>
+              {fromEditor ? (
+                <>
+                  <DefaultSubtitle>Читайте также</DefaultSubtitle>
+                  <DefaultTitle>{title}</DefaultTitle>
+                  <Link href={link}>
+                    <a>
+                      <ArrowRight />
+                    </a>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Subtitle>{subtitle}</Subtitle>
+                  <Title>{title}</Title>
+                  <Link href={link}>
+                    <a>
+                      <ArrowRight />
+                    </a>
+                  </Link>
+                </>
+              )}
             </Section>
           ),
           'button': (

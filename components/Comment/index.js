@@ -3,17 +3,16 @@ import { Block, Container, Img, Card, Text } from './styles';
 
 const Comment = props => {
   const {
-    data: { src, text, name },
-    position
+    data: { imageUrl, title, describe }
   } = props;
   return (
-    <Block align={position}>
+    <Block>
       <Container>
-        <Img src={src} alt={name} />
-        <TitleH5>{name}</TitleH5>
+        <Img background={`https://api.develop.dins.d.nimax.ru/${imageUrl}`} />
+        <TitleH5>{title}</TitleH5>
       </Container>
       <Card>
-        <Text>{text}</Text>
+        <Text dangerouslySetInnerHTML={{ __html: describe }} />
       </Card>
     </Block>
   );

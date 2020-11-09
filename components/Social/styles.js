@@ -1,14 +1,26 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
 
-  @media (max-width: 420px) {
+  ${props =>
+    props.carryover &&
+    css`
+      flex-wrap: wrap;
+    `}
+
+  @media screen and (max-width: 420px) {
     margin: 0;
   }
 `;
 
 export const Element = styled.li`
+  ${props =>
+    props.carryover &&
+    css`
+      margin-bottom: 10px;
+    `}
+
   &:not(:last-child) {
     margin-right: 14px;
   }
@@ -24,8 +36,8 @@ export const SocialLink = styled.a`
   border-radius: 50%;
   transition: background-color 200ms ease;
 
-  @media (max-width: 420px) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 420px) {
+    margin-bottom: ${props => (props.carryover ? '0' : '30px')};
   }
 
   &:hover {

@@ -1,5 +1,5 @@
-import { getStatusImage } from 'helpers/events-helpers';
 import dayjs from 'dayjs';
+import { getStatusImage } from 'helpers/events-helpers';
 import * as S from './styles';
 
 const EventCard = ({ event, completed }) => {
@@ -12,7 +12,12 @@ const EventCard = ({ event, completed }) => {
     if (status.slug === 'online') {
       return (
         <>
-          <S.Icon src={getStatusImage(status.slug)} alt={status.name} />
+          <S.Icon
+            src={getStatusImage(status.slug)}
+            alt={status.name}
+            width="16"
+            height="16"
+          />
           {status.name}
         </>
       );
@@ -20,7 +25,12 @@ const EventCard = ({ event, completed }) => {
     if (status.slug === 'streaming') {
       return (
         <>
-          <S.Icon src={getStatusImage(status.slug)} alt={status.name} />
+          <S.Icon
+            src={getStatusImage(status.slug)}
+            alt={status.name}
+            width="16"
+            height="16"
+          />
           {status.name}
         </>
       );
@@ -48,7 +58,12 @@ const EventCard = ({ event, completed }) => {
               {program.speaker &&
                 [program.speaker].map(speaker => (
                   <S.Speaker key={speaker.id}>
-                    <S.Pic src={speaker.image.path.normal} alt={speaker.name} />
+                    <S.Pic
+                      src={speaker.image.path.normal}
+                      alt={speaker.name}
+                      width="63"
+                      height="63"
+                    />
                     <S.NameWrapper>
                       <S.SpeakerName>{speaker.name}</S.SpeakerName>
                       <S.SpeakerJob>{speaker.company}</S.SpeakerJob>

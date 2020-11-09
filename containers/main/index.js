@@ -1,29 +1,49 @@
-import { Infographics, Intro } from 'containers';
-import { Container, GreyContainer } from './styles';
+import {
+  Infographics,
+  Intro,
+  AboutCompany,
+  PersonalStories,
+  Teams,
+  Vacancies,
+} from 'containers';
+import { RunningText } from '../../components';
+import { Main as MainContainer, Container, GreyContainer } from './styles';
 
-const Main = ({ data }) => {
+const Main = ({ data, storiesData, teams }) => {
   return (
-    <main>
+    <MainContainer>
       <GreyContainer>
         <Container>
-          {/*<Head>*/}
-          {/*  <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/}
-          {/*</Head>*/}
           <Intro data={data.intro} />
         </Container>
       </GreyContainer>
       <Container>
         <Infographics data={data.infographics} />
       </Container>
-      <Container>{/*<AboutUs />*/}</Container>
+      <Container>
+        <RunningText data={data.technologies} />
+      </Container>
+      <Container>
+        <AboutCompany data={data.aboutCompany} />
+      </Container>
+      {data.hasStories && (
+        <GreyContainer>
+          <Container>
+            <PersonalStories data={storiesData} />
+          </Container>
+        </GreyContainer>
+      )}
+      {data.hasTeams && (
+        <Container>
+          <Teams data={teams} />
+        </Container>
+      )}
       <GreyContainer>
-        <Container>{/*<PersonalStory />*/}</Container>
+        <Container>
+          <Vacancies data={data.vacancies} />
+        </Container>
       </GreyContainer>
-      <Container>{/*<Teams />*/}</Container>
-      <GreyContainer>
-        <Container>{/*<Vacancies />*/}</Container>
-      </GreyContainer>
-    </main>
+    </MainContainer>
   );
 };
 

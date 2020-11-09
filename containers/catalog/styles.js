@@ -24,10 +24,9 @@ export const Article = styled.article`
 `;
 
 export const Grid = styled.div`
-  align-items: flex-start;
   padding-top: 200px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
@@ -48,7 +47,25 @@ export const Aside = styled.aside`
 export const Title = styled(TitleH1)`
   margin-bottom: 100px;
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 1280px) {
+    display: none;
   }
+`;
+
+export const Filter = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Block = styled.div`
+  @media screen and (max-width: 420px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+`;
+
+export const List = styled.div`
+  margin-bottom: 25px;
 `;

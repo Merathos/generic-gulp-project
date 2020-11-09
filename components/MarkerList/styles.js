@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const List = styled.ul`
+  margin-bottom: ${props => (props.inline ? '0' : '100px')};
+  max-width: 850px;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+  }
+`;
 
 export const Img = styled.img`
   margin-bottom: 40px;
@@ -23,15 +32,17 @@ export const ElementEllipse = styled.li`
     width: ${props => (props.inline ? '6px' : '8px')};
     height: ${props => (props.inline ? '6px' : '8px')};
     left: ${props => (props.inline ? '0' : '30px')};
-    top: ${props => (props.inline ? '6px' : '10px')};
+    top: ${props => (props.inline ? '8px' : '10px')};
   }
 
   @media screen and (max-width: 420px) {
-    padding-left: 25px;
+    padding-left: ${props => (props.inline ? '16px' : '25px')};
     margin-bottom: 20px;
-    margin-right: ${props => (props.inline ? '25px' : '0')};
+    margin-right: 0;
 
     &::before {
+      width: ${props => (props.inline ? '4px' : '8px')};
+      height: ${props => (props.inline ? '4px' : '8px')};
       left: 0;
     }
   }
@@ -63,6 +74,15 @@ export const Number = styled.span`
 export const Text = styled.p`
   font-size: ${props => (props.inline ? '18px' : '20px')};
   line-height: ${props => (props.inline ? '120%' : '158%')};
+
+  ${props =>
+    props.inline &&
+    css`
+      @media screen and (max-width: 720px) {
+        font-size: 14px;
+        line-height: 158%;
+      }
+    `}
 
   @media screen and (max-width: 420px) {
     font-size: 14px;

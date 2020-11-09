@@ -1,8 +1,26 @@
 import gql from 'graphql-tag';
 
 export const GET_VACANCIES = gql`
-  query getVacancies {
-    vacancies(limit: 10) {
+  query getVacancies(
+      $search: String
+      $teams: [String]
+      $categories: [String]
+      $stacks: [String]
+      $internship: Boolean
+      $english: Boolean
+      $limit: Int
+    ) {
+    vacancies(
+      filter: {
+        search: $search
+        categories: $categories
+        teams: $teams
+        stacks: $stacks
+        is_internship: $internship
+        is_english_speaking_team: $english
+    }
+      limit: $limit
+    ) {
       name
       is_english_speaking_team
       is_internship
@@ -37,7 +55,15 @@ export const GET_VACANCY_CONTENT = gql`
     	technology_stacks
     	recruiters {
         name
+        email
+        telegram
+        image {
+          path {
+            normal
+          }
+        }
       }
+      id
     }
   }
 `;
@@ -57,24 +83,10 @@ export const GET_RELOCATION_BLOGS = gql`
   }
 `;
 
-export const GET_FILTER_SEARCH = gql`
-  query getSearch {
-    vacancies(filter: {
-      search: $search
-    }) {
-      name
-      is_english_speaking_team
-      is_internship
-      is_relocation
-      descr
-      slug
-    }
-  }
-`;
-
 export const GET_BLOG_CONTENT = gql`
   query getBlogContent($slug: String) {
     blogs(slug: $slug) {
+      type
       slug
       title
       created_at
@@ -151,8 +163,17 @@ export const GET_TEAM_CATEGORIES = gql`
 export const GET_TEAM_CONTENT = gql`
   query getTeamContent($slug: String) {
     teams(slug: $slug) {
-      name
+      content
       description
+      id
+      name
+      slug
+      detail_image {
+        path {
+          normal
+        }
+      }
+      technology_stacks
     }
   }
 `;

@@ -1,12 +1,20 @@
+import { EventList, EventsTags, Mailing, SubForm } from 'components';
+import { FormModal, SuccessModal } from 'containers';
 import { EventsFilter } from 'forms';
-import { Mailing, EventList, EventsTags } from 'components';
-import { NewsModal, SuccessModal } from 'containers';
 import { useState } from 'react';
 import * as S from './styles';
 
 const Events = ({ data, eventCategories, events, pageSlug }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [successIsShown, setSuccessIsShown] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(prev => !prev);
+  }
+
+  function toggleSuccess() {
+    setSuccessIsShown(prev => !prev);
+  }
 
   // Filter upcoming events
   const eventsUpcoming = events.filter(
@@ -49,16 +57,17 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>
-      <NewsModal
-        data={data.newsModal}
-        modalIsOpen={modalIsOpen}
-        closeModal={() => setIsOpen(false)}
-        showSuccess={() => setSuccessIsShown(true)}
-      />
+      <FormModal modalIsOpen={modalIsOpen} closeModal={toggleModal}>
+        <SubForm
+          data={data.newsModal}
+          closeModal={toggleModal}
+          showSuccess={toggleSuccess}
+        />
+      </FormModal>
       <SuccessModal
         data={data.newsModal.confirmation}
         successIsShown={successIsShown}
-        closeSuccess={() => setSuccessIsShown(false)}
+        closeSuccess={toggleSuccess}
       />
     </S.Main>
   );

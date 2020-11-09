@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
 import { EventsCheckbox } from 'elements';
 import {
-  generateCategories,
   checkActiveCategories,
+  generateCategories,
 } from 'helpers/events-helpers';
-import { Wrapper, List, Item, ResetFilter } from './styles';
+import { useRouter } from 'next/router';
+import { Item, List, ResetFilter, Wrapper } from './styles';
 
 const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
   const router = useRouter();

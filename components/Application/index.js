@@ -7,10 +7,10 @@ const Application = ({ data, decor }) => {
   return (
     <S.Section>
       <S.Wrapper decor={decor}>
-        <S.H2>{english ? 'Apply' : 'Откликнуться на вакансию'}</S.H2>
+        <S.H2>{english ? 'Apply' : data.title}</S.H2>
         {text && <S.Text>{text}</S.Text>}
         <S.StyledButton type="accent">
-          {english ? 'Send CV' : 'Отправить резюме'}
+          {english ? 'Send CV' : data.button}
         </S.StyledButton>
         {picture && <S.Picture src={picture} alt="apply" />}
       </S.Wrapper>

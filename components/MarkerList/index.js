@@ -5,16 +5,16 @@ const MarkerList = props => {
   return (
     <>
       {type === 'ellipse' ? (
-        <ul>
+        <S.List inline={inline}>
           {data.map((el, i) => (
             <S.ElementEllipse inline={inline} key={i}>
               {el.image && <S.Img src={el.image} alt={el.title} />}
               <S.Text inline={inline}>{el.text || el}</S.Text>
             </S.ElementEllipse>
           ))}
-        </ul>
+        </S.List>
       ) : (
-        <ul>
+        <S.List>
           {data.map((el, i) => (
             <S.ElementNumber key={i}>
               <S.Number>{`0${i + 1}`}</S.Number>
@@ -22,7 +22,7 @@ const MarkerList = props => {
               <S.Text>{el.text || el}</S.Text>
             </S.ElementNumber>
           ))}
-        </ul>
+        </S.List>
       )}
     </>
   );

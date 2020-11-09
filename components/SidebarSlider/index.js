@@ -2,10 +2,15 @@ import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
 import GreenArrowRight from 'public/icons/green-arrow-right.svg';
 import { useRef } from 'react';
 import Swiper from 'react-id-swiper';
-import { Article, Element, Img, H4, Text, Arrows, StyledLink  } from './styles';
+import { Article, Element, Img, H4, Text, Arrows, StyledLink } from './styles';
 
 const SidebarSlider = props => {
   const ref = useRef(null);
+
+  const params = {
+    slidesPerView: 1,
+    loop: true,
+  };
 
   const goNext = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
@@ -23,13 +28,16 @@ const SidebarSlider = props => {
 
   return (
     <Article>
-      <Swiper ref={ref}>
+      <Swiper ref={ref} {...params}>
         {data.map((el, i) => (
           <Element key={i}>
-            <Img src={el.image} alt={el.alt} />
+            <Img
+              src={`https://api.develop.dins.d.nimax.ru/${el.imageUrl}`}
+              alt={el.title}
+            />
             <div>
               <H4>{el.title}</H4>
-              <Text>{el.description}</Text>
+              <Text>{el.describe}</Text>
             </div>
           </Element>
         ))}

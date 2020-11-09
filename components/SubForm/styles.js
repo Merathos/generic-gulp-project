@@ -1,5 +1,5 @@
+import { EventsCheckbox, TitleH2 } from 'elements';
 import styled from 'styled-components';
-import { TitleH2, EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
   background-image: url('backgrounds/mailing-form.svg');
@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-color: #ffffff;
   padding-top: 37px;
-  padding-bottom: 182px;
+  padding-bottom: 90px;
 
   @media (max-width: 768px) {
     padding-top: 22px;
@@ -40,22 +40,30 @@ export const MainTitle = styled(TitleH2)`
 `;
 
 export const FormSection = styled.fieldset`
-  margin-bottom: 60px;
+  margin-bottom: 90px;
 
   @media (max-width: 768px) {
-    margin-bottom: 25px;
+    margin-bottom: 60px;
+  }
+`;
+
+export const MultivarSection = styled(FormSection)`
+  margin-bottom: 70px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 
 export const SectionTitle = styled.h3`
-  margin-bottom: 60px;
+  margin-bottom: 33px;
   font-size: 24px;
   line-height: 28.8px;
   font-weight: 700;
   letter-spacing: normal;
 
   @media (max-width: 768px) {
-    margin-bottom: 35px;
+    margin-bottom: 5px;
     font-size: 16px;
     line-height: 19.2px;
     letter-spacing: 0.01em;
@@ -66,12 +74,16 @@ export const InputsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+  }
 `;
 
 export const CheckboxContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 72px;
+  margin-bottom: 0px;
 
   @media (max-width: 768px) {
     margin-bottom: 50px;
@@ -80,9 +92,13 @@ export const CheckboxContainer = styled.div`
 `;
 
 export const Question = styled.p`
+  margin-top: 60px;
   margin-bottom: 40px;
 
   @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 38px;
     margin-bottom: 30px;
     letter-spacing: -0.029em;
   }
@@ -139,6 +155,12 @@ export const AgreemenCheckbox = styled(EventsCheckbox)`
 export const Link = styled.a`
   display: inline;
   color: #53b443;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    color: #339722;
+  }
 `;
 
 export const BottomWrap = styled.div`
@@ -147,6 +169,15 @@ export const BottomWrap = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+
+    #rc-imageselect,
+    div {
+      width: 195px;
+      transform: scale(0.891);
+      -webkit-transform: scale(0.891);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+    }
   }
 `;
 
@@ -161,15 +192,23 @@ export const StyledButton = styled.button`
   color: #ffffff;
   display: flex;
   align-items: center;
+  justify-content: center;
   align-self: flex-end;
+  transition: all 0.3s ease;
 
   @media (max-width: 768px) {
+    padding: 21px 20px;
+    min-width: 191px;
+    font-size: 12px;
+    line-height: 14px;
     margin-left: 0;
-    margin-top: 18px;
+    margin-top: -10px;
     align-self: flex-start;
   }
 
-  &:hover {
-    color: #53b443;
+  &:hover,
+  &:active {
+    background-color: #ec381a;
+    color: #ffffff;
   }
 `;
