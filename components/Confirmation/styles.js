@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   background-position: left 0 top 7px, right 100%;
   background-repeat: no-repeat, no-repeat;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px), (max-height: 550px) {
     padding-top: 22px;
     min-height: 100vh;
     padding-bottom: 0;
@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 768px), (max-height: 550px) {
     position: absolute;
     top: 50%;
     left: 50%;
