@@ -15,7 +15,7 @@ const TextInput = ({
   date = false,
   reference,
 }) => {
-  const handleDateMask = function(e) {
+  const handleDateMask = e => {
     const input = e.target;
     if (e.charCode < 47 || e.charCode > 57) {
       e.preventDefault();
@@ -23,7 +23,7 @@ const TextInput = ({
     const len = input.value.length;
 
     if (len !== 1 || len !== 3) {
-      if (e.charCode == 47) {
+      if (e.charCode === 47) {
         e.preventDefault();
       }
     }
@@ -37,7 +37,7 @@ const TextInput = ({
     }
   };
 
-  const handlePhoneMask = function(e) {
+  const handlePhoneMask = e => {
     if ((e.charCode < 48 && e.charCode !== 43) || e.charCode > 57) {
       e.preventDefault();
     }
