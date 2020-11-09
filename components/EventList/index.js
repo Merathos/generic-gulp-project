@@ -1,12 +1,20 @@
 import { EventCard } from 'components';
-import { List, Item } from './styles';
+import { Item, List } from './styles';
 
 const EventList = ({ events, completed }) => {
   return (
     <List>
       {events.map(event => (
         <Item key={event.id}>
-          <EventCard event={event} completed={completed} />
+          <EventCard
+            category={event.category}
+            startsAt={event.starts_at}
+            endsAt={event.ends_at}
+            status={event.status}
+            programs={event.programs}
+            location={event.location}
+            completed={completed}
+          />
         </Item>
       ))}
     </List>

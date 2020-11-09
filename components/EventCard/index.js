@@ -2,9 +2,15 @@ import dayjs from 'dayjs';
 import { getStatusImage } from 'helpers/events-helpers';
 import * as S from './styles';
 
-const EventCard = ({ event, completed }) => {
-  const { category, starts_at, ends_at, status, programs, location } = event;
-
+const EventCard = ({
+  category,
+  startsAt,
+  endsAt,
+  status,
+  programs,
+  location,
+  completed,
+}) => {
   const renderStatus = () => {
     if (status.slug === 'offline' && location) {
       return null;
@@ -45,8 +51,8 @@ const EventCard = ({ event, completed }) => {
           <S.Title color={category.color}>{category.name}</S.Title>
         </S.Link>
         <S.DateContainer color={category.color}>
-          <S.Date>{dayjs(starts_at).format('DD.MM')}</S.Date>
-          <S.Time>{`Начало в ${dayjs(starts_at).format('HH.mm')}`}</S.Time>
+          <S.Date>{dayjs(startsAt).format('DD.MM')}</S.Date>
+          <S.Time>{`Начало в ${dayjs(startsAt).format('HH.mm')}`}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
       <S.Status status={status.slug}>{renderStatus()}</S.Status>

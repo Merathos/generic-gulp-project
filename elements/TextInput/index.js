@@ -13,13 +13,14 @@ const TextInput = ({
   errorMsg,
   phone,
   date = false,
+  reference,
 }) => {
   const handleDateMask = function(e) {
-    let input = e.target;
+    const input = e.target;
     if (e.charCode < 47 || e.charCode > 57) {
       e.preventDefault();
     }
-    var len = input.value.length;
+    const len = input.value.length;
 
     if (len !== 1 || len !== 3) {
       if (e.charCode == 47) {
@@ -60,6 +61,7 @@ const TextInput = ({
         required={required}
         maxLength={date ? 10 : phone ? 13 : 999}
         onKeyPress={date ? handleDateMask : phone ? handlePhoneMask : () => {}}
+        ref={reference}
       />
       <label htmlFor={name}>{label}</label>
     </Wrapper>

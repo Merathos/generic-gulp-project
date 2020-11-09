@@ -12,7 +12,7 @@ const SubForm = ({
   showSuccess,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
-  const [subscribe, { data, error }] = useMutation(SET_SUBSCRIPTION, {
+  const [subscribe, { error }] = useMutation(SET_SUBSCRIPTION, {
     onCompleted() {
       closeModal();
       showSuccess();
@@ -51,7 +51,7 @@ const SubForm = ({
               <TextInput
                 key={i}
                 name={item.name}
-                placeholder={item.placeholder}
+                label={item.placeholder}
                 reference={register({
                   required: 'Required',
                 })}
@@ -71,6 +71,7 @@ const SubForm = ({
                 checked={checkedEls[item]}
                 onChange={handleChange}
                 color="#53B443"
+                // reference={register()}
               />
             ))}
           </S.CheckboxContainer>
