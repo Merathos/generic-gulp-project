@@ -7,8 +7,12 @@ export const Grid = styled.div`
   margin-bottom: 100px;
   align-items: center;
 
-  @media screen and (max-width: 1024px) {
+  @media (max-width: 1600px) {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: 1024px) {
     padding-top: 110px;
     padding-bottom: 0;
     margin-bottom: 50px;
@@ -34,7 +38,7 @@ export const Paragraph = styled(Text)`
 `;
 
 export const ListTitle = styled(TitleH3)`
-  color: #2F8ED9;
+  color: #2f8ed9;
   margin-bottom: 12px;
   white-space: nowrap;
 
@@ -57,16 +61,23 @@ export const StyledIcon = styled(Icon)`
   }
 `;
 
-export const Picture = styled.img`
-  margin-left: 50px;
-  @media screen and (max-width: 420px) {
-    margin-left: 0;
-  }
-`;
+export const Picture = styled.img``;
 
 export const Block = styled.div`
+  margin-left: 50px;
   position: relative;
+  box-sizing: border-box;
   width: 340px;
+
+  @media (max-width: 1600px) {
+    margin-top: 80px;
+    margin-left: 0;
+  }
+
+  @media (max-width: 420px) {
+    margin-top: 50px;
+    margin-left: 0;
+  }
 
   &::after {
     content: '';
@@ -75,13 +86,8 @@ export const Block = styled.div`
     width: 330px;
     height: 330px;
     bottom: 40px;
-    right: -200px;
+    right: -150px;
     z-index: 2;
-
-    @media (max-width: 1360px) {
-      right: 50%;
-      bottom: -100%;
-    }
 
     @media (max-width: 420px) {
       width: 120px;
