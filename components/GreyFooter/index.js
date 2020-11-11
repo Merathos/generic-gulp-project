@@ -14,15 +14,17 @@ const GreyFooter = ({ data, type, background }) => {
           ))}
         </S.ListBlog>
       ) : (
-        <S.List>
-          {data.map((el, i) => (
-            <S.Element key={i}>
-              <S.Title>{el.title}</S.Title>
-              <S.Text>{el.text}</S.Text>
-              <ArrowRight />
-            </S.Element>
-          ))}
-        </S.List>
+        <S.ListContainer>
+          <S.List>
+            {data.map((el, i) => (
+              <S.Element key={i}>
+                <S.Title>{el.title}</S.Title>
+                <S.Text>{el.text}</S.Text>
+                <ArrowRight />
+              </S.Element>
+            ))}
+          </S.List>
+        </S.ListContainer>
       )}
     </S.Section>
   );
