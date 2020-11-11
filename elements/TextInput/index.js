@@ -1,5 +1,4 @@
 import { Wrapper } from './styles';
-import InputMask from 'react-input-mask';
 
 const TextInput = ({
   type = 'text',
@@ -52,22 +51,17 @@ const TextInput = ({
       error={error}
     >
       {errorMsg && <p>{errorMsg}</p>}
-      <InputMask mask={phone ? '+7(999)999-99-99' : ''}>
-        {() => (
-          <input
-            type={type}
-            placeholder=" "
-            name={name}
-            id={name}
-            autoComplete="off"
-            required={required}
-            maxLength={date ? 10 : 999}
-            onKeyPress={
-              date ? handleDateMask : phone ? handlePhoneMask : () => {}
-            }
-          />
-        )}
-      </InputMask>
+      <input
+        type={type}
+        placeholder=" "
+        name={name}
+        id={name}
+        autoComplete="off"
+        required={required}
+        maxLength={date ? 10 : 999}
+        onKeyPress={date ? handleDateMask : phone ? handlePhoneMask : () => {}}
+      />
+
       <label htmlFor={name}>{label}</label>
     </Wrapper>
   );
