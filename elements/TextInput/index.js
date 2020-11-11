@@ -58,9 +58,10 @@ const TextInput = ({
         id={name}
         autoComplete="off"
         required={required}
-        maxLength={date ? 10 : phone ? 13 : 999}
+        maxLength={date ? 10 : 999}
         onKeyPress={date ? handleDateMask : phone ? handlePhoneMask : () => {}}
       />
+
       <label htmlFor={name}>{label}</label>
     </Wrapper>
   );
