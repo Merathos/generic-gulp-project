@@ -10,6 +10,15 @@ export const Section = styled.section`
   }
 `;
 
+export const ListContainer = styled.div`
+  @media (min-width: 769px) {
+    min-height: 300px;
+    background-image: url('backgrounds/about-footer.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+`;
+
 export const Title = styled.h3`
   font-weight: bold;
   font-size: 50px;
@@ -18,7 +27,7 @@ export const Title = styled.h3`
   transition: color 200ms ease;
 
   &:hover {
-    color: #53B443;
+    color: #53b443;
     cursor: pointer;
   }
 

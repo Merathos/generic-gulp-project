@@ -78,3 +78,4 @@ export { default as JobForm } from './JobForm';
 export { default as InternForm } from './InternForm';
 export { default as MailingForm } from './MailingForm';
 export { default as Recruiters } from './Recruiters';
+export { default as AboutSlider } from './AboutSlider';

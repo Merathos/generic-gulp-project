@@ -4,6 +4,7 @@ import { TitleH2 } from 'elements';
 export const Section = styled.section`
   margin-bottom: 0;
   cursor: grab;
+  overflow: hidden;
 
   &:active {
     cursor: grabbing;
@@ -24,16 +25,25 @@ export const Container = styled.div`
   padding: 0 30px;
   margin: 0 auto;
 
-  .swiper-container {
-    margin-right: -30px;
+  &::before {
+    @media (min-width: 911px) {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -840px;
+      width: 870px;
+      height: 100%;
+      background-color: #ffffff;
+      z-index: 500;
+    }
   }
 
-  @media (max-width: 768px) {
-    padding: 0;
+  .swiper-container {
+    overflow: visible;
+  }
 
-    .swiper-container {
-      margin-right: 0;
-    }
+  @media (max-width: 910px) {
+    padding: 0;
 
     .swiper-wrapper {
       display: flex;
@@ -76,7 +86,7 @@ export const PrevButton = styled.button`
     fill: #53b443;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 910px) {
     display: none;
   }
 `;
@@ -104,7 +114,7 @@ export const NextButton = styled.button`
     fill: #53b443;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 910px) {
     display: none;
   }
 `;
@@ -114,7 +124,7 @@ export const Element = styled.div`
   flex-shrink: 0;
   margin-right: 80px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 910px) {
     margin-right: 0;
     margin-bottom: 40px;
     width: 100%;
