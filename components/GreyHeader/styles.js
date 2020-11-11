@@ -61,9 +61,15 @@ export const Logo = styled(MagicQuadrant)`
 `;
 
 export const ListTitle = styled(TitleH3)`
-  color: #2F8ED9;
+  color: #2f8ed9;
   margin-bottom: 12px;
   white-space: nowrap;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:active {
+    color: #2079bf;
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 10px;
@@ -78,6 +84,8 @@ export const Element = styled.li`
 
 export const StyledIcon = styled(Icon)`
   margin-bottom: 30px;
+  background-size: 24px 24px;
+
   @media screen and (max-width: 1024px) {
     margin-right: 20px;
     margin-bottom: 0;
@@ -143,6 +151,6 @@ export const Block = styled.div`
       background-size: 120px 120px;
       bottom: 20px;
       right: 0;
-  }
+    }
   }
 `;

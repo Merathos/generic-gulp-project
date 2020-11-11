@@ -10,26 +10,29 @@ const GreyHeader = ({
   picture,
   buttons,
   audio,
-  mobPicture
+  mobPicture,
 }) => {
   return (
     <S.Grid>
       <S.Wrapper>
         <TitleH1>{title}</TitleH1>
         <S.Paragraph>{text}</S.Paragraph>
-        {list && <S.Features>
-          {list.map((el, i) => (
-            <S.Element key={i}>
+        {list && (
+          <S.Features>
+            {list.map((el, i) => (
+              <S.Element key={i}>
                 {el.icon && <S.StyledIcon name={el.icon} white />}
                 <div>
-                  <S.ListTitle>{el.title}</S.ListTitle>
+                  <a href={el.href}>
+                    <S.ListTitle>{el.title}</S.ListTitle>
+                  </a>
                   <SmallText>{el.text}</SmallText>
                   {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
                 </div>
               </S.Element>
             ))}
           </S.Features>
-        }
+        )}
         {buttons && (
           <S.ButtonsWrapper>
             <S.StyledButton type="accent">{buttons[0]}</S.StyledButton>
@@ -46,7 +49,11 @@ const GreyHeader = ({
       )}
       {picture && (
         <S.Block>
-          <S.Picture src={picture} srcSet={`${mobPicture} 420w, ${picture}`} alt={title} />
+          <S.Picture
+            src={picture}
+            srcSet={`${mobPicture} 420w, ${picture}`}
+            alt={title}
+          />
         </S.Block>
       )}
     </S.Grid>

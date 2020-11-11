@@ -17,14 +17,16 @@ export const Container = styled.section`
 `;
 
 export const GreyContainer = styled.div`
-  background-color: #F7F8F9;
-  /* background-image: url('backgrounds/about-grey-title.svg'); */
+  background-color: #f7f8f9;
+  background-image: url('backgrounds/contacts-header.png');
   background-repeat: no-repeat;
-  background-position: 118% 298%;
+  background-position: 100% 100%;
+
+  @media screen and (max-width: 1024px) {
+    background-image: none;
+  }
 
   @media screen and (max-width: 420px) {
-    background-size: 50% 50%;
-    background-position: 150% 120%;
     margin-bottom: 50px;
   }
 `;
