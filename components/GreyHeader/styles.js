@@ -1,6 +1,10 @@
-import styled, { css } from 'styled-components';
-import { TitleH3, Text, Icon, Button } from 'elements';
+import styled, {css} from 'styled-components';
+import { TitleH3, Text, Icon, Button, SmallText } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
+
+export const StyledSmallText = styled(SmallText)`
+  max-width: 280px;
+`;
 
 export const Grid = styled.div`
   display: flex;
@@ -23,10 +27,12 @@ export const Wrapper = styled.article`
 
 export const Aside = styled.aside`
   width: 254px;
+  margin-left: auto;
 
   @media screen and (max-width: 420px) {
     width: 100%;
     margin-top: 80px;
+    margin-left: 0;
   }
 `;
 

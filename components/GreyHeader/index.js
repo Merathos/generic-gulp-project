@@ -1,5 +1,5 @@
 import { Player } from 'components';
-import { Subtitle, SmallText, TitleH1, Button } from 'elements';
+import { Subtitle, TitleH1, Button } from 'elements';
 import * as S from './styles';
 
 const GreyHeader = ({
@@ -27,7 +27,7 @@ const GreyHeader = ({
                   <a href={el.href}>
                     <S.ListTitle>{el.title}</S.ListTitle>
                   </a>
-                  <SmallText>{el.text}</SmallText>
+                  <S.StyledSmallText>{el.text}</S.StyledSmallText>
                   {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
                 </div>
               </S.Element>

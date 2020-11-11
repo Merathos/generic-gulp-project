@@ -22,7 +22,6 @@ const EventsSlider = ({ cards }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    // spaceBetween: 80,
 
     renderPrevButton: () => {
       return (
@@ -46,7 +45,7 @@ const EventsSlider = ({ cards }) => {
         <Swiper
           ref={ref}
           {...params}
-          noSwiping={initialWidth > 768 ? false : true}
+          noSwiping={initialWidth > 910 ? false : true}
         >
           {cards.map((card, i) => (
             <Element key={i}>
