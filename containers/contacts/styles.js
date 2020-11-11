@@ -1,5 +1,20 @@
 import styled from 'styled-components';
 
+export const Main = styled.main`
+  background-image: url('backgrounds/contacts-location.png');
+  background-repeat: no-repeat;
+  background-position: 100% 76%;
+
+  @media screen and (max-width: 1024px) {
+    background-position: 100% 86%;
+  }
+
+  @media screen and (max-width: 768px) {
+    background-size: 75px auto;
+    background-position: 100% 82%;
+  }
+`;
+
 export const Container = styled.section`
   max-width: 1200px;
   padding: 0 45px;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TitleH3, Text, Icon, Button } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
@@ -44,6 +44,16 @@ export const Features = styled.ul`
   grid-gap: 100px;
   margin-bottom: 100px;
 
+  ${props =>
+    props.contacts &&
+    css`
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 30px;
+        margin-bottom: 30px;
+      }
+    `};
   @media screen and (max-width: 420px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
