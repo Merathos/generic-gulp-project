@@ -29,7 +29,7 @@ const catalogPage = () => {
   if (!vacancies) return null;
 
   return (
-    <Layout>
+    <Layout anchor={true} hideHav>
       <VacanciesList data={mock.catalog} back={vacancies} />
     </Layout>
   );

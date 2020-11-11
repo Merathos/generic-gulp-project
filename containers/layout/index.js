@@ -66,10 +66,17 @@ const Layout = ({
   plainHeader = false,
   smallPadding = false,
   nimax = true,
+  anchor = false,
+  hideHav = false,
 }) => {
   return (
     <Wrapper>
-      <Header data={mock.header} plain={plainHeader} />
+      <Header
+        data={mock.header}
+        plain={plainHeader}
+        anchor={anchor}
+        hideHav={hideHav}
+      />
       {children}
       {showFooter && (
         <Footer

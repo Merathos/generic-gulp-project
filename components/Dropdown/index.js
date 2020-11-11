@@ -9,6 +9,7 @@ const Dropdown = props => {
     handleOpen,
     handleChangeCheckbox,
     handleChangeRadio,
+    withBg = false,
   } = props;
   const filterArray = useSelector(state => state.filter);
   const categories = useSelector(state => state.categories);
@@ -18,7 +19,7 @@ const Dropdown = props => {
       <Title type="button" onClick={() => handleOpen()} active={opened}>
         {title}
       </Title>
-      <Wrapper style={{ display: opened ? 'block' : 'none' }}>
+      <Wrapper style={{ display: opened ? 'block' : 'none' }} withBg={withBg}>
         <List>
           {list.map((el, i) => (
             <Item key={i}>
