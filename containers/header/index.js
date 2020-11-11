@@ -1,9 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { OpenedMenu } from 'containers';
 import CustomLink from 'elements/CustomLink';
 import Logo from 'public/images/logo.svg';
 import Menu from 'public/icons/menu.svg';
 import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const StyledHeader = styled.header`
   padding: 34px 45px;
@@ -29,6 +31,19 @@ const StyledHeader = styled.header`
 const StyledLogo = styled(Logo)`
   width: 85px;
   height: 26px;
+  transition: opacity 0.3s ease;
+
+  ${props =>
+    props.guiding &&
+    css`
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    `};
 
   @media (max-width: 420px) {
     width: 54px;
@@ -68,10 +83,19 @@ const Element = styled.li`
 
 const Header = ({ data: links, plain }) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <StyledHeader plain={plain}>
-      <StyledLogo />
+      {router.pathname === '/' ? (
+        <StyledLogo />
+      ) : (
+        <Link href="/" passHref>
+          <a aria-label="To the main page">
+            <StyledLogo guiding="guiding" />
+          </a>
+        </Link>
+      )}
       <Nav plain={plain}>
         <List>
           {links.map((el, i) => (
