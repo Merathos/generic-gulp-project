@@ -6,6 +6,18 @@ const Text = styled.p`
   line-height: 158%;
   font-weight: bold;
 
+  a {
+    display: inline-block;
+    font-weight: 700;
+    color: #53b443;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 150%;
@@ -32,10 +44,17 @@ const Section = styled.section`
 `;
 
 const SectionNote = ({ data }) => {
+  const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
+
+  const renewedData = data.replace(
+    emailRegExp,
+    email => `<a href="mailto:${email}">${email}</a>`
+  );
+
   return (
     <Section>
       <Icon name="26" />
-      <Text dangerouslySetInnerHTML={{ __html: data }} />
+      <Text dangerouslySetInnerHTML={{ __html: renewedData }} />
     </Section>
   );
 };
