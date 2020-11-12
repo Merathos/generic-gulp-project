@@ -6,8 +6,14 @@ import {
   GreyFooter,
   RunningText,
 } from 'components';
-import { SectionGroup } from 'containers';
-import { Container, GreyContainer, HeaderContainer, Main } from './styles';
+
+import {
+  Container,
+  GreyContainer,
+  HeaderContainer,
+  Main,
+  ValuesSection,
+} from './styles';
 
 const About = ({ data }) => {
   return (
@@ -22,12 +28,15 @@ const About = ({ data }) => {
           />
         </Container>
       </HeaderContainer>
-
       <Container>
         <Details data={data.details} />
-        <SectionGroup>
+      </Container>
+      <ValuesSection>
+        <Container>
           <Values data={data.values} />
-        </SectionGroup>
+        </Container>
+      </ValuesSection>
+      <Container>
         <RunningText data={data.technologies} />
       </Container>
       <Gallery data={data.gallery} />

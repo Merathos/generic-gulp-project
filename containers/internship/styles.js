@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { SectionGroup } from 'containers';
+import { Application } from 'components';
 
 export const Container = styled.section`
   max-width: 1200px;
@@ -17,10 +19,27 @@ export const Container = styled.section`
   }
 `;
 
+export const ValuesSection = styled(SectionGroup)`
+  @media (min-width: 769px) {
+    background-image: url('backgrounds/i-values.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+`;
+
+export const VacancySection = styled(SectionGroup)`
+  @media (min-width: 769px) {
+    background-image: url('backgrounds/i-vacancy.svg');
+    background-repeat: no-repeat;
+    background-position: top 145px right;
+  }
+`;
+
 export const GreyWrapper = styled.div`
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   margin-bottom: 100px;
   padding-bottom: 240px;
+  overflow: hidden;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -29,15 +48,33 @@ export const GreyWrapper = styled.div`
 `;
 
 export const GreyContainer = styled.div`
-  background-color: #F7F8F9;
-  /* background-image: url('backgrounds/about-grey-title.svg'); */
+  background-color: #f7f8f9;
+  overflow: hidden;
   background-repeat: no-repeat;
   background-position: 118% 298%;
-  /* margin-top: 220px; */
 
   @media screen and (max-width: 420px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
-    /* margin-top: 120px; */
+  }
+`;
+
+export const StyledApplication = styled(Application)`
+  h2 {
+    max-width: 590px;
+  }
+
+  p {
+    max-width: 570px;
+  }
+
+  button {
+    margin-top: 75px;
+  }
+
+  @media (min-width: 769px) {
+    background-image: url('backgrounds/i-application.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
   }
 `;
