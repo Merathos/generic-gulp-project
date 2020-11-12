@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import TitleH2 from 'elements/TitleH2';
 import Button from 'elements/Button';
 
 export const Section = styled.section`
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   margin-bottom: 100px;
 
   @media screen and (max-width: 420px) {
@@ -21,10 +21,23 @@ export const Wrapper = styled.div`
     'd b'
     '. b';
   grid-column-gap: 170px;
-  background-image: ${props => props.decor ? "url('/backgrounds/application.png')" : 'none'};
+  background-image: ${props =>
+    props.decor ? "url('/backgrounds/application.png')" : 'none'};
   background-repeat: no-repeat;
   background-position: 105% center;
   padding: 160px 50px 180px;
+
+  ${props =>
+    props.type === 'relocation' &&
+    css`
+      background-image: url('backgrounds/relocation-vacancies.png');
+      background-repeat: no-repeat;
+      background-position: 72% 80%;
+
+      @media screen and (max-width: 1024px) {
+        background-image: none;
+      }
+    `};
 
   @media screen and (max-width: 420px) {
     max-width: 315px;
@@ -32,10 +45,10 @@ export const Wrapper = styled.div`
     background-position: 150% center;
     padding: 80px 30px 80px;
     grid-template-areas:
-    'a'
-    'b'
-    'c'
-    'd';
+      'a'
+      'b'
+      'c'
+      'd';
     grid-column-gap: 0;
   }
 `;

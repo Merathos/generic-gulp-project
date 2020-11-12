@@ -7,11 +7,11 @@ import {
   Map,
 } from 'components';
 import { SectionGroup } from 'containers';
-import { Container, GreyContainer } from './styles';
+import { Main, Container, GreyContainer } from './styles';
 
 const Relocation = ({ data, blogs }) => {
   return (
-    <main>
+    <Main>
       <GreyContainer>
         <Container>
           <GreyHeader
@@ -32,7 +32,7 @@ const Relocation = ({ data, blogs }) => {
         </SectionGroup>
       </Container>
 
-      <Application data={data.promo} />
+      <Application data={data.promo} type="relocation" />
 
       <Container>
         <SectionGroup>
@@ -44,9 +44,9 @@ const Relocation = ({ data, blogs }) => {
       </Container>
 
       <GreyContainer>
-        <GreyFooter data={data.greyFooter} />
+        <GreyFooter data={data.greyFooter} type="relocation" />
       </GreyContainer>
-    </main>
+    </Main>
   );
 };
 

@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import * as S from './styles';
 
-const Application = ({ data, decor }) => {
+const Application = ({ data, decor, type }) => {
   const english = useSelector(state => state.english);
   const { text, picture } = data;
   return (
     <S.Section>
-      <S.Wrapper decor={decor}>
+      <S.Wrapper decor={decor} type={type}>
         <S.H2>{english ? 'Apply' : data.title}</S.H2>
         {text && <S.Text>{text}</S.Text>}
         <S.StyledButton type="accent">
