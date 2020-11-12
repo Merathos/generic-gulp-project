@@ -14,7 +14,7 @@ const GreyHeader = ({
 }) => {
   return (
     <S.Grid>
-      <S.Wrapper>
+      <S.Wrapper withPicture={!!picture}>
         <TitleH1>{title}</TitleH1>
         <S.Paragraph>{text}</S.Paragraph>
         {list && (

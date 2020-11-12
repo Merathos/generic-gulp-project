@@ -18,7 +18,8 @@ export const Grid = styled.div`
 `;
 
 export const Wrapper = styled.article`
-  max-width: 854px;
+  max-width: ${props => (props.withPicture ? '744px' : '854px')};
+  padding-right: ${props => (props.withPicture ? '110px' : '0')};
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
