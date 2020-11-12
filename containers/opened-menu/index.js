@@ -1,12 +1,15 @@
 import * as S from './styles';
 import { MenuList, ContactsList, Social } from '../../components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import LogoNimax from '../../public/images/logo-nimax.svg';
 import MenuClose from '../../public/icons/menu-close.svg';
 import mock from 'mock/index';
 import { useLayoutEffect } from 'react';
 
 const OpenedMenu = ({ onMenuClose }) => {
+  const router = useRouter();
+
   useLayoutEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     document.body.style.overflow = 'hidden';
@@ -25,6 +28,12 @@ const OpenedMenu = ({ onMenuClose }) => {
     };
   }, [onMenuClose]);
 
+  const handleLogoClick = () => {
+    if (router.pathname === '/') {
+      onMenuClose();
+    }
+  };
+
   return (
     <S.Wrapper>
       <S.Container>
@@ -32,7 +41,11 @@ const OpenedMenu = ({ onMenuClose }) => {
           <MenuClose />
         </S.Button>
         <S.Menu>
-          <S.StyledLogo />
+          <Link href="/" passHref>
+            <a aria-label="To the main page" onClick={handleLogoClick}>
+              <S.StyledLogo guiding="guiding" />
+            </a>
+          </Link>
           <MenuList data={mock.headerMenu.menuList} />
           <S.CopyrightMenuBlock>
             <S.Copyright>{mock.footer.copyright}</S.Copyright>

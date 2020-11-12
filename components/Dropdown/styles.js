@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Title = styled.button.attrs(props => ({
   transform: props.active
     ? 'rotate(-180deg) translateY(50%)'
-    : 'translateY(-50%)'
+    : 'translateY(-50%)',
 }))`
   padding: 15px 0;
   position: relative;
@@ -36,8 +36,8 @@ export const Item = styled.li`
   margin-bottom: 10px;
 
   input:checked ~ label {
-    color: #53B443;
-  
+    color: #53b443;
+
     &::after {
       display: block;
     }
@@ -58,7 +58,8 @@ export const List = styled.ul`
   scrollbar-width: none; /* Firefox */
   padding-bottom: 15px;
 
-  &::-webkit-scrollbar {   /* Chrome */
+  &::-webkit-scrollbar {
+    /* Chrome */
     opacity: 0;
   }
 `;
@@ -66,7 +67,7 @@ export const List = styled.ul`
 export const Wrapper = styled.div`
   position: relative;
   padding-bottom: 20px;
-  
+
   &::after {
     content: '';
     width: 100%;
@@ -75,7 +76,19 @@ export const Wrapper = styled.div`
     bottom: -10px;
     left: 0;
     z-index: 1;
-    background: linear-gradient(360deg, #FFFFFF 49.12%, rgba(255, 255, 255, 0) 121.93%);
+    background: linear-gradient(
+      360deg,
+      #ffffff 49.12%,
+      rgba(255, 255, 255, 0) 121.93%
+    );
+  }
+
+  @media screen and (max-width: 768px) {
+    &::after {
+      background: ${props =>
+        props.withBg
+          ? 'linear-gradient(360deg, #f7f8f9 49.12%, rgba(247, 248, 249, 0) 121.93%)'
+          : 'linear-gradient(360deg, #FFFFFF 49.12%, rgba(255, 255, 255, 0) 121.93%)'};
+    }
   }
 `;
-

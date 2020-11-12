@@ -13,14 +13,13 @@ export const StyledFooter = styled.footer`
       @media screen and (max-width: 600px) {
         padding-top: 120px;
       }
-    `}
+    `};
 
-  @media (max-width: 768px) {
-    padding: 50px 0;
+  @media screen and (max-width: 600px) {
+    padding: 120px 0 50px 0;
     flex-direction: column-reverse;
     text-align: center;
     align-items: center;
-    padding-top: 120px;
   }
 `;
 

@@ -42,7 +42,6 @@ export const Title = styled(TitleH2)`
   width: max-content;
 
   @media (max-width: 768px) {
-    /* margin-top: 143px; */
     margin-bottom: 20px;
     font-size: 32px;
     line-height: 42.88px;

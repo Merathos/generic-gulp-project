@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Logo from 'public/images/logo.svg';
 
 export const Wrapper = styled.div`
@@ -80,6 +80,19 @@ export const StyledLogo = styled(Logo)`
   height: 26px;
   margin-bottom: 140px;
   margin-right: 50px;
+  transition: opacity 0.3s ease;
+
+  ${props =>
+    props.guiding &&
+    css`
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    `};
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 64px;
