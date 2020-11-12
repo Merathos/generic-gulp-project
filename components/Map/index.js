@@ -13,12 +13,12 @@ class Map extends Component {
       height: '100%',
       latitude: 59.94984372479269,
       longitude: 30.33145024042134,
-      zoom: 12.275823249249143
-    }
+      zoom: 12.275823249249143,
+    },
   };
 
   render() {
-    const { data, english } = this.props;
+    const { data, english, contacts } = this.props;
     return (
       <>
         <S.H2>{english ? 'Our offices' : 'Офисы на карте'}</S.H2>
@@ -54,7 +54,7 @@ class Map extends Component {
           </ReactMapGL>
         </S.Container>
         {data.stations && (
-          <S.List>
+          <S.List contacts={contacts}>
             {data.stations.map((el, i) => (
               <li key={i}>
                 <Metro data={el} />
@@ -62,13 +62,13 @@ class Map extends Component {
             ))}
           </S.List>
         )}
-     </>
+      </>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  english: state.english
+  english: state.english,
 });
 
 export default connect(mapStateToProps)(Map);

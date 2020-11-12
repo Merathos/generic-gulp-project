@@ -13,6 +13,8 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.b`
+  font-size: 16px;
+  line-height: 20.96px;
   font-weight: bold;
   margin-bottom: 12px;
   display: block;
@@ -23,5 +25,7 @@ export const Title = styled.b`
 `;
 
 export const Subtitle = styled.p`
+  font-size: 16px;
+  line-height: 21.44px;
   opacity: 0.5;
 `;

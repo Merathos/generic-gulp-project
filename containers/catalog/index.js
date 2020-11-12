@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown } from 'components';
@@ -17,7 +17,27 @@ const VacanciesList = ({ data: mock, back }) => {
   const english_state = useSelector(state => state.english);
 
   const [opened, setOpened] = useState('');
+  const [hidden, setHidden] = useState(true);
   const filterArray = useSelector(state => state.filter);
+
+  const initialWidth = useWindowWidth();
+
+  function useWindowWidth() {
+    const [windowWidth, setWindowWidth] = useState(undefined);
+
+    useEffect(() => {
+      function handleResize() {
+        setWindowWidth(window.innerWidth);
+      }
+
+      window.addEventListener('resize', handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    return windowWidth;
+  }
 
   const openDropdown = e => {
     if (opened === e) {
@@ -35,7 +55,7 @@ const VacanciesList = ({ data: mock, back }) => {
         categories: e,
       },
     });
-    dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e })
+    dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
   };
 
   const handleCheckbox = e => {
@@ -66,7 +86,7 @@ const VacanciesList = ({ data: mock, back }) => {
         english: !english_state || '',
       },
     });
-    dispatch({ type: 'CATALOG_ENGLISH' })
+    dispatch({ type: 'CATALOG_ENGLISH' });
   };
 
   const handleSearch = search => {
@@ -90,48 +110,75 @@ const VacanciesList = ({ data: mock, back }) => {
         tags: getNewTags(router.query.tags, tag),
       },
     });
-  }
+  };
+
+  const handleOpenFilter = () => {
+    setHidden(!hidden);
+  };
 
   const {
-    filter: { fields, internship, english, discard }
+    filter: { fields, internship, english, discard },
   } = mock;
+
+  const renderAside = () => (
+    <S.Aside>
+      <S.Filter>
+        <S.List>
+          {fields.map((el, i) => (
+            <Dropdown
+              key={i}
+              data={el}
+              handleOpen={() => openDropdown(el.title)}
+              opened={opened === el.title}
+              handleChangeCheckbox={e => handleCheckbox(e)}
+              handleChangeRadio={e => handleCategories(e)}
+              withBg={true}
+            />
+          ))}
+        </S.List>
+        <S.Block>
+          <Checkbox
+            name={internship}
+            checked_state={internship_state}
+            handleChange={() => handleInternship()}
+          />
+          <Checkbox
+            name={english}
+            checked_state={english_state}
+            handleChange={() => handleEnglish()}
+          />
+        </S.Block>
+        <FilterButton
+          name={discard}
+          handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
+        />
+      </S.Filter>
+      {initialWidth > 768 && (
+        <SidebarArticle type="button" data={mock.article} />
+      )}
+    </S.Aside>
+  );
 
   return (
     <S.Container>
       <S.Grid>
-        <S.Aside>
-          <S.Filter>
-            <S.List>
-              {fields.map((el, i) => (
-                <Dropdown
-                  key={i}
-                  data={el}
-                  handleOpen={() => openDropdown(el.title)}
-                  opened={opened === el.title}
-                  handleChangeCheckbox={e => handleCheckbox(e)}
-                  handleChangeRadio={e => handleCategories(e)}
-                />
-              ))}
-            </S.List>
-            <S.Block>
-              <Checkbox
-                name={internship}
-                checked_state={internship_state}
-                handleChange={() => handleInternship()}
-              />
-              <Checkbox
-                name={english}
-                checked_state={english_state}
-                handleChange={() => handleEnglish()}
-              />
-            </S.Block>
-            <FilterButton
-              name={discard}
-              handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
-            />
-          </S.Filter>
-          <SidebarArticle type="button" data={mock.article} />
-        </S.Aside>
+        {initialWidth > 768 ? (
+          renderAside()
+        ) : (
+          <S.FilterWrapper active={!hidden}>
+            <>
+              <S.FilterTitle
+                active={!hidden}
+                onClick={() => handleOpenFilter()}
+                type="button"
+              >
+                {hidden ? 'Открыть фильтр' : 'Закрыть фильтр'}
+              </S.FilterTitle>
+              {!hidden && renderAside()}
+            </>
+          </S.FilterWrapper>
+        )}
+
         <S.Article>
           <S.Title>{mock.mainTitle}</S.Title>
           <Search
@@ -141,6 +188,14 @@ const VacanciesList = ({ data: mock, back }) => {
           />
           <Tags handleChangeFilter={el => handleClearTags(el)} />
         </S.Article>
+        {initialWidth <= 768 && (
+          <S.Resume>
+            <S.ResumeLink href={mock.article.href}>
+              {mock.article.linkText}
+            </S.ResumeLink>
+            {mock.article.plainText}
+          </S.Resume>
+        )}
         <Cards data={back} type="vacancies" />
       </S.Grid>
     </S.Container>

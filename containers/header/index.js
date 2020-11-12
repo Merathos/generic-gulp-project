@@ -20,6 +20,17 @@ const StyledHeader = styled.header`
   width: 100%;
   box-sizing: border-box;
 
+  ${props =>
+    props.anchor &&
+    css`
+      @media (max-width: 768px) {
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        z-index: 5;
+      }
+    `};
+
   @media (max-width: 420px) {
     padding: 30px;
     align-items: center;
@@ -68,6 +79,13 @@ const Nav = styled.nav`
       }}
   }
 
+  @media screen and (max-width: 600px) {
+    ${props =>
+      props.hideNav && {
+        display: 'none',
+      }}
+  }
+
   @media screen and (max-width: 420px) {
     display: none;
   }
@@ -81,12 +99,12 @@ const Element = styled.li`
   margin-left: 40px;
 `;
 
-const Header = ({ data: links, plain }) => {
+const Header = ({ data: links, plain, anchor, hideHav }) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
-    <StyledHeader plain={plain}>
+    <StyledHeader plain={plain} anchor={anchor}>
       {router.pathname === '/' ? (
         <StyledLogo />
       ) : (
@@ -96,7 +114,7 @@ const Header = ({ data: links, plain }) => {
           </a>
         </Link>
       )}
-      <Nav plain={plain}>
+      <Nav plain={plain} hideNav={hideHav}>
         <List>
           {links.map((el, i) => (
             <Element key={i}>

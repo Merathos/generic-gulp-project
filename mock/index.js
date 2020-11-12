@@ -136,6 +136,9 @@ export default {
     article: {
       text: `Отправь резюме, и мы свяжемся с тобой, если появится подходящая позиция.`,
       button: `Отправить`,
+      linkText: `Отправь резюме`,
+      plainText: `, и мы свяжемся с тобой, если появится подходящая позиция.`,
+      href: 'mailto:jobs@dins.ru',
     },
   },
   article: {
@@ -1185,12 +1188,14 @@ export default {
       те, кто хочет созидать и создавать полезный продукт для миллионов людей во всем мире.`,
       list: [
         {
-          icon: `ec-earth-americas`,
+          icon: `phone`,
+          href: 'tel:+78127407761',
           title: `+7 (812) 740-77-61`,
           subtitle: `Телефон для связи`,
         },
         {
-          icon: `ec-earth-americas`,
+          icon: `mail`,
+          href: 'mailto:jobs@dins.ru',
           title: `jobs@dins.ru`,
           subtitle: `E-mail для резюме`,
         },
