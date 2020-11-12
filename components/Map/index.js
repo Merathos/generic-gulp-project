@@ -18,7 +18,7 @@ class Map extends Component {
   };
 
   render() {
-    const { data, english, contacts } = this.props;
+    const { data, english, twoColumns = false } = this.props;
     return (
       <>
         <S.H2>{english ? 'Our offices' : 'Офисы на карте'}</S.H2>
@@ -54,7 +54,7 @@ class Map extends Component {
           </ReactMapGL>
         </S.Container>
         {data.stations && (
-          <S.List contacts={contacts}>
+          <S.List twoColumns={twoColumns}>
             {data.stations.map((el, i) => (
               <li key={i}>
                 <Metro data={el} />

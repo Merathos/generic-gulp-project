@@ -4,7 +4,7 @@ import {
   Blogs,
   GreyHeader,
   GreyFooter,
-  Map
+  Map,
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer } from './styles';
@@ -18,7 +18,11 @@ const Relocation = ({ data, blogs }) => {
             title={data.intro.title}
             text={data.intro.text}
             list={data.intro.list}
-            picture={data.intro.picture} />
+            picture={data.intro.picture}
+            mobPicture={data.intro.mobPicture}
+            hash="relocation"
+            twoColumns
+          />
         </Container>
       </GreyContainer>
 

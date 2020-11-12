@@ -7,7 +7,7 @@ import {
   InternInfo,
   SliderVacancy,
   InternAbout,
-  Slider
+  Slider,
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer, GreyWrapper } from './styles';
@@ -21,7 +21,10 @@ const Internship = ({ data, vacancies }) => {
             title={data.intro.title}
             text={data.intro.text}
             buttons={data.intro.buttons}
-            picture={data.intro.picture} />
+            picture={data.intro.picture}
+            mobPicture={data.intro.mobPicture}
+            hash="internship"
+          />
         </Container>
       </GreyWrapper>
 

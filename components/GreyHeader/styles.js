@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TitleH3, Text, Icon, Button, SmallText } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
@@ -8,6 +8,7 @@ export const StyledSmallText = styled(SmallText)`
 
 export const Grid = styled.div`
   display: flex;
+  justify-content: space-between;
   padding-top: 240px;
 
   @media screen and (max-width: 1024px) {
@@ -20,6 +21,14 @@ export const Grid = styled.div`
 export const Wrapper = styled.article`
   max-width: ${props => (props.withPicture ? '744px' : '854px')};
   padding-right: ${props => (props.withPicture ? '110px' : '0')};
+
+  @media screen and (max-width: 1200px) {
+    padding-right: ${props => (props.withPicture ? '60px' : '0')};
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-right: 0;
+  }
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
@@ -52,7 +61,7 @@ export const Features = styled.ul`
   margin-bottom: 100px;
 
   ${props =>
-    props.contacts &&
+    props.twoColumns &&
     css`
       @media screen and (max-width: 1024px) {
         grid-template-columns: 1fr;
@@ -104,6 +113,7 @@ export const StyledIcon = styled(Icon)`
   background-size: 24px 24px;
 
   @media screen and (max-width: 1024px) {
+    flex-shrink: 0;
     margin-right: 20px;
     margin-bottom: 0;
   }
@@ -170,4 +180,68 @@ export const Block = styled.div`
       right: 0;
     }
   }
+
+  ${props =>
+    props.hash &&
+    css`
+    align-self: flex-start;
+    min-width: 340px;
+    
+    @media screen and (max-width: 1200px) {
+      min-width: 260px;
+    }
+    
+    @media screen and (max-width: 1024px) {
+      min-width: auto;
+    }
+    
+    @media screen and (max-width: 600px) {
+      width: 315px;
+      align-self: center;
+    }
+    
+    @media screen and (max-width: 420px) {
+      width: auto;
+    }
+    
+    &::after {
+      background-repeat: no-repeat;
+      bottom: -140px;
+      left: -156px;
+      right: auto;
+    
+      @media screen and (max-width: 1200px) {
+        bottom: -80px;
+        width: 240px;
+        height: 240px;
+        background-size: 240px 240px;
+      }
+    
+      @media screen and (max-width: 1024px) {
+        left: auto;
+        right: -120px;
+      }
+    
+      @media screen and (max-width: 600px) {
+        width: 120px;
+        height: 120px;
+        background-size: 120px 120px;
+        bottom: -40px;
+        right: -30px;
+      }
+  `}
+
+  ${props =>
+    props.hash === 'relocation' &&
+    css`
+      background-image: url('/backgrounds/relocate-letters.svg');
+    `}
+
+  ${props =>
+    props.hash === 'internship' &&
+    css`
+      background-image: url('/backgrounds/letters-intern.png');
+      width: 294px;
+      height: 294px;
+    `}
 `;

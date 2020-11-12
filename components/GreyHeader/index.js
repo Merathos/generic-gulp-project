@@ -11,7 +11,8 @@ const GreyHeader = ({
   buttons,
   audio,
   mobPicture,
-  contacts = false,
+  twoColumns = false,
+  hash,
 }) => {
   return (
     <S.Grid>
@@ -19,7 +20,7 @@ const GreyHeader = ({
         <TitleH1>{title}</TitleH1>
         <S.Paragraph>{text}</S.Paragraph>
         {list && (
-          <S.Features contacts={contacts}>
+          <S.Features twoColumns={twoColumns}>
             {list.map((el, i) => (
               <S.Element key={i}>
                 {el.icon && <S.StyledIcon name={el.icon} white />}
@@ -49,7 +50,7 @@ const GreyHeader = ({
         </S.Aside>
       )}
       {picture && (
-        <S.Block>
+        <S.Block hash={hash}>
           <S.Picture
             src={picture}
             srcSet={`${mobPicture} 420w, ${picture}`}
