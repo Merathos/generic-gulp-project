@@ -916,8 +916,7 @@ export default {
     },
     apply: {
       title: `Нет подходящей вакансии?`,
-      text: `Тогда оправляй резюме на jobs@dins.ru или заполни форму
-      на сайте.`,
+      email: `jobs@dins.ru`,
       button: `Заполнить форму`,
     },
     greyFooter: [

@@ -6,7 +6,7 @@ export const Text = styled(Subtitle)`
   text-align: center;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     margin-top: 5px;
     margin-bottom: 100px;
   }
@@ -16,7 +16,7 @@ export const Element = styled.div`
   margin-bottom: 16px;
   text-align: center;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 8px;
   }
 `;
@@ -29,7 +29,7 @@ export const Section = styled.section`
     cursor: grabbing;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 50px;
     width: 100%;
   }
@@ -39,7 +39,7 @@ export const Img = styled.img`
   width: 706px;
   margin-right: 40px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     width: 301px;
     margin-right: 12px;
   }
