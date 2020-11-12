@@ -57,7 +57,7 @@ export const StyledButton = styled(Button)`
   margin-top: 40px;
   grid-area: d;
   margin-right: 20px;
-  max-width: 230px;
+  max-width: ${props => (props.usage === 'relocation' ? '236px' : '230px')};
   box-sizing: border-box;
   text-align: center;
 

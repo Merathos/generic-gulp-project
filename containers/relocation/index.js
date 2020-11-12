@@ -8,6 +8,13 @@ import {
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Main, Container, GreyContainer } from './styles';
+import Router from 'next/router';
+
+const handleVacanciesClick = () => {
+  Router.push({
+    pathname: '/vacancies',
+  }).then(() => window.scrollTo(0, 0));
+};
 
 const Relocation = ({ data, blogs }) => {
   return (
@@ -32,7 +39,11 @@ const Relocation = ({ data, blogs }) => {
         </SectionGroup>
       </Container>
 
-      <Application data={data.promo} type="relocation" />
+      <Application
+        data={data.promo}
+        type="relocation"
+        handleVacanciesClick={handleVacanciesClick}
+      />
 
       <Container>
         <SectionGroup>
