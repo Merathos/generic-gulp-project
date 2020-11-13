@@ -15,7 +15,7 @@ const Label = styled.label`
     height: 7px;
     top: 50%;
     left: 0;
-    background-color: #53B443;
+    background-color: #53b443;
     transform: translateY(-50%);
     border-radius: 50%;
     display: none;
@@ -32,6 +32,7 @@ const RadioButton = props => {
         name={name}
         id={value}
         onChange={e => handleChange(e.target.id)}
+        onClick={e => handleChange(checked ? '' : e.target.id)}
         checked={checked}
       />
       <Label htmlFor={value}>{value}</Label>
