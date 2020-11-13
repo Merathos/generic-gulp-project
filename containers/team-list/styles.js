@@ -1,20 +1,32 @@
 import styled from 'styled-components';
 import { TitleH1 } from 'elements';
 
+export const Main = styled.main`
+  background: url('backgrounds/teams-bg.png') no-repeat right 10%;
+
+  @media screen and (max-width: 1024px) {
+    background-image: none;
+  }
+`;
+
 export const Container = styled.div`
   max-width: 1200px;
   padding: 200px 45px 0;
   margin: 0 auto;
 
+  @media screen and (max-width: 768px) {
+    padding-top: 120px;
+  }
+
   @media screen and (max-width: 420px) {
     max-width: 375px;
-    padding: 0 30px;
+    padding: 110px 30px 0;
     overflow: hidden;
   }
 
   @media screen and (max-width: 240px) {
     max-width: 320px;
-    padding: 0 20px;
+    padding: 110px 20px 0;
   }
 `;
 
@@ -23,6 +35,16 @@ export const Title = styled(TitleH1)`
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 0;
+    font-size: 60px;
+    line-height: 1.34;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 46px;
+  }
+
+  @media screen and (max-width: 420px) {
+    font-size: 32px;
   }
 `;
 
@@ -36,8 +58,7 @@ export const Article = styled.article`
 `;
 
 export const Grid = styled.div`
-  @media screen and (max-width: 1024px) {
-    padding-top: 110px;
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
@@ -47,6 +68,14 @@ export const Aside = styled.aside`
   max-width: 254px;
   margin-right: 90px;
   float: left;
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: 200px;
+  }
 
   @media screen and (max-width: 420px) {
     max-width: 100%;

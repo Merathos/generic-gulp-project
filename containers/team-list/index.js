@@ -57,7 +57,7 @@ const TeamList = ({ mock, back }) => {
   };
 
   return (
-    <main>
+    <S.Main>
       <S.Container>
         <S.Grid>
           <S.Aside>
@@ -73,7 +73,7 @@ const TeamList = ({ mock, back }) => {
           <Cards data={back} type="teams" />
         </S.Grid>
       </S.Container>
-    </main>
+    </S.Main>
   );
 };
 

@@ -8,6 +8,7 @@ export const List = styled.ul`
 
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
+    margin-top: ${props => (props.type === 'teams' ? '35px' : '85px')};
   }
 
   @media screen and (max-width: 420px) {
