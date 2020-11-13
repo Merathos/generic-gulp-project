@@ -88,7 +88,7 @@ export const H2 = styled(TitleH2)`
   grid-area: a;
 
   @media screen and (max-width: 724px) {
-    font-size: 40px;
+    font-size: 28px;
   }
 `;
 

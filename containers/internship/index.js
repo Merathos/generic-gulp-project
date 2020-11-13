@@ -29,7 +29,7 @@ const Internship = ({ data, vacancies }) => {
             buttons={data.intro.buttons}
             picture={data.intro.picture}
             mobPicture={data.intro.mobPicture}
-            hash="internship"
+            hash="relocation"
           />
         </Container>
       </GreyWrapper>
