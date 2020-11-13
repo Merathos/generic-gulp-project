@@ -31,6 +31,14 @@ export const Title = styled.button.attrs(props => ({
   }
 `;
 
+export const Sup = styled.sup`
+  margin-left: 6px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #53b443;
+  vertical-align: top;
+`;
+
 export const Item = styled.li`
   opacity: 0.5;
   margin-bottom: 10px;

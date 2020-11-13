@@ -11,7 +11,10 @@ const TeamsFilter = props => {
 
   return (
     <S.Wrapper>
-      <S.Title>{title}</S.Title>
+      <S.Title>
+        {title}
+        {filterArray.length > 0 && <S.Sup>{filterArray.length}</S.Sup>}
+      </S.Title>
       <S.List>
         {list.map((el, i) => (
           <S.Item key={i}>

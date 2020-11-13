@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Checkbox, RadioButton } from 'elements';
-import { Title, Item, List, Wrapper } from './styles';
+import { Title, Item, List, Wrapper, Sup } from './styles';
 
 const Dropdown = props => {
   const {
@@ -18,6 +18,13 @@ const Dropdown = props => {
     <>
       <Title type="button" onClick={() => handleOpen()} active={opened}>
         {title}
+        {title === 'Категории' && categories && <Sup>1</Sup>}
+        {(title === 'Технологии' || title === 'Команды') &&
+          filterArray.length > 0 && (
+            <Sup>
+              {list.filter(item => filterArray.includes(item)).length || ''}
+            </Sup>
+          )}
       </Title>
       <Wrapper style={{ display: opened ? 'block' : 'none' }} withBg={withBg}>
         <List>
