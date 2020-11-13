@@ -39,17 +39,26 @@ export const Wrapper = styled.div`
       }
     `};
 
-  @media screen and (max-width: 420px) {
-    max-width: 315px;
-    background-size: 50%;
-    background-position: 150% center;
-    padding: 80px 30px 80px;
+  @media screen and (max-width: 1024px) {
+    grid-column-gap: 60px;
+  }
+
+  @media screen and (max-width: 724px) {
     grid-template-areas:
       'a'
       'b'
       'c'
       'd';
     grid-column-gap: 0;
+    padding: 80px 45px 80px;
+    background-size: 50%;
+    background-position: 150% center;
+  }
+
+  @media screen and (max-width: 420px) {
+    max-width: 315px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 
@@ -61,10 +70,14 @@ export const StyledButton = styled(Button)`
   box-sizing: border-box;
   text-align: center;
 
+  @media screen and (max-width: 724px) {
+    margin-top: ${props => (props.usage === 'relocation' ? '60px' : '40px')};
+  }
+
   @media screen and (max-width: 420px) {
     margin-right: 0;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: ${props => (props.usage === 'relocation' ? '0' : '20px')};
     max-width: 180px;
   }
 `;
@@ -73,11 +86,23 @@ export const H2 = styled(TitleH2)`
   max-width: 520px;
   margin-bottom: 40px;
   grid-area: a;
+
+  @media screen and (max-width: 724px) {
+    font-size: 40px;
+  }
 `;
 
 export const Picture = styled.img`
   width: 344px;
   grid-area: b;
+
+  @media screen and (max-width: 1024px) {
+    width: 260px;
+  }
+
+  @media screen and (max-width: 724px) {
+    margin-bottom: 20px;
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 20px;

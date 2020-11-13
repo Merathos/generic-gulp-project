@@ -4,6 +4,7 @@ import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const StyledSmallText = styled(SmallText)`
   max-width: 280px;
+  white-space: pre-wrap;
 `;
 
 export const Grid = styled.div`
@@ -70,11 +71,12 @@ export const Features = styled.ul`
         margin-bottom: 30px;
       }
     `};
+
   @media screen and (max-width: 420px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
   }
 `;
 
@@ -105,6 +107,10 @@ export const ListTitle = styled(TitleH3)`
 export const Element = styled.li`
   @media screen and (max-width: 1024px) {
     display: flex;
+  }
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
   }
 `;
 
@@ -180,6 +186,29 @@ export const Block = styled.div`
       right: 0;
     }
   }
+
+  ${props =>
+    props.afterTitle === true &&
+    css`
+      display: none;
+
+      @media screen and (max-width: 420px) {
+        display: block;
+        box-sizing: border-box;
+        max-width: 315px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+    `}
+
+  ${props =>
+    props.afterTitle === false &&
+    css`
+      @media screen and (max-width: 420px) {
+        display: none;
+      }
+    `}
 
   ${props =>
     props.hash &&

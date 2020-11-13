@@ -18,6 +18,15 @@ const GreyHeader = ({
     <S.Grid>
       <S.Wrapper withPicture={!!picture}>
         <TitleH1>{title}</TitleH1>
+        {picture && hash === 'relocation' && (
+          <S.Block hash={hash} afterTitle={true}>
+            <S.Picture
+              src={picture}
+              srcSet={`${mobPicture} 420w, ${picture}`}
+              alt={title}
+            />
+          </S.Block>
+        )}
         <S.Paragraph>{text}</S.Paragraph>
         {list && (
           <S.Features twoColumns={twoColumns}>
@@ -50,7 +59,7 @@ const GreyHeader = ({
         </S.Aside>
       )}
       {picture && (
-        <S.Block hash={hash}>
+        <S.Block hash={hash} afterTitle={false}>
           <S.Picture
             src={picture}
             srcSet={`${mobPicture} 420w, ${picture}`}

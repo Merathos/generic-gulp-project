@@ -728,11 +728,11 @@ export default {
       list: [
         {
           icon: 16,
-          text: `Предоставим Relocation Bonus`,
+          text: `Предоставим \nRelocation Bonus`,
         },
         {
           icon: 17,
-          text: `Поможем в поиске жилья`,
+          text: `Поможем \nв поиске жилья`,
         },
       ],
       picture: `/images/relocate-header.jpg`,
