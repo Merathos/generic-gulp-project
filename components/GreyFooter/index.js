@@ -14,7 +14,7 @@ const GreyFooter = ({ data, type, background }) => {
           ))}
         </S.ListBlog>
       ) : (
-        <S.ListContainer type={type}>
+        <S.ListContainer background={background} type={type}>
           <S.List>
             {data.map((el, i) => (
               <S.Element key={i}>

@@ -1,14 +1,20 @@
 import { useSelector } from 'react-redux';
 import * as S from './styles';
 
-const Application = ({ data, decor, type, handleVacanciesClick }) => {
+const Application = ({ data, decor, type, handleVacanciesClick, className }) => {
   const english = useSelector(state => state.english);
-  const { text, picture } = data;
+  const { text, picture, email } = data;
   return (
-    <S.Section>
+    <S.Section className={className}>
       <S.Wrapper decor={decor} type={type}>
         <S.H2>{english ? 'Apply' : data.title}</S.H2>
         {text && <S.Text>{text}</S.Text>}
+        {email && (
+          <S.Text>
+            Тогда оправляй резюме на <a href="#">{email}</a> или заполни форму
+            на сайте.
+          </S.Text>
+        )}
         <S.StyledButton
           type="accent"
           usage={type}

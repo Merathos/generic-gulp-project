@@ -10,7 +10,14 @@ import {
   Slider,
 } from 'components';
 import { SectionGroup } from 'containers';
-import { Container, GreyContainer, GreyWrapper } from './styles';
+import {
+  Container,
+  GreyContainer,
+  GreyWrapper,
+  ValuesSection,
+  VacancySection,
+  StyledApplication,
+} from './styles';
 
 const Internship = ({ data, vacancies }) => {
   return (
@@ -38,11 +45,12 @@ const Internship = ({ data, vacancies }) => {
         <SectionGroup>
           <Slider pictures={data.pictures} />
         </SectionGroup>
-        <SectionGroup>
-          <Values data={data.values} />
-        </SectionGroup>
-        <div />
       </Container>
+      <ValuesSection>
+        <Container>
+          <Values data={data.values} />
+        </Container>
+      </ValuesSection>
 
       <GreyContainer>
         <Container>
@@ -50,13 +58,13 @@ const Internship = ({ data, vacancies }) => {
         </Container>
       </GreyContainer>
 
-      <Container>
-        <SectionGroup>
+      <VacancySection>
+        <Container>
           <InternVacancies mock={data.vacancies} back={vacancies} />
-        </SectionGroup>
-      </Container>
+        </Container>
+      </VacancySection>
 
-      <Application data={data.apply} />
+      <StyledApplication data={data.apply} />
 
       <GreyFooter data={data.greyFooter} background="transparent" />
     </main>

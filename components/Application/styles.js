@@ -91,6 +91,16 @@ export const Text = styled.p`
   line-height: 158%;
   grid-area: c;
 
+  a {
+    display: inline;
+    color: #53b443;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 158%;

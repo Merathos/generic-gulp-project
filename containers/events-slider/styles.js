@@ -30,8 +30,8 @@ export const Container = styled.div`
       content: '';
       position: absolute;
       top: 0;
-      left: -840px;
-      width: 870px;
+      left: -1840px;
+      width: 1870px;
       height: 100%;
       background-color: #ffffff;
       z-index: 500;

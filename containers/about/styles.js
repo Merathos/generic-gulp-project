@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SectionGroup } from 'containers';
 
 export const Main = styled.main`
   overflow: hidden;
@@ -21,9 +22,16 @@ export const Container = styled.section`
   }
 `;
 
+export const ValuesSection = styled(SectionGroup)`
+  @media (min-width: 769px) {
+    background-image: url('backgrounds/about-values.svg');
+    background-repeat: no-repeat;
+    background-position: top 45px right;
+  }
+`;
+
 export const GreyContainer = styled.div`
   background-color: #f7f8f9;
-  /* background-image: url('backgrounds/about-grey-title.svg'); */
   background-repeat: no-repeat;
   background-position: 118% 298%;
 

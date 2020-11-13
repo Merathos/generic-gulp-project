@@ -77,6 +77,10 @@ export const Image = styled.img`
 
 export const Aside = styled.aside`
   padding-top: 30px;
+  background-image: url('backgrounds/i-sidebar.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+
   @media screen and (max-width: 420px) {
     display: grid;
     grid-template-areas:
@@ -84,5 +88,7 @@ export const Aside = styled.aside`
       'a c';
     grid-column-gap: 20px;
     grid-row-gap: 8px;
+    background-position: top left 30px;
+    background-size: 80px;
   }
 `;

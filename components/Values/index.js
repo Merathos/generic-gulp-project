@@ -6,7 +6,7 @@ const Values = props => {
     data: { title, items },
   } = props;
   return (
-    <Wrapper>
+    <>
       <Title>{title}</Title>
       <List>
         {items.map((el, i) => (
@@ -17,7 +17,7 @@ const Values = props => {
           </li>
         ))}
       </List>
-    </Wrapper>
+    </>
   );
 };
 
