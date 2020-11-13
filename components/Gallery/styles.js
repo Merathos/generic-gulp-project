@@ -15,5 +15,9 @@ export const Title = styled(TitleH2)`
 
 export const Wrapper = styled.div`
   position: relative;
-  padding-bottom: 150px;
+  padding-bottom: 125px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 0;
+  }
 `;

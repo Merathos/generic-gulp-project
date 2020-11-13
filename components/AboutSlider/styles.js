@@ -40,22 +40,32 @@ export const Img = styled.img`
   margin-right: 40px;
 
   @media screen and (max-width: 768px) {
-    width: 301px;
-    margin-right: 12px;
+    width: 315px;
+    margin-right: 16px;
   }
 `;
 
 export const Title = styled.p`
   opacity: 0.5;
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: left;
+  max-width: 706px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 315px;
+  }
 `;
 
 export const PrevButton = styled.button`
   display: none;
   display: block;
   position: absolute;
-  bottom: 16.3%;
-  left: 865px;
+  bottom: 100px;
+  right: 521px;
   width: 53px;
   height: 106px;
   padding-left: 19px;
@@ -83,8 +93,8 @@ export const NextButton = styled.button`
   display: none;
   display: block;
   position: absolute;
-  bottom: 16.3%;
-  left: 918px;
+  bottom: 100px;
+  right: 468px;
   width: 53px;
   height: 106px;
   padding-left: 13px;

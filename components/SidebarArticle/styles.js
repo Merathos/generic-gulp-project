@@ -3,6 +3,12 @@ import { TitleH4, TitleH5, Icon, Subtitle } from '/elements';
 
 export const Title = styled(TitleH4)`
   margin-bottom: 40px;
+
+  @media (max-width: 1205px) {
+    grid-area: b;
+    margin-bottom: 0;
+  }
+
   @media screen and (max-width: 420px) {
     grid-area: b;
     margin-bottom: 0;
@@ -35,6 +41,7 @@ export const Section = styled.div`
 
 export const SectionIcon = styled.div`
   max-width: 250px;
+
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
   }
@@ -69,7 +76,11 @@ export const Image = styled.img`
   margin-bottom: 30px;
   position: relative;
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 1205px) {
+    grid-area: a;
+  }
+
+  @media screen and (max-width: 500px) {
     width: 74px;
     grid-area: a;
   }
@@ -79,9 +90,18 @@ export const Aside = styled.aside`
   padding-top: 30px;
   background-image: url('backgrounds/i-sidebar.svg');
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: top left 100px;
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 1205px) {
+    display: grid;
+    grid-template-areas:
+      'a b'
+      'a c';
+    grid-column-gap: 20px;
+    grid-row-gap: 8px;
+  }
+
+  @media screen and (max-width: 500px) {
     display: grid;
     grid-template-areas:
       'a b'

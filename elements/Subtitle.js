@@ -5,7 +5,7 @@ const Styled = styled.p`
   line-height: 134%;
   opacity: 0.5;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 500px) {
     font-size: 14px;
     line-height: 134%;
   }

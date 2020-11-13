@@ -88,7 +88,7 @@ export const H2 = styled(TitleH2)`
   grid-area: a;
 
   @media screen and (max-width: 724px) {
-    font-size: 40px;
+    font-size: 28px;
   }
 `;
 
@@ -119,6 +119,7 @@ export const Text = styled.p`
   a {
     display: inline;
     color: #53b443;
+    transition: color 0.3s;
 
     &:hover,
     &:active {

@@ -6,7 +6,7 @@ const Styled = styled.h2`
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     font-size: 28px;
   }
 `;

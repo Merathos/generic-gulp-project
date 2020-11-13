@@ -20,8 +20,8 @@ export const Item = styled.li`
   margin-bottom: 10px;
 
   input:checked ~ label {
-    color: #53B443;
-  
+    color: #53b443;
+
     &::after {
       display: block;
     }
@@ -39,17 +39,22 @@ export const List = styled.ul`
   height: 450px;
   min-width: 250px;
   overflow-y: scroll;
-  -ms-overflow-style: none; /* IE 10+ */
-  scrollbar-width: none; /* Firefox */
   padding-bottom: 15px;
 
-  &::-webkit-scrollbar {   /* Chrome */
-    opacity: 0;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f7f8f9;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #53b443;
+    border-radius: 6px;
+    border: 3px solid #53b443;
   }
 
-  &::-webkit-scrollbar {
-    opacity: 0;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: #53b443 #f7f8f9;
 
   @media screen and (max-width: 420px) {
     max-height: 200px;
@@ -59,7 +64,7 @@ export const List = styled.ul`
 export const Wrapper = styled.div`
   position: relative;
   padding-bottom: 20px;
-  
+
   &::after {
     content: '';
     width: 100%;
@@ -68,7 +73,11 @@ export const Wrapper = styled.div`
     bottom: -10px;
     left: 0;
     z-index: 1;
-    background: linear-gradient(360deg, #FFFFFF 49.12%, rgba(255, 255, 255, 0) 121.93%);
+    background: linear-gradient(
+      360deg,
+      #ffffff 49.12%,
+      rgba(255, 255, 255, 0) 121.93%
+    );
   }
 `;
 
@@ -84,7 +93,7 @@ export const Label = styled.label`
     height: 7px;
     top: 50%;
     left: 0;
-    background-color: #53B443;
+    background-color: #53b443;
     transform: translateY(-50%);
     border-radius: 50%;
     display: none;

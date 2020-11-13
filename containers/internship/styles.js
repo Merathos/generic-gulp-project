@@ -41,7 +41,7 @@ export const GreyWrapper = styled.div`
   padding-bottom: 240px;
   overflow: hidden;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1560px) {
     margin-bottom: 50px;
     padding-bottom: 0;
   }

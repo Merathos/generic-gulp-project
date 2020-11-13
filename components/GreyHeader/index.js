@@ -60,11 +60,7 @@ const GreyHeader = ({
       )}
       {picture && (
         <S.Block hash={hash} afterTitle={false}>
-          <S.Picture
-            src={picture}
-            srcSet={`${mobPicture} 420w, ${picture}`}
-            alt={title}
-          />
+          <S.Picture src={picture} alt={title} />
         </S.Block>
       )}
     </S.Grid>
