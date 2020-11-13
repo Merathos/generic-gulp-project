@@ -4,18 +4,22 @@ import { Text } from 'elements';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 800px 1fr;
-  grid-gap: 160px;
+  grid-template-columns: 800px 254px;
+  grid-gap: 60px;
+  justify-content: space-between;
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 1205px) {
     grid-template-columns: 1fr;
-    grid-gap: 20px;
+    grid-gap: 60px;
   }
 `;
 
 export const Title = styled(TitleH2)`
   margin-bottom: 40px;
-  @media screen and (max-width: 420px) {
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    line-height: 130%;
     margin-bottom: 20px;
   }
 `;
@@ -27,7 +31,7 @@ export const List = styled.ul`
   grid-row-gap: 30px;
   max-width: 600px;
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 620px) {
     grid-template-columns: 1fr;
     grid-row-gap: 20px;
   }
@@ -51,7 +55,7 @@ export const Item = styled.li`
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 2px solid #2F8ED9;
+    border: 2px solid #2f8ed9;
     top: 12px;
   }
   @media screen and (max-width: 420px) {
@@ -59,8 +63,8 @@ export const Item = styled.li`
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      border: 2px solid #2F8ED9;
+      border: 2px solid #2f8ed9;
       top: 7px;
-  }
+    }
   }
 `;

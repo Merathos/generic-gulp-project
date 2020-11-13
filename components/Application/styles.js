@@ -82,6 +82,7 @@ export const Text = styled.p`
   a {
     display: inline;
     color: #53b443;
+    transition: color 0.3s;
 
     &:hover,
     &:active {

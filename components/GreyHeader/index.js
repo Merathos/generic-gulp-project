@@ -10,7 +10,6 @@ const GreyHeader = ({
   picture,
   buttons,
   audio,
-  mobPicture,
   contacts = false,
 }) => {
   return (
@@ -50,11 +49,7 @@ const GreyHeader = ({
       )}
       {picture && (
         <S.Block>
-          <S.Picture
-            src={picture}
-            srcSet={`${mobPicture} 420w, ${picture}`}
-            alt={title}
-          />
+          <S.Picture src={picture} alt={title} />
         </S.Block>
       )}
     </S.Grid>

@@ -54,14 +54,22 @@ export const Item = styled.li`
 export const List = styled.ul`
   height: 180px;
   overflow-y: scroll;
-  -ms-overflow-style: none; /* IE 10+ */
-  scrollbar-width: none; /* Firefox */
   padding-bottom: 15px;
 
   &::-webkit-scrollbar {
-    /* Chrome */
-    opacity: 0;
+    width: 3px;
   }
+  &::-webkit-scrollbar-track {
+    background: #f7f8f9;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #53b443;
+    border-radius: 6px;
+    border: 3px solid #53b443;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #53b443 #f7f8f9;
 `;
 
 export const Wrapper = styled.div`

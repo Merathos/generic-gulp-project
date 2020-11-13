@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TitleH3, Text, Icon, Button, SmallText } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
@@ -10,7 +10,7 @@ export const Grid = styled.div`
   display: flex;
   padding-top: 240px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1560px) {
     flex-direction: column;
     padding-top: 110px;
     padding-bottom: 80px;
@@ -125,7 +125,7 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Picture = styled.img`
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1560px) {
     margin-top: 30px;
   }
 `;
@@ -158,7 +158,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 590px) {
     width: 100%;
 
     &::after {
