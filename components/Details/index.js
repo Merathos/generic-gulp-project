@@ -25,13 +25,13 @@ const Details = ({ data: { block1, block2 } }) => {
         <S.Links>
           {block2.links.map((el, i) => (
             <S.LinkElement key={i}>
-              <S.Link href={el.link}>
-                {el.title}
-              </S.Link>
+              <S.Link href={el.link}>{el.title}</S.Link>
             </S.LinkElement>
           ))}
         </S.Links>
-        <img src={block2.picture} alt={block2.title} />
+        <S.ImgWrapper>
+          <img src={block2.picture} alt={block2.title} />
+        </S.ImgWrapper>
       </div>
     </S.Section>
   );

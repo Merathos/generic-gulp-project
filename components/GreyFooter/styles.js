@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Subtitle } from 'elements';
 
 export const Section = styled.section`
@@ -10,6 +10,21 @@ export const Section = styled.section`
   }
 `;
 
+export const ListContainer = styled.div`
+  @media (min-width: 769px) {
+    min-height: 300px;
+    background-image: url('backgrounds/about-footer.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+
+    ${props =>
+      props.background === 'transparent' &&
+      css`
+        background-image: url('backgrounds/i-footer.svg');
+      `};
+  }
+`;
+
 export const Title = styled.h3`
   font-weight: bold;
   font-size: 50px;
@@ -18,7 +33,7 @@ export const Title = styled.h3`
   transition: color 200ms ease;
 
   &:hover {
-    color: #53B443;
+    color: #53b443;
     cursor: pointer;
   }
 
@@ -30,10 +45,19 @@ export const Title = styled.h3`
 
 export const List = styled.ul`
   display: flex;
+  flex-flow: row wrap;
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
   justify-content: space-between;
+
+  @media (max-width: 1145px) {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+  }
 
   @media screen and (max-width: 420px) {
     max-width: 375px;
@@ -83,7 +107,13 @@ export const Text = styled(Subtitle)`
 `;
 
 export const Element = styled.li`
+  margin-bottom: 45px;
   max-width: 325px;
+  flex-shrink: 0;
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
 
   @media screen and (max-width: 420px) {
     max-width: auto;

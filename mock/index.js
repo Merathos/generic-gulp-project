@@ -136,6 +136,9 @@ export default {
     article: {
       text: `Отправь резюме, и мы свяжемся с тобой, если появится подходящая позиция.`,
       button: `Отправить`,
+      linkText: `Отправь резюме`,
+      plainText: `, и мы свяжемся с тобой, если появится подходящая позиция.`,
+      href: 'mailto:jobs@dins.ru',
     },
   },
   article: {
@@ -610,6 +613,27 @@ export default {
       },
     },
     animation: {},
+    technologies: [
+      'Kubernetes',
+      'DDC',
+      'Marathon',
+      'Amazon AWS',
+      'Terraform',
+      'CloudFoundry',
+      'Rabbit',
+      'Google GCP',
+      'Zabbix',
+      'Git',
+      'Influx',
+      'Mercurial',
+      'Jenkins',
+      'Elasticsearch',
+      'GitLab',
+      'GridGain',
+      'Kafka',
+      'Coherence',
+      'ZeroMQ',
+    ],
     values: {
       title: `В DINS мы ценим`,
       items: [
@@ -895,8 +919,7 @@ export default {
     },
     apply: {
       title: `Нет подходящей вакансии?`,
-      text: `Тогда оправляй резюме на jobs@dins.ru или заполни форму
-      на сайте.`,
+      email: `jobs@dins.ru`,
       button: `Заполнить форму`,
     },
     greyFooter: [
@@ -1164,12 +1187,14 @@ export default {
       те, кто хочет созидать и создавать полезный продукт для миллионов людей во всем мире.`,
       list: [
         {
-          icon: `ec-earth-americas`,
+          icon: `phone`,
+          href: 'tel:+78127407761',
           title: `+7 (812) 740-77-61`,
           subtitle: `Телефон для связи`,
         },
         {
-          icon: `ec-earth-americas`,
+          icon: `mail`,
+          href: 'mailto:jobs@dins.ru',
           title: `jobs@dins.ru`,
           subtitle: `E-mail для резюме`,
         },

@@ -3,7 +3,7 @@ import TitleH2 from 'elements/TitleH2';
 import Button from 'elements/Button';
 
 export const Section = styled.section`
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   margin-bottom: 100px;
 
   @media screen and (max-width: 420px) {
@@ -21,7 +21,8 @@ export const Wrapper = styled.div`
     'd b'
     '. b';
   grid-column-gap: 170px;
-  background-image: ${props => props.decor ? "url('/backgrounds/application.png')" : 'none'};
+  background-image: ${props =>
+    props.decor ? "url('/backgrounds/application.png')" : 'none'};
   background-repeat: no-repeat;
   background-position: 105% center;
   padding: 160px 50px 180px;
@@ -32,10 +33,10 @@ export const Wrapper = styled.div`
     background-position: 150% center;
     padding: 80px 30px 80px;
     grid-template-areas:
-    'a'
-    'b'
-    'c'
-    'd';
+      'a'
+      'b'
+      'c'
+      'd';
     grid-column-gap: 0;
   }
 `;
@@ -77,6 +78,16 @@ export const Text = styled.p`
   font-size: 20px;
   line-height: 158%;
   grid-area: c;
+
+  a {
+    display: inline;
+    color: #53b443;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
 
   @media screen and (max-width: 420px) {
     font-size: 16px;

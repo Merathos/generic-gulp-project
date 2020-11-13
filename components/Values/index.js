@@ -1,9 +1,9 @@
 import { Subtitle } from 'elements';
-import { Title, H4, List, StyledIcon } from './styles';
+import { Title, H4, List, StyledIcon, Wrapper } from './styles';
 
 const Values = props => {
   const {
-    data: { title, items }
+    data: { title, items },
   } = props;
   return (
     <>

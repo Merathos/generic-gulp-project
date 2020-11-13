@@ -8,6 +8,7 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
   const refProgress = useRef(null);
   const [play, setPlay] = useState(false);
   const [isFirstClick, setFirstClick] = useState(false);
+  const [initialDuration, setinitialDuration] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
 
   const togglePlayer = () => {
@@ -16,7 +17,7 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
   };
 
   const handleUpdate = e => {
-    refProgress.current.style.width = `${Math.round(177 * e.played)}px`;
+    refProgress.current.style.width = `${Math.round(152 * e.played)}px`;
     setAudioDuration(restOfDuration(audioDuration));
   };
 
@@ -48,7 +49,16 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
         width="0"
         height="0"
         onProgress={e => play && handleUpdate(e)}
-        onDuration={e => !play && setAudioDuration(e)}
+        onDuration={e => {
+          setinitialDuration(e);
+          !play && setAudioDuration(e);
+        }}
+        onEnded={() => {
+          setPlay(false);
+          iconName = 'play';
+          setAudioDuration(initialDuration);
+          refProgress.current.style.width = `0px`;
+        }}
       />
       <S.Block>
         <S.Button

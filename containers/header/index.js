@@ -1,9 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { OpenedMenu } from 'containers';
 import CustomLink from 'elements/CustomLink';
 import Logo from 'public/images/logo.svg';
 import Menu from 'public/icons/menu.svg';
 import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const StyledHeader = styled.header`
   padding: 34px 45px;
@@ -18,6 +20,17 @@ const StyledHeader = styled.header`
   width: 100%;
   box-sizing: border-box;
 
+  ${props =>
+    props.anchor &&
+    css`
+      @media (max-width: 768px) {
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        z-index: 5;
+      }
+    `};
+
   @media (max-width: 420px) {
     padding: 30px;
     align-items: center;
@@ -29,6 +42,19 @@ const StyledHeader = styled.header`
 const StyledLogo = styled(Logo)`
   width: 85px;
   height: 26px;
+  transition: opacity 0.3s ease;
+
+  ${props =>
+    props.guiding &&
+    css`
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    `};
 
   @media (max-width: 420px) {
     width: 54px;
@@ -53,7 +79,14 @@ const Nav = styled.nav`
       }}
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 600px) {
+    ${props =>
+      props.hideNav && {
+        display: 'none',
+      }}
+  }
+
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -66,13 +99,22 @@ const Element = styled.li`
   margin-left: 40px;
 `;
 
-const Header = ({ data: links, plain }) => {
+const Header = ({ data: links, plain, anchor, hideHav }) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
-    <StyledHeader plain={plain}>
-      <StyledLogo />
-      <Nav plain={plain}>
+    <StyledHeader plain={plain} anchor={anchor}>
+      {router.pathname === '/' ? (
+        <StyledLogo />
+      ) : (
+        <Link href="/" passHref>
+          <a aria-label="To the main page">
+            <StyledLogo guiding="guiding" />
+          </a>
+        </Link>
+      )}
+      <Nav plain={plain} hideNav={hideHav}>
         <List>
           {links.map((el, i) => (
             <Element key={i}>

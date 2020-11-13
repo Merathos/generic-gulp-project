@@ -6,22 +6,26 @@ export const Title = styled(TitleH2)`
 
   @media (max-width: 420px) {
     margin-bottom: 50px;
-  } 
+  }
 `;
 
 export const H4 = styled(TitleH4)`
   margin-bottom: 24px;
 `;
- 
+
 export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 75px;
 
-  @media (max-width: 420px) {
+  @media (max-width: 1150px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
     grid-gap: 45px;
-  } 
+  }
 `;
 
 export const StyledIcon = styled(Icon)`

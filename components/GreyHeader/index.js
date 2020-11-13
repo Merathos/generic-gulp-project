@@ -1,5 +1,5 @@
 import { Player } from 'components';
-import { Subtitle, SmallText, TitleH1, Button } from 'elements';
+import { Subtitle, TitleH1, Button } from 'elements';
 import * as S from './styles';
 
 const GreyHeader = ({
@@ -10,26 +10,30 @@ const GreyHeader = ({
   picture,
   buttons,
   audio,
-  mobPicture
+  mobPicture,
+  contacts = false,
 }) => {
   return (
     <S.Grid>
       <S.Wrapper>
         <TitleH1>{title}</TitleH1>
         <S.Paragraph>{text}</S.Paragraph>
-        {list && <S.Features>
-          {list.map((el, i) => (
-            <S.Element key={i}>
+        {list && (
+          <S.Features contacts={contacts}>
+            {list.map((el, i) => (
+              <S.Element key={i}>
                 {el.icon && <S.StyledIcon name={el.icon} white />}
                 <div>
-                  <S.ListTitle>{el.title}</S.ListTitle>
-                  <SmallText>{el.text}</SmallText>
+                  <a href={el.href}>
+                    <S.ListTitle>{el.title}</S.ListTitle>
+                  </a>
+                  <S.StyledSmallText>{el.text}</S.StyledSmallText>
                   {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
                 </div>
               </S.Element>
             ))}
           </S.Features>
-        }
+        )}
         {buttons && (
           <S.ButtonsWrapper>
             <S.StyledButton type="accent">{buttons[0]}</S.StyledButton>
@@ -46,7 +50,11 @@ const GreyHeader = ({
       )}
       {picture && (
         <S.Block>
-          <S.Picture src={picture} srcSet={`${mobPicture} 420w, ${picture}`} alt={title} />
+          <S.Picture
+            src={picture}
+            srcSet={`${mobPicture} 420w, ${picture}`}
+            alt={title}
+          />
         </S.Block>
       )}
     </S.Grid>
