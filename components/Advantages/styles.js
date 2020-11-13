@@ -4,9 +4,11 @@ import { TitleH2 } from 'elements';
 export const Title = styled(TitleH2)`
   padding-top: 100px;
   margin-bottom: 120px;
-  @media screen and (max-width: 420px) {
+
+  @media screen and (max-width: 724px) {
     margin-bottom: 60px;
     padding-top: 50px;
+    font-size: 40px;
   }
 `;
 
@@ -16,9 +18,13 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 160px;
 
-  @media screen and (max-width: 420px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
     padding-bottom: 30px;
+  }
+
+  @media screen and (max-width: 724px) {
+    grid-template-columns: 1fr;
   }
 `;

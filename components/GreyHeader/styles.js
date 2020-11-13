@@ -1,13 +1,15 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TitleH3, Text, Icon, Button, SmallText } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const StyledSmallText = styled(SmallText)`
   max-width: 280px;
+  white-space: pre-wrap;
 `;
 
 export const Grid = styled.div`
   display: flex;
+  justify-content: space-between;
   padding-top: 240px;
 
   @media screen and (max-width: 1024px) {
@@ -18,7 +20,16 @@ export const Grid = styled.div`
 `;
 
 export const Wrapper = styled.article`
-  max-width: 854px;
+  max-width: ${props => (props.withPicture ? '744px' : '854px')};
+  padding-right: ${props => (props.withPicture ? '110px' : '0')};
+
+  @media screen and (max-width: 1200px) {
+    padding-right: ${props => (props.withPicture ? '60px' : '0')};
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-right: 0;
+  }
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
@@ -51,7 +62,7 @@ export const Features = styled.ul`
   margin-bottom: 100px;
 
   ${props =>
-    props.contacts &&
+    props.twoColumns &&
     css`
       @media screen and (max-width: 1024px) {
         grid-template-columns: 1fr;
@@ -60,11 +71,12 @@ export const Features = styled.ul`
         margin-bottom: 30px;
       }
     `};
+
   @media screen and (max-width: 420px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
   }
 `;
 
@@ -96,6 +108,10 @@ export const Element = styled.li`
   @media screen and (max-width: 1024px) {
     display: flex;
   }
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+  }
 `;
 
 export const StyledIcon = styled(Icon)`
@@ -103,6 +119,7 @@ export const StyledIcon = styled(Icon)`
   background-size: 24px 24px;
 
   @media screen and (max-width: 1024px) {
+    flex-shrink: 0;
     margin-right: 20px;
     margin-bottom: 0;
   }
@@ -169,4 +186,91 @@ export const Block = styled.div`
       right: 0;
     }
   }
+
+  ${props =>
+    props.afterTitle === true &&
+    css`
+      display: none;
+
+      @media screen and (max-width: 420px) {
+        display: block;
+        box-sizing: border-box;
+        max-width: 315px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+    `}
+
+  ${props =>
+    props.afterTitle === false &&
+    css`
+      @media screen and (max-width: 420px) {
+        display: none;
+      }
+    `}
+
+  ${props =>
+    props.hash &&
+    css`
+    align-self: flex-start;
+    min-width: 340px;
+    
+    @media screen and (max-width: 1200px) {
+      min-width: 260px;
+    }
+    
+    @media screen and (max-width: 1024px) {
+      min-width: auto;
+    }
+    
+    @media screen and (max-width: 600px) {
+      width: 315px;
+      align-self: center;
+    }
+    
+    @media screen and (max-width: 420px) {
+      width: auto;
+    }
+    
+    &::after {
+      background-repeat: no-repeat;
+      bottom: -140px;
+      left: -156px;
+      right: auto;
+    
+      @media screen and (max-width: 1200px) {
+        bottom: -80px;
+        width: 240px;
+        height: 240px;
+        background-size: 240px 240px;
+      }
+    
+      @media screen and (max-width: 1024px) {
+        left: auto;
+        right: -120px;
+      }
+    
+      @media screen and (max-width: 600px) {
+        width: 120px;
+        height: 120px;
+        background-size: 120px 120px;
+        bottom: -40px;
+        right: -30px;
+      }
+  `}
+
+  ${props =>
+    props.hash === 'relocation' &&
+    css`
+      background-image: url('/backgrounds/relocate-letters.svg');
+    `}
+
+  ${props =>
+    props.hash === 'internship' &&
+    css`
+      background-image: url('/backgrounds/letters-intern.png');
+      width: 294px;
+      height: 294px;
+    `}
 `;

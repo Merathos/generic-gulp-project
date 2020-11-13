@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import * as S from './styles';
 
-const Application = ({ data, decor, className }) => {
+const Application = ({ data, decor, type, handleVacanciesClick, className }) => {
   const english = useSelector(state => state.english);
   const { text, picture, email } = data;
   return (
     <S.Section className={className}>
-      <S.Wrapper decor={decor}>
+      <S.Wrapper decor={decor} type={type}>
         <S.H2>{english ? 'Apply' : data.title}</S.H2>
         {text && <S.Text>{text}</S.Text>}
         {email && (
@@ -15,7 +15,11 @@ const Application = ({ data, decor, className }) => {
             на сайте.
           </S.Text>
         )}
-        <S.StyledButton type="accent">
+        <S.StyledButton
+          type="accent"
+          usage={type}
+          onClick={type === 'relocation' ? handleVacanciesClick : undefined}
+        >
           {english ? 'Send CV' : data.button}
         </S.StyledButton>
         {picture && <S.Picture src={picture} alt="apply" />}
