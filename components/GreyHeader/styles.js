@@ -53,6 +53,10 @@ export const Paragraph = styled(Text)`
   @media screen and (max-width: 1024px) {
     margin-bottom: 60px;
   }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const Features = styled.ul`

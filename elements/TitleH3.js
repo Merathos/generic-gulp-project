@@ -5,7 +5,7 @@ const Styled = styled.h3`
   line-height: 120%;
   font-weight: 600;
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 768px) {
     font-size: 22px;
     line-height: 120%;
   }
