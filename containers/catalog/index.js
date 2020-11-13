@@ -28,45 +28,95 @@ const VacanciesList = ({ data: mock, back }) => {
   };
 
   const handleCategories = e => {
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        categories: e,
-      },
-    });
-    dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e })
+    if (e === '') {
+      delete query.categories;
+      router.push({
+        pathname,
+        query: {
+          ...query,
+        },
+      });
+      dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
+    } else {
+      router.push({
+        pathname,
+        query: {
+          ...query,
+          categories: e,
+        },
+      });
+      dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
+    }
   };
 
   const handleCheckbox = e => {
     if (filterArray.indexOf(e) === -1) {
+      router.push({
+        pathname,
+        query: {
+          ...query,
+          filter: [...filterArray, e],
+        },
+      });
       dispatch({ type: 'CATALOG_FILTER', payload: e });
     } else {
+      const item = filterArray.find(el => el === e);
+      const index = filterArray.indexOf(item);
+
+      router.push({
+        pathname,
+        query: {
+          ...query,
+          filter: [
+            ...filterArray.slice(0, index),
+            ...filterArray.slice(index + 1),
+          ],
+        },
+      });
       dispatch({ type: 'CLEAR_FILTER', payload: e });
     }
   };
 
   const handleInternship = () => {
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        internship: !internship_state || '',
-      },
-    });
+    if (query.internship) {
+      delete query.internship;
+      router.push({
+        pathname,
+        query: {
+          ...query,
+        },
+      });
+    } else {
+      router.push({
+        pathname,
+        query: {
+          ...query,
+          internship: !internship_state,
+        },
+      });
+    }
     dispatch({ type: 'CATALOG_INTERNSHIP' });
   };
 
   const handleEnglish = () => {
-    const { pathname, query } = router;
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        english: !english_state || '',
-      },
-    });
-    dispatch({ type: 'CATALOG_ENGLISH' })
+    if (query.english) {
+      delete query.english;
+      router.push({
+        pathname,
+        query: {
+          ...query,
+        },
+      });
+    } else {
+      router.push({
+        pathname,
+        query: {
+          ...query,
+          english: !english_state,
+        },
+      });
+    }
+    dispatch({ type: 'CATALOG_ENGLISH' });
   };
 
   const handleSearch = search => {
@@ -82,18 +132,35 @@ const VacanciesList = ({ data: mock, back }) => {
 
   const handleClearTags = tag => {
     dispatch({ type: 'CLEAR_FILTER', payload: tag });
-    const { pathname, query } = router;
+
+    const item = filterArray.find(el => el === tag);
+    const index = filterArray.indexOf(item);
+
     router.push({
       pathname,
       query: {
         ...query,
-        tags: getNewTags(router.query.tags, tag),
+        filter: [
+          ...filterArray.slice(0, index),
+          ...filterArray.slice(index + 1),
+        ],
       },
     });
-  }
+  };
+
+  const handleClearCategoryTag = () => {
+    delete query.categories;
+    router.push({
+      pathname,
+      query: {
+        ...query,
+      },
+    });
+    dispatch({ type: 'CLEAR_FILTER_CATEGORIES' });
+  };
 
   const {
-    filter: { fields, internship, english, discard }
+    filter: { fields, internship, english, discard },
   } = mock;
 
   return (
@@ -127,7 +194,10 @@ const VacanciesList = ({ data: mock, back }) => {
             </S.Block>
             <FilterButton
               name={discard}
-              handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
+              handleChange={() => {
+                router.push(pathname);
+                dispatch({ type: 'CLEAR_ALL_FILTERS' });
+              }}
             />
           </S.Filter>
           <SidebarArticle type="button" data={mock.article} />
@@ -139,7 +209,10 @@ const VacanciesList = ({ data: mock, back }) => {
             handleSearch={search => handleSearch(search)}
             initialValue={router.query.search}
           />
-          <Tags handleChangeFilter={el => handleClearTags(el)} />
+          <Tags
+            handleChangeFilter={el => handleClearTags(el)}
+            handleChangeCategory={handleClearCategoryTag}
+          />
         </S.Article>
         <Cards data={back} type="vacancies" />
       </S.Grid>
