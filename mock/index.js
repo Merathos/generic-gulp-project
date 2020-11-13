@@ -728,14 +728,15 @@ export default {
       list: [
         {
           icon: 16,
-          text: `Предоставим Relocation Bonus`,
+          text: `Предоставим \nRelocation Bonus`,
         },
         {
           icon: 17,
-          text: `Поможем в поиске жилья`,
+          text: `Поможем \nв поиске жилья`,
         },
       ],
       picture: `/images/relocate-header.jpg`,
+      mobPicture: `/images/relocate-header-mob.jpg`,
     },
     advantages: {
       title: `В петербурге здорово`,
@@ -813,6 +814,7 @@ export default {
        технических вузов на оплачиваемую стажировку. `,
       buttons: [`Оставить заявку`, `Смотреть вакансии`],
       picture: `/images/intern-header-desktop.jpg`,
+      mobPicture: `/images/intern-header-mobile.jpg`,
     },
     about: {
       title: `О стажировке`,

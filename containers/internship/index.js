@@ -28,6 +28,8 @@ const Internship = ({ data, vacancies }) => {
             text={data.intro.text}
             buttons={data.intro.buttons}
             picture={data.intro.picture}
+            mobPicture={data.intro.mobPicture}
+            hash="internship"
           />
         </Container>
       </GreyWrapper>

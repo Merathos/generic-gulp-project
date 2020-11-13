@@ -51,12 +51,12 @@ const Default = styled.button`
   }
 `;
 
-const Button = ({ type = 'default', children, className }) => (
+const Button = ({ type = 'default', children, className, onClick }) => (
   <>
     {
       {
         accent: (
-          <Accent type="button" className={className}>
+          <Accent type="button" className={className} onClick={onClick}>
             {children}
           </Accent>
         ),

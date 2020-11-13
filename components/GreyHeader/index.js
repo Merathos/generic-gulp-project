@@ -10,15 +10,26 @@ const GreyHeader = ({
   picture,
   buttons,
   audio,
-  contacts = false,
+  mobPicture,
+  twoColumns = false,
+  hash,
 }) => {
   return (
     <S.Grid>
-      <S.Wrapper>
+      <S.Wrapper withPicture={!!picture}>
         <TitleH1>{title}</TitleH1>
+        {picture && hash === 'relocation' && (
+          <S.Block hash={hash} afterTitle={true}>
+            <S.Picture
+              src={picture}
+              srcSet={`${mobPicture} 420w, ${picture}`}
+              alt={title}
+            />
+          </S.Block>
+        )}
         <S.Paragraph>{text}</S.Paragraph>
         {list && (
-          <S.Features contacts={contacts}>
+          <S.Features twoColumns={twoColumns}>
             {list.map((el, i) => (
               <S.Element key={i}>
                 {el.icon && <S.StyledIcon name={el.icon} white />}
@@ -48,7 +59,7 @@ const GreyHeader = ({
         </S.Aside>
       )}
       {picture && (
-        <S.Block>
+        <S.Block hash={hash} afterTitle={false}>
           <S.Picture src={picture} alt={title} />
         </S.Block>
       )}

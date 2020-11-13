@@ -11,14 +11,16 @@ const InternVacancies = ({ mock, back }) => {
       {back && (
         <S.List>
           {back.map((el, i) => (
-          <li key={i}>
-            <Advert data={el} />
-          </li>
+            <li key={i}>
+              <Advert data={el} />
+            </li>
           ))}
         </S.List>
       )}
       <Link href="/catalog">
-        <Button>{button}</Button>
+        <a>
+          <Button>{button}</Button>
+        </a>
       </Link>
     </>
   );

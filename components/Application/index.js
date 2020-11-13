@@ -1,7 +1,13 @@
 import { useSelector } from 'react-redux';
 import * as S from './styles';
 
-const Application = ({ data, decor, className }) => {
+const Application = ({
+  data,
+  decor,
+  type,
+  handleVacanciesClick,
+  className,
+}) => {
   const english = useSelector(state => state.english);
   const { text, picture } = data;
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
@@ -12,10 +18,14 @@ const Application = ({ data, decor, className }) => {
 
   return (
     <S.Section className={className}>
-      <S.Wrapper decor={decor}>
+      <S.Wrapper decor={decor} type={type}>
         <S.H2>{english ? 'Apply' : data.title}</S.H2>
         {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
-        <S.StyledButton type="accent">
+        <S.StyledButton
+          type="accent"
+          usage={type}
+          onClick={type === 'relocation' ? handleVacanciesClick : undefined}
+        >
           {english ? 'Send CV' : data.button}
         </S.StyledButton>
         {picture && <S.Picture src={picture} alt="apply" />}

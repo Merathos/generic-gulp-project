@@ -5,6 +5,18 @@ export const Section = styled.section`
   padding-top: 160px;
   background-color: ${props => props.background || '#F7F8F9'};
 
+  ${props =>
+    props.type === 'relocation' &&
+    css`
+      background-image: url('backgrounds/relocation-footer.png');
+      background-repeat: no-repeat;
+      background-position: right 70%;
+
+      @media screen and (max-width: 1024px) {
+        background-image: none;
+      }
+    `};
+
   @media screen and (max-width: 420px) {
     padding-top: 80px;
   }
@@ -13,7 +25,10 @@ export const Section = styled.section`
 export const ListContainer = styled.div`
   @media (min-width: 769px) {
     min-height: 300px;
-    background-image: url('backgrounds/about-footer.svg');
+    background-image: ${props =>
+      props.type === 'relocation'
+        ? `none`
+        : `url('backgrounds/about-footer.svg')`};
     background-repeat: no-repeat;
     background-position: right top;
 
