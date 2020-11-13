@@ -178,7 +178,6 @@ const VacanciesList = ({ data: mock, back }) => {
     });
     dispatch({ type: 'CLEAR_FILTER_CATEGORIES' });
   };
-  };
 
   const handleOpenFilter = () => {
     setHidden(!hidden);
