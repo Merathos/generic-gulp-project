@@ -51,6 +51,10 @@ export const Item = styled.li`
     }
   }
 
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 190%;

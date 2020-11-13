@@ -35,6 +35,10 @@ export const Item = styled.li`
     }
   }
 
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 190%;
@@ -49,7 +53,6 @@ export const List = styled.ul`
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE 10+ */
   scrollbar-width: none; /* Firefox */
-  padding-bottom: 15px;
 
   &::-webkit-scrollbar {
     /* Chrome */
