@@ -24,6 +24,10 @@ export const Title = styled(TitleH2)`
   @media screen and (max-width: 1024px) {
     margin-bottom: 20px;
   }
+
+  @media screen and (max-width: 724px) {
+    font-size: 40px;
+  }
 `;
 
 export const StyledText = styled(Text)`
@@ -31,6 +35,10 @@ export const StyledText = styled(Text)`
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 60px;
   }
 `;
 

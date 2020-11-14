@@ -11,7 +11,7 @@ const Contacts = ({ data }) => {
             title={data.mainTitle.title}
             text={data.mainTitle.text}
             list={data.mainTitle.list}
-            contacts={true}
+            twoColumns
           />
         </Container>
       </GreyContainer>
@@ -19,7 +19,7 @@ const Contacts = ({ data }) => {
       <Container>
         {data.offices.map((el, i) => (
           <SectionGroup key={i}>
-            <Map key={i} data={el} contacts={true} />
+            <Map key={i} data={el} twoColumns />
           </SectionGroup>
         ))}
       </Container>

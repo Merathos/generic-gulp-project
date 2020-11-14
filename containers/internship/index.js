@@ -1,13 +1,12 @@
 import {
   Values,
-  Application,
   InternVacancies,
   GreyHeader,
   GreyFooter,
   InternInfo,
   SliderVacancy,
   InternAbout,
-  Slider,
+  Gallery,
 } from 'components';
 import { SectionGroup } from 'containers';
 import {
@@ -29,6 +28,8 @@ const Internship = ({ data, vacancies }) => {
             text={data.intro.text}
             buttons={data.intro.buttons}
             picture={data.intro.picture}
+            mobPicture={data.intro.mobPicture}
+            hash="relocation"
           />
         </Container>
       </GreyWrapper>
@@ -40,10 +41,8 @@ const Internship = ({ data, vacancies }) => {
         <SectionGroup>
           <InternAbout data={data.about} />
         </SectionGroup>
-        <SectionGroup>
-          <Slider pictures={data.pictures} />
-        </SectionGroup>
       </Container>
+      <Gallery data={data.gallery} />
       <ValuesSection>
         <Container>
           <Values data={data.values} />

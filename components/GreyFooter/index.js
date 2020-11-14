@@ -4,7 +4,7 @@ import * as S from './styles';
 
 const GreyFooter = ({ data, type, background }) => {
   return (
-    <S.Section background={background}>
+    <S.Section background={background} type={type}>
       {type === 'blog' ? (
         <S.ListBlog>
           {data.map((el, i) => (
@@ -14,7 +14,7 @@ const GreyFooter = ({ data, type, background }) => {
           ))}
         </S.ListBlog>
       ) : (
-        <S.ListContainer background={background}>
+        <S.ListContainer background={background} type={type}>
           <S.List>
             {data.map((el, i) => (
               <S.Element key={i}>

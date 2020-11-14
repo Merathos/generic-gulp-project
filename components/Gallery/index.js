@@ -4,7 +4,7 @@ import { Title, Wrapper } from './styles';
 const Gallery = ({ data: { title, subtitle, pictures } }) => {
   return (
     <Wrapper>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       <AboutSlider pictures={pictures} subtitle={subtitle} />
     </Wrapper>
   );

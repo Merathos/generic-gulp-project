@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const Main = styled.main`
+  background: url('backgrounds/relocation-difficulties.png') no-repeat right 73%,
+    url('backgrounds/relocation-benefits.png') no-repeat right 36%;
+
+  @media screen and (max-width: 1024px) {
+    background-image: none;
+  }
+`;
+
 export const Container = styled.section`
   max-width: 1200px;
   padding: 0 45px;
@@ -17,7 +26,7 @@ export const Container = styled.section`
 `;
 
 export const GreyContainer = styled.div`
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   /* background-image: url('backgrounds/about-grey-title.svg'); */
   background-repeat: no-repeat;
   background-position: 118% 298%;

@@ -26,7 +26,7 @@ export const List = styled.ul`
   grid-gap: 60px;
 
   ${props =>
-    props.contacts &&
+    props.twoColumns &&
     css`
       @media screen and (max-width: 1024px) {
         grid-template-columns: 1fr 1fr;
