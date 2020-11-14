@@ -215,13 +215,15 @@ const VacanciesList = ({ data: mock, back }) => {
             handleChange={() => handleEnglish()}
           />
         </S.Block>
-        <FilterButton
-          name={discard}
-          handleChange={() => {
-            router.push(pathname);
-            dispatch({ type: 'CLEAR_ALL_FILTERS' });
-          }}
-        />
+        {Object.keys(query).length !== 0 && (
+          <FilterButton
+            name={discard}
+            handleChange={() => {
+              router.push(pathname);
+              dispatch({ type: 'CLEAR_ALL_FILTERS' });
+            }}
+          />
+        )}
       </S.Filter>
       {initialWidth > 768 && (
         <SidebarArticle type="button" data={mock.article} />
