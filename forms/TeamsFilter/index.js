@@ -1,21 +1,27 @@
 import { Checkbox } from 'elements';
 import { useSelector } from 'react-redux';
 import * as S from './styles';
+import { useState } from 'react';
 
 const TeamsFilter = props => {
   const {
     data: { title, list },
     handleChange,
   } = props;
+  const [hidden, setHidden] = useState(true);
   const filterArray = useSelector(state => state.filter);
+
+  const handleOpenFilter = () => {
+    setHidden(!hidden);
+  };
 
   return (
     <S.Wrapper>
-      <S.Title>
+      <S.Title onClick={() => handleOpenFilter()} active={!hidden}>
         {title}
         {filterArray.length > 0 && <S.Sup>{filterArray.length}</S.Sup>}
       </S.Title>
-      <S.List>
+      <S.List active={!hidden}>
         {list.map((el, i) => (
           <S.Item key={i}>
             <Checkbox

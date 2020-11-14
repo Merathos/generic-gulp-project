@@ -15,18 +15,17 @@ export const Container = styled.div`
   margin: 0 auto;
 
   @media screen and (max-width: 768px) {
-    padding-top: 120px;
+    padding-top: 30px;
   }
 
   @media screen and (max-width: 420px) {
     max-width: 375px;
-    padding: 110px 30px 0;
-    overflow: hidden;
+    padding: 30px 30px 0;
   }
 
   @media screen and (max-width: 240px) {
     max-width: 320px;
-    padding: 110px 20px 0;
+    padding: 30px 20px 0;
   }
 `;
 
@@ -55,6 +54,10 @@ export const Element = styled.li`
 export const Article = styled.article`
   width: 100%;
   order: -2;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const Grid = styled.div`
@@ -77,10 +80,15 @@ export const Aside = styled.aside`
     max-width: 200px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
+    position: sticky;
+    top: 100px;
     max-width: 100%;
     margin-right: 0;
-    float: none;
+  }
+
+  @media screen and (max-width: 420px) {
+    top: 92px;
   }
 `;
 

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Title = styled.h3`
+export const Title = styled.h3.attrs(props => ({
+  transform: props.active
+    ? 'rotate(-180deg) translateY(50%)'
+    : 'translateY(-50%)',
+}))`
   padding: 15px 0;
   position: relative;
   font-size: 20px;
@@ -9,9 +13,28 @@ export const Title = styled.h3`
   width: 100%;
   font-weight: 500;
 
+  &::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 7px;
+    top: 50%;
+    right: 0;
+    background-image: url('icons/dropdown.svg');
+    background-repeat: no-repeat;
+    transform: ${props => props.transform};
+    transition: transform 0.2s ease;
+  }
+
+  @media screen and (max-width: 768px) {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 134%;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 `;
 
@@ -21,6 +44,10 @@ export const Sup = styled.sup`
   line-height: 1.2;
   color: #53b443;
   vertical-align: top;
+
+  @media screen and (max-width: 420px) {
+    font-size: 10px;
+  }
 `;
 
 export const Item = styled.li`
@@ -63,8 +90,30 @@ export const List = styled.ul`
     opacity: 0;
   }
 
+  &:last-of-type {
+    &::after {
+      content: '';
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(
+        360deg,
+        #ffffff 49.12%,
+        rgba(255, 255, 255, 0) 121.93%
+      );
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: ${props => (props.active ? 'block' : 'none')};
+  }
+
   @media screen and (max-width: 420px) {
     max-height: 200px;
+    padding-top: 22px;
   }
 `;
 
@@ -72,19 +121,18 @@ export const Wrapper = styled.div`
   position: relative;
   padding-bottom: 20px;
 
-  &::after {
-    content: '';
-    width: 100%;
-    height: 60px;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    z-index: 1;
-    background: linear-gradient(
-      360deg,
-      #ffffff 49.12%,
-      rgba(255, 255, 255, 0) 121.93%
-    );
+  @media screen and (max-width: 768px) {
+    margin-left: -45px;
+    margin-right: -45px;
+    padding: 16px 45px;
+    background-color: #f7f8f9;
+    z-index: 3;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-left: -30px;
+    margin-right: -30px;
+    padding: 16px 30px;
   }
 `;
 
