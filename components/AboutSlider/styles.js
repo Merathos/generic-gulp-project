@@ -16,6 +16,10 @@ export const Element = styled.div`
   margin-bottom: 16px;
   text-align: center;
 
+  &:first-child {
+    padding-left: 30px;
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 8px;
   }
@@ -27,6 +31,10 @@ export const Section = styled.section`
 
   &:active {
     cursor: grabbing;
+  }
+
+  .swiper-container {
+    padding-left: 30px;
   }
 
   @media screen and (max-width: 768px) {

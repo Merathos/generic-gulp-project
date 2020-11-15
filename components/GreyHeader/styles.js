@@ -149,6 +149,12 @@ export const Picture = styled.img`
   @media screen and (max-width: 1560px) {
     margin-top: 30px;
   }
+
+  @media (max-width: 600px) {
+    max-width: 315px;
+    max-height: 319px;
+    object-fit: cover;
+  }
 `;
 
 export const Block = styled.div`
@@ -196,7 +202,7 @@ export const Block = styled.div`
     css`
       display: none;
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 600px) {
         display: block;
         box-sizing: border-box;
         max-width: 315px;
@@ -209,7 +215,7 @@ export const Block = styled.div`
   ${props =>
     props.afterTitle === false &&
     css`
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 600px) {
         display: none;
       }
     `}
@@ -242,25 +248,22 @@ export const Block = styled.div`
       bottom: -140px;
       left: -156px;
       right: auto;
-    
-      @media screen and (max-width: 1200px) {
-        bottom: -80px;
+      
+      @media screen and (max-width: 1560px) {
+        left: auto;
+        right: -120px;
+        bottom: -110px;
         width: 240px;
         height: 240px;
         background-size: 240px 240px;
-      }
-    
-      @media screen and (max-width: 1024px) {
-        left: auto;
-        right: -120px;
       }
     
       @media screen and (max-width: 600px) {
         width: 120px;
         height: 120px;
         background-size: 120px 120px;
-        bottom: -40px;
-        right: -30px;
+        bottom: -25px;
+        right: -33px;
       }
   `}
 
