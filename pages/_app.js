@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     display: block;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
 
   a:hover,
