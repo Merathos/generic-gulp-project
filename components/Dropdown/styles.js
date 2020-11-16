@@ -64,24 +64,18 @@ export const Item = styled.li`
 `;
 
 export const List = styled.ul`
+  position: relative;
   height: 180px;
-  overflow-y: scroll;
   padding-bottom: 15px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    width: 3px;
+    display: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
   }
-  &::-webkit-scrollbar-track {
-    background: #f7f8f9;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #53b443;
-    border-radius: 6px;
-    border: 3px solid #53b443;
-  }
-
-  scrollbar-width: thin;
-  scrollbar-color: #53b443 #f7f8f9;
 `;
 
 export const Wrapper = styled.div`

@@ -77,19 +77,16 @@ export const Item = styled.li`
 export const List = styled.ul`
   height: 450px;
   min-width: 250px;
-  overflow-y: scroll;
   padding-bottom: 15px;
 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   &::-webkit-scrollbar {
-    width: 3px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #f7f8f9;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #53b443;
-    border-radius: 6px;
-    border: 3px solid #53b443;
+    display: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
   }
 
   scrollbar-width: thin;
