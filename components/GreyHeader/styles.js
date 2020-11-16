@@ -12,7 +12,7 @@ export const Grid = styled.div`
   justify-content: space-between;
   padding-top: 240px;
 
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     padding-top: 110px;
     padding-bottom: 80px;
@@ -146,7 +146,7 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Picture = styled.img`
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     margin-top: 30px;
   }
 
@@ -249,7 +249,7 @@ export const Block = styled.div`
       left: -156px;
       right: auto;
       
-      @media screen and (max-width: 1560px) {
+      @media screen and (max-width: 1200px) {
         left: auto;
         right: -120px;
         bottom: -110px;

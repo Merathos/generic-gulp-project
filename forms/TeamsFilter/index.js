@@ -1,4 +1,5 @@
 import { Checkbox } from 'elements';
+import { CustomScrollbars } from 'components';
 import { useSelector } from 'react-redux';
 import * as S from './styles';
 
@@ -13,16 +14,18 @@ const TeamsFilter = props => {
     <S.Wrapper>
       <S.Title>{title}</S.Title>
       <S.List>
-        {list.map((el, i) => (
-          <S.Item key={i}>
-            <Checkbox
-              name={el}
-              handleChange={() => handleChange(el)}
-              type="dropdown"
-              checked_state={filterArray.indexOf(el) !== -1}
-            />
-          </S.Item>
-        ))}
+        <CustomScrollbars>
+          {list.map((el, i) => (
+            <S.Item key={i}>
+              <Checkbox
+                name={el}
+                handleChange={() => handleChange(el)}
+                type="dropdown"
+                checked_state={filterArray.indexOf(el) !== -1}
+              />
+            </S.Item>
+          ))}
+        </CustomScrollbars>
       </S.List>
     </S.Wrapper>
   );

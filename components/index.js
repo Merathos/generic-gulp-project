@@ -79,3 +79,4 @@ export { default as InternForm } from './InternForm';
 export { default as MailingForm } from './MailingForm';
 export { default as Recruiters } from './Recruiters';
 export { default as AboutSlider } from './AboutSlider';
+export { default as CustomScrollbars } from './CustomScrollbars';

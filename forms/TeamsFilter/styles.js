@@ -38,23 +38,17 @@ export const Item = styled.li`
 export const List = styled.ul`
   height: 450px;
   min-width: 250px;
-  overflow-y: scroll;
   padding-bottom: 15px;
 
-  &::-webkit-scrollbar {
-    width: 3px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #f7f8f9;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #53b443;
-    border-radius: 6px;
-    border: 3px solid #53b443;
-  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-  scrollbar-width: thin;
-  scrollbar-color: #53b443 #f7f8f9;
+  &::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
 
   @media screen and (max-width: 420px) {
     max-height: 200px;
