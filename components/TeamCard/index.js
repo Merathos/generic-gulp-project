@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Section, H3, StyledText, ArrowRight, Picture } from './styles';
-import ArrowIcon from 'public/icons/arrow-right.svg';
+import { Section, H3, StyledText, Arrow, Picture } from './styles';
+import ArrowRight from 'public/icons/arrow-right.svg';
 
 const TeamCard = props => {
   const {
@@ -20,9 +20,9 @@ const TeamCard = props => {
           />
           <H3 isMain={isMain}>{name}</H3>
           <StyledText isMain={isMain}>{summary}</StyledText>
-          <ArrowRight isMain={isMain}>
-            <ArrowIcon />
-          </ArrowRight>
+          <Arrow isMain={isMain}>
+            <ArrowRight />
+          </Arrow>
         </Section>
       </a>
     </Link>

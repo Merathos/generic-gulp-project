@@ -67,6 +67,15 @@ const Button = styled.button`
   width: 33px;
   height: 25px;
   margin-left: 102px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 `;
 
 const Nav = styled.nav`

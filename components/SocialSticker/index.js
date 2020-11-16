@@ -13,6 +13,18 @@ const Link = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #53b443;
+    background-color: #53b443;
+    color: #ffffff;
+  }
+
+  &:active {
+    border-color: #339722;
+    background-color: #339722;
+  }
 `;
 
 const SocialSticker = ({ data, className }) => (

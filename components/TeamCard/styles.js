@@ -3,11 +3,11 @@ import { TitleH3 } from 'elements';
 
 export const Section = styled.div`
   max-width: ${props => (props.isMain ? '350px' : '380px')};
-  transition: all 200ms ease;
+  transition: all 0.3s ease;
 
   svg,
   path {
-    transition: all 200ms ease;
+    transition: all 0.3s ease;
   }
 
   ${props =>
@@ -17,28 +17,29 @@ export const Section = styled.div`
       flex-direction: column;
     `}
 
-  &:hover {
-    svg {
-      fill: #53b443;
+  &:hover svg {
+    fill: #53b443;
 
-      path:first-child {
-        stroke: #53b443;
-      }
+    path:first-child {
+      stroke: #53b443;
+    }
 
-      path:last-child {
-        fill: #ffffff;
-        stroke: #ffffff;
-      }
+    path:last-child {
+      fill: #ffffff;
+      stroke: #ffffff;
     }
   }
 
-  &:active {
-    svg {
-      fill: #339722;
+  &:active svg {
+    fill: #339722;
 
-      path:first-child {
-        stroke: #339722;
-      }
+    path:first-child {
+      stroke: #339722;
+    }
+
+    path:last-child {
+      stroke: #ffffff;
+      fill: #ffffff;
     }
   }
 
@@ -85,7 +86,7 @@ export const H3 = styled(TitleH3)`
   }
 `;
 
-export const ArrowRight = styled.span`
+export const Arrow = styled.span`
   display: flex;
   width: 38px;
   height: 38px;

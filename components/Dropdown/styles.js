@@ -40,11 +40,11 @@ export const Sup = styled.sup`
 `;
 
 export const Item = styled.li`
-  opacity: 0.5;
   margin-bottom: 10px;
 
   input:checked ~ label {
     color: #53b443;
+    opacity: 1;
 
     &::after {
       display: block;

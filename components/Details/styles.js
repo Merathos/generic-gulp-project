@@ -64,6 +64,12 @@ export const LinkElement = styled.li`
 export const Link = styled.a`
   color: #53b443;
   font-weight: bold;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:active {
+    color: #339722;
+  }
 `;
 
 export const ImgWrapper = styled.div`
