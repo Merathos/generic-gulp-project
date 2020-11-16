@@ -49,9 +49,10 @@ const StyledArrowLeft = styled.div`
 const StyledSocialSticker = styled(SocialSticker)`
   position: fixed;
   right: 0;
-  top: 600px;
+  top: 50%;
+  transform: translateY(-50%);
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;

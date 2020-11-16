@@ -26,9 +26,9 @@ const Vacancy = ({ data, back }) => {
 
       <Container>
         <SectionGroup>
-          <Recruiters data={data.recruiters} back={back.recruiters} decor /> 
-          </SectionGroup>
-          <SectionGroup>
+          <Recruiters data={data.recruiters} back={back.recruiters} decor />
+        </SectionGroup>
+        <SectionGroup>
           <Map data={data.map} />
         </SectionGroup>
         <SectionGroup>

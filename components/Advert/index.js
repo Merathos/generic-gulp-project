@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Features } from 'components';
-import { Section, H3, StyledText, ArrowRight } from './styles';
+import { Section, H3, StyledText, Arrow } from './styles';
+import ArrowRight from 'public/icons/arrow-right.svg';
 
 const Advert = props => {
   const [hover, setHovered] = useState(false);
@@ -13,7 +14,7 @@ const Advert = props => {
       is_relocation,
       is_internship,
       slug,
-    }
+    },
   } = props;
 
   let features = [];
@@ -34,7 +35,7 @@ const Advert = props => {
         icon: 26,
         title: `Релокация`,
         flag: is_relocation,
-      }
+      },
     ];
   }
 
@@ -47,7 +48,9 @@ const Advert = props => {
         {features.length !== 0 && <Features data={features} />}
         <H3>{name}</H3>
         <StyledText>{descr}</StyledText>
-        <ArrowRight hovered={hover} />
+        <Arrow>
+          <ArrowRight />
+        </Arrow>
       </Section>
     </Link>
   );

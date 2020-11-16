@@ -6,6 +6,18 @@ export const Wrapper = styled.div`
   font-size: 20px;
   line-height: 134%;
 
+  input:hover ~ label {
+    &::before {
+      border-color: #53b443;
+    }
+  }
+
+  input:active ~ label {
+    &::before {
+      border-color: #339722;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     margin-bottom: 0;
     font-size: 14px;
@@ -15,7 +27,7 @@ export const Wrapper = styled.div`
 
 export const Label = styled.label.attrs(props => ({
   checkbox: props.checked ? "url('icons/checked.svg')" : 'none',
-  color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)'
+  color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)',
 }))`
   padding-left: 30px;
   position: relative;
@@ -34,6 +46,7 @@ export const Label = styled.label.attrs(props => ({
     background-repeat: no-repeat;
     border: 2px solid rgba(31, 32, 42, 0.3);
     border-color: ${props => props.color};
+    transition: border-color 0.3s ease;
   }
 `;
 
@@ -44,6 +57,16 @@ export const DropLabel = styled.label`
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #53b443;
+  }
+
+  &:active {
+    color: #339722;
+  }
 
   &::after {
     content: '';
@@ -52,7 +75,7 @@ export const DropLabel = styled.label`
     height: 7px;
     top: 50%;
     left: 0;
-    background-color: #53B443;
+    background-color: #53b443;
     transform: translateY(-50%);
     border-radius: 50%;
     display: none;

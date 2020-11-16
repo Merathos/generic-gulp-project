@@ -5,7 +5,7 @@ const Cards = props => {
   const { data, type } = props;
   return (
     <section>
-      <List>
+      <List type={type}>
         {data.map((el, i) => (
           <li key={i}>
             {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}

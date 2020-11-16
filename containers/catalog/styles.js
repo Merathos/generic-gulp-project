@@ -98,7 +98,7 @@ export const Aside = styled.aside`
   margin-right: 90px;
   float: left;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 990px) {
     max-width: 100%;
     margin-right: 0;
     float: none;
@@ -108,23 +108,12 @@ export const Aside = styled.aside`
 export const Title = styled(TitleH1)`
   margin-bottom: 100px;
 
-  @media screen and (max-width: 1024px) {
-    font-size: 60px;
-    line-height: 1.34;
-  }
-
-  @media screen and (max-width: 850px) {
-    font-size: 46px;
-  }
-
   @media screen and (max-width: 768px) {
     margin-bottom: 30px;
   }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 14px;
-    font-size: 32px;
-    line-height: 42px;
   }
 `;
 

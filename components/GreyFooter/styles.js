@@ -40,17 +40,12 @@ export const ListContainer = styled.div`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled.b`
+  display: block;
   font-weight: bold;
   font-size: 50px;
   line-height: 120%;
   margin-bottom: 10px;
-  transition: color 200ms ease;
-
-  &:hover {
-    color: #53b443;
-    cursor: pointer;
-  }
 
   @media screen and (max-width: 420px) {
     font-size: 22px;
@@ -125,6 +120,54 @@ export const Element = styled.li`
   margin-bottom: 45px;
   max-width: 325px;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  svg {
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: #53b443;
+  }
+
+  &:hover p {
+    opacity: 1;
+  }
+
+  &:hover svg {
+    fill: #53b443;
+
+    path:first-child {
+      stroke: #53b443;
+    }
+
+    path:last-child {
+      stroke: #ffffff;
+      fill: #ffffff;
+    }
+  }
+
+  &:active {
+    color: #339722;
+  }
+
+  &:active p {
+    opacity: 1;
+  }
+
+  &:active svg {
+    fill: #339722;
+
+    path:first-child {
+      stroke: #339722;
+    }
+
+    path:last-child {
+      stroke: #ffffff;
+      fill: #ffffff;
+    }
+  }
 
   &:not(:last-child) {
     margin-right: 40px;

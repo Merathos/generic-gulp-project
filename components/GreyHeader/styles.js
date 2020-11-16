@@ -12,10 +12,10 @@ export const Grid = styled.div`
   justify-content: space-between;
   padding-top: 240px;
 
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     padding-top: 110px;
-    padding-bottom: 80px;
+    padding-bottom: 110px;
   }
 `;
 
@@ -53,13 +53,21 @@ export const Paragraph = styled(Text)`
   @media screen and (max-width: 1024px) {
     margin-bottom: 60px;
   }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const Features = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 140px;
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 100px;
+  }
 
   ${props =>
     props.twoColumns &&
@@ -142,8 +150,14 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Picture = styled.img`
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     margin-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 315px;
+    max-height: 319px;
+    object-fit: cover;
   }
 `;
 
@@ -175,7 +189,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 590px) {
+  @media screen and (max-width: 600px) {
     width: 100%;
 
     &::after {
@@ -192,7 +206,7 @@ export const Block = styled.div`
     css`
       display: none;
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 600px) {
         display: block;
         box-sizing: border-box;
         max-width: 315px;
@@ -205,7 +219,7 @@ export const Block = styled.div`
   ${props =>
     props.afterTitle === false &&
     css`
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 600px) {
         display: none;
       }
     `}
@@ -235,20 +249,17 @@ export const Block = styled.div`
     
     &::after {
       background-repeat: no-repeat;
-      bottom: -140px;
+      bottom: -130px;
       left: -156px;
       right: auto;
-    
+      
       @media screen and (max-width: 1200px) {
-        bottom: -80px;
+        left: auto;
+        right: -120px;
+        bottom: -110px;
         width: 240px;
         height: 240px;
         background-size: 240px 240px;
-      }
-    
-      @media screen and (max-width: 1024px) {
-        left: auto;
-        right: -120px;
       }
     
       @media screen and (max-width: 600px) {

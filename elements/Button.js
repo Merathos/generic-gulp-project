@@ -32,8 +32,8 @@ const Default = styled.button`
   box-sizing: border-box;
   border-radius: 8px;
   padding: 0 32px;
-  box-sizing: border-box;
   display: inline-block;
+  transition: all 0.3s ease;
 
   &:hover {
     border-color: #fb5235;

@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     display: block;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
 
   a:hover,
@@ -144,6 +145,27 @@ const GlobalStyle = createGlobalStyle`
       transform: translateY(0);
       bottom: 0;
     }
+  }
+
+  .track-vertical {
+    position: absolute;
+    width: 3px !important;
+    right: 0;
+    bottom: 2px;
+    top: 2px;
+    border-radius: 6px;
+    background-color: #f7f8f9;
+  }
+
+  .thumb-vertical {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: #53b443;
+    height: 84px;
+    transform: translateY(0px);
   }
   
   @media screen and (max-width: 420px) {

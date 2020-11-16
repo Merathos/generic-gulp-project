@@ -7,6 +7,17 @@ const Label = styled.label`
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    color: #53b443;
+  }
+
+  &:active {
+    color: #339722;
+  }
 
   &::after {
     content: '';
