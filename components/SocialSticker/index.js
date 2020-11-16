@@ -4,7 +4,7 @@ import Facebook from 'public/icons/facebook.svg';
 import styled from 'styled-components';
 
 const List = styled.ul`
-  background: linear-gradient(0deg, #F7F8F9, #F7F8F9), #201F2A;
+  background-color: #f7f8f9;
 `;
 
 const Link = styled.a`
@@ -20,19 +20,13 @@ const SocialSticker = ({ data, className }) => (
     {data.map((el, i) => (
       <li key={i}>
         <Link href={el.link}>
-        {
           {
-            'twitter': (
-              <Twitter />
-            ),
-            'facebook': (
-              <Facebook />
-            ),
-            'vk': (
-              <Vk />
-            )
-          }[el.title]
-        }
+            {
+              twitter: <Twitter />,
+              facebook: <Facebook />,
+              vk: <Vk />,
+            }[el.title]
+          }
         </Link>
       </li>
     ))}
