@@ -15,7 +15,7 @@ export const Grid = styled.div`
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     padding-top: 110px;
-    padding-bottom: 80px;
+    padding-bottom: 110px;
   }
 `;
 
@@ -63,7 +63,11 @@ export const Features = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 140px;
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 100px;
+  }
 
   ${props =>
     props.twoColumns &&
@@ -185,7 +189,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 590px) {
+  @media screen and (max-width: 600px) {
     width: 100%;
 
     &::after {
@@ -245,7 +249,7 @@ export const Block = styled.div`
     
     &::after {
       background-repeat: no-repeat;
-      bottom: -140px;
+      bottom: -130px;
       left: -156px;
       right: auto;
       
@@ -262,8 +266,8 @@ export const Block = styled.div`
         width: 120px;
         height: 120px;
         background-size: 120px 120px;
-        bottom: -25px;
-        right: -33px;
+        bottom: -40px;
+        right: -30px;
       }
   `}
 
