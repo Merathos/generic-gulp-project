@@ -4,7 +4,7 @@ import Facebook from 'public/icons/facebook.svg';
 import styled from 'styled-components';
 
 const List = styled.ul`
-  background: linear-gradient(0deg, #f7f8f9, #f7f8f9), #201f2a;
+  background-color: #f7f8f9;
 `;
 
 const Link = styled.a`

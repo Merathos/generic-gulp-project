@@ -12,7 +12,7 @@ export const Grid = styled.div`
   justify-content: space-between;
   padding-top: 240px;
 
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     padding-top: 110px;
     padding-bottom: 80px;
@@ -52,6 +52,10 @@ export const Paragraph = styled(Text)`
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 60px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
   }
 `;
 
@@ -142,8 +146,14 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Picture = styled.img`
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     margin-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 315px;
+    max-height: 319px;
+    object-fit: cover;
   }
 `;
 
@@ -192,7 +202,7 @@ export const Block = styled.div`
     css`
       display: none;
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 600px) {
         display: block;
         box-sizing: border-box;
         max-width: 315px;
@@ -205,7 +215,7 @@ export const Block = styled.div`
   ${props =>
     props.afterTitle === false &&
     css`
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 600px) {
         display: none;
       }
     `}
@@ -238,25 +248,22 @@ export const Block = styled.div`
       bottom: -140px;
       left: -156px;
       right: auto;
-    
+      
       @media screen and (max-width: 1200px) {
-        bottom: -80px;
+        left: auto;
+        right: -120px;
+        bottom: -110px;
         width: 240px;
         height: 240px;
         background-size: 240px 240px;
-      }
-    
-      @media screen and (max-width: 1024px) {
-        left: auto;
-        right: -120px;
       }
     
       @media screen and (max-width: 600px) {
         width: 120px;
         height: 120px;
         background-size: 120px 120px;
-        bottom: -40px;
-        right: -30px;
+        bottom: -25px;
+        right: -33px;
       }
   `}
 

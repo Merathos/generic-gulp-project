@@ -44,7 +44,7 @@ export const Section = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    margin-bottom: ${props => (props.isMain ? '0' : '30px')};
+    margin-bottom: ${props => (props.isMain ? '0' : '10px')};
   }
 `;
 
@@ -63,7 +63,7 @@ export const StyledText = styled.p`
     `}
 
   @media screen and (max-width: 420px) {
-    margin-bottom: ${props => (props.isMain ? '15px' : '30px')};
+    margin-bottom: ${props => (props.isMain ? '15px' : '20px')};
     font-size: 14px;
     line-height: ${props => (props.isMain ? '160%' : '152%')};
   }
@@ -81,14 +81,8 @@ export const H3 = styled(TitleH3)`
     `}
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 14px;
-
-    ${props =>
-      props.isMain &&
-      css`
-        font-size: 16px;
-        margin-bottom: 6px;
-      `}
+    margin-bottom: 6px;
+    font-size: 16px;
   }
 `;
 

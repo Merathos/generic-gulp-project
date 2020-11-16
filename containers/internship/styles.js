@@ -39,9 +39,8 @@ export const GreyWrapper = styled.div`
   background-color: #f7f8f9;
   margin-bottom: 100px;
   padding-bottom: 240px;
-  overflow: hidden;
 
-  @media screen and (max-width: 1560px) {
+  @media screen and (max-width: 1200px) {
     margin-bottom: 50px;
     padding-bottom: 0;
   }

@@ -40,7 +40,8 @@ export const ListContainer = styled.div`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled.b`
+  display: block;
   font-weight: bold;
   font-size: 50px;
   line-height: 120%;
