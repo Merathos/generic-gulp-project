@@ -11,11 +11,13 @@ const Application = ({
   const english = useSelector(state => state.english);
   const { text, picture } = data;
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
-  const updatedText = text.replace(
-    emailRegExp,
-    email => `<a href="mailto:${email}">${email}</a>`
-  );
-
+  let updatedText;
+  if (text) {
+    updatedText = text.replace(
+      emailRegExp,
+      email => `<a href="mailto:${email}">${email}</a>`
+    );
+  }
   return (
     <S.Section className={className}>
       <S.Wrapper decor={decor} type={type}>
