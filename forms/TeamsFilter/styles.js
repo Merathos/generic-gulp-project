@@ -13,21 +13,21 @@ export const Title = styled.h3.attrs(props => ({
   width: 100%;
   font-weight: 500;
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 14px;
-    height: 7px;
-    top: 50%;
-    right: 0;
-    background-image: url('icons/dropdown.svg');
-    background-repeat: no-repeat;
-    transform: ${props => props.transform};
-    transition: transform 0.2s ease;
-  }
-
   @media screen and (max-width: 768px) {
     cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 7px;
+      top: 50%;
+      right: 0;
+      background-image: url('icons/dropdown.svg');
+      background-repeat: no-repeat;
+      transform: ${props => props.transform};
+      transition: transform 0.2s ease;
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -79,6 +79,7 @@ export const Item = styled.li`
 `;
 
 export const List = styled.ul`
+  position: relative;
   height: 450px;
   min-width: 250px;
   padding-bottom: 15px;
@@ -96,30 +97,45 @@ export const List = styled.ul`
   scrollbar-width: thin;
   scrollbar-color: #53b443 #f7f8f9;
 
-    &:last-of-type {
-    &::after {
-      content: '';
-      width: 100%;
-      height: 60px;
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      z-index: 1;
-      background: linear-gradient(
-        360deg,
-        #ffffff 49.12%,
-        rgba(255, 255, 255, 0) 121.93%
-      );
-    }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(
+      360deg,
+      #ffffff 49.12%,
+      rgba(255, 255, 255, 0) 121.93%
+    );
   }
 
   @media screen and (max-width: 768px) {
     display: ${props => (props.active ? 'block' : 'none')};
+
+    &::after {
+      background: linear-gradient(
+        360deg,
+        #f7f8f9 49.12%,
+        rgba(247, 248, 249, 0) 121.93%
+      );
+    }
   }
 
   @media screen and (max-width: 420px) {
     max-height: 200px;
     padding-top: 22px;
+  }
+`;
+
+export const ResetButtonWrapper = styled.div`
+  margin-top: 30px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 18px;
+    display: ${props => (props.active ? 'block' : 'none')};
   }
 `;
 
@@ -130,7 +146,7 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
     margin-left: -45px;
     margin-right: -45px;
-    padding: 16px 45px;
+    padding: ${props => (props.active ? '16px 45px 50px' : '16px 45px')};
     background-color: #f7f8f9;
     z-index: 3;
   }

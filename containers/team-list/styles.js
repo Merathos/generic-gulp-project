@@ -40,6 +40,7 @@ export const Title = styled(TitleH1)`
 
   @media screen and (max-width: 768px) {
     font-size: 46px;
+    margin-bottom: 30px;
   }
 
   @media screen and (max-width: 420px) {
