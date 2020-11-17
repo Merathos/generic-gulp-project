@@ -34,16 +34,7 @@ export const Title = styled(TitleH1)`
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 0;
-    font-size: 60px;
     line-height: 1.34;
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 46px;
-  }
-
-  @media screen and (max-width: 420px) {
-    font-size: 32px;
   }
 `;
 

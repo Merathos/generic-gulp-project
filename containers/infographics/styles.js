@@ -32,7 +32,6 @@ export const H2 = styled(TitleH2)`
   }
 
   @media screen and (max-width: 960px) {
-    font-size: 40px;
     :not(:first-of-type) {
       margin-bottom: 65px;
     }
