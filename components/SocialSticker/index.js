@@ -39,7 +39,7 @@ const SocialSticker = ({ data, className }) => {
     <List className={className}>
       {data.map((el, i) => (
         <li key={i}>
-          <Link href={el.link + currentURL} target="_blank">
+          <Link href={el.link + currentURL} target="_blank" rel="noreferrer">
             {
               {
                 twitter: <Twitter />,
