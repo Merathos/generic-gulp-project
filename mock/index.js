@@ -533,6 +533,7 @@ export default {
         `Kafka`,
         `ZeroMQ,`,
       ],
+      discard: `Сбросить фильтр`,
     },
   },
   about: {
