@@ -86,10 +86,6 @@ export const H2 = styled(TitleH2)`
   max-width: 520px;
   margin-bottom: 40px;
   grid-area: a;
-
-  @media screen and (max-width: 724px) {
-    font-size: 28px;
-  }
 `;
 
 export const Picture = styled.img`

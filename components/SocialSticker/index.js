@@ -2,6 +2,7 @@ import Vk from 'public/icons/vk.svg';
 import Twitter from 'public/icons/twitter.svg';
 import Facebook from 'public/icons/facebook.svg';
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 
 const List = styled.ul`
   background-color: #f7f8f9;
@@ -27,22 +28,30 @@ const Link = styled.a`
   }
 `;
 
-const SocialSticker = ({ data, className }) => (
-  <List className={className}>
-    {data.map((el, i) => (
-      <li key={i}>
-        <Link href={el.link}>
-          {
+const SocialSticker = ({ data, className }) => {
+  const [currentURL, setCurrentUrl] = useState('');
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href);
+  }, []);
+
+  return (
+    <List className={className}>
+      {data.map((el, i) => (
+        <li key={i}>
+          <Link href={el.link + currentURL} target="_blank" rel="noreferrer">
             {
-              twitter: <Twitter />,
-              facebook: <Facebook />,
-              vk: <Vk />,
-            }[el.title]
-          }
-        </Link>
-      </li>
-    ))}
-  </List>
-);
+              {
+                twitter: <Twitter />,
+                facebook: <Facebook />,
+                vk: <Vk />,
+              }[el.title]
+            }
+          </Link>
+        </li>
+      ))}
+    </List>
+  );
+};
 
 export default SocialSticker;

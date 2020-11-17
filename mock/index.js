@@ -1266,15 +1266,15 @@ export default {
   socialSticker: [
     {
       title: `twitter`,
-      link: `https://www.google.com/`,
+      link: `https://twitter.com/intent/tweet?url=`,
     },
     {
       title: `facebook`,
-      link: `https://www.google.com/`,
+      link: `https://www.facebook.com/sharer/sharer.php?u=`,
     },
     {
       title: `vk`,
-      link: `https://www.google.com/`,
+      link: `https://vk.com/share.php?url=`,
     },
   ],
   footer: {
