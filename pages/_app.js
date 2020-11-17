@@ -163,9 +163,25 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     cursor: pointer;
     border-radius: inherit;
-    background-color: #53b443;
+    background-color: #53b443 !important;
     height: 84px;
     transform: translateY(0px);
+  }
+
+  .scroll-view {
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F7F8F9;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #53B443;
+      border-radius: 6px;
+      border: 3px solid #53B443;
+    }
   }
   
   @media screen and (max-width: 420px) {

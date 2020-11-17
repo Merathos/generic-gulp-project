@@ -11,6 +11,7 @@ const CustomScrollbars = function({ children }) {
       renderThumbVertical={props => (
         <div {...props} className="thumb-vertical" />
       )}
+      renderView={props => <div {...props} className="scroll-view" />}
     >
       {children}
     </Scrollbars>
