@@ -24,6 +24,7 @@ export const Article = styled.article`
   @media screen and (max-width: 768px) {
     position: sticky;
     top: 30px;
+    padding-bottom: 20px;
     background-color: #ffffff;
     z-index: 3;
   }
@@ -46,7 +47,7 @@ export const Grid = styled.div`
 export const FilterWrapper = styled.div`
   @media screen and (max-width: 768px) {
     position: sticky;
-    top: 259px;
+    top: 260px;
     margin-left: -45px;
     margin-right: -45px;
     padding: ${props => (props.active ? '16px 45px 50px' : '16px 45px')};
@@ -55,7 +56,7 @@ export const FilterWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    top: 206px;
+    top: 226px;
     margin-left: -30px;
     margin-right: -30px;
     padding: ${props => (props.active ? '16px 30px 50px' : '16px 30px')};
@@ -147,6 +148,17 @@ export const Block = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 360px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
 `;
 

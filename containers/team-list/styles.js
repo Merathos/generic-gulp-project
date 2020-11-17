@@ -36,6 +36,10 @@ export const Title = styled(TitleH1)`
     margin-bottom: 0;
     line-height: 1.34;
   }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const Element = styled.li`
