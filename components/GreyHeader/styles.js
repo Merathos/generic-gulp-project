@@ -12,7 +12,7 @@ export const Grid = styled.div`
   justify-content: space-between;
   padding-top: 240px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1250px) {
     flex-direction: column;
     padding-top: 110px;
     padding-bottom: 110px;
@@ -23,7 +23,7 @@ export const Wrapper = styled.article`
   max-width: ${props => (props.withPicture ? '744px' : '854px')};
   padding-right: ${props => (props.withPicture ? '110px' : '0')};
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1250px) {
     padding-right: ${props => (props.withPicture ? '60px' : '0')};
   }
 
@@ -150,7 +150,7 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Picture = styled.img`
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1250px) {
     margin-top: 30px;
   }
 
@@ -230,7 +230,7 @@ export const Block = styled.div`
     align-self: flex-start;
     min-width: 340px;
     
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1250px) {
       min-width: 260px;
     }
     
@@ -253,7 +253,7 @@ export const Block = styled.div`
       left: -156px;
       right: auto;
       
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 1250px) {
         left: auto;
         right: -120px;
         bottom: -110px;

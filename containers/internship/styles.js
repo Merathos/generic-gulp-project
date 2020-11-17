@@ -40,7 +40,7 @@ export const GreyWrapper = styled.div`
   margin-bottom: 100px;
   padding-bottom: 240px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1250px) {
     margin-bottom: 50px;
     padding-bottom: 0;
   }
