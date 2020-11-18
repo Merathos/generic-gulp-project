@@ -46,17 +46,6 @@ const StyledArrowLeft = styled.div`
   }
 `;
 
-const StyledSocialSticker = styled(SocialSticker)`
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
 const Layout = ({
   children,
   backButton,
@@ -79,6 +68,7 @@ const Layout = ({
         hideHav={hideHav}
       />
       {children}
+      {isVisible && <SocialSticker data={mock.socialSticker} />}
       {showFooter && (
         <Footer
           data={mock.footer}
@@ -86,9 +76,9 @@ const Layout = ({
           smallPadding={smallPadding}
           subscription={subscription}
           nimax={nimax}
+          isVisible={isVisible}
         />
       )}
-      {isVisible && <StyledSocialSticker data={mock.socialSticker} />}
       {backButton && (
         <a>
           <StyledArrowLeft onClick={() => Router.back()}>

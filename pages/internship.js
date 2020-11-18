@@ -21,7 +21,7 @@ const internshipPage = () => {
   if (!vacancies) return null;
 
   return (
-    <Layout>
+    <Layout isVisible={false}>
       <Internship data={mock.internship} vacancies={vacancies} />
     </Layout>
   );

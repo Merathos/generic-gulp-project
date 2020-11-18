@@ -16,7 +16,7 @@ const relocationPage = () => {
 
   if (!blogs) return null;
   return (
-    <Layout greyFooter>
+    <Layout greyFooter isVisible={false}>
       <Relocation data={mock.relocation} blogs={blogs} />
     </Layout>
   );

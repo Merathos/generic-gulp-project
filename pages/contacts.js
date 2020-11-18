@@ -4,10 +4,10 @@ import mock from 'mock/index';
 
 const contactsPage = () => {
   return (
-    <Layout nimax>
+    <Layout nimax isVisible={false}>
       <Contacts data={mock.contacts} />
     </Layout>
   );
-}
+};
 
 export default contactsPage;

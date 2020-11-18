@@ -18,7 +18,7 @@ const teamsPage = ({ teams }) => {
   }, []);
 
   return (
-    <Layout anchor={true} hideHav>
+    <Layout anchor={true} hideHav isVisible={false}>
       <TeamList mock={mock.teamList} back={teams} />
     </Layout>
   );

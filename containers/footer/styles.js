@@ -15,8 +15,8 @@ export const StyledFooter = styled.footer`
       }
     `};
 
-  @media screen and (max-width: 600px) {
-    padding: 120px 0 50px 0;
+  @media screen and (max-width: 768px) {
+    padding: ${props => (props.isVisible ? '26px 0 50px 0' : '120px 0 50px 0')};
     flex-direction: column-reverse;
     text-align: center;
     align-items: center;
