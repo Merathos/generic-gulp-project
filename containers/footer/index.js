@@ -12,8 +12,9 @@ const Footer = ({
   grey,
   smallPadding,
   nimax,
+  isVisible,
 }) => (
-  <S.StyledFooter grey={grey} smallPadding={smallPadding}>
+  <S.StyledFooter grey={grey} smallPadding={smallPadding} isVisible={isVisible}>
     <S.Container>
       <S.FooterText>{copyright}</S.FooterText>
       <S.Link href={link}>{text}</S.Link>

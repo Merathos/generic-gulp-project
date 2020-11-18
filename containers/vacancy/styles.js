@@ -6,6 +6,10 @@ export const Container = styled.main`
   padding: 0 45px 200px;
   position: relative;
 
+  @media (max-width: 768px) {
+    padding: 0 45px 0;
+  }
+
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
@@ -18,7 +22,7 @@ export const Container = styled.main`
 `;
 
 export const GreyContainer = styled.div`
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   overflow-x: hidden;
   margin-bottom: 160px;
 
