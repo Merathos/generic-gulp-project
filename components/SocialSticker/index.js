@@ -20,6 +20,7 @@ const List = styled.ul`
     position: relative;
     padding: 0 10%;
     top: 0;
+    transform: translateY(0);
     max-width: 84%;
     justify-content: space-around;
   }
