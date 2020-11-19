@@ -1375,8 +1375,8 @@ export default {
       infographicsData: [
         {
           name: 'centers-quantity',
-          title: 'Дата-центров \nна 4 континентах',
-          value: '17',
+          title: 'Дата-центр \nна 5 континентах',
+          value: '31',
         },
         {
           name: 'accessibility',
