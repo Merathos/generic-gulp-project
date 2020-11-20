@@ -153,24 +153,24 @@ export const Contacts = styled.div`
   &:after {
     content: '';
     position: absolute;
-    width: 350px;
-    height: 350px;
-    bottom: 90px;
+    width: min(350px, 44vh);
+    height: min(350px, 44vh);
+    bottom: 12vh;
     left: -210px;
     background-image: url('backgrounds/opened-menu-bg.png');
     background-repeat: no-repeat;
     background-size: contain;
 
     @media screen and (max-width: 1200px) {
-      width: 250px;
-      height: 250px;
+      max-width: 250px;
+      max-height: 250px;
       bottom: 80px;
       left: -160px;
     }
 
     @media screen and (max-width: 1024px) {
-      width: 200px;
-      height: 200px;
+      max-width: 200px;
+      max-height: 200px;
       bottom: auto;
       left: auto;
       top: -100px;
@@ -179,8 +179,8 @@ export const Contacts = styled.div`
 
     @media screen and (max-width: 420px) {
       transform: rotate(-10deg);
-      width: 170px;
-      height: 170px;
+      max-width: 170px;
+      max-height: 170px;
       top: -130px;
       right: 0;
     }
