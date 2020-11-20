@@ -78,7 +78,7 @@ export const Button = styled.button`
 export const StyledLogo = styled(Logo)`
   width: 85px;
   height: 26px;
-  margin-bottom: 140px;
+  margin-bottom: 130px;
   margin-right: 50px;
   transition: opacity 0.3s ease;
 
@@ -150,64 +150,45 @@ export const Contacts = styled.div`
   padding-bottom: 40px;
   background-color: #ffffff;
 
-  &:before {
+  &:after {
     content: '';
     position: absolute;
-    bottom: 236px;
-    left: 14px;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background-color: #fb5235;
-    z-index: 3;
+    width: min(350px, 44vh);
+    height: min(350px, 44vh);
+    bottom: 12vh;
+    left: -210px;
+    background-image: url('backgrounds/opened-menu-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 
     @media screen and (max-width: 1200px) {
-      bottom: 186px;
+      max-width: 250px;
+      max-height: 250px;
+      bottom: 80px;
+      left: -160px;
     }
 
     @media screen and (max-width: 1024px) {
+      max-width: 200px;
+      max-height: 200px;
       bottom: auto;
       left: auto;
       top: -100px;
       right: 70px;
-      width: 53px;
-      height: 53px;
     }
 
-    @media screen and (max-width: 720px) {
-      top: -90px;
-      right: 10px;
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 126px;
-    left: -174px;
-    width: 212px;
-    height: 212px;
-    transform: rotate(-28deg);
-    background-color: #2f8ed9;
-    z-index: 5;
-
-    @media screen and (max-width: 1200px) {
-      bottom: 86px;
+    @media screen and (max-width: 420px) {
+      transform: rotate(-10deg);
+      max-width: 170px;
+      max-height: 170px;
+      top: -130px;
+      right: 0;
     }
 
-    @media screen and (max-width: 1024px) {
-      bottom: auto;
-      left: auto;
-      top: -80px;
-      right: 100px;
-      width: 104px;
-      height: 104px;
-      transform: rotate(-50deg);
-    }
-
-    @media screen and (max-width: 720px) {
-      right: 46px;
-      transform: rotate(-38deg);
+    @media screen and (max-width: 300px) {
+      width: 100px;
+      height: 100px;
+      top: -60px;
     }
   }
 
