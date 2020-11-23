@@ -1,9 +1,9 @@
 import * as S from './styles';
 import { Media, MarkerList, Slider } from 'components';
 
-const EventRecap = ({ data }) => {
+const EventRecap = ({ data, recap }) => {
   return (
-    <S.Section id="recap-content">
+    <S.Section id="recap-content" ref={recap}>
       <S.Container>
         {data.map((topic, i) => (
           <S.TopicWrapper key={i}>

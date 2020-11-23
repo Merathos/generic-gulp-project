@@ -4,6 +4,7 @@ import * as S from './styles';
 const EventReg = props => {
   const {
     data: { customizeID, eventID },
+    regForm,
   } = props;
 
   const timepadForm = `
@@ -445,7 +446,7 @@ const EventReg = props => {
   `;
 
   return (
-    <S.Section>
+    <S.Section ref={regForm}>
       <S.Container id="form-container">
         <InnerHTML html={mainTpl} />
         <InnerHTML html={ticketTpl} />
