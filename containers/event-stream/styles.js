@@ -55,8 +55,7 @@ export const Chat = styled.div`
     border: none;
   }
 
-  @media (max-width: 768px) {
-    box-sizing: border-box;
-    padding: 0 30px;
+  @media (max-width: 1200px) {
+    display: none;
   }
 `;

@@ -188,7 +188,6 @@ const GlobalStyle = createGlobalStyle`
       border-radius: 6px;
       border: 3px solid #53B443;
     }
-
   }
   
   @media screen and (max-width: 420px) {

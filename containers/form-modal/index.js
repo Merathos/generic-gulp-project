@@ -1,4 +1,5 @@
 import Modal from 'react-modal';
+import { CustomScrollbars } from 'components';
 
 const customStyles = {
   overlay: {
@@ -16,7 +17,7 @@ const FormModal = ({ modalIsOpen, closeModal, children }) => {
       style={customStyles}
       className="formModal"
     >
-      {children}
+      <CustomScrollbars onModal>{children}</CustomScrollbars>
     </Modal>
   );
 };
