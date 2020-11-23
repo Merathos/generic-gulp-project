@@ -6,13 +6,17 @@ import {
   EventReg,
   EventStream,
 } from 'containers';
-import { useRef } from 'react';
-import * as S from './styles';
+import { useRef, useEffect } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 
 const EventDetails = ({ data, cards }) => {
   const { isActive } = data;
   const regForm = useRef(null);
   const recap = useRef(null);
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
 
   return (
     <main>
