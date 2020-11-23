@@ -1,7 +1,7 @@
 import { Scrollbars } from 'react-custom-scrollbars';
 import { useRef, useState } from 'react';
 
-const CustomScrollbars = function({ children }) {
+const CustomScrollbars = function({ children, onModal = false }) {
   let timer;
   const scrollbar = useRef();
   const [scroll, setScroll] = useState(0);
@@ -35,7 +35,7 @@ const CustomScrollbars = function({ children }) {
   return (
     <Scrollbars
       universal={true}
-      autoHide
+      autoHide={onModal ? false : true}
       renderTrackVertical={props => (
         <div {...props} className="track-vertical" />
       )}
@@ -43,7 +43,11 @@ const CustomScrollbars = function({ children }) {
         <div {...props} className="thumb-vertical" />
       )}
       renderView={props => (
-        <div {...props} className="scroll-view" onScroll={handleScroll} />
+        <div
+          {...props}
+          className={onModal ? 'scroll-view--scrolling' : 'scroll-view'}
+          onScroll={onModal ? () => {} : handleScroll}
+        />
       )}
       onUpdate={handleUpdate}
       onScrollStart={handleScrollStart}

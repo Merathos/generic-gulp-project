@@ -1,7 +1,7 @@
 import * as S from './styles';
 import { SmartText } from 'elements';
 
-const Schedule = ({ description, schedule }) => {
+const Schedule = ({ description, schedule, regForm }) => {
   return (
     <S.Section>
       <S.Container>
@@ -18,7 +18,14 @@ const Schedule = ({ description, schedule }) => {
             </S.Item>
           ))}
         </S.List>
-        <S.StyledButton accent={true}>Зарегистрироваться</S.StyledButton>
+        <S.StyledButton
+          accent={true}
+          onClick={() => {
+            regForm.current.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          Зарегистрироваться
+        </S.StyledButton>
       </S.Container>
     </S.Section>
   );

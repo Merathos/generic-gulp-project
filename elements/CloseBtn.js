@@ -6,6 +6,7 @@ const Styled = styled.button`
   margin-right: 37px;
   margin-bottom: 75px;
   position: sticky;
+  z-index: 50;
   top: 38px;
 
   svg {

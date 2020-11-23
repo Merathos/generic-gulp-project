@@ -55,6 +55,10 @@ export const Container = styled.div`
 export const Title = styled(TitleH2)`
   margin-bottom: 100px;
 
+  @media (max-width: 910px) {
+    margin-left: 30px;
+  }
+
   @media (max-width: 768px) {
     margin-left: 30px;
     margin-bottom: 50px;
