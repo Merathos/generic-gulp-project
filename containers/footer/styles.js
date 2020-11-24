@@ -21,6 +21,16 @@ export const StyledFooter = styled.footer`
     text-align: center;
     align-items: center;
   }
+
+  ${props =>
+    props.isAbout &&
+    css`
+      padding-top: 150px;
+
+      @media screen and (max-width: 420px) {
+        padding-top: 70px;
+      }
+    `};
 `;
 
 export const Container = styled.div`
@@ -28,6 +38,7 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     margin-right: 0;
+    margin-top: 20px;
   }
 `;
 

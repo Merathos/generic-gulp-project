@@ -2,7 +2,7 @@ import {
   Details,
   Values,
   Gallery,
-  GreyHeader,
+  AboutHeader,
   GreyFooter,
   RunningText,
 } from 'components';
@@ -20,7 +20,7 @@ const About = ({ data }) => {
     <Main>
       <HeaderContainer>
         <Container>
-          <GreyHeader
+          <AboutHeader
             title={data.intro.title}
             text={data.intro.text}
             list={data.intro.list}
@@ -41,7 +41,7 @@ const About = ({ data }) => {
       </Container>
       <Gallery data={data.gallery} />
       <GreyContainer>
-        <GreyFooter data={data.greyFooter} />
+        <GreyFooter data={data.greyFooter} type="about" />
       </GreyContainer>
     </Main>
   );
