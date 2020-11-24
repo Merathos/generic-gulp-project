@@ -189,6 +189,11 @@ const GlobalStyle = createGlobalStyle`
       border: 3px solid #53B443;
     }
   }
+
+  .map-container {
+    width: 100%;
+    height: 100%;
+  }
   
   @media screen and (max-width: 420px) {
     body {
