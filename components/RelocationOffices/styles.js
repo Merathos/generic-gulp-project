@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { TitleH2 } from 'elements';
 
 export const Section = styled.section`
-  margin-bottom: 260px;
+  margin-bottom: 220px;
 
   @media (max-width: 768px) {
     margin-bottom: 80px;
@@ -20,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled(TitleH2)`
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 
   @media (max-width: 768px) {
     margin-left: 30px;
