@@ -44,8 +44,8 @@ export const List = styled.ul`
   grid-template-columns: repeat(auto-fill, 330px);
   justify-content: space-between;
 
-  @media (max-width: 1130px) {
-    justify-content: unset;
+  @media (max-width: 1150px) {
+    justify-content: flex-start;
   }
 `;
 

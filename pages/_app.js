@@ -193,6 +193,10 @@ const GlobalStyle = createGlobalStyle`
   .map-container {
     width: 100%;
     height: 100%;
+
+    .ymaps-2-1-77-copyrights-pane {
+      inset: auto 0px 10px !important;
+    }
   }
   
   @media screen and (max-width: 420px) {
