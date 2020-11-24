@@ -58,6 +58,7 @@ const Layout = ({
   nimax = true,
   anchor = false,
   hideHav = false,
+  isAbout = false,
 }) => {
   return (
     <Wrapper>
@@ -77,6 +78,7 @@ const Layout = ({
           subscription={subscription}
           nimax={nimax}
           isVisible={isVisible}
+          isAbout={isAbout}
         />
       )}
       {backButton && (

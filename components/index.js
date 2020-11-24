@@ -80,3 +80,4 @@ export { default as MailingForm } from './MailingForm';
 export { default as Recruiters } from './Recruiters';
 export { default as AboutSlider } from './AboutSlider';
 export { default as CustomScrollbars } from './CustomScrollbars';
+export { default as AboutHeader } from './AboutHeader';

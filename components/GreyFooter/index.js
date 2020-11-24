@@ -20,7 +20,9 @@ const GreyFooter = ({ data, type, background }) => {
               <S.Element key={i}>
                 <S.Title>{el.title}</S.Title>
                 <S.Text>{el.text}</S.Text>
-                <ArrowRight />
+                <S.ArrowWrapper>
+                  <ArrowRight />
+                </S.ArrowWrapper>
               </S.Element>
             ))}
           </S.List>
