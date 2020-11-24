@@ -55,12 +55,19 @@ export const Wrapper = styled.a`
   }
 `;
 
-export const Title = styled(TitleH4)`
+export const Title = styled.b`
   margin-bottom: 30px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Date = styled.p`
