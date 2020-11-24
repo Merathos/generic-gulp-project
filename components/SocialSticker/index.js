@@ -13,9 +13,7 @@ const List = styled.ul`
 
   @media screen and (max-width: 768px) {
     box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: 94px;
-    margin-bottom: 94px;
+    margin: 94px auto;
     display: flex;
     position: relative;
     padding: 0 10%;

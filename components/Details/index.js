@@ -1,6 +1,4 @@
 import * as S from './styles';
-import { Button } from 'elements';
-// import Link from 'next/link';
 
 const Details = ({ data: { block1, block2 } }) => {
   return (
@@ -12,16 +10,18 @@ const Details = ({ data: { block1, block2 } }) => {
           {block1.list.map((el, i) => (
             <S.Element key={i}>
               <S.StyledIcon name={el.icon} />
-              <span>{el.title}</span>
+              <S.ListText>{el.title}</S.ListText>
             </S.Element>
           ))}
         </S.List>
         <S.StyledSubtitle>{block1.subtitle}</S.StyledSubtitle>
-        <Button type="accent">{block1.button}</Button>
+        <S.Button accent>{block1.button}</S.Button>
       </div>
       <div>
         <S.H3>{block2.title}</S.H3>
-        <S.Text>{block2.text}</S.Text>
+        {block2.text.map((item, index) => (
+          <S.Text key={index}>{item}</S.Text>
+        ))}
         <S.Links>
           {block2.links.map((el, i) => (
             <S.LinkElement key={i}>

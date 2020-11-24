@@ -17,7 +17,19 @@ export const Section = styled.section`
       }
     `};
 
-  @media screen and (max-width: 420px) {
+  ${props =>
+    props.type === 'about' &&
+    css`
+      background-image: url('backgrounds/about-footer.svg');
+      background-repeat: no-repeat;
+      background-position: right 116%;
+
+      @media screen and (max-width: 768px) {
+        background-image: none;
+      }
+    `};
+
+  @media screen and (max-width: 768px) {
     padding-top: 80px;
   }
 `;
@@ -25,12 +37,6 @@ export const Section = styled.section`
 export const ListContainer = styled.div`
   @media (min-width: 769px) {
     min-height: 300px;
-    background-image: ${props =>
-      props.type === 'relocation'
-        ? `none`
-        : `url('backgrounds/about-footer.svg')`};
-    background-repeat: no-repeat;
-    background-position: right top;
 
     ${props =>
       props.background === 'transparent' &&
@@ -47,9 +53,10 @@ export const Title = styled.b`
   line-height: 120%;
   margin-bottom: 10px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     font-size: 22px;
     line-height: 134%;
+    margin-bottom: 14px;
   }
 `;
 
@@ -59,13 +66,12 @@ export const List = styled.ul`
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
-  justify-content: space-between;
 
-  @media (max-width: 1145px) {
-    justify-content: flex-start;
+  @media (max-width: 1280px) {
+    justify-content: space-between;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 
@@ -113,10 +119,13 @@ export const Text = styled(Subtitle)`
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 152%;
+    margin-bottom: 16px;
   }
 `;
 
 export const Element = styled.li`
+  display: flex;
+  flex-direction: column;
   margin-bottom: 45px;
   max-width: 325px;
   flex-shrink: 0;
@@ -129,52 +138,74 @@ export const Element = styled.li`
 
   &:hover {
     color: #53b443;
-  }
 
-  &:hover p {
-    opacity: 1;
-  }
-
-  &:hover svg {
-    fill: #53b443;
-
-    path:first-child {
-      stroke: #53b443;
+    p {
+      opacity: 1;
     }
 
-    path:last-child {
-      stroke: #ffffff;
-      fill: #ffffff;
+    svg {
+      fill: #53b443;
+
+      path:first-child {
+        stroke: #53b443;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
     }
   }
 
   &:active {
     color: #339722;
-  }
 
-  &:active p {
-    opacity: 1;
-  }
-
-  &:active svg {
-    fill: #339722;
-
-    path:first-child {
-      stroke: #339722;
+    p {
+      opacity: 1;
     }
 
-    path:last-child {
-      stroke: #ffffff;
-      fill: #ffffff;
+    svg {
+      fill: #339722;
+
+      path:first-child {
+        stroke: #339722;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
     }
   }
 
-  &:not(:last-child) {
-    margin-right: 40px;
+  &:not(:nth-child(3n)) {
+    margin-right: 100px;
   }
 
-  @media screen and (max-width: 420px) {
-    max-width: auto;
-    margin-bottom: 45px;
+  @media (max-width: 1280px) {
+    max-width: 45%;
+
+    &:not(:nth-child(3n)) {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 45%;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: none;
+    margin-bottom: 50px;
+  }
+`;
+
+export const ArrowWrapper = styled.div`
+  margin-top: auto;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    width: 28px;
+    height: 28px;
   }
 `;

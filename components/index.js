@@ -88,3 +88,4 @@ export { default as RelocationBlogs } from './RelocationBlogs';
 export { default as StoryCard } from './StoryCard';
 export { default as RelocationOffices } from './RelocationOffices';
 export { default as RelocationFooter } from './RelocationFooter';
+export { default as AboutHeader } from './AboutHeader';
