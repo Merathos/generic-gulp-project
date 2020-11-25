@@ -21,15 +21,16 @@ export const Label = styled.label`
     &:hover {
       cursor: pointer;
 
-      @media (min-width: 1200px) {
+      @media (min-width: 1000px) {
         background-color: #53b443;
         color: #ffffff;
       }
     }
   }
 
-  input:checked + span {
-    background-color: #53b443;
+  input:checked + span,
+  input:active + span {
+    background-color: #339722;
     color: #ffffff;
   }
 `;

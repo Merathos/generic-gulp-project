@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Grid = styled.div`
   display: grid;
@@ -25,11 +25,13 @@ export const Grid = styled.div`
 export const Item = styled.div`
   overflow: hidden;
 
-  &:first-child {
-    grid-column: span 2;
+  ${props =>
+    props.isHighlight &&
+    css`
+      grid-column: span 2;
 
-    @media (max-width: 834px) {
-      grid-column: span 1;
-    }
-  }
+      @media (max-width: 834px) {
+        grid-column: span 1;
+      }
+    `};
 `;

@@ -47,7 +47,7 @@ export const Text = styled.p`
 export const Title = styled.b`
   margin-bottom: 16px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 24px;

@@ -1,6 +1,6 @@
 import { Label } from './styles';
 
-const BlogsTag = ({ name, label, id, checked, onChange }) => {
+const BlogsTag = ({ name, label, id, checked = false, onChange }) => {
   return (
     <Label>
       <input

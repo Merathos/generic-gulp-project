@@ -48,7 +48,11 @@ const BlogGrid = ({ cards }) => {
   return (
     <S.Grid ref={grid}>
       {cards.map((el, i) => (
-        <S.Item key={i} className="js-item">
+        <S.Item
+          key={i}
+          className="js-item"
+          isHighlight={el.type === 'highlight' ? true : false}
+        >
           {el.type === 'highlight' ? (
             <HighlightCard data={el} />
           ) : el.type === 'story' ? (
