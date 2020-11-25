@@ -17,6 +17,7 @@ export const Section = styled.section`
 
   @media screen and (max-width: 420px) {
     padding: 0 30px;
+    margin-bottom: 0;
   }
 `;
 

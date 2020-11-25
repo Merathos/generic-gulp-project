@@ -1,11 +1,9 @@
 import * as S from './styles';
 import Router from 'next/router';
-
-const handleVacanciesClick = () => {
-  Router.push({
-    pathname: '/vacancies',
-  }).then(() => window.scrollTo(0, 0));
-};
+import { useState } from 'react';
+import mock from '../../mock';
+import { InternForm } from '../index';
+import { FormModal } from '../../containers';
 
 const InternshipHeader = ({
   title,
@@ -15,6 +13,22 @@ const InternshipHeader = ({
   mobPicture,
   size,
 }) => {
+  const [isModalOpened, setModalOpen] = useState(false);
+
+  const handleVacanciesClick = () => {
+    Router.push({
+      pathname: '/vacancies',
+    }).then(() => window.scrollTo(0, 0));
+  };
+
+  const handleSendRequestClick = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <S.Grid>
       <S.Wrapper withPicture={!!picture}>
@@ -33,7 +47,9 @@ const InternshipHeader = ({
         <S.Paragraph>{text}</S.Paragraph>
         {buttons && (
           <S.ButtonsWrapper>
-            <S.StyledButton accent>{buttons[0]}</S.StyledButton>
+            <S.StyledButton accent onClick={handleSendRequestClick}>
+              {buttons[0]}
+            </S.StyledButton>
             <S.Button onClick={handleVacanciesClick}>{buttons[1]}</S.Button>
           </S.ButtonsWrapper>
         )}
@@ -47,6 +63,15 @@ const InternshipHeader = ({
             height={size?.height}
           />
         </S.Block>
+      )}
+      {isModalOpened && (
+        <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
+          <InternForm
+            data={mock.internForm}
+            closeModal={closeModal}
+            showSuccess={() => {}}
+          />
+        </FormModal>
       )}
     </S.Grid>
   );
