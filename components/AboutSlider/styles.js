@@ -53,7 +53,7 @@ export const Element = styled.div`
 `;
 
 export const Img = styled.img`
-  height: 404px;
+  height: 405px;
   width: auto;
 
   @media screen and (max-width: 960px) {
@@ -107,7 +107,7 @@ export const Text = styled(Subtitle)`
 export const PrevButton = styled.button`
   display: block;
   position: absolute;
-  bottom: 160px;
+  bottom: 76px;
   right: 521px;
   width: 53px;
   height: 106px;
@@ -145,7 +145,7 @@ export const PrevButton = styled.button`
 export const NextButton = styled.button`
   display: block;
   position: absolute;
-  bottom: 160px;
+  bottom: 76px;
   right: 468px;
   width: 53px;
   height: 106px;
