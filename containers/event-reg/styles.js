@@ -31,7 +31,7 @@ export const Container = styled.div`
   }
 
   &:hover::after {
-    animation: 2.5s linear infinite rotation;
+    animation: 3s linear infinite rotation;
   }
 
   @keyframes rotation {

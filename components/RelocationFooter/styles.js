@@ -3,6 +3,7 @@ import { Subtitle } from 'elements';
 
 export const Section = styled.section`
   padding-top: 160px;
+  padding-bottom: 60px;
   background-color: #f7f8f9;
   background-image: url('backgrounds/relocation-footer.png');
   background-repeat: no-repeat;
@@ -47,10 +48,14 @@ export const List = styled.ul`
   @media (max-width: 1150px) {
     justify-content: flex-start;
   }
+
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 330px));
+  }
 `;
 
 export const Text = styled(Subtitle)`
-  margin-bottom: auto;
+  margin-bottom: 27px;
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -80,6 +85,7 @@ export const Element = styled.li`
 
   svg {
     transition: all 0.3s ease;
+    margin-top: auto;
 
     @media (max-width: 768px) {
       width: 27px;
