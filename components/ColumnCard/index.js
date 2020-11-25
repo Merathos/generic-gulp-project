@@ -1,20 +1,22 @@
 import Link from 'next/link';
 import * as S from './styles';
 
-const StoryCard = props => {
+const ColumnCard = props => {
   const {
-    data: { date, title, img, href },
+    data: { title, text, img, date, category, href },
   } = props;
 
   return (
     <Link href={href}>
       <S.Wrapper className="js-content">
+        {img && <S.Picture src={img} alt={title} width="210" height="254" />}
         <S.Date>{date}</S.Date>
         <S.Title>{title}</S.Title>
-        <S.Picture src={img} alt={title} width="210" height="254" />
+        <S.Text>{text}</S.Text>
+        <S.Type>{category}</S.Type>
       </S.Wrapper>
     </Link>
   );
 };
 
-export default StoryCard;
+export default ColumnCard;

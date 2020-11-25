@@ -89,3 +89,6 @@ export { default as StoryCard } from './StoryCard';
 export { default as RelocationOffices } from './RelocationOffices';
 export { default as RelocationFooter } from './RelocationFooter';
 export { default as AboutHeader } from './AboutHeader';
+export { default as BlogGrid } from './BlogGrid';
+export { default as HighlightCard } from './HighlightCard';
+export { default as ColumnCard } from './ColumnCard';

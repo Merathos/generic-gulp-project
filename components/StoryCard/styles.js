@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { TitleH4 } from 'elements';
 
 export const Wrapper = styled.a`
   position: relative;
@@ -8,7 +7,6 @@ export const Wrapper = styled.a`
   background-color: #f7f8f9;
   padding: 40px 40px 0;
   width: 100%;
-  max-width: 349px;
   box-sizing: border-box;
   min-height: 431px;
 

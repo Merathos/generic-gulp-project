@@ -33,3 +33,4 @@ export { default as Vacancies } from './vacancies';
 export { default as OpenedMenu } from './opened-menu';
 export { default as RelocationV2 } from './relocationV2';
 export { default as Map } from './Map';
+export { default as Blogs } from './blogs';
