@@ -1,7 +1,7 @@
 import {
   Values,
   InternVacancies,
-  GreyHeader,
+  InternshipHeader,
   GreyFooter,
   InternInfo,
   SliderVacancy,
@@ -16,54 +16,55 @@ import {
   ValuesSection,
   VacancySection,
   StyledApplication,
+  GroupContainer,
 } from './styles';
 
 const Internship = ({ data, vacancies }) => {
   return (
     <main>
-      <GreyWrapper>
+      <GreyWrapper withPicture={!!data.intro.picture}>
         <Container>
-          <GreyHeader
+          <InternshipHeader
             title={data.intro.title}
             text={data.intro.text}
             buttons={data.intro.buttons}
             picture={data.intro.picture}
             mobPicture={data.intro.mobPicture}
-            hash="internship"
+            size={data.intro.size}
           />
         </Container>
       </GreyWrapper>
 
       <Container>
-        <SectionGroup>
+        <GroupContainer>
           <InternInfo data={data.info} />
-        </SectionGroup>
-        <SectionGroup>
+        </GroupContainer>
+        <GroupContainer>
           <InternAbout data={data.about} />
-        </SectionGroup>
+        </GroupContainer>
       </Container>
+
       <Gallery data={data.gallery} />
+
       <ValuesSection>
-        <Container>
-          <Values data={data.values} />
-        </Container>
+        <Values data={data.values} />
       </ValuesSection>
 
-      <GreyContainer>
-        <Container>
-          <SliderVacancy data={data.steps} background="#F7F8F9" />
-        </Container>
-      </GreyContainer>
+      {/*<GreyContainer>*/}
+      {/*  <Container>*/}
+      {/*    <SliderVacancy data={data.steps} background="#F7F8F9" />*/}
+      {/*  </Container>*/}
+      {/*</GreyContainer>*/}
 
-      <VacancySection>
-        <Container>
-          <InternVacancies mock={data.vacancies} back={vacancies} />
-        </Container>
-      </VacancySection>
+      {/*<VacancySection>*/}
+      {/*  <Container>*/}
+      {/*    <InternVacancies mock={data.vacancies} back={vacancies} />*/}
+      {/*  </Container>*/}
+      {/*</VacancySection>*/}
 
-      <StyledApplication data={data.apply} />
+      {/*<StyledApplication data={data.apply} />*/}
 
-      <GreyFooter data={data.greyFooter} background="transparent" />
+      {/*<GreyFooter data={data.greyFooter} background="transparent" />*/}
     </main>
   );
 };

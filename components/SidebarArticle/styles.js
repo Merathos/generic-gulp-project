@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TitleH4, TitleH5, Icon, Subtitle } from '/elements';
 
 export const Title = styled(TitleH4)`
-  margin-bottom: 40px;
+  margin-bottom: ${props => (props.isInternship ? '14px' : '40px')};
+  font-weight: 700;
 
   @media (max-width: 1205px) {
     grid-area: b;
@@ -29,6 +30,16 @@ export const DefaultSubtitle = styled(Subtitle)`
 
 export const H5 = styled(TitleH5)`
   margin-bottom: 12px;
+
+  @media screen and (max-width: 420px) {
+    ${props =>
+      props.isInternship &&
+      css`
+        font-size: 14px;
+        line-height: 131%;
+        margin-bottom: 4px;
+      `}
+  }
 `;
 
 export const Section = styled.div`
@@ -41,6 +52,14 @@ export const Section = styled.div`
 
 export const SectionIcon = styled.div`
   max-width: 250px;
+
+  @media screen and (max-width: 1024px) {
+    ${props =>
+      props.isInternship &&
+      css`
+        max-width: none;
+      `}
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -69,11 +88,51 @@ export const Text = styled.p`
 
 export const StyledIcon = styled(Icon)`
   margin-bottom: 26px;
+
+  ${props =>
+    props.isInternship &&
+    css`
+      margin-top: 32px;
+      width: 38px;
+      height: 38px;
+      background-size: 65%;
+      background-color: transparent;
+
+      @media screen and (max-width: 420px) {
+        margin-top: 0;
+        margin-bottom: 12px;
+        width: 33px;
+        height: 33px;
+        background-size: 50%;
+        background-color: #f7f8f9;
+        border-radius: 50%;
+      }
+    `}
+`;
+
+export const StyledSubtitle = styled(Subtitle)`
+  font-size: 16px;
+  line-height: 134%;
+
+  @media screen and (max-width: 500px) {
+    font-size: 14px;
+    line-height: 131%;
+  }
+`;
+
+export const SubtitleWrapper = styled(Subtitle)`
+  ${props =>
+    props.isInternship &&
+    css`
+      @media screen and (max-width: 768px) {
+        line-height: 148%;
+      }
+    `}
 `;
 
 export const Image = styled.img`
   width: 143px;
-  margin-bottom: 30px;
+  margin-bottom: ${props => (props.isInternship ? '20px' : '30px')};
   position: relative;
 
   @media (max-width: 1205px) {
@@ -92,7 +151,7 @@ export const Aside = styled.aside`
   background-repeat: no-repeat;
   background-position: top left 100px;
 
-  @media (max-width: 1205px) {
+  @media (max-width: 1024px) {
     display: grid;
     grid-template-areas:
       'a b'
