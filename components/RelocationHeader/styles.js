@@ -156,7 +156,7 @@ export const PicContainer = styled.div`
   }
 
   &:hover::after {
-    animation: 3.8s linear infinite rotation;
+    animation: 2.6s linear infinite rotation;
   }
 
   @keyframes rotation {

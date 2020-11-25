@@ -37,7 +37,7 @@ export const Wrapper = styled.a`
   }
 
   &:hover::after {
-    animation: 3s linear infinite rotation;
+    animation: 2s linear infinite rotation;
   }
 
   @keyframes rotation {
