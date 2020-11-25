@@ -67,6 +67,7 @@ export const Text = styled.p`
 export const Button = styled(Btn)`
   max-width: 229px;
   padding: 22px 28px;
+  border: none;
 
   @media (max-width: 768px) {
     padding: 19px 34px;

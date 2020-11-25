@@ -3,6 +3,15 @@ import { TitleH3 } from 'elements';
 
 export const Picture = styled.img`
   margin-bottom: 30px;
+  max-height: 245px;
+
+  @media (max-width: 1024px) {
+    max-height: 314px;
+  }
+
+  @media (max-width: 600px) {
+    max-height: 363px;
+  }
 
   @media screen and (max-width: 724px) {
     width: 100%;

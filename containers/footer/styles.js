@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const StyledFooter = styled.footer`
   padding: 220px 46px 46px;
+  padding-top: 190px;
   display: flex;
   align-items: flex-end;
   background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
