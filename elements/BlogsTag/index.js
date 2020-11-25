@@ -1,6 +1,6 @@
 import { Label } from './styles';
 
-const BlogsCheckbox = ({ name, label, id, checked, onChange }) => {
+const BlogsTag = ({ name, label, id, checked, onChange }) => {
   return (
     <Label>
       <input
@@ -15,4 +15,4 @@ const BlogsCheckbox = ({ name, label, id, checked, onChange }) => {
   );
 };
 
-export default BlogsCheckbox;
+export default BlogsTag;

@@ -9,7 +9,7 @@ export const Grid = styled.div`
 
   @media (max-width: 834px) {
     grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
-    grid-gap: 30px;
+    grid-gap: 36px;
     grid-row-gap: 26px;
   }
 

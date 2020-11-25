@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BlogsCheckbox } from 'elements';
+import { BlogsTag } from 'elements';
 import { Section, Element } from './styles';
 import Swiper from 'react-id-swiper';
 
@@ -23,7 +23,7 @@ const BlogsFilter = ({ filterTabs }) => {
       <Swiper {...params}>
         {filterTabs.map((item, i) => (
           <Element key={i}>
-            <BlogsCheckbox
+            <BlogsTag
               name={item.name}
               label={item.title}
               id={item.name}

@@ -3,11 +3,11 @@ import * as S from './styles';
 
 const StoryCard = props => {
   const {
-    data: { date, title, img },
+    data: { date, title, img, href },
   } = props;
 
   return (
-    <Link href={`#`}>
+    <Link href={href}>
       <S.Wrapper className="js-content">
         <S.Date>{date}</S.Date>
         <S.Title>{title}</S.Title>

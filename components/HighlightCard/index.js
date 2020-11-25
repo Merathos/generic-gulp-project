@@ -3,11 +3,11 @@ import * as S from './styles';
 
 const HighlightCard = props => {
   const {
-    data: { title, icon, text, img, bgImg, bgMob },
+    data: { title, icon, text, img, bgImg, bgMob, href },
   } = props;
 
   return (
-    <Link href={`#`}>
+    <Link href={href}>
       <S.Wrapper className="js-content" bgImg={bgImg} bgMob={bgMob}>
         <S.Content>
           <S.Title>

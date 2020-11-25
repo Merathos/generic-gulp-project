@@ -7,14 +7,14 @@ const BlogGrid = ({ cards }) => {
 
   useEffect(() => {
     function resizeMasonryItem(item) {
-      let rowGap = parseInt(
+      const rowGap = parseInt(
         window.getComputedStyle(grid.current).getPropertyValue('grid-row-gap')
       );
-      let rowHeight = parseInt(
+      const rowHeight = parseInt(
         window.getComputedStyle(grid.current).getPropertyValue('grid-auto-rows')
       );
 
-      let rowSpan = Math.ceil(
+      const rowSpan = Math.ceil(
         (item.querySelector('.js-content').getBoundingClientRect().height +
           rowGap) /
           (rowHeight + rowGap)
@@ -24,7 +24,7 @@ const BlogGrid = ({ cards }) => {
     }
 
     function resizeAllMasonryItems() {
-      let allItems = grid.current.querySelectorAll('.js-item');
+      const allItems = grid.current.querySelectorAll('.js-item');
 
       allItems.forEach(el => {
         resizeMasonryItem(el);

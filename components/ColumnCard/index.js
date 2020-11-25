@@ -3,11 +3,11 @@ import * as S from './styles';
 
 const ColumnCard = props => {
   const {
-    data: { title, text, img, date, category },
+    data: { title, text, img, date, category, href },
   } = props;
 
   return (
-    <Link href={`#`}>
+    <Link href={href}>
       <S.Wrapper className="js-content">
         {img && <S.Picture src={img} alt={title} width="210" height="254" />}
         <S.Date>{date}</S.Date>
