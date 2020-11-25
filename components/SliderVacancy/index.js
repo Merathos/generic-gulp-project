@@ -5,7 +5,7 @@ import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
 import * as S from './styles';
 
-const SliderVacancy = ({ data, background }) => {
+const SliderVacancy = ({ data }) => {
   const { title, list } = data;
   const ref = useRef(null);
 
@@ -39,7 +39,7 @@ const SliderVacancy = ({ data, background }) => {
         {list &&
           list.map((el, i) => (
             <S.Element key={i}>
-              <S.Number background={background}>{`0${i + 1}`}</S.Number>
+              <S.Number>{`0${i + 1}`}</S.Number>
               <S.Title>{el.title}</S.Title>
               <S.Text>{el.text}</S.Text>
               {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}

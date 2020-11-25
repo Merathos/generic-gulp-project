@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { SectionGroup } from 'containers';
-import { Application } from 'components';
+import { InternshipApplication } from 'components';
 
 export const GreyWrapper = styled.div`
   background-color: #f7f8f9;
@@ -65,9 +65,8 @@ export const GroupContainer = styled.section`
 `;
 
 export const ValuesSection = styled(SectionGroup)`
-  max-width: 1440px;
-  padding: 86px 120px 0;
-  margin: 0 auto;
+  padding-top: 86px;
+  padding-bottom: 66px;
 
   ul {
     grid-gap: 88px 76px;
@@ -79,13 +78,10 @@ export const ValuesSection = styled(SectionGroup)`
     background-position: top right;
   }
 
-  @media screen and (max-width: 768px) {
-    padding: 0 45px;
-  }
-
   @media screen and (max-width: 420px) {
     margin-top: -38px;
-    padding: 0 30px;
+    padding-top: 0;
+    padding-bottom: 30px;
 
     ul {
       grid-row-gap: 46px;
@@ -94,10 +90,16 @@ export const ValuesSection = styled(SectionGroup)`
 `;
 
 export const VacancySection = styled(SectionGroup)`
+  padding-bottom: 62px;
+
   @media (min-width: 769px) {
     background-image: url('backgrounds/i-vacancy.svg');
     background-repeat: no-repeat;
-    background-position: top 145px right;
+    background-position: top 160px right;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-bottom: 30px;
   }
 `;
 
@@ -113,18 +115,8 @@ export const GreyContainer = styled.div`
   }
 `;
 
-export const StyledApplication = styled(Application)`
-  h2 {
-    max-width: 590px;
-  }
-
-  p {
-    max-width: 570px;
-  }
-
-  button {
-    margin-top: 75px;
-  }
+export const ApplicationSection = styled(InternshipApplication)`
+  background-color: #f7f8f9;
 
   @media (min-width: 769px) {
     background-image: url('backgrounds/i-application.svg');

@@ -8,18 +8,17 @@ import {
   InternAbout,
   Gallery,
 } from 'components';
-import { SectionGroup } from 'containers';
 import {
   Container,
   GreyContainer,
   GreyWrapper,
   ValuesSection,
   VacancySection,
-  StyledApplication,
+  ApplicationSection,
   GroupContainer,
 } from './styles';
 
-const Internship = ({ data, vacancies }) => {
+const Internship = ({ data }) => {
   return (
     <main>
       <GreyWrapper withPicture={!!data.intro.picture}>
@@ -47,24 +46,30 @@ const Internship = ({ data, vacancies }) => {
       <Gallery data={data.gallery} />
 
       <ValuesSection>
-        <Values data={data.values} />
+        <Container>
+          <Values data={data.values} />
+        </Container>
       </ValuesSection>
 
-      {/*<GreyContainer>*/}
-      {/*  <Container>*/}
-      {/*    <SliderVacancy data={data.steps} background="#F7F8F9" />*/}
-      {/*  </Container>*/}
-      {/*</GreyContainer>*/}
+      <GreyContainer>
+        <Container>
+          <SliderVacancy data={data.steps} />
+        </Container>
+      </GreyContainer>
 
-      {/*<VacancySection>*/}
-      {/*  <Container>*/}
-      {/*    <InternVacancies mock={data.vacancies} back={vacancies} />*/}
-      {/*  </Container>*/}
-      {/*</VacancySection>*/}
+      <VacancySection>
+        <Container>
+          <InternVacancies mock={data.vacancies} />
+        </Container>
+      </VacancySection>
 
-      {/*<StyledApplication data={data.apply} />*/}
+      <ApplicationSection data={data.apply} />
 
-      {/*<GreyFooter data={data.greyFooter} background="transparent" />*/}
+      <GreyFooter
+        data={data.greyFooter}
+        background="transparent"
+        type="internship"
+      />
     </main>
   );
 };

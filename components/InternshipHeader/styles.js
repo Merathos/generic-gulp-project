@@ -28,7 +28,7 @@ export const Grid = styled.div`
       }
 
       &:hover::before {
-        animation: 1.5s ease-in-out rotation;
+        animation: 2.6s linear infinite rotation;
       }
 
       @keyframes rotation {
@@ -95,7 +95,7 @@ export const Block = styled.div`
   }
 
   &:hover::after {
-    animation: 1.5s ease-in-out rotation;
+    animation: 2.6s linear infinite rotation;
   }
 
   @keyframes rotation {
