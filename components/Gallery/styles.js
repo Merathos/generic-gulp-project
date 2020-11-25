@@ -4,7 +4,7 @@ import { TitleH2 } from 'elements';
 export const Wrapper = styled.div`
   position: relative;
   margin-top: 80px;
-  padding-bottom: 184px;
+  padding-bottom: 100px;
 
   @media screen and (max-width: 1024px) {
     margin-top: 0;

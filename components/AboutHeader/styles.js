@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { TitleH1, TitleH3, SmallText, Subtitle } from 'elements';
-import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const Grid = styled.div`
   display: flex;
@@ -84,21 +83,13 @@ export const Features = styled.ul`
 
 export const Element = styled.li`
   max-width: 240px;
-  margin-right: 55px;
+  margin-right: 62px;
   margin-bottom: 40px;
-
-  &:first-child {
-    margin-right: 70px;
-  }
 
   @media screen and (max-width: 1024px) {
     width: 80%;
     max-width: none;
     margin-right: 0;
-
-    &:first-child {
-      margin-right: 0;
-    }
   }
 
   @media screen and (max-width: 768px) {
@@ -133,11 +124,15 @@ export const Aside = styled.aside`
   }
 `;
 
-export const Logo = styled(MagicQuadrant)`
-  margin-bottom: 10px;
+export const Logo = styled.img`
+  display: inline-block;
+  width: 154px;
+  height: 25px;
+  margin-top: 6px;
+  margin-bottom: 20px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 2px;
+    margin-bottom: 12px;
   }
 `;
 
