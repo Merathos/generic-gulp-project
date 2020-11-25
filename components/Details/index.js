@@ -1,6 +1,14 @@
 import * as S from './styles';
+import { Media } from '../index';
+import Router from 'next/router';
 
 const Details = ({ data: { block1, block2 } }) => {
+  const handleClick = () => {
+    Router.push({
+      pathname: '/teams',
+    }).then(() => window.scrollTo(0, 0));
+  };
+
   return (
     <S.Section>
       <div>
@@ -15,7 +23,9 @@ const Details = ({ data: { block1, block2 } }) => {
           ))}
         </S.List>
         <S.StyledSubtitle>{block1.subtitle}</S.StyledSubtitle>
-        <S.Button accent>{block1.button}</S.Button>
+        <S.Button accent onClick={handleClick}>
+          {block1.button}
+        </S.Button>
       </div>
       <div>
         <S.H3>{block2.title}</S.H3>
@@ -25,12 +35,20 @@ const Details = ({ data: { block1, block2 } }) => {
         <S.Links>
           {block2.links.map((el, i) => (
             <S.LinkElement key={i}>
-              <S.Link href={el.link}>{el.title}</S.Link>
+              <S.Link
+                href={el.link}
+                {...(el.link.startsWith('http') && {
+                  target: '_blank',
+                  rel: 'nofollow noopener',
+                })}
+              >
+                {el.title}
+              </S.Link>
             </S.LinkElement>
           ))}
         </S.Links>
         <S.ImgWrapper>
-          <img src={block2.picture} alt={block2.title} />
+          <Media data={block2.video} hasCircle isAbout />
         </S.ImgWrapper>
       </div>
     </S.Section>

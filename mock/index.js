@@ -463,31 +463,108 @@ export default {
     filterTabs: [
       {
         title: `Наши люди`,
+        name: `ourPeople`,
         slug: `nashi-lyudi`,
       },
       {
         title: `Обмен знаниями`,
+        name: `knowledgeExchange`,
         slug: `obmen-znaniyami`,
       },
       {
         title: `Традиции`,
+        name: `traditions`,
         slug: `tradicii`,
       },
       {
         title: `Жизнь офиса`,
+        name: `officeLife`,
         slug: `zhizn-ofisa`,
       },
       {
         title: `Обучение`,
+        name: `tuition`,
         slug: `obuchenie`,
       },
       {
         title: `Благотворительность`,
+        name: `charity`,
         slug: `charity`,
       },
       {
         title: `Забота о природе`,
+        name: `nature`,
         slug: `zabota-o-prirode`,
+      },
+    ],
+    cards: [
+      {
+        type: `highlight`,
+        href: `#`,
+        title: `Неделя Clean up with\u00A0DINS!`,
+        icon: `/icons/clap.png`,
+        text: `Команда RCV занимается разработкой сервиса видео-конференций нового fgafgsad`,
+        img: `/images/story-portrait.png`,
+        bgImg: `/backgrounds/highlight.svg`,
+        bgMob: `/backgrounds/highlight-mob.svg`,
+      },
+      {
+        type: `story`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `История успеха Екатерины. Начать переезжать сложно и наши HR расскажут об этой возможности`,
+        img: `/images/story-card2.png`,
+      },
+      {
+        type: `story`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `История Валеры`,
+        img: `/images/story-card1.png`,
+      },
+      {
+        type: `column`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `Работа работой, но о разминке не забывайте`,
+        text: `Команда RCV занимается разработкой сервиса видео-конференций нового поколения, построенного с использованием WebRTC, качество asdfgasd asdf`,
+        category: `Жизнь офиса`,
+      },
+      {
+        type: `column`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `Работа работой, но о разминке не забывайте`,
+        text: `Занимайтесь в перерывах между онлайн-встречами и заряжайтесь хорошим настроением.`,
+        img: `/images/column1.jpg`,
+        category: `Благотворительность`,
+      },
+      {
+        type: `column`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `Как продуктивно отдыхать от работы, пока мы находимся в режиме`,
+        text: `Занимайтесь в перерывах между онлайн-встречами и заряжайтесь хорошим настроением.`,
+        img: `/images/column3.jpg`,
+        category: `Жизнь офиса`,
+      },
+      {
+        type: `column`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `Соскучились по офисному спортзалу?`,
+        text: `Подключайтесь к утренней разминке с Костей Гамовым, которая пройдет завтра, 7 апреля, в 9:30 утра в прямом эфире нашего Инстаграма.`,
+        img: `/images/column2.jpg`,
+        category: `Обмен знаниями`,
+      },
+      {
+        type: `column`,
+        href: `#`,
+        date: `12.06.2020`,
+        title: `Соскучились по офисному спортзалу?`,
+        text: `Подключайтесь к утренней разминке с Костей Гамовым, которая пройдет завтра, 7 апреля, в 9:30 утра в прямом эфире нашего Инстаграма.`,
+        img: `/images/column4.jpg`,
+        category: `Обмен знаниями`,
       },
     ],
   },
@@ -557,6 +634,7 @@ export default {
       sidebar: {
         subtitle: `RingCentral${'\u00A0'}– Лидер Gartner UCaaS Magic Quadrant в${'\u00A0'}течение последних 5${'\u00A0'}лет (июль, 2019)`,
       },
+      logo: `/images/magic-quadrant.png`,
     },
     details: {
       block1: {
@@ -588,7 +666,7 @@ export default {
             title: `и многое другое`,
           },
         ],
-        subtitle: `Еще больше о${'\u00A0'}проектах и${'\u00A0'}командах,\n которые развивают эту функциональность. `,
+        subtitle: `Еще больше о${'\u00A0'}проектах и${'\u00A0'}командах,\nкоторые развивают эту функциональность. `,
         button: `Узнать больше`,
       },
       block2: {
@@ -604,10 +682,14 @@ export default {
           },
           {
             title: `Habr`,
-            link: `/habr`,
+            link: `https://habr.com/ru/company/dins/`,
           },
         ],
         picture: `/images/about-details.png`,
+        video: {
+          src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+          srcPoster: `/images/about-details.png`,
+        },
       },
     },
     animation: {},
@@ -672,20 +754,60 @@ export default {
       title: `У нас хорошо`,
       pictures: [
         {
-          src: `/images/gallery-1.jpg`,
+          src: `/images/slide-1.jpg`,
           title: `Комфортное рабочее место: от${'\u00A0'}желаемого количества мониторов до${'\u00A0'}комнатных цветов и${'\u00A0'}увлажнителя воздуха`,
+          size: {
+            width: 706,
+            height: 405,
+          },
         },
         {
-          src: `/images/gallery-2.jpg`,
-          title: `Комфортное рабочее место: от${'\u00A0'}желаемого количества мониторов до${'\u00A0'}комнатных цветов и${'\u00A0'}увлажнителя воздуха`,
+          src: `/images/slide-2.jpg`,
+          title: `Время начала работы гибкое. Многие команды работают, как им${'\u00A0'}удобно`,
+          size: {
+            width: 706,
+            height: 405,
+          },
         },
         {
-          src: `/images/gallery-1.jpg`,
-          title: `Комфортное рабочее место: от${'\u00A0'}желаемого количества мониторов до${'\u00A0'}комнатных цветов и${'\u00A0'}увлажнителя воздуха`,
+          src: `/images/slide-3.jpg`,
+          title: `Белая зарплата, ежегодная премия, ДМС со${'\u00A0'}стоматологией`,
+          size: {
+            width: 706,
+            height: 405,
+          },
         },
         {
-          src: `/images/gallery-2.jpg`,
-          title: `Комфортное рабочее место: от${'\u00A0'}желаемого количества мониторов до${'\u00A0'}комнатных цветов и${'\u00A0'}увлажнителя воздуха`,
+          src: `/images/slide-4.jpg`,
+          title: `Курсы английского в${'\u00A0'}офисе за${'\u00A0'}счет компании. Практика при общении с${'\u00A0'}иностранными коллегами`,
+          size: {
+            width: 706,
+            height: 405,
+          },
+        },
+        {
+          src: `/images/slide-5.jpg`,
+          title: `Завтраки, фрукты, сладости, кофе и${'\u00A0'}соки. Свежие круассаны из${'\u00A0'}офисного кафе`,
+          size: {
+            width: 706,
+            height: 405,
+          },
+        },
+        {
+          src: `/images/slide-6.jpg`,
+          title: `Спортивные секции в${'\u00A0'}офисе. Крытая велопарковка, душ, оборудованные спортзалы`,
+          size: {
+            width: 706,
+            height: 405,
+          },
+        },
+        {
+          src: `/images/slide-7.jpg`,
+          title: `Комнаты отдыха с${'\u00A0'}теннисом, кикером, массажным креслом и${'\u00A0'}«Кинектом»`,
+          size: {
+            width: 706,
+            height: 405,
+          },
         },
       ],
     },
@@ -693,31 +815,34 @@ export default {
       {
         title: `Вакансии`,
         text: `Тебе интересна компания и${'\u00A0'}близки наши ценности? Откликайся на${'\u00A0'}открытые позиции в${'\u00A0'}этом разделе.`,
+        href: `/vacancies`,
       },
       {
         title: `IT${'\u00A0'}EVENINGS`,
         text: `Присоединяйся к${'\u00A0'}ежеквартальным встречам DINS IT${'\u00A0'}EVENING. `,
+        href: `/events`,
       },
       {
         title: `Блог`,
         text: `Читай наш блог, чтобы узнать последние новости из${'\u00A0'}жизни компании.`,
+        href: `/blog/articles`,
       },
     ],
   },
   relocation: {
     intro: {
       title: `Релокация`,
-      text: `Мы живем и работаем в Санкт-Петербурге. Если ты живешь
-      в другом городе, но успешно пройдешь все этапы отбора,
-      мы поможем тебе переехать.`,
+      text: `Мы живем и работаем в Санкт\u2011Петербурге. Если ты живешь
+      в\u00A0другом городе, но успешно пройдешь все этапы отбора,
+      мы\u00A0поможем тебе переехать.`,
       list: [
         {
-          icon: 16,
+          icon: `/emodzi/gem.png`,
           text: `Предоставим \nRelocation Bonus`,
         },
         {
-          icon: 17,
-          text: `Поможем \nв поиске жилья`,
+          icon: `/emodzi/house.png`,
+          text: `Поможем \nв\u00A0поиске\u00A0жилья`,
         },
       ],
       picture: `/images/relocate-header.jpg`,
@@ -769,24 +894,62 @@ export default {
     blogs: {
       title: `Переезжать сложно?`,
       text: `Если все еще сомневаешься, прочитай истории наших ребят: они переехали
-       в Петербург, когда получили оффер от DINS.`,
+       в\u00A0Петербург, когда получили оффер от DINS.`,
+      noteIcon: `/icons/fire.png`,
       note: `В некоторых командах можно работать удаленно. Присылай резюме
-      на jobs@dins.ru с пометкой «удаленка», и наши HR расскажут об этой возможности.`,
+      на\u00A0jobs@dins.ru с пометкой «удаленка», и наши HR расскажут об этой возможности.`,
+      cards: [
+        {
+          href: `#`,
+          date: `12.06.2020`,
+          title: `История Валеры`,
+          img: `/images/story-card1.png`,
+        },
+        {
+          href: `#`,
+          date: `12.06.2020`,
+          title: `История успеха Екатерины. Начать переезжать сложно и наши HR расскажут об этой возможности`,
+          img: `/images/story-card2.png`,
+        },
+      ],
     },
     map: {
       title: `Офисы на карте`,
-      coords: ``,
+      zoom: 12,
+      center: {
+        lat: 59.908,
+        lng: 30.348,
+      },
+      markers: [
+        {
+          id: 723,
+          coordinates: {
+            lat: 59.9119,
+            lng: 30.2764,
+          },
+        },
+        {
+          id: 265,
+          coordinates: {
+            lat: 59.9017,
+            lng: 30.4299,
+          },
+        },
+      ],
     },
     greyFooter: [
       {
+        link: `vacancies/`,
         title: `Вакансии`,
         text: `Тебе интересна компания и близки наши ценности? Откликайся на открытые позиции в этом разделе.`,
       },
       {
-        title: `IT evenings`,
+        link: `events/`,
+        title: `IT EVENINGS`,
         text: `Присоединяйся к ежеквартальным встречам DINS IT EVENING. `,
       },
       {
+        link: `blog/articles`,
         title: `Блог`,
         text: `Читай наш блог, чтобы узнать последние новости из жизни компании.`,
       },

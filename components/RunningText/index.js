@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import { Container, Link } from './styles';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 const startOffset = 65.5;
 const endOffset = 0;
@@ -18,7 +18,7 @@ const RunningText = ({ data }) => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
-  const animate = time => {
+  const animate = useCallback(time => {
     if (previousTimeRef.current !== undefined && isHovered === false) {
       setStep(prevStep =>
         prevStep <= endOffset ? startOffset : prevStep - 0.02
@@ -26,11 +26,13 @@ const RunningText = ({ data }) => {
     }
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animate);
-  };
+  }, []);
 
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(requestRef.current);
+    return () => {
+      cancelAnimationFrame(requestRef.current);
+    };
   }, [animate]);
 
   return (

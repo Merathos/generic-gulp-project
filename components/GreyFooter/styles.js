@@ -20,6 +20,7 @@ export const Section = styled.section`
   ${props =>
     props.type === 'about' &&
     css`
+      margin-top: 84px;
       background-image: url('backgrounds/about-footer.svg');
       background-repeat: no-repeat;
       background-position: right 116%;

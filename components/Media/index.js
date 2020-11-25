@@ -15,6 +15,7 @@ const Media = props => {
     type,
     decoration,
     hasCircle,
+    isAbout = false,
   } = props;
 
   return (
@@ -29,7 +30,7 @@ const Media = props => {
           alt={caption}
         />
       ) : (
-        <VideoContainer>
+        <VideoContainer isAbout={isAbout}>
           <ReactPlayer
             url={src}
             config={{
@@ -42,6 +43,7 @@ const Media = props => {
               },
             }}
             light={
+              srcPoster ||
               'https://api.develop.dins.d.nimax.ru//storage/images/zpQbYFjH42sG4nMjqID7ASCCbg9OGSV4IfiRIdzQ.jpeg'
             }
             className="react-player"

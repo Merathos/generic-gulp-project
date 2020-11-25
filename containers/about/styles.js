@@ -30,6 +30,7 @@ export const ValuesSection = styled(SectionGroup)`
 
   @media screen and (max-width: 420px) {
     margin-bottom: 70px;
+    padding-top: 34px;
   }
 `;
 

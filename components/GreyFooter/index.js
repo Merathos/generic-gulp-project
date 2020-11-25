@@ -1,6 +1,7 @@
 import ArrowRight from 'public/icons/arrow-right.svg';
 import { BlogsCard } from 'components';
 import * as S from './styles';
+import Link from 'next/link';
 
 const GreyFooter = ({ data, type, background }) => {
   return (
@@ -17,13 +18,15 @@ const GreyFooter = ({ data, type, background }) => {
         <S.ListContainer background={background} type={type}>
           <S.List>
             {data.map((el, i) => (
-              <S.Element key={i}>
-                <S.Title>{el.title}</S.Title>
-                <S.Text>{el.text}</S.Text>
-                <S.ArrowWrapper>
-                  <ArrowRight />
-                </S.ArrowWrapper>
-              </S.Element>
+              <Link href={el.href} key={i} passHref>
+                <S.Element>
+                  <S.Title>{el.title}</S.Title>
+                  <S.Text>{el.text}</S.Text>
+                  <S.ArrowWrapper>
+                    <ArrowRight />
+                  </S.ArrowWrapper>
+                </S.Element>
+              </Link>
             ))}
           </S.List>
         </S.ListContainer>

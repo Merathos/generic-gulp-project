@@ -59,7 +59,11 @@ export const Section = styled.section`
 
 export const VideoContainer = styled.div`
   position: relative;
-  padding-top: 49.5%;
+  padding-top: ${props => (props.isAbout ? 63.7 : 49.5)}%;
+
+  @media screen and (max-width: 420px) {
+    padding-top: ${props => (props.isAbout ? 57.8 : 49.5)}%;
+  }
 
   .react-player {
     position: absolute;
@@ -84,11 +88,28 @@ export const VideoContainer = styled.div`
     border-radius: 50% !important;
     background: none !important;
     background-color: #ffffff !important;
+
+    @media screen and (max-width: 420px) {
+      ${props =>
+        props.isAbout &&
+        css`
+          width: 40px !important;
+          height: 40px !important;
+        `}
+    }
   }
 
   .react-player__play-icon {
     border-color: transparent transparent transparent #53b443 !important;
     border-width: 11px 0 11px 13px !important;
     margin-left: 4px !important;
+
+    @media screen and (max-width: 420px) {
+      ${props =>
+        props.isAbout &&
+        css`
+          border-width: 6px 0 6px 7px !important;
+        `}
+    }
   }
 `;
