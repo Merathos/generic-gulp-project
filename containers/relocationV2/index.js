@@ -3,7 +3,7 @@ import {
   Benefits,
   RelocationApply,
   RelocationBlogs,
-  RelocationOffices,
+  OfficesMap,
   RelocationFooter,
 } from 'components';
 
@@ -14,7 +14,7 @@ const Relocation = ({ data }) => {
       <Benefits data={data.advantages} />
       <RelocationApply data={data.promo} />
       <RelocationBlogs data={data.blogs} />
-      <RelocationOffices data={data.map} />
+      <OfficesMap data={data.map} />
       <RelocationFooter data={data.greyFooter} />
     </main>
   );
