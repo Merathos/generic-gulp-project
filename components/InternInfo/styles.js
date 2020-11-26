@@ -87,12 +87,22 @@ export const Item = styled.li`
   @media screen and (max-width: 768px) {
     padding-left: 26px;
 
+    &:nth-of-type(even) {
+      order: 5;
+    }
+
     &:before {
       width: 4px;
       height: 4px;
       border-radius: 50%;
       border: 2px solid #2f8ed9;
-      top: 7px;
+      top: 46%;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    &:before {
+      top: 40%;
     }
   }
 `;

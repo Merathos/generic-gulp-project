@@ -93,10 +93,9 @@ export const StyledIcon = styled(Icon)`
     props.isInternship &&
     css`
       margin-top: 32px;
-      width: 38px;
-      height: 38px;
-      background-size: 65%;
-      background-color: transparent;
+      width: 57px;
+      height: 57px;
+      background-size: 40%;
 
       @media screen and (max-width: 420px) {
         margin-top: 0;

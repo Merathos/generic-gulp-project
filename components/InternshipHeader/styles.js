@@ -69,6 +69,10 @@ export const Title = styled(TitleH1)`
     font-size: 64px;
   }
 
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 0;
+  }
+
   @media screen and (max-width: 768px) {
     font-size: 32px;
     line-height: 134%;
@@ -148,12 +152,20 @@ export const Block = styled.div`
     }
   }
 
+  @media screen and (max-width: 370px) {
+    &::after {
+      width: 120px;
+      height: 120px;
+      background-size: 120px 120px;
+    }
+  }
+
   ${props =>
     props.afterTitle === true &&
     css`
       display: none;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         display: block;
         box-sizing: border-box;
         max-width: 315px;
@@ -165,12 +177,17 @@ export const Block = styled.div`
       @media screen and (max-width: 420px) {
         margin-bottom: 40px;
       }
+
+      @media screen and (max-width: 370px) {
+        max-width: none;
+        width: 100%;
+      }
     `}
 
   ${props =>
     props.afterTitle === false &&
     css`
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         display: none;
       }
     `}
