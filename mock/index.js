@@ -1433,6 +1433,20 @@ export default {
             },
           },
         ],
+        routeFrom: [
+          {
+            name: `first`,
+            lat: 59.9011,
+            lng: 30.275,
+            color: '#2F8ED9',
+          },
+          {
+            name: `second`,
+            lat: 59.9074,
+            lng: 30.2997,
+            color: '#53B443',
+          },
+        ],
         controls: ['zoomControl'],
         behaviors: ['dblClickZoom', 'drag', 'multiTouch'],
       },
@@ -1447,25 +1461,26 @@ export default {
             subtitle: `Можно добраться пешком за 10 минут.`,
           },
         ],
-        zoom: 12,
+        zoom: 16,
         center: {
-          lat: 59.908,
-          lng: 30.348,
+          lat: 59.8992,
+          lng: 30.429,
         },
         markers: [
-          {
-            id: 723,
-            coordinates: {
-              lat: 59.9119,
-              lng: 30.2764,
-            },
-          },
           {
             id: 265,
             coordinates: {
               lat: 59.9017,
               lng: 30.4299,
             },
+          },
+        ],
+        routeFrom: [
+          {
+            name: `first`,
+            lat: 59.8966,
+            lng: 30.4237,
+            color: '#2F8ED9',
           },
         ],
         controls: ['zoomControl'],
