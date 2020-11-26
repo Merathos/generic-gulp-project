@@ -1,7 +1,7 @@
 import * as S from './styles';
 import { Map } from 'containers';
 
-const RelocationOffices = ({ data }) => {
+const OfficesMap = ({ data }) => {
   return (
     <S.Section>
       <S.Container>
@@ -14,4 +14,4 @@ const RelocationOffices = ({ data }) => {
   );
 };
 
-export default RelocationOffices;
+export default OfficesMap;

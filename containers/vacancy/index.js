@@ -1,10 +1,10 @@
 import {
   VacancyHeader,
   Articles,
-  Map,
   Application,
   ArticleContent,
   Recruiters,
+  OfficesMap,
 } from 'components';
 import { SectionGroup } from 'containers';
 import { Container, GreyContainer } from './styles';
@@ -18,7 +18,6 @@ const Vacancy = ({ data, back }) => {
       </GreyContainer>
 
       <Container>
-        {console.log(content)}
         <ArticleContent content={content} />
       </Container>
 
@@ -28,9 +27,9 @@ const Vacancy = ({ data, back }) => {
         <SectionGroup>
           <Recruiters data={data.recruiters} back={back.recruiters} decor />
         </SectionGroup>
-        <SectionGroup>
-          <Map data={data.map} />
-        </SectionGroup>
+      </Container>
+      <OfficesMap data={data.map} />
+      <Container>
         <SectionGroup>
           <Articles type="vacancy" data={data.vacancies} />
         </SectionGroup>

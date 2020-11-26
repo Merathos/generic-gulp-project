@@ -1342,7 +1342,27 @@ export default {
     },
     map: {
       title: `Офисы на карте`,
-      coords: ``,
+      zoom: 12,
+      center: {
+        lat: 59.908,
+        lng: 30.348,
+      },
+      markers: [
+        {
+          id: 723,
+          coordinates: {
+            lat: 59.9119,
+            lng: 30.2764,
+          },
+        },
+        {
+          id: 265,
+          coordinates: {
+            lat: 59.9017,
+            lng: 30.4299,
+          },
+        },
+      ],
     },
   },
   contacts: {

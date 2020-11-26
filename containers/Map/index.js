@@ -24,7 +24,7 @@ const Map = ({ data: { center, markers, zoom } }) => {
                 geometry={[marker.coordinates.lat, marker.coordinates.lng]}
                 options={{
                   iconLayout: 'default#image',
-                  iconImageHref: 'icons/map-marker.svg',
+                  iconImageHref: '/icons/map-marker.svg',
                   iconImageSize: [43, 60],
                   iconImageOffset: [-21.5, -60],
                 }}
