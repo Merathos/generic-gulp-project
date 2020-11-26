@@ -23,9 +23,10 @@ const Map = ({
             wayPointVisible: false,
             routeActiveMarkerVisible: false,
             routeOpenBalloonOnClick: false,
-            routeActiveStrokeWidth: 8,
+            routeActiveStrokeWidth: 7,
             routeActivePedestrianSegmentStrokeStyle: 'solid',
             routeActivePedestrianSegmentStrokeColor: route.color,
+            opacity: 1,
           }
         );
 
@@ -39,7 +40,7 @@ const Map = ({
       <YMaps
         query={{
           load: 'package.full',
-          apikey: '61fd3e3c-cb48-4eac-aa7d-01729008e940',
+          apikey: 'cf856e76-b8bc-4d46-8e01-396fe94b6909',
         }}
       >
         <Mapcomp

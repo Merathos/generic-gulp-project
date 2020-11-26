@@ -18,6 +18,11 @@ export const Grid = styled.div`
     grid-row-gap: 33px;
   }
 
+  @media (max-width: 725px) {
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
   @media (max-width: 420px) {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }

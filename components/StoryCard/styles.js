@@ -32,6 +32,10 @@ export const Wrapper = styled.a`
       left: unset;
       right: 144px;
     }
+
+    @media (max-width: 350px) {
+      right: 114px;
+    }
   }
 
   &:hover::after {
