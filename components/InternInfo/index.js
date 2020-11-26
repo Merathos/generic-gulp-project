@@ -14,7 +14,7 @@ const InternInfo = ({ data }) => {
           ))}
         </S.List>
       </div>
-      <SidebarArticle type="image" data={sidebar} />
+      <SidebarArticle type="image" data={sidebar} isInternship />
     </S.Container>
   );
 };

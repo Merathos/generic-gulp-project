@@ -4,15 +4,15 @@ import { Subtitle, TitleH2 } from 'elements';
 export const Text = styled(Subtitle)`
   margin-bottom: 37px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 30px;
   }
 `;
 
 export const Element = styled.div`
   margin-right: 20px;
-  width: 461px;
-  padding-right: 130px;
+  width: 470px;
+  padding-right: 120px;
   position: relative;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -24,14 +24,16 @@ export const Element = styled.div`
     height: 2px;
     background-color: #2f8ed9;
     top: 10px;
-    right: 0;
+    right: 10px;
 
-    @media (max-width: 420px) {
+    @media (max-width: 768px) {
       width: 228px;
+      right: 0;
+      top: 6px;
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     margin-right: 15px;
     padding-right: 30px;
     width: 255px;
@@ -41,16 +43,16 @@ export const Element = styled.div`
 export const Section = styled.div`
   position: relative;
   width: 100%;
-  padding: 160px 0;
-  padding-bottom: 55px;
+  padding: 160px 0 120px;
+  background-color: #f7f8f9;
 
   .swiper-container {
     overflow: visible;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     width: 320px;
-    padding: 80px 0;
+    padding: 80px 0 34px;
   }
 `;
 
@@ -62,13 +64,13 @@ export const Number = styled.span`
   color: #2f8ed9;
   z-index: 444;
   margin-bottom: 40px;
-  background-color: ${props => props.background || '#fff'};
+  background-color: #f7f8f9;
   padding-right: 20px;
   width: 20px;
 
-  @media screen and (max-width: 420px) {
-    width: 301px;
-    margin-right: 12px;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 34px;
   }
 `;
 
@@ -76,9 +78,9 @@ export const Title = styled.p`
   font-weight: bold;
   font-size: 18px;
   line-height: 120%;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     font-size: 16px;
     line-height: 120%;
     margin-bottom: 8px;
@@ -89,8 +91,8 @@ export const H2 = styled(TitleH2)`
   max-width: 720px;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 50px;
   }
 `;
 
@@ -117,7 +119,11 @@ export const PrevButton = styled.button`
     fill: #53b443;
   }
 
-  @media (max-width: 910px) {
+  @media (max-width: 1200px) {
+    right: 53px;
+  }
+
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -145,7 +151,11 @@ export const NextButton = styled.button`
     fill: #53b443;
   }
 
-  @media (max-width: 910px) {
+  @media (max-width: 1200px) {
+    right: 0;
+  }
+
+  @media (max-width: 1024px) {
     display: none;
   }
 `;

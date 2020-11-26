@@ -92,3 +92,6 @@ export { default as AboutHeader } from './AboutHeader';
 export { default as BlogGrid } from './BlogGrid';
 export { default as HighlightCard } from './HighlightCard';
 export { default as ColumnCard } from './ColumnCard';
+export { default as InternshipHeader } from './InternshipHeader';
+export { default as VacancyCard } from './VacancyCard';
+export { default as InternshipApplication } from './InternshipApplication';

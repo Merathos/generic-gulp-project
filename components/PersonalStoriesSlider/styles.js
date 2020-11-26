@@ -150,7 +150,7 @@ export const ImageWrapper = styled.div`
   }
 
   &:hover::after {
-    animation: 1s ease-in-out rotation;
+    animation: 2.6s linear infinite rotation;
   }
 
   @keyframes rotation {

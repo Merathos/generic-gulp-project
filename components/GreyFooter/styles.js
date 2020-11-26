@@ -43,6 +43,8 @@ export const ListContainer = styled.div`
       props.background === 'transparent' &&
       css`
         background-image: url('backgrounds/i-footer.svg');
+        background-repeat: no-repeat;
+        background-position: top right;
       `};
   }
 `;

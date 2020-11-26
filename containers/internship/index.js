@@ -1,48 +1,50 @@
 import {
   Values,
   InternVacancies,
-  GreyHeader,
+  InternshipHeader,
   GreyFooter,
   InternInfo,
   SliderVacancy,
   InternAbout,
   Gallery,
 } from 'components';
-import { SectionGroup } from 'containers';
 import {
   Container,
   GreyContainer,
   GreyWrapper,
   ValuesSection,
   VacancySection,
-  StyledApplication,
+  ApplicationSection,
+  GroupContainer,
 } from './styles';
 
-const Internship = ({ data, vacancies }) => {
+const Internship = ({ data }) => {
   return (
     <main>
-      <GreyWrapper>
+      <GreyWrapper withPicture={!!data.intro.picture}>
         <Container>
-          <GreyHeader
+          <InternshipHeader
             title={data.intro.title}
             text={data.intro.text}
             buttons={data.intro.buttons}
             picture={data.intro.picture}
             mobPicture={data.intro.mobPicture}
-            hash="internship"
+            size={data.intro.size}
           />
         </Container>
       </GreyWrapper>
 
       <Container>
-        <SectionGroup>
+        <GroupContainer>
           <InternInfo data={data.info} />
-        </SectionGroup>
-        <SectionGroup>
+        </GroupContainer>
+        <GroupContainer>
           <InternAbout data={data.about} />
-        </SectionGroup>
+        </GroupContainer>
       </Container>
+
       <Gallery data={data.gallery} />
+
       <ValuesSection>
         <Container>
           <Values data={data.values} />
@@ -51,19 +53,23 @@ const Internship = ({ data, vacancies }) => {
 
       <GreyContainer>
         <Container>
-          <SliderVacancy data={data.steps} background="#F7F8F9" />
+          <SliderVacancy data={data.steps} />
         </Container>
       </GreyContainer>
 
       <VacancySection>
         <Container>
-          <InternVacancies mock={data.vacancies} back={vacancies} />
+          <InternVacancies mock={data.vacancies} />
         </Container>
       </VacancySection>
 
-      <StyledApplication data={data.apply} />
+      <ApplicationSection data={data.apply} />
 
-      <GreyFooter data={data.greyFooter} background="transparent" />
+      <GreyFooter
+        data={data.greyFooter}
+        background="transparent"
+        type="internship"
+      />
     </main>
   );
 };

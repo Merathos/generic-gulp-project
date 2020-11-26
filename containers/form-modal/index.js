@@ -4,6 +4,7 @@ import { CustomScrollbars } from 'components';
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(32, 31, 42, 0.3)',
+    zIndex: 5,
   },
 };
 

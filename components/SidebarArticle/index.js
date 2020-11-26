@@ -13,6 +13,8 @@ import {
   Aside,
   DefaultSubtitle,
   DefaultTitle,
+  StyledSubtitle,
+  SubtitleWrapper,
 } from './styles';
 
 const SidebarArticle = props => {
@@ -20,13 +22,14 @@ const SidebarArticle = props => {
     data: { title, subtitle, description, text, button, icon, picture, link },
     type,
     fromEditor,
+    isInternship = false,
   } = props;
   return (
     <>
       {
         {
-          'icon': (
-            <SectionIcon>
+          icon: (
+            <SectionIcon isInternship={isInternship}>
               {fromEditor ? (
                 <>
                   <StyledIcon name={26} />
@@ -35,15 +38,16 @@ const SidebarArticle = props => {
                 </>
               ) : (
                 <>
-                  <StyledIcon name={icon} />
-                  <H5>{title}</H5>
-                  <Subtitle>{description}</Subtitle>
+                  <StyledIcon name={icon} isInternship={isInternship} />
+                  <H5 isInternship={isInternship}>{title}</H5>
+                  <StyledSubtitle isInternship={isInternship}>
+                    {description}
+                  </StyledSubtitle>
                 </>
-              )
-              }
+              )}
             </SectionIcon>
           ),
-          'default': (
+          default: (
             <Section>
               {fromEditor ? (
                 <>
@@ -68,19 +72,25 @@ const SidebarArticle = props => {
               )}
             </Section>
           ),
-          'button': (
+          button: (
             <SectionButton>
               <Text>{text}</Text>
               <Button type="accent">{button}</Button>
             </SectionButton>
           ),
-          'image': (
-            <Aside>
-              <Image src={picture} alt={title} />
-              <Title>{title}</Title>
-              <Subtitle>{text}</Subtitle>
+          image: (
+            <Aside isInternship={isInternship}>
+              <Image
+                src={picture}
+                alt={title}
+                isInternship={isInternship}
+                width="143"
+                height="143"
+              />
+              <Title isInternship={isInternship}>{title}</Title>
+              <SubtitleWrapper isInternship>{text}</SubtitleWrapper>
             </Aside>
-          )
+          ),
         }[type]
       }
     </>
