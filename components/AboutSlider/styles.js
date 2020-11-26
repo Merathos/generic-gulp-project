@@ -20,6 +20,7 @@ export const Section = styled.section`
 
   @media screen and (max-width: 420px) {
     .swiper-container {
+      margin-left: 30px;
       padding-left: 0;
     }
   }
@@ -44,10 +45,6 @@ export const Element = styled.div`
 
     &:first-child {
       padding-left: 0;
-    }
-
-    &.swiper-slide-active {
-      padding-left: 30px !important;
     }
   }
 `;

@@ -17,6 +17,10 @@ export const Element = styled.div`
   box-sizing: border-box;
   flex-shrink: 0;
 
+  &:last-of-type {
+    margin-right: 0;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -51,7 +55,6 @@ export const Section = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 320px;
     padding: 80px 0 34px;
   }
 `;
