@@ -7,8 +7,8 @@ import {
   Map,
 } from 'components';
 import { SectionGroup } from 'containers';
-import { Main, Container, GreyContainer } from './styles';
 import Router from 'next/router';
+import { Main, Container, GreyContainer } from './styles';
 
 const handleVacanciesClick = () => {
   Router.push({
