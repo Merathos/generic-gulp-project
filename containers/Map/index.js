@@ -1,18 +1,23 @@
 import { Map as Mapcomp, Placemark, YMaps } from 'react-yandex-maps';
 import { useEffect, useState } from 'react';
 
-const Map = ({ data: { center, markers, zoom } }) => {
+const Map = ({ data: { center, markers, zoom, controls, behaviors } }) => {
   const initialWidth = useWindowWidth();
 
   return (
     <>
-      <YMaps query={{ load: 'package.full' }}>
+      <YMaps
+        query={{
+          load: 'package.full',
+        }}
+      >
         <Mapcomp
           className={'map-container'}
           state={{
             center: [center.lat, center.lng],
             zoom: initialWidth > 768 ? zoom : zoom - 1,
-            controls: [],
+            controls,
+            behaviors,
           }}
           modules={['layout.Image']}
           options={{ suppressMapOpenBlock: true }}

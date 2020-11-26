@@ -936,6 +936,8 @@ export default {
           },
         },
       ],
+      controls: [],
+      behaviors: ['default'],
     },
     greyFooter: [
       {
@@ -1363,6 +1365,8 @@ export default {
           },
         },
       ],
+      controls: [],
+      behaviors: ['default'],
     },
   },
   contacts: {
@@ -1415,6 +1419,22 @@ export default {
             от наб. Канала Грибоедова д. 56.`,
           },
         ],
+        zoom: 15,
+        center: {
+          lat: 59.907,
+          lng: 30.279,
+        },
+        markers: [
+          {
+            id: 723,
+            coordinates: {
+              lat: 59.9119,
+              lng: 30.2764,
+            },
+          },
+        ],
+        controls: ['zoomControl'],
+        behaviors: ['dblClickZoom', 'drag', 'multiTouch'],
       },
       {
         title: `Офис на проспекте Обуховской Обороны`,
@@ -1427,6 +1447,29 @@ export default {
             subtitle: `Можно добраться пешком за 10 минут.`,
           },
         ],
+        zoom: 12,
+        center: {
+          lat: 59.908,
+          lng: 30.348,
+        },
+        markers: [
+          {
+            id: 723,
+            coordinates: {
+              lat: 59.9119,
+              lng: 30.2764,
+            },
+          },
+          {
+            id: 265,
+            coordinates: {
+              lat: 59.9017,
+              lng: 30.4299,
+            },
+          },
+        ],
+        controls: ['zoomControl'],
+        behaviors: ['dblClickZoom', 'drag', 'multiTouch'],
       },
     ],
   },

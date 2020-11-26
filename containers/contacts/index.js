@@ -1,4 +1,4 @@
-import { GreyHeader, Map } from 'components';
+import { GreyHeader, OfficesMap } from 'components';
 import { SectionGroup } from 'containers';
 import { Main, Container, GreyContainer } from './styles';
 
@@ -15,14 +15,9 @@ const Contacts = ({ data }) => {
           />
         </Container>
       </GreyContainer>
-
-      <Container>
-        {data.offices.map((el, i) => (
-          <SectionGroup key={i}>
-            <Map key={i} data={el} twoColumns />
-          </SectionGroup>
-        ))}
-      </Container>
+      {data.offices.map((el, i) => (
+        <OfficesMap key={i} data={el} isContacts />
+      ))}
     </Main>
   );
 };
