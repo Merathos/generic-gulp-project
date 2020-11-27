@@ -687,7 +687,7 @@ export default {
         ],
         picture: `/images/about-details.png`,
         video: {
-          src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
+          src: `https://www.youtube.com/watch?v=7koWVT4kyfk`,
           srcPoster: `/images/about-details.png`,
         },
       },
