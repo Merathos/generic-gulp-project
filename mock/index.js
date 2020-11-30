@@ -1572,6 +1572,7 @@ export default {
     },
     nimaxText: 'Сделали в',
     producersText: 'Дизайн и разработка',
+    producersLink: `https://www.nimax.ru/`,
   },
   main: {
     intro: {

@@ -7,6 +7,9 @@ import mock from 'mock/index';
 
 const Wrapper = styled.div`
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledArrowLeft = styled.div`
@@ -59,6 +62,7 @@ const Layout = ({
   anchor = false,
   hideHav = false,
   isAbout = false,
+  greyHeader = true,
 }) => {
   return (
     <Wrapper>
@@ -67,6 +71,7 @@ const Layout = ({
         plain={plainHeader}
         anchor={anchor}
         hideHav={hideHav}
+        greyHeader={greyHeader}
       />
       {children}
       {isVisible && <SocialSticker data={mock.socialSticker} />}

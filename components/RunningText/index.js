@@ -18,15 +18,18 @@ const RunningText = ({ data }) => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
-  const animate = useCallback(time => {
-    if (previousTimeRef.current !== undefined && isHovered === false) {
-      setStep(prevStep =>
-        prevStep <= endOffset ? startOffset : prevStep - 0.02
-      );
-    }
-    previousTimeRef.current = time;
-    requestRef.current = requestAnimationFrame(animate);
-  }, []);
+  const animate = useCallback(
+    time => {
+      if (previousTimeRef.current !== undefined && isHovered === false) {
+        setStep(prevStep =>
+          prevStep <= endOffset ? startOffset : prevStep - 0.02
+        );
+      }
+      previousTimeRef.current = time;
+      requestRef.current = requestAnimationFrame(animate);
+    },
+    [isHovered]
+  );
 
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);

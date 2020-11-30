@@ -7,7 +7,8 @@ const Footer = ({
     labour: { link, text },
     social,
     copyright,
-    nimaxText,
+    producersText,
+    producersLink,
   },
   grey,
   smallPadding,
@@ -28,8 +29,10 @@ const Footer = ({
     <Social grey={grey} links={social} />
     {nimax && (
       <S.Block>
-        <S.Span>{nimaxText}</S.Span>
-        <LogoNimax />
+        <S.Span>{producersText}</S.Span>
+        <S.ProducerLink href={producersLink}>
+          <LogoNimax />
+        </S.ProducerLink>
       </S.Block>
     )}
   </S.StyledFooter>
