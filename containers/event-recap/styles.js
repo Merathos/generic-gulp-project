@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { TitleH2 } from 'elements';
+import { MarkerList } from 'components';
 
 export const Section = styled.section`
   margin-bottom: 160px;
@@ -54,4 +55,8 @@ export const SliderContainer = styled.div`
     margin-top: 65px;
     margin-right: -30px;
   }
+`;
+
+export const StyledMarkerList = styled(MarkerList)`
+  padding-left: 20px;
 `;

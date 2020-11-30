@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Subtitle } from 'elements';
 
 export const Container = styled.ul`
   display: flex;
@@ -29,6 +30,11 @@ export const Item = styled.li`
   @media screen and (max-width: 420px) {
     &:not(:last-child) {
       margin-right: 14px;
+    }
   }
-  }
+`;
+
+export const StyledSubtitle = styled(Subtitle)`
+  font-size: 16px;
+  line-height: 21px;
 `;

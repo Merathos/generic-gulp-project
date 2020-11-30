@@ -21,7 +21,7 @@ const Vacancy = ({ data, back }) => {
         <ArticleContent content={content} />
       </Container>
 
-      <Application data={data.application} decor />
+      <Application data={data.application} decor vacancy={true} />
 
       <Container>
         <SectionGroup>

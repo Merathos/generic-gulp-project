@@ -7,6 +7,7 @@ const Application = ({
   type,
   handleVacanciesClick,
   className,
+  vacancy,
 }) => {
   const english = useSelector(state => state.english);
   const { text, picture } = data;
@@ -20,8 +21,8 @@ const Application = ({
   }
   return (
     <S.Section className={className}>
-      <S.Wrapper decor={decor} type={type}>
-        <S.H2>{english ? 'Apply' : data.title}</S.H2>
+      <S.Wrapper decor={decor} type={type} vacancy={vacancy}>
+        <S.H2 vacancy={vacancy}>{english ? 'Apply' : data.title}</S.H2>
         {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
         <S.StyledButton
           type="accent"

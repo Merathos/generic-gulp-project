@@ -1,5 +1,4 @@
 import { GreyHeader, OfficesMap } from 'components';
-import { SectionGroup } from 'containers';
 import { Main, Container, GreyContainer } from './styles';
 
 const Contacts = ({ data }) => {
@@ -12,6 +11,7 @@ const Contacts = ({ data }) => {
             text={data.mainTitle.text}
             list={data.mainTitle.list}
             twoColumns
+            isContacts
           />
         </Container>
       </GreyContainer>

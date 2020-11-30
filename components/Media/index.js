@@ -28,6 +28,8 @@ const Media = props => {
         <img
           src={`https://api.develop.dins.d.nimax.ru/${file.url}`}
           alt={caption}
+          width="200"
+          height="100"
         />
       ) : (
         <VideoContainer isAbout={isAbout}>

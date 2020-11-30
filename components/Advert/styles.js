@@ -64,6 +64,7 @@ export const StyledText = styled.p`
 
 export const H3 = styled(TitleH3)`
   margin-bottom: 20px;
+  font-weight: 700;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 14px;

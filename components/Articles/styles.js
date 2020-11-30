@@ -18,22 +18,23 @@ export const Block = styled.div`
 
   &::before {
     content: '';
-    width: 480px;
-    height: 530px;
+    width: 313px;
+    height: 532px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10%;
+    left: -10%;
     z-index: 2;
-    background-color: red;
-    background-image: url('backgrounds/vacancy-bottom.png');
+    background-image: url('/backgrounds/vacanccy-category.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   @media screen and (max-width: 1024px) {
     padding-left: 0;
-  }
 
-  &::before {
-    display: none;
+    &::before {
+      display: none;
+    }
   }
 `;
 
@@ -50,6 +51,7 @@ export const AdvertsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 90px;
+  grid-row-gap: 50px;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;

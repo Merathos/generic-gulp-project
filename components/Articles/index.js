@@ -6,12 +6,12 @@ const Articles = props => {
   const english = useSelector(state => state.english);
   const { data, type } = props;
   return (
-    <Container>
+    <>
       {type === 'article' ? (
-        <>
+        <Container>
           <NoteLeft data={data[0]} />
           <NoteRight data={data[1]} />
-        </>
+        </Container>
       ) : (
         <Block>
           <H2>
@@ -25,7 +25,7 @@ const Articles = props => {
           </AdvertsWrapper>
         </Block>
       )}
-    </Container>
+    </>
   );
 };
 
