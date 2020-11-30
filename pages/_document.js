@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="ru">
         <Head>
           <link rel="font" href="/fonts/TTNorms-Medium.woff" as="font" />
           <link rel="font" href="/fonts/TTNorms-Medium.eot" as="font" />

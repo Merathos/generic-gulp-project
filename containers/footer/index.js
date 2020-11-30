@@ -30,7 +30,10 @@ const Footer = ({
     {nimax && (
       <S.Block>
         <S.Span>{producersText}</S.Span>
-        <S.ProducerLink href={producersLink}>
+        <S.ProducerLink
+          href={producersLink}
+          aria-label="Digital-агентство Nimax"
+        >
           <LogoNimax />
         </S.ProducerLink>
       </S.Block>

@@ -67,7 +67,10 @@ const OpenedMenu = ({ onMenuClose }) => {
           </S.CopyrightContactsBlock>
           <S.Producer>
             <S.Span>{mock.footer.producersText}</S.Span>
-            <S.ProducerLink href={mock.footer.producersLink}>
+            <S.ProducerLink
+              href={mock.footer.producersLink}
+              aria-label="Digital-агентство Nimax"
+            >
               <LogoNimax />
             </S.ProducerLink>
           </S.Producer>
