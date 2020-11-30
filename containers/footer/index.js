@@ -13,13 +13,13 @@ const Footer = ({
   smallPadding,
   nimax,
   isVisible,
-  isAbout,
+  smallIndent,
 }) => (
   <S.StyledFooter
     grey={grey}
     smallPadding={smallPadding}
     isVisible={isVisible}
-    isAbout={isAbout}
+    smallIndent={smallIndent}
   >
     <S.Container>
       <S.FooterText>{copyright}</S.FooterText>

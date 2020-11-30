@@ -24,7 +24,7 @@ export const StyledFooter = styled.footer`
   }
 
   ${props =>
-    props.isAbout &&
+    props.smallIndent &&
     css`
       padding-top: 150px;
 
