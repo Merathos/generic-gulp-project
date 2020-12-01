@@ -37,7 +37,7 @@ const OpenedMenu = ({ onMenuClose }) => {
   return (
     <S.Wrapper>
       <S.Container>
-        <S.Button aria-label="Menu" onClick={onMenuClose}>
+        <S.Button aria-label="Menu" onClick={onMenuClose} type="button">
           <MenuClose />
         </S.Button>
         <S.Menu>
@@ -57,7 +57,7 @@ const OpenedMenu = ({ onMenuClose }) => {
         <S.Contacts>
           <ContactsList data={mock.headerMenu} />
           <S.Socials>
-            <Social links={mock.footer.social} carryover={true} />
+            <Social links={mock.footer.social} noMargin />
           </S.Socials>
           <S.CopyrightContactsBlock>
             <S.Copyright>{mock.footer.copyright}</S.Copyright>
@@ -67,7 +67,12 @@ const OpenedMenu = ({ onMenuClose }) => {
           </S.CopyrightContactsBlock>
           <S.Producer>
             <S.Span>{mock.footer.producersText}</S.Span>
-            <LogoNimax />
+            <S.ProducerLink
+              href={mock.footer.producersLink}
+              aria-label="Digital-агентство Nimax"
+            >
+              <LogoNimax />
+            </S.ProducerLink>
           </S.Producer>
         </S.Contacts>
       </S.Container>

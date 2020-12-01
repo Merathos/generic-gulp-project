@@ -42,15 +42,15 @@ export const Menu = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    padding-top: 30px;
+    padding-top: 25px;
     padding-left: 30px;
   }
 `;
 
 export const Button = styled.button`
   position: absolute;
-  top: 42px;
-  right: 38px;
+  top: 33px;
+  right: 42px;
   display: flex;
   z-index: 20;
   align-items: center;
@@ -59,25 +59,32 @@ export const Button = styled.button`
   height: 30px;
   border: none;
   background-color: transparent;
-  transition: opacity 0.3s ease;
+
+  svg > * {
+    transition: fill 0.3s ease;
+  }
 
   &:hover {
-    opacity: 0.8;
+    svg > * {
+      fill: #53b443;
+    }
   }
 
   &:active {
-    opacity: 0.6;
+    svg > * {
+      fill: #53b443;
+    }
   }
 
   @media screen and (max-width: 420px) {
-    top: 30px;
+    top: 24px;
     right: 23px;
   }
 `;
 
 export const StyledLogo = styled(Logo)`
-  width: 85px;
-  height: 26px;
+  width: 86px;
+  height: 25px;
   margin-bottom: 130px;
   margin-right: 50px;
   transition: opacity 0.3s ease;
@@ -268,5 +275,19 @@ export const Span = styled.span`
   @media screen and (max-width: 900px) {
     font-size: 10px;
     line-height: 12px;
+  }
+`;
+
+export const ProducerLink = styled.a`
+  display: inline-block;
+  line-height: 100%;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 `;

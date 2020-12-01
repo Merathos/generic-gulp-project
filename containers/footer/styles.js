@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  padding: 220px 46px 46px;
-  padding-top: 190px;
+  padding: 186px 46px 40px;
+  margin-top: auto;
   display: flex;
   align-items: flex-end;
-  background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
   justify-content: space-between;
+  background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
 
   ${props =>
     props.smallPadding &&
@@ -16,11 +16,21 @@ export const StyledFooter = styled.footer`
       }
     `};
 
-  @media screen and (max-width: 768px) {
-    padding: ${props => (props.isVisible ? '26px 0 50px 0' : '120px 0 50px 0')};
+  @media screen and (max-width: 1440px) {
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: ${props =>
+      props.isVisible ? '26px 60px 50px 60px' : '120px 60px 50px 60px'};
     flex-direction: column-reverse;
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: ${props =>
+      props.isVisible ? '26px 60px 50px 60px' : '124px 30px 40px 30px'};
   }
 
   ${props =>
@@ -35,11 +45,20 @@ export const StyledFooter = styled.footer`
 `;
 
 export const Container = styled.div`
+  flex-shrink: 0;
   width: 265px;
+  margin-right: 240px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
+    margin-right: 120px;
+  }
+
+  @media (max-width: 1024px) {
     margin-right: 0;
-    margin-top: 20px;
+    margin-top: 22px;
+    margin-bottom: 40px;
+    width: 90%;
+    text-align: left;
   }
 `;
 
@@ -50,40 +69,70 @@ export const FooterText = styled.p`
   opacity: 0.5;
   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin-bottom: 12px;
-    text-align: center;
-  }
-`;
-
-export const Button = styled.button`
-  border: none;
-  background-color: transparent;
-  color: #fb5235;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 120%;
-
-  @media (max-width: 768px) {
-    display: none;
+    font-size: 10px;
   }
 `;
 
 export const Link = styled.a`
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 14px;
   line-height: 144.2%;
+
+  @media (max-width: 1024px) {
+    font-size: 10px;
+  }
 `;
 
 export const Span = styled.span`
   font-size: 12px;
   line-height: 18px;
   opacity: 0.6;
-  margin-right: 6px;
+  margin-right: 10px;
+
+  @media (max-width: 1024px) {
+    font-size: 10px;
+    line-height: 120%;
+  }
+`;
+
+export const ProducerLink = styled.a`
+  display: inline-block;
+  line-height: 100%;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (max-width: 1024px) {
+    svg {
+      width: 56px;
+      height: 24px;
+    }
+  }
 `;
 
 export const Block = styled.div`
-  @media (max-width: 768px) {
-    display: none;
+  display: flex;
+  align-items: flex-end;
+  min-width: 175px;
+  margin-bottom: 10px;
+
+  @media (max-width: 1440px) {
+    margin-left: auto;
+  }
+
+  @media (max-width: 1024px) {
+    order: -1;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
   }
 `;

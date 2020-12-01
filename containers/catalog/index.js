@@ -232,48 +232,50 @@ const VacanciesList = ({ data: mock, back }) => {
   );
 
   return (
-    <S.Container>
-      <S.Grid>
-        {initialWidth > 768 ? (
-          renderAside()
-        ) : (
-          <S.FilterWrapper active={!hidden}>
-            <>
-              <S.FilterTitle
-                active={!hidden}
-                onClick={() => handleOpenFilter()}
-                type="button"
-              >
-                {hidden ? 'Открыть фильтр' : 'Закрыть фильтр'}
-              </S.FilterTitle>
-              {!hidden && renderAside()}
-            </>
-          </S.FilterWrapper>
-        )}
+    <S.Main>
+      <S.Container>
+        <S.Grid>
+          {initialWidth > 768 ? (
+            renderAside()
+          ) : (
+            <S.FilterWrapper active={!hidden}>
+              <>
+                <S.FilterTitle
+                  active={!hidden}
+                  onClick={() => handleOpenFilter()}
+                  type="button"
+                >
+                  {hidden ? 'Открыть фильтр' : 'Закрыть фильтр'}
+                </S.FilterTitle>
+                {!hidden && renderAside()}
+              </>
+            </S.FilterWrapper>
+          )}
 
-        <S.Article>
-          <S.Title>{mock.mainTitle}</S.Title>
-          <Search
-            placeholder={mock.search}
-            handleSearch={search => handleSearch(search)}
-            initialValue={router.query.search}
-          />
-          <Tags
-            handleChangeFilter={el => handleClearTags(el)}
-            handleChangeCategory={handleClearCategoryTag}
-          />
-        </S.Article>
-        {initialWidth <= 768 && (
-          <S.Resume>
-            <S.ResumeLink href={mock.article.href}>
-              {mock.article.linkText}
-            </S.ResumeLink>
-            {mock.article.plainText}
-          </S.Resume>
-        )}
-        <Cards data={back} type="vacancies" />
-      </S.Grid>
-    </S.Container>
+          <S.Article>
+            <S.Title>{mock.mainTitle}</S.Title>
+            <Search
+              placeholder={mock.search}
+              handleSearch={search => handleSearch(search)}
+              initialValue={router.query.search}
+            />
+            <Tags
+              handleChangeFilter={el => handleClearTags(el)}
+              handleChangeCategory={handleClearCategoryTag}
+            />
+          </S.Article>
+          {initialWidth <= 768 && (
+            <S.Resume>
+              <S.ResumeLink href={mock.article.href}>
+                {mock.article.linkText}
+              </S.ResumeLink>
+              {mock.article.plainText}
+            </S.Resume>
+          )}
+          <Cards data={back} type="vacancies" />
+        </S.Grid>
+      </S.Container>
+    </S.Main>
   );
 };
 
