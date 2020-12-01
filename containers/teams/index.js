@@ -10,7 +10,7 @@ const Teams = ({ data }) => {
       <List>
         {data.map((team, index) => (
           <ListItem key={index}>
-            <TeamCard data={team} isMain={true} />
+            <TeamCard data={team} />
           </ListItem>
         ))}
       </List>

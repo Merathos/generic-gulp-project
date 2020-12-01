@@ -68,9 +68,13 @@ const TeamList = ({ mock, back }) => {
           </S.Aside>
           <S.Article>
             <S.Title>{mock.mainTitle}</S.Title>
-            <Tags handleChangeFilter={el => handleClearTags(el)} />
+            {filterArray.length > 0 && (
+              <Tags handleChangeFilter={el => handleClearTags(el)} />
+            )}
           </S.Article>
-          <Cards data={back} type="teams" />
+          <S.CardsWrapper>
+            <Cards data={back} type="teams" />
+          </S.CardsWrapper>
         </S.Grid>
       </S.Container>
     </S.Main>
