@@ -5,7 +5,7 @@ const routeMap = {
   'О компании': '/about',
   'IT Evenings': '/events',
   Команды: '/teams',
-  Блог: '/blog/articles/svoboda-vybirat',
+  Блог: '/blog-list',
   Вакансии: '/vacancies',
   Релокация: '/relocation',
   Стажировки: '/internship',

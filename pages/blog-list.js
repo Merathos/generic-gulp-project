@@ -3,7 +3,7 @@ import mock from 'mock/index';
 
 const BlogList = () => {
   return (
-    <Layout isVisible={false}>
+    <Layout isVisible={false} greyHeader={false}>
       <Blogs data={mock.blogList} />
     </Layout>
   );

@@ -8,17 +8,24 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const StyledHeader = styled.header`
-  padding: 34px 45px;
+  padding: 34px 48px 34px 45px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   background-image: ${props =>
     props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
   background-repeat: no-repeat;
   background-position: 40% top;
-  position: absolute;
+  background-color: ${props => (props.greyHeader ? '#f7f8f9' : '#ffffff')};
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 5;
   box-sizing: border-box;
+
+  .guidingLogo {
+    max-height: 25px;
+  }
 
   ${props =>
     props.anchor &&
@@ -32,7 +39,7 @@ const StyledHeader = styled.header`
     `};
 
   @media (max-width: 420px) {
-    padding: 30px;
+    padding: 25px 30px 30px;
     align-items: center;
     background-size: 200px;
     background-position: 50% top;
@@ -40,8 +47,8 @@ const StyledHeader = styled.header`
 `;
 
 const StyledLogo = styled(Logo)`
-  width: 85px;
-  height: 26px;
+  width: 86px;
+  height: 25px;
   transition: opacity 0.3s ease;
 
   ${props =>
@@ -66,15 +73,22 @@ const Button = styled.button`
   background-color: transparent;
   width: 33px;
   height: 25px;
-  margin-left: 102px;
-  transition: opacity 0.3s ease;
+  margin-left: 100px;
+
+  svg > * {
+    transition: fill 0.3s ease;
+  }
 
   &:hover {
-    opacity: 0.8;
+    svg > * {
+      fill: #53b443;
+    }
   }
 
   &:active {
-    opacity: 0.6;
+    svg > * {
+      fill: #53b443;
+    }
   }
 `;
 
@@ -102,23 +116,24 @@ const Nav = styled.nav`
 
 const List = styled.ul`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const Element = styled.li`
-  margin-left: 40px;
+  margin-left: 42px;
 `;
 
-const Header = ({ data: links, plain, anchor, hideHav }) => {
+const Header = ({ data: links, plain, anchor, hideHav, greyHeader }) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
-    <StyledHeader plain={plain} anchor={anchor}>
+    <StyledHeader plain={plain} anchor={anchor} greyHeader={greyHeader}>
       {router.pathname === '/' ? (
         <StyledLogo />
       ) : (
         <Link href="/" passHref>
-          <a aria-label="To the main page">
+          <a aria-label="To the main page" className="guidingLogo">
             <StyledLogo guiding="guiding" />
           </a>
         </Link>
@@ -133,6 +148,7 @@ const Header = ({ data: links, plain, anchor, hideHav }) => {
         </List>
       </Nav>
       <Button
+        type="button"
         aria-label="Menu"
         onClick={() => {
           setMenuOpen(true);
