@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Features } from 'components';
-import { Section, H3, StyledText, Arrow } from './styles';
 import ArrowRight from 'public/icons/arrow-right.svg';
+import { Section, H3, StyledText, Arrow } from './styles';
 
-const Advert = props => {
+const Advert = ({
+  data: {
+    name,
+    descr,
+    is_english_speaking_team,
+    is_relocation,
+    is_internship,
+    slug,
+  },
+}) => {
   const [hover, setHovered] = useState(false);
-  const {
-    data: {
-      name,
-      descr,
-      is_english_speaking_team,
-      is_relocation,
-      is_internship,
-      slug,
-    },
-  } = props;
 
   let features = [];
 
@@ -45,9 +44,9 @@ const Advert = props => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {features.length !== 0 && <Features data={features} />}
-        <H3>{name}</H3>
-        <StyledText>{descr}</StyledText>
+        {features && features.length > 0 && <Features data={features} />}
+        {name && <H3>{name}</H3>}
+        {descr && <StyledText>{descr}</StyledText>}
         <Arrow>
           <ArrowRight />
         </Arrow>

@@ -6,11 +6,14 @@ const Cards = props => {
   return (
     <section>
       <List type={type}>
-        {data.map((el, i) => (
-          <ListItem key={i}>
-            {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}
-          </ListItem>
-        ))}
+        {data.map((el, i) => {
+          if (!el) return false;
+          return (
+            <ListItem key={i}>
+              {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}
+            </ListItem>
+          );
+        })}
       </List>
     </section>
   );

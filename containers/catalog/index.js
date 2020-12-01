@@ -1,9 +1,9 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
-import { Dropdown } from 'components';
+import { Dropdown, Cards, SidebarArticle, Tags } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
-import { Cards, SidebarArticle, Tags } from 'components';
+
 import { Search } from 'forms';
 import { getNewTags } from 'helpers';
 import * as S from './styles';
@@ -199,7 +199,7 @@ const VacanciesList = ({ data: mock, back }) => {
               opened={opened === el.title}
               handleChangeCheckbox={e => handleCheckbox(e)}
               handleChangeRadio={e => handleCategories(e)}
-              withBg={true}
+              withBg
             />
           ))}
         </S.List>
