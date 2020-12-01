@@ -30,6 +30,7 @@ export const DefaultSubtitle = styled(Subtitle)`
 
 export const H5 = styled(TitleH5)`
   margin-bottom: 12px;
+  font-weight: 700;
 
   @media screen and (max-width: 420px) {
     ${props =>

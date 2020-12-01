@@ -3,7 +3,7 @@ import mock from 'mock/index';
 
 const internshipPage = () => {
   return (
-    <Layout isVisible={false} plainHeader={true}>
+    <Layout isVisible={false} plainHeader={true} smallIndent>
       <Internship data={mock.internship} />
     </Layout>
   );

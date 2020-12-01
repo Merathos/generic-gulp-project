@@ -85,6 +85,7 @@ export const Inscription = styled.p`
 
 export const H3 = styled(TitleH3)`
   margin-bottom: 20px;
+  font-weight: 700;
 
   @media screen and (max-width: 768px) {
     line-height: 130%;
