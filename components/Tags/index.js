@@ -6,6 +6,10 @@ const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   min-height: 32px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const Element = styled.li`

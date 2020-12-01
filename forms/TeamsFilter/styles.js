@@ -13,7 +13,7 @@ export const Title = styled.h3.attrs(props => ({
   width: 100%;
   font-weight: 500;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     cursor: pointer;
 
     &::after {
@@ -97,6 +97,22 @@ export const List = styled.ul`
   scrollbar-width: thin;
   scrollbar-color: #53b443 #f7f8f9;
 
+  &::before {
+    content: '';
+    width: 100%;
+    height: 24px;
+    position: absolute;
+    top: -16px;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(
+      360deg,
+      #ffffff 49.12%,
+      rgba(255, 255, 255, 0) 121.93%
+    );
+    transform: rotate(-180deg);
+  }
+
   &::after {
     content: '';
     width: 100%;
@@ -112,8 +128,12 @@ export const List = styled.ul`
     );
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: ${props => (props.active ? 'block' : 'none')};
+
+    &::before {
+      display: none;
+    }
 
     &::after {
       background: linear-gradient(
@@ -131,9 +151,10 @@ export const List = styled.ul`
 `;
 
 export const ResetButtonWrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 26px;
+  padding-left: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     margin-top: 18px;
     display: ${props => (props.active ? 'block' : 'none')};
   }
@@ -143,7 +164,7 @@ export const Wrapper = styled.div`
   position: relative;
   padding-bottom: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     margin-left: -45px;
     margin-right: -45px;
     padding: ${props => (props.active ? '16px 45px 50px' : '16px 45px')};

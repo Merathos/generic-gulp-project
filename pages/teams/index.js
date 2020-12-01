@@ -18,7 +18,13 @@ const teamsPage = ({ teams }) => {
   }, []);
 
   return (
-    <Layout anchor={true} hideHav isVisible={false} greyHeader={false}>
+    <Layout
+      anchor={true}
+      hideHav
+      isVisible={false}
+      greyHeader={false}
+      plainHeader
+    >
       <TeamList mock={mock.teamList} back={teams} />
     </Layout>
   );

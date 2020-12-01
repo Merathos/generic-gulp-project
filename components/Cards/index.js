@@ -1,5 +1,5 @@
 import { Advert, TeamCard } from 'components';
-import { List } from './styles';
+import { List, ListItem } from './styles';
 
 const Cards = props => {
   const { data, type } = props;
@@ -7,9 +7,9 @@ const Cards = props => {
     <section>
       <List type={type}>
         {data.map((el, i) => (
-          <li key={i}>
+          <ListItem key={i}>
             {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}
-          </li>
+          </ListItem>
         ))}
       </List>
     </section>
