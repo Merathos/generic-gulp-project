@@ -17,6 +17,10 @@ export const List = styled.ul`
   @media screen and (max-width: 420px) {
     margin: 0;
   }
+
+  @media screen and (max-width: 360px) {
+    min-width: auto;
+  }
 `;
 
 export const Element = styled.li`

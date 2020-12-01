@@ -5,6 +5,7 @@ export const StyledFooter = styled.footer`
   margin-top: auto;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
 
   ${props =>
@@ -14,6 +15,10 @@ export const StyledFooter = styled.footer`
         padding-top: 120px;
       }
     `};
+
+  @media screen and (max-width: 1440px) {
+    justify-content: flex-start;
+  }
 
   @media screen and (max-width: 1024px) {
     padding: ${props =>
@@ -118,8 +123,11 @@ export const Block = styled.div`
   display: flex;
   align-items: flex-end;
   min-width: 175px;
-  margin-left: auto;
   margin-bottom: 10px;
+
+  @media (max-width: 1440px) {
+    margin-left: auto;
+  }
 
   @media (max-width: 1024px) {
     order: -1;
