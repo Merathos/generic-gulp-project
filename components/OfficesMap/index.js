@@ -4,9 +4,9 @@ import { Metro } from 'components';
 
 const OfficesMap = ({ data, isContacts }) => {
   return (
-    <S.Section>
+    <S.Section isContacts={isContacts}>
       <S.Container>
-        <S.Title>{data.title}</S.Title>
+        <S.Title isContacts={isContacts}>{data.title}</S.Title>
         {data.location && (
           <S.Wrapper>
             <S.Place>{data.location}</S.Place>

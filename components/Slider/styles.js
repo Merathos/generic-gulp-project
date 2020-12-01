@@ -83,6 +83,12 @@ export const Img = styled.img`
         width: 315px;
         height: 232px;
       }
+
+      @media screen and (max-width: 350px) {
+        max-width: 78vw;
+        height: 180px;
+        width: auto;
+      }
     `}
 `;
 
@@ -103,6 +109,10 @@ export const Title = styled.p`
         font-size: 14px;
         line-height: 18.34px;
         width: 315px;
+      }
+
+      @media screen and (max-width: 350px) {
+        width: 78vw;
       }
     `}
 `;

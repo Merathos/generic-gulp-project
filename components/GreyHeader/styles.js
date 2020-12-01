@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { TitleH3, Text, Icon, Button, SmallText } from 'elements';
+import { Text, Icon, Button, SmallText } from 'elements';
 import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const StyledSmallText = styled(SmallText)`
@@ -17,6 +17,17 @@ export const Grid = styled.div`
     padding-top: 110px;
     padding-bottom: 110px;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      padding-top: 210px;
+
+      @media (max-width: 768px) {
+        padding-top: 113px;
+        padding-bottom: 80px;
+      }
+    `};
 `;
 
 export const Wrapper = styled.article`
@@ -57,16 +68,39 @@ export const Paragraph = styled(Text)`
   @media (max-width: 768px) {
     font-size: 14px;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      margin-top: 52px;
+      margin-bottom: 164px;
+      font-size: 24px;
+      line-height: 36px;
+      max-width: 750px;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 25px;
+        margin-top: 22px;
+      }
+    `};
 `;
 
 export const Features = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
-  margin-bottom: 140px;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 1200px) {
     margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: 420px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+    margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
   }
 
   ${props =>
@@ -78,14 +112,14 @@ export const Features = styled.ul`
         grid-gap: 30px;
         margin-bottom: 30px;
       }
-    `};
 
-  @media screen and (max-width: 420px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 30px;
-    margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
-  }
+      @media screen and (max-width: 420px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 30px;
+        margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
+      }
+    `};
 `;
 
 export const Logo = styled(MagicQuadrant)`
@@ -96,19 +130,28 @@ export const Logo = styled(MagicQuadrant)`
   }
 `;
 
-export const ListTitle = styled(TitleH3)`
+export const ListTitle = styled.b`
+  display: block;
   color: #2f8ed9;
   margin-bottom: 12px;
   white-space: nowrap;
   transition: color 0.3s ease;
+  font-size: 34px;
+  line-height: 120%;
+  font-weight: 700;
 
   &:hover,
   &:active {
     color: #2079bf;
   }
 
+  @media (max-width: 768px) {
+    font-size: 22px;
+    line-height: 120%;
+  }
+
   @media screen and (max-width: 420px) {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
   }
 `;
 
@@ -120,6 +163,14 @@ export const Element = styled.li`
   @media screen and (max-width: 420px) {
     flex-direction: column;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      @media screen and (max-width: 420px) {
+        flex-direction: unset;
+      }
+    `};
 `;
 
 export const StyledIcon = styled(Icon)`
@@ -131,10 +182,17 @@ export const StyledIcon = styled(Icon)`
     margin-right: 20px;
     margin-bottom: 0;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      transform: scale(0.93);
+    `}
 `;
 
 export const StyledButton = styled(Button)`
   margin-right: 40px;
+
   @media screen and (max-width: 1024px) {
     margin-right: 0;
     margin-bottom: 20px;

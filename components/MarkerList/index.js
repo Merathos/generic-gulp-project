@@ -1,7 +1,7 @@
 import * as S from './styles';
 
 const MarkerList = props => {
-  const { data, type, inline = false } = props;
+  const { data, type, inline = false, className } = props;
   return (
     <>
       {type === 'ellipse' ? (
@@ -14,7 +14,7 @@ const MarkerList = props => {
           ))}
         </S.List>
       ) : (
-        <S.List>
+        <S.List className={className}>
           {data.map((el, i) => (
             <S.ElementNumber key={i}>
               <S.Number>{`0${i + 1}`}</S.Number>

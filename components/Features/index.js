@@ -1,5 +1,4 @@
-import { Subtitle } from 'elements';
-import { Container, Item, Icon } from './styles';
+import { Container, Item, Icon, StyledSubtitle } from './styles';
 
 const Features = ({ data }) => (
   <Container>
@@ -8,7 +7,7 @@ const Features = ({ data }) => (
         return (
           <Item key={i}>
             <Icon name={el.icon} />
-            <Subtitle>{el.title}</Subtitle>
+            <StyledSubtitle>{el.title}</StyledSubtitle>
           </Item>
         );
       }

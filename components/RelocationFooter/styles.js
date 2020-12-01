@@ -41,12 +41,11 @@ export const Container = styled.div`
 export const List = styled.ul`
   display: grid;
   max-width: 1187px;
-  grid-gap: 40px;
+  grid-gap: 97px;
   grid-template-columns: repeat(auto-fill, 330px);
-  justify-content: space-between;
 
-  @media (max-width: 1150px) {
-    justify-content: flex-start;
+  @media (max-width: 768px) {
+    grid-gap: 44px;
   }
 
   @media (max-width: 420px) {

@@ -36,13 +36,13 @@ export const GreyContainer = styled.div`
   background-image: url('backgrounds/contacts-header.png');
   background-repeat: no-repeat;
   background-position: 100% 100%;
-  margin-bottom: 60px;
+  margin-bottom: 180px;
 
   @media screen and (max-width: 1024px) {
     background-image: none;
   }
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
   }
 `;

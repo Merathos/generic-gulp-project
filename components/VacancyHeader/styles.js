@@ -25,7 +25,7 @@ export const TextBlock = styled.div`
 `;
 
 export const Bold = styled.b`
-  font-weight: 800;
+  font-weight: 700;
   margin-right: 5px;
 `;
 

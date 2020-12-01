@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   background-image: ${props =>
     props.decor ? "url('/backgrounds/application.png')" : 'none'};
   background-repeat: no-repeat;
-  background-position: 105% center;
+  background-position: 100% center;
   padding: 160px 50px 180px;
 
   ${props =>
@@ -60,6 +60,15 @@ export const Wrapper = styled.div`
     padding-left: 30px;
     padding-right: 30px;
   }
+
+  ${props =>
+    props.vacancy &&
+    css`
+      @media (max-width: 1200px) {
+        background-size: 50%;
+        background-position: 150% center;
+      }
+    `};
 `;
 
 export const StyledButton = styled(Button)`
@@ -86,6 +95,14 @@ export const H2 = styled(TitleH2)`
   max-width: 520px;
   margin-bottom: 40px;
   grid-area: a;
+
+  ${props =>
+    props.vacancy &&
+    css`
+      @media (max-width: 768px) {
+        max-width: 315px;
+      }
+    `};
 `;
 
 export const Picture = styled.img`
