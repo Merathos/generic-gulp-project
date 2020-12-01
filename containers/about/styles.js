@@ -21,6 +21,7 @@ export const Container = styled.section`
 
 export const ValuesSection = styled(SectionGroup)`
   margin-bottom: 140px;
+  padding-top: 70px;
 
   @media (min-width: 1023px) {
     background-image: url('backgrounds/about-values.svg');
