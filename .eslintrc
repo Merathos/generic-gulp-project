@@ -1,3 +1,10 @@
 {
-  "extends": ["nextjs"]
+  "extends": ["nextjs"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["."]
+      }
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { 
+import { Fragment } from 'react';
+import {
   Paragraph,
   SidebarSlider,
   Media,
@@ -90,11 +91,35 @@ const renderContent = props => {
         }[type]
       }
     </>
-  )
+  );
+};
+
+const ASIDE_BLOCKS = {
+  asideSlider: true,
+  asideBlock: true,
+  asideNote: true,
 };
 
 const ArticleContent = ({ content }) => (
-  <>{content.length !== 0 && content.map(el => renderContent(el))}</>
+  <>
+    {content.length !== 0 &&
+      content.map((el, index) => {
+        // Don't render if block is aside
+        if (ASIDE_BLOCKS[content[index]?.type]) return null;
+
+        // Check if the next block is aside to render both
+        if (ASIDE_BLOCKS[content[index + 1]?.type]) {
+          return (
+            <div key={index}>
+              {renderContent(el)}
+              {renderContent(content[index + 1])}
+            </div>
+          );
+        }
+
+        return <Fragment key={index}>{renderContent(el)}</Fragment>;
+      })}
+  </>
 );
 
 export default ArticleContent;
