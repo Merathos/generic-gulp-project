@@ -8,7 +8,7 @@ import {
   Bold,
   StyledText,
   StyledButton,
-  Picture
+  Picture,
 } from './styles';
 
 const VacancyHeader = ({ data }) => {
@@ -20,25 +20,25 @@ const VacancyHeader = ({ data }) => {
     is_internship,
     is_english_speaking_team,
     team,
-    category
+    category,
   } = data;
 
   const features = [
     {
       icon: 19,
       title: `English Speaking Team`,
-      flag: is_english_speaking_team
+      flag: is_english_speaking_team,
     },
     {
       icon: 18,
       title: `Стажировка`,
-      flag: is_internship
+      flag: is_internship,
     },
     {
       icon: 26,
       title: `Релокация`,
-      flag: is_relocation
-    }
+      flag: is_relocation,
+    },
   ];
 
   return (
@@ -61,7 +61,12 @@ const VacancyHeader = ({ data }) => {
         </StyledButton>
       </div>
       {category.image && (
-        <Picture src={category.image.path.normal} alt={name} />
+        <Picture
+          src={category.image.path.normal}
+          alt={name}
+          width="200"
+          height="180"
+        />
       )}
     </Section>
   );

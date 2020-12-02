@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Subtitle } from 'elements';
 
 export const Container = styled.ul`
   display: flex;
@@ -38,15 +39,7 @@ export const Icon = styled.div`
   height: 22px;
 `;
 
-export const Subtitle = styled.p`
+export const StyledSubtitle = styled(Subtitle)`
   font-size: 16px;
-  font-weight: 500;
-  line-height: 131%;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-
-  @media screen and (max-width: 500px) {
-    font-size: 14px;
-    line-height: 134%;
-  }
+  line-height: 21px;
 `;

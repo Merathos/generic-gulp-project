@@ -10,7 +10,12 @@ const Recruiters = ({ data, back }) => {
         {back.map((el, i) => (
           <S.Element key={i}>
             <S.Clip>
-              <S.Picture src={el.image.path.normal} alt={el.name} />
+              <S.Picture
+                src={el.image.path.normal}
+                alt={el.name}
+                width="200"
+                height="100"
+              />
             </S.Clip>
             <S.H3>{el.name}</S.H3>
             <S.Subtitle>{el.email}</S.Subtitle>

@@ -13,9 +13,10 @@ const GreyHeader = ({
   mobPicture,
   twoColumns = false,
   hash,
+  isContacts,
 }) => {
   return (
-    <S.Grid>
+    <S.Grid isContacts={isContacts}>
       <S.Wrapper withPicture={!!picture}>
         <TitleH1>{title}</TitleH1>
         {picture && hash && (
@@ -27,12 +28,14 @@ const GreyHeader = ({
             />
           </S.Block>
         )}
-        <S.Paragraph>{text}</S.Paragraph>
+        <S.Paragraph isContacts={isContacts}>{text}</S.Paragraph>
         {list && (
           <S.Features twoColumns={twoColumns}>
             {list.map((el, i) => (
-              <S.Element key={i}>
-                {el.icon && <S.StyledIcon name={el.icon} white />}
+              <S.Element key={i} isContacts={isContacts}>
+                {el.icon && (
+                  <S.StyledIcon name={el.icon} white isContacts={isContacts} />
+                )}
                 <div>
                   <a href={el.href}>
                     <S.ListTitle>{el.title}</S.ListTitle>

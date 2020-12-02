@@ -7,6 +7,20 @@ export const Section = styled.section`
   @media (max-width: 768px) {
     margin-bottom: 80px;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      margin-bottom: 160px;
+
+      &:last-child {
+        margin-bottom: 45px;
+
+        @media (max-width: 420px) {
+          margin-bottom: 0;
+        }
+      }
+    `};
 `;
 
 export const Container = styled.div`
@@ -27,6 +41,16 @@ export const Title = styled(TitleH2)`
     margin-right: 30px;
     margin-bottom: 20px;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      max-width: 830px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
+      }
+    `};
 `;
 
 export const MapWrapper = styled.div`
@@ -38,6 +62,14 @@ export const MapWrapper = styled.div`
     padding-top: 40px;
     height: 267px;
   }
+
+  ${props =>
+    props.isContacts &&
+    css`
+      @media (max-width: 768px) {
+        padding-top: 20px;
+      }
+    `};
 `;
 
 export const Wrapper = styled.p`

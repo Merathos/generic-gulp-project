@@ -112,4 +112,8 @@ export const VideoContainer = styled.div`
         `}
     }
   }
+
+  .react-player__preview {
+    outline: none;
+  }
 `;

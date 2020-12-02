@@ -87,6 +87,7 @@ export const PrevButton = styled.button`
   }
 
   svg {
+    transition: fill 0.3s ease;
     fill: #53b443;
   }
 
@@ -115,6 +116,7 @@ export const NextButton = styled.button`
   }
 
   svg {
+    transition: fill 0.3s ease;
     fill: #53b443;
   }
 
