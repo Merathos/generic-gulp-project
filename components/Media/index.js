@@ -23,6 +23,7 @@ const Media = props => {
       decoration={decoration}
       hasCircle={hasCircle}
       stretched={stretched}
+      caption={caption}
     >
       {type === 'img' ? (
         <img

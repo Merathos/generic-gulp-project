@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { 
+import {
   Paragraph,
   SidebarSlider,
   Media,
@@ -17,11 +17,11 @@ import {
 import { TitleH2, TitleH3 } from 'elements';
 
 const H2 = styled(TitleH2)`
-  padding-top: 60px;
+  /* padding-top: 60px; */
   margin-bottom: 40px;
 
   @media screen and (max-width: 420px) {
-    padding-top: 30px;
+    /* padding-top: 30px; */
     margin-bottom: 30px;
   }
 `;
@@ -47,6 +47,12 @@ const Wrapper = styled.aside`
   }
 `;
 
+const SliderContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin-right: -45px;
+`;
+
 const renderContent = props => {
   const { type, data } = props;
   return (
@@ -67,7 +73,16 @@ const renderContent = props => {
           factoids: <List type="blue" data={data.factoids} />,
           note: <SectionNote data={data.text} />,
           person: <Feedback data={data} />,
-          gallery: <StyledSlider pictures={data.factoids} fromEditor />,
+          gallery: (
+            <SliderContainer>
+              <StyledSlider
+                pictures={data.factoids}
+                fromEditor
+                fromArticle
+                isSmall
+              />
+            </SliderContainer>
+          ),
           asideSlider: (
             <Wrapper>
               <SidebarSlider data={data.factoids} />
@@ -90,7 +105,7 @@ const renderContent = props => {
         }[type]
       }
     </>
-  )
+  );
 };
 
 const ArticleContent = ({ content }) => (

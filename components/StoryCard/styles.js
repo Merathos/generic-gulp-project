@@ -4,7 +4,7 @@ export const Wrapper = styled.a`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #f7f8f9;
+  background-color: ${props => props.background || '#f7f8f9'};
   padding: 40px 40px 0;
   width: 100%;
   box-sizing: border-box;
@@ -90,6 +90,7 @@ export const Picture = styled.img`
   margin-left: auto;
   max-height: 254px;
   width: auto;
+  max-width: 211px;
 
   @media (max-width: 768px) {
     max-height: 235px;

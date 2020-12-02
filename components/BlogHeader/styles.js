@@ -30,10 +30,11 @@ export const Wrapper = styled.article`
 `;
 
 export const Paragraph = styled(Text)`
-  margin-bottom: 90px;
+  /* margin-bottom: 90px; */
+  margin-bottom: ${props => (props.audio ? '90px' : '0')};
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: 60px;
+    margin-bottom: ${props => (props.audio ? '60px' : '0')};
   }
 `;
 
@@ -74,6 +75,10 @@ export const Block = styled.div`
     margin-left: 0;
   }
 
+  @media (max-width: 550px) {
+    margin-top: 0;
+  }
+
   @media (max-width: 420px) {
     margin-top: 50px;
     margin-left: 0;
@@ -89,7 +94,7 @@ export const Block = styled.div`
     right: -150px;
     z-index: 2;
 
-    @media (max-width: 420px) {
+    @media (max-width: 550px) {
       width: 120px;
       height: 120px;
       background-size: 120px 120px;
@@ -99,7 +104,7 @@ export const Block = styled.div`
   }
 
   &:hover::after {
-    animation: 1s ease-in-out infinite rotation;
+    animation: 2.6s linear infinite rotation;
   }
 
   @keyframes rotation {

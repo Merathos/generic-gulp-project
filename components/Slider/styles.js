@@ -25,6 +25,16 @@ export const Section = styled.section`
   margin-bottom: 100px;
   cursor: grab;
 
+  ${props =>
+    props.fromArticle &&
+    css`
+      .swiper-container {
+        @media (max-width: 945px) {
+          overflow: visible;
+        }
+      }
+    `};
+
   &:active {
     cursor: grabbing;
   }
@@ -115,13 +125,23 @@ export const Title = styled.p`
         width: 78vw;
       }
     `}
+
+  ${props =>
+    props.fromArticle &&
+    css`
+      margin-top: 10px;
+
+      @media (max-width: 768px) {
+        margin-top: 4px;
+      }
+    `}
 `;
 
 export const PrevButton = styled.button`
   display: none;
 
   ${props =>
-    props.hasControls &&
+    (props.hasControls || props.fromArticle) &&
     css`
       display: block;
       position: absolute;
@@ -162,7 +182,7 @@ export const NextButton = styled.button`
   display: none;
 
   ${props =>
-    props.hasControls &&
+    (props.hasControls || props.fromArticle) &&
     css`
       display: block;
       position: absolute;

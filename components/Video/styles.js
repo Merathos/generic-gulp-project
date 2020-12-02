@@ -2,13 +2,17 @@ import styled, { css } from 'styled-components';
 import Subtitle from 'elements/Subtitle';
 
 export const Text = styled(Subtitle)`
-  margin-top: 20px;
+  margin-top: 16px;
   text-align: center;
   margin-bottom: 100px;
+  font-size: 16px;
+  line-height: 21px;
 
   @media screen and (max-width: 420px) {
     margin-top: 5px;
     margin-bottom: 50px;
+    font-size: 10px;
+    line-height: 13px;
   }
 `;
 
@@ -70,8 +74,13 @@ export const VideoContainer = styled.div`
 
     &:hover {
       .react-player__play-icon {
+        transition: all 0.3 ease-in !important;
         border-color: transparent transparent transparent #339722 !important;
       }
+    }
+
+    .react-player__play-icon {
+      transition: all 0.3s ease-in;
     }
   }
 
@@ -81,11 +90,32 @@ export const VideoContainer = styled.div`
     border-radius: 50% !important;
     background: none !important;
     background-color: #ffffff !important;
+
+    @media screen and (max-width: 420px) {
+      ${props =>
+        props.isAbout &&
+        css`
+          width: 40px !important;
+          height: 40px !important;
+        `}
+    }
   }
 
   .react-player__play-icon {
     border-color: transparent transparent transparent #53b443 !important;
     border-width: 11px 0 11px 13px !important;
     margin-left: 4px !important;
+
+    @media screen and (max-width: 420px) {
+      ${props =>
+        props.isAbout &&
+        css`
+          border-width: 6px 0 6px 7px !important;
+        `}
+    }
+  }
+
+  .react-player__preview {
+    outline: none;
   }
 `;
