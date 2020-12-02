@@ -10,6 +10,10 @@ const List = styled.ul`
   @media screen and (max-width: 1024px) {
     margin-bottom: 15px;
   }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 
 const Element = styled.li`

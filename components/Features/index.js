@@ -1,5 +1,4 @@
-import { Subtitle } from 'elements';
-import { Container, Item, Icon } from './styles';
+import { Container, Item, Icon, Subtitle } from './styles';
 
 const Features = ({ data }) => (
   <Container>

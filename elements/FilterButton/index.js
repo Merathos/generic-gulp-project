@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   opacity: 0.5;
   font-size: 16px;
+  font-weight: 500;
   line-height: 131%;
   position: relative;
   align-self: flex-start;

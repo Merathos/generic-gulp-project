@@ -5,9 +5,10 @@ export const Title = styled.button.attrs(props => ({
     ? 'rotate(-180deg) translateY(50%)'
     : 'translateY(-50%)',
 }))`
-  padding: 15px 0;
+  padding: 16px 0;
   position: relative;
   font-size: 20px;
+  font-weight: 500;
   line-height: 134%;
   text-align: left;
   width: 100%;
@@ -18,11 +19,19 @@ export const Title = styled.button.attrs(props => ({
     width: 14px;
     height: 7px;
     top: 50%;
-    right: 0;
+    right: 32px;
     background-image: url('icons/dropdown.svg');
     background-repeat: no-repeat;
     transform: ${props => props.transform};
     transition: transform 0.2s ease;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 14px 0;
+
+    &::after {
+      right: 0;
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -59,13 +68,12 @@ export const Item = styled.li`
     font-size: 14px;
     line-height: 190%;
     margin-bottom: 16px;
-    padding-left: 12px;
   }
 `;
 
 export const List = styled.ul`
   position: relative;
-  height: 180px;
+  height: 172px;
   padding-bottom: 15px;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -76,18 +84,21 @@ export const List = styled.ul`
     width: 0;
     height: 0;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 200px;
+  }
 `;
 
 export const Wrapper = styled.div`
   position: relative;
-  padding-bottom: 20px;
 
   &::after {
     content: '';
     width: 100%;
-    height: 60px;
+    height: 40px;
     position: absolute;
-    bottom: -10px;
+    bottom: 10px;
     left: 0;
     z-index: 1;
     background: linear-gradient(

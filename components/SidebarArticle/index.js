@@ -23,6 +23,7 @@ const SidebarArticle = props => {
     type,
     fromEditor,
     isInternship = false,
+    handleSendRequestClick,
   } = props;
   return (
     <>
@@ -75,7 +76,9 @@ const SidebarArticle = props => {
           button: (
             <SectionButton>
               <Text>{text}</Text>
-              <Button type="accent">{button}</Button>
+              <Button type="accent" onClick={handleSendRequestClick}>
+                {button}
+              </Button>
             </SectionButton>
           ),
           image: (

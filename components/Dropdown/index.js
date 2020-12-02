@@ -20,7 +20,7 @@ const Dropdown = props => {
       <Title type="button" onClick={() => handleOpen()} active={opened}>
         {title}
         {title === 'Категории' && categories && <Sup>1</Sup>}
-        {(title === 'Технологии' || title === 'Команды') &&
+        {(title === 'Технологии' || title === 'Проекты') &&
           filterArray.length > 0 && (
             <Sup>
               {list.filter(item => filterArray.includes(item)).length || ''}
@@ -35,6 +35,7 @@ const Dropdown = props => {
                 {multi ? (
                   <Checkbox
                     name={el}
+                    id={el + title}
                     handleChange={() => handleChangeCheckbox(el)}
                     type="dropdown"
                     checked_state={filterArray.indexOf(el) !== -1}
