@@ -1,12 +1,15 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
-import { Dropdown, Cards, SidebarArticle, Tags } from 'components';
+import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
-
+import formMock from '../../mock';
 import { Search } from 'forms';
 import { getNewTags } from 'helpers';
 import * as S from './styles';
+import { FormModal } from '../index';
+import ArrowRight from 'public/icons/arrow-right.svg';
+import Link from 'next/link';
 
 const VacanciesList = ({ data: mock, back }) => {
   const router = useRouter();
@@ -19,6 +22,16 @@ const VacanciesList = ({ data: mock, back }) => {
   const [opened, setOpened] = useState('');
   const [hidden, setHidden] = useState(true);
   const filterArray = useSelector(state => state.filter);
+
+  const [isModalOpened, setModalOpen] = useState(false);
+
+  const handleSendRequestClick = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   const initialWidth = useWindowWidth();
 
@@ -226,7 +239,11 @@ const VacanciesList = ({ data: mock, back }) => {
         )}
       </S.Filter>
       {initialWidth > 768 && (
-        <SidebarArticle type="button" data={mock.article} />
+        <SidebarArticle
+          type="button"
+          data={mock.article}
+          handleSendRequestClick={handleSendRequestClick}
+        />
       )}
     </S.Aside>
   );
@@ -238,7 +255,10 @@ const VacanciesList = ({ data: mock, back }) => {
           {initialWidth > 768 ? (
             renderAside()
           ) : (
-            <S.FilterWrapper active={!hidden}>
+            <S.FilterWrapper
+              active={!hidden}
+              withExtraSpace={!!internship_state}
+            >
               <>
                 <S.FilterTitle
                   active={!hidden}
@@ -258,11 +278,24 @@ const VacanciesList = ({ data: mock, back }) => {
               placeholder={mock.search}
               handleSearch={search => handleSearch(search)}
               initialValue={router.query.search}
+              smallPadding
             />
             <Tags
               handleChangeFilter={el => handleClearTags(el)}
               handleChangeCategory={handleClearCategoryTag}
             />
+            {internship_state && (
+              <Link href={`/internship`} passHrref>
+                <a>
+                  <S.InternshipLink>
+                    <S.InternshipLinkText>
+                      {mock.internshipText}
+                    </S.InternshipLinkText>
+                    <ArrowRight />
+                  </S.InternshipLink>
+                </a>
+              </Link>
+            )}
           </S.Article>
           {initialWidth <= 768 && (
             <S.Resume>
@@ -272,9 +305,20 @@ const VacanciesList = ({ data: mock, back }) => {
               {mock.article.plainText}
             </S.Resume>
           )}
-          <Cards data={back} type="vacancies" />
+          <S.CardsWrapper>
+            <Cards data={back} type="vacancies" />
+          </S.CardsWrapper>
         </S.Grid>
       </S.Container>
+      {isModalOpened && (
+        <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
+          <JobForm
+            data={formMock.jobFormV2}
+            closeModal={closeModal}
+            showSuccess={() => {}}
+          />
+        </FormModal>
+      )}
     </S.Main>
   );
 };

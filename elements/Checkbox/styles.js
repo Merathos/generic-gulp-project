@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   font-size: 20px;
   line-height: 134%;
 
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+
   input:hover ~ label {
     &::before {
       border-color: #53b443;
@@ -18,10 +22,20 @@ export const Wrapper = styled.div`
     }
   }
 
+  @media screen and (max-width: 768px) {
+    &:not(:last-of-type) {
+      margin-right: 24px;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     margin-bottom: 0;
     font-size: 14px;
     line-height: 134%;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -36,8 +50,8 @@ export const Label = styled.label.attrs(props => ({
   &::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -47,6 +61,11 @@ export const Label = styled.label.attrs(props => ({
     border: 2px solid rgba(31, 32, 42, 0.3);
     border-color: ${props => props.color};
     transition: border-color 0.3s ease;
+  }
+
+  @media screen and (max-width: 420px) {
+    font-size: 14px;
+    line-height: 190%;
   }
 `;
 
@@ -79,5 +98,16 @@ export const DropLabel = styled.label`
     transform: translateY(-50%);
     border-radius: 50%;
     display: none;
+  }
+
+  @media screen and (max-width: 420px) {
+    font-size: 14px;
+    line-height: 190%;
+    padding-left: 14px;
+
+    &::after {
+      width: 5px;
+      height: 5px;
+    }
   }
 `;

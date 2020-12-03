@@ -34,7 +34,7 @@ const ProjectPage = () => {
   if (!categories || !content) return null;
 
   return (
-    <Layout backButton greyFooter>
+    <Layout backButton smallButton greyFooter plainHeader isVisible={false}>
       <Project data={mock.project} teams={content} />
     </Layout>
   );

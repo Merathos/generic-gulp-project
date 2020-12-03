@@ -105,7 +105,7 @@ export default {
           multi: true,
         },
         {
-          title: `Команды`,
+          title: `Проекты`,
           list: [
             `Contact Center`,
             `Platform A`,
@@ -133,6 +133,7 @@ export default {
       discard: `Сбросить фильтр`,
     },
     search: `Введите название вакансии`,
+    internshipText: `О стажировке`,
     article: {
       text: `Отправь резюме, и мы свяжемся с тобой, если появится подходящая позиция.`,
       button: `Отправить`,

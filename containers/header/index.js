@@ -44,6 +44,19 @@ const StyledHeader = styled.header`
     background-size: 200px;
     background-position: 50% top;
   }
+
+  ${props =>
+    props.mobileDecor &&
+    css`
+      background-image: none;
+
+      @media (max-width: 768px) {
+        background-image: ${props =>
+          props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
+        background-repeat: no-repeat;
+        background-position: 40% top;
+      }
+    `};
 `;
 
 const StyledLogo = styled(Logo)`
@@ -123,12 +136,24 @@ const Element = styled.li`
   margin-left: 42px;
 `;
 
-const Header = ({ data: links, plain, anchor, hideHav, greyHeader }) => {
+const Header = ({
+  data: links,
+  plain,
+  anchor,
+  hideHav,
+  greyHeader,
+  mobileDecor,
+}) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
-    <StyledHeader plain={plain} anchor={anchor} greyHeader={greyHeader}>
+    <StyledHeader
+      plain={plain}
+      anchor={anchor}
+      greyHeader={greyHeader}
+      mobileDecor={mobileDecor}
+    >
       {router.pathname === '/' ? (
         <StyledLogo />
       ) : (
