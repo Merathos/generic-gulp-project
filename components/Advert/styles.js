@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { TitleH3 } from 'elements';
 
 export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 380px;
   transition: all 0.3s ease;
 
@@ -73,6 +75,12 @@ export const H3 = styled(TitleH3)`
 
 export const Arrow = styled.span`
   display: flex;
+  margin-top: auto;
   width: 38px;
   height: 38px;
+
+  @media screen and (max-width: 768px) {
+    width: 26px;
+    height: 26px;
+  }
 `;

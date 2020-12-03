@@ -23,7 +23,7 @@ const teamsPage = ({ teams }) => {
       hideHav
       isVisible={false}
       greyHeader={false}
-      plainHeader
+      mobileDecor
     >
       <TeamList mock={mock.teamList} back={teams} />
     </Layout>
