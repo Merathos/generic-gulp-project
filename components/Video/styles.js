@@ -20,6 +20,7 @@ export const Section = styled.section`
   position: relative;
   max-width: ${props => (props.stretched ? 'none' : '850px')};
   padding: 100px 0;
+  padding-top: 0;
 
   &::before {
     content: '';

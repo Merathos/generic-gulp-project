@@ -30,11 +30,17 @@ export const Wrapper = styled.article`
 `;
 
 export const Paragraph = styled(Text)`
-  /* margin-bottom: 90px; */
   margin-bottom: ${props => (props.audio ? '90px' : '0')};
+  font-size: 24px;
+  line-height: 36px;
 
   @media screen and (max-width: 1024px) {
     margin-bottom: ${props => (props.audio ? '60px' : '0')};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 25px;
   }
 `;
 

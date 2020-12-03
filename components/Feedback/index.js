@@ -22,6 +22,11 @@ const Content = styled.div`
 const StyledText = styled.p`
   font-size: 18px;
   line-height: 158%;
+
+  @media (max-width: 420px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
 `;
 
 const Section = styled.section`

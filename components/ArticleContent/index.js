@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Fragment } from 'react';
 import {
   Paragraph,
   SidebarSlider,
@@ -17,17 +18,17 @@ import {
 import { TitleH2, TitleH3 } from 'elements';
 
 const H2 = styled(TitleH2)`
-  /* padding-top: 60px; */
   margin-bottom: 40px;
+  max-width: 854px;
 
   @media screen and (max-width: 420px) {
-    /* padding-top: 30px; */
     margin-bottom: 30px;
   }
 `;
 
 const H3 = styled(TitleH3)`
   margin-bottom: 30px;
+  max-width: 854px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 10px;
@@ -41,9 +42,15 @@ const StyledSlider = styled(Slider)`
 const Wrapper = styled.aside`
   position: absolute;
   right: 0;
+  top: 0;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1240px) {
     position: static;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 420px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -51,6 +58,10 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin-right: -45px;
+`;
+
+const Block = styled.div`
+  position: relative;
 `;
 
 const renderContent = props => {
@@ -108,8 +119,32 @@ const renderContent = props => {
   );
 };
 
+const ASIDE_BLOCKS = {
+  asideSlider: true,
+  asideBlock: true,
+  asideNote: true,
+};
+
 const ArticleContent = ({ content }) => (
-  <>{content.length !== 0 && content.map(el => renderContent(el))}</>
+  <>
+    {content.length !== 0 &&
+      content.map((el, index) => {
+        // Don't render if block is aside
+        if (ASIDE_BLOCKS[content[index]?.type]) return null;
+
+        // Check if the next block is aside to render both
+        if (ASIDE_BLOCKS[content[index + 1]?.type]) {
+          return (
+            <Block key={index}>
+              {renderContent(el)}
+              {renderContent(content[index + 1])}
+            </Block>
+          );
+        }
+
+        return <Fragment key={index}>{renderContent(el)}</Fragment>;
+      })}
+  </>
 );
 
 export default ArticleContent;

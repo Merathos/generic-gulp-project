@@ -3,7 +3,7 @@ import { Text } from 'elements';
 
 export const Section = styled.section`
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 27px;
   max-width: 850px;
   overflow: hidden;
 
@@ -30,6 +30,8 @@ export const Span = styled.span`
   margin-right: 30px;
 
   @media screen and (max-width: 420px) {
+    font-size: 42px;
+    margin-top: -2px;
     margin-right: 20px;
   }
 `;

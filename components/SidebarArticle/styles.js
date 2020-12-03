@@ -171,3 +171,46 @@ export const Aside = styled.aside`
     background-size: 80px;
   }
 `;
+
+export const Content = styled.div`
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: #53b443;
+
+    svg {
+      fill: #53b443;
+
+      path:first-child {
+        stroke: #53b443;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
+    }
+  }
+
+  &:active {
+    color: #339722;
+
+    svg {
+      fill: #339722;
+
+      path:first-child {
+        stroke: #339722;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
+    }
+  }
+`;

@@ -3,11 +3,18 @@ import TitleH4 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
 
 export const Article = styled.article`
+  position: relative;
   background-image: url('/backgrounds/grey-square-sidebar.png');
   background-repeat: no-repeat;
-  background-position: 70% 0;
+  background-position: top right 10%;
   margin-bottom: 110px;
   width: 250px;
+  cursor: grab;
+  padding-top: 24px;
+
+  &:active {
+    cursor: grabbing;
+  }
 
   @media screen and (max-width: 1024px) {
     background-position: 10% 0;
@@ -60,7 +67,7 @@ export const Element = styled.div`
 
   @media screen and (max-width: 1024px) {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     min-width: 300px;
   }
 `;
