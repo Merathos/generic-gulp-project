@@ -4,9 +4,10 @@ import TitleH2 from '/elements/TitleH2';
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column;
     margin-bottom: 50px;
   }

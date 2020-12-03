@@ -4,36 +4,69 @@ import Subtitle from 'elements/Subtitle';
 
 const Img = styled.img`
   width: 404px;
-  margin-right: 70px;
 
   @media screen and (max-width: 1024px) {
-    margin-right: 0;
     width: 200px;
     margin-bottom: 20px;
+  }
+`;
+
+const Content = styled.div`
+  margin-left: 70px;
+
+  @media (max-width: 1024px) {
+    margin-left: 0;
   }
 `;
 
 const StyledText = styled.p`
   font-size: 18px;
   line-height: 158%;
+
+  @media (max-width: 420px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
 `;
 
 const Section = styled.section`
   max-width: 850px;
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   align-items: flex-end;
-  background-image: url('/backgrounds/circle.png');
-  background-repeat: no-repeat;
-  background-position: 310px top;
   padding-top: 90px;
+
+  picture {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 179px;
+      height: 179px;
+      border-radius: 50%;
+      right: -89px;
+      top: -89px;
+      background-color: #f7f8f9;
+      z-index: -3;
+      display: block;
+
+      @media (max-width: 768px) {
+        width: 112px;
+        height: 112px;
+        right: -56px;
+        top: -56px;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    margin-bottom: 40px;
+  }
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 50px;
-    background-size: 112px 112px;
-    background-position: 140px top;
     padding-top: 60px;
   }
 `;
@@ -56,7 +89,7 @@ const H3 = styled(TitleH3)`
 
 const Feedback = props => {
   const {
-    data: { imageUrl, title, describe, subtitle }
+    data: { imageUrl, title, describe, subtitle },
   } = props;
   return (
     <Section>
@@ -71,11 +104,11 @@ const Feedback = props => {
           alt={title}
         />
       </picture>
-      <div>
+      <Content>
         <StyledSubtitle>{subtitle}</StyledSubtitle>
         <H3>{title}</H3>
         <StyledText>{describe}</StyledText>
-      </div>
+      </Content>
     </Section>
   );
 };

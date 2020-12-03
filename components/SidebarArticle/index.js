@@ -15,6 +15,7 @@ import {
   DefaultTitle,
   StyledSubtitle,
   SubtitleWrapper,
+  Content,
 } from './styles';
 
 const SidebarArticle = props => {
@@ -52,12 +53,14 @@ const SidebarArticle = props => {
             <Section>
               {fromEditor ? (
                 <>
-                  <DefaultSubtitle>Читайте также</DefaultSubtitle>
-                  <DefaultTitle>{title}</DefaultTitle>
                   <Link href={link}>
-                    <a>
-                      <ArrowRight />
-                    </a>
+                    <Content>
+                      <DefaultSubtitle>Читайте также</DefaultSubtitle>
+                      <DefaultTitle>{title}</DefaultTitle>
+                      <div>
+                        <ArrowRight />
+                      </div>
+                    </Content>
                   </Link>
                 </>
               ) : (

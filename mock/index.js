@@ -511,17 +511,25 @@ export default {
       },
       {
         type: `story`,
-        href: `#`,
-        date: `12.06.2020`,
+        slug: `#`,
+        created_at: `2020-10-02T13:36:04+0300`,
         title: `История успеха Екатерины. Начать переезжать сложно и наши HR расскажут об этой возможности`,
-        img: `/images/story-card2.png`,
+        preview: {
+          path: {
+            normal: `/images/story-card2.png`,
+          },
+        },
       },
       {
         type: `story`,
-        href: `#`,
-        date: `12.06.2020`,
+        slug: `#`,
+        created_at: `2020-10-02T13:36:04+0300`,
         title: `История Валеры`,
-        img: `/images/story-card1.png`,
+        preview: {
+          path: {
+            normal: `/images/story-card1.png`,
+          },
+        },
       },
       {
         type: `column`,
@@ -901,16 +909,24 @@ export default {
       на\u00A0jobs@dins.ru с пометкой «удаленка», и наши HR расскажут об этой возможности.`,
       cards: [
         {
-          href: `#`,
-          date: `12.06.2020`,
+          slug: `#`,
+          created_at: `2020-10-02T13:36:04+0300`,
           title: `История Валеры`,
-          img: `/images/story-card1.png`,
+          preview: {
+            path: {
+              normal: `/images/story-card1.png`,
+            },
+          },
         },
         {
-          href: `#`,
-          date: `12.06.2020`,
+          slug: `#`,
+          created_at: `2020-10-02T13:36:04+0300`,
           title: `История успеха Екатерины. Начать переезжать сложно и наши HR расскажут об этой возможности`,
-          img: `/images/story-card2.png`,
+          preview: {
+            path: {
+              normal: `/images/story-card2.png`,
+            },
+          },
         },
       ],
     },

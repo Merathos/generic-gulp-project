@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const Block = styled.div`
-  font-weight: bold;
+  font-weight: 700;
   font-size: 34px;
   line-height: 120%;
   display: flex;
+  align-items: center;
   padding: 35px 0 60px 50px;
 
   @media screen and (max-width: 420px) {
@@ -22,6 +23,20 @@ export const Img = styled.div`
   background-image: ${props => `url(${props.background})`};
   background-position: center;
   background-size: cover;
+`;
+
+export const Text = styled.p`
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 21px;
+  opacity: 0.5;
+  font-weight: 500;
+
+  @media (max-width: 420px) {
+    margin-top: 1px;
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
 
 export const Crop = styled.div`
