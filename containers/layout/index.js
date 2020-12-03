@@ -64,6 +64,8 @@ const Layout = ({
   smallIndent = false,
   greyHeader = true,
   smallButton = false,
+  mobileDecor = false,
+  isFixed = false,
 }) => {
   return (
     <Wrapper>
@@ -73,9 +75,10 @@ const Layout = ({
         anchor={anchor}
         hideHav={hideHav}
         greyHeader={greyHeader}
+        mobileDecor={mobileDecor}
       />
       {children}
-      {isVisible && <SocialSticker data={mock.socialSticker} />}
+      {isVisible && <SocialSticker data={mock.socialSticker} isFixed />}
       {showFooter && (
         <Footer
           data={mock.footer}

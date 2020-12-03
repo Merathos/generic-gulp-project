@@ -68,7 +68,7 @@ export const SectionIcon = styled.div`
 `;
 
 export const SectionButton = styled.div`
-  margin: 50px 0;
+  margin: 48px 0;
 
   @media screen and (max-width: 420px) {
     margin: 40px 0 60px;

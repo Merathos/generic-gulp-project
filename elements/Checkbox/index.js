@@ -2,18 +2,18 @@ import { Wrapper, Label, DropLabel } from './styles';
 
 const Checkbox = props => {
   const { name, handleChange, type, checked_state } = props;
-
+  const id = props.id || name;
   return (
     <>
       {type === 'dropdown' ? (
         <>
           <input
             type="checkbox"
-            id={name}
+            id={id}
             onChange={() => handleChange()}
             checked={checked_state}
           />
-          <DropLabel htmlFor={name} checked={checked_state}>
+          <DropLabel htmlFor={id} checked={checked_state}>
             {name}
           </DropLabel>
         </>
@@ -21,11 +21,11 @@ const Checkbox = props => {
         <Wrapper>
           <input
             type="checkbox"
-            id={name}
+            id={id}
             onChange={() => handleChange()}
             checked={checked_state}
           />
-          <Label htmlFor={name} checked={checked_state}>
+          <Label htmlFor={id} checked={checked_state}>
             {name}
           </Label>
         </Wrapper>

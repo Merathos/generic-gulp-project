@@ -21,6 +21,10 @@ const catalogPage = () => {
       type: 'SET_CATALOG_FILTERS',
       payload: router.query.filter || [],
     });
+    dispatch({
+      type: 'SET_INTERNSHIP',
+      payload: !!router.query.internship || false,
+    });
   }, []);
 
   const categoriesData = useQuery(GET_VACANCIES, {
@@ -40,7 +44,7 @@ const catalogPage = () => {
   );
 
   return (
-    <Layout anchor={true} hideHav greyHeader={false}>
+    <Layout anchor={true} hideHav greyHeader={false} mobileDecor isFixed>
       <VacanciesList data={mock.catalog} back={vacancies || []} />
     </Layout>
   );

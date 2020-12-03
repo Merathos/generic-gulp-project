@@ -31,6 +31,17 @@ const Label = styled.label`
     border-radius: 50%;
     display: none;
   }
+
+  @media screen and (max-width: 420px) {
+    font-size: 14px;
+    line-height: 190%;
+    padding-left: 14px;
+
+    &::after {
+      width: 5px;
+      height: 5px;
+    }
+  }
 `;
 
 const RadioButton = props => {
