@@ -19,8 +19,8 @@ const StyledArrowLeft = styled.div`
   justify-content: center;
   border: 2px solid #201f2a;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: ${props => (props.smallButton ? '34px' : '38px')};
+  height: ${props => (props.smallButton ? '34px' : '38px')};
   left: 45px;
   top: 140px;
   transition: all 0.1s ease;
@@ -63,6 +63,7 @@ const Layout = ({
   hideHav = false,
   smallIndent = false,
   greyHeader = true,
+  smallButton = false,
   mobileDecor = false,
   isFixed = false,
 }) => {
@@ -91,7 +92,10 @@ const Layout = ({
       )}
       {backButton && (
         <a>
-          <StyledArrowLeft onClick={() => Router.back()}>
+          <StyledArrowLeft
+            onClick={() => Router.back()}
+            smallButton={smallButton}
+          >
             <svg
               width="14"
               height="13"

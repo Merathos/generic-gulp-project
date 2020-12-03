@@ -12,7 +12,7 @@ const TeamsHeader = ({ title, text, stack, picture }) => {
           <S.StyledText>{stack}</S.StyledText>
         </S.TextBlock>
       </S.Wrapper>
-      {picture && <S.Picture src={picture.path.normal} alt={title} />}
+      {picture && <S.Picture src={picture} alt={title} />}
     </S.Grid>
   );
 };
