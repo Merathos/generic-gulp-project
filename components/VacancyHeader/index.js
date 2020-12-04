@@ -56,7 +56,7 @@ const VacancyHeader = ({ data }) => {
           <Bold>Команда:</Bold>
           <StyledText>{team && team.name}</StyledText>
         </TextBlock>
-        <StyledButton type="accent">
+        <StyledButton accent={true}>
           {english ? 'Send CV' : 'Отправить резюме'}
         </StyledButton>
       </div>
