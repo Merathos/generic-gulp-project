@@ -17,7 +17,7 @@ const List = styled.ul`
   @media (max-width: 420px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
-  } 
+  }
 `;
 
 const Emoji = styled(Icon)`

@@ -1301,31 +1301,31 @@ export default {
       title: `Conditions`,
       list: [
         {
-          icon: 26,
+          icon: `fire`,
           text: `28 day vacation 100% paid in accordance with the current salary`,
         },
         {
-          icon: 26,
+          icon: `lock`,
           text: `Business trips to foreign branch offices (the USA, China) and further work H1-B`,
         },
         {
-          icon: 26,
+          icon: `heart`,
           text: `Corporate training programs, English language `,
         },
         {
-          icon: 26,
+          icon: `Moai`,
           text: `Job placement and payment of salary take place according to the labor codey`,
         },
         {
-          icon: 26,
+          icon: `lock`,
           text: `Nonresident applicants are granted Relocation Bonus`,
         },
         {
-          icon: 26,
+          icon: `balloon`,
           text: `28 day vacation 100% paid in accordance with the current salary`,
         },
         {
-          icon: 26,
+          icon: `fire`,
           text: `Sick leaves 100% paid.`,
         },
       ],
