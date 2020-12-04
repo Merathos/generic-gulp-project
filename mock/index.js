@@ -1313,7 +1313,7 @@ export default {
           text: `Corporate training programs, English language `,
         },
         {
-          icon: `Moai`,
+          icon: `moai`,
           text: `Job placement and payment of salary take place according to the labor codey`,
         },
         {
