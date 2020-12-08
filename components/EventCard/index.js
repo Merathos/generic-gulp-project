@@ -1,10 +1,25 @@
 import * as S from './styles';
+import Router from 'next/router';
 
 const EventCard = props => {
   const {
     card: { type, color, date, status, topics, location },
     completed = false,
+    regForm,
   } = props;
+
+  const handleRegistrationClick = () => {
+    if (Router.pathname === `/event`) {
+      regForm?.current.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      Router.push({
+        pathname: '/event',
+        hash: 'form',
+      }).then(() =>
+        document.getElementById('form').scrollIntoView({ behavior: 'smooth' })
+      );
+    }
+  };
 
   return (
     <S.CardWrapper>
@@ -44,7 +59,9 @@ const EventCard = props => {
       ))}
       <S.BottomWrapper>
         {completed === false ? (
-          <S.StyledButton accent={true}>Зарегистрироваться</S.StyledButton>
+          <S.StyledButton accent={true} onClick={handleRegistrationClick}>
+            Зарегистрироваться
+          </S.StyledButton>
         ) : (
           <S.StyledButton>Подробнее о прошедшем мероприятии</S.StyledButton>
         )}

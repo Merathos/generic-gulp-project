@@ -12,7 +12,7 @@ import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 import { EventCard } from 'components';
 
-const EventsSlider = ({ cards }) => {
+const EventsSlider = ({ cards, regForm }) => {
   const ref = useRef(null);
   const initialWidth = useWindowWidth();
   const params = {
@@ -49,7 +49,7 @@ const EventsSlider = ({ cards }) => {
         >
           {cards.map((card, i) => (
             <Element key={i}>
-              <EventCard card={card} />
+              <EventCard card={card} regForm={regForm} />
             </Element>
           ))}
         </Swiper>

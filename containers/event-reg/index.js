@@ -446,7 +446,7 @@ const EventReg = props => {
   `;
 
   return (
-    <S.Section ref={regForm}>
+    <S.Section ref={regForm} id="form">
       <S.Container id="form-container">
         <InnerHTML html={mainTpl} />
         <InnerHTML html={ticketTpl} />

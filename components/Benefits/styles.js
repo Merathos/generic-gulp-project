@@ -30,8 +30,8 @@ export const Title = styled(TitleH2)`
 `;
 
 export const List = styled.ul`
-  padding-right: 30px;
   margin-right: -82px;
+  width: 100%;
   display: grid;
   grid-gap: 30px;
   row-gap: 80px;
