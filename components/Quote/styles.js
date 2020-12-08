@@ -3,8 +3,9 @@ import { Text } from 'elements';
 
 export const Section = styled.section`
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 27px;
   max-width: 850px;
+  overflow: hidden;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 20px;
@@ -25,10 +26,12 @@ export const Block = styled.div`
 export const Span = styled.span`
   font-weight: 800;
   font-size: 54px;
-  color: #2F8ED9;
+  color: #2f8ed9;
   margin-right: 30px;
 
   @media screen and (max-width: 420px) {
+    font-size: 42px;
+    margin-top: -2px;
     margin-right: 20px;
   }
 `;

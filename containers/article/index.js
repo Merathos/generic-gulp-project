@@ -1,8 +1,4 @@
-import {
-  Title,
-  Articles,
-  ArticleContent
-} from 'components';
+import { Title, Articles, ArticleContent } from 'components';
 import { Container, Wrapper, Grid, Aside } from './styles';
 
 const Article = ({ data, back }) => {

@@ -7,6 +7,7 @@ export const Styled = styled.div`
   background-image: ${props => `url('/emodzi/${props.name}.png')`};
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-size: 20px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

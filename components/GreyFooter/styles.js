@@ -4,6 +4,7 @@ import { Subtitle } from 'elements';
 export const Section = styled.section`
   padding-top: 160px;
   background-color: ${props => props.background || '#F7F8F9'};
+  overflow: hidden;
 
   ${props =>
     props.type === 'relocation' &&
@@ -91,28 +92,52 @@ export const List = styled.ul`
 `;
 
 export const ListBlog = styled.ul`
-  display: flex;
+  display: block;
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
 
+  @media (max-width: 1024px) {
+    margin-bottom: 160px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
-    flex-direction: column;
   }
 
   @media screen and (max-width: 240px) {
     max-width: 320px;
     padding: 0 20px;
   }
+
+  .swiper-container {
+    overflow: visible;
+  }
 `;
 
 export const Card = styled.li`
   margin-right: 80px;
+  width: 349px;
+
+  @media (max-width: 768px) {
+    width: 315px;
+  }
 
   @media screen and (max-width: 420px) {
     margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    @media (max-width: 420px) {
+      margin-right: 0;
+    }
   }
 `;
 

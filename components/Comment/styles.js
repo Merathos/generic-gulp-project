@@ -21,12 +21,12 @@ export const Block = styled.div`
 `;
 
 export const Card = styled.div`
-  background: #F7F8F9;
+  background: #f7f8f9;
   padding: 40px;
   border-radius: 12px;
   width: 670px;
-  
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 848px) {
     box-sizing: border-box;
     width: 100%;
   }
@@ -57,4 +57,4 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 160%;
   }
- `;
+`;

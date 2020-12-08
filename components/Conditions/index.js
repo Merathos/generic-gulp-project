@@ -14,17 +14,6 @@ const Section = styled.div`
   margin-bottom: 100px;
   position: relative;
 
-  &::after {
-    content: '';
-    width: 365px;
-    height: 385px;
-    position: absolute;
-    top: -5%;
-    right: -115%;
-    z-index: 2;
-    background-image: url('backgrounds/vacancy-middle.png');
-  }
-
   @media screen and (max-width: 1024px) {
     margin-bottom: 50px;
 

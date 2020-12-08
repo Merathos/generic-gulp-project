@@ -1,7 +1,7 @@
 import Vk from 'public/icons/vk.svg';
 import Twitter from 'public/icons/twitter.svg';
 import Facebook from 'public/icons/facebook.svg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useState, useEffect } from 'react';
 
 const List = styled.ul`
@@ -22,6 +22,16 @@ const List = styled.ul`
     max-width: 84%;
     justify-content: space-around;
   }
+
+  ${props =>
+    props.isFixed &&
+    css`
+      top: 682px;
+
+      @media screen and (max-width: 1280px) {
+        display: none;
+      }
+    `};
 `;
 
 const Link = styled.a`
@@ -51,7 +61,7 @@ const Link = styled.a`
   }
 `;
 
-const SocialSticker = ({ data, className }) => {
+const SocialSticker = ({ data, className, isFixed }) => {
   const [currentURL, setCurrentUrl] = useState('');
 
   useEffect(() => {
@@ -59,7 +69,7 @@ const SocialSticker = ({ data, className }) => {
   }, []);
 
   return (
-    <List className={className}>
+    <List className={className} isFixed={isFixed}>
       {data.map((el, i) => (
         <li key={i}>
           <Link href={el.link + currentURL} target="_blank" rel="noreferrer">

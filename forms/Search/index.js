@@ -3,12 +3,19 @@ import SearchIcon from 'public/icons/search.svg';
 import { Field, Form, Submit } from './styles';
 
 const Search = props => {
-  const { placeholder, handleSearch, initialValue, isMain = false } = props;
+  const {
+    placeholder,
+    handleSearch,
+    initialValue,
+    isMain = false,
+    smallPadding = false,
+  } = props;
   const [value, setValue] = useState(initialValue || '');
 
   return (
     <Form
       isMain={isMain}
+      smallPadding={smallPadding}
       onSubmit={evt => {
         evt.preventDefault();
         handleSearch(value);

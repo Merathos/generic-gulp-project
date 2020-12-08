@@ -122,9 +122,9 @@ export const PrevButton = styled.button`
     fill: #53b443;
   }
 
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     right: 53px;
-  }
+  } */
 
   @media (max-width: 1024px) {
     display: none;
@@ -154,9 +154,9 @@ export const NextButton = styled.button`
     fill: #53b443;
   }
 
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     right: 0;
-  }
+  } */
 
   @media (max-width: 1024px) {
     display: none;

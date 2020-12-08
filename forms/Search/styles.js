@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components';
 export const Form = styled.form`
   border-bottom: 1px solid #201f2a;
   display: flex;
-  padding: ${props => (props.isMain ? '0' : '25px 0')};
+  padding: ${props =>
+    props.isMain ? '0' : props.smallPadding ? '25px 0 16px' : '25px 0'};
   margin-bottom: 10px;
 
   ${props =>
@@ -17,7 +18,8 @@ export const Form = styled.form`
     `};
 
   @media screen and (max-width: 420px) {
-    padding: ${props => (props.isMain ? '0' : '16px 0')};
+    padding: ${props =>
+      props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
   }
 `;
 

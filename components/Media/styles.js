@@ -2,13 +2,17 @@ import styled, { css } from 'styled-components';
 import Subtitle from 'elements/Subtitle';
 
 export const Text = styled(Subtitle)`
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
   margin-bottom: 100px;
+  font-size: 16px;
+  line-height: 21px;
 
   @media screen and (max-width: 420px) {
     margin-top: 5px;
     margin-bottom: 50px;
+    font-size: 10px;
+    line-height: 13px;
   }
 `;
 
@@ -55,6 +59,14 @@ export const Section = styled.section`
         }
       }
     `}
+
+  img {
+    margin-bottom: ${props => (props.caption ? '0' : '100px')};
+
+    @media (max-width: 420px) {
+      margin-bottom: ${props => (props.caption ? '0' : '50px')};
+    }
+  }
 `;
 
 export const VideoContainer = styled.div`

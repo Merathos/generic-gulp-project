@@ -68,7 +68,7 @@ export const SectionIcon = styled.div`
 `;
 
 export const SectionButton = styled.div`
-  margin: 50px 0;
+  margin: 48px 0;
 
   @media screen and (max-width: 420px) {
     margin: 40px 0 60px;
@@ -169,5 +169,48 @@ export const Aside = styled.aside`
     grid-row-gap: 8px;
     background-position: top left 30px;
     background-size: 80px;
+  }
+`;
+
+export const Content = styled.div`
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: #53b443;
+
+    svg {
+      fill: #53b443;
+
+      path:first-child {
+        stroke: #53b443;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
+    }
+  }
+
+  &:active {
+    color: #339722;
+
+    svg {
+      fill: #339722;
+
+      path:first-child {
+        stroke: #339722;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
+    }
   }
 `;

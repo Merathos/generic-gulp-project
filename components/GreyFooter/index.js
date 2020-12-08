@@ -1,18 +1,26 @@
 import ArrowRight from 'public/icons/arrow-right.svg';
-import { BlogsCard } from 'components';
+import { StoryCard } from 'components';
 import Link from 'next/link';
+import Swiper from 'react-id-swiper';
 import * as S from './styles';
 
 const GreyFooter = ({ data, type, background }) => {
+  const params = {
+    slidesPerView: 'auto',
+    loop: false,
+  };
+
   return (
     <S.Section background={background} type={type}>
       {type === 'blog' ? (
         <S.ListBlog>
-          {data.map((el, i) => (
-            <S.Card key={i}>
-              <BlogsCard data={el} background="#fff" />
-            </S.Card>
-          ))}
+          <Swiper {...params}>
+            {data.map((el, i) => (
+              <S.Card key={i}>
+                <StoryCard data={el} background="#fff" />
+              </S.Card>
+            ))}
+          </Swiper>
         </S.ListBlog>
       ) : (
         <S.ListContainer background={background} type={type}>
