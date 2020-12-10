@@ -44,9 +44,11 @@ const VacancyHeader = ({ data }) => {
   return (
     <Section>
       <div>
-        <Wrapper>
-          <Features data={features} />
-        </Wrapper>
+        {features && (
+          <Wrapper>
+            <Features data={features} />
+          </Wrapper>
+        )}
         <H1>{name}</H1>
         {technology_stacks && (
           <TextBlock>
@@ -54,15 +56,17 @@ const VacancyHeader = ({ data }) => {
             <StyledText>{technology_stacks}</StyledText>
           </TextBlock>
         )}
-        <TextBlock>
-          <Bold>Команда:</Bold>
-          <StyledText>{team && team.name}</StyledText>
-        </TextBlock>
+        {team?.name && (
+          <TextBlock>
+            <Bold>Команда:</Bold>
+            <StyledText>{team && team.name}</StyledText>
+          </TextBlock>
+        )}
         <StyledButton accent>
           {english ? 'Send CV' : 'Отправить резюме'}
         </StyledButton>
       </div>
-      {category.image && (
+      {category?.image && (
         <Picture
           src={category.image.path.normal}
           alt={name}
