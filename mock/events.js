@@ -13,18 +13,18 @@ export default {
         type: `QA Evening`,
         color: `#53B443`,
         date: { day: `11.04`, time: `Начало в 18:00` },
-        status: { img: `icons/online.png`, name: `Онлайн` },
+        status: { img: `/icons/online.png`, name: `Онлайн` },
         topics: [
           {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
               {
-                img: `images/speaker2.png`,
+                img: `/images/speaker2.png`,
                 name: `Александр Калошин`,
                 job: `DINS`,
               },
@@ -34,7 +34,7 @@ export default {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
@@ -47,18 +47,18 @@ export default {
         type: `JS Evening`,
         color: `#FEB251`,
         date: { day: `11.04`, time: `Начало в 18:00` },
-        status: { img: `icons/streaming.png`, name: `Идет трансляция` },
+        status: { img: `/icons/streaming.png`, name: `Идет трансляция` },
         topics: [
           {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
               {
-                img: `images/speaker2.png`,
+                img: `/images/speaker2.png`,
                 name: `Александр Калошин`,
                 job: `DINS`,
               },
@@ -68,7 +68,7 @@ export default {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
@@ -83,18 +83,18 @@ export default {
         type: `JаVa Evening`,
         color: `#FB5235`,
         date: { day: `11.04`, time: `Начало в 18:00` },
-        status: { img: `icons/recording.png`, name: `Есть запись` },
+        status: { img: `/icons/recording.png`, name: `Есть запись` },
         topics: [
           {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
               {
-                img: `images/speaker2.png`,
+                img: `/images/speaker2.png`,
                 name: `Александр Калошин`,
                 job: `DINS`,
               },
@@ -104,7 +104,7 @@ export default {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
@@ -117,18 +117,18 @@ export default {
         type: `QA Evening`,
         color: `#53B443`,
         date: { day: `11.04.19`, time: `Начало в 18:00` },
-        status: { img: `icons/recording.png`, name: `Есть запись` },
+        status: { img: `/icons/recording.png`, name: `Есть запись` },
         topics: [
           {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },
               {
-                img: `images/speaker2.png`,
+                img: `/images/speaker2.png`,
                 name: `Александр Калошин`,
                 job: `DINS`,
               },
@@ -138,7 +138,7 @@ export default {
             title: `Эволюция систем мониторинга Prometheus и Zabbix`,
             speakers: [
               {
-                img: `images/speaker1.png`,
+                img: `/images/speaker1.png`,
                 name: `Вячеслав Швецов`,
                 job: `DINS`,
               },

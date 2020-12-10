@@ -1,9 +1,9 @@
 import { EventBanner, BlogsBanner } from 'components';
-import { Container, List, ListItem, H3, Text, Ref } from './styles';
 import Link from 'next/link';
+import { Container, List, ListItem, H3, Text, Ref } from './styles';
 
-const BenefitsList = ({ data }) => {
-  const { benefits, showEvent, bannersData, blogLinkDefault } = data;
+const BenefitsList = ({ data, banner }) => {
+  const { benefits, bannersData, blogLinkDefault } = data;
 
   return (
     <Container>
@@ -17,13 +17,13 @@ const BenefitsList = ({ data }) => {
             </Link>
           </ListItem>
         ))}
-        <ListItem key={'banner'} banner={true}>
-          {showEvent ? (
-            <EventBanner data={bannersData.event} />
-          ) : (
+        <ListItem key="banner" banner>
+          {banner.type === 'event' && <EventBanner data={banner.event} />}
+          {banner.type === 'blog' && (
             <BlogsBanner
               data={bannersData.blogLinksData}
               blogLinkType={blogLinkDefault}
+              banner={banner}
             />
           )}
         </ListItem>

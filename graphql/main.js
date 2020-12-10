@@ -17,3 +17,22 @@ export const GET_QUOTES = gql`
     }
   }
 `;
+
+export const GET_BANNER = gql`
+  query getBanner {
+    banner {
+      id
+      type
+      text
+      link
+      button_text
+      event {
+        id
+        name
+        slug
+        starts_at
+        ends_at
+      }
+    }
+  }
+`;

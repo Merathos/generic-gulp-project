@@ -37,7 +37,7 @@ export const Item = styled.li`
     right: -47px;
     width: 100px;
     height: 86px;
-    background-image: url('backgrounds/speaker-card1.svg');
+    background-image: url('/backgrounds/speaker-card1.svg');
     background-position: center;
     background-repeat: no-repeat;
 
@@ -53,7 +53,7 @@ export const Item = styled.li`
 
   &:nth-child(even) {
     &::after {
-      background-image: url('backgrounds/speaker-card2.svg');
+      background-image: url('/backgrounds/speaker-card2.svg');
       top: 19px;
       right: -37px;
 

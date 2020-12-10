@@ -97,6 +97,5 @@ export const EventButton = styled(Btn)`
   align-self: flex-start;
   margin-top: auto;
   z-index: 1;
-  background-color: #fb5235;
   border-color: #fb5235;
 `;

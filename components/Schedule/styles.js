@@ -3,7 +3,7 @@ import { TitleH2, Btn } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 170px;
-  background-image: url('backgrounds/schedule.svg');
+  background-image: url('/backgrounds/schedule.svg');
   background-position: right 0 top 950px;
   background-repeat: no-repeat;
 
