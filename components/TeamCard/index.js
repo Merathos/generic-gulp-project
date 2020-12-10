@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Section, H3, StyledText, Arrow, Picture } from './styles';
 import ArrowRight from 'public/icons/arrow-right.svg';
+import { Section, H3, StyledText, Arrow, Picture } from './styles';
 
 const TeamCard = props => {
   const {
@@ -8,7 +8,7 @@ const TeamCard = props => {
   } = props;
 
   return (
-    <Link href={`teams/projects/${slug}`}>
+    <Link href={`teams/${slug}`}>
       <a>
         <Section>
           <Picture
