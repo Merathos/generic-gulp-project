@@ -1,17 +1,23 @@
 import { EventCard } from 'components';
-import { List, Item } from './styles';
+import { Item, List } from './styles';
 
-const EventList = props => {
-  const { cards, completed } = props;
-
+const EventList = ({ events, completed }) => {
   return (
-      <List>
-        {cards.map((el, i) => (
-          <Item key={i}>
-            <EventCard card={el} completed={completed} />
-          </Item>
-        ))}
-      </List>
+    <List>
+      {events.map(event => (
+        <Item key={event.id}>
+          <EventCard
+            category={event.category}
+            startsAt={event.starts_at}
+            endsAt={event.ends_at}
+            status={event.status}
+            programs={event.programs}
+            location={event.location}
+            completed={completed}
+          />
+        </Item>
+      ))}
+    </List>
   );
 };
 

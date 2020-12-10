@@ -1,41 +1,50 @@
-import { useState } from 'react';
 import { EventsCheckbox } from 'elements';
-import { Wrapper, List, Item, ResetFilter } from './styles';
+import {
+  checkActiveCategories,
+  generateCategories,
+} from 'helpers/events-helpers';
+import { useRouter } from 'next/router';
+import { Item, List, ResetFilter, Wrapper } from './styles';
 
-const EventsFilter = props => {
-  const {
-    data: { filterFields, discard },
-  } = props;
+const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
+  const router = useRouter();
+  const { query } = router;
 
-  const [checkedItems, setCheckedItems] = useState({});
-
-  const handleChange = event => {
-    setCheckedItems({
-      ...checkedItems,
-      [event.target.id]: event.target.checked,
+  const handleChange = (slug, isActive) => {
+    router.push({
+      pathname: pageSlug,
+      query: {
+        ...query,
+        categories: generateCategories(query.categories, slug, isActive),
+      },
     });
+  };
+
+  const onReset = () => {
+    router.push(pageSlug);
   };
 
   return (
     <Wrapper>
       <List>
-        {filterFields.map((item, i) => (
-          <Item key={i}>
-            <EventsCheckbox
-              name={item.name}
-              checked={checkedItems[item.name]}
-              onChange={handleChange}
-              color={item.color}
-            />
-          </Item>
-        ))}
+        {eventCategories.map(item => {
+          const isActive = checkActiveCategories(query.categories, item.slug);
+          return (
+            <Item key={item.id}>
+              <EventsCheckbox
+                name={item.name}
+                value={item.name}
+                checked={isActive}
+                slug={item.slug}
+                onChange={() => handleChange(item.slug, isActive)}
+                color={item.color}
+              />
+            </Item>
+          );
+        })}
       </List>
-      <ResetFilter
-        type="button"
-        onClick={() => setCheckedItems({})}
-        checkedItems={checkedItems}
-      >
-        {discard}
+      <ResetFilter type="button" onClick={() => onReset()}>
+        {resetButtonText}
       </ResetFilter>
     </Wrapper>
   );

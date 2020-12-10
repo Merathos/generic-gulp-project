@@ -27,10 +27,7 @@ export const Item = styled.li`
 `;
 
 export const ResetFilter = styled.button`
-  display: ${props =>
-    Object.keys(props.checkedItems).some(k => props.checkedItems[k])
-      ? 'inline-block'
-      : 'none'};
+  display: 'inline-block';
   opacity: 0.5;
   font-size: 16px;
   line-height: 131%;

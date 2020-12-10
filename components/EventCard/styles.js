@@ -1,5 +1,5 @@
+import { Btn, TitleH2 } from 'elements';
 import styled from 'styled-components';
-import { TitleH2, Btn } from 'elements';
 
 export const CardWrapper = styled.div`
   box-sizing: border-box;
@@ -32,7 +32,7 @@ export const Title = styled(TitleH2)`
     margin-bottom: 15px;
     width: 100%;
     font-size: 32px;
-    line-height: 42.88px;
+    line-height: 43px;
     letter-spacing: 0.01em;
   }
 `;
@@ -57,19 +57,19 @@ export const Date = styled.p`
     margin-bottom: 0;
     text-align: left;
     font-size: 26px;
-    line-height: 31.2px;
+    line-height: 31px;
   }
 `;
 
 export const Time = styled.p`
   text-align: right;
   font-size: 18px;
-  line-height: 23.58px;
+  line-height: 24px;
 
   @media (max-width: 910px) {
     text-align: left;
     font-size: 14px;
-    line-height: 20.72px;
+    line-height: 21px;
   }
 `;
 
@@ -79,8 +79,8 @@ export const Status = styled.p`
   display: flex;
   align-items: center;
   font-size: 18px;
-  line-height: 23.58px;
-  color: ${props => (props.status === `Идет трансляция` ? `#FB5235` : ``)};
+  line-height: 24px;
+  color: ${props => (props.status === 'streaming' ? `#FB5235` : ``)};
 
   @media (max-width: 910px) {
     margin-top: -42px;
@@ -88,7 +88,7 @@ export const Status = styled.p`
     margin-bottom: 60px;
     width: fit-content;
     font-size: 14px;
-    line-height: 20.72px;
+    line-height: 21px;
   }
 
   @media (max-width: 768px) {
@@ -107,23 +107,22 @@ export const Icon = styled.img`
 `;
 
 export const TopicContainer = styled.div`
-  margin-bottom: 7px;
+  margin-bottom: 40px;
   display: flex;
   padding-top: 18px;
   border-top: 2px solid rgba(32, 31, 42, 0.1);
 
   @media (max-width: 910px) {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     flex-direction: column;
   }
 `;
 
 export const TopicName = styled.p`
   max-width: 385px;
-  margin-top: 3px;
   margin-right: auto;
   font-size: 24px;
-  line-height: 33.6px;
+  line-height: 34px;
   font-weight: 700;
 
   @media (max-width: 910px) {
@@ -147,6 +146,10 @@ export const Speaker = styled.div`
   @media (max-width: 910px) {
     margin-bottom: 21px;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const Pic = styled.img`
@@ -154,6 +157,7 @@ export const Pic = styled.img`
   width: 63px;
   height: 63px;
   border-radius: 50%;
+  object-fit: cover;
 
   @media (max-width: 910px) {
     margin-right: 11px;
@@ -168,13 +172,13 @@ export const NameWrapper = styled.div`
   max-width: 177px;
   padding-top: 11px;
   font-size: 18px;
-  line-height: 23.58px;
+  line-height: 24px;
 
   @media (max-width: 910px) {
     max-width: 70%;
     padding-top: 5px;
     font-size: 14px;
-    line-height: 18.34px;
+    line-height: 18px;
   }
 `;
 
@@ -211,7 +215,7 @@ export const Location = styled.p`
   max-width: 185px;
   align-self: flex-end;
   font-size: 16px;
-  line-height: 20.96px;
+  line-height: 21px;
   opacity: 0.5;
 
   @media (max-width: 910px) {
@@ -219,7 +223,7 @@ export const Location = styled.p`
     text-align: left;
     align-self: flex-start;
     font-size: 14px;
-    line-height: 20.72px;
+    line-height: 21px;
   }
 `;
 

@@ -1,6 +1,5 @@
+import { EventsCheckbox, TitleH2 } from 'elements';
 import styled from 'styled-components';
-import { TitleH2 } from 'elements';
-import { EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
   background-image: url('backgrounds/mailing-form.svg');

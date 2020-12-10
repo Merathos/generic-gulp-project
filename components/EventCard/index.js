@@ -1,12 +1,50 @@
-import * as S from './styles';
+import dayjs from 'dayjs';
+import { getStatusImage } from 'helpers/events-helpers';
 import Router from 'next/router';
+import * as S from './styles';
 
-const EventCard = props => {
-  const {
-    card: { type, color, date, status, topics, location },
-    completed = false,
-    regForm,
-  } = props;
+const EventCard = ({
+  category,
+  startsAt,
+  endsAt,
+  status,
+  programs,
+  location,
+  completed,
+  regForm,
+}) => {
+  const renderStatus = () => {
+    if (status.slug === 'offline' && location) {
+      return null;
+    }
+    if (status.slug === 'online') {
+      return (
+        <>
+          <S.Icon
+            src={getStatusImage(status.slug)}
+            alt={status.name}
+            width="16"
+            height="16"
+          />
+          {status.name}
+        </>
+      );
+    }
+    if (status.slug === 'streaming') {
+      return (
+        <>
+          <S.Icon
+            src={getStatusImage(status.slug)}
+            alt={status.name}
+            width="16"
+            height="16"
+          />
+          {status.name}
+        </>
+      );
+    }
+    return null;
+  };
 
   const handleRegistrationClick = () => {
     if (Router.pathname === `/event`) {
@@ -21,51 +59,62 @@ const EventCard = props => {
     }
   };
 
+  const handlePastEventClick = () => {
+    Router.push({
+      pathname: '/event',
+    }).then(() => window.scrollTo(0, 0));
+  };
+
   return (
     <S.CardWrapper>
       <S.TopWrapper>
-        <S.Link href="#">
-          <S.Title color={color}>{type}</S.Title>
+        <S.Link>
+          <S.Title color={category.color}>{category.name}</S.Title>
         </S.Link>
-        <S.DateContainer color={color}>
-          <S.Date>{date.day}</S.Date>
-          <S.Time>{date.time}</S.Time>
+        <S.DateContainer color={category.color}>
+          <S.Date>{dayjs(startsAt).format('DD.MM')}</S.Date>
+          <S.Time>{`Начало в ${dayjs(startsAt).format('HH.mm')}`}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
-      <S.Status status={status.name}>
-        <S.Icon src={status.img} alt={status.name} width="16" height="16" />
-        {status.name}
-      </S.Status>
-      {topics.map((topic, i) => (
-        <S.TopicContainer key={i}>
-          <S.TopicName>{topic.title}</S.TopicName>
-          <S.SpeakerContainer>
-            {topic.speakers.map((speaker, j) => (
-              <S.Speaker key={j}>
-                <S.Pic
-                  src={speaker.img}
-                  alt={speaker.name}
-                  width="63"
-                  height="63"
-                />
-                <S.NameWrapper>
-                  <S.SpeakerName>{speaker.name}</S.SpeakerName>
-                  <S.SpeakerJob>{speaker.job}</S.SpeakerJob>
-                </S.NameWrapper>
-              </S.Speaker>
-            ))}
-          </S.SpeakerContainer>
-        </S.TopicContainer>
-      ))}
+      <S.Status status={status.slug}>{renderStatus()}</S.Status>
+      {programs &&
+        programs.map(program => (
+          <S.TopicContainer key={program.id}>
+            <S.TopicName>{program.name}</S.TopicName>
+            <S.SpeakerContainer>
+              {program.speaker &&
+                [program.speaker].map(speaker => (
+                  <S.Speaker key={speaker.id}>
+                    <S.Pic
+                      src={speaker.image.path.normal}
+                      alt={speaker.name}
+                      width="63"
+                      height="63"
+                    />
+                    <S.NameWrapper>
+                      <S.SpeakerName>{speaker.name}</S.SpeakerName>
+                      <S.SpeakerJob>{speaker.company}</S.SpeakerJob>
+                    </S.NameWrapper>
+                  </S.Speaker>
+                ))}
+            </S.SpeakerContainer>
+          </S.TopicContainer>
+        ))}
       <S.BottomWrapper>
-        {completed === false ? (
-          <S.StyledButton accent={true} onClick={handleRegistrationClick}>
-            Зарегистрироваться
+        {completed === true ? (
+          <S.StyledButton onClick={handlePastEventClick}>
+            Подробнее о прошедшем мероприятии
           </S.StyledButton>
         ) : (
-          <S.StyledButton>Подробнее о прошедшем мероприятии</S.StyledButton>
+          <S.StyledButton accent onClick={handleRegistrationClick}>
+            Зарегистрироваться
+          </S.StyledButton>
         )}
-        <S.Location>{location}</S.Location>
+        <S.Location>
+          {location ||
+            `Мероприятие
+проводится онлайн`}
+        </S.Location>
       </S.BottomWrapper>
     </S.CardWrapper>
   );

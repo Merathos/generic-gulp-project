@@ -48,6 +48,7 @@ export { default as TeamCard } from './TeamCard';
 export { default as Mailing } from './Mailing';
 export { default as EventCard } from './EventCard';
 export { default as EventList } from './EventList';
+export { default as EventsTags } from './EventsTags';
 export { default as PortraitSlider } from './PortraitSlider';
 export { default as InfographicsList } from './InfographicsList';
 export { default as ListFigure } from './ListFigure';

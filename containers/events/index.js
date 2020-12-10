@@ -1,11 +1,10 @@
-import { EventsFilter } from 'forms';
-import { FilterButton } from 'elements';
-import { Mailing, EventList, SubForm } from 'components';
+import { EventList, EventsTags, Mailing, SubForm } from 'components';
 import { FormModal, SuccessModal } from 'containers';
+import { EventsFilter } from 'forms';
 import { useState } from 'react';
 import * as S from './styles';
 
-const Events = ({ data }) => {
+const Events = ({ data, eventCategories, events, pageSlug }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [successIsShown, setSuccessIsShown] = useState(false);
 
@@ -17,26 +16,44 @@ const Events = ({ data }) => {
     setSuccessIsShown(prev => !prev);
   }
 
+  // Filter upcoming events
+  const eventsUpcoming = events.filter(
+    event => Date.parse(event.ends_at) - Date.parse(new Date()) > 0
+  );
+
+  // Filter ended events
+  const eventsEnded = events.filter(
+    event => Date.parse(event.ends_at) - Date.parse(new Date()) < 0
+  );
+
   return (
     <S.Main>
       <S.Container>
         <S.Grid>
           <S.Title>{data.mainTitle}</S.Title>
           <S.Aside>
-            <EventsFilter data={data} />
-            <Mailing data={data.mailing} onClick={toggleModal} />
+            {eventCategories && (
+              <EventsFilter
+                data={data}
+                eventCategories={eventCategories}
+                pageSlug={pageSlug}
+                resetButtonText={data.resetButtonText}
+              />
+            )}
+            <Mailing data={data.mailing} onClick={() => setIsOpen(true)} />
           </S.Aside>
           <S.ContentWrapper>
-            <S.Tags>
-              {data.tags.map((el, i) => (
-                <S.Tag key={i}>
-                  <FilterButton name={el} handleChange={() => {}} />
-                </S.Tag>
-              ))}
-            </S.Tags>
-            <EventList cards={data.cards.active} />
+            {eventCategories && (
+              <EventsTags
+                eventCategories={eventCategories}
+                pageSlug={pageSlug}
+              />
+            )}
+            {eventsUpcoming.length > 0 && <EventList events={eventsUpcoming} />}
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
-            <EventList cards={data.cards.completed} completed />
+            {eventsEnded.length > 0 && (
+              <EventList events={eventsEnded} completed />
+            )}
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>

@@ -39,7 +39,7 @@ const EventDetails = ({ data, cards }) => {
       )}
       <Speakers data={data.speakers} />
       {isActive && <EventReg data={data.timepad} regForm={regForm} />}
-      <EventsSlider cards={cards.active} regForm={regForm} />
+      {/* <EventsSlider cards={cards.active} regForm={regForm} /> */}
     </main>
   );
 };

@@ -1,16 +1,33 @@
+import { EventCard } from 'components';
+import { useEffect, useRef, useState } from 'react';
 import Swiper from 'react-id-swiper';
-import { useRef, useEffect, useState } from 'react';
+import ArrowNext from '../../public/icons/arrow-next.svg';
+import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import {
-  Section,
+  Container,
+  Element,
   NextButton,
   PrevButton,
-  Element,
-  Container,
+  Section,
   Title,
 } from './styles';
-import ArrowPrev from '../../public/icons/arrow-prev.svg';
-import ArrowNext from '../../public/icons/arrow-next.svg';
-import { EventCard } from 'components';
+
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(undefined);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return windowWidth;
+}
 
 const EventsSlider = ({ cards, regForm }) => {
   const ref = useRef(null);
@@ -42,14 +59,18 @@ const EventsSlider = ({ cards, regForm }) => {
     <Section>
       <Container>
         <Title>Ещё по теме</Title>
-        <Swiper
-          ref={ref}
-          {...params}
-          noSwiping={initialWidth > 910 ? false : true}
-        >
+        <Swiper ref={ref} {...params} noSwiping={!(initialWidth > 910)}>
           {cards.map((card, i) => (
             <Element key={i}>
-              <EventCard card={card} regForm={regForm} />
+              <EventCard
+                category={card.category}
+                startsAt={card.starts_at}
+                endsAt={card.ends_at}
+                status={card.status}
+                programs={card.programs}
+                location={card.location}
+                regForm={regForm}
+              />
             </Element>
           ))}
         </Swiper>
@@ -57,22 +78,5 @@ const EventsSlider = ({ cards, regForm }) => {
     </Section>
   );
 };
-
-function useWindowWidth() {
-  const [windowWidth, setWindowWidth] = useState(undefined);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return windowWidth;
-}
 
 export default EventsSlider;
