@@ -9,12 +9,12 @@ import {
 import { RunningText } from '../../components';
 import { Main as MainContainer, Container, GreyContainer } from './styles';
 
-const Main = ({ data, storiesData, teams }) => {
+const Main = ({ data, storiesData, teams, quotes }) => {
   return (
     <MainContainer>
       <GreyContainer>
         <Container>
-          <Intro data={data.intro} />
+          <Intro data={data.intro} quotes={quotes} />
         </Container>
       </GreyContainer>
       <Container>

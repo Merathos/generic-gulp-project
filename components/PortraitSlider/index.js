@@ -4,7 +4,7 @@ import ArrowPrev from 'public/icons/arrow-prev.svg';
 import ArrowNext from 'public/icons/arrow-next.svg';
 import * as S from './styles';
 
-const PortraitSlider = ({ pictures }) => {
+const PortraitSlider = ({ quotes }) => {
   const ref = useRef(null);
 
   const params = {
@@ -39,18 +39,17 @@ const PortraitSlider = ({ pictures }) => {
   return (
     <S.Section>
       <Swiper ref={ref} {...params}>
-        {pictures.map((el, i) => (
-          <S.Element key={i} isMain={el.isMain}>
+        {quotes.map(item => (
+          <S.Element key={item.id}>
             <S.Img
-              src={el.src}
-              alt={el.alt}
-              width={el.size.width}
-              height={el.size.height}
+              src={item.image.path.normal}
+              srcSet={`${item.image.path.normal} 1x, ${item.image.path.retina} 2x`}
+              alt={item.name}
             />
-            {el.quote && (
-              <S.QuoteBlock bgColor={el.bgColor} textColor={el.textColor}>
-                <S.Quote>{el.quote}</S.Quote>
-                <S.Author>{el.name}</S.Author>
+            {item.content && (
+              <S.QuoteBlock bgColor={item.color}>
+                <S.Quote>{item.content}</S.Quote>
+                <S.Author>{item.name}</S.Author>
               </S.QuoteBlock>
             )}
           </S.Element>

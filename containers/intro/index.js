@@ -2,7 +2,7 @@ import { MarkerList, PortraitSlider } from 'components';
 import Btn from '../../elements/Btn';
 import * as S from './styles';
 
-const Intro = ({ data }) => {
+const Intro = ({ data, quotes }) => {
   return (
     <S.Container>
       <S.TextBlock>
@@ -18,7 +18,7 @@ const Intro = ({ data }) => {
         <S.Button accent="accent">{data.buttonText}</S.Button>
       </S.TextBlock>
       <S.PortraitBlock>
-        <PortraitSlider pictures={data.portraits} />
+        <PortraitSlider quotes={quotes} />
       </S.PortraitBlock>
     </S.Container>
   );
