@@ -8,7 +8,7 @@ const endOffset = 0;
 const handleSearch = searchValue => {
   Router.push({
     pathname: '/vacancies',
-    query: { technology: searchValue },
+    query: { technologies: searchValue },
   }).then(() => window.scrollTo(0, 0));
 };
 
