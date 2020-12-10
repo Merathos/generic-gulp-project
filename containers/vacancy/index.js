@@ -40,7 +40,7 @@ const Vacancy = ({ data, back }) => {
         </SliderContainer>
       </SliderSection>
 
-      <Application data={data.application} decor vacancy={true} />
+      <Application data={data.application} decor vacancy />
 
       <OfficesMap data={data.map} />
 

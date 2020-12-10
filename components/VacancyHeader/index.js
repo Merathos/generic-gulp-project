@@ -48,15 +48,17 @@ const VacancyHeader = ({ data }) => {
           <Features data={features} />
         </Wrapper>
         <H1>{name}</H1>
-        <TextBlock>
-          <Bold>Technology Stack:</Bold>
-          <StyledText>{technology_stacks}</StyledText>
-        </TextBlock>
+        {technology_stacks && (
+          <TextBlock>
+            <Bold>Technology Stack:</Bold>
+            <StyledText>{technology_stacks}</StyledText>
+          </TextBlock>
+        )}
         <TextBlock>
           <Bold>Команда:</Bold>
           <StyledText>{team && team.name}</StyledText>
         </TextBlock>
-        <StyledButton accent={true}>
+        <StyledButton accent>
           {english ? 'Send CV' : 'Отправить резюме'}
         </StyledButton>
       </div>
