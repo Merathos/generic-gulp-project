@@ -60,7 +60,7 @@ const EventsSlider = ({ cards, regForm }) => {
       <Container>
         <Title>Ещё по теме</Title>
         <Swiper ref={ref} {...params} noSwiping={!(initialWidth > 910)}>
-          {/* {cards.map((card, i) => (
+          {cards.map((card, i) => (
             <Element key={i}>
               <EventCard
                 category={card.category}
@@ -72,7 +72,7 @@ const EventsSlider = ({ cards, regForm }) => {
                 regForm={regForm}
               />
             </Element>
-          ))} */}
+          ))}
         </Swiper>
       </Container>
     </Section>
