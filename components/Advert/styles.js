@@ -2,12 +2,49 @@ import styled from 'styled-components';
 import { TitleH3 } from 'elements';
 
 export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 380px;
-  transition: color 200ms ease;
+  transition: all 0.3s ease;
+
+  svg,
+  path {
+    transition: all 0.3s ease;
+  }
 
   &:hover {
-    color: #53B443;
+    color: #53b443;
     cursor: pointer;
+  }
+
+  &:hover svg {
+    fill: #53b443;
+
+    path:first-child {
+      stroke: #53b443;
+    }
+
+    path:last-child {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+  }
+
+  &:active {
+    color: #339722;
+  }
+
+  &:active svg {
+    fill: #339722;
+
+    path:first-child {
+      stroke: #339722;
+    }
+
+    path:last-child {
+      stroke: #ffffff;
+      fill: #ffffff;
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -29,19 +66,21 @@ export const StyledText = styled.p`
 
 export const H3 = styled(TitleH3)`
   margin-bottom: 20px;
+  font-weight: 700;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 14px;
   }
 `;
 
-export const ArrowRight = styled.a.attrs(props => ({
-  image: props.hovered
-    ? "url('/icons/arrow-hover.png')"
-    : "url('/icons/arrow.png')"
-}))`
+export const Arrow = styled.span`
+  display: flex;
+  margin-top: auto;
   width: 38px;
   height: 38px;
-  background-image: ${props => props.image};
-  transition: background-image 200ms ease;
+
+  @media screen and (max-width: 768px) {
+    width: 26px;
+    height: 26px;
+  }
 `;

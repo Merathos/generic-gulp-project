@@ -32,6 +32,10 @@ export const StyledText = styled(Text)`
   @media screen and (max-width: 1024px) {
     margin-bottom: 20px;
   }
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 60px;
+  }
 `;
 
 export const StyledSubtitle = styled(Subtitle)`

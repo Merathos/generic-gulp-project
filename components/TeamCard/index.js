@@ -1,28 +1,27 @@
 import Link from 'next/link';
-import { Section, H3, StyledText, ArrowRight, Picture } from './styles';
-import ArrowIcon from 'public/icons/arrow-right.svg';
+import ArrowRight from 'public/icons/arrow-right.svg';
+import { Section, H3, StyledText, Arrow, Picture } from './styles';
 
 const TeamCard = props => {
   const {
     data: { name, slug, summary, image },
-    isMain = false,
   } = props;
 
   return (
-    <Link href={`teams/projects/${slug}`}>
+    <Link href={`teams/${slug}`}>
       <a>
-        <Section isMain={isMain}>
+        <Section>
           <Picture
             src={image && image.path.normal}
             alt={name}
             width="350"
             height="194"
           />
-          <H3 isMain={isMain}>{name}</H3>
-          <StyledText isMain={isMain}>{summary}</StyledText>
-          <ArrowRight isMain={isMain}>
-            <ArrowIcon />
-          </ArrowRight>
+          <H3>{name}</H3>
+          <StyledText>{summary}</StyledText>
+          <Arrow>
+            <ArrowRight />
+          </Arrow>
         </Section>
       </a>
     </Link>

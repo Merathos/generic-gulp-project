@@ -1,24 +1,26 @@
 import Link from 'next/link';
-import { Button } from 'elements';
-import { Advert } from 'components';
+import { Btn } from 'elements';
+import { VacancyCard } from 'components';
 import * as S from './styles';
 
-const InternVacancies = ({ mock, back }) => {
-  const { title, button } = mock;
+const InternVacancies = ({ mock }) => {
+  const { title, button, href, vacanciesList } = mock;
   return (
     <>
       <S.Title>{title}</S.Title>
-      {back && (
+      {vacanciesList && (
         <S.List>
-          {back.map((el, i) => (
-          <li key={i}>
-            <Advert data={el} />
-          </li>
+          {vacanciesList.map((item, index) => (
+            <S.ListItem key={index}>
+              <VacancyCard data={item} />
+            </S.ListItem>
           ))}
         </S.List>
       )}
-      <Link href="/catalog">
-        <Button>{button}</Button>
+      <Link href={href} passHref>
+        <a>
+          <Btn>{button}</Btn>
+        </a>
       </Link>
     </>
   );

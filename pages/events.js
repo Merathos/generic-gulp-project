@@ -5,7 +5,7 @@ import { initializeApollo } from 'lib/apollo';
 
 const eventsPage = ({ event_categories, events }) => {
   return (
-    <Layout plainHeader isVisible={false} showFooter={false}>
+    <Layout plainHeader isVisible={false} showFooter={false} greyHeader={false}>
       <Events
         data={eventsStatic}
         eventCategories={event_categories}

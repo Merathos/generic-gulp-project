@@ -1,9 +1,8 @@
-import { Subtitle } from 'elements';
-import { Title, H4, List, StyledIcon } from './styles';
+import { Title, H4, List, StyledIcon, Text } from './styles';
 
 const Values = props => {
   const {
-    data: { title, items }
+    data: { title, items },
   } = props;
   return (
     <>
@@ -13,7 +12,7 @@ const Values = props => {
           <li key={i}>
             <StyledIcon name={el.icon} />
             <H4>{el.title}</H4>
-            <Subtitle>{el.text}</Subtitle>
+            <Text>{el.text}</Text>
           </li>
         ))}
       </List>

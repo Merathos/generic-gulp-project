@@ -1,42 +1,71 @@
 import styled from 'styled-components';
 import { TitleH2 } from 'elements';
-import { Text } from 'elements';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 800px 1fr;
-  grid-gap: 160px;
+  grid-template-columns: 65% 21%;
+  grid-gap: 60px;
+  justify-content: space-between;
 
-  @media screen and (max-width: 420px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 1360px) {
+    grid-template-columns: 65% 25%;
     grid-gap: 20px;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 65% 30%;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-gap: 60px;
+  }
+
+  @media (max-width: 1024px) {
+    grid-gap: 30px;
   }
 `;
 
 export const Title = styled(TitleH2)`
   margin-bottom: 40px;
-  @media screen and (max-width: 420px) {
-    margin-bottom: 20px;
+  margin-top: 30px;
+
+  @media (max-width: 1024px) {
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    line-height: 130%;
+    margin-bottom: 22px;
+  }
+`;
+
+export const StyledText = styled.p`
+  margin-bottom: 80px;
+  font-size: 18px;
+  line-height: 158%;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 90%;
   }
 `;
 
 export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 70px;
+  grid-column-gap: 20px;
   grid-row-gap: 30px;
-  max-width: 600px;
+  max-width: 550px;
 
-  @media screen and (max-width: 420px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-row-gap: 20px;
-  }
-`;
-
-export const StyledText = styled(Text)`
-  margin-bottom: 80px;
-  @media screen and (max-width: 420px) {
-    margin-bottom: 40px;
   }
 `;
 
@@ -51,16 +80,29 @@ export const Item = styled.li`
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 2px solid #2F8ED9;
+    border: 2px solid #2f8ed9;
     top: 12px;
   }
-  @media screen and (max-width: 420px) {
+
+  @media screen and (max-width: 768px) {
+    padding-left: 26px;
+
+    &:nth-of-type(even) {
+      order: 5;
+    }
+
     &:before {
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      border: 2px solid #2F8ED9;
-      top: 7px;
+      border: 2px solid #2f8ed9;
+      top: 46%;
+    }
   }
+
+  @media screen and (max-width: 420px) {
+    &:before {
+      top: 40%;
+    }
   }
 `;

@@ -3,6 +3,8 @@ import * as S from './styles';
 const EventHeader = props => {
   const {
     data: { type, isActive, bgImg, status, date, location, speakers },
+    recap,
+    regForm,
   } = props;
 
   return (
@@ -47,9 +49,22 @@ const EventHeader = props => {
           </S.SpeakersContainer>
         </S.Grid>
         {isActive ? (
-          <S.StyledButton accent={true}>Зарегестрироваться</S.StyledButton>
+          <S.StyledButton
+            accent={true}
+            onClick={() => {
+              regForm.current.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Зарегестрироваться
+          </S.StyledButton>
         ) : (
-          <S.StyledButton>Смотреть запись</S.StyledButton>
+          <S.StyledButton
+            onClick={() => {
+              recap.current.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Смотреть запись
+          </S.StyledButton>
         )}
       </S.Container>
     </S.GreyHeader>

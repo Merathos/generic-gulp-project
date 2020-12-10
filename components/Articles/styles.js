@@ -4,36 +4,22 @@ import TitleH2 from '/elements/TitleH2';
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column;
     margin-bottom: 50px;
   }
 `;
 
 export const Block = styled.div`
-  padding-left: 350px;
+  margin-left: auto;
+  max-width: 850px;
   position: relative;
 
-  &::before {
-    content: '';
-    width: 480px;
-    height: 530px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background-color: red;
-    background-image: url('backgrounds/vacancy-bottom.png');
-  }
-
-  @media screen and (max-width: 1024px) {
-    padding-left: 0;
-  }
-
-  &::before {
-    display: none;
+  @media screen and (max-width: 1110px) {
+    margin-left: 0;
   }
 `;
 
@@ -50,6 +36,7 @@ export const AdvertsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 90px;
+  grid-row-gap: 50px;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;

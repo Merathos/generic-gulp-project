@@ -32,8 +32,8 @@ const Default = styled.button`
   box-sizing: border-box;
   border-radius: 8px;
   padding: 0 32px;
-  box-sizing: border-box;
   display: inline-block;
+  transition: all 0.3s ease;
 
   &:hover {
     border-color: #fb5235;
@@ -51,12 +51,12 @@ const Default = styled.button`
   }
 `;
 
-const Button = ({ type = 'default', children, className }) => (
+const Button = ({ type = 'default', children, className, onClick }) => (
   <>
     {
       {
         accent: (
-          <Accent type="button" className={className}>
+          <Accent type="button" className={className} onClick={onClick}>
             {children}
           </Accent>
         ),

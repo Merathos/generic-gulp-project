@@ -7,10 +7,11 @@ const BlogsCard = ({ data, background }) => {
     title,
     slug,
     preview: {
-      path: { normal }
+      path: { normal },
     },
-    created_at
+    created_at,
   } = data;
+
   return (
     <Link href={`articles/${slug}`}>
       <S.Wrapper background={background}>

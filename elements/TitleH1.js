@@ -8,11 +8,6 @@ const Styled = styled.h1`
   margin-bottom: 40px;
 
   @media screen and (max-width: 768px) {
-    font-size: 54px;
-    line-height: 60px;
-  }
-
-  @media screen and (max-width: 420px) {
     font-size: 32px;
     line-height: 134%;
     margin-bottom: 20px;

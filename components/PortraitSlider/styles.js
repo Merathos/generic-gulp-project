@@ -9,6 +9,11 @@ export const Element = styled.div`
   flex: none;
   align-self: flex-end;
   text-align: center;
+  opacity: 0 !important;
+
+  &.swiper-slide-active {
+    opacity: 1 !important;
+  }
 
   @media screen and (max-width: 420px) {
     align-self: flex-start;
@@ -29,7 +34,7 @@ export const Img = styled.img`
   margin-right: 40px;
   vertical-align: bottom;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 800px) {
     margin-right: 0;
   }
 
@@ -60,13 +65,10 @@ export const QuoteBlock = styled.div`
     left: 40px;
   }
 
-  @media screen and (max-width: 768px) {
-    padding: 20px 25px 25px 20px;
-  }
-
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 800px) {
     left: 50%;
     transform: translateX(-50%);
+    padding: 20px 25px 25px 20px;
   }
 
   @media screen and (max-width: 420px) {
@@ -102,110 +104,6 @@ export const Author = styled.span`
   }
 `;
 
-export const PrevButtonMain = styled.button`
-  position: absolute;
-  bottom: 520px;
-  right: 130px;
-  width: 53px;
-  height: 106px;
-  padding-left: 19px;
-  padding-top: 7px;
-  border-radius: 108px 0 0 108px;
-  border: 2px solid #53b443;
-  border-right: none;
-
-  svg {
-    transition: fill 0.3s ease;
-    fill: #53b443;
-
-    &:hover,
-    &:active {
-      fill: #339722;
-    }
-  }
-
-  .inactive-slide & {
-    display: none;
-
-    @media screen and (max-width: 960px) {
-      display: block;
-    }
-  }
-
-  @media screen and (max-width: 960px) {
-    top: 0;
-    right: 10%;
-    padding-top: 0;
-    height: 16px;
-    border: none;
-  }
-
-  @media screen and (max-width: 860px) {
-    right: 20%;
-  }
-
-  @media screen and (max-width: 800px) {
-    right: 30%;
-  }
-
-  @media screen and (max-width: 720px) {
-    top: 4px;
-    right: 52px;
-  }
-`;
-
-export const NextButtonMain = styled.button`
-  position: absolute;
-  bottom: 520px;
-  right: 78px;
-  width: 53px;
-  height: 106px;
-  padding-left: 13px;
-  padding-top: 10px;
-  border-radius: 0 108px 108px 0;
-  border: 2px solid #53b443;
-  border-left: none;
-
-  svg {
-    transition: fill 0.3s ease;
-    fill: #53b443;
-
-    &:hover,
-    &:active {
-      fill: #339722;
-    }
-  }
-
-  .inactive-slide & {
-    display: none;
-
-    @media screen and (max-width: 960px) {
-      display: block;
-    }
-  }
-
-  @media screen and (max-width: 960px) {
-    top: 0;
-    right: 2%;
-    padding-top: 0;
-    height: 16px;
-    border: none;
-  }
-
-  @media screen and (max-width: 860px) {
-    right: 12%;
-  }
-
-  @media screen and (max-width: 800px) {
-    right: 20%;
-  }
-
-  @media screen and (max-width: 720px) {
-    top: 4px;
-    right: 8px;
-  }
-`;
-
 export const PrevButton = styled.button`
   position: absolute;
   bottom: 85px;
@@ -213,7 +111,7 @@ export const PrevButton = styled.button`
   width: 19px;
   height: 19px;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 
   svg {
     fill: #ffffff;
@@ -224,17 +122,35 @@ export const PrevButton = styled.button`
     opacity: 1;
   }
 
-  .first-active-slide & {
-    display: none;
-  }
-
   @media screen and (max-width: 1024px) {
     left: 320px;
-    bottom: 65px;
+    bottom: 60px;
   }
 
   @media screen and (max-width: 960px) {
-    display: none;
+    left: auto;
+    right: 38%;
+  }
+
+  @media screen and (max-width: 800px) {
+    bottom: auto;
+    top: 50px;
+    right: 16%;
+    opacity: 1;
+
+    svg {
+      fill: #53b443;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    top: 2px;
+    right: 18%;
   }
 `;
 
@@ -245,7 +161,7 @@ export const NextButton = styled.button`
   width: 19px;
   height: 19px;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 
   svg {
     fill: #ffffff;
@@ -256,16 +172,34 @@ export const NextButton = styled.button`
     opacity: 1;
   }
 
-  .first-active-slide & {
-    display: none;
-  }
-
   @media screen and (max-width: 1024px) {
     left: 360px;
-    bottom: 65px;
+    bottom: 60px;
   }
 
   @media screen and (max-width: 960px) {
-    display: none;
+    left: auto;
+    right: 30%;
+  }
+
+  @media screen and (max-width: 800px) {
+    bottom: auto;
+    top: 50px;
+    right: 8%;
+    opacity: 1;
+
+    svg {
+      fill: #53b443;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    top: 2px;
+    right: 8%;
   }
 `;

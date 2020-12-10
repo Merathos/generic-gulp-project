@@ -1,61 +1,75 @@
 import {
   Values,
-  Application,
   InternVacancies,
-  GreyHeader,
+  InternshipHeader,
   GreyFooter,
   InternInfo,
   SliderVacancy,
   InternAbout,
-  Slider
+  Gallery,
 } from 'components';
-import { SectionGroup } from 'containers';
-import { Container, GreyContainer, GreyWrapper } from './styles';
+import {
+  Container,
+  GreyContainer,
+  GreyWrapper,
+  ValuesSection,
+  VacancySection,
+  ApplicationSection,
+  GroupContainer,
+} from './styles';
 
-const Internship = ({ data, vacancies }) => {
+const Internship = ({ data }) => {
   return (
     <main>
-      <GreyWrapper>
+      <GreyWrapper withPicture={!!data.intro.picture}>
         <Container>
-          <GreyHeader
+          <InternshipHeader
             title={data.intro.title}
             text={data.intro.text}
             buttons={data.intro.buttons}
-            picture={data.intro.picture} />
+            picture={data.intro.picture}
+            mobPicture={data.intro.mobPicture}
+            size={data.intro.size}
+          />
         </Container>
       </GreyWrapper>
 
       <Container>
-        <SectionGroup>
+        <GroupContainer>
           <InternInfo data={data.info} />
-        </SectionGroup>
-        <SectionGroup>
+        </GroupContainer>
+        <GroupContainer>
           <InternAbout data={data.about} />
-        </SectionGroup>
-        <SectionGroup>
-          <Slider pictures={data.pictures} />
-        </SectionGroup>
-        <SectionGroup>
-          <Values data={data.values} />
-        </SectionGroup>
-        <div />
+        </GroupContainer>
       </Container>
+
+      <Gallery data={data.gallery} />
+
+      <ValuesSection>
+        <Container>
+          <Values data={data.values} />
+        </Container>
+      </ValuesSection>
 
       <GreyContainer>
         <Container>
-          <SliderVacancy data={data.steps} background="#F7F8F9" />
+          <SliderVacancy data={data.steps} />
         </Container>
       </GreyContainer>
 
-      <Container>
-        <SectionGroup>
-          <InternVacancies mock={data.vacancies} back={vacancies} />
-        </SectionGroup>
-      </Container>
+      <VacancySection>
+        <Container>
+          <InternVacancies mock={data.vacancies} />
+        </Container>
+      </VacancySection>
 
-      <Application data={data.apply} />
+      <ApplicationSection data={data.apply} />
 
-      <GreyFooter data={data.greyFooter} background="transparent" />
+      <GreyFooter
+        data={data.greyFooter}
+        background="transparent"
+        type="internship"
+      />
     </main>
   );
 };

@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     display: block;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
 
   a:hover,
@@ -109,6 +110,21 @@ const GlobalStyle = createGlobalStyle`
       bottom: 0;
       padding-top: 0;
     }
+
+    &::-webkit-scrollbar {
+    width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #F7F8F9;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #53B443;
+      border-radius: 6px;
+      border: 3px solid #53B443;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: #53B443 #F7F8F9;
   }
 
   .successModal {
@@ -128,6 +144,58 @@ const GlobalStyle = createGlobalStyle`
       top: 0;
       transform: translateY(0);
       bottom: 0;
+    }
+  }
+
+  .track-vertical {
+    position: absolute;
+    width: 3px !important;
+    right: 0;
+    bottom: 2px;
+    top: 2px;
+    border-radius: 6px;
+    background-color: #f7f8f9;
+  }
+
+  .thumb-vertical {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: #53b443 !important;
+    height: 84px;
+    transform: translateY(0px);
+  }
+
+  .scroll-view {
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+  }
+
+  .scroll-view--scrolling {
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F7F8F9;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #53B443;
+      border-radius: 6px;
+      border: 3px solid #53B443;
+    }
+  }
+
+  .map-container {
+    width: 100%;
+    height: 100%;
+
+    .ymaps-2-1-77-copyrights-pane {
+      inset: auto 0px 10px !important;
     }
   }
   

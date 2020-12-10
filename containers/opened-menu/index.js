@@ -1,12 +1,15 @@
 import * as S from './styles';
 import { MenuList, ContactsList, Social } from '../../components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import LogoNimax from '../../public/images/logo-nimax.svg';
 import MenuClose from '../../public/icons/menu-close.svg';
 import mock from 'mock/index';
 import { useLayoutEffect } from 'react';
 
 const OpenedMenu = ({ onMenuClose }) => {
+  const router = useRouter();
+
   useLayoutEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     document.body.style.overflow = 'hidden';
@@ -25,14 +28,24 @@ const OpenedMenu = ({ onMenuClose }) => {
     };
   }, [onMenuClose]);
 
+  const handleLogoClick = () => {
+    if (router.pathname === '/') {
+      onMenuClose();
+    }
+  };
+
   return (
     <S.Wrapper>
       <S.Container>
-        <S.Button aria-label="Menu" onClick={onMenuClose}>
+        <S.Button aria-label="Menu" onClick={onMenuClose} type="button">
           <MenuClose />
         </S.Button>
         <S.Menu>
-          <S.StyledLogo />
+          <Link href="/" passHref>
+            <a aria-label="To the main page" onClick={handleLogoClick}>
+              <S.StyledLogo guiding="guiding" />
+            </a>
+          </Link>
           <MenuList data={mock.headerMenu.menuList} />
           <S.CopyrightMenuBlock>
             <S.Copyright>{mock.footer.copyright}</S.Copyright>
@@ -44,7 +57,7 @@ const OpenedMenu = ({ onMenuClose }) => {
         <S.Contacts>
           <ContactsList data={mock.headerMenu} />
           <S.Socials>
-            <Social links={mock.footer.social} carryover={true} />
+            <Social links={mock.footer.social} noMargin />
           </S.Socials>
           <S.CopyrightContactsBlock>
             <S.Copyright>{mock.footer.copyright}</S.Copyright>
@@ -54,7 +67,12 @@ const OpenedMenu = ({ onMenuClose }) => {
           </S.CopyrightContactsBlock>
           <S.Producer>
             <S.Span>{mock.footer.producersText}</S.Span>
-            <LogoNimax />
+            <S.ProducerLink
+              href={mock.footer.producersLink}
+              aria-label="Digital-агентство Nimax"
+            >
+              <LogoNimax />
+            </S.ProducerLink>
           </S.Producer>
         </S.Contacts>
       </S.Container>

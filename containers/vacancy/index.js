@@ -1,16 +1,25 @@
 import {
   VacancyHeader,
   Articles,
-  Map,
   Application,
   ArticleContent,
-  Recruiters,
+  OfficesMap,
+  Conditions,
+  SliderVacancy,
 } from 'components';
-import { SectionGroup } from 'containers';
-import { Container, GreyContainer } from './styles';
+
+import {
+  Container,
+  GreyContainer,
+  SliderContainer,
+  SliderSection,
+  VacancySection,
+  ConditionsSection,
+} from './styles';
 
 const Vacancy = ({ data, back }) => {
   const content = JSON.parse(back.content);
+
   return (
     <>
       <GreyContainer>
@@ -18,23 +27,28 @@ const Vacancy = ({ data, back }) => {
       </GreyContainer>
 
       <Container>
-        {console.log(content)}
         <ArticleContent content={content} />
       </Container>
+      <ConditionsSection>
+        <Container>
+          <Conditions data={data.conditions} />
+        </Container>
+      </ConditionsSection>
+      <SliderSection>
+        <SliderContainer>
+          <SliderVacancy data={data.steps} />
+        </SliderContainer>
+      </SliderSection>
 
-      <Application data={data.application} decor />
+      <Application data={data.application} decor vacancy />
 
-      <Container>
-        <SectionGroup>
-          <Recruiters data={data.recruiters} back={back.recruiters} decor /> 
-          </SectionGroup>
-          <SectionGroup>
-          <Map data={data.map} />
-        </SectionGroup>
-        <SectionGroup>
+      <OfficesMap data={data.map} />
+
+      <VacancySection>
+        <Container>
           <Articles type="vacancy" data={data.vacancies} />
-        </SectionGroup>
-      </Container>
+        </Container>
+      </VacancySection>
     </>
   );
 };

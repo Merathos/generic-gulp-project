@@ -4,21 +4,32 @@ import {
   Blogs,
   GreyHeader,
   GreyFooter,
-  Map
+  Map,
 } from 'components';
 import { SectionGroup } from 'containers';
-import { Container, GreyContainer } from './styles';
+import Router from 'next/router';
+import { Main, Container, GreyContainer } from './styles';
+
+const handleVacanciesClick = () => {
+  Router.push({
+    pathname: '/vacancies',
+  }).then(() => window.scrollTo(0, 0));
+};
 
 const Relocation = ({ data, blogs }) => {
   return (
-    <main>
+    <Main>
       <GreyContainer>
         <Container>
           <GreyHeader
             title={data.intro.title}
             text={data.intro.text}
             list={data.intro.list}
-            picture={data.intro.picture} />
+            picture={data.intro.picture}
+            mobPicture={data.intro.mobPicture}
+            hash="relocation"
+            twoColumns
+          />
         </Container>
       </GreyContainer>
 
@@ -28,7 +39,11 @@ const Relocation = ({ data, blogs }) => {
         </SectionGroup>
       </Container>
 
-      <Application data={data.promo} />
+      <Application
+        data={data.promo}
+        type="relocation"
+        handleVacanciesClick={handleVacanciesClick}
+      />
 
       <Container>
         <SectionGroup>
@@ -40,9 +55,9 @@ const Relocation = ({ data, blogs }) => {
       </Container>
 
       <GreyContainer>
-        <GreyFooter data={data.greyFooter} />
+        <GreyFooter data={data.greyFooter} type="relocation" />
       </GreyContainer>
-    </main>
+    </Main>
   );
 };
 

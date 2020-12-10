@@ -29,7 +29,7 @@ function useWindowWidth() {
   return windowWidth;
 }
 
-const EventsSlider = ({ cards }) => {
+const EventsSlider = ({ cards, regForm }) => {
   const ref = useRef(null);
   const initialWidth = useWindowWidth();
   const params = {
@@ -39,7 +39,6 @@ const EventsSlider = ({ cards }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    // spaceBetween: 80,
 
     renderPrevButton: () => {
       return (
@@ -60,7 +59,7 @@ const EventsSlider = ({ cards }) => {
     <Section>
       <Container>
         <Title>Ещё по теме</Title>
-        <Swiper ref={ref} {...params} noSwiping={!(initialWidth > 768)}>
+        <Swiper ref={ref} {...params} noSwiping={!(initialWidth > 910)}>
           {/* {cards.map((card, i) => (
             <Element key={i}>
               <EventCard
@@ -70,6 +69,7 @@ const EventsSlider = ({ cards }) => {
                 status={card.status}
                 programs={card.programs}
                 location={card.location}
+                regForm={regForm}
               />
             </Element>
           ))} */}

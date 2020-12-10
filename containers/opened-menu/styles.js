@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Logo from 'public/images/logo.svg';
 
 export const Wrapper = styled.div`
@@ -42,15 +42,15 @@ export const Menu = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    padding-top: 30px;
+    padding-top: 25px;
     padding-left: 30px;
   }
 `;
 
 export const Button = styled.button`
   position: absolute;
-  top: 42px;
-  right: 38px;
+  top: 33px;
+  right: 42px;
   display: flex;
   z-index: 20;
   align-items: center;
@@ -59,27 +59,47 @@ export const Button = styled.button`
   height: 30px;
   border: none;
   background-color: transparent;
-  transition: opacity 0.3s ease;
+
+  svg > * {
+    transition: fill 0.3s ease;
+  }
 
   &:hover {
-    opacity: 0.8;
+    svg > * {
+      fill: #53b443;
+    }
   }
 
   &:active {
-    opacity: 0.6;
+    svg > * {
+      fill: #53b443;
+    }
   }
 
   @media screen and (max-width: 420px) {
-    top: 30px;
+    top: 24px;
     right: 23px;
   }
 `;
 
 export const StyledLogo = styled(Logo)`
-  width: 85px;
-  height: 26px;
-  margin-bottom: 140px;
+  width: 86px;
+  height: 25px;
+  margin-bottom: 130px;
   margin-right: 50px;
+  transition: opacity 0.3s ease;
+
+  ${props =>
+    props.guiding &&
+    css`
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    `};
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 64px;
@@ -137,64 +157,45 @@ export const Contacts = styled.div`
   padding-bottom: 40px;
   background-color: #ffffff;
 
-  &:before {
+  &:after {
     content: '';
     position: absolute;
-    bottom: 236px;
-    left: 14px;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background-color: #fb5235;
-    z-index: 3;
+    width: min(350px, 44vh);
+    height: min(350px, 44vh);
+    bottom: 12vh;
+    left: -210px;
+    background-image: url('backgrounds/opened-menu-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 
     @media screen and (max-width: 1200px) {
-      bottom: 186px;
+      max-width: 250px;
+      max-height: 250px;
+      bottom: 80px;
+      left: -160px;
     }
 
     @media screen and (max-width: 1024px) {
+      max-width: 200px;
+      max-height: 200px;
       bottom: auto;
       left: auto;
       top: -100px;
       right: 70px;
-      width: 53px;
-      height: 53px;
     }
 
-    @media screen and (max-width: 720px) {
-      top: -90px;
-      right: 10px;
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 126px;
-    left: -174px;
-    width: 212px;
-    height: 212px;
-    transform: rotate(-28deg);
-    background-color: #2f8ed9;
-    z-index: 5;
-
-    @media screen and (max-width: 1200px) {
-      bottom: 86px;
+    @media screen and (max-width: 420px) {
+      transform: rotate(-10deg);
+      max-width: 170px;
+      max-height: 170px;
+      top: -130px;
+      right: 0;
     }
 
-    @media screen and (max-width: 1024px) {
-      bottom: auto;
-      left: auto;
-      top: -80px;
-      right: 100px;
-      width: 104px;
-      height: 104px;
-      transform: rotate(-50deg);
-    }
-
-    @media screen and (max-width: 720px) {
-      right: 46px;
-      transform: rotate(-38deg);
+    @media screen and (max-width: 300px) {
+      width: 100px;
+      height: 100px;
+      top: -60px;
     }
   }
 
@@ -274,5 +275,19 @@ export const Span = styled.span`
   @media screen and (max-width: 900px) {
     font-size: 10px;
     line-height: 12px;
+  }
+`;
+
+export const ProducerLink = styled.a`
+  display: inline-block;
+  line-height: 100%;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 `;

@@ -18,6 +18,7 @@ const Slider = ({
   hasControls,
   isSmall,
   fromEditor,
+  fromArticle,
   className,
 }) => {
   const ref = useRef(null);
@@ -34,6 +35,7 @@ const Slider = ({
         <PrevButton
           className="swiper-button-prev"
           hasControls={hasControls}
+          fromArticle={fromArticle}
           isSmall={isSmall}
           type="button"
           aria-label="Previous slide"
@@ -46,6 +48,7 @@ const Slider = ({
       <NextButton
         className="swiper-button-next"
         hasControls={hasControls}
+        fromArticle={fromArticle}
         isSmall={isSmall}
         type="button"
         aria-label="Next slide"
@@ -56,7 +59,11 @@ const Slider = ({
   };
 
   return (
-    <Section hasControls={hasControls} className={className}>
+    <Section
+      hasControls={hasControls}
+      className={className}
+      fromArticle={fromArticle}
+    >
       <Swiper ref={ref} {...params}>
         {pictures.map((el, i) => (
           <Element key={i} hasControls={hasControls}>
@@ -72,7 +79,11 @@ const Slider = ({
               width={el.size?.width}
               height={el.size?.height}
             />
-            {el.title && <Title isSmall={isSmall}>{el.title}</Title>}
+            {el.title && (
+              <Title isSmall={isSmall} fromArticle={fromArticle}>
+                {el.title}
+              </Title>
+            )}
           </Element>
         ))}
       </Swiper>

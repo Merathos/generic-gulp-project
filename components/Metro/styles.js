@@ -13,15 +13,26 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.b`
+  font-size: 16px;
+  line-height: 20.96px;
   font-weight: bold;
   margin-bottom: 12px;
   display: block;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 18px;
   }
 `;
 
 export const Subtitle = styled.p`
+  font-size: 16px;
+  line-height: 21.44px;
   opacity: 0.5;
+
+  @media (max-width: 420px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;

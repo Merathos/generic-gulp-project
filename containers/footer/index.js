@@ -7,13 +7,21 @@ const Footer = ({
     labour: { link, text },
     social,
     copyright,
-    nimaxText,
+    producersText,
+    producersLink,
   },
   grey,
   smallPadding,
   nimax,
+  isVisible,
+  smallIndent,
 }) => (
-  <S.StyledFooter grey={grey} smallPadding={smallPadding}>
+  <S.StyledFooter
+    grey={grey}
+    smallPadding={smallPadding}
+    isVisible={isVisible}
+    smallIndent={smallIndent}
+  >
     <S.Container>
       <S.FooterText>{copyright}</S.FooterText>
       <S.Link href={link}>{text}</S.Link>
@@ -21,8 +29,13 @@ const Footer = ({
     <Social grey={grey} links={social} />
     {nimax && (
       <S.Block>
-        <S.Span>{nimaxText}</S.Span>
-        <LogoNimax />
+        <S.Span>{producersText}</S.Span>
+        <S.ProducerLink
+          href={producersLink}
+          aria-label="Digital-агентство Nimax"
+        >
+          <LogoNimax />
+        </S.ProducerLink>
       </S.Block>
     )}
   </S.StyledFooter>

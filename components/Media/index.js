@@ -15,6 +15,7 @@ const Media = props => {
     type,
     decoration,
     hasCircle,
+    isAbout = false,
   } = props;
 
   return (
@@ -22,14 +23,17 @@ const Media = props => {
       decoration={decoration}
       hasCircle={hasCircle}
       stretched={stretched}
+      caption={caption}
     >
       {type === 'img' ? (
         <img
           src={`https://api.develop.dins.d.nimax.ru/${file.url}`}
           alt={caption}
+          width="200"
+          height="100"
         />
       ) : (
-        <VideoContainer>
+        <VideoContainer isAbout={isAbout}>
           <ReactPlayer
             url={src}
             config={{
@@ -42,6 +46,7 @@ const Media = props => {
               },
             }}
             light={
+              srcPoster ||
               'https://api.develop.dins.d.nimax.ru//storage/images/zpQbYFjH42sG4nMjqID7ASCCbg9OGSV4IfiRIdzQ.jpeg'
             }
             className="react-player"

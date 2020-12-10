@@ -7,6 +7,9 @@ import mock from 'mock/index';
 
 const Wrapper = styled.div`
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledArrowLeft = styled.div`
@@ -16,8 +19,8 @@ const StyledArrowLeft = styled.div`
   justify-content: center;
   border: 2px solid #201f2a;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: ${props => (props.smallButton ? '34px' : '38px')};
+  height: ${props => (props.smallButton ? '34px' : '38px')};
   left: 45px;
   top: 140px;
   transition: all 0.1s ease;
@@ -41,17 +44,7 @@ const StyledArrowLeft = styled.div`
     background-color: #339722;
   }
 
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const StyledSocialSticker = styled(SocialSticker)`
-  position: fixed;
-  right: 0;
-  top: 600px;
-
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -66,11 +59,26 @@ const Layout = ({
   plainHeader = false,
   smallPadding = false,
   nimax = true,
+  anchor = false,
+  hideHav = false,
+  smallIndent = false,
+  greyHeader = true,
+  smallButton = false,
+  mobileDecor = false,
+  isFixed = false,
 }) => {
   return (
     <Wrapper>
-      <Header data={mock.header} plain={plainHeader} />
+      <Header
+        data={mock.header}
+        plain={plainHeader}
+        anchor={anchor}
+        hideHav={hideHav}
+        greyHeader={greyHeader}
+        mobileDecor={mobileDecor}
+      />
       {children}
+      {isVisible && <SocialSticker data={mock.socialSticker} isFixed />}
       {showFooter && (
         <Footer
           data={mock.footer}
@@ -78,12 +86,16 @@ const Layout = ({
           smallPadding={smallPadding}
           subscription={subscription}
           nimax={nimax}
+          isVisible={isVisible}
+          smallIndent={smallIndent}
         />
       )}
-      {isVisible && <StyledSocialSticker data={mock.socialSticker} />}
       {backButton && (
         <a>
-          <StyledArrowLeft onClick={() => Router.back()}>
+          <StyledArrowLeft
+            onClick={() => Router.back()}
+            smallButton={smallButton}
+          >
             <svg
               width="14"
               height="13"

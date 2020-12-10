@@ -1,27 +1,24 @@
-import { GreyHeader, Map } from 'components';
-import { SectionGroup } from 'containers';
-import { Container, GreyContainer } from './styles';
+import { GreyHeader, OfficesMap } from 'components';
+import { Main, Container, GreyContainer } from './styles';
 
 const Contacts = ({ data }) => {
   return (
-    <main>
+    <Main>
       <GreyContainer>
         <Container>
           <GreyHeader
             title={data.mainTitle.title}
             text={data.mainTitle.text}
-            list={data.mainTitle.list} />
+            list={data.mainTitle.list}
+            twoColumns
+            isContacts
+          />
         </Container>
       </GreyContainer>
-
-      <Container>
-        {data.offices.map((el, i) => (
-          <SectionGroup key={i}>
-            <Map key={i} data={el} />
-          </SectionGroup>
-        ))}
-      </Container>
-    </main>
+      {data.offices.map((el, i) => (
+        <OfficesMap key={i} data={el} isContacts />
+      ))}
+    </Main>
   );
 };
 

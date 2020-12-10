@@ -94,7 +94,7 @@ export const Wrapper = styled.div`
 
   label {
     margin-bottom: 16px;
-    transition: all 0.2s;
+    transition: transform 0.2s;
     touch-action: manipulation;
     font-size: 16px;
     line-height: 21px;

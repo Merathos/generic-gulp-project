@@ -13,6 +13,9 @@ import {
   Aside,
   DefaultSubtitle,
   DefaultTitle,
+  StyledSubtitle,
+  SubtitleWrapper,
+  Content,
 } from './styles';
 
 const SidebarArticle = props => {
@@ -20,13 +23,15 @@ const SidebarArticle = props => {
     data: { title, subtitle, description, text, button, icon, picture, link },
     type,
     fromEditor,
+    isInternship = false,
+    handleSendRequestClick,
   } = props;
   return (
     <>
       {
         {
-          'icon': (
-            <SectionIcon>
+          icon: (
+            <SectionIcon isInternship={isInternship}>
               {fromEditor ? (
                 <>
                   <StyledIcon name={26} />
@@ -35,24 +40,27 @@ const SidebarArticle = props => {
                 </>
               ) : (
                 <>
-                  <StyledIcon name={icon} />
-                  <H5>{title}</H5>
-                  <Subtitle>{description}</Subtitle>
+                  <StyledIcon name={icon} isInternship={isInternship} />
+                  <H5 isInternship={isInternship}>{title}</H5>
+                  <StyledSubtitle isInternship={isInternship}>
+                    {description}
+                  </StyledSubtitle>
                 </>
-              )
-              }
+              )}
             </SectionIcon>
           ),
-          'default': (
+          default: (
             <Section>
               {fromEditor ? (
                 <>
-                  <DefaultSubtitle>Читайте также</DefaultSubtitle>
-                  <DefaultTitle>{title}</DefaultTitle>
                   <Link href={link}>
-                    <a>
-                      <ArrowRight />
-                    </a>
+                    <Content>
+                      <DefaultSubtitle>Читайте также</DefaultSubtitle>
+                      <DefaultTitle>{title}</DefaultTitle>
+                      <div>
+                        <ArrowRight />
+                      </div>
+                    </Content>
                   </Link>
                 </>
               ) : (
@@ -68,19 +76,27 @@ const SidebarArticle = props => {
               )}
             </Section>
           ),
-          'button': (
+          button: (
             <SectionButton>
               <Text>{text}</Text>
-              <Button type="accent">{button}</Button>
+              <Button type="accent" onClick={handleSendRequestClick}>
+                {button}
+              </Button>
             </SectionButton>
           ),
-          'image': (
-            <Aside>
-              <Image src={picture} alt={title} />
-              <Title>{title}</Title>
-              <Subtitle>{text}</Subtitle>
+          image: (
+            <Aside isInternship={isInternship}>
+              <Image
+                src={picture}
+                alt={title}
+                isInternship={isInternship}
+                width="143"
+                height="143"
+              />
+              <Title isInternship={isInternship}>{title}</Title>
+              <SubtitleWrapper isInternship>{text}</SubtitleWrapper>
             </Aside>
-          )
+          ),
         }[type]
       }
     </>

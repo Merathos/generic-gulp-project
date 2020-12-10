@@ -29,6 +29,7 @@
     "next-with-apollo": "^5.1.0",
     "react": "^16.11.0",
     "react-autosize-textarea": "^7.1.0",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.11.0",
     "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^6.9.6",
@@ -38,8 +39,10 @@
     "react-player": "^2.6.2",
     "react-redux": "^7.2.1",
     "react-select": "^3.1.0",
+    "react-yandex-maps": "^4.4.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "2.13.8",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.0",
     "swiper": "^5.4.5"
   },

@@ -2,24 +2,29 @@ import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  min-width: 250px;
+  margin-right: ${props => (props.noMargin ? '0' : '240px')};
 
-  ${props =>
-    props.carryover &&
-    css`
-      flex-wrap: wrap;
-    `}
+  @media screen and (max-width: 1300px) {
+    margin-right: ${props => (props.noMargin ? '0' : '80px')};
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-right: ${props => (props.noMargin ? '0' : '40px')};
+  }
 
   @media screen and (max-width: 420px) {
     margin: 0;
   }
+
+  @media screen and (max-width: 360px) {
+    min-width: auto;
+  }
 `;
 
 export const Element = styled.li`
-  ${props =>
-    props.carryover &&
-    css`
-      margin-bottom: 10px;
-    `}
+  margin-bottom: 10px;
 
   &:not(:last-child) {
     margin-right: 14px;
@@ -35,10 +40,6 @@ export const SocialLink = styled.a`
   background-color: ${props => (props.grey ? '#FFFFFF' : '#F7F8F9')};
   border-radius: 50%;
   transition: background-color 200ms ease;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: ${props => (props.carryover ? '0' : '30px')};
-  }
 
   &:hover {
     background-color: ${props =>

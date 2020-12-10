@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { TitleH2, Button } from 'elements';
+import { TitleH2 } from 'elements';
 
 export const Container = styled.div`
   background-color: #ffffff;
   @media (max-width: 768px) {
+    position: relative;
     top: 0;
     height: 100vh;
   }
@@ -15,12 +16,23 @@ export const Wrapper = styled.div`
     url('backgrounds/confirmation-right.svg');
   background-position: left 0 top 7px, right 100%;
   background-repeat: no-repeat, no-repeat;
-  @media (max-width: 768px) {
+
+  @media (max-width: 768px), (max-height: 550px) {
     padding-top: 22px;
-    min-height: 655px;
+    min-height: 100vh;
     padding-bottom: 0;
-    background-size: 49%, 30%;
-    background-position: left 0 top -10px, right 0 top 460px;
+    background-size: 190px, 110px;
+    background-position: left 0 top 2%, right 0 top 97%;
+  }
+`;
+
+export const Content = styled.div`
+  @media (max-width: 768px), (max-height: 550px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 315px;
   }
 `;
 
@@ -30,7 +42,6 @@ export const Title = styled(TitleH2)`
   width: max-content;
 
   @media (max-width: 768px) {
-    margin-top: 143px;
     margin-bottom: 20px;
     font-size: 32px;
     line-height: 42.88px;

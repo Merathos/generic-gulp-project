@@ -7,28 +7,28 @@ import {
   Img,
   Wrapper,
   StyledSubtitle,
-  H4
+  H4,
 } from './styles';
 
 const NoteLeft = props => {
   const {
-    data: { src, subtitle, title }
+    data: { src, subtitle, title },
   } = props;
   return (
-    <Card>
-      <Link href="/about">
+    <Link href="/about">
+      <Card>
         <StyledLink>
           <ArrowLeft />
         </StyledLink>
-      </Link>
-      <Container>
-        <Img src={src} alt={title} />
-        <Wrapper>
-          <StyledSubtitle>{subtitle}</StyledSubtitle>
-          <H4>{title}</H4>
-        </Wrapper>
-      </Container>
-    </Card>
+        <Container>
+          <Img src={src} alt={title} />
+          <Wrapper>
+            <StyledSubtitle>{subtitle}</StyledSubtitle>
+            <H4>{title}</H4>
+          </Wrapper>
+        </Container>
+      </Card>
+    </Link>
   );
 };
 

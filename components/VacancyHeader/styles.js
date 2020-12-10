@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH1, Button, Text } from 'elements';
+import { TitleH1, Btn, Text } from 'elements';
 
 export const Section = styled.section`
   max-width: 1200px;
@@ -17,6 +17,18 @@ export const Section = styled.section`
     padding: 110px 20px 64px;
     max-width: 320px;
   }
+
+  @media (max-width: 768px) {
+    & > div {
+      min-width: 240px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    & > div {
+      min-width: 210px;
+    }
+  }
 `;
 
 export const TextBlock = styled.div`
@@ -25,7 +37,7 @@ export const TextBlock = styled.div`
 `;
 
 export const Bold = styled.b`
-  font-weight: 800;
+  font-weight: 700;
   margin-right: 5px;
 `;
 
@@ -37,7 +49,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled(Btn)`
   margin-top: 40px;
 `;
 

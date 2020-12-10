@@ -7,8 +7,8 @@ const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
     <S.Grid>
       <S.Wrapper>
         <TitleH1>{title}</TitleH1>
-        <S.Paragraph>{text}</S.Paragraph>
-        {audio && <Player src={audio} />}
+        <S.Paragraph audio={audio}>{text}</S.Paragraph>
+        {audio && <Player src={audio} withDynamic={true} />}
       </S.Wrapper>
       {picture && (
         <S.Block>

@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { getStatusImage } from 'helpers/events-helpers';
+import Router from 'next/router';
 import * as S from './styles';
 
 const EventCard = ({
@@ -10,6 +11,7 @@ const EventCard = ({
   programs,
   location,
   completed,
+  regForm,
 }) => {
   const renderStatus = () => {
     if (status.slug === 'offline' && location) {
@@ -42,6 +44,25 @@ const EventCard = ({
       );
     }
     return null;
+  };
+
+  const handleRegistrationClick = () => {
+    if (Router.pathname === `/event`) {
+      regForm?.current.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      Router.push({
+        pathname: '/event',
+        hash: 'form',
+      }).then(() =>
+        document.getElementById('form').scrollIntoView({ behavior: 'smooth' })
+      );
+    }
+  };
+
+  const handlePastEventClick = () => {
+    Router.push({
+      pathname: '/event',
+    }).then(() => window.scrollTo(0, 0));
   };
 
   return (
@@ -81,9 +102,13 @@ const EventCard = ({
         ))}
       <S.BottomWrapper>
         {completed === true ? (
-          <S.StyledButton>Подробнее о прошедшем мероприятии</S.StyledButton>
+          <S.StyledButton onClick={handlePastEventClick}>
+            Подробнее о прошедшем мероприятии
+          </S.StyledButton>
         ) : (
-          <S.StyledButton type="accent">Зарегистрироваться</S.StyledButton>
+          <S.StyledButton accent onClick={handleRegistrationClick}>
+            Зарегистрироваться
+          </S.StyledButton>
         )}
         <S.Location>
           {location ||

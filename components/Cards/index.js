@@ -1,16 +1,20 @@
 import { Advert, TeamCard } from 'components';
-import { List } from './styles';
+import { List, ListItem } from './styles';
 
 const Cards = props => {
   const { data, type } = props;
+
   return (
     <section>
-      <List>
-        {data.map((el, i) => (
-          <li key={i}>
-            {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}
-          </li>
-        ))}
+      <List type={type}>
+        {data.map((el, i) => {
+          if (!el) return false;
+          return (
+            <ListItem type={type} key={i}>
+              {type === 'teams' ? <TeamCard data={el} /> : <Advert data={el} />}
+            </ListItem>
+          );
+        })}
       </List>
     </section>
   );

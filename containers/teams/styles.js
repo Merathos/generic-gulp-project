@@ -21,7 +21,6 @@ export const Title = styled(TitleH2)`
   }
 
   @media screen and (max-width: 960px) {
-    font-size: 40px;
     margin-bottom: 50px;
   }
 

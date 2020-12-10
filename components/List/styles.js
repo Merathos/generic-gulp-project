@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     border-radius: 50%;
     left: -75px;
     top: -75px;
-    background-color: #f7F8F9;
+    background-color: #f7f8f9;
     z-index: -1;
   }
 
@@ -36,7 +36,7 @@ export const NormalList = styled.ul`
   grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 545px) {
     grid-template-columns: 1fr;
     grid-gap: 100px;
   }
@@ -44,17 +44,17 @@ export const NormalList = styled.ul`
 
 export const BlueList = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 250px);
   grid-gap: 50px;
 
   @media (max-width: 420px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(141px, 1fr));
     grid-gap: 30px;
   }
 `;
 
 export const BlueTitle = styled.b`
-  color: #2F8ED9;
+  color: #2f8ed9;
   margin-bottom: 13px;
   font-size: 34px;
   line-height: 120%;
@@ -65,7 +65,7 @@ export const BlueTitle = styled.b`
     font-size: 22px;
     line-height: 120%;
   }
-`; 
+`;
 
 export const BlueText = styled.p`
   opacity: 0.5;
@@ -76,7 +76,7 @@ export const BlueText = styled.p`
     font-size: 14px;
     line-height: 131%;
   }
-`; 
+`;
 
 export const H3 = styled.b`
   display: block;

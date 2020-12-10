@@ -16,9 +16,12 @@ export const Container = styled.section`
     min-height: 811px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 720px) {
     padding-left: 30px;
   }
 
@@ -184,7 +187,7 @@ export const PortraitBlock = styled.div`
   align-self: flex-end;
   position: relative;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 800px) {
     align-self: center;
     width: 80%;
   }

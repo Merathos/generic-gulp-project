@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1200px;
-  padding: 0 45px;
+  padding: 0 45px 80px;
   margin: 0 auto;
   position: relative;
 
   @media screen and (max-width: 420px) {
     max-width: 375px;
-    padding: 0 30px;
+    padding: 0 30px 80px;
     overflow: hidden;
   }
 
@@ -19,9 +19,25 @@ export const Container = styled.div`
 `;
 
 export const GreyWrapper = styled.div`
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   margin-bottom: 100px;
   padding-bottom: 160px;
+
+  ${props =>
+    props.withBg &&
+    css`
+      background-image: url('../../backgrounds/teams-header-bg.png');
+      background-repeat: no-repeat;
+      background-position: right 70%;
+
+      @media screen and (max-width: 1200px) {
+        background-image: none;
+      }
+    `};
+
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 0;
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;

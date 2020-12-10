@@ -21,7 +21,7 @@ const blogPage = () => {
     [categoriesData.data]
   );
   return (
-    <Layout>
+    <Layout greyHeader={false}>
       <BlogList mock={mock.blogList} back={categories} />
     </Layout>
   );

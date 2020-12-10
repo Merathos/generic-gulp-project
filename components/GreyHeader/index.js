@@ -1,5 +1,5 @@
 import { Player } from 'components';
-import { Subtitle, SmallText, TitleH1, Button } from 'elements';
+import { Subtitle, TitleH1, Button } from 'elements';
 import * as S from './styles';
 
 const GreyHeader = ({
@@ -10,26 +10,43 @@ const GreyHeader = ({
   picture,
   buttons,
   audio,
-  mobPicture
+  mobPicture,
+  twoColumns = false,
+  hash,
+  isContacts,
 }) => {
   return (
-    <S.Grid>
-      <S.Wrapper>
+    <S.Grid isContacts={isContacts}>
+      <S.Wrapper withPicture={!!picture}>
         <TitleH1>{title}</TitleH1>
-        <S.Paragraph>{text}</S.Paragraph>
-        {list && <S.Features>
-          {list.map((el, i) => (
-            <S.Element key={i}>
-                {el.icon && <S.StyledIcon name={el.icon} white />}
+        {picture && hash && (
+          <S.Block hash={hash} afterTitle={true}>
+            <S.Picture
+              src={picture}
+              srcSet={`${mobPicture} 420w, ${picture}`}
+              alt={title}
+            />
+          </S.Block>
+        )}
+        <S.Paragraph isContacts={isContacts}>{text}</S.Paragraph>
+        {list && (
+          <S.Features twoColumns={twoColumns}>
+            {list.map((el, i) => (
+              <S.Element key={i} isContacts={isContacts}>
+                {el.icon && (
+                  <S.StyledIcon name={el.icon} white isContacts={isContacts} />
+                )}
                 <div>
-                  <S.ListTitle>{el.title}</S.ListTitle>
-                  <SmallText>{el.text}</SmallText>
+                  <a href={el.href}>
+                    <S.ListTitle>{el.title}</S.ListTitle>
+                  </a>
+                  <S.StyledSmallText>{el.text}</S.StyledSmallText>
                   {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
                 </div>
               </S.Element>
             ))}
           </S.Features>
-        }
+        )}
         {buttons && (
           <S.ButtonsWrapper>
             <S.StyledButton type="accent">{buttons[0]}</S.StyledButton>
@@ -45,8 +62,8 @@ const GreyHeader = ({
         </S.Aside>
       )}
       {picture && (
-        <S.Block>
-          <S.Picture src={picture} srcSet={`${mobPicture} 420w, ${picture}`} alt={title} />
+        <S.Block hash={hash} afterTitle={false}>
+          <S.Picture src={picture} alt={title} />
         </S.Block>
       )}
     </S.Grid>
