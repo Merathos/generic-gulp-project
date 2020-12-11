@@ -8,11 +8,15 @@ const Teams = ({ teams }) => {
     <Container>
       <Title>{title}</Title>
       <List>
-        {teams.map(team => (
-          <ListItem key={team.id}>
-            <TeamCard data={team} />
-          </ListItem>
-        ))}
+        {teams.map((team, index) => {
+          if (index < 3) {
+            return (
+              <ListItem key={team.id}>
+                <TeamCard data={team} />
+              </ListItem>
+            );
+          }
+        })}
       </List>
     </Container>
   );
