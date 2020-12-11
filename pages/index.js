@@ -35,6 +35,7 @@ export async function getServerSideProps() {
     data: { teams },
   } = await apolloClient.query({
     query: GET_TEAMS_MAIN,
+    variables: { is_home: true },
   });
 
   return {

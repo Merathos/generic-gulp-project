@@ -18,6 +18,7 @@ const TeamCard = props => {
               alt={name}
               width="350"
               height="194"
+              loading="lazy"
             />
           )}
           <H3>{name}</H3>
