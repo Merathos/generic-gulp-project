@@ -64,6 +64,7 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
           data={data.newsModal}
           closeModal={toggleModal}
           showSuccess={toggleSuccess}
+          eventCategories={eventCategories}
         />
       </FormModal>
       <SuccessModal

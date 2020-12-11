@@ -10,6 +10,7 @@ const SubForm = ({
   data: { mainTitle, contact, directions, agreement, mailing, buttonText },
   closeModal,
   showSuccess,
+  eventCategories,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
   const [captchaPassed, setCaptchaPassed] = useState(false);
@@ -29,16 +30,18 @@ const SubForm = ({
   };
 
   const onSubmit = values => {
-    subscribe({
-      variables: {
-        name: values.name,
-        lastname: values.lastname,
-        email: values.email,
-        is_consent_pd: values.personal,
-        is_consent_newsletter: values.newsletter,
-        categories: [],
-      },
-    });
+    if (captchaPassed) {
+      subscribe({
+        variables: {
+          name: values.name,
+          lastname: values.lastname,
+          email: values.email,
+          is_consent_pd: values.personal,
+          is_consent_newsletter: values.newsletter,
+          categories: [],
+        },
+      });
+    }
   };
 
   function onChangeRecaptcha(value) {
@@ -69,15 +72,15 @@ const SubForm = ({
           <S.SectionTitle>{directions.title}</S.SectionTitle>
           <S.Question>{directions.question}</S.Question>
           <S.CheckboxContainer>
-            {directions.inputs.map((item, i) => (
+            {eventCategories.map(item => (
               <S.CheckBox
-                key={i}
-                name={item}
-                value={item}
-                checked={checkedEls[item]}
+                key={item.id}
+                name={item.slug}
+                value={item.name}
+                checked={checkedEls[item.slug]}
                 onChange={handleChange}
                 color="#53B443"
-                // reference={register()}
+                reference={register()}
               />
             ))}
           </S.CheckboxContainer>
@@ -108,10 +111,7 @@ const SubForm = ({
               sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
               onChange={onChangeRecaptcha}
             />
-            <S.StyledButton
-              type="submit"
-              // disabled={!captchaPassed}
-            >
+            <S.StyledButton type="submit" disabled={!captchaPassed}>
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>
