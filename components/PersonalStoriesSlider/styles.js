@@ -17,6 +17,7 @@ export const Element = styled.div`
 
 export const TextWrapper = styled.div`
   width: 45%;
+  margin-bottom: 40px;
 
   @media screen and (max-width: 720px) {
     display: flex;
@@ -65,6 +66,7 @@ export const Text = styled.p`
   font-size: 20px;
   line-height: 134%;
   margin-bottom: 60px;
+  max-width: 90%;
 
   @media screen and (max-width: 720px) {
     font-size: 16px;

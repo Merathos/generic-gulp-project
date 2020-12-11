@@ -3,10 +3,10 @@ import { Player } from 'components';
 import { useRef, useState } from 'react';
 import ArrowPrev from 'public/icons/arrow-prev.svg';
 import ArrowNext from 'public/icons/arrow-next.svg';
-import * as S from './styles';
 import Link from 'next/link';
+import * as S from './styles';
 
-const PersonalStoriesSlider = ({ data }) => {
+const PersonalStoriesSlider = ({ blogs }) => {
   const [activeSlide, setActiveSlide] = useState(1);
   const ref = useRef(null);
 
@@ -44,13 +44,13 @@ const PersonalStoriesSlider = ({ data }) => {
         ref={ref}
         {...params}
         on={{
-          slideChange: function() {
-            let activeIndex = ref.current.swiper.activeIndex;
+          slideChange() {
+            let { activeIndex } = ref.current.swiper;
 
             if (activeIndex === 0) {
-              activeIndex = data.length;
+              activeIndex = blogs.length;
             }
-            if (activeIndex > data.length) {
+            if (activeIndex > blogs.length) {
               activeIndex = 1;
             }
             setActiveSlide(activeIndex);
@@ -66,28 +66,31 @@ const PersonalStoriesSlider = ({ data }) => {
           },
         }}
       >
-        {data.map((story, index) => (
-          <S.Element key={index}>
+        {blogs.map((story, index) => (
+          <S.Element key={story.id}>
             <S.TextWrapper>
               <S.Title>{story.title}</S.Title>
-              <S.Text>{story.text}</S.Text>
-              <Player
-                isPaused={activeSlide !== index + 1}
-                withDynamic={true}
-                src={story.audio.src}
-              />
-              <Link href="/" passHref>
-                <S.Link href="#">{story.linkText}</S.Link>
+              <S.Text>{story.description}</S.Text>
+              {story.audio && (
+                <Player
+                  isPaused={activeSlide !== index + 1}
+                  withDynamic
+                  src={story.audio}
+                />
+              )}
+              <Link href={`/blog/${story.slug}`} passHref>
+                <S.Link>Читать полностью</S.Link>
               </Link>
             </S.TextWrapper>
-            <S.ImageWrapper>
-              <S.Img
-                src={story.picture}
-                alt={story.alt}
-                width={story.size.width}
-                height={story.size.height}
-              />
-            </S.ImageWrapper>
+            {story.detail && (
+              <S.ImageWrapper>
+                <S.Img
+                  src={story.detail.path?.normal}
+                  alt={story.title}
+                  loading="lazy"
+                />
+              </S.ImageWrapper>
+            )}
           </S.Element>
         ))}
       </Swiper>

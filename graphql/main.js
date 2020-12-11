@@ -47,6 +47,28 @@ export const GET_BANNER = gql`
   }
 `;
 
+export const GET_BLOGS_MAIN = gql`
+  query getBlogsMain($is_home: Boolean) {
+    blogs(is_home: $is_home) {
+      id
+      type
+      title
+      summary
+      description
+      slug
+      detail {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      type
+      audio
+    }
+  }
+`;
+
 export const GET_TEAMS_MAIN = gql`
   query getTeams($is_home: Boolean) {
     teams(is_home: $is_home) {
