@@ -64,3 +64,23 @@ export const GET_EVENTS = gql`
     }
   }
 `;
+
+export const SET_EVENTS_SUBSCRIPTION = gql`
+  mutation Event(
+    $name: String!
+    $lastname: String!
+    $email: String!
+    $is_consent_pd: Boolean
+    $is_consent_newsletter: Boolean
+    $categories: [Int]
+  ) {
+    Event(
+      name: $name
+      lastname: $lastname
+      email: $email
+      is_consent_pd: $is_consent_pd
+      is_consent_newsletter: $is_consent_newsletter
+      categories: $categories
+    )
+  }
+`;

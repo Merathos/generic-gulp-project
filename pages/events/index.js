@@ -1,6 +1,6 @@
 import { Layout, Events } from 'containers';
 import eventsStatic from 'mock/events';
-import { GET_EVENT_CATEGORIES, GET_EVENTS } from 'graphql/queries/events';
+import { GET_EVENT_CATEGORIES, GET_EVENTS } from 'graphql/events';
 import { initializeApollo } from 'lib/apollo';
 
 const eventsPage = ({ event_categories, events }) => {
