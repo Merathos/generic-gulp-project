@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.section`
   display: flex;
@@ -11,21 +11,9 @@ export const Container = styled.section`
   padding: 40px 40px 0;
   background-image: url(${props => props.bg});
   background-repeat: no-repeat;
-
-  ${props =>
-    props.blogLinkType === 'link2' &&
-    css`
-      background-position: 80% top;
-    `}
-
-  ${props =>
-    props.blogLinkType === 'link1' &&
-    css`
-      background-position: right bottom;
-    `};
+  background-position: right bottom;
 
   @media screen and (max-width: 1360px) {
-    min-height: auto;
     min-width: auto;
   }
 
@@ -36,6 +24,7 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 720px) {
+    min-height: 286px;
     padding: 20px 20px 0 40px;
   }
 
@@ -61,32 +50,10 @@ export const Ref = styled.a`
 export const ImageWrapper = styled.div`
   align-self: flex-end;
   max-width: 50%;
-
-  @media screen and (max-width: 1360px) {
-    height: 100%;
-  }
-
-  @media screen and (max-width: 420px) {
-    height: 286px;
-  }
 `;
 
 export const Image = styled.img`
-  ${props =>
-    props.blogLinkType === 'link2' &&
-    css`
-      padding-bottom: 40px;
-    `}
-
-  ${props =>
-    props.blogLinkType === 'link1' &&
-    css`
-      margin-bottom: -9px;
-    `};
-
   @media screen and (max-width: 1360px) {
-    height: 100%;
-    width: auto;
     box-sizing: border-box;
   }
 `;

@@ -4,21 +4,25 @@ import { Section, H3, StyledText, Arrow, Picture } from './styles';
 
 const TeamCard = props => {
   const {
-    data: { name, slug, summary, image },
+    data: { name, slug, description, image },
   } = props;
 
   return (
-    <Link href={`teams/${slug}`}>
+    <Link href={`/teams/${slug}`}>
       <a>
         <Section>
-          <Picture
-            src={image && image.path.normal}
-            alt={name}
-            width="350"
-            height="194"
-          />
+          {image && (
+            <Picture
+              src={image.path.normal}
+              srcSet={`${image.path.retina} 2x`}
+              alt={name}
+              width="350"
+              height="194"
+              loading="lazy"
+            />
+          )}
           <H3>{name}</H3>
-          <StyledText>{summary}</StyledText>
+          <StyledText>{description}</StyledText>
           <Arrow>
             <ArrowRight />
           </Arrow>

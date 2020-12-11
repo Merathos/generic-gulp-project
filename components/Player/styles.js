@@ -4,6 +4,7 @@ import { Subtitle } from 'elements';
 export const Block = styled.div`
   display: flex;
   align-items: flex-start;
+  z-index: 1;
 `;
 
 export const Wrapper = styled.div`

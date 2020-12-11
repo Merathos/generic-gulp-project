@@ -146,7 +146,7 @@ export const Aside = styled.aside`
   max-width: 254px;
   margin-right: 74px;
   float: left;
-  z-index: 5;
+  z-index: 4;
 
   @media screen and (max-width: 1300px) {
     margin-right: 44px;

@@ -1693,18 +1693,21 @@ export default {
           explanation:
             'Современный офис, фрукты и завтраки на кухне, выбор техники, языковые курсы, спортивный зал, ДМС с первого рабочего дня. ',
           details: 'Подробнее',
+          href: '/about',
         },
         {
           title: 'Релокация',
           explanation:
             'Поможем переехать в Санкт-Петербург: выплатим бонус и подскажем, куда обратиться по поводу жилья. ',
           details: 'Подробнее',
+          href: '/relocation',
         },
         {
           title: 'Стажировки',
           explanation:
             'Официальное оформление и зарплата, реальные задачи и поддержка на протяжении всей стажировки.  ',
           details: 'Подробнее',
+          href: '/internship',
         },
       ],
       showEvent: true,
@@ -2152,18 +2155,18 @@ export default {
           type: `QA Evening`,
           color: `#53B443`,
           date: { day: `11.04`, time: `Начало в 18:00` },
-          status: { img: `icons/online.png`, name: `Онлайн` },
+          status: { img: `/icons/online.png`, name: `Онлайн` },
           topics: [
             {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
                 {
-                  img: `images/speaker2.png`,
+                  img: `/images/speaker2.png`,
                   name: `Александр Калошин`,
                   job: `DINS`,
                 },
@@ -2173,7 +2176,7 @@ export default {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
@@ -2186,18 +2189,18 @@ export default {
           type: `JS Evening`,
           color: `#FEB251`,
           date: { day: `11.04`, time: `Начало в 18:00` },
-          status: { img: `icons/streaming.png`, name: `Идет трансляция` },
+          status: { img: `/icons/streaming.png`, name: `Идет трансляция` },
           topics: [
             {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
                 {
-                  img: `images/speaker2.png`,
+                  img: `/images/speaker2.png`,
                   name: `Александр Калошин`,
                   job: `DINS`,
                 },
@@ -2207,7 +2210,7 @@ export default {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
@@ -2222,18 +2225,18 @@ export default {
           type: `JаVa Evening`,
           color: `#FB5235`,
           date: { day: `11.04`, time: `Начало в 18:00` },
-          status: { img: `icons/recording.png`, name: `Есть запись` },
+          status: { img: `/icons/recording.png`, name: `Есть запись` },
           topics: [
             {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
                 {
-                  img: `images/speaker2.png`,
+                  img: `/images/speaker2.png`,
                   name: `Александр Калошин`,
                   job: `DINS`,
                 },
@@ -2243,7 +2246,7 @@ export default {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
@@ -2256,18 +2259,18 @@ export default {
           type: `QA Evening`,
           color: `#53B443`,
           date: { day: `11.04.19`, time: `Начало в 18:00` },
-          status: { img: `icons/recording.png`, name: `Есть запись` },
+          status: { img: `/icons/recording.png`, name: `Есть запись` },
           topics: [
             {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
                 {
-                  img: `images/speaker2.png`,
+                  img: `/images/speaker2.png`,
                   name: `Александр Калошин`,
                   job: `DINS`,
                 },
@@ -2277,7 +2280,7 @@ export default {
               title: `Эволюция систем мониторинга Prometheus и Zabbix`,
               speakers: [
                 {
-                  img: `images/speaker1.png`,
+                  img: `/images/speaker1.png`,
                   name: `Вячеслав Швецов`,
                   job: `DINS`,
                 },
@@ -2332,23 +2335,23 @@ export default {
     eventDetails: {
       type: `JavaScript EVENING`,
       isActive: true,
-      bgImg: `backgrounds/javascript.svg`,
-      status: { img: `icons/online.png`, name: `Online` },
+      bgImg: `/backgrounds/javascript.svg`,
+      status: { img: `/icons/online.png`, name: `Online` },
       date: { day: `29 мая,`, time: `19:30-21:30` },
       location: `Санкт-Петербург. Старо-Петергофский проспект 19, БЦ «Петергофский»`,
       speakers: {
         title: `Спикеры`,
         list: [
           {
-            img: `images/speaker1.png`,
-            bigImg: `images/details-speaker.jpg`,
+            img: `/images/speaker1.png`,
+            bigImg: `/images/details-speaker.jpg`,
             name: `Вячеслав Швецов`,
             job: `DINS`,
             text: `На моем опыте я больше вижу, что SAST используется скорее для соблюдения формальностей, связанных с различными требованиями со стороны заказчиков, чем для поиска реальных багов.`,
           },
           {
-            img: `images/speaker1.png`,
-            bigImg: `images/details-speaker.jpg`,
+            img: `/images/speaker1.png`,
+            bigImg: `/images/details-speaker.jpg`,
             name: `Вячеслав Швецов`,
             job: `DINS`,
             text: `При таком подходе, в результате, имеем в лучшем случае, относительно небольшое количество «уязвимостей», которые чуть ли не автоматически прокликиваются как «not exploitable» (потому что таковыми и являются в 99.9% случаев).`,
@@ -2385,7 +2388,7 @@ export default {
           title: `Как мы собираем логи Nginx в ClickHouse`,
           video: {
             src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
-            srcPoster: `images/event-details1.jpg`,
+            srcPoster: `/images/event-details1.jpg`,
           },
           text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
           list: [
@@ -2404,24 +2407,24 @@ export default {
           title: `Как (не)правильно использовать REST Assured `,
           video: {
             src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
-            srcPoster: `images/event-details2.jpg`,
+            srcPoster: `/images/event-details2.jpg`,
           },
           text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
           photos: [
             {
-              src: `images/event-details1.jpg`,
+              src: `/images/event-details1.jpg`,
               title: `Подпись к картинке 3`,
             },
             {
-              src: `images/event-details2.jpg`,
+              src: `/images/event-details2.jpg`,
               title: `Подпись к картинке 4`,
             },
             {
-              src: `images/gallery-1.jpg`,
+              src: `/images/gallery-1.jpg`,
               title: `Подпись к картинке`,
             },
             {
-              src: `images/gallery-2.jpg`,
+              src: `/images/gallery-2.jpg`,
               title: `Подпись к картинке 2`,
             },
           ],
@@ -2432,7 +2435,7 @@ export default {
         msg: `Трансляция начнется в 19:30 и будет доступна на странице`,
         video: {
           src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
-          srcPoster: `images/event-details1.jpg`,
+          srcPoster: `/images/event-details1.jpg`,
           stretched: true,
         },
       },
@@ -2444,23 +2447,23 @@ export default {
     eventDetailsArch: {
       type: `JavaScript EVENING`,
       isActive: false,
-      bgImg: `backgrounds/javascript.svg`,
-      status: { img: `icons/recording.png`, name: `Есть запись` },
+      bgImg: `/backgrounds/javascript.svg`,
+      status: { img: `/icons/recording.png`, name: `Есть запись` },
       date: { day: `29 мая,`, time: `19:30-21:30` },
       location: `Санкт-Петербург. Старо-Петергофский проспект 19, БЦ «Петергофский»`,
       speakers: {
         title: `Спикеры`,
         list: [
           {
-            img: `images/speaker1.png`,
-            bigImg: `images/details-speaker.jpg`,
+            img: `/images/speaker1.png`,
+            bigImg: `/images/details-speaker.jpg`,
             name: `Вячеслав Швецов`,
             job: `DINS`,
             text: `На моем опыте я больше вижу, что SAST используется скорее для соблюдения формальностей, связанных с различными требованиями со стороны заказчиков, чем для поиска реальных багов.`,
           },
           {
-            img: `images/speaker1.png`,
-            bigImg: `images/details-speaker.jpg`,
+            img: `/images/speaker1.png`,
+            bigImg: `/images/details-speaker.jpg`,
             name: `Вячеслав Швецов`,
             job: `DINS`,
             text: `При таком подходе, в результате, имеем в лучшем случае, относительно небольшое количество «уязвимостей», которые чуть ли не автоматически прокликиваются как «not exploitable» (потому что таковыми и являются в 99.9% случаев).`,
@@ -2497,7 +2500,7 @@ export default {
           title: `Как мы собираем логи Nginx в ClickHouse`,
           video: {
             src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
-            srcPoster: `images/event-details1.jpg`,
+            srcPoster: `/images/event-details1.jpg`,
           },
           text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
           list: [
@@ -2516,12 +2519,12 @@ export default {
           title: `Как (не)правильно использовать REST Assured `,
           video: {
             src: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
-            srcPoster: `images/event-details2.jpg`,
+            srcPoster: `/images/event-details2.jpg`,
           },
           text: `Возможно, отсутствие статей и гайдов от сообщества Checkmarx связано с высокой стоимостью инструмента и, как следствие, небольшой аудиторией. А может быть просто мало кто заморачивается тонкой настройкой и используют решение как есть, из коробки. /getTransaction – на вход принимает id транзакции и выдает инфу по ней, id принимает.`,
           photos: [
             {
-              src: `images/event-details1.jpg`,
+              src: `/images/event-details1.jpg`,
               title: `Подпись к картинке 3`,
               size: {
                 width: 706,
@@ -2529,7 +2532,7 @@ export default {
               },
             },
             {
-              src: `images/event-details2.jpg`,
+              src: `/images/event-details2.jpg`,
               title: `Подпись к картинке 4`,
               size: {
                 width: 706,
@@ -2537,7 +2540,7 @@ export default {
               },
             },
             {
-              src: `images/gallery-1.jpg`,
+              src: `/images/gallery-1.jpg`,
               title: `Подпись к картинке`,
               size: {
                 width: 706,
@@ -2545,7 +2548,7 @@ export default {
               },
             },
             {
-              src: `images/gallery-2.jpg`,
+              src: `/images/gallery-2.jpg`,
               title: `Подпись к картинке 2`,
               size: {
                 width: 706,
@@ -2560,7 +2563,7 @@ export default {
         msg: `Трансляция начнется в 19:30 и будет доступна на странице`,
         video: {
           src: `https://www.youtube.com/watch?v=5qap5aO4i9A`,
-          srcPoster: `images/event-details1.jpg`,
+          srcPoster: `/images/event-details1.jpg`,
           stretched: true,
         },
       },

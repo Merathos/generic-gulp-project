@@ -1,6 +1,6 @@
 import Router from 'next/router';
-import { Container, Link } from './styles';
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { Container, Link } from './styles';
 
 const startOffset = 65.5;
 const endOffset = 0;
@@ -8,7 +8,7 @@ const endOffset = 0;
 const handleSearch = searchValue => {
   Router.push({
     pathname: '/vacancies',
-    query: { search: searchValue },
+    query: { technologies: searchValue },
   }).then(() => window.scrollTo(0, 0));
 };
 
@@ -49,7 +49,7 @@ const RunningText = ({ data }) => {
         <text fill="#feb251">
           <textPath
             xlinkHref="#curve"
-            startOffset={step + '%'}
+            startOffset={`${step}%`}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >

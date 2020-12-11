@@ -13,16 +13,16 @@ const handleSearch = searchValue => {
   }).then(() => window.scrollTo(0, 0));
 };
 
-const Vacancies = ({ data }) => {
+const Vacancies = ({ vacancyCat }) => {
   return (
     <Container>
       <Title>{title}</Title>
       <Search
-        isMain={true}
+        isMain
         placeholder={placeHolder}
         handleSearch={search => handleSearch(search)}
       />
-      <VacanciesList data={data} />
+      {vacancyCat?.length > 0 && <VacanciesList vacancyCat={vacancyCat} />}
     </Container>
   );
 };

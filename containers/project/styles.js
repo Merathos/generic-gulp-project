@@ -26,7 +26,7 @@ export const GreyWrapper = styled.div`
   ${props =>
     props.withBg &&
     css`
-      background-image: url('../../backgrounds/teams-header-bg.png');
+      background-image: url('/backgrounds/teams-header-bg.png');
       background-repeat: no-repeat;
       background-position: right 70%;
 

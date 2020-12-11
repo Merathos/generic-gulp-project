@@ -1,30 +1,37 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { Layout, BlogList } from 'containers';
-import { GET_BLOG_CATEGORIES } from 'graphql/query';
+import { Layout, Story, Article } from 'containers';
+import { GET_BLOG_CONTENT } from 'graphql/query';
 import withApollo from 'lib/withApollo';
 import { getDataFromTree } from '@apollo/react-ssr';
+
 import mock from 'mock/index';
 
-const blogPage = () => {
+const storyPage = () => {
   const router = useRouter();
 
-  const categoriesData = useQuery(GET_BLOG_CATEGORIES, {
+  const blogData = useQuery(GET_BLOG_CONTENT, {
     variables: {
-      categories: router.query.slug,
+      slug: router.query.slug,
     },
   });
-
-  const categories = useMemo(
-    () => (!categoriesData.loading ? categoriesData.data.blogs : null),
-    [categoriesData.data]
+  const blog = useMemo(
+    () => (!blogData.loading ? blogData.data.blogs[0] : null),
+    [blogData.data]
   );
+
+  if (!blog) return null;
+
   return (
-    <Layout greyHeader={false}>
-      <BlogList mock={mock.blogList} back={categories} />
+    <Layout backButton greyFooter={blog.type === 'history'}>
+      {blog.type === 'history' ? (
+        <Story back={blog} />
+      ) : (
+        <Article data={mock.article} back={blog} />
+      )}
     </Layout>
   );
 };
 
-export default withApollo(blogPage, { getDataFromTree });
+export default withApollo(storyPage, { getDataFromTree });

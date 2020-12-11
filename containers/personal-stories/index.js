@@ -1,10 +1,10 @@
 import { PersonalStoriesSlider } from 'components';
 import { Container } from './styles';
 
-const PersonalStories = ({ data }) => {
+const PersonalStories = ({ blogs }) => {
   return (
     <Container>
-      <PersonalStoriesSlider data={data} />
+      <PersonalStoriesSlider blogs={blogs} />
     </Container>
   );
 };

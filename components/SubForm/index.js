@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import { CloseBtn, TextInput } from 'elements';
-import { SET_SUBSCRIPTION } from 'graphql/mutations/subscription';
+import { SET_EVENTS_SUBSCRIPTION } from 'graphql/events';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
@@ -12,7 +12,7 @@ const SubForm = ({
   showSuccess,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
-  const [subscribe, { error }] = useMutation(SET_SUBSCRIPTION, {
+  const [subscribe, { error }] = useMutation(SET_EVENTS_SUBSCRIPTION, {
     onCompleted() {
       closeModal();
       showSuccess();
@@ -36,6 +36,7 @@ const SubForm = ({
         email: values.email,
         is_consent_pd: values.personal,
         is_consent_newsletter: values.newsletter,
+        categories: [],
       },
     });
   };

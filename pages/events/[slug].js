@@ -1,6 +1,5 @@
-import { Layout } from 'containers';
+import { Layout, EventDetails } from 'containers';
 import mock from 'mock/index';
-import { EventDetails } from 'containers';
 
 const EventPage = () => {
   return (

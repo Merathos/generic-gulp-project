@@ -3,13 +3,13 @@ import { Container, Title, List, ListItem } from './styles';
 
 const title = 'Команды';
 
-const Teams = ({ data }) => {
+const Teams = ({ teams }) => {
   return (
     <Container>
       <Title>{title}</Title>
       <List>
-        {data.map((team, index) => (
-          <ListItem key={index}>
+        {teams.map(team => (
+          <ListItem key={team.id}>
             <TeamCard data={team} />
           </ListItem>
         ))}

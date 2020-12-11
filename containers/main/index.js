@@ -9,12 +9,12 @@ import {
 import { RunningText } from '../../components';
 import { Main as MainContainer, Container, GreyContainer } from './styles';
 
-const Main = ({ data, storiesData, teams }) => {
+const Main = ({ data, quotes, banner, blogs, teams, vacancyCat }) => {
   return (
     <MainContainer>
       <GreyContainer>
         <Container>
-          <Intro data={data.intro} />
+          <Intro data={data.intro} quotes={quotes} />
         </Container>
       </GreyContainer>
       <Container>
@@ -24,23 +24,23 @@ const Main = ({ data, storiesData, teams }) => {
         <RunningText data={data.technologies} />
       </Container>
       <Container>
-        <AboutCompany data={data.aboutCompany} />
+        <AboutCompany data={data.aboutCompany} banner={banner} />
       </Container>
-      {data.hasStories && (
+      {blogs.length > 0 && (
         <GreyContainer>
           <Container>
-            <PersonalStories data={storiesData} />
+            <PersonalStories blogs={blogs} />
           </Container>
         </GreyContainer>
       )}
-      {data.hasTeams && (
+      {teams?.length > 0 && (
         <Container>
-          <Teams data={teams} />
+          <Teams teams={teams} />
         </Container>
       )}
       <GreyContainer>
         <Container>
-          <Vacancies data={data.vacancies} />
+          <Vacancies vacancyCat={vacancyCat} />
         </Container>
       </GreyContainer>
     </MainContainer>

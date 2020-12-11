@@ -5,7 +5,7 @@ const routeMap = {
   'О компании': '/about',
   'IT Evenings': '/events',
   Команды: '/teams',
-  Блог: '/blog-list',
+  Блог: '/blog',
   Вакансии: '/vacancies',
   Релокация: '/relocation',
   Стажировки: '/internship',
@@ -22,7 +22,7 @@ const MenuList = ({ data }) => {
           </Link>
           {item.isSpecial && (
             <SpecialMark
-              src={`/emodzi/star.png`}
+              src="/emodzi/star.png"
               alt="Special"
               width="120"
               height="120"

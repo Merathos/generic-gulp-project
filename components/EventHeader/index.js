@@ -50,7 +50,7 @@ const EventHeader = props => {
         </S.Grid>
         {isActive ? (
           <S.StyledButton
-            accent={true}
+            accent
             onClick={() => {
               regForm.current.scrollIntoView({ behavior: 'smooth' });
             }}
