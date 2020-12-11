@@ -12,6 +12,7 @@ const SubForm = ({
   showSuccess,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
+  const [captchaPassed, setCaptchaPassed] = useState(false);
   const [subscribe, { error }] = useMutation(SET_EVENTS_SUBSCRIPTION, {
     onCompleted() {
       closeModal();
@@ -28,7 +29,6 @@ const SubForm = ({
   };
 
   const onSubmit = values => {
-    console.log(values);
     subscribe({
       variables: {
         name: values.name,
@@ -40,6 +40,11 @@ const SubForm = ({
       },
     });
   };
+
+  function onChangeRecaptcha(value) {
+    setCaptchaPassed(value);
+  }
+
   return (
     <S.Container>
       <CloseBtn onClick={closeModal} />
@@ -99,13 +104,13 @@ const SubForm = ({
             reference={register()}
           />
           <S.BottomWrap>
-            <ReCAPTCHA sitekey="Your client site key" onChange={() => {}} />
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
+              onChange={onChangeRecaptcha}
+            />
             <S.StyledButton
               type="submit"
-              // onClick={e => {
-              //   e.preventDefault();
-              //   onClick();
-              // }}
+              // disabled={!captchaPassed}
             >
               {buttonText}
             </S.StyledButton>
