@@ -8,7 +8,7 @@ const TeamCard = props => {
   } = props;
 
   return (
-    <Link href={`teams/${slug}`}>
+    <Link href={`/teams/${slug}`}>
       <a>
         <Section>
           {image && (

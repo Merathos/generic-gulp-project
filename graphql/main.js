@@ -26,6 +26,13 @@ export const GET_BANNER = gql`
       text
       link
       button_text
+      image {
+        id
+        path(width: 500) {
+          normal
+          retina
+        }
+      }
       event {
         id
         name
