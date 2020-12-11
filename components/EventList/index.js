@@ -13,6 +13,7 @@ const EventList = ({ events, completed }) => {
             status={event.status}
             programs={event.programs}
             location={event.location}
+            slug={event.slug}
             completed={completed}
           />
         </Item>

@@ -12,6 +12,7 @@ const EventCard = ({
   location,
   completed,
   regForm,
+  slug,
 }) => {
   const renderStatus = () => {
     if (status.slug === 'offline' && location) {
@@ -47,7 +48,7 @@ const EventCard = ({
   };
 
   const handleRegistrationClick = () => {
-    if (Router.pathname === `/event`) {
+    if (Router.pathname === `/events/${slug}`) {
       regForm?.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       Router.push({
@@ -61,7 +62,7 @@ const EventCard = ({
 
   const handlePastEventClick = () => {
     Router.push({
-      pathname: '/event',
+      pathname: `/events/${slug}`,
     }).then(() => window.scrollTo(0, 0));
   };
 
