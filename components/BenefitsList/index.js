@@ -17,16 +17,18 @@ const BenefitsList = ({ data, banner }) => {
             </Link>
           </ListItem>
         ))}
-        <ListItem key="banner" banner>
-          {banner.type === 'event' && <EventBanner data={banner.event} />}
-          {banner.type === 'blog' && (
-            <BlogsBanner
-              data={bannersData.blogLinksData}
-              blogLinkType={blogLinkDefault}
-              banner={banner}
-            />
-          )}
-        </ListItem>
+        {banner && (
+          <ListItem key="banner" banner>
+            {banner.type === 'event' && <EventBanner data={banner.event} />}
+            {banner.type === 'blog' && (
+              <BlogsBanner
+                data={bannersData.blogLinksData}
+                blogLinkType={blogLinkDefault}
+                banner={banner}
+              />
+            )}
+          </ListItem>
+        )}
       </List>
     </Container>
   );

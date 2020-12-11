@@ -17,9 +17,11 @@ const Intro = ({ data, quotes }) => {
         </S.ListBlock>
         <S.Button accent="accent">{data.buttonText}</S.Button>
       </S.TextBlock>
-      <S.PortraitBlock>
-        <PortraitSlider quotes={quotes} />
-      </S.PortraitBlock>
+      {quotes?.length > 0 && (
+        <S.PortraitBlock>
+          <PortraitSlider quotes={quotes} />
+        </S.PortraitBlock>
+      )}
     </S.Container>
   );
 };

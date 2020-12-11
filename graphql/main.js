@@ -32,6 +32,26 @@ export const GET_BANNER = gql`
         slug
         starts_at
         ends_at
+        category {
+          slug
+        }
+      }
+    }
+  }
+`;
+
+export const GET_TEAMS_MAIN = gql`
+  query getTeams($is_home: Boolean) {
+    teams(is_home: $is_home) {
+      id
+      description
+      slug
+      image {
+        id
+        path(width: 350) {
+          normal
+          retina
+        }
       }
     }
   }
