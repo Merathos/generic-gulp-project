@@ -4,7 +4,8 @@ import { TitleH2 } from 'elements';
 export const Wrapper = styled.div`
   position: relative;
   margin-top: 80px;
-  padding-bottom: 100px;
+  padding-bottom: ${p => (p.controlsTop ? '0' : '100px')};
+  padding-top: ${p => (p.controlsTop ? '166px' : '0')};
 
   @media screen and (max-width: 1024px) {
     margin-top: 0;
@@ -12,6 +13,7 @@ export const Wrapper = styled.div`
 
   @media screen and (max-width: 960px) {
     padding-bottom: 0;
+    padding-top: 0;
   }
 `;
 

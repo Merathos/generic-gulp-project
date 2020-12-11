@@ -6,7 +6,7 @@ import {
   Teams,
   Vacancies,
 } from 'containers';
-import { RunningText } from '../../components';
+import { RunningText, Gallery } from '../../components';
 import { Main as MainContainer, Container, GreyContainer } from './styles';
 
 const Main = ({ data, quotes, banner, blogs, teams, vacancyCat }) => {
@@ -26,7 +26,8 @@ const Main = ({ data, quotes, banner, blogs, teams, vacancyCat }) => {
       <Container>
         <AboutCompany data={data.aboutCompany} banner={banner} />
       </Container>
-      {blogs.length > 0 && (
+      <Gallery controlsTop />
+      {blogs?.length > 0 && (
         <GreyContainer>
           <Container>
             <PersonalStories blogs={blogs} />

@@ -43,7 +43,7 @@ const Internship = ({ data }) => {
         </GroupContainer>
       </Container>
 
-      <Gallery data={data.gallery} />
+      <Gallery title={data.gallery.title} subtitle={data.gallery.subtitle} />
 
       <ValuesSection>
         <Container>

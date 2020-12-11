@@ -1,11 +1,16 @@
 import { AboutSlider } from 'components';
+import galleryData from 'mock/gallery';
 import { Title, Wrapper } from './styles';
 
-const Gallery = ({ data: { title, subtitle, pictures } }) => {
+const Gallery = ({ title, subtitle, controlsTop }) => {
   return (
-    <Wrapper>
+    <Wrapper controlsTop={controlsTop}>
       {title && <Title>{title}</Title>}
-      <AboutSlider pictures={pictures} subtitle={subtitle} />
+      <AboutSlider
+        pictures={galleryData.pictures}
+        subtitle={subtitle}
+        controlsTop={controlsTop}
+      />
     </Wrapper>
   );
 };

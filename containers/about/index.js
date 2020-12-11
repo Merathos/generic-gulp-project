@@ -40,7 +40,7 @@ const About = ({ data }) => {
       <Container>
         <RunningText data={data.technologies} />
       </Container>
-      <Gallery data={data.gallery} />
+      <Gallery title={data.gallery.title} subtitle={data.gallery.subtitle} />
       <GreyContainer>
         <GreyFooter data={data.greyFooter} type="about" />
       </GreyContainer>

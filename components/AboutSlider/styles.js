@@ -114,6 +114,27 @@ export const PrevButton = styled.button`
   border: 2px solid #53b443;
   border-right: none;
 
+  ${props =>
+    props.controlsTop &&
+    css`
+      top: 0;
+      left: 115px;
+    `}
+
+  ${props =>
+    !props.controlsTop &&
+    css`
+      @media screen and (max-width: 1440px) {
+        right: auto;
+        left: 866px;
+      }
+
+      @media screen and (max-width: 1200px) {
+        left: auto;
+        right: 283px;
+      }
+    `}
+
   svg {
     transition: fill 0.3s ease;
     fill: #53b443;
@@ -122,16 +143,6 @@ export const PrevButton = styled.button`
     &:active {
       fill: #339722;
     }
-  }
-
-  @media screen and (max-width: 1440px) {
-    right: auto;
-    left: 866px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    left: auto;
-    right: 283px;
   }
 
   @media screen and (max-width: 960px) {
@@ -152,6 +163,27 @@ export const NextButton = styled.button`
   border: 2px solid #53b443;
   border-left: none;
 
+  ${props =>
+    props.controlsTop &&
+    css`
+      top: 0;
+      left: 168px;
+    `}
+
+  ${props =>
+    !props.controlsTop &&
+    css`
+      @media screen and (max-width: 1440px) {
+        right: auto;
+        left: 919px;
+      }
+
+      @media screen and (max-width: 1200px) {
+        left: auto;
+        right: 230px;
+      }
+    `}
+
   svg {
     transition: fill 0.3s ease;
     fill: #53b443;
@@ -160,16 +192,6 @@ export const NextButton = styled.button`
     &:active {
       fill: #339722;
     }
-  }
-
-  @media screen and (max-width: 1440px) {
-    right: auto;
-    left: 919px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    left: auto;
-    right: 230px;
   }
 
   @media screen and (max-width: 960px) {

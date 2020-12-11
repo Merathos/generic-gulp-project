@@ -12,7 +12,13 @@ import {
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 
-const AboutSlider = ({ subtitle, pictures, fromEditor, className }) => {
+const AboutSlider = ({
+  subtitle,
+  pictures,
+  fromEditor,
+  className,
+  controlsTop,
+}) => {
   const ref = useRef(null);
 
   const params = {
@@ -28,6 +34,7 @@ const AboutSlider = ({ subtitle, pictures, fromEditor, className }) => {
           className="swiper-button-prev"
           type="button"
           aria-label="Previous slide"
+          controlsTop={controlsTop}
         >
           <ArrowPrev />
         </PrevButton>
@@ -38,6 +45,7 @@ const AboutSlider = ({ subtitle, pictures, fromEditor, className }) => {
         className="swiper-button-next"
         type="button"
         aria-label="Next slide"
+        controlsTop={controlsTop}
       >
         <ArrowNext />
       </NextButton>
