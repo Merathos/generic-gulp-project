@@ -251,7 +251,7 @@ export const NextButton = styled.button`
   width: 53px;
   height: 106px;
   padding-left: 13px;
-  padding-top: 10px;
+  padding-top: 7px;
   border-radius: 0 108px 108px 0;
   border: 2px solid #53b443;
   border-left: none;
