@@ -9,7 +9,7 @@ export const GET_QUOTES = gql`
       color
       image {
         id
-        path {
+        path(width: 792) {
           normal
           retina
         }

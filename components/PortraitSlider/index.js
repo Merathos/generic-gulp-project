@@ -43,8 +43,11 @@ const PortraitSlider = ({ quotes }) => {
           <S.Element key={item.id}>
             <S.Img
               src={item.image.path.normal}
-              srcSet={`${item.image.path.normal} 1x, ${item.image.path.retina} 2x`}
+              srcSet={`${item.image.path.retina} 2x`}
               alt={item.name}
+              width="792"
+              height="836"
+              loading="lazy"
             />
             {item.content && (
               <S.QuoteBlock bgColor={item.color}>
