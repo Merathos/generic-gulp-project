@@ -14,7 +14,7 @@ const SubForm = ({
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
   const [captchaPassed, setCaptchaPassed] = useState(false);
-  const [subscribe, { error }] = useMutation(SET_EVENTS_SUBSCRIPTION, {
+  const [subscribe] = useMutation(SET_EVENTS_SUBSCRIPTION, {
     onCompleted() {
       closeModal();
       showSuccess();
@@ -115,7 +115,6 @@ const SubForm = ({
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>
-          {JSON.stringify(error)}
         </S.FormSection>
       </S.Form>
     </S.Container>
