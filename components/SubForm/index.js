@@ -13,11 +13,14 @@ const SubForm = ({
   eventCategories,
 }) => {
   const [checkedEls, setCheckedEls] = useState({});
+  const [selectedEventCategories, setSelectedEventCategories] = useState([]);
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [subscribe] = useMutation(SET_EVENTS_SUBSCRIPTION, {
-    onCompleted() {
-      closeModal();
-      showSuccess();
+    onCompleted(data) {
+      if (data.Event) {
+        closeModal();
+        showSuccess();
+      }
     },
   });
   const { handleSubmit, register } = useForm();
@@ -29,6 +32,14 @@ const SubForm = ({
     });
   };
 
+  const handleEventCategoryChange = (event, id) => {
+    setCheckedEls({
+      ...checkedEls,
+      [event.target.id]: event.target.checked,
+    });
+    setSelectedEventCategories(prev => [...prev, id]);
+  };
+
   const onSubmit = values => {
     if (captchaPassed) {
       subscribe({
@@ -38,7 +49,7 @@ const SubForm = ({
           email: values.email,
           is_consent_pd: values.personal,
           is_consent_newsletter: values.newsletter,
-          categories: [],
+          categories: selectedEventCategories,
         },
       });
     }
@@ -78,7 +89,7 @@ const SubForm = ({
                 name={item.slug}
                 value={item.name}
                 checked={checkedEls[item.slug]}
-                onChange={handleChange}
+                onChange={event => handleEventCategoryChange(event, item.id)}
                 color="#53B443"
                 reference={register()}
               />
