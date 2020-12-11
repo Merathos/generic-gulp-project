@@ -24,6 +24,15 @@ export const Section = styled.section`
       padding-left: 0;
     }
   }
+
+  ${p =>
+    p.controlsTop &&
+    css`
+      margin-bottom: 144px;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 72px;
+      }
+    `}
 `;
 
 export const Element = styled.div`

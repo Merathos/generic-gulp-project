@@ -53,7 +53,7 @@ const AboutSlider = ({
   };
 
   return (
-    <Section className={className}>
+    <Section className={className} controlsTop={controlsTop}>
       <Swiper ref={ref} {...params}>
         {pictures.map((el, i) => (
           <Element key={i}>
