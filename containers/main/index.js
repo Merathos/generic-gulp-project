@@ -9,7 +9,7 @@ import {
 import { RunningText } from '../../components';
 import { Main as MainContainer, Container, GreyContainer } from './styles';
 
-const Main = ({ data, storiesData, quotes, banner, blogs, teams }) => {
+const Main = ({ data, quotes, banner, blogs, teams, vacancyCat }) => {
   return (
     <MainContainer>
       <GreyContainer>
@@ -40,7 +40,7 @@ const Main = ({ data, storiesData, quotes, banner, blogs, teams }) => {
       )}
       <GreyContainer>
         <Container>
-          <Vacancies data={data.vacancies} />
+          <Vacancies vacancyCat={vacancyCat} />
         </Container>
       </GreyContainer>
     </MainContainer>

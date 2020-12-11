@@ -86,3 +86,14 @@ export const GET_TEAMS_MAIN = gql`
     }
   }
 `;
+
+export const GET_VACANCY_CATEGORIES_MAIN = gql`
+  query getVacancyCategories {
+    vacancy_categories {
+      id
+      name
+      slug
+      vacancy_count
+    }
+  }
+`;

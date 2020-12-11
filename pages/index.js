@@ -7,9 +7,10 @@ import {
   GET_BANNER,
   GET_BLOGS_MAIN,
   GET_TEAMS_MAIN,
+  GET_VACANCY_CATEGORIES_MAIN,
 } from 'graphql/main';
 
-const mainPage = ({ quotes, banner, blogs, teams }) => {
+const mainPage = ({ quotes, banner, blogs, teams, vacancy_categories }) => {
   return (
     <Layout greyFooter plainHeader smallPadding isVisible={false}>
       <Main
@@ -19,6 +20,7 @@ const mainPage = ({ quotes, banner, blogs, teams }) => {
         banner={banner}
         blogs={blogs}
         teams={teams}
+        vacancyCat={vacancy_categories}
       />
     </Layout>
   );
@@ -49,6 +51,11 @@ export async function getServerSideProps() {
     query: GET_TEAMS_MAIN,
     variables: { is_home: true },
   });
+  const {
+    data: { vacancy_categories },
+  } = await apolloClient.query({
+    query: GET_VACANCY_CATEGORIES_MAIN,
+  });
 
   return {
     props: {
@@ -56,6 +63,7 @@ export async function getServerSideProps() {
       banner,
       blogs,
       teams,
+      vacancy_categories,
     },
   };
 }
