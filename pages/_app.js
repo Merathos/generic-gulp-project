@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
+import Head from 'next/head';
+import { ApolloProvider as Apollo } from '@apollo/client';
 import { useStore } from '../lib/store';
 import { useApollo } from '../lib/apollo';
-import Head from 'next/head';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -85,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
   .swiper-container {
     overflow: hidden;
   }
-  
+
   .ReactModal__Body--open {
     overflow: hidden;
     margin-right: 17px;
@@ -198,7 +199,7 @@ const GlobalStyle = createGlobalStyle`
       inset: auto 0px 10px !important;
     }
   }
-  
+
   @media screen and (max-width: 420px) {
     body {
       font-size: 14px;
@@ -212,13 +213,15 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      <ApolloProvider client={apolloClient}>
-        <Head>
-          <title>Dins</title>
-        </Head>
-        <Component {...pageProps} />
-        <GlobalStyle />
-      </ApolloProvider>
+      <Apollo client={apolloClient}>
+        <ApolloProvider client={apolloClient}>
+          <Head>
+            <title>Dins</title>
+          </Head>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </ApolloProvider>
+      </Apollo>
     </Provider>
   );
 }

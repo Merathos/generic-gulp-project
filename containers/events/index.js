@@ -17,12 +17,12 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
   }
 
   // Filter upcoming events
-  const eventsUpcoming = events.filter(
+  const eventsUpcoming = events?.filter(
     event => Date.parse(event.ends_at) - Date.parse(new Date()) > 0
   );
 
   // Filter ended events
-  const eventsEnded = events.filter(
+  const eventsEnded = events?.filter(
     event => Date.parse(event.ends_at) - Date.parse(new Date()) < 0
   );
 
@@ -49,9 +49,11 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
                 pageSlug={pageSlug}
               />
             )}
-            {eventsUpcoming.length > 0 && <EventList events={eventsUpcoming} />}
+            {eventsUpcoming?.length > 0 && (
+              <EventList events={eventsUpcoming} />
+            )}
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
-            {eventsEnded.length > 0 && (
+            {eventsEnded?.length > 0 && (
               <EventList events={eventsEnded} completed />
             )}
           </S.ContentWrapper>

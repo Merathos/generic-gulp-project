@@ -11,13 +11,17 @@ const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
   const { query } = router;
 
   const handleChange = (slug, isActive) => {
-    router.push({
-      pathname: pageSlug,
-      query: {
-        ...query,
-        categories: generateCategories(query.categories, slug, isActive),
+    router.push(
+      {
+        pathname: pageSlug,
+        query: {
+          ...query,
+          categories: generateCategories(query.categories, slug, isActive),
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   const onReset = () => {
