@@ -12,7 +12,7 @@ const BenefitsList = ({ data, banner }) => {
           <ListItem key={index}>
             <H3>{benefit.title}</H3>
             <Text>{benefit.explanation}</Text>
-            <Link href="/" passHref>
+            <Link href={benefit.href} passHref>
               <Ref>{benefit.details}</Ref>
             </Link>
           </ListItem>
