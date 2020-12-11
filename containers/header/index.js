@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
-import { OpenedMenu } from 'containers';
 import CustomLink from 'elements/CustomLink';
 import Logo from 'public/images/logo.svg';
 import Menu from 'public/icons/menu.svg';
-import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -143,8 +141,8 @@ const Header = ({
   hideHav,
   greyHeader,
   mobileDecor,
+  onMenuCLose,
 }) => {
-  const [isMenuOpened, setMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
@@ -172,22 +170,9 @@ const Header = ({
           ))}
         </List>
       </Nav>
-      <Button
-        type="button"
-        aria-label="Menu"
-        onClick={() => {
-          setMenuOpen(true);
-        }}
-      >
+      <Button type="button" aria-label="Menu" onClick={onMenuCLose}>
         <Menu />
       </Button>
-      {isMenuOpened && (
-        <OpenedMenu
-          onMenuClose={() => {
-            setMenuOpen(false);
-          }}
-        />
-      )}
     </StyledHeader>
   );
 };

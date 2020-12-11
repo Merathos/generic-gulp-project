@@ -1,8 +1,8 @@
-import { Header, Footer } from 'containers';
+import { Header, Footer, OpenedMenu } from 'containers';
 import styled from 'styled-components';
 import { SocialSticker } from 'components';
 import Router from 'next/router';
-
+import { useState } from 'react';
 import mock from 'mock/index';
 
 const Wrapper = styled.div`
@@ -67,6 +67,12 @@ const Layout = ({
   mobileDecor = false,
   isFixed = false,
 }) => {
+  const [isMenuOpened, setMenuOpen] = useState(false);
+
+  const handleCloseMenu = () => {
+    setMenuOpen(true);
+  };
+
   return (
     <Wrapper>
       <Header
@@ -76,9 +82,12 @@ const Layout = ({
         hideHav={hideHav}
         greyHeader={greyHeader}
         mobileDecor={mobileDecor}
+        onMenuCLose={handleCloseMenu}
       />
       {children}
-      {isVisible && <SocialSticker data={mock.socialSticker} isFixed />}
+      {isVisible && (
+        <SocialSticker data={mock.socialSticker} isFixed={isFixed} />
+      )}
       {showFooter && (
         <Footer
           data={mock.footer}
@@ -88,6 +97,14 @@ const Layout = ({
           nimax={nimax}
           isVisible={isVisible}
           smallIndent={smallIndent}
+        />
+      )}
+      {isMenuOpened && (
+        <OpenedMenu
+          isOpen={isMenuOpened}
+          onMenuClose={() => {
+            setMenuOpen(false);
+          }}
         />
       )}
       {backButton && (
