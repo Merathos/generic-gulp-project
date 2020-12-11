@@ -22,7 +22,7 @@ const Vacancies = ({ vacancyCat }) => {
         placeholder={placeHolder}
         handleSearch={search => handleSearch(search)}
       />
-      <VacanciesList vacancyCat={vacancyCat} />
+      {vacancyCat?.length > 0 && <VacanciesList vacancyCat={vacancyCat} />}
     </Container>
   );
 };
