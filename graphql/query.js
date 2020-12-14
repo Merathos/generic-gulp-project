@@ -2,14 +2,14 @@ import gql from 'graphql-tag';
 
 export const GET_VACANCIES = gql`
   query getVacancies(
-      $search: String
-      $teams: [String]
-      $categories: [String]
-      $stacks: [String]
-      $internship: Boolean
-      $english: Boolean
-      $limit: Int
-    ) {
+    $search: String
+    $teams: [String]
+    $categories: [String]
+    $stacks: [String]
+    $internship: Boolean
+    $english: Boolean
+    $limit: Int
+  ) {
     vacancies(
       filter: {
         search: $search
@@ -18,7 +18,7 @@ export const GET_VACANCIES = gql`
         stacks: $stacks
         is_internship: $internship
         is_english_speaking_team: $english
-    }
+      }
       limit: $limit
     ) {
       name
@@ -40,20 +40,20 @@ export const GET_VACANCY_CONTENT = gql`
       is_relocation
       descr
       slug
-    	content
-    	category {
+      content
+      category {
         id
         image {
           path {
             normal
           }
         }
-    	}
-    	team {
-    	  name
-    	}
-    	technology_stacks
-    	recruiters {
+      }
+      team {
+        name
+      }
+      technology_stacks
+      recruiters {
         name
         email
         telegram
@@ -169,8 +169,9 @@ export const GET_TEAM_CONTENT = gql`
       name
       slug
       detail_image {
-        path {
+        path(width: 500) {
           normal
+          retina
         }
       }
       technology_stacks

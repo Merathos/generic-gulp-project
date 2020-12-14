@@ -13,7 +13,7 @@ const Project = ({ data, teams }) => {
             title={teams.name}
             text={teams.description}
             stack={teams.technology_stacks}
-            picture={teams.detail_image?.path.normal}
+            picture={teams.detail_image}
           />
         </Container>
       </GreyWrapper>
