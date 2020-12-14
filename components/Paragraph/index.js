@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { handleEditorLinks } from 'helpers/handle-editor-links';
 
 const Description = styled.p`
   opacity: ${props => props.opacity || '1'};
@@ -12,7 +13,7 @@ const Description = styled.p`
   }
 
   a {
-    color: #53B443;
+    color: #53b443;
     font-weight: bold;
     display: inline;
 
@@ -38,7 +39,7 @@ const Paragraph = props => {
     <Description
       bold={bold}
       opacity={opacity}
-      dangerouslySetInnerHTML={{ __html: text }}
+      dangerouslySetInnerHTML={{ __html: handleEditorLinks(text) }}
     />
   );
 };
