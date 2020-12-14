@@ -34,7 +34,7 @@ const Button = styled.button`
 `;
 
 const FilterButton = ({ name, onClick }) => (
-  <Button type="button" onClick={() => onClick()}>
+  <Button type="button" onClick={onClick}>
     {name}
   </Button>
 );

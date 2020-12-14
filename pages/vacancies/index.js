@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import { Layout, VacanciesList } from 'containers';
 import mock from 'mock/index';
 import { GET_VACANCIES } from 'graphql/query';
-import withApollo from 'lib/withApollo';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { initializeApollo } from 'lib/apollo';
+
 import { useDispatch } from 'react-redux';
 
 const catalogPage = () => {
@@ -44,10 +44,32 @@ const catalogPage = () => {
   );
 
   return (
-    <Layout anchor={true} hideHav greyHeader={false} mobileDecor isFixed>
+    <Layout anchor hideHav greyHeader={false} mobileDecor isFixed>
       <VacanciesList data={mock.catalog} back={vacancies || []} />
     </Layout>
   );
 };
 
-export default withApollo(catalogPage, { getDataFromTree });
+export async function getServerSideProps({ query }) {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: GET_VACANCIES,
+    variables: {
+      search: query.search,
+      categories: query.categories,
+      teams: query.teams,
+      stacks: query.stacks,
+      internship: Boolean(query.internship),
+      english: Boolean(query.english),
+    },
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
+
+export default catalogPage;

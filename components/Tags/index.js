@@ -29,15 +29,12 @@ const Tags = ({ handleChangeFilter, handleChangeCategory }) => {
       {filterArray.length !== 0 &&
         filterArray.map((el, i) => (
           <Element key={i}>
-            <FilterButton
-              name={el}
-              handleChange={() => handleChangeFilter(el)}
-            />
+            <FilterButton name={el} onClick={() => handleChangeFilter(el)} />
           </Element>
         ))}
       {categories && (
         <Element>
-          <FilterButton name={categories} handleChange={handleChangeCategory} />
+          <FilterButton name={categories} onClick={handleChangeCategory} />
         </Element>
       )}
     </List>

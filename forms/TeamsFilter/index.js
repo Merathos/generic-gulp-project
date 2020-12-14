@@ -1,9 +1,9 @@
 import { Checkbox, FilterButton } from 'elements';
 import { CustomScrollbars } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
-import * as S from './styles';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import * as S from './styles';
 
 const TeamsFilter = props => {
   const {
@@ -44,7 +44,7 @@ const TeamsFilter = props => {
         <S.ResetButtonWrapper active={!hidden}>
           <FilterButton
             name={discard}
-            handleChange={() => {
+            onClick={() => {
               router.push(pathname);
               dispatch({ type: 'CLEAR_ALL_FILTERS' });
             }}

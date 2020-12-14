@@ -28,7 +28,7 @@ const Filter = props => {
   };
 
   const {
-    data: { fields, internship, english, discard }
+    data: { fields, internship, english, discard },
   } = props;
   return (
     <Wrapper>
@@ -60,7 +60,7 @@ const Filter = props => {
       </Container>
       <FilterButton
         name={discard}
-        handleChange={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
+        onClick={() => dispatch({ type: 'CLEAR_ALL_FILTERS' })}
       />
     </Wrapper>
   );

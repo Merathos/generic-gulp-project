@@ -3,13 +3,13 @@ import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
-import formMock from '../../mock';
 import { Search } from 'forms';
 import { getNewTags } from 'helpers';
-import * as S from './styles';
-import { FormModal } from '../index';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
+import * as S from './styles';
+import { FormModal } from '../index';
+import formMock from '../../mock';
 
 const VacanciesList = ({ data: mock, back }) => {
   const router = useRouter();
@@ -33,8 +33,6 @@ const VacanciesList = ({ data: mock, back }) => {
     setModalOpen(false);
   };
 
-  const initialWidth = useWindowWidth();
-
   function useWindowWidth() {
     const [windowWidth, setWindowWidth] = useState(undefined);
 
@@ -52,6 +50,8 @@ const VacanciesList = ({ data: mock, back }) => {
     return windowWidth;
   }
 
+  const initialWidth = useWindowWidth();
+
   const openDropdown = e => {
     if (opened === e) {
       setOpened('');
@@ -63,49 +63,65 @@ const VacanciesList = ({ data: mock, back }) => {
   const handleCategories = e => {
     if (e === '') {
       delete query.categories;
-      router.push({
-        pathname,
-        query: {
-          ...query,
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
       dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
     } else {
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          categories: e,
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            categories: e,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
       dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
     }
   };
 
   const handleCheckbox = e => {
     if (filterArray.indexOf(e) === -1) {
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          filter: [...filterArray, e],
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            filter: [...filterArray, e],
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
       dispatch({ type: 'CATALOG_FILTER', payload: e });
     } else {
       const item = filterArray.find(el => el === e);
       const index = filterArray.indexOf(item);
 
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          filter: [
-            ...filterArray.slice(0, index),
-            ...filterArray.slice(index + 1),
-          ],
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            filter: [
+              ...filterArray.slice(0, index),
+              ...filterArray.slice(index + 1),
+            ],
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
       dispatch({ type: 'CLEAR_FILTER', payload: e });
     }
   };
@@ -113,20 +129,28 @@ const VacanciesList = ({ data: mock, back }) => {
   const handleInternship = () => {
     if (query.internship) {
       delete query.internship;
-      router.push({
-        pathname,
-        query: {
-          ...query,
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
     } else {
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          internship: !internship_state,
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            internship: !internship_state,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
     }
     dispatch({ type: 'CATALOG_INTERNSHIP' });
   };
@@ -134,33 +158,45 @@ const VacanciesList = ({ data: mock, back }) => {
   const handleEnglish = () => {
     if (query.english) {
       delete query.english;
-      router.push({
-        pathname,
-        query: {
-          ...query,
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
     } else {
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          english: !english_state,
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            english: !english_state,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
     }
     dispatch({ type: 'CATALOG_ENGLISH' });
   };
 
   const handleSearch = search => {
     const { pathname, query } = router;
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        search: getNewTags(router.query.search, search),
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          search: getNewTags(router.query.search, search),
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   const handleClearTags = tag => {
@@ -169,26 +205,34 @@ const VacanciesList = ({ data: mock, back }) => {
     const item = filterArray.find(el => el === tag);
     const index = filterArray.indexOf(item);
 
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        filter: [
-          ...filterArray.slice(0, index),
-          ...filterArray.slice(index + 1),
-        ],
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          filter: [
+            ...filterArray.slice(0, index),
+            ...filterArray.slice(index + 1),
+          ],
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   const handleClearCategoryTag = () => {
     delete query.categories;
-    router.push({
-      pathname,
-      query: {
-        ...query,
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
     dispatch({ type: 'CLEAR_FILTER_CATEGORIES' });
   };
 
@@ -231,7 +275,7 @@ const VacanciesList = ({ data: mock, back }) => {
         {Object.keys(query).length !== 0 && (
           <FilterButton
             name={discard}
-            handleChange={() => {
+            onClick={() => {
               router.push(pathname);
               dispatch({ type: 'CLEAR_ALL_FILTERS' });
             }}
@@ -285,7 +329,7 @@ const VacanciesList = ({ data: mock, back }) => {
               handleChangeCategory={handleClearCategoryTag}
             />
             {internship_state && (
-              <Link href={`/internship`} passHrref>
+              <Link href="/internship" passHrref>
                 <a>
                   <S.InternshipLink>
                     <S.InternshipLinkText>
