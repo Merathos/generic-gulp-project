@@ -835,7 +835,7 @@ export default {
       {
         title: `Блог`,
         text: `Читай наш блог, чтобы узнать последние новости из${'\u00A0'}жизни компании.`,
-        href: `/blog/articles`,
+        href: `/blog`,
       },
     ],
   },
@@ -958,17 +958,17 @@ export default {
     },
     greyFooter: [
       {
-        link: `vacancies/`,
+        href: `/vacancies`,
         title: `Вакансии`,
         text: `Тебе интересна компания и близки наши ценности? Откликайся на открытые позиции в этом разделе.`,
       },
       {
-        link: `events/`,
+        href: `/events`,
         title: `IT EVENINGS`,
         text: `Присоединяйся к ежеквартальным встречам DINS IT EVENING. `,
       },
       {
-        link: `blog/articles`,
+        href: `/blog`,
         title: `Блог`,
         text: `Читай наш блог, чтобы узнать последние новости из жизни компании.`,
       },
@@ -1155,7 +1155,7 @@ export default {
       {
         title: `Блог`,
         text: `Читай наш блог, чтобы узнать последние новости из${'\u00A0'}жизни компании.`,
-        href: `/blog/articles`,
+        href: `/blog`,
       },
     ],
   },
@@ -1273,14 +1273,17 @@ export default {
       {
         title: `Вакансии`,
         text: `Тебе интересна компания и близки наши ценности? Откликайся на открытые позиции в этом разделе.`,
+        href: `/vacancies`,
       },
       {
         title: `IT evenings`,
         text: `Присоединяйся к ежеквартальным встречам DINS IT EVENING. `,
+        href: `/events`,
       },
       {
         title: `Блог`,
         text: `Читай наш блог, чтобы узнать последние новости из жизни компании.`,
+        href: `/blog`,
       },
     ],
   },

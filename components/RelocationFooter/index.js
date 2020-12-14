@@ -8,7 +8,7 @@ const RelocationFooter = ({ data }) => {
       <S.Container>
         <S.List>
           {data.map((el, i) => (
-            <Link href={el.link} key={i}>
+            <Link href={el.href} key={i}>
               <S.Element>
                 <S.Title>{el.title}</S.Title>
                 <S.Text>{el.text}</S.Text>
