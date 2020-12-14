@@ -27,11 +27,11 @@ const mainPage = () => {
       <Main
         data={mock.main}
         storiesData={mock.stories}
-        quotes={quotesData}
-        banner={bannerData}
-        blogs={blogsData}
-        teams={teamsData}
-        vacancyCat={vacancyCatData}
+        quotes={quotesData?.quotes}
+        banner={bannerData?.banner}
+        blogs={blogsData?.blogs}
+        teams={teamsData?.teams}
+        vacancyCat={vacancyCatData?.vacancy_categories}
       />
     </Layout>
   );
