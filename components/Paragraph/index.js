@@ -5,7 +5,7 @@ const Description = styled.p`
   opacity: ${props => props.opacity || '1'};
   font-size: 20px;
   line-height: 158%;
-  margin-bottom: 100px;
+  margin-bottom: ${props => (props.nextIsParagraph ? '32px' : '100px')};
   max-width: 854px;
 
   mark {
@@ -25,7 +25,7 @@ const Description = styled.p`
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 158%;
-    margin-bottom: 50px;
+    margin-bottom: ${props => (props.nextIsParagraph ? '22px' : '40px')};
   }
 `;
 
@@ -34,12 +34,14 @@ const Paragraph = props => {
     data: { text },
     opacity,
     bold,
+    nextIsParagraph,
   } = props;
   return (
     <Description
       bold={bold}
       opacity={opacity}
       dangerouslySetInnerHTML={{ __html: handleEditorLinks(text) }}
+      nextIsParagraph={nextIsParagraph}
     />
   );
 };

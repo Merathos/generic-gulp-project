@@ -64,15 +64,22 @@ const Block = styled.div`
   position: relative;
 `;
 
-const renderContent = props => {
+const renderContent = (props, nextIsParagraph) => {
   const { type, data } = props;
+
   return (
     <>
       {
         {
           header:
             data.level === 2 ? <H2>{data.text}</H2> : <H3>{data.text}</H3>,
-          paragraph: <Paragraph bold="700" data={data} />,
+          paragraph: (
+            <Paragraph
+              bold="700"
+              data={data}
+              nextIsParagraph={nextIsParagraph}
+            />
+          ),
           list:
             data.style === 'ordered' ? (
               <MarkerList data={data.items} />
@@ -132,17 +139,31 @@ const ArticleContent = ({ content }) => (
         // Don't render if block is aside
         if (ASIDE_BLOCKS[content[index]?.type]) return null;
 
+        // Check if the next block after paragraph is paragraph
+        let nextIsParagraph;
+        if (
+          (content[index].type === 'paragraph' &&
+            content[index + 1]?.type === 'paragraph') ||
+          (content[index].type === 'paragraph' &&
+            ASIDE_BLOCKS[content[index + 1]?.type] &&
+            content[index + 2]?.type === 'paragraph')
+        ) {
+          nextIsParagraph = true;
+        }
+
         // Check if the next block is aside to render both
         if (ASIDE_BLOCKS[content[index + 1]?.type]) {
           return (
             <Block key={index}>
-              {renderContent(el)}
+              {renderContent(el, nextIsParagraph)}
               {renderContent(content[index + 1])}
             </Block>
           );
         }
 
-        return <Fragment key={index}>{renderContent(el)}</Fragment>;
+        return (
+          <Fragment key={index}>{renderContent(el, nextIsParagraph)}</Fragment>
+        );
       })}
   </>
 );
