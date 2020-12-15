@@ -24,7 +24,7 @@ const Date = styled(Subtitle)`
   margin-bottom: 80px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 40px ;
+    margin-bottom: 40px;
   }
 `;
 
@@ -50,9 +50,15 @@ const Title = ({ data }) => {
   const { title, date, description } = data;
   return (
     <div>
-      <ArticleTitle>{title}</ArticleTitle>
-      <Date>{date}</Date>
-      <Description>{description}</Description>
+      {title && (
+        <ArticleTitle
+          dangerouslySetInnerHTML={{
+            __html: title.replace(/\n/g, '<br>'),
+          }}
+        />
+      )}
+      {date && <Date>{date}</Date>}
+      {description && <Description>{description}</Description>}
     </div>
   );
 };

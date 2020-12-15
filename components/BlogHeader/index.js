@@ -6,9 +6,15 @@ const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
   return (
     <S.Grid>
       <S.Wrapper>
-        <TitleH1>{title}</TitleH1>
+        {title && (
+          <TitleH1
+            dangerouslySetInnerHTML={{
+              __html: title.replace(/\n/g, '<br>'),
+            }}
+          />
+        )}
         <S.Paragraph audio={audio}>{text}</S.Paragraph>
-        {audio && <Player src={audio} withDynamic={true} />}
+        {audio && <Player src={audio} withDynamic />}
       </S.Wrapper>
       {picture && (
         <S.Block>

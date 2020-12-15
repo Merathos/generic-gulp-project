@@ -5,7 +5,13 @@ const TeamsHeader = ({ title, text, stack, picture }) => {
   return (
     <S.Grid>
       <S.Wrapper>
-        {title && <TitleH1>{title}</TitleH1>}
+        {title && (
+          <TitleH1
+            dangerouslySetInnerHTML={{
+              __html: title.replace(/\n/g, '<br>'),
+            }}
+          />
+        )}
         {text && <S.Paragraph>{text}</S.Paragraph>}
         {stack && (
           <S.TextBlock>

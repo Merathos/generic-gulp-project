@@ -14,8 +14,17 @@ const Styled = styled.h1`
   }
 `;
 
-const TitleH1 = ({ children, className }) => (
-  <Styled className={className}>{children}</Styled>
+const TitleH1 = ({ dangerouslySetInnerHTML, children, className }) => (
+  <>
+    {dangerouslySetInnerHTML ? (
+      <Styled
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+        className={className}
+      />
+    ) : (
+      <Styled className={className}>{children}</Styled>
+    )}
+  </>
 );
 
 export default TitleH1;

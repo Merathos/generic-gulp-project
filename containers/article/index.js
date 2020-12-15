@@ -8,7 +8,7 @@ const Article = ({ data, back }) => {
   }
   return (
     <Container>
-      <Title data={data.mainTitle} />
+      <Title data={back?.title} />
       {Object.keys(content).length !== 0 && (
         <ArticleContent content={content} />
       )}
