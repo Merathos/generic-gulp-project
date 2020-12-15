@@ -27,7 +27,7 @@ const Vacancy = ({ data, back }) => {
       </GreyContainer>
 
       <Container>
-        <ArticleContent content={content} />
+        <ArticleContent content={content} isRelocation={back.is_relocation} />
       </Container>
       <ConditionsSection>
         <Container>

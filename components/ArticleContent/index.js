@@ -14,8 +14,10 @@ import {
   Comments,
   Video,
   SidebarArticle,
+  SidebarRelocation,
 } from 'components';
 import { TitleH2, TitleH3 } from 'elements';
+import vacancyMock from 'mock/vacancy';
 
 const H2 = styled(TitleH2)`
   margin-bottom: 40px;
@@ -132,40 +134,69 @@ const ASIDE_BLOCKS = {
   asideNote: true,
 };
 
-const ArticleContent = ({ content }) => (
-  <>
-    {content.length !== 0 &&
-      content.map((el, index) => {
-        // Don't render if block is aside
-        if (ASIDE_BLOCKS[content[index]?.type]) return null;
+const ArticleContent = ({ content, isRelocation }) => {
+  let relocationAdded = false;
+  return (
+    <>
+      {content.length !== 0 &&
+        content.map((el, index) => {
+          // Don't render if block is aside
+          if (ASIDE_BLOCKS[content[index]?.type]) return null;
 
-        // Check if the next block after paragraph is paragraph
-        let nextIsParagraph;
-        if (
-          (content[index].type === 'paragraph' &&
-            content[index + 1]?.type === 'paragraph') ||
-          (content[index].type === 'paragraph' &&
-            ASIDE_BLOCKS[content[index + 1]?.type] &&
-            content[index + 2]?.type === 'paragraph')
-        ) {
-          nextIsParagraph = true;
-        }
+          // Check if the next block after paragraph is paragraph
+          let nextIsParagraph;
+          if (
+            (content[index].type === 'paragraph' &&
+              content[index + 1]?.type === 'paragraph') ||
+            (content[index].type === 'paragraph' &&
+              ASIDE_BLOCKS[content[index + 1]?.type] &&
+              content[index + 2]?.type === 'paragraph')
+          ) {
+            nextIsParagraph = true;
+          }
 
-        // Check if the next block is aside to render both
-        if (ASIDE_BLOCKS[content[index + 1]?.type]) {
+          // Check if the next block is aside to render both
+          if (ASIDE_BLOCKS[content[index + 1]?.type]) {
+            return (
+              <Block key={index}>
+                {renderContent(el, nextIsParagraph)}
+                {renderContent(content[index + 1])}
+              </Block>
+            );
+          }
+
+          // Add relocation aside
+          if (
+            isRelocation &&
+            !relocationAdded &&
+            !ASIDE_BLOCKS[content[index - 2]?.type] &&
+            !ASIDE_BLOCKS[content[index - 1]?.type] &&
+            !ASIDE_BLOCKS[content[index + 1]?.type] &&
+            !ASIDE_BLOCKS[content[index + 2]?.type]
+          ) {
+            relocationAdded = true;
+            return (
+              <Block key={index}>
+                {renderContent(el, nextIsParagraph)}
+                <Wrapper>
+                  <SidebarRelocation
+                    title={vacancyMock.relocation.title}
+                    subtitle={vacancyMock.relocation.subtitle}
+                    href={vacancyMock.relocation.href}
+                  />
+                </Wrapper>
+              </Block>
+            );
+          }
+
           return (
-            <Block key={index}>
+            <Fragment key={index}>
               {renderContent(el, nextIsParagraph)}
-              {renderContent(content[index + 1])}
-            </Block>
+            </Fragment>
           );
-        }
-
-        return (
-          <Fragment key={index}>{renderContent(el, nextIsParagraph)}</Fragment>
-        );
-      })}
-  </>
-);
+        })}
+    </>
+  );
+};
 
 export default ArticleContent;

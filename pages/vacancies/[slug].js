@@ -11,6 +11,7 @@ import mock from 'mock/index';
 
 const vacancyPage = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const categoriesData = useQuery(GET_VACANCY_CONTENT, {
     variables: {
@@ -23,8 +24,6 @@ const vacancyPage = () => {
   );
 
   if (!categories) return null;
-
-  const dispatch = useDispatch();
 
   dispatch({
     type: 'LANGUAGE',

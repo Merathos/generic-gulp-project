@@ -42,7 +42,7 @@ export const Container = styled.main`
   margin: 0 auto;
   padding: 0 45px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   @media (max-width: 768px) {
     padding: 0 30px;

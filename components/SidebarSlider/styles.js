@@ -8,7 +8,7 @@ export const Article = styled.article`
   background-repeat: no-repeat;
   background-position: top right 10%;
   margin-bottom: 110px;
-  width: 250px;
+  width: 254px;
   cursor: grab;
   padding-top: 24px;
 
