@@ -49,7 +49,13 @@ const VacancyHeader = ({ data }) => {
             <Features data={features} />
           </Wrapper>
         )}
-        <H1>{name}</H1>
+        {name && (
+          <H1
+            dangerouslySetInnerHTML={{
+              __html: name.replace(/\n/g, '<br>'),
+            }}
+          />
+        )}
         {technology_stacks && (
           <TextBlock>
             <Bold>Technology Stack:</Bold>
