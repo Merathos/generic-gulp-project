@@ -26,9 +26,14 @@ const Vacancy = ({ data, back }) => {
         <VacancyHeader data={back} />
       </GreyContainer>
 
-      <Container>
-        <ArticleContent content={content} isRelocation={back.is_relocation} />
-      </Container>
+      {content && (
+        <Container>
+          <ArticleContent
+            content={content}
+            isRelocation={back?.is_relocation}
+          />
+        </Container>
+      )}
       <ConditionsSection>
         <Container>
           <Conditions data={data.conditions} />
@@ -44,11 +49,13 @@ const Vacancy = ({ data, back }) => {
 
       <OfficesMap data={data.map} />
 
-      <VacancySection>
-        <Container>
-          <Articles type="vacancy" data={data.vacancies} />
-        </Container>
-      </VacancySection>
+      {back.related && (
+        <VacancySection>
+          <Container>
+            <Articles type="vacancy" data={back.related} />
+          </Container>
+        </VacancySection>
+      )}
     </>
   );
 };

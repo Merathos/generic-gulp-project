@@ -5,6 +5,7 @@ import { Container, Block, H2, AdvertsWrapper } from './styles';
 const Articles = props => {
   const english = useSelector(state => state.english);
   const { data, type } = props;
+
   return (
     <>
       {type === 'article' ? (
@@ -20,8 +21,8 @@ const Articles = props => {
               : 'Вакансии в этой категории'}
           </H2>
           <AdvertsWrapper>
-            <Advert data={data.catalog[0]} />
-            <Advert data={data.catalog[1]} />
+            {data[0] && <Advert data={data[0]} />}
+            {data[1] && <Advert data={data[1]} />}
           </AdvertsWrapper>
         </Block>
       )}

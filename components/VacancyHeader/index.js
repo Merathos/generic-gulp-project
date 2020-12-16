@@ -34,11 +34,6 @@ const VacancyHeader = ({ data }) => {
       title: `Стажировка`,
       flag: is_internship,
     },
-    {
-      icon: 26,
-      title: `Релокация`,
-      flag: is_relocation,
-    },
   ];
 
   return (

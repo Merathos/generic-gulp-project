@@ -24,7 +24,7 @@ const Advert = ({
   }
 
   return (
-    <Link href={`vacancies/${slug}`}>
+    <Link href={`/vacancies/${slug}`}>
       <Section>
         {features && features.length > 0 && <Features data={features} />}
         {name && <H3>{name}</H3>}

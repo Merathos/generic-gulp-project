@@ -34,6 +34,7 @@ export const GET_VACANCIES = gql`
 export const GET_VACANCY_CONTENT = gql`
   query getVacancyContent($slug: String) {
     vacancies(slug: $slug) {
+      id
       name
       is_english_speaking_team
       is_internship
@@ -63,7 +64,14 @@ export const GET_VACANCY_CONTENT = gql`
           }
         }
       }
-      id
+      related {
+        id
+        name
+        slug
+        descr
+        is_english_speaking_team
+        is_internship
+      }
     }
   }
 `;
