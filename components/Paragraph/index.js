@@ -3,8 +3,8 @@ import { handleEditorLinks } from 'helpers/handle-editor-links';
 
 const Description = styled.p`
   opacity: ${props => props.opacity || '1'};
-  font-size: 20px;
-  line-height: 158%;
+  font-size: ${props => (props.leadText ? '24px' : '20px')};
+  line-height: ${props => (props.leadText ? '150%' : '158%')};
   margin-bottom: ${props => (props.nextIsParagraph ? '32px' : '100px')};
   max-width: 854px;
 
@@ -33,12 +33,12 @@ const Paragraph = props => {
   const {
     data: { text },
     opacity,
-    bold,
     nextIsParagraph,
+    leadText,
   } = props;
   return (
     <Description
-      bold={bold}
+      leadText={leadText}
       opacity={opacity}
       dangerouslySetInnerHTML={{ __html: handleEditorLinks(text) }}
       nextIsParagraph={nextIsParagraph}

@@ -76,11 +76,10 @@ const renderContent = (props, nextIsParagraph) => {
           header:
             data.level === 2 ? <H2>{data.text}</H2> : <H3>{data.text}</H3>,
           paragraph: (
-            <Paragraph
-              bold="700"
-              data={data}
-              nextIsParagraph={nextIsParagraph}
-            />
+            <Paragraph data={data} nextIsParagraph={nextIsParagraph} />
+          ),
+          leadText: (
+            <Paragraph data={data} nextIsParagraph={nextIsParagraph} leadText />
           ),
           list:
             data.style === 'ordered' ? (
