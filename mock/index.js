@@ -2340,7 +2340,7 @@ export default {
       isActive: true,
       bgImg: `/backgrounds/javascript.svg`,
       status: { img: `/icons/online.png`, name: `Online` },
-      date: { day: `29 мая,`, time: `19:30-21:30` },
+      date: { day: `29 мая,`, time: `19:30-21:30`, zone: '(MSK)' },
       location: `Санкт-Петербург. Старо-Петергофский проспект 19, БЦ «Петергофский»`,
       speakers: {
         title: `Спикеры`,

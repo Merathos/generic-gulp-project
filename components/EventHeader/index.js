@@ -26,6 +26,7 @@ const EventHeader = props => {
               <S.DateWrapper>
                 <p>{date.day}&nbsp;</p>
                 <p>{date.time}</p>
+                <S.DateWrapperTimeZone>{date.zone}</S.DateWrapperTimeZone>
               </S.DateWrapper>
               <S.Location>{location}</S.Location>
             </S.LocationContainer>

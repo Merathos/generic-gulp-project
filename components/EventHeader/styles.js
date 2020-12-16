@@ -102,6 +102,10 @@ export const DateWrapper = styled.div`
   }
 `;
 
+export const DateWrapperTimeZone = styled.p`
+  opacity: 0.5;
+`;
+
 export const Location = styled.div`
   max-width: 411px;
 `;
