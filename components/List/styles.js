@@ -38,7 +38,7 @@ export const NormalList = styled.ul`
 
   @media screen and (max-width: 545px) {
     grid-template-columns: 1fr;
-    grid-gap: 100px;
+    grid-gap: 30px;
   }
 `;
 
@@ -112,6 +112,5 @@ export const NormalText = styled.p`
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 158%;
-    margin-bottom: 30px;
   }
 `;
