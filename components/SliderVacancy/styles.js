@@ -47,7 +47,8 @@ export const Element = styled.div`
 export const Section = styled.div`
   position: relative;
   width: 100%;
-  padding: 160px 0 120px;
+  margin-top: 160px;
+  margin-bottom: 120px;
   background-color: #f7f8f9;
 
   .swiper-container {
@@ -102,7 +103,7 @@ export const H2 = styled(TitleH2)`
 export const PrevButton = styled.button`
   display: block;
   position: absolute;
-  top: 183px;
+  top: 23px;
   right: 148px;
   width: 53px;
   height: 106px;
@@ -134,7 +135,7 @@ export const PrevButton = styled.button`
 export const NextButton = styled.button`
   display: block;
   position: absolute;
-  top: 183px;
+  top: 23px;
   right: 95px;
   width: 53px;
   height: 106px;

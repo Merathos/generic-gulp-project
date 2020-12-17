@@ -11,7 +11,6 @@ const H2 = styled(TitleH2)`
 `;
 
 const Section = styled.div`
-  margin-bottom: 100px;
   position: relative;
 
   @media screen and (max-width: 1024px) {

@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import { Icon, Subtitle } from 'elements';
 
-const Section = styled.section`
-  margin-bottom: 100px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
-  }
-`;
+const Section = styled.section``;
 
 const List = styled.ul`
   display: grid;

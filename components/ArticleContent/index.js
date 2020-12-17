@@ -20,15 +20,17 @@ import { TitleH2, TitleH3 } from 'elements';
 import vacancyMock from 'mock/vacancy';
 
 const H2 = styled(TitleH2)`
+  margin-top: ${props => (props.isFirstBlockHeader ? '0' : '160px')};
   margin-bottom: 40px;
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 `;
 
 const H3 = styled(TitleH3)`
+  margin-top: ${props => (props.isFirstBlockHeader ? '0' : '130px')};
   margin-bottom: 30px;
   max-width: 854px;
 
@@ -66,7 +68,12 @@ const Block = styled.div`
   position: relative;
 `;
 
-const renderContent = (props, nextIsParagraph) => {
+const renderContent = (
+  props,
+  nextIsParagraph,
+  noQuoteAuthor,
+  isFirstBlockHeader
+) => {
   const { type, data } = props;
 
   return (
@@ -74,7 +81,11 @@ const renderContent = (props, nextIsParagraph) => {
       {
         {
           header:
-            data.level === 2 ? <H2>{data.text}</H2> : <H3>{data.text}</H3>,
+            data.level === 2 ? (
+              <H2 isFirstBlockHeader={isFirstBlockHeader}>{data.text}</H2>
+            ) : (
+              <H3 isFirstBlockHeader={isFirstBlockHeader}>{data.text}</H3>
+            ),
           paragraph: (
             <Paragraph data={data} nextIsParagraph={nextIsParagraph} />
           ),
@@ -108,7 +119,7 @@ const renderContent = (props, nextIsParagraph) => {
             </Wrapper>
           ),
           video: <Video data={data} />,
-          quote: <Quote data={data} />,
+          quote: <Quote data={data} noQuoteAuthor={noQuoteAuthor} />,
           comments: <Comments data={data.factoids} />,
           asideBlock: (
             <Wrapper>
@@ -134,6 +145,7 @@ const ASIDE_BLOCKS = {
 };
 
 const ArticleContent = ({ content, isRelocation }) => {
+  console.log(content);
   let relocationAdded = false;
   return (
     <>
@@ -141,6 +153,23 @@ const ArticleContent = ({ content, isRelocation }) => {
         content.map((el, index) => {
           // Don't render if block is aside
           if (ASIDE_BLOCKS[content[index]?.type]) return null;
+
+          // Check if first block is a header
+          let isFirstBlockHeader = false;
+          if (index === 0 && content[index].type === 'header') {
+            isFirstBlockHeader = true;
+          }
+
+          // Check if after quote is author block
+          let noQuoteAuthor = true;
+          if (
+            content[index].type === 'quote' &&
+            (content[index + 1]?.type === 'user' ||
+              (ASIDE_BLOCKS[content[index + 1]?.type] &&
+                content[index + 2]?.type === 'user'))
+          ) {
+            noQuoteAuthor = false;
+          }
 
           // Check if the next block after paragraph is paragraph
           let nextIsParagraph;
@@ -158,7 +187,12 @@ const ArticleContent = ({ content, isRelocation }) => {
           if (ASIDE_BLOCKS[content[index + 1]?.type]) {
             return (
               <Block key={index}>
-                {renderContent(el, nextIsParagraph)}
+                {renderContent(
+                  el,
+                  nextIsParagraph,
+                  noQuoteAuthor,
+                  isFirstBlockHeader
+                )}
                 {renderContent(content[index + 1])}
               </Block>
             );
@@ -176,7 +210,12 @@ const ArticleContent = ({ content, isRelocation }) => {
             relocationAdded = true;
             return (
               <Block key={index}>
-                {renderContent(el, nextIsParagraph)}
+                {renderContent(
+                  el,
+                  nextIsParagraph,
+                  noQuoteAuthor,
+                  isFirstBlockHeader
+                )}
                 <Wrapper>
                   <SidebarRelocation
                     title={vacancyMock.relocation.title}
@@ -190,7 +229,12 @@ const ArticleContent = ({ content, isRelocation }) => {
 
           return (
             <Fragment key={index}>
-              {renderContent(el, nextIsParagraph)}
+              {renderContent(
+                el,
+                nextIsParagraph,
+                noQuoteAuthor,
+                isFirstBlockHeader
+              )}
             </Fragment>
           );
         })}

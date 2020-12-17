@@ -4,10 +4,11 @@ import { Section, Span, Block, Container, Img, Description } from './styles';
 
 const Quote = props => {
   const {
-    data: { src, name, company, text, description }
+    data: { src, name, company, text, description },
+    noQuoteAuthor,
   } = props;
   return (
-    <Section>
+    <Section noQuoteAuthor={noQuoteAuthor}>
       <Span>«</Span>
       <Block>
         <blockquote dangerouslySetInnerHTML={{ __html: text }} />

@@ -3,7 +3,7 @@ import { Text } from 'elements';
 
 export const Section = styled.section`
   display: flex;
-  margin-bottom: 27px;
+  margin-bottom: ${props => (props.noQuoteAuthor ? '100px' : '27px')};
   max-width: 850px;
   overflow: hidden;
 

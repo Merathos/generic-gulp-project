@@ -5,7 +5,7 @@ export const VacancySection = styled.div`
   background-image: url('/backgrounds/vacanccy-category.svg');
   background-repeat: no-repeat;
   background-position: left center;
-  padding-top: 60px;
+  margin-top: 60px;
   margin-bottom: 100px;
 
   @media (max-width: 1110px) {
@@ -23,7 +23,6 @@ export const ConditionsSection = styled.div`
   background-repeat: no-repeat;
   background-position: top right;
   padding-top: 60px;
-  margin-bottom: 100px;
 
   @media (max-width: 1110px) {
     background-image: none;
@@ -31,7 +30,6 @@ export const ConditionsSection = styled.div`
 
   @media screen and (max-width: 420px) {
     padding-top: 30px;
-    margin-bottom: 50px;
   }
 `;
 
