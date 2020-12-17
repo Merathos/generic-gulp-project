@@ -150,7 +150,6 @@ const ASIDE_BLOCKS = {
 };
 
 const ArticleContent = ({ content, isRelocation }) => {
-  console.log(content);
   let relocationAdded = false;
   return (
     <>
