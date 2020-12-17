@@ -18,6 +18,8 @@ export const Block = styled.div`
 export const Img = styled.div`
   width: 67px;
   height: 67px;
+  min-width: 67px;
+  min-height: 67px;
   margin-right: 20px;
   border-radius: 50%;
   background-image: ${props => `url(${props.background})`};
