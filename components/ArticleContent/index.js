@@ -64,6 +64,9 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin-right: -45px;
+  @media screen and (max-width: 768px) {
+    margin-right: -30px;
+  }
 `;
 
 const Block = styled.div`
