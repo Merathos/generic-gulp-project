@@ -25,6 +25,7 @@ const H2 = styled(TitleH2)`
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
+    margin-top: ${props => (props.isFirstBlockHeader ? '0' : '80px')};
     margin-bottom: 20px;
   }
 `;
@@ -35,6 +36,7 @@ const H3 = styled(TitleH3)`
   max-width: 854px;
 
   @media screen and (max-width: 420px) {
+    margin-top: ${props => (props.isFirstBlockHeader ? '0' : '70px')};
     margin-bottom: 10px;
   }
 `;
