@@ -47,6 +47,7 @@ export const GET_VACANCY_CONTENT = gql`
         image {
           path {
             normal
+            retina
           }
         }
       }
@@ -61,6 +62,7 @@ export const GET_VACANCY_CONTENT = gql`
         image {
           path {
             normal
+            retina
           }
         }
       }
@@ -82,6 +84,7 @@ export const GET_RELOCATION_BLOGS = gql`
       preview {
         path {
           normal
+          retina
         }
       }
       slug
@@ -106,12 +109,14 @@ export const GET_BLOG_CONTENT = gql`
       detail {
         path {
           normal
+          retina
         }
       }
       related {
         preview {
           path {
             normal
+            retina
           }
         }
         slug
@@ -139,11 +144,13 @@ export const GET_BLOG_CATEGORIES = gql`
       highlight_image {
         path {
           normal
+          retina
         }
       }
       preview {
         path(width: 350) {
           normal
+          retina
         }
       }
       category {
@@ -161,6 +168,7 @@ export const GET_TEAM_CATEGORIES = gql`
       image {
         path(width: 350) {
           normal
+          retina
         }
       }
       summary
