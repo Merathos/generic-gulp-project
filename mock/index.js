@@ -139,7 +139,6 @@ export default {
       button: `Отправить`,
       linkText: `Отправь резюме`,
       plainText: `, и мы свяжемся с тобой, если появится подходящая позиция.`,
-      href: 'mailto:jobs@dins.ru',
     },
   },
   article: {
