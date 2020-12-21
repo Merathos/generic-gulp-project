@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Router from 'next/router';
 import { List, ListItem, Title, SpecialMark } from './styles';
 
 const routeMap = {
@@ -18,7 +19,9 @@ const MenuList = ({ data }) => {
       {data.map((item, index) => (
         <ListItem key={index}>
           <Link href={routeMap[item.title]} passHref>
-            <Title>{item.title}</Title>
+            <Title isActive={routeMap[item.title] === Router.pathname}>
+              {item.title}
+            </Title>
           </Link>
           {item.isSpecial && (
             <SpecialMark
