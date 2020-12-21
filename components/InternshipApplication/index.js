@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { FormModal } from '../../containers';
-import { JobForm } from '../index';
+import { InternForm } from '../index';
 import mock from '../../mock';
 import { useState } from 'react';
 
@@ -36,8 +36,8 @@ const InternshipApplication = ({ data }) => {
       </S.Wrapper>
       {isModalOpened && (
         <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
-          <JobForm
-            data={mock.jobFormV2}
+          <InternForm
+            data={mock.internForm}
             closeModal={closeModal}
             showSuccess={() => {}}
           />
