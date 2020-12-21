@@ -185,17 +185,26 @@ export const InternshipLink = styled.span`
   justify-content: flex-end;
   align-items: center;
   margin-top: 24px;
-  transition: all 0.3s ease;
 
-  svg,
-  path {
-    transition: all 0.3s ease;
+  svg {
+    path {
+      transition: all 0.3s ease;
+
+      :first-child {
+        fill: white;
+        stroke: #201f2a;
+      }
+
+      :last-child {
+        fill: black;
+        stroke: none;
+      }
+    }
   }
 
-  &:hover svg {
-    fill: #53b443;
-
+  &:hover {
     path:first-child {
+      fill: #53b443;
       stroke: #53b443;
     }
 
@@ -205,10 +214,9 @@ export const InternshipLink = styled.span`
     }
   }
 
-  &:active svg {
-    fill: #339722;
-
+  &:active {
     path:first-child {
+      fill: #339722;
       stroke: #339722;
     }
 

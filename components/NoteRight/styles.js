@@ -24,37 +24,43 @@ export const Card = styled.div`
     min-height: 0;
   }
 
-  &:hover {
-    color: #53b443;
+  svg {
+    path {
+      transition: all 0.3s ease;
 
-    svg {
-      fill: #53b443;
-
-      path:first-child {
-        stroke: #53b443;
+      :first-child {
+        fill: white;
+        stroke: #201f2a;
       }
 
-      path:last-child {
-        stroke: #ffffff;
-        fill: #ffffff;
+      :last-child {
+        fill: black;
+        stroke: none;
       }
     }
   }
 
+  &:hover {
+    path:first-child {
+      fill: red;
+      stroke: #53b443;
+    }
+
+    path:last-child {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+  }
+
   &:active {
-    color: #339722;
-
-    svg {
+    path:first-child {
       fill: #339722;
+      stroke: #339722;
+    }
 
-      path:first-child {
-        stroke: #339722;
-      }
-
-      path:last-child {
-        stroke: #ffffff;
-        fill: #ffffff;
-      }
+    path:last-child {
+      stroke: #ffffff;
+      fill: #ffffff;
     }
   }
 `;

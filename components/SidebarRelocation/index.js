@@ -92,16 +92,26 @@ const StyledArrow = styled.a`
   svg {
     fill: #ffffff;
   }
-  svg,
-  path {
-    transition: all 0.3s ease;
+
+  svg {
+    path {
+      transition: all 0.3s ease;
+
+      :first-child {
+        fill: white;
+        stroke: #201f2a;
+      }
+
+      :last-child {
+        fill: black;
+        stroke: none;
+      }
+    }
   }
 
-  &:hover svg {
-    fill: #53b443;
-    cursor: pointer;
-
+  &:hover {
     path:first-child {
+      fill: #53b443;
       stroke: #53b443;
     }
 
@@ -112,13 +122,8 @@ const StyledArrow = styled.a`
   }
 
   &:active {
-    color: #339722;
-  }
-
-  &:active svg {
-    fill: #339722;
-
     path:first-child {
+      fill: #339722;
       stroke: #339722;
     }
 

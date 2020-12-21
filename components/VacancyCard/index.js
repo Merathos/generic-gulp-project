@@ -15,17 +15,19 @@ const VacancyCard = ({ data }) => {
 
   return (
     <Link href={`vacancies/${href}`} passhref>
-      <Section>
-        <Badge>
-          <IconWrapper name="graduation-cap" />
-          <Inscription>{type}</Inscription>
-        </Badge>
-        <H3>{name}</H3>
-        <StyledText>{description}</StyledText>
-        <Arrow>
-          <ArrowRight />
-        </Arrow>
-      </Section>
+      <a>
+        <Section>
+          <Badge>
+            <IconWrapper name="graduation-cap" />
+            <Inscription>{type}</Inscription>
+          </Badge>
+          <H3>{name}</H3>
+          <StyledText>{description}</StyledText>
+          <Arrow>
+            <ArrowRight />
+          </Arrow>
+        </Section>
+      </a>
     </Link>
   );
 };
