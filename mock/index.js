@@ -640,10 +640,8 @@ export default {
         },
       ],
       sidebar: {
-        subtitle: `RingCentral${'\u00A0'}– Лидер Gartner UCaaS Magic Quadrant в${'\u00A0'}течение последних 5${'\u00A0'}лет (июль, 2019)`,
-        alt: `Magic Quadrant`,
+        subtitle: `RingCentral${'\u00A0'}– Лидер Gartner UCaaS Magic Quadrant в${'\u00A0'}течение последних 6${'\u00A0'}лет (июль, 2019)`,
       },
-      logo: `/images/magic-quadrant.png`,
     },
     details: {
       block1: {

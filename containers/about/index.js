@@ -25,7 +25,6 @@ const About = ({ data }) => {
             text={data.intro.text}
             list={data.intro.list}
             sidebar={data.intro.sidebar}
-            logo={data.intro.logo}
           />
         </Container>
       </HeaderContainer>
