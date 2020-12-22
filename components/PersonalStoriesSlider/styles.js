@@ -110,35 +110,36 @@ export const ImageWrapper = styled.div`
     content: '';
     position: absolute;
     background-image: url('/backgrounds/our-people.svg');
-    width: 380px;
-    height: 380px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 301px;
+    height: 301px;
     bottom: 30px;
     left: -140px;
     z-index: 2;
-    transform: rotate(270deg);
+    animation: 45s linear infinite rotation;
 
-    @media screen and (max-width: 1360px) {
-      width: 300px;
-      height: 300px;
-      bottom: 10px;
-      left: -100px;
+    @media screen and (max-width: 1200px) {
+      width: 260px;
+      height: 260px;
+      bottom: 20px;
     }
 
     @media screen and (max-width: 800px) {
-      width: 250px;
-      height: 250px;
-      bottom: 0;
-      left: -60px;
+      width: 200px;
+      height: 200px;
+      left: -100px;
     }
 
     @media screen and (max-width: 720px) {
-      bottom: 110px;
+      bottom: auto;
+      top: -60px;
       left: max(-100vw + 120px + 100%, -50px);
-      width: 200px;
-      height: 200px;
     }
 
     @media screen and (max-width: 600px) {
+      top: auto;
       bottom: 0;
       left: -100px;
     }
@@ -151,16 +152,12 @@ export const ImageWrapper = styled.div`
     }
   }
 
-  &:hover::after {
-    animation: 2.6s linear infinite rotation;
-  }
-
   @keyframes rotation {
     0% {
-      transform: rotate(270deg);
+      transform: rotate(0deg);
     }
     100% {
-      transform: rotate(630deg);
+      transform: rotate(360deg);
     }
   }
 

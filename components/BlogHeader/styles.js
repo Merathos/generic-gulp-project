@@ -94,11 +94,15 @@ export const Block = styled.div`
     content: '';
     position: absolute;
     background-image: url('/backgrounds/our-people.svg');
-    width: 330px;
-    height: 330px;
-    bottom: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 301px;
+    height: 301px;
+    bottom: 80px;
     right: -150px;
     z-index: 2;
+    animation: 45s linear infinite rotation;
 
     @media (max-width: 550px) {
       width: 120px;
@@ -107,10 +111,6 @@ export const Block = styled.div`
       bottom: 20px;
       right: 0;
     }
-  }
-
-  &:hover::after {
-    animation: 2.6s linear infinite rotation;
   }
 
   @keyframes rotation {

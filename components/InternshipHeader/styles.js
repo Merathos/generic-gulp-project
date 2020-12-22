@@ -14,21 +14,20 @@ export const Grid = styled.div`
       &:before {
         content: '';
         position: absolute;
-        background-image: url('/backgrounds/letters-intern.png');
+        background-image: url('/backgrounds/letters-intern.svg');
         background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         width: 290px;
         height: 290px;
         bottom: -26px;
         right: -1%;
         z-index: 2;
+        animation: 45s linear infinite rotation;
 
         @media screen and (max-width: 1024px) {
           display: none;
         }
-      }
-
-      &:hover::before {
-        animation: 2.6s linear infinite rotation;
       }
 
       @keyframes rotation {
@@ -89,17 +88,16 @@ export const Block = styled.div`
   &::after {
     content: '';
     position: absolute;
-    background-image: url('/backgrounds/letters-intern.png');
+    background-image: url('/backgrounds/letters-intern.svg');
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     width: 290px;
     height: 290px;
     bottom: -130px;
     left: -148px;
     z-index: 2;
-  }
-
-  &:hover::after {
-    animation: 2.6s linear infinite rotation;
+    animation: 45s linear infinite rotation;
   }
 
   @keyframes rotation {
