@@ -69,10 +69,12 @@ export const Text = styled.p`
   font-size: 20px;
   line-height: 134%;
   margin-bottom: 50px;
+  white-space: pre-wrap;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
     margin-bottom: 20px;
+    white-space: normal;
   }
 
   @media screen and (max-width: 720px) {
