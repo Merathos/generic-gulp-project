@@ -1,4 +1,4 @@
-import { EventList, EventsTags, Mailing, SubForm } from 'components';
+import { EventList, Mailing, SubForm } from 'components';
 import { FormModal, SuccessModal } from 'containers';
 import { EventsFilter } from 'forms';
 import { useState } from 'react';
@@ -43,12 +43,6 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
             <Mailing data={data.mailing} onClick={() => setIsOpen(true)} />
           </S.Aside>
           <S.ContentWrapper>
-            {eventCategories && (
-              <EventsTags
-                eventCategories={eventCategories}
-                pageSlug={pageSlug}
-              />
-            )}
             {eventsUpcoming?.length > 0 && (
               <EventList events={eventsUpcoming} />
             )}

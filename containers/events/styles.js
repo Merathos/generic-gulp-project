@@ -32,6 +32,7 @@ export const Grid = styled.div`
   @media (min-width: 1200px) {
     display: grid;
     grid-template-columns: minmax(210px, 312px) 865px;
+    grid-template-rows: max-content auto;
     grid-column-gap: 20px;
     grid-template-areas:
       'sidebar   mainTitle'
@@ -98,8 +99,6 @@ export const Title = styled(TitleH1)`
 `;
 
 export const CompletedTitle = styled.h2`
-  margin-bottom: 25px;
-
   font-size: 90px;
   line-height: 100px;
   letter-spacing: 0.01em;
