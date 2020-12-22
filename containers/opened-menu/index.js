@@ -46,7 +46,7 @@ const OpenedMenu = ({ onMenuClose }) => {
               <S.StyledLogo guiding="guiding" />
             </a>
           </Link>
-          <MenuList data={mock.headerMenu.menuList} />
+          <MenuList data={mock.headerMenu.menuList} onMenuClose={onMenuClose} />
           <S.CopyrightMenuBlock>
             <S.Copyright>{mock.footer.copyright}</S.Copyright>
             <Link href={mock.footer.labour.link} passHref>

@@ -13,26 +13,30 @@ const routeMap = {
   Контакты: '/contacts',
 };
 
-const MenuList = ({ data }) => {
+const MenuList = ({ data, onMenuClose }) => {
   return (
     <List>
-      {data.map((item, index) => (
-        <ListItem key={index}>
-          <Link href={routeMap[item.title]} passHref>
-            <Title isActive={routeMap[item.title] === Router.pathname}>
-              {item.title}
-            </Title>
-          </Link>
-          {item.isSpecial && (
-            <SpecialMark
-              src="/emodzi/star.png"
-              alt="Special"
-              width="120"
-              height="120"
-            />
-          )}
-        </ListItem>
-      ))}
+      {data.map((item, index) => {
+        const isActive = routeMap[item.title] === Router.pathname;
+
+        return (
+          <ListItem key={index}>
+            <Link href={routeMap[item.title]} passHref>
+              <Title isActive={isActive} onClick={isActive && onMenuClose}>
+                {item.title}
+              </Title>
+            </Link>
+            {item.isSpecial && (
+              <SpecialMark
+                src="/emodzi/star.png"
+                alt="Special"
+                width="120"
+                height="120"
+              />
+            )}
+          </ListItem>
+        );
+      })}
     </List>
   );
 };
