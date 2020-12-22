@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 104px;
+  margin-top: 100px;
   max-width: 856px;
 
   @media screen and (max-width: 1024px) {
@@ -17,16 +17,31 @@ export const List = styled.ul`
   }
 `;
 
-export const ListItem = styled.li`
-  display: flex;
+export const ListColumn = styled.div`
   width: 45%;
-  margin-bottom: 10px;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
 
   @media screen and (max-width: 600px) {
+    :not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+`;
+
+export const ListItem = styled.li`
+  position: relative;
+  padding-left: 32px;
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 26px;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-left: 20px;
     margin-bottom: 20px;
 
     :last-child {
@@ -36,29 +51,28 @@ export const ListItem = styled.li`
 `;
 
 export const VacancyQuantity = styled.span`
-  align-self: flex-end;
-  margin-right: 18px;
-  margin-bottom: 12px;
+  position: absolute;
+  top: 28px;
+  left: 0;
   font-size: 14px;
   font-weight: 700;
   line-height: 120%;
   color: #2f8ed9;
 
   @media screen and (max-width: 1024px) {
+    top: 20px;
     font-size: 14px;
-    margin-bottom: 0;
-    margin-right: 14px;
   }
 
   @media screen and (max-width: 600px) {
+    top: 7px;
     font-size: 10px;
   }
 `;
 
 export const VacancyTitle = styled.a`
-  align-self: flex-end;
   font-size: 32px;
-  line-height: 170%;
+  line-height: 200%;
   font-weight: 700;
   word-break: break-word;
   transition: color 0.2s ease;

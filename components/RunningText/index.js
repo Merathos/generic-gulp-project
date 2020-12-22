@@ -1,9 +1,12 @@
 import Router from 'next/router';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { Container, Link } from './styles';
 
 const startOffset = 65.5;
 const endOffset = 0;
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 const handleSearch = searchValue => {
   Router.push({
@@ -18,25 +21,22 @@ const RunningText = ({ data }) => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
-  const animate = useCallback(
-    time => {
+  useIsomorphicLayoutEffect(() => {
+    const animate = time => {
       if (previousTimeRef.current !== undefined && isHovered === false) {
         setStep(prevStep =>
-          prevStep <= endOffset ? startOffset : prevStep - 0.02
+          prevStep <= endOffset ? startOffset : prevStep - 0.01
         );
       }
       previousTimeRef.current = time;
       requestRef.current = requestAnimationFrame(animate);
-    },
-    [isHovered]
-  );
+    };
 
-  useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => {
       cancelAnimationFrame(requestRef.current);
     };
-  }, [animate]);
+  }, [isHovered]);
 
   return (
     <Container>
