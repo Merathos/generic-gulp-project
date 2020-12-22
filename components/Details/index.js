@@ -1,5 +1,4 @@
 import * as S from './styles';
-import { Media } from '../index';
 import Router from 'next/router';
 
 const Details = ({ data: { block1, block2 } }) => {
@@ -47,9 +46,12 @@ const Details = ({ data: { block1, block2 } }) => {
             </S.LinkElement>
           ))}
         </S.Links>
-        <S.ImgWrapper>
-          <Media data={block2.video} hasCircle isAbout />
-        </S.ImgWrapper>
+        <S.Image
+          src={block2.picture.src}
+          alt={block2.picture.alt}
+          width="595"
+          height="379"
+        />
       </div>
     </S.Section>
   );

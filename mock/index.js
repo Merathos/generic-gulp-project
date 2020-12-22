@@ -624,7 +624,7 @@ export default {
   about: {
     intro: {
       title: `O${'\u00A0'}компании`,
-      text: `DINS${'\u00A0'}— это центр разработки, который участвует в${'\u00A0'}создании UCaaS-платформы для американской компании RingCentral${'\u00A0'}— ведущего разработчика и${'\u00A0'}провайдера облачных коммуникационных услуг для бизнеса.`,
+      text: `DINS${'\u00A0'}— это центр разработки, который участвует в${'\u00A0'}создании UCaaS-платформы для американской компании RingCentral, ведущего разработчика и${'\u00A0'}провайдера облачных коммуникационных услуг для бизнеса.`,
       list: [
         {
           title: `22${'\u00A0'}года`,
@@ -646,7 +646,7 @@ export default {
     details: {
       block1: {
         title: `Что мы${'\u00A0'}делаем`,
-        text: `Очень много всего. Решение, в${'\u00A0'}разработке которого участвуем, содержит большой набор функций. Сюда входят:`,
+        text: `Решение, в${'\u00A0'}разработке которого DINS принимает участие, содержит большой набор функций:`,
         list: [
           {
             icon: 'megaphone',
@@ -692,10 +692,9 @@ export default {
             link: `https://habr.com/ru/company/dins/`,
           },
         ],
-        picture: `/images/about-details.png`,
-        video: {
-          src: `https://www.youtube.com/watch?v=7koWVT4kyfk`,
-          srcPoster: `/images/about-details.png`,
+        picture: {
+          src: `/images/about-experience.png`,
+          alt: `Обмен опытом в команде`,
         },
       },
     },
