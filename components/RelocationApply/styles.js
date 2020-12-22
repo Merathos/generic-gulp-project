@@ -57,6 +57,17 @@ export const Text = styled.p`
   line-height: 31px;
   margin-bottom: 80px;
 
+  a {
+    display: inline;
+    color: #53b443;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
+
   @media (max-width: 768px) {
     margin-bottom: 60px;
     font-size: 16px;
