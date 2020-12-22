@@ -343,9 +343,9 @@ const VacanciesList = ({ data: mock, back }) => {
           </S.Article>
           {initialWidth <= 768 && (
             <S.Resume>
-              <S.ResumeLink href={mock.article.href}>
+              <S.ResumeButton onClick={handleSendRequestClick}>
                 {mock.article.linkText}
-              </S.ResumeLink>
+              </S.ResumeButton>
               {mock.article.plainText}
             </S.Resume>
           )}

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
@@ -52,11 +52,30 @@ export const ListItem = styled.li`
 `;
 
 export const Title = styled.a`
-  padding-right: 10px;
+  position: relative;
+  margin-right: 10px;
   font-size: 32px;
   font-weight: 700;
   line-height: 170%;
   transition: color 0.3s ease;
+
+  ${props =>
+    props.isActive &&
+    css`
+      color: #53b443;
+
+      &::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #53b443;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    `};
 
   @media screen and (max-width: 1024px) {
     font-size: 26px;

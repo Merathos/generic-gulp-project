@@ -3,7 +3,6 @@ import CustomLink from 'elements/CustomLink';
 import Logo from 'public/images/logo.svg';
 import Menu from 'public/icons/menu.svg';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const StyledHeader = styled.header`
   padding: 34px 48px 34px 45px;
@@ -62,17 +61,13 @@ const StyledLogo = styled(Logo)`
   height: 25px;
   transition: opacity 0.3s ease;
 
-  ${props =>
-    props.guiding &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
+  &:hover {
+    opacity: 0.8;
+  }
 
-      &:active {
-        opacity: 0.6;
-      }
-    `};
+  &:active {
+    opacity: 0.6;
+  }
 
   @media (max-width: 420px) {
     width: 54px;
@@ -143,8 +138,6 @@ const Header = ({
   mobileDecor,
   onMenuCLose,
 }) => {
-  const router = useRouter();
-
   return (
     <StyledHeader
       plain={plain}
@@ -152,15 +145,11 @@ const Header = ({
       greyHeader={greyHeader}
       mobileDecor={mobileDecor}
     >
-      {router.pathname === '/' ? (
-        <StyledLogo />
-      ) : (
-        <Link href="/" passHref>
-          <a aria-label="To the main page" className="guidingLogo">
-            <StyledLogo guiding="guiding" />
-          </a>
-        </Link>
-      )}
+      <Link href="/" passHref>
+        <a aria-label="To the main page" className="guidingLogo">
+          <StyledLogo />
+        </a>
+      </Link>
       <Nav plain={plain} hideNav={hideHav}>
         <List>
           {links.map((el, i) => (

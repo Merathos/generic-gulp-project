@@ -86,6 +86,20 @@ export const Element = styled.li`
     transition: all 0.3s ease;
     margin-top: auto;
 
+    path {
+      transition: all 0.3s ease;
+
+      :first-child {
+        fill: white;
+        stroke: #201f2a;
+      }
+
+      :last-child {
+        fill: black;
+        stroke: none;
+      }
+    }
+
     @media (max-width: 768px) {
       width: 27px;
       height: 27px;
@@ -94,37 +108,27 @@ export const Element = styled.li`
 
   &:hover {
     color: #53b443;
+
+    path:first-child {
+      fill: #53b443;
+      stroke: #53b443;
+    }
+
+    path:last-child {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
   }
 
   &:hover p {
     opacity: 1;
   }
 
-  &:hover svg {
-    fill: #53b443;
-
-    path:first-child {
-      stroke: #53b443;
-    }
-
-    path:last-child {
-      stroke: #ffffff;
-      fill: #ffffff;
-    }
-  }
-
   &:active {
     color: #339722;
-  }
-
-  &:active p {
-    opacity: 1;
-  }
-
-  &:active svg {
-    fill: #339722;
 
     path:first-child {
+      fill: #339722;
       stroke: #339722;
     }
 
@@ -132,6 +136,10 @@ export const Element = styled.li`
       stroke: #ffffff;
       fill: #ffffff;
     }
+  }
+
+  &:active p {
+    opacity: 1;
   }
 
   @media (max-width: 420px) {

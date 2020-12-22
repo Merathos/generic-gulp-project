@@ -25,14 +25,16 @@ const Advert = ({
 
   return (
     <Link href={`/vacancies/${slug}`}>
-      <Section>
-        {features && features.length > 0 && <Features data={features} />}
-        {name && <H3>{name}</H3>}
-        {descr && <StyledText>{descr}</StyledText>}
-        <Arrow>
-          <ArrowRight />
-        </Arrow>
-      </Section>
+      <a>
+        <Section>
+          {features && features.length > 0 && <Features data={features} />}
+          {name && <H3>{name}</H3>}
+          {descr && <StyledText>{descr}</StyledText>}
+          <Arrow>
+            <ArrowRight />
+          </Arrow>
+        </Section>
+      </a>
     </Link>
   );
 };

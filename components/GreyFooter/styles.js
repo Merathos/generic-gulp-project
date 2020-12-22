@@ -157,11 +157,22 @@ export const Element = styled.li`
   margin-bottom: 45px;
   max-width: 325px;
   flex-shrink: 0;
-  transition: all 0.3s ease;
   cursor: pointer;
 
   svg {
-    transition: all 0.3s ease;
+    path {
+      transition: all 0.3s ease;
+
+      :first-child {
+        fill: white;
+        stroke: #201f2a;
+      }
+
+      :last-child {
+        fill: black;
+        stroke: none;
+      }
+    }
   }
 
   &:hover {
@@ -175,6 +186,7 @@ export const Element = styled.li`
       fill: #53b443;
 
       path:first-child {
+        fill: #53b443;
         stroke: #53b443;
       }
 
@@ -196,6 +208,7 @@ export const Element = styled.li`
       fill: #339722;
 
       path:first-child {
+        fill: #339722;
         stroke: #339722;
       }
 

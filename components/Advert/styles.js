@@ -5,22 +5,26 @@ export const Section = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 380px;
-  transition: all 0.3s ease;
 
-  svg,
-  path {
-    transition: all 0.3s ease;
+  svg {
+    path {
+      transition: all 0.3s ease;
+
+      :first-child {
+        fill: white;
+        stroke: #201f2a;
+      }
+
+      :last-child {
+        fill: black;
+        stroke: none;
+      }
+    }
   }
 
   &:hover {
-    color: #53b443;
-    cursor: pointer;
-  }
-
-  &:hover svg {
-    fill: #53b443;
-
     path:first-child {
+      fill: #53b443;
       stroke: #53b443;
     }
 
@@ -31,13 +35,8 @@ export const Section = styled.div`
   }
 
   &:active {
-    color: #339722;
-  }
-
-  &:active svg {
-    fill: #339722;
-
     path:first-child {
+      fill: #339722;
       stroke: #339722;
     }
 

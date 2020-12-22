@@ -9,11 +9,13 @@ const RelocationFooter = ({ data }) => {
         <S.List>
           {data.map((el, i) => (
             <Link href={el.href} key={i}>
-              <S.Element>
-                <S.Title>{el.title}</S.Title>
-                <S.Text>{el.text}</S.Text>
-                <ArrowRight />
-              </S.Element>
+              <a>
+                <S.Element>
+                  <S.Title>{el.title}</S.Title>
+                  <S.Text>{el.text}</S.Text>
+                  <ArrowRight />
+                </S.Element>
+              </a>
             </Link>
           ))}
         </S.List>
