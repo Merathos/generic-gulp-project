@@ -15,14 +15,14 @@ const EventCard = ({
   slug,
 }) => {
   const renderStatus = () => {
-    if (status.slug === 'offline' && location) {
+    if (status?.slug === 'offline' && location) {
       return null;
     }
-    if (status.slug === 'online') {
+    if (status?.slug === 'online') {
       return (
         <>
           <S.Icon
-            src={getStatusImage(status.slug)}
+            src={getStatusImage(status?.slug)}
             alt={status.name}
             width="16"
             height="16"
@@ -31,11 +31,11 @@ const EventCard = ({
         </>
       );
     }
-    if (status.slug === 'streaming') {
+    if (status?.slug === 'streaming') {
       return (
         <>
           <S.Icon
-            src={getStatusImage(status.slug)}
+            src={getStatusImage(status?.slug)}
             alt={status.name}
             width="16"
             height="16"
@@ -77,7 +77,7 @@ const EventCard = ({
           <S.Time>{`Начало в ${dayjs(startsAt).format('HH.mm')}`}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
-      <S.Status status={status.slug}>{renderStatus()}</S.Status>
+      <S.Status status={status?.slug}>{renderStatus()}</S.Status>
       {programs &&
         programs.map(program => (
           <S.TopicContainer key={program.id}>
