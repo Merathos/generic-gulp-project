@@ -3,6 +3,7 @@ import { Subtitle, TitleH2 } from 'elements';
 
 export const Text = styled(Subtitle)`
   margin-bottom: 37px;
+  white-space: pre-wrap;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 30px;
