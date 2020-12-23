@@ -12,10 +12,12 @@ export const Container = styled.div`
     background-image: url('/backgrounds/form-bg.svg');
     background-position: center;
     background-repeat: no-repeat;
-    width: 420px;
-    height: 420px;
+    background-size: contain;
+    width: 340px;
+    height: 340px;
     top: -275px;
     right: -45px;
+    animation: 45s linear infinite rotation;
 
     @media (max-width: 1370px) {
       right: 0;
@@ -28,10 +30,6 @@ export const Container = styled.div`
       top: -130px;
       right: 15px;
     }
-  }
-
-  &:hover::after {
-    animation: 3s linear infinite rotation;
   }
 
   @keyframes rotation {

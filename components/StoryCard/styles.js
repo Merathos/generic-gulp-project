@@ -22,7 +22,7 @@ export const Wrapper = styled.a`
     left: 25px;
     bottom: 65px;
     z-index: 2;
-    transform: rotate(-90deg);
+    animation: 45s linear infinite rotation;
 
     @media (max-width: 768px) {
       background-size: 155px 155px;
@@ -38,16 +38,12 @@ export const Wrapper = styled.a`
     }
   }
 
-  &:hover::after {
-    animation: 2s linear infinite rotation;
-  }
-
   @keyframes rotation {
     0% {
-      transform: rotate(-90deg);
+      transform: rotate(0deg);
     }
     100% {
-      transform: rotate(270deg);
+      transform: rotate(360deg);
     }
   }
 

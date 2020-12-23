@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-const AboutHeader = ({ title, text, list, sidebar, logo }) => {
+const AboutHeader = ({ title, text, list, sidebar }) => {
   return (
     <S.Grid>
       <S.Wrapper>
@@ -19,7 +19,6 @@ const AboutHeader = ({ title, text, list, sidebar, logo }) => {
       </S.Wrapper>
       {sidebar && (
         <S.Aside>
-          <S.Logo src={logo} width="154" height="25" alt={sidebar.alt} />
           <S.AsideText>{sidebar.subtitle}</S.AsideText>
         </S.Aside>
       )}

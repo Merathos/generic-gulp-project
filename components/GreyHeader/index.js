@@ -57,7 +57,6 @@ const GreyHeader = ({
       </S.Wrapper>
       {sidebar && (
         <S.Aside>
-          <S.Logo />
           <Subtitle>{sidebar.subtitle}</Subtitle>
         </S.Aside>
       )}

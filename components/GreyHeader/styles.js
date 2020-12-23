@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { Text, Icon, Button, SmallText } from 'elements';
-import MagicQuadrant from 'public/images/about-magic-quadrant.svg';
 
 export const StyledSmallText = styled(SmallText)`
   max-width: 280px;
@@ -49,6 +48,7 @@ export const Wrapper = styled.article`
 
 export const Aside = styled.aside`
   width: 254px;
+  margin-top: 152px;
   margin-left: auto;
 
   @media screen and (max-width: 420px) {
@@ -120,14 +120,6 @@ export const Features = styled.ul`
         margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
       }
     `};
-`;
-
-export const Logo = styled(MagicQuadrant)`
-  margin-bottom: 20px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 8px;
-  }
 `;
 
 export const ListTitle = styled.b`
@@ -227,15 +219,15 @@ export const Block = styled.div`
     content: '';
     position: absolute;
     background-image: url('/backgrounds/our-people.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     width: 330px;
     height: 330px;
     bottom: 40px;
     right: -200px;
     z-index: 2;
-  }
-
-  &:hover::after {
-    animation: 1.5s linear infinite rotation;
+    animation: 45s linear infinite rotation;
   }
 
   @keyframes rotation {
@@ -338,7 +330,7 @@ export const Block = styled.div`
   ${props =>
     props.hash === 'internship' &&
     css`
-      background-image: url('/backgrounds/letters-intern.png');
+      background-image: url('/backgrounds/letters-intern.svg');
       width: 294px;
       height: 294px;
     `}

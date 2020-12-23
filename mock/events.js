@@ -7,6 +7,10 @@ export default {
     linkHref: `#`,
     text: ` и будь в курсе наших мероприятий`,
   },
+  announcement: {
+    text: `Анонсы предстоящих мероприятий появятся здесь в ближайщее время`,
+    emodzi: `face-with-monocle`,
+  },
   cards: {
     active: [
       {

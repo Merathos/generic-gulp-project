@@ -3,7 +3,7 @@ import { MenuList, ContactsList, Social } from '../../components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import LogoNimax from '../../public/images/logo-nimax.svg';
-import MenuClose from '../../public/icons/menu-close.svg';
+import MenuClose from '../../public/icons/cross.svg';
 import mock from 'mock/index';
 import { useLayoutEffect } from 'react';
 
@@ -46,7 +46,7 @@ const OpenedMenu = ({ onMenuClose }) => {
               <S.StyledLogo guiding="guiding" />
             </a>
           </Link>
-          <MenuList data={mock.headerMenu.menuList} />
+          <MenuList data={mock.headerMenu.menuList} onMenuClose={onMenuClose} />
           <S.CopyrightMenuBlock>
             <S.Copyright>{mock.footer.copyright}</S.Copyright>
             <Link href={mock.footer.labour.link} passHref>

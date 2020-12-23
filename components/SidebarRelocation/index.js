@@ -1,10 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Link from 'next/link';
 import TitleH4 from 'elements/TitleH4';
 import Subtitle from 'elements/Subtitle';
 import ArrowRight from 'public/icons/arrow-right.svg';
-import RelocationText from 'public/backgrounds/relocation.svg';
-import { useState } from 'react';
 
 const H4 = styled(TitleH4)`
   margin-bottom: 30px;
@@ -33,57 +31,38 @@ const Section = styled.section`
 
 const RelocationBackground = styled.div`
   position: absolute;
-  top: 40px;
-  left: 120px;
-  max-width: 300px;
-  max-height: 300px;
+  top: -40px;
+  left: 0;
+  width: 340px;
+  height: 340px;
   z-index: -1;
-  transform: translate(-50%, -50%);
+  background-image: url('/backgrounds/relocation.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: rotate(90deg);
+  animation: 45s linear infinite rotation;
 
   @media (max-width: 1240px) {
-    top: 10px;
-    left: 100px;
-  }
-  @media (max-width: 420px) {
-    top: 40px;
-    left: 100px;
+    width: 300px;
+    height: 300px;
+    top: -85px;
+    left: -20px;
   }
 
-  svg {
-    fill: #f7f8f9;
-    stroke: #f7f8f9;
-    width: 420px;
-    height: 420px;
-    @media (max-width: 1240px) {
-      width: 380px;
-      height: 380px;
-    }
-    @media (max-width: 420px) {
-      width: 276px;
-      height: 276px;
-    }
+  @media (max-width: 500px) {
+    width: 260px;
+    height: 260px;
+    top: -85px;
+    left: 20px;
   }
-
-  ${props =>
-    props.rotate === 1 &&
-    css`
-      svg {
-        fill: #feb251;
-        animation: 45s linear infinite rotation;
-
-        path:last-child {
-          fill: #feb251;
-          stroke: #feb251;
-        }
-      }
-    `}
 
   @keyframes rotation {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(90deg);
     }
     100% {
-      transform: rotate(360deg);
+      transform: rotate(450deg);
     }
   }
 `;
@@ -143,12 +122,8 @@ const StyledSubtitle = styled(Subtitle)`
 `;
 
 const SidebarRelocation = ({ title, subtitle, href }) => {
-  const [rotate, setRotate] = useState(0);
   return (
-    <Section
-      onMouseEnter={() => setRotate(1)}
-      onMouseLeave={() => setRotate(0)}
-    >
+    <Section>
       <H4>{title}</H4>
       <StyledSubtitle>{subtitle}</StyledSubtitle>
       <Link href={href} passHref>
@@ -156,9 +131,7 @@ const SidebarRelocation = ({ title, subtitle, href }) => {
           <ArrowRight />
         </StyledArrow>
       </Link>
-      <RelocationBackground rotate={rotate}>
-        <RelocationText />
-      </RelocationBackground>
+      <RelocationBackground />
     </Section>
   );
 };

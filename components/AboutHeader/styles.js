@@ -118,21 +118,11 @@ export const StyledSmallText = styled(SmallText)`
 
 export const Aside = styled.aside`
   width: 23%;
+  margin-top: 152px;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
-  }
-`;
-
-export const Logo = styled.img`
-  display: inline-block;
-  width: 154px;
-  height: 25px;
-  margin-top: 6px;
-  margin-bottom: 20px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 12px;
+    margin-top: 0;
   }
 `;
 

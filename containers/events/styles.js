@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH1 } from 'elements';
+import { Icon, TitleH1 } from 'elements';
 
 export const Main = styled.main`
   background-image: url('backgrounds/events-left.svg'),
@@ -32,6 +32,7 @@ export const Grid = styled.div`
   @media (min-width: 1200px) {
     display: grid;
     grid-template-columns: minmax(210px, 312px) 865px;
+    grid-template-rows: max-content auto;
     grid-column-gap: 20px;
     grid-template-areas:
       'sidebar   mainTitle'
@@ -66,13 +67,37 @@ export const Aside = styled.aside`
   @media (max-width: 910px) {
     margin-left: 30px;
     margin-right: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 `;
 
 export const ContentWrapper = styled.div`
   grid-area: content;
   width: 100%;
+`;
+
+export const Announcement = styled.div`
+  margin-bottom: 60px;
+  color: rgba(32, 31, 43, 0.5);
+
+  @media screen and (max-width: 1200px) {
+    max-width: 862px;
+    margin: 0 auto 60px;
+  }
+
+  @media (max-width: 910px) {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 14px;
+    line-height: 18.34px;
+  }
+`;
+
+export const StyledIcon = styled(Icon)`
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
 `;
 
 export const Title = styled(TitleH1)`
@@ -98,8 +123,6 @@ export const Title = styled(TitleH1)`
 `;
 
 export const CompletedTitle = styled.h2`
-  margin-bottom: 25px;
-
   font-size: 90px;
   line-height: 100px;
   letter-spacing: 0.01em;

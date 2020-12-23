@@ -134,29 +134,27 @@ export const PicContainer = styled.div`
     background-image: url('/backgrounds/relocate-letters.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 330px;
-    height: 330px;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
     bottom: -140px;
     left: -152px;
     z-index: 2;
+    animation: 45s linear infinite rotation;
 
     @media (max-width: 1130px) {
       width: 160px;
-      height: 160px;
+      reloheight: 160px;
       background-size: 160px 160px;
       bottom: -60px;
-      left: -43px;
+      left: -80px;
     }
 
     @media (max-width: 768px) {
       left: initial;
-      bottom: -55px;
-      right: -43px;
+      bottom: -45px;
+      right: -45px;
     }
-  }
-
-  &:hover::after {
-    animation: 2.6s linear infinite rotation;
   }
 
   @keyframes rotation {

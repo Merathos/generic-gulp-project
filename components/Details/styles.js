@@ -154,30 +154,10 @@ export const Link = styled.a`
   }
 `;
 
-export const ImgWrapper = styled.div`
-  position: relative;
-
-  &::before {
-    @media (min-width: 769px) {
-      content: '';
-      position: absolute;
-      z-index: -10;
-      bottom: -84px;
-      left: -100px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background-color: #f7f8f9;
-    }
-  }
-
+export const Image = styled.img`
   @media screen and (max-width: 420px) {
-    margin-right: -45px;
-    margin-left: -45px;
-
-    img {
-      object-fit: cover;
-      height: 232px;
-    }
+    width: 100vw;
+    margin-right: -30px;
+    margin-left: -30px;
   }
 `;
