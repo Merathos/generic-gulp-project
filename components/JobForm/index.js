@@ -76,6 +76,7 @@ const JobForm = ({
             checked={checkedEls[agreement.dataText]}
             onChange={handleCheckbox}
             color={'#53B443'}
+            value={agreement.dataText}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}
@@ -86,6 +87,7 @@ const JobForm = ({
             checked={checkedEls[agreement.mailing]}
             onChange={handleCheckbox}
             color={'#53B443'}
+            value={agreement.mailing}
           />
           <S.BottomWrap>
             <ReCAPTCHA sitekey="Your client site key" onChange={() => {}} />
