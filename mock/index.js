@@ -2319,7 +2319,7 @@ export default {
       agreement: {
         dataText: 'Подтверждаю свое согласие на ',
         dataLink: ' обработку персональных данных',
-        dataHref: '#',
+        dataHref: 'https://dins.ru/downloads/policy.pdf',
         mailing:
           'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
       },
@@ -2625,7 +2625,7 @@ export default {
     agreement: {
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
       mailing:
         'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
     },
@@ -2653,7 +2653,7 @@ export default {
         },
         {
           name: `birthDate`,
-          label: `Дата рождения *`,
+          label: `Дата рождения (дд.мм.гггг) *`,
           required: true,
           date: true,
         },
@@ -2767,7 +2767,7 @@ export default {
     agreement: {
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
       mailing:
         'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
     },
@@ -2832,7 +2832,7 @@ export default {
     agreement: {
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
       mailing:
         'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
     },
@@ -2869,7 +2869,7 @@ export default {
     agreement: {
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
       mailing:
         'Я согласен получать рассылку о вакансиях и мероприятиях от DINS®',
     },
