@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   ListFigure,
   ClockFigure,
@@ -9,7 +9,7 @@ import {
   UploadFigure,
 } from 'components';
 
-const InfographicsList = ({ data }) => {
+const InfographicsList = ({ data, activeItemIndex, onHover }) => {
   const [currentAnimation, changeAnimation] = useState('');
 
   const infographicsMap = {
@@ -21,14 +21,25 @@ const InfographicsList = ({ data }) => {
     'changes-quantity': <UploadFigure />,
   };
 
+  useEffect(() => {
+    activeItemIndex !== null
+      ? changeAnimation(data[activeItemIndex].name)
+      : changeAnimation('');
+  }, [activeItemIndex]);
+
   return (
     <S.Container>
       <S.List>
         {data.map((item, index) => (
           <S.ListItem
             key={index}
-            onMouseEnter={() => changeAnimation(item.name)}
-            onMouseLeave={() => changeAnimation('')}
+            onMouseEnter={() => {
+              onHover(true, index);
+            }}
+            onMouseLeave={() => {
+              onHover(false, index);
+            }}
+            isActive={index === activeItemIndex}
           >
             <S.ItemValue>{item.value}</S.ItemValue>
             <S.ItemTitle>{item.title}</S.ItemTitle>

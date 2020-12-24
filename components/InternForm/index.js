@@ -86,6 +86,7 @@ const InternForm = ({
               <S.CheckBox
                 key={i}
                 name={item}
+                value={item}
                 checked={checkedEls[item]}
                 onChange={handleCheckbox}
                 color={'#53B443'}
@@ -94,12 +95,7 @@ const InternForm = ({
           </S.CheckboxContainer>
           <S.TechContainer>
             {terms.tech.map((item, i) => (
-              <SmartTextarea
-                key={i}
-                label={item.label}
-                placeholder={item.placeholder}
-                name={item.name}
-              />
+              <SmartTextarea key={i} label={item.label} name={item.name} />
             ))}
             <S.MonthContainer>
               <S.TermsQuestion>{terms.startingMonth.question}</S.TermsQuestion>
