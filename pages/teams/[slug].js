@@ -10,10 +10,11 @@ import { useRouter } from 'next/router';
 
 const ProjectPage = () => {
   const router = useRouter();
+  const { query } = router;
 
   const categoriesData = useQuery(GET_TEAM_CATEGORIES, {
     variables: {
-      slug: router.query.slug,
+      slug: query.slug,
     },
   });
   const categories = useMemo(
@@ -23,7 +24,8 @@ const ProjectPage = () => {
 
   const contentData = useQuery(GET_TEAM_CONTENT, {
     variables: {
-      slug: router.query.slug,
+      slug: query.slug,
+      is_preview: query.preview === 'true',
     },
   });
   const content = useMemo(
