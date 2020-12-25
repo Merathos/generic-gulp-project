@@ -7,11 +7,11 @@ const CustomLink = ({ href, children, className }) => {
 
   return (
     <Styled className={className}>
-      <Link href={href}>
+      <Link href={href} passHref>
         <StyledLink activeLink={pathname === href}>{children}</StyledLink>
       </Link>
     </Styled>
-  )
+  );
 };
 
 export default CustomLink;
