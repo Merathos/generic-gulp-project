@@ -5,10 +5,15 @@ import mock from 'mock/index';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
 
-const teamsPage = ({ teams }) => {
+const teamsPage = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+
+  const { data: teamsData } = useQuery(GET_TEAM_CATEGORIES, {
+    variables: { stack: router.query.filter },
+  });
 
   useEffect(() => {
     dispatch({
@@ -19,7 +24,7 @@ const teamsPage = ({ teams }) => {
 
   return (
     <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>
-      <TeamList mock={mock.teamList} back={teams} />
+      <TeamList mock={mock.teamList} back={teamsData?.teams} />
     </Layout>
   );
 };
@@ -27,16 +32,14 @@ const teamsPage = ({ teams }) => {
 export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
 
-  const {
-    data: { teams },
-  } = await apolloClient.query({
+  await apolloClient.query({
     query: GET_TEAM_CATEGORIES,
-    variables: { stack: query.tags },
+    variables: { stack: query.filter },
   });
 
   return {
     props: {
-      teams,
+      initialApolloState: apolloClient.cache.extract(),
     },
   };
 }

@@ -12,28 +12,36 @@ const TeamList = ({ mock, back }) => {
 
   const handleClick = e => {
     if (filterArray.indexOf(e) === -1) {
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          filter: [...filterArray, e],
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            filter: [...filterArray, e],
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
       dispatch({ type: 'CATALOG_FILTER', payload: e });
     } else {
       const item = filterArray.find(el => el === e);
       const index = filterArray.indexOf(item);
 
-      router.push({
-        pathname,
-        query: {
-          ...query,
-          filter: [
-            ...filterArray.slice(0, index),
-            ...filterArray.slice(index + 1),
-          ],
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            filter: [
+              ...filterArray.slice(0, index),
+              ...filterArray.slice(index + 1),
+            ],
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
       dispatch({ type: 'CLEAR_FILTER', payload: e });
     }
   };
@@ -44,16 +52,20 @@ const TeamList = ({ mock, back }) => {
     const item = filterArray.find(el => el === tag);
     const index = filterArray.indexOf(item);
 
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        filter: [
-          ...filterArray.slice(0, index),
-          ...filterArray.slice(index + 1),
-        ],
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          filter: [
+            ...filterArray.slice(0, index),
+            ...filterArray.slice(index + 1),
+          ],
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   return (
@@ -73,7 +85,7 @@ const TeamList = ({ mock, back }) => {
             )}
           </S.Article>
           <S.CardsWrapper>
-            <Cards data={back} type="teams" />
+            {back && <Cards data={back} type="teams" />}
           </S.CardsWrapper>
         </S.Grid>
       </S.Container>
