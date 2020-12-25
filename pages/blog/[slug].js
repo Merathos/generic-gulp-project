@@ -10,10 +10,12 @@ import mock from 'mock/index';
 
 const storyPage = () => {
   const router = useRouter();
+  const { query } = router;
 
   const blogData = useQuery(GET_BLOG_CONTENT, {
     variables: {
-      slug: router.query.slug,
+      slug: query.slug,
+      is_preview: query.preview === 'true',
     },
   });
   const blog = useMemo(

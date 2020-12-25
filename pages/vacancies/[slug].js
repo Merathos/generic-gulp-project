@@ -11,11 +11,13 @@ import mock from 'mock/index';
 
 const vacancyPage = () => {
   const router = useRouter();
+  const { query } = router;
   const dispatch = useDispatch();
 
   const categoriesData = useQuery(GET_VACANCY_CONTENT, {
     variables: {
-      slug: router.query.slug,
+      slug: query.slug,
+      is_preview: query.preview === 'true',
     },
   });
   const categories = useMemo(
