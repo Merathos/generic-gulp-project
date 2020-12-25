@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { Layout, Project } from 'containers';
 import { useQuery } from '@apollo/client';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { initializeApollo } from 'lib/apollo';
 import { GET_TEAM_CONTENT, GET_TEAM_CATEGORIES } from 'graphql/query';
-import withApollo from 'lib/withApollo';
+import Head from 'next/head';
 
 import mock from 'mock/index';
 import { useRouter } from 'next/router';
@@ -36,10 +36,36 @@ const ProjectPage = () => {
   if (!categories || !content) return null;
 
   return (
-    <Layout backButton smallButton greyFooter plainHeader isVisible={false}>
-      <Project data={mock.project} teams={content} />
-    </Layout>
+    <>
+      <Head>
+        {query.preview === 'true' && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
+      </Head>
+      <Layout backButton smallButton greyFooter plainHeader isVisible={false}>
+        <Project data={mock.project} teams={content} />
+      </Layout>
+    </>
   );
 };
 
-export default withApollo(ProjectPage, { getDataFromTree });
+export async function getServerSideProps({ query }) {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: GET_TEAM_CATEGORIES,
+    variables: { slug: query.slug },
+  });
+  await apolloClient.query({
+    query: GET_TEAM_CONTENT,
+    variables: { slug: query.slug, is_preview: query.preview === 'true' },
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
+
+export default ProjectPage;

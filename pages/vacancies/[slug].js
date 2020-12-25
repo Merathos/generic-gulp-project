@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import { useDispatch } from 'react-redux';
 import { Layout, Vacancy } from 'containers';
 import { GET_VACANCY_CONTENT } from 'graphql/query';
-import withApollo from 'lib/withApollo';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { initializeApollo } from 'lib/apollo';
+import Head from 'next/head';
 
 import mock from 'mock/index';
 
@@ -33,10 +33,32 @@ const vacancyPage = () => {
   });
 
   return (
-    <Layout backButton>
-      <Vacancy data={mock.vacancy} back={categories} />
-    </Layout>
+    <>
+      <Head>
+        {query.preview === 'true' && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
+      </Head>
+      <Layout backButton>
+        <Vacancy data={mock.vacancy} back={categories} />
+      </Layout>
+    </>
   );
 };
 
-export default withApollo(vacancyPage, { getDataFromTree });
+export async function getServerSideProps({ query }) {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: GET_VACANCY_CONTENT,
+    variables: { slug: query.slug, is_preview: query.preview === 'true' },
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
+
+export default vacancyPage;

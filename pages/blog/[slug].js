@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
+import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
 import { Layout, Story, Article } from 'containers';
 import { GET_BLOG_CONTENT } from 'graphql/query';
-import withApollo from 'lib/withApollo';
-import { getDataFromTree } from '@apollo/react-ssr';
+import Head from 'next/head';
 
 import mock from 'mock/index';
 
@@ -26,14 +26,36 @@ const storyPage = () => {
   if (!blog) return null;
 
   return (
-    <Layout backButton greyFooter={blog.type === 'history'}>
-      {blog.type === 'history' ? (
-        <Story back={blog} />
-      ) : (
-        <Article data={mock.article} back={blog} />
-      )}
-    </Layout>
+    <>
+      <Head>
+        {query.preview === 'true' && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
+      </Head>
+      <Layout backButton greyFooter={blog.type === 'history'}>
+        {blog.type === 'history' ? (
+          <Story back={blog} />
+        ) : (
+          <Article data={mock.article} back={blog} />
+        )}
+      </Layout>
+    </>
   );
 };
 
-export default withApollo(storyPage, { getDataFromTree });
+export async function getServerSideProps({ query }) {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: GET_BLOG_CONTENT,
+    variables: { slug: query.slug, is_preview: query.preview === 'true' },
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
+
+export default storyPage;
