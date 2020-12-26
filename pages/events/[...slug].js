@@ -4,6 +4,7 @@ import { Layout, EventDetails } from 'containers';
 import { useQuery } from '@apollo/client';
 import { GET_EVENT, GET_EVENT_POLLING } from 'graphql/events';
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 
 import mock from 'mock/index';
 
@@ -45,16 +46,23 @@ const EventPage = () => {
   }, [eventPolling]);
 
   return (
-    <Layout plainHeader backButton>
-      <EventDetails
-        data={mock.events.eventDetails}
-        eventData={event}
-        eventDataPolling={eventPolling}
-        eventStarted={eventStarted}
-        setEventStarted={setEventStarted}
-        isActive={isActive}
-      />
-    </Layout>
+    <>
+      <Head>
+        {query.preview === 'true' && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
+      </Head>
+      <Layout plainHeader backButton>
+        <EventDetails
+          data={mock.events.eventDetails}
+          eventData={event}
+          eventDataPolling={eventPolling}
+          eventStarted={eventStarted}
+          setEventStarted={setEventStarted}
+          isActive={isActive}
+        />
+      </Layout>
+    </>
   );
 };
 
