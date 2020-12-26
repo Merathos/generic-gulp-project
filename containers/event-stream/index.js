@@ -111,9 +111,6 @@ const EventStream = ({
       <S.Container>
         <S.Title>{title}</S.Title>
         {message()}
-        <button type="button" onClick={() => setVideoCode('DX5IiaQBqXY')}>
-          Click
-        </button>
       </S.Container>
       {videoCode && (
         <S.StreamWrapper>
