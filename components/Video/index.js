@@ -4,9 +4,10 @@ import { Section, Text, VideoContainer } from './styles';
 const Video = props => {
   const {
     data: { link, title },
+    recap,
   } = props;
   return (
-    <Section>
+    <Section ref={recap}>
       <VideoContainer>
         <ReactPlayer
           url={link}

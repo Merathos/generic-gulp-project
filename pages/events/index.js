@@ -12,6 +12,7 @@ const eventsPage = () => {
   const { data: eventsData } = useQuery(GET_EVENTS, {
     variables: { categories: router.query.categories },
   });
+
   return (
     <Layout plainHeader isVisible={false} showFooter={false} greyHeader={false}>
       <Events

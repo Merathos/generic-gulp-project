@@ -8,12 +8,12 @@ const EventList = ({ events, completed }) => {
         <Item key={event.id}>
           <EventCard
             category={event.category}
+            slug={event.slug}
             startsAt={event.starts_at}
             endsAt={event.ends_at}
             status={event.status}
             programs={event.programs}
             location={event.location}
-            slug={event.slug}
             completed={completed}
           />
         </Item>

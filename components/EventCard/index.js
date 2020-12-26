@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
-import { getStatusImage } from 'helpers/events-helpers';
 import Router from 'next/router';
+import { EventStatus } from 'elements';
+import Link from 'next/link';
 import * as S from './styles';
 
 const EventCard = ({
@@ -14,45 +15,12 @@ const EventCard = ({
   regForm,
   slug,
 }) => {
-  const renderStatus = () => {
-    if (status?.slug === 'offline' && location) {
-      return null;
-    }
-    if (status?.slug === 'online') {
-      return (
-        <>
-          <S.Icon
-            src={getStatusImage(status?.slug)}
-            alt={status.name}
-            width="16"
-            height="16"
-          />
-          {status.name}
-        </>
-      );
-    }
-    if (status?.slug === 'streaming') {
-      return (
-        <>
-          <S.Icon
-            src={getStatusImage(status?.slug)}
-            alt={status.name}
-            width="16"
-            height="16"
-          />
-          {status.name}
-        </>
-      );
-    }
-    return null;
-  };
-
   const handleRegistrationClick = () => {
     if (Router.pathname === `/events/${slug}`) {
       regForm?.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       Router.push({
-        pathname: '/event',
+        pathname: `/events/${slug}`,
         hash: 'form',
       }).then(() =>
         document.getElementById('form').scrollIntoView({ behavior: 'smooth' })
@@ -69,15 +37,17 @@ const EventCard = ({
   return (
     <S.CardWrapper>
       <S.TopWrapper>
-        <S.Link>
-          <S.Title color={category.color}>{category.name}</S.Title>
-        </S.Link>
+        <Link href={`/events/${slug}`} passHref>
+          <S.Link>
+            <S.Title color={category.color}>{category.name}</S.Title>
+          </S.Link>
+        </Link>
         <S.DateContainer color={category.color}>
           <S.Date>{dayjs(startsAt).format('DD.MM')}</S.Date>
           <S.Time>{`Начало в ${dayjs(startsAt).format('HH.mm')}`}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
-      <S.Status status={status?.slug}>{renderStatus()}</S.Status>
+      <EventStatus status={status} location={location} width="16" height="16" />
       {programs &&
         programs.map(program => (
           <S.TopicContainer key={program.id}>

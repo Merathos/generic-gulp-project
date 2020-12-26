@@ -10,6 +10,7 @@ export const GET_EVENT_CATEGORIES = gql`
     }
   }
 `;
+
 export const GET_EVENTS = gql`
   query getEvents(
     $slug: String
@@ -82,5 +83,120 @@ export const SET_EVENTS_SUBSCRIPTION = gql`
       is_consent_newsletter: $is_consent_newsletter
       categories: $categories
     )
+  }
+`;
+
+export const GET_EVENT = gql`
+  query getEvent($slug: String, $is_preview: Boolean) {
+    events(slug: $slug, is_preview: $is_preview) {
+      id
+      name
+      slug
+      has_video
+      starts_at
+      ends_at
+      location
+      future_content
+      previous_content
+      is_open_broadcast
+      broadcast_link
+      timepad_id
+      category {
+        id
+        name
+        slug
+        color
+      }
+      status {
+        id
+        name
+        slug
+      }
+      speakers {
+        id
+        name
+        company
+        description
+        image {
+          id
+          path(width: 363) {
+            normal
+            retina
+          }
+        }
+      }
+      programs {
+        id
+        speaker {
+          id
+          name
+          company
+          image {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+        description
+        name
+        time_at
+      }
+      related {
+        id
+        name
+        slug
+        is_open_broadcast
+        has_video
+        starts_at
+        ends_at
+        location
+        category {
+          id
+          name
+          slug
+          color
+        }
+        status {
+          id
+          name
+          slug
+        }
+        programs {
+          id
+          speaker {
+            id
+            name
+            company
+            image {
+              id
+              path {
+                normal
+                retina
+              }
+            }
+          }
+          description
+          name
+          time_at
+        }
+        broadcast_link
+      }
+    }
+  }
+`;
+
+export const GET_EVENT_POLLING = gql`
+  query getEvent($slug: String, $is_preview: Boolean) {
+    events(slug: $slug, is_preview: $is_preview) {
+      id
+      broadcast_link
+      status {
+        id
+        name
+        slug
+      }
+    }
   }
 `;

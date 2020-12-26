@@ -1,17 +1,18 @@
 import { EventHeader, Schedule } from 'components';
-import {
-  EventRecap,
-  Speakers,
-  EventsSlider,
-  EventReg,
-  EventStream,
-} from 'containers';
+import { Speakers, EventsSlider, EventReg, EventStream } from 'containers';
 import { useRef, useEffect } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 
-const EventDetails = ({ data, cards }) => {
-  const { isActive } = data;
+const EventDetails = ({
+  data,
+  eventData,
+  eventDataPolling,
+  eventStarted,
+  setEventStarted,
+  isActive,
+}) => {
   const regForm = useRef(null);
+  const firstVideoRef = useRef(null);
   const recap = useRef(null);
 
   useEffect(() => {
@@ -20,26 +21,60 @@ const EventDetails = ({ data, cards }) => {
 
   return (
     <main>
-      <EventHeader data={data} recap={recap} regForm={regForm} />
+      {eventData && (
+        <EventHeader
+          data={data}
+          recap={recap}
+          regForm={regForm}
+          firstVideoRef={firstVideoRef}
+          eventData={eventData}
+          eventDataPolling={eventDataPolling}
+          speakersTitle="Спикеры"
+          isActive={isActive}
+          timezone="(MSK)"
+        />
+      )}
       {isActive ? (
         <Schedule
-          description={data.description}
-          schedule={data.schedule}
+          content={eventData.previous_content}
+          programsTitle="Программа мероприятия"
+          programs={eventData.programs}
           regForm={regForm}
         />
       ) : (
-        <EventRecap data={data.eventRecap} recap={recap} />
+        <Schedule
+          content={eventData.future_content}
+          recap={recap}
+          isActive={isActive}
+        />
       )}
       {isActive && (
         <EventStream
+          title="Прямая трансляция"
+          code={eventDataPolling?.broadcast_link}
+          eventStarted={eventStarted}
+          setEventStarted={setEventStarted}
+          isOpenBroadCast={eventData.is_open_broadcast}
+          startsAt={eventData.starts_at}
+          status={eventDataPolling?.status}
+          regForm={regForm}
           data={data.stream}
-          code="5qap5aO4i9A"
           domain="dins.vercel.app"
         />
       )}
-      <Speakers data={data.speakers} />
-      {isActive && <EventReg data={data.timepad} regForm={regForm} />}
-      {/* <EventsSlider cards={cards.active} regForm={regForm} /> */}
+      {eventData.speakers?.length > 0 && (
+        <Speakers speakersTitle="Спикеры" speakers={eventData.speakers} />
+      )}
+      {isActive && eventData.timepad_id && (
+        <EventReg
+          regForm={regForm}
+          customizeID="114194"
+          eventID={eventData.timepad_id}
+        />
+      )}
+      {eventData.related?.length > 0 && (
+        <EventsSlider cards={eventData.related} regForm={regForm} />
+      )}
     </main>
   );
 };
