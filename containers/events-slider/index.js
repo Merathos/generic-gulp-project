@@ -70,6 +70,7 @@ const EventsSlider = ({ cards, regForm }) => {
                 programs={card.programs}
                 location={card.location}
                 regForm={regForm}
+                slug={card.slug}
               />
             </Element>
           ))}

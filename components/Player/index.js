@@ -25,7 +25,7 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
     if (isPaused) {
       setPlay(false);
     }
-  });
+  }, []);
 
   let iconName;
 

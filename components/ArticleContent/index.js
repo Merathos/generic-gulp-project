@@ -77,7 +77,8 @@ const renderContent = (
   props,
   nextIsParagraph,
   noQuoteAuthor,
-  isFirstBlockHeader
+  isFirstBlockHeader,
+  recap
 ) => {
   const { type, data } = props;
 
@@ -123,7 +124,7 @@ const renderContent = (
               <SidebarSlider data={data.factoids} />
             </Wrapper>
           ),
-          video: <Video data={data} />,
+          video: <Video data={data} recap={recap} />,
           quote: <Quote data={data} noQuoteAuthor={noQuoteAuthor} />,
           comments: <Comments data={data.factoids} />,
           asideBlock: (
@@ -149,11 +150,13 @@ const ASIDE_BLOCKS = {
   asideNote: true,
 };
 
-const ArticleContent = ({ content, isRelocation }) => {
-  let relocationAdded = false;
+const ArticleContent = ({ content, isRelocation, recap }) => {
+  let relocationAdded;
+  let recapAdded;
+
   return (
     <>
-      {content.length !== 0 &&
+      {content.length > 0 &&
         content.map((el, index) => {
           // Don't render if block is aside
           if (ASIDE_BLOCKS[content[index]?.type]) return null;
@@ -228,6 +231,22 @@ const ArticleContent = ({ content, isRelocation }) => {
                   />
                 </Wrapper>
               </Block>
+            );
+          }
+
+          // Add first video recap ref in finished events
+          if (recap && !recapAdded && content[index].type === 'video') {
+            recapAdded = true;
+            return (
+              <Fragment key={index}>
+                {renderContent(
+                  el,
+                  nextIsParagraph,
+                  noQuoteAuthor,
+                  isFirstBlockHeader,
+                  recap
+                )}
+              </Fragment>
             );
           }
 

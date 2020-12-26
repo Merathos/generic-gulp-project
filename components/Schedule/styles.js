@@ -36,6 +36,7 @@ export const Description = styled.p`
 export const MainTitle = styled(TitleH2)`
   margin-bottom: 100px;
   max-width: 500px;
+  text-transform: uppercase;
 
   @media (max-width: 768px) {
     margin-bottom: 50px;

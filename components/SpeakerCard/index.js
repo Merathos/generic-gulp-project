@@ -2,15 +2,24 @@ import * as S from './styles';
 
 const SpeakerCard = props => {
   const {
-    data: { bigImg, name, job, text },
+    data: { image, name, company, description },
   } = props;
 
   return (
     <S.Wrapper>
-      <S.Photo src={bigImg} alt={name} width="363" height="252" />
-      <S.Name>{name}</S.Name>
-      <S.Job>{job}</S.Job>
-      <S.Text>{text}</S.Text>
+      {image?.path?.normal && image?.path?.retina && (
+        <S.Photo
+          src={image.path.normal}
+          srcSet={`${image.path.retina} 2x`}
+          alt={name}
+          width="363"
+          height="252"
+          loading="lazy"
+        />
+      )}
+      {name && <S.Name>{name}</S.Name>}
+      {company && <S.Job>{company}</S.Job>}
+      {description && <S.Text>{description}</S.Text>}
     </S.Wrapper>
   );
 };

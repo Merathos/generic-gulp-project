@@ -35,16 +35,34 @@ export const Title = styled(TitleH2)`
   }
 `;
 
-export const Msg = styled.p`
+export const TimeWatch = styled.img`
+  width: 26px;
+  height: 26px;
+  position: relative;
+  top: 3px;
+  @media (max-width: 768px) {
+    width: 16px;
+    height: 16px;
+    top: 2px;
+  }
+`;
+
+export const Msg = styled.div`
   margin-bottom: 100px;
-  font-size: 20px;
+  font-size: ${props =>
+    props.isStartingIn24Hrs && !props.status === 'streaming' ? `26px` : `20px`};
+  color: ${props => (props.status === 'streaming' ? `#FB5235` : ``)};
   line-height: 32px;
 
   @media (max-width: 768px) {
     margin-bottom: 40px;
-    font-size: 14px;
+    font-size: ${props => (props.isStartingIn24Hrs ? `16px` : `14px`)};
     line-height: 22px;
   }
+`;
+
+export const TimeUntilStart = styled.span`
+  color: #2f8ed9;
 `;
 
 export const Chat = styled.div`
@@ -57,5 +75,27 @@ export const Chat = styled.div`
 
   @media (max-width: 1200px) {
     display: none;
+  }
+`;
+
+export const RegisterLink = styled.span`
+  display: inline;
+  color: #53b443;
+  transition: color 0.3s;
+
+  &:hover,
+  &:active {
+    color: #339722;
+    cursor: pointer;
+  }
+`;
+
+export const Icon = styled.img`
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+
+  @media (max-width: 768px) {
+    margin-right: 6px;
   }
 `;

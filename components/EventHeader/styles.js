@@ -46,7 +46,7 @@ export const Status = styled.p`
   align-items: center;
   font-size: 18px;
   line-height: 23.58px;
-  color: ${props => (props.status === `Идет трансляция` ? `#FB5235` : ``)};
+  color: ${props => (props.status === `streaming` ? `#FB5235` : ``)};
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -153,11 +153,12 @@ export const Pic = styled.img`
   width: 54px;
   height: 54px;
   border-radius: 50%;
+  object-fit: cover;
 
   @media (max-width: 768px) {
     margin-right: 11px;
-    width: 51.22px;
-    height: 51.22px;
+    width: 52px;
+    height: 52px;
   }
 `;
 

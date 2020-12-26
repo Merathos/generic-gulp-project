@@ -2,10 +2,7 @@ import InnerHTML from 'dangerously-set-html-content';
 import * as S from './styles';
 
 const EventReg = props => {
-  const {
-    data: { customizeID, eventID },
-    regForm,
-  } = props;
+  const { regForm, customizeID, eventID } = props;
 
   const timepadForm = `
   <script id="form-script" type="text/javascript" async="async" defer="defer" charset="UTF-8"

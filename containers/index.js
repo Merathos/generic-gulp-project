@@ -23,7 +23,7 @@ export { default as PersonalStories } from './personal-stories';
 export { default as FormModal } from './form-modal';
 export { default as SuccessModal } from './success-modal';
 export { default as EventDetails } from './event-details';
-export { default as EventRecap } from './event-recap';
+// export { default as EventRecap } from './event-recap';
 export { default as Speakers } from './speakers';
 export { default as EventsSlider } from './events-slider';
 export { default as EventReg } from './event-reg';

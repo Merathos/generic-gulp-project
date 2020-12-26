@@ -1,5 +1,5 @@
-import * as S from './styles';
 import { Media, Slider } from 'components';
+import * as S from './styles';
 
 const EventRecap = ({ data, recap }) => {
   return (
@@ -8,16 +8,12 @@ const EventRecap = ({ data, recap }) => {
         {data.map((topic, i) => (
           <S.TopicWrapper key={i}>
             <S.Topic>{topic.title}</S.Topic>
-            <Media data={topic.video} hasCircle={true} />
+            <Media data={topic.video} hasCircle />
             <S.Text>{topic.text}</S.Text>
             {topic.list && <S.StyledMarkerList data={topic.list} />}
             {topic.photos && (
               <S.SliderContainer>
-                <Slider
-                  pictures={topic.photos}
-                  hasControls={true}
-                  isSmall={true}
-                />
+                <Slider pictures={topic.photos} hasControls isSmall />
               </S.SliderContainer>
             )}
           </S.TopicWrapper>

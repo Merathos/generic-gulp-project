@@ -5,7 +5,6 @@ const Userpic = props => {
   const {
     data: { imageUrl, title, describe },
   } = props;
-  console.log(describe);
 
   return (
     <Block>

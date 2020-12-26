@@ -23,3 +23,4 @@ export { default as FileInput } from './FileInput';
 export { default as SmartTextarea } from './SmartTextarea';
 export { default as RadioBtn } from './RadioBtn';
 export { default as BlogsTag } from './BlogsTag';
+export { default as EventStatus } from './EventStatus';

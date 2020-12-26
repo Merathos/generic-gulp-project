@@ -1,17 +1,15 @@
-import * as S from './styles';
 import { SpeakerCard } from 'components';
+import * as S from './styles';
 
 const Speakers = props => {
-  const {
-    data: { title, list },
-  } = props;
+  const { speakersTitle, speakers } = props;
 
   return (
     <S.Section>
       <S.Container>
-        <S.Title>{title}</S.Title>
+        <S.Title>{speakersTitle}</S.Title>
         <S.List>
-          {list.map((el, i) => (
+          {speakers.map((el, i) => (
             <S.Item key={i}>
               <SpeakerCard data={el} />
             </S.Item>

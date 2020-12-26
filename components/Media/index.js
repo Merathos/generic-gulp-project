@@ -1,22 +1,18 @@
-import { Section, Text, VideoContainer } from './styles';
 import ReactPlayer from 'react-player';
+import { useState } from 'react';
+import { Section, Text, VideoContainer } from './styles';
 
-const Media = props => {
-  const {
-    data: {
-      subtitle,
-      src,
-      srcPoster,
-      stream = false,
-      caption,
-      file,
-      stretched,
-    },
-    type,
-    decoration,
-    hasCircle,
-    isAbout = false,
-  } = props;
+const Media = ({
+  data: { subtitle, caption, file, stretched },
+  type,
+  decoration,
+  hasCircle,
+  autoplay,
+  srcPoster,
+  isAbout = false,
+  code,
+}) => {
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <Section
@@ -33,27 +29,31 @@ const Media = props => {
           height="100"
         />
       ) : (
-        <VideoContainer isAbout={isAbout}>
-          <ReactPlayer
-            url={src}
-            config={{
-              youtube: {
-                playerVars: {
-                  showinfo: 1,
-                  controls: 1,
-                  autoplay: `${stream ? 0 : 1}`,
-                },
-              },
-            }}
-            light={
-              srcPoster ||
-              'https://api.develop.dins.d.nimax.ru//storage/images/zpQbYFjH42sG4nMjqID7ASCCbg9OGSV4IfiRIdzQ.jpeg'
-            }
-            className="react-player"
-            width="100%"
-            height="100%"
-          />
-        </VideoContainer>
+        <>
+          {code && (
+            <VideoContainer isAbout={isAbout}>
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${code}`}
+                config={{
+                  youtube: {
+                    playerVars: {
+                      showinfo: 1,
+                      controls: 1,
+                      autoplay: `${autoplay ? 1 : 0}`,
+                    },
+                  },
+                }}
+                light={srcPoster}
+                className="react-player"
+                width="100%"
+                height="100%"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                playing={isPlaying}
+              />
+            </VideoContainer>
+          )}
+        </>
       )}
       {subtitle && <Text>{subtitle}</Text>}
       {caption && <Text>{caption}</Text>}
