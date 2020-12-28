@@ -33,7 +33,7 @@ export const GET_BLOGS_LIST = gql`
       }
       highlight_image {
         id
-        path(width: 380) {
+        path(width: 774) {
           normal
           retina
         }
