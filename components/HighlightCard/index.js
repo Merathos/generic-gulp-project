@@ -10,7 +10,11 @@ const HighlightCard = props => {
 
   return (
     <Link href={`/blog/${slug}`} passHref>
-      <S.Wrapper className="js-content" bgImg={bgImg} bgMob={bgMob}>
+      <S.Wrapper
+        className="js-content"
+        bgImg={highlightImage ? '' : bgImg}
+        bgMob={highlightImage ? '' : bgMob}
+      >
         <S.Content>
           <S.Title>{title}</S.Title>
           <S.Text>{summary}</S.Text>

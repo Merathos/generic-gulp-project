@@ -86,17 +86,16 @@ export const Title = styled.b`
 
 export const Picture = styled.img`
   position: absolute;
-  right: 100px;
+  right: 0;
   bottom: 0;
   /* display: block;
   margin-top: auto;
   margin-left: auto;
   margin-right: 62px; */
-  max-height: 378px;
+  max-height: 440px;
   width: auto;
 
   @media (max-width: 834px) {
-    max-height: 237px;
-    margin-right: -13px;
+    max-height: 240px;
   }
 `;
