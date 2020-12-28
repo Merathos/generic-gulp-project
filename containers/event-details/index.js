@@ -36,14 +36,14 @@ const EventDetails = ({
       )}
       {isActive ? (
         <Schedule
-          content={eventData.previous_content}
+          content={eventData?.previous_content}
           programsTitle="Программа мероприятия"
-          programs={eventData.programs}
+          programs={eventData?.programs}
           regForm={regForm}
         />
       ) : (
         <Schedule
-          content={eventData.future_content}
+          content={eventData?.future_content}
           recap={recap}
           isActive={isActive}
         />
@@ -54,25 +54,25 @@ const EventDetails = ({
           code={eventDataPolling?.broadcast_link}
           eventStarted={eventStarted}
           setEventStarted={setEventStarted}
-          isOpenBroadCast={eventData.is_open_broadcast}
-          startsAt={eventData.starts_at}
+          isOpenBroadCast={eventData?.is_open_broadcast}
+          startsAt={eventData?.starts_at}
           status={eventDataPolling?.status}
           regForm={regForm}
           data={data.stream}
           domain="dins.vercel.app"
         />
       )}
-      {eventData.speakers?.length > 0 && (
-        <Speakers speakersTitle="Спикеры" speakers={eventData.speakers} />
+      {eventData?.speakers?.length > 0 && (
+        <Speakers speakersTitle="Спикеры" speakers={eventData?.speakers} />
       )}
-      {isActive && eventData.timepad_id && (
+      {isActive && eventData?.timepad_id && (
         <EventReg
           regForm={regForm}
           customizeID="114194"
           eventID={eventData.timepad_id}
         />
       )}
-      {eventData.related?.length > 0 && (
+      {eventData?.related?.length > 0 && (
         <EventsSlider cards={eventData.related} regForm={regForm} />
       )}
     </main>
