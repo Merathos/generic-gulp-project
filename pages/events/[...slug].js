@@ -37,13 +37,19 @@ const EventPage = () => {
     }
     if (
       eventPolling?.status?.slug === 'streaming' ||
-      Date.parse(event.ends_at) - Date.parse(new Date()) > 0
+      Date.parse(event?.ends_at) - Date.parse(new Date()) > 0
     ) {
       setIsActive(true);
     } else {
       setIsActive(false);
     }
   }, [eventPolling]);
+
+  useEffect(() => {
+    if (eventData && Object.keys(event).length === 0) router.push('/404');
+  }, [eventData]);
+
+  if (Object.keys(event).length === 0) return null;
 
   return (
     <>
