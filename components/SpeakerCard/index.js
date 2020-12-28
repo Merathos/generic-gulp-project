@@ -7,10 +7,10 @@ const SpeakerCard = props => {
 
   return (
     <S.Wrapper>
-      {image?.path?.normal && image?.path?.retina && (
+      {image && (
         <S.Photo
-          src={image.path.normal}
-          srcSet={`${image.path.retina} 2x`}
+          src={image?.path?.normal}
+          srcSet={`${image?.path?.retina} 2x`}
           alt={name}
           width="363"
           height="252"

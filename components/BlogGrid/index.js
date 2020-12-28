@@ -1,17 +1,21 @@
 import { HighlightCard, StoryCard, ColumnCard } from 'components';
-import * as S from './styles';
 import { useEffect, useRef } from 'react';
+import * as S from './styles';
 
 const BlogGrid = ({ cards }) => {
   const grid = useRef(null);
 
   useEffect(() => {
-    function resizeMasonryItem(item) {
+    function resizeMasonryItem(item, index) {
       const rowGap = parseInt(
-        window.getComputedStyle(grid.current).getPropertyValue('grid-row-gap')
+        window.getComputedStyle(grid.current).getPropertyValue('grid-row-gap'),
+        10
       );
       const rowHeight = parseInt(
-        window.getComputedStyle(grid.current).getPropertyValue('grid-auto-rows')
+        window
+          .getComputedStyle(grid.current)
+          .getPropertyValue('grid-auto-rows'),
+        10
       );
 
       const rowSpan = Math.ceil(
@@ -20,26 +24,30 @@ const BlogGrid = ({ cards }) => {
           (rowHeight + rowGap)
       );
 
-      item.style.gridRowEnd = 'span ' + rowSpan;
+      if (index === 1 && !item.className.includes('js-item-history')) {
+        item.style.gridRowEnd = `span ${rowSpan + 1}`;
+      } else {
+        item.style.gridRowEnd = `span ${rowSpan}`;
+      }
     }
 
     function resizeAllMasonryItems() {
       const allItems = grid.current.querySelectorAll('.js-item');
 
-      allItems.forEach(el => {
-        resizeMasonryItem(el);
+      allItems.forEach((el, index) => {
+        resizeMasonryItem(el, index);
       });
     }
 
     const masonryEvents = ['load', 'resize'];
-    masonryEvents.forEach(function(event) {
+    masonryEvents.forEach(event => {
       window.addEventListener(event, resizeAllMasonryItems);
     });
 
     resizeAllMasonryItems();
 
     return () => {
-      masonryEvents.forEach(function(event) {
+      masonryEvents.forEach(event => {
         window.removeEventListener(event, resizeAllMasonryItems);
       });
     };
@@ -47,21 +55,29 @@ const BlogGrid = ({ cards }) => {
 
   return (
     <S.Grid ref={grid}>
-      {cards.map((el, i) => (
-        <S.Item
-          key={i}
-          className="js-item"
-          isHighlight={el.type === 'highlight' ? true : false}
-        >
-          {el.type === 'highlight' ? (
-            <HighlightCard data={el} />
-          ) : el.type === 'story' ? (
-            <StoryCard data={el} />
-          ) : (
-            <ColumnCard data={el} />
-          )}
-        </S.Item>
-      ))}
+      {cards.map(item => {
+        return (
+          <S.Item
+            key={item.id}
+            className={`js-item ${
+              item.type === 'history' ? 'js-item-history' : ''
+            }`}
+            isHighlight={item.is_highlight}
+          >
+            {item.is_highlight ? (
+              <HighlightCard
+                data={item}
+                bgImg="/backgrounds/highlight.svg"
+                bgMob="/backgrounds/highlight-mob.svg"
+              />
+            ) : item.type === 'history' ? (
+              <StoryCard data={item} />
+            ) : (
+              <ColumnCard data={item} />
+            )}
+          </S.Item>
+        );
+      })}
     </S.Grid>
   );
 };

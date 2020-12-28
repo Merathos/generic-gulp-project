@@ -14,8 +14,8 @@ export const GET_EVENT_CATEGORIES = gql`
 export const GET_EVENTS = gql`
   query getEvents(
     $slug: String
-    $limit: Int = 4
-    $offset: Int = 0
+    $limit: Int
+    $offset: Int
     $categories: [String]
   ) {
     events(

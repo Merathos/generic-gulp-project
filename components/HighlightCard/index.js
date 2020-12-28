@@ -3,20 +3,28 @@ import * as S from './styles';
 
 const HighlightCard = props => {
   const {
-    data: { title, icon, text, img, bgImg, bgMob, href },
+    data: { title, summary, highlight_image: highlightImage, slug },
+    bgImg,
+    bgMob,
   } = props;
 
   return (
-    <Link href={href}>
+    <Link href={`/blog/${slug}`} passHref>
       <S.Wrapper className="js-content" bgImg={bgImg} bgMob={bgMob}>
         <S.Content>
-          <S.Title>
-            {title}
-            {icon && <img src={icon} width={20} height={20} alt="icon" />}
-          </S.Title>
-          <S.Text>{text}</S.Text>
+          <S.Title>{title}</S.Title>
+          <S.Text>{summary}</S.Text>
         </S.Content>
-        <S.Picture src={img} alt={title} width="210" height="254" />
+        {highlightImage && (
+          <S.Picture
+            src={highlightImage?.path?.normal}
+            srcSet={`${highlightImage?.path?.retina} 2x`}
+            alt={title}
+            width="210"
+            height="254"
+            loading="lazy"
+          />
+        )}
       </S.Wrapper>
     </Link>
   );
