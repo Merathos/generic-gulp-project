@@ -8,7 +8,11 @@ const Article = ({ data, back }) => {
   }
   return (
     <Container>
-      <Title data={back?.title} />
+      <Title
+        title={back?.title}
+        date={back?.created_at}
+        description={back?.description}
+      />
       {Object.keys(content).length !== 0 && (
         <ArticleContent content={content} />
       )}

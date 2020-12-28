@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import Subtitle from 'elements/Subtitle';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ru';
 
 const ArticleTitle = styled.h1`
   font-size: 84px;
@@ -46,8 +48,7 @@ const Description = styled.p`
   }
 `;
 
-const Title = ({ data }) => {
-  const { title, date, description } = data;
+const Title = ({ title, date, description }) => {
   return (
     <div>
       {title && (
@@ -57,7 +58,11 @@ const Title = ({ data }) => {
           }}
         />
       )}
-      {date && <Date>{date}</Date>}
+      {date && (
+        <Date>{`${dayjs(date)
+          .locale('ru')
+          .format('D MMM YYYY')}`}</Date>
+      )}
       {description && <Description>{description}</Description>}
     </div>
   );
