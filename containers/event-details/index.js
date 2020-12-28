@@ -36,14 +36,15 @@ const EventDetails = ({
       )}
       {isActive ? (
         <Schedule
-          content={eventData?.previous_content}
+          content={eventData?.future_content}
           programsTitle="Программа мероприятия"
           programs={eventData?.programs}
           regForm={regForm}
+          isActive={isActive}
         />
       ) : (
         <Schedule
-          content={eventData?.future_content}
+          content={eventData?.previous_content}
           recap={recap}
           isActive={isActive}
         />
