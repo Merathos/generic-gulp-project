@@ -1,12 +1,12 @@
 import { Label } from './styles';
 
-const BlogsTag = ({ name, label, id, checked = false, onChange }) => {
+const BlogsTag = ({ name, label, id, checked = false, onClick }) => {
   return (
     <Label>
       <input
         type="checkbox"
         id={id}
-        onChange={onChange}
+        onClick={onClick}
         checked={checked}
         name={name}
       />

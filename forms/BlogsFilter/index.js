@@ -1,37 +1,51 @@
-import { useState } from 'react';
+import { useCallback } from 'react';
 import { BlogsTag } from 'elements';
-import { Section, Element } from './styles';
 import Swiper from 'react-id-swiper';
+import { useRouter } from 'next/router';
+import { queryHelpers } from 'helpers/query-helpers';
+import { Section, Element } from './styles';
 
-const BlogsFilter = ({ filterTabs }) => {
-  const [checkedItems, setCheckedItems] = useState({});
+const { checkTagActive, generateNewTags } = queryHelpers;
 
-  const handleChange = event => {
-    setCheckedItems({
-      ...checkedItems,
-      [event.target.id]: event.target.checked,
-    });
-  };
+const BlogsFilter = ({ categories }) => {
+  const router = useRouter();
+  const { query } = router;
 
   const params = {
     slidesPerView: 'auto',
     loop: false,
   };
 
+  const onCategoryClick = useCallback((q, slug, alreadyHas) => {
+    router.push(
+      {
+        query: {
+          ...q,
+          categories: generateNewTags(q.categories, slug, alreadyHas),
+        },
+      },
+      undefined,
+      { shallow: true }
+    );
+  }, []);
+
   return (
     <Section>
       <Swiper {...params}>
-        {filterTabs.map((item, i) => (
-          <Element key={i}>
-            <BlogsTag
-              name={item.name}
-              label={item.title}
-              id={item.name}
-              checked={checkedItems[item.name]}
-              onChange={handleChange}
-            />
-          </Element>
-        ))}
+        {categories.map(item => {
+          const isActive = checkTagActive(query.categories, item.slug);
+          return (
+            <Element key={item.id}>
+              <BlogsTag
+                name={item.name}
+                label={item.name}
+                id={item.id}
+                checked={isActive}
+                onClick={() => onCategoryClick(query, item.slug, isActive)}
+              />
+            </Element>
+          );
+        })}
       </Swiper>
     </Section>
   );

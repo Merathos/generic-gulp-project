@@ -11,6 +11,7 @@ export const Wrapper = styled.a`
   background-image: url(${props => props.bgImg});
   background-repeat: no-repeat;
   background-position: bottom right;
+  position: relative;
 
   @media (max-width: 834px) {
     background-image: url(${props => props.bgMob});
@@ -28,6 +29,7 @@ export const Content = styled.div`
   margin-top: auto;
   margin-bottom: 40px;
   max-width: 348px;
+  z-index: 1;
 
   @media (max-width: 834px) {
     margin-bottom: 0;
@@ -83,15 +85,17 @@ export const Title = styled.b`
 `;
 
 export const Picture = styled.img`
-  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  /* display: block;
   margin-top: auto;
   margin-left: auto;
-  margin-right: 62px;
-  max-height: 378px;
+  margin-right: 62px; */
+  max-height: 440px;
   width: auto;
 
   @media (max-width: 834px) {
-    max-height: 237px;
-    margin-right: -13px;
+    max-height: 240px;
   }
 `;

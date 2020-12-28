@@ -13,8 +13,8 @@ const TeamCard = props => {
         <Section>
           {image && (
             <Picture
-              src={image.path.normal}
-              srcSet={`${image.path.retina} 2x`}
+              src={image?.path?.normal}
+              srcSet={`${image?.path?.retina} 2x`}
               alt={name}
               width="350"
               height="194"

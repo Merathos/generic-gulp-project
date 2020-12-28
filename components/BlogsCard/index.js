@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import Link from 'next/link';
 import * as S from './styles';
 
@@ -16,7 +16,7 @@ const BlogsCard = ({ data, background }) => {
     <Link href={`articles/${slug}`}>
       <S.Wrapper background={background}>
         <S.StyledSubtitle>
-          {moment(created_at).format('DD.MM.yyyy')}
+          {dayjs(created_at).format('DD.MM.YYYY')}
         </S.StyledSubtitle>
         <S.Title>{title}</S.Title>
         <S.Picture src={normal} alt={title} />

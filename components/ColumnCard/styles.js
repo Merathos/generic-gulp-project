@@ -64,7 +64,8 @@ export const Title = styled.b`
 export const Picture = styled.img`
   display: block;
   width: 100%;
-  height: auto;
+  max-height: 192px;
+  object-fit: cover;
   margin-bottom: 30px;
 
   @media (max-width: 768px) {

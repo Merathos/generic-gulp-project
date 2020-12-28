@@ -49,7 +49,7 @@ const EventDetails = ({
           isActive={isActive}
         />
       )}
-      {isActive && eventDataPolling?.status !== 'offline' && (
+      {isActive && (
         <EventStream
           title="Прямая трансляция"
           code={eventDataPolling?.broadcast_link}
