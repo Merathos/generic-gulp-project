@@ -75,13 +75,17 @@ const EventStream = ({
         <S.Msg status={status?.slug} isStartingIn24Hrs={isStartingIn24Hrs}>
           {eventStarted ? (
             <>
-              <S.Icon
-                src={getStatusImage(status?.slug)}
-                alt={status?.name}
-                width="16"
-                height="16"
-              />
-              {status?.name}
+              {status?.slug !== 'offline' && (
+                <>
+                  <S.Icon
+                    src={getStatusImage(status?.slug)}
+                    alt={status?.name}
+                    width="16"
+                    height="16"
+                  />
+                  {status?.name}
+                </>
+              )}
             </>
           ) : (
             <>
