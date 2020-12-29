@@ -1,12 +1,17 @@
-import * as S from './styles';
 import { Map } from 'containers';
 import { Metro } from 'components';
+import { useSelector } from 'react-redux';
+import * as S from './styles';
 
-const OfficesMap = ({ data, isContacts }) => {
+const OfficesMap = ({ data, isContacts, english }) => {
+  const language = useSelector(state => state.language);
+
   return (
     <S.Section isContacts={isContacts}>
       <S.Container>
-        <S.Title isContacts={isContacts}>{data.title}</S.Title>
+        <S.Title isContacts={isContacts}>
+          {english && language ? 'Our offices' : data.title}
+        </S.Title>
         {data.location && (
           <S.Wrapper>
             <S.Place>{data.location}</S.Place>
@@ -17,7 +22,7 @@ const OfficesMap = ({ data, isContacts }) => {
           <Map data={data} />
         </S.MapWrapper>
         {data.stations && (
-          <S.List twoColumns={true}>
+          <S.List twoColumns>
             {data.stations.map((el, i) => (
               <li key={i}>
                 <Metro data={el} />

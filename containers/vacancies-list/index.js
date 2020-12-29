@@ -60,6 +60,22 @@ const VacanciesList = ({ data: mock, back }) => {
     }
   };
 
+  useEffect(() => {
+    if (english_state) {
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            english: english_state,
+          },
+        },
+        undefined,
+        { shallow: true }
+      );
+    }
+  }, []);
+
   const handleCategories = e => {
     if (e === '') {
       delete query.categories;
