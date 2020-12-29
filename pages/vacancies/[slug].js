@@ -29,7 +29,7 @@ const vacancyPage = () => {
 
   dispatch({
     type: 'LANGUAGE',
-    payload: categoriesData.data.vacancies[0].is_english_speaking_team,
+    payload: categories?.is_english_speaking_team,
   });
 
   return (

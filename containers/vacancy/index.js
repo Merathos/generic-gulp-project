@@ -47,7 +47,7 @@ const Vacancy = ({ data, back }) => {
 
       <Application data={data.application} decor vacancy />
 
-      <OfficesMap data={data.map} />
+      <OfficesMap data={data.map} english={back.is_english_speaking_team} />
 
       {back.related && (
         <VacancySection>
