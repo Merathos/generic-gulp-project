@@ -10,6 +10,8 @@ const Application = ({
   vacancy,
 }) => {
   const english = useSelector(state => state.english);
+  const language = useSelector(state => state.language);
+
   const { text, picture } = data;
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
   let updatedText;
@@ -22,7 +24,9 @@ const Application = ({
   return (
     <S.Section className={className}>
       <S.Wrapper decor={decor} type={type} vacancy={vacancy}>
-        <S.H2 vacancy={vacancy}>{english ? 'Apply' : data.title}</S.H2>
+        <S.H2 vacancy={vacancy}>
+          {english && language ? 'Apply' : data.title}
+        </S.H2>
         {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
         <S.StyledButton
           type="accent"

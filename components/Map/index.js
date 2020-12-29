@@ -1,6 +1,6 @@
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 
 import MarkerIcon from 'public/icons/marker.svg';
 import { Metro } from 'components';
@@ -19,9 +19,10 @@ class Map extends Component {
 
   render() {
     const { data, english, twoColumns = false } = this.props;
+    const language = useSelector(state => state.language);
     return (
       <>
-        <S.H2>{english ? 'Our offices' : 'Офисы на карте'}</S.H2>
+        <S.H2>{english && language ? 'Our offices' : 'Офисы на карте'}</S.H2>
         {data.location && (
           <S.Wrapper>
             <S.Place>{data.location}</S.Place>

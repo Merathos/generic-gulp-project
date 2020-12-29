@@ -11,8 +11,10 @@ import {
   Picture,
 } from './styles';
 
-const VacancyHeader = ({ data }) => {
+const VacancyHeader = ({ data, toggleJobModal }) => {
   const english = useSelector(state => state.english);
+  const language = useSelector(state => state.language);
+
   const {
     name,
     technology_stacks,
@@ -52,18 +54,20 @@ const VacancyHeader = ({ data }) => {
         )}
         {technology_stacks && (
           <TextBlock>
-            <Bold>{english ? 'Technology Stack:' : 'Стек технологий:'}</Bold>
+            <Bold>
+              {english && language ? 'Technology Stack:' : 'Стек технологий:'}
+            </Bold>
             <StyledText>{technology_stacks}</StyledText>
           </TextBlock>
         )}
         {team?.name && (
           <TextBlock>
-            <Bold>{english ? 'Team:' : 'Команда:'}</Bold>
+            <Bold>{english && language ? 'Team:' : 'Команда:'}</Bold>
             <StyledText>{team && team.name}</StyledText>
           </TextBlock>
         )}
-        <StyledButton accent>
-          {english ? 'Send CV' : 'Отправить резюме'}
+        <StyledButton accent onClick={toggleJobModal}>
+          {english && language ? 'Send CV' : 'Отправить резюме'}
         </StyledButton>
       </div>
       {category?.image && (

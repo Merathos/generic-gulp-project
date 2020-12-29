@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Layout, Vacancy } from 'containers';
 import { GET_VACANCY_CONTENT } from 'graphql/query';
 import { initializeApollo } from 'lib/apollo';
@@ -12,7 +12,7 @@ import mock from 'mock/index';
 const vacancyPage = () => {
   const router = useRouter();
   const { query } = router;
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const categoriesData = useQuery(GET_VACANCY_CONTENT, {
     variables: {
@@ -27,10 +27,10 @@ const vacancyPage = () => {
 
   if (!categories) return null;
 
-  // dispatch({
-  //   type: 'LANGUAGE',
-  //   payload: categoriesData.data.vacancies[0].is_english_speaking_team,
-  // });
+  dispatch({
+    type: 'LANGUAGE',
+    payload: categoriesData.data.vacancies[0].is_english_speaking_team,
+  });
 
   return (
     <>

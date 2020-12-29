@@ -8,6 +8,8 @@ import * as S from './styles';
 
 const SliderVacancy = ({ data }) => {
   const english = useSelector(state => state.english);
+  const language = useSelector(state => state.language);
+
   const { list } = data;
   const ref = useRef(null);
 
@@ -36,7 +38,7 @@ const SliderVacancy = ({ data }) => {
 
   return (
     <S.Section>
-      <S.H2>{english ? 'Selection Process' : 'Этапы отбора'}</S.H2>
+      <S.H2>{english && language ? 'Selection Process' : 'Этапы отбора'}</S.H2>
       <Swiper ref={ref} {...params}>
         {list &&
           list.map((el, i) => (
