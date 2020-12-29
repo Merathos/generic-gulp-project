@@ -185,7 +185,6 @@ const VacanciesList = ({ data: mock, back }) => {
   };
 
   const handleSearch = search => {
-    const { pathname, query } = router;
     router.push(
       {
         pathname,
