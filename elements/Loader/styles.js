@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Loader = styled.div`
-  margin: 50px auto;
+  margin: 100px auto 0;
   font-size: 10px;
   width: 1em;
   height: 1em;
