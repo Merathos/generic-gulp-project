@@ -1,4 +1,4 @@
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { CloseBtn, TextInput } from 'elements';
 import { SET_EVENTS_SUBSCRIPTION } from 'graphql/events';
 import { useState } from 'react';
