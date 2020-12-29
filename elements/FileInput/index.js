@@ -6,14 +6,14 @@ const FileInput = ({ id, name, label, fileExt }) => {
   const [hasFile, setHasFile] = useState(false);
   const fileInput = useRef(null);
 
-  const handleLabel = function(e) {
+  const handleLabel = e => {
     if (e.target.files[0]) {
       setHasFile(true);
       setMsg(e.target.files[0].name);
     }
   };
 
-  const handleInputReset = function() {
+  const handleInputReset = () => {
     fileInput.current.value = '';
     setHasFile(false);
     setMsg(label);
@@ -28,10 +28,10 @@ const FileInput = ({ id, name, label, fileExt }) => {
         accept=".doc, .docx, .pdf, .rtf, .txt"
         onChange={handleLabel}
         ref={fileInput}
-      ></input>
+      />
       <ImgWrapper>
         <img
-          src="icons/page-facing-up.png"
+          src="/icons/page-facing-up.png"
           width="25"
           height="25"
           aria-label="file icon"
