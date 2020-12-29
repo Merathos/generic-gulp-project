@@ -101,6 +101,7 @@ export const GET_EVENT = gql`
       is_open_broadcast
       broadcast_link
       timepad_id
+      has_video
       category {
         id
         name

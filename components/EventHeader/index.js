@@ -102,7 +102,7 @@ const EventHeader = ({
             </S.SpeakersContainer>
           )}
         </S.Grid>
-        {isActive ? (
+        {isActive && (
           <S.StyledButton
             accent
             onClick={() => {
@@ -111,7 +111,8 @@ const EventHeader = ({
           >
             Зарегистрироваться
           </S.StyledButton>
-        ) : (
+        )}
+        {!isActive && eventData.has_video && (
           <S.StyledButton
             onClick={() => {
               recap.current.scrollIntoView({ behavior: 'smooth' });
