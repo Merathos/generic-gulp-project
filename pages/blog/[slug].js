@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
