@@ -1,12 +1,14 @@
 import Subtitle from 'elements/Subtitle';
-import ArrowPrev from '../../public/icons/arrow-prev.svg';
-import ArrowNext from '../../public/icons/arrow-next.svg';
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
+import ArrowPrev from '../../public/icons/arrow-prev.svg';
+import ArrowNext from '../../public/icons/arrow-next.svg';
 import * as S from './styles';
 
 const SliderVacancy = ({ data }) => {
-  const { title, list } = data;
+  const english = useSelector(state => state.english);
+  const { list } = data;
   const ref = useRef(null);
 
   const params = {
@@ -34,7 +36,7 @@ const SliderVacancy = ({ data }) => {
 
   return (
     <S.Section>
-      <S.H2>{title}</S.H2>
+      <S.H2>{english ? 'Selection Process' : 'Этапы отбора'}</S.H2>
       <Swiper ref={ref} {...params}>
         {list &&
           list.map((el, i) => (

@@ -16,7 +16,6 @@ const VacancyHeader = ({ data }) => {
   const {
     name,
     technology_stacks,
-    is_relocation,
     is_internship,
     is_english_speaking_team,
     team,
@@ -53,13 +52,13 @@ const VacancyHeader = ({ data }) => {
         )}
         {technology_stacks && (
           <TextBlock>
-            <Bold>Technology Stack:</Bold>
+            <Bold>{english ? 'Technology Stack:' : 'Стек технологий:'}</Bold>
             <StyledText>{technology_stacks}</StyledText>
           </TextBlock>
         )}
         {team?.name && (
           <TextBlock>
-            <Bold>Команда:</Bold>
+            <Bold>{english ? 'Team:' : 'Команда:'}</Bold>
             <StyledText>{team && team.name}</StyledText>
           </TextBlock>
         )}
