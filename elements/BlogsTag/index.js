@@ -9,6 +9,7 @@ const BlogsTag = ({ name, label, id, checked = false, onClick }) => {
         onClick={onClick}
         checked={checked}
         name={name}
+        readOnly
       />
       <span>{label}</span>
     </Label>

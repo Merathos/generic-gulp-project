@@ -12,16 +12,13 @@ const storyPage = () => {
   const router = useRouter();
   const { query } = router;
 
-  const blogData = useQuery(GET_BLOG_CONTENT, {
+  const { data: blogData } = useQuery(GET_BLOG_CONTENT, {
     variables: {
       slug: query.slug,
       is_preview: query.preview === 'true',
     },
   });
-  const blog = useMemo(
-    () => (!blogData.loading ? blogData.data.blogs[0] : null),
-    [blogData.data]
-  );
+  const blog = blogData?.blogs[0];
 
   if (!blog) return null;
 
@@ -32,13 +29,15 @@ const storyPage = () => {
           <meta name="robots" content="noindex, nofollow" />
         )}
       </Head>
-      <Layout backButton greyFooter={blog.type === 'history'}>
-        {blog.type === 'history' ? (
-          <Story back={blog} />
-        ) : (
-          <Article data={mock.article} back={blog} />
-        )}
-      </Layout>
+      {blog && (
+        <Layout backButton greyFooter={blog.type === 'history'}>
+          {blog.type === 'history' ? (
+            <Story back={blog} />
+          ) : (
+            <Article data={mock.article} back={blog} />
+          )}
+        </Layout>
+      )}
     </>
   );
 };
