@@ -915,6 +915,7 @@ export default {
           preview: {
             path: {
               normal: `/images/story-card1.png`,
+              retina: `/images/story-card1.png`,
             },
           },
         },
@@ -925,6 +926,7 @@ export default {
           preview: {
             path: {
               normal: `/images/story-card2.png`,
+              retina: `/images/story-card2.png`,
             },
           },
         },
