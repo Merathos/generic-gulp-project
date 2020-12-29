@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
-import { ApolloProvider as Apollo } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import { useStore } from '../lib/store';
 import { useApollo } from '../lib/apollo';
 
@@ -213,15 +212,13 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      <Apollo client={apolloClient}>
-        <ApolloProvider client={apolloClient}>
-          <Head>
-            <title>Dins</title>
-          </Head>
-          <Component {...pageProps} />
-          <GlobalStyle />
-        </ApolloProvider>
-      </Apollo>
+      <ApolloProvider client={apolloClient}>
+        <Head>
+          <title>Dins</title>
+        </Head>
+        <Component {...pageProps} />
+        <GlobalStyle />
+      </ApolloProvider>
     </Provider>
   );
 }
