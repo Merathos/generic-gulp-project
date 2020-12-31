@@ -12,8 +12,8 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   padding-top: 37px;
   padding-bottom: 182px;
-  background-image: url('backgrounds/confirmation-left.svg'),
-    url('backgrounds/confirmation-right.svg');
+  background-image: url('/backgrounds/confirmation-left.svg'),
+    url('/backgrounds/confirmation-right.svg');
   background-position: left 0 top 7px, right 100%;
   background-repeat: no-repeat, no-repeat;
 

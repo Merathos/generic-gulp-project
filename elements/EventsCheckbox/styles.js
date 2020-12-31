@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -6,10 +6,10 @@ export const Wrapper = styled.div`
   align-items: center;
 
   input:checked ~ label {
-    color: ${props => props.color};
+    color: #53b443;
 
     &::before {
-      border-color: ${props => props.color};
+      border-color: #53b443;
     }
 
     &::after {
@@ -20,9 +20,9 @@ export const Wrapper = styled.div`
       left: 5px;
       top: 50%;
       transform: translateY(-50%);
-      mask: url('icons/checked.svg') no-repeat 50% 50%;
+      mask: url('/icons/checked.svg') no-repeat 50% 50%;
       mask-size: 11px 9px;
-      background-color: ${props => props.color};
+      background-color: #53b443;
 
       @media (max-width: 768px) {
         top: 7px;
@@ -34,10 +34,21 @@ export const Wrapper = styled.div`
   input:hover ~ label {
     &::before {
       @media (min-width: 1000px) {
-        border-color: ${props => props.color};
+        border-color: #53b443;
       }
     }
   }
+
+  ${props =>
+    props.error &&
+    css`
+      input ~ label {
+        color: #fb5235;
+        &::before {
+          border-color: #fb5235;
+        }
+      }
+    `};
 `;
 
 export const Label = styled.label`

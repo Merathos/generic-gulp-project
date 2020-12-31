@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Label, Container, FileExt, ResetBtn, ImgWrapper } from './styles';
 
-const FileInput = ({ id, name, label, fileExt }) => {
+const FileInput = ({ id, name, label, fileExt, register }) => {
   const [msg, setMsg] = useState(label);
   const [hasFile, setHasFile] = useState(false);
   const fileInput = useRef(null);
@@ -27,7 +27,12 @@ const FileInput = ({ id, name, label, fileExt }) => {
         name={name}
         accept=".doc, .docx, .pdf, .rtf, .txt"
         onChange={handleLabel}
-        ref={fileInput}
+        ref={e => {
+          if (register) {
+            register(e);
+          }
+          fileInput.current = e; // you can still assign to ref
+        }}
       />
       <ImgWrapper>
         <img

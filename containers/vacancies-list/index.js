@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';

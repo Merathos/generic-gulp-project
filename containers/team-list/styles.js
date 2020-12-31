@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { TitleH1 } from 'elements';
 
 export const Main = styled.main`
-  background: url('backgrounds/teams-bg.png') no-repeat right 110px,
-    url('backgrounds/sidebar-bg.png') no-repeat left 352px;
+  background: url('/backgrounds/teams-bg.png') no-repeat right 110px,
+    url('/backgrounds/sidebar-bg.png') no-repeat left 352px;
 
   @media screen and (max-width: 1360px) {
-    background: url('backgrounds/teams-bg.png') no-repeat right 110px,
-      url('backgrounds/sidebar-bg.png') no-repeat left 620px;
+    background: url('/backgrounds/teams-bg.png') no-repeat right 110px,
+      url('/backgrounds/sidebar-bg.png') no-repeat left 620px;
   }
 
   @media screen and (max-width: 1024px) {

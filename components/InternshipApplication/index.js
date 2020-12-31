@@ -1,8 +1,7 @@
+import { useState } from 'react';
 import * as S from './styles';
 import { FormModal } from '../../containers';
-import { InternForm } from '../index';
-import mock from '../../mock';
-import { useState } from 'react';
+import { JobForm } from '../index';
 
 const InternshipApplication = ({ data }) => {
   const { text, title, button } = data;
@@ -36,11 +35,7 @@ const InternshipApplication = ({ data }) => {
       </S.Wrapper>
       {isModalOpened && (
         <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
-          <InternForm
-            data={mock.internForm}
-            closeModal={closeModal}
-            showSuccess={() => {}}
-          />
+          <JobForm closeModal={closeModal} showSuccess={() => {}} />
         </FormModal>
       )}
     </S.Section>

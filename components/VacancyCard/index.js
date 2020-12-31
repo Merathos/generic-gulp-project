@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import ArrowRight from 'public/icons/arrow-right.svg';
 import {
   Section,
   Badge,
@@ -7,14 +9,12 @@ import {
   StyledText,
   Arrow,
 } from './styles';
-import Link from 'next/link';
-import ArrowRight from 'public/icons/arrow-right.svg';
 
 const VacancyCard = ({ data }) => {
   const { type, name, description, href } = data;
 
   return (
-    <Link href={`vacancies/${href}`} passhref>
+    <Link href={`/vacancies/${href}`} passhref>
       <a>
         <Section>
           <Badge>

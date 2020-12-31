@@ -12,7 +12,7 @@ const Button = styled.button`
 
   &::after {
     content: '';
-    background-image: url('icons/close-filter.svg');
+    background-image: url('/icons/close-filter.svg');
     background-position: center;
     background-repeat: no-repeat;
     width: 10px;

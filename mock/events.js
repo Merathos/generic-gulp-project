@@ -158,9 +158,22 @@ export default {
     contact: {
       title: 'Оставь  контактные данные',
       inputs: [
-        { name: 'lastname', placeholder: 'Фамилия *' },
-        { name: 'name', placeholder: 'Имя *' },
-        { name: 'email', placeholder: 'Email *' },
+        {
+          name: 'lastname',
+          label: 'Фамилия *',
+          error: 'Поле является необходимым для заполнения',
+        },
+        {
+          name: 'name',
+          label: 'Имя *',
+          error: 'Поле является необходимым для заполнения',
+        },
+        {
+          name: 'email',
+          label: 'Email *',
+          error: 'Поле является необходимым для заполнения',
+          warning: 'Введите настоящий email',
+        },
       ],
     },
     directions: {

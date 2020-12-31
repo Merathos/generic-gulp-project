@@ -2,7 +2,7 @@ import { EventsCheckbox, TitleH2 } from 'elements';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-image: url('backgrounds/mailing-form.svg');
+  background-image: url('/backgrounds/mailing-form.svg');
   background-position: right top 380px;
   background-repeat: no-repeat;
   background-color: #ffffff;

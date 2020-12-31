@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   ${props =>
     props.type === 'relocation' &&
     css`
-      background-image: url('backgrounds/relocation-vacancies.png');
+      background-image: url('/backgrounds/relocation-vacancies.png');
       background-repeat: no-repeat;
       background-position: 72% 80%;
 

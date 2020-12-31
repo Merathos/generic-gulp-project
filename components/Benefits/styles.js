@@ -6,7 +6,8 @@ export const Section = styled.section`
   padding-bottom: 160px;
 
   @media (min-width: 1440px) {
-    background: url('backgrounds/relocation-benefits.png') no-repeat right 890px;
+    background: url('/backgrounds/relocation-benefits.png') no-repeat right
+      890px;
   }
 
   @media (max-width: 768px) {

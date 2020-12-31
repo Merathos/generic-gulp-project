@@ -1,5 +1,5 @@
 import TextareaAutosize from 'react-autosize-textarea';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Label = styled.label`
   margin-bottom: 60px;
@@ -46,6 +46,12 @@ const StyledTextarea = styled(TextareaAutosize)`
     border-bottom: 1px solid #5faf52;
   }
 
+  ${props =>
+    props.error &&
+    css`
+      border-color: #fb5235;
+    `}
+
   &::placeholder {
     color: rgba(32, 31, 42, 0.5);
   }
@@ -65,7 +71,7 @@ const StyledTextarea = styled(TextareaAutosize)`
   }
 `;
 
-const SmartTextarea = ({ label, placeholder, name }) => {
+const SmartTextarea = ({ label, placeholder, name, register, error }) => {
   return (
     <Label>
       <span>{label}</span>
@@ -74,6 +80,8 @@ const SmartTextarea = ({ label, placeholder, name }) => {
         maxRows={8}
         placeholder={placeholder}
         name={name}
+        ref={register}
+        error={error}
       />
     </Label>
   );

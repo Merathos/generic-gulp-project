@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  background-image: url('backgrounds/contacts-location.png');
+  background-image: url('/backgrounds/contacts-location.png');
   background-repeat: no-repeat;
   background-position: 100% 76%;
 
@@ -33,7 +33,7 @@ export const Container = styled.section`
 
 export const GreyContainer = styled.div`
   background-color: #f7f8f9;
-  background-image: url('backgrounds/contacts-header.png');
+  background-image: url('/backgrounds/contacts-header.png');
   background-repeat: no-repeat;
   background-position: 100% 100%;
   margin-bottom: 180px;

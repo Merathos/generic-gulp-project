@@ -135,7 +135,7 @@ export const Wrapper = styled.div`
       input {
         color: #53b443;
         border-color: #53b443;
-        background-image: url('icons/ok.svg');
+        background-image: url('/icons/ok.svg');
 
         &:focus {
           border-bottom: 1px solid #53b443;
@@ -149,7 +149,7 @@ export const Wrapper = styled.div`
       input {
         color: #feb251;
         border-color: #feb251;
-        background-image: url('icons/warning.svg');
+        background-image: url('/icons/warning.svg');
 
         &:focus {
           border-bottom: 1px solid #feb251;
@@ -179,7 +179,7 @@ export const Wrapper = styled.div`
       input {
         color: #fb5235;
         border-color: #fb5235;
-        background-image: url('icons/error.svg');
+        background-image: url('/icons/error.svg');
 
         &:focus {
           border-bottom: 1px solid #fb5235;

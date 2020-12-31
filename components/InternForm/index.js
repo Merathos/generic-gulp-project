@@ -1,4 +1,3 @@
-import * as S from './styles';
 import {
   TextInput,
   CloseBtn,
@@ -6,28 +5,101 @@ import {
   SmartTextarea,
   FileInput,
   RadioBtn,
+  Captcha,
 } from 'elements';
 import { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useMutation, useQuery } from '@apollo/client';
+import { useForm } from 'react-hook-form';
+import form from 'mock/forms';
+import { SET_FORM_INTERNSHIP } from 'graphql/forms';
+import { GET_EVENT_CATEGORIES } from 'graphql/events';
 
-const InternForm = ({
-  data: { mainTitle, contact, education, terms, cv, agreement, buttonText },
-  closeModal,
-  showSuccess,
-}) => {
+import * as S from './styles';
+
+const InternForm = ({ closeModal, showSuccess }) => {
+  const {
+    mainTitle,
+    contact,
+    education,
+    terms,
+    cv,
+    agreement,
+    mailing,
+    buttonText,
+  } = form.internForm;
   const [checkedEls, setCheckedEls] = useState({});
-  const [selectValue, setSelectValue] = useState('');
+  const [contactValue, setContactValue] = useState('');
+  const [monthValue, setMonthValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [captchaPassed, setCaptchaPassed] = useState(false);
+  const [selectedEventCategories, setSelectedEventCategories] = useState([]);
 
-  const handleCheckbox = event => {
+  const { data: eventCategoriesData } = useQuery(GET_EVENT_CATEGORIES);
+  const [sendVacancy] = useMutation(SET_FORM_INTERNSHIP, {
+    onCompleted(data) {
+      if (data.Event) {
+        closeModal();
+        showSuccess();
+      }
+    },
+  });
+
+  const { handleSubmit, register, errors, getValues } = useForm();
+  const handleChange = event => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
   };
 
-  const handleSelectValue = event => {
-    setSelectValue(event.value);
+  const handleEventCategoryChange = (event, id) => {
+    setCheckedEls({
+      ...checkedEls,
+      [event.target.id]: event.target.checked,
+    });
+    setSelectedEventCategories(prev => {
+      if (prev.includes(id)) {
+        return prev.filter(item => item !== id);
+      }
+      return [...prev, id];
+    });
+  };
+
+  const handleSelectValue = (event, select) => {
+    if (select.name === 'contact') {
+      setContactValue(event.value);
+    }
+    if (select.name === 'month') {
+      setMonthValue(event.value);
+    }
+  };
+
+  const onSubmit = values => {
+    if (captchaPassed) {
+      sendVacancy({
+        variables: {
+          name: values.name,
+          lastname: values.lastname,
+          email: values.email,
+          phone: values.phone,
+          is_consent_pd: values.personal,
+          is_consent_newsletter: values.newsletter,
+          communication_method: contactValue,
+          tg_login: values.telegram,
+          dob: values.birthDate,
+          university: values.university,
+          faculty: values.faculty,
+          course: values.course,
+          technologies_like: values.techWish,
+          technologies_use: values.techExp,
+          start_month: monthValue,
+          hours: values.time,
+          resume_file: values.cvFile[0],
+          categories: selectedEventCategories,
+          // ?: values.cvLink,
+        },
+      });
+    }
   };
 
   return (
@@ -36,31 +108,46 @@ const InternForm = ({
       <S.TitleWrap>
         <S.MainTitle>{mainTitle}</S.MainTitle>
       </S.TitleWrap>
-      <S.Form action="#">
-        <S.Fade isOpen={isOpen}></S.Fade>
+      <S.Form onSubmit={handleSubmit(onSubmit)}>
+        <S.Fade isOpen={isOpen} />
         <S.FormSection>
           <S.SectionTitle>{contact.title}</S.SectionTitle>
           <S.InputsContainer>
-            {contact.inputs.map((el, i) => (
+            {contact.inputs.map((item, i) => (
               <TextInput
                 key={i}
-                name={el.name}
-                label={el.label}
-                type={el.type}
-                date={el.date}
-                phone={el.phone}
+                name={item.name}
+                label={item.label}
+                register={register({
+                  required: true,
+                  pattern:
+                    item.name === 'email'
+                      ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                      : '',
+                })}
+                error={errors[item.name]?.type === 'required'}
+                warning={errors[item.name]?.type === 'pattern'}
+                errorMsg={
+                  (errors[item.name]?.type === 'required' && item.error) ||
+                  (errors[item.name]?.type === 'pattern' && item.warning)
+                }
               />
             ))}
             <S.SelectContainer>
               <SelectInput
                 options={contact.select.options}
                 placeholder={contact.select.placeholder}
+                name={contact.select.name}
                 onChange={handleSelectValue}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
               />
-              {selectValue === 'telegram' && (
-                <TextInput name="telegram" label="Ник в Telegram" />
+              {contactValue === 'telegram' && (
+                <TextInput
+                  name="telegram"
+                  label={contact.telegramLabel}
+                  register={register()}
+                />
               )}
             </S.SelectContainer>
           </S.InputsContainer>
@@ -68,12 +155,16 @@ const InternForm = ({
         <S.FormSection>
           <S.SectionTitle>{education.title}</S.SectionTitle>
           <S.InputsContainer>
-            {education.inputs.map((el, i) => (
+            {education.inputs.map((item, i) => (
               <TextInput
                 key={i}
-                name={el.name}
-                label={el.label}
-                type={el.type}
+                name={item.name}
+                label={item.label}
+                register={register({
+                  required: true,
+                })}
+                error={errors[item.name]?.type === 'required'}
+                errorMsg={errors[item.name]?.type === 'required' && item.error}
               />
             ))}
           </S.InputsContainer>
@@ -82,26 +173,43 @@ const InternForm = ({
           <S.SectionTitle>{terms.title}</S.SectionTitle>
           <S.Question>{terms.direction.question}</S.Question>
           <S.CheckboxContainer>
-            {terms.direction.inputs.map((item, i) => (
+            {eventCategoriesData?.event_categories?.map(item => (
               <S.CheckBox
-                key={i}
-                name={item}
-                value={item}
-                checked={checkedEls[item]}
-                onChange={handleCheckbox}
-                color={'#53B443'}
+                key={item.id}
+                name={item.slug}
+                value={item.name}
+                checked={checkedEls[item.slug]}
+                onChange={event => handleEventCategoryChange(event, item.id)}
+                register={register({
+                  required: selectedEventCategories.length === 0,
+                })}
+                error={
+                  errors[item.slug]?.type === 'required' &&
+                  selectedEventCategories.length === 0
+                }
               />
             ))}
           </S.CheckboxContainer>
           <S.TechContainer>
             {terms.tech.map((item, i) => (
-              <SmartTextarea key={i} label={item.label} name={item.name} />
+              <SmartTextarea
+                key={i}
+                label={item.label}
+                placeholder={item.placeholder}
+                name={item.name}
+                register={register({
+                  required: true,
+                })}
+                error={errors[item.name]?.type === 'required'}
+              />
             ))}
             <S.MonthContainer>
               <S.TermsQuestion>{terms.startingMonth.question}</S.TermsQuestion>
               <SelectInput
                 options={terms.startingMonth.options}
                 placeholder={terms.startingMonth.placeholder}
+                name={terms.startingMonth.name}
+                onChange={handleSelectValue}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
               />
@@ -113,8 +221,13 @@ const InternForm = ({
                   <RadioBtn
                     key={i}
                     label={item.label}
+                    id={item.id}
                     value={item.value}
                     name={item.name}
+                    register={register({
+                      required: true,
+                    })}
+                    error={errors[item.name]?.type === 'required'}
                   />
                 ))}
               </S.RadioContainer>
@@ -129,40 +242,47 @@ const InternForm = ({
               name={cv.fileInput.name}
               label={cv.fileInput.label}
               fileExt={cv.fileInput.fileExt}
+              register={register()}
             />
-            <TextInput name={cv.textInput.name} label={cv.textInput.label} cv />
+            <TextInput
+              name={cv.textInput.name}
+              label={cv.textInput.label}
+              cv
+              error={errors.cvLink?.type === 'required'}
+              register={register({
+                required:
+                  getValues('cvFile')?.length === 0 &&
+                  getValues('cvLink') === '',
+              })}
+              errorMsg={cv.textInput.error}
+            />
           </S.FileWrapper>
         </S.FormSection>
         <S.SubmitSection>
           <S.AgreemenCheckbox
-            name={agreement.dataText}
-            checked={checkedEls[agreement.dataText]}
-            onChange={handleCheckbox}
-            color={'#53B443'}
+            name={agreement.name}
             value={agreement.dataText}
+            checked={checkedEls[agreement.name]}
+            onChange={handleChange}
+            register={register({
+              required: true,
+            })}
+            error={errors?.personal?.type === 'required'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}
             </S.Link>
           </S.AgreemenCheckbox>
           <S.AgreemenCheckbox
-            name={agreement.mailing}
-            checked={checkedEls[agreement.mailing]}
-            onChange={handleCheckbox}
-            color={'#53B443'}
-            value={agreement.mailing}
+            name={mailing.name}
+            value={mailing.value}
+            checked={checkedEls[mailing.name]}
+            onChange={handleChange}
+            register={register()}
           />
           <S.BottomWrap>
-            <ReCAPTCHA sitekey="Your client site key" onChange={() => {}} />
-            <S.StyledButton
-              type="submit"
-              accent={true}
-              onClick={e => {
-                e.preventDefault();
-                closeModal();
-                showSuccess();
-              }}
-            >
+            <Captcha setCaptchaPassed={setCaptchaPassed} />
+            <S.StyledButton type="submit" accent>
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>

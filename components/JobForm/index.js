@@ -1,59 +1,115 @@
-import * as S from './styles';
-import { TextInput, CloseBtn, SelectInput, FileInput } from 'elements';
+import { TextInput, CloseBtn, SelectInput, FileInput, Captcha } from 'elements';
 import { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import form from 'mock/forms';
+import { useForm } from 'react-hook-form';
+import { SET_FORM_VACANCY } from 'graphql/forms';
+import { useMutation } from '@apollo/client';
 
-const JobForm = ({
-  data: { mainTitle, subtitle, contact, cv, agreement, buttonText },
-  closeModal,
-  showSuccess,
-}) => {
+import * as S from './styles';
+
+const JobForm = ({ closeModal, showSuccess, title, id }) => {
+  const {
+    mainTitle,
+    subtitle,
+    contact,
+    cv,
+    agreement,
+    mailing,
+    buttonText,
+  } = form.jobForm;
   const [checkedEls, setCheckedEls] = useState({});
-  const [selectValue, setSelectValue] = useState('');
+  const [contactValue, setContactValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [captchaPassed, setCaptchaPassed] = useState(false);
+  const [sendVacancy] = useMutation(SET_FORM_VACANCY, {
+    onCompleted(data) {
+      if (data.Event) {
+        closeModal();
+        showSuccess();
+      }
+    },
+  });
 
-  const handleCheckbox = event => {
+  const { handleSubmit, register, errors, getValues } = useForm();
+
+  const handleChange = event => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
   };
 
-  const handleSelectValue = event => {
-    setSelectValue(event.value);
+  const handleContactValue = event => {
+    setContactValue(event.value);
+  };
+
+  const onSubmit = values => {
+    if (captchaPassed) {
+      sendVacancy({
+        variables: {
+          name: values.name,
+          lastname: values.lastname,
+          email: values.email,
+          phone: values.phone,
+          is_consent_pd: values.personal,
+          is_consent_newsletter: values.newsletter,
+          communication_method: contactValue,
+          tg_login: values.telegram,
+          resume_file: values.cvFile[0],
+          vacancy_id: id,
+          // ?: values.cvLink,
+        },
+      });
+    }
   };
 
   return (
     <S.Container>
       <CloseBtn onClick={closeModal} />
       <S.TitleWrap>
-        <S.MainTitle>{mainTitle}</S.MainTitle>
-        <S.Subtitle>{subtitle}</S.Subtitle>
+        <S.MainTitle>{id && title ? title : mainTitle}</S.MainTitle>
+        <S.Subtitle>{id ? subtitle : ''}</S.Subtitle>
       </S.TitleWrap>
-      <S.Form action="#">
-        <S.Fade isOpen={isOpen}></S.Fade>
+      <S.Form onSubmit={handleSubmit(onSubmit)}>
+        <S.Fade isOpen={isOpen} />
         <S.FormSection>
           <S.SectionTitle>{contact.title}</S.SectionTitle>
           <S.InputsContainer>
-            {contact.inputs.map((el, i) => (
+            {contact.inputs.map((item, i) => (
               <TextInput
                 key={i}
-                name={el.name}
-                label={el.label}
-                type={el.type}
-                phone={el.phone}
+                name={item.name}
+                label={item.label}
+                register={register({
+                  required: true,
+                  pattern:
+                    item.name === 'email'
+                      ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                      : '',
+                })}
+                error={errors[item.name]?.type === 'required'}
+                warning={errors[item.name]?.type === 'pattern'}
+                errorMsg={
+                  (errors[item.name]?.type === 'required' && item.error) ||
+                  (errors[item.name]?.type === 'pattern' && item.warning)
+                }
               />
             ))}
             <S.SelectContainer>
               <SelectInput
                 options={contact.select.options}
                 placeholder={contact.select.placeholder}
-                onChange={handleSelectValue}
+                onChange={handleContactValue}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
+                register={register()}
               />
-              {selectValue === 'telegram' && (
-                <TextInput name="telegram" label="Ник в Telegram" />
+              {contactValue === 'telegram' && (
+                <TextInput
+                  name="telegram"
+                  label={contact.telegramLabel}
+                  register={register()}
+                />
               )}
             </S.SelectContainer>
           </S.InputsContainer>
@@ -66,40 +122,47 @@ const JobForm = ({
               name={cv.fileInput.name}
               label={cv.fileInput.label}
               fileExt={cv.fileInput.fileExt}
+              register={register()}
             />
-            <TextInput name={cv.textInput.name} label={cv.textInput.label} cv />
+            <TextInput
+              name={cv.textInput.name}
+              label={cv.textInput.label}
+              cv
+              error={errors.cvLink?.type === 'required'}
+              register={register({
+                required:
+                  getValues('cvFile')?.length === 0 &&
+                  getValues('cvLink') === '',
+              })}
+              errorMsg={cv.textInput.error}
+            />
           </S.FileWrapper>
         </S.FormSection>
         <S.SubmitSection>
           <S.AgreemenCheckbox
-            name={agreement.dataText}
-            checked={checkedEls[agreement.dataText]}
-            onChange={handleCheckbox}
-            color={'#53B443'}
+            name={agreement.name}
             value={agreement.dataText}
+            checked={checkedEls[agreement.name]}
+            onChange={handleChange}
+            register={register({
+              required: true,
+            })}
+            error={errors?.personal?.type === 'required'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}
             </S.Link>
           </S.AgreemenCheckbox>
           <S.AgreemenCheckbox
-            name={agreement.mailing}
-            checked={checkedEls[agreement.mailing]}
-            onChange={handleCheckbox}
-            color={'#53B443'}
-            value={agreement.mailing}
+            name={mailing.name}
+            value={mailing.value}
+            checked={checkedEls[mailing.name]}
+            onChange={handleChange}
+            register={register()}
           />
           <S.BottomWrap>
-            <ReCAPTCHA sitekey="Your client site key" onChange={() => {}} />
-            <S.StyledButton
-              type="submit"
-              accent={true}
-              onClick={e => {
-                e.preventDefault();
-                closeModal();
-                showSuccess();
-              }}
-            >
+            <Captcha setCaptchaPassed={setCaptchaPassed} />
+            <S.StyledButton type="submit" accent>
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>

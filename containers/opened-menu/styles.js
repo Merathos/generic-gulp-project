@@ -164,7 +164,7 @@ export const Contacts = styled.div`
     height: min(350px, 44vh);
     bottom: 12vh;
     left: -210px;
-    background-image: url('backgrounds/opened-menu-bg.png');
+    background-image: url('/backgrounds/opened-menu-bg.png');
     background-repeat: no-repeat;
     background-size: contain;
 
