@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -36,6 +36,18 @@ export const ListItem = styled.li`
   flex-direction: column;
   margin-bottom: 55px;
 
+  ${props =>
+    props.isActive &&
+    css`
+      b {
+        color: #2f8ed9;
+        opacity: 1;
+      }
+      p {
+        color: #201f2a;
+      }
+    `}
+
   :hover {
     b {
       color: #2f8ed9;
@@ -45,10 +57,6 @@ export const ListItem = styled.li`
     p {
       color: #201f2a;
     }
-  }
-
-  @media screen and (max-width: 1360px) {
-    cursor: auto;
   }
 
   @media screen and (max-width: 720px) {
