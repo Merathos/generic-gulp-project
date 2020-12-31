@@ -5,7 +5,7 @@ export const Section = styled.section`
   padding-top: 160px;
   padding-bottom: 60px;
   background-color: #f7f8f9;
-  background-image: url('backgrounds/relocation-footer.png');
+  background-image: url('/backgrounds/relocation-footer.png');
   background-repeat: no-repeat;
   background-position: right bottom;
 

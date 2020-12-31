@@ -9,7 +9,7 @@ export const Section = styled.section`
   ${props =>
     props.type === 'relocation' &&
     css`
-      background-image: url('backgrounds/relocation-footer.png');
+      background-image: url('/backgrounds/relocation-footer.png');
       background-repeat: no-repeat;
       background-position: right 70%;
 
@@ -22,7 +22,7 @@ export const Section = styled.section`
     props.type === 'about' &&
     css`
       margin-top: 84px;
-      background-image: url('backgrounds/about-footer.svg');
+      background-image: url('/backgrounds/about-footer.svg');
       background-repeat: no-repeat;
       background-position: right 116%;
 
@@ -43,7 +43,7 @@ export const ListContainer = styled.div`
     ${props =>
       props.background === 'transparent' &&
       css`
-        background-image: url('backgrounds/i-footer.svg');
+        background-image: url('/backgrounds/i-footer.svg');
         background-repeat: no-repeat;
         background-position: top right;
       `};

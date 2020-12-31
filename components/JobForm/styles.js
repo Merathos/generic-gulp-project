@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
-import { TitleH2, Btn } from 'elements';
-import { EventsCheckbox } from 'elements';
+import { TitleH2, Btn, EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
-  background-image: url('backgrounds/mailing-form.svg');
+  background-image: url('/backgrounds/mailing-form.svg');
   background-position: right top 540px;
   background-repeat: no-repeat;
   background-color: #ffffff;
@@ -66,7 +65,7 @@ export const MainTitle = styled(TitleH2)`
     max-width: 330px;
     margin-bottom: 15px;
     font-size: 32px;
-    line-height: 42.88px;
+    line-height: 43px;
     letter-spacing: 0.01em;
   }
 `;
@@ -101,14 +100,14 @@ export const SubmitSection = styled(FormSection)`
 export const SectionTitle = styled.h3`
   margin-bottom: 33px;
   font-size: 24px;
-  line-height: 28.8px;
+  line-height: 29px;
   font-weight: 700;
   letter-spacing: normal;
 
   @media (max-width: 768px) {
     margin-bottom: 5px;
     font-size: 16px;
-    line-height: 19.2px;
+    line-height: 19px;
     letter-spacing: 0.01em;
   }
 `;
@@ -156,16 +155,16 @@ export const AgreemenCheckbox = styled(EventsCheckbox)`
 
   label {
     font-size: 18px;
-    line-height: 21.6px;
+    line-height: 22px;
 
     @media (max-width: 910px) {
       font-size: 20px;
-      line-height: 26.8px;
+      line-height: 27px;
     }
 
     @media (max-width: 768px) {
       font-size: 14px;
-      line-height: 22.12px;
+      line-height: 22px;
     }
   }
 
@@ -196,7 +195,7 @@ export const BottomWrap = styled.div`
     div {
       width: 195px;
       transform: scale(0.891);
-      -webkit-transform: scale(0.891);
+      -webkit-transform: scale(0.9);
       transform-origin: 0 0;
       -webkit-transform-origin: 0 0;
     }

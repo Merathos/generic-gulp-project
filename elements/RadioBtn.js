@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Label = styled.label`
   position: relative;
@@ -24,6 +24,12 @@ const Label = styled.label`
     @media (max-width: 768px) {
       top: 1px;
     }
+
+    ${props =>
+      props.error &&
+      css`
+        border-color: #fb5235;
+      `}
   }
 
   & > input:not(:disabled):not(:checked) + span:hover::before {
@@ -56,15 +62,26 @@ const Label = styled.label`
   }
 `;
 
-const RadioBtn = ({ name, handleChange, value, label, required = true }) => {
+const RadioBtn = ({
+  name,
+  handleChange,
+  value,
+  id,
+  label,
+  checked,
+  register,
+  error,
+}) => {
   return (
-    <Label>
+    <Label error={error}>
       <input
         type="radio"
         name={name}
-        id={value}
+        id={id}
+        value={value}
         onChange={() => {}}
-        required={required}
+        checked={checked}
+        ref={register}
       />
       <span>{label}</span>
     </Label>

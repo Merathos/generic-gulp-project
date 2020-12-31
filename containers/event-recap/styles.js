@@ -7,7 +7,7 @@ export const Section = styled.section`
 
   @media (min-width: 900px) {
     margin-bottom: 80px;
-    background-image: url('backgrounds/recap.svg');
+    background-image: url('/backgrounds/recap.svg');
     background-position: right 0 top 655px;
     background-repeat: no-repeat;
   }

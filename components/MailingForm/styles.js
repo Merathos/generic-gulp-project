@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
-import { TitleH2, Btn } from 'elements';
-import { EventsCheckbox } from 'elements';
+import { TitleH2, Btn, EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
-  background-image: url('backgrounds/mailing-form.svg');
+  background-image: url('/backgrounds/mailing-form.svg');
   background-position: right top 540px;
   background-repeat: no-repeat;
   background-color: #ffffff;

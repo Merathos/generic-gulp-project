@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import * as S from './styles';
 import { FormModal } from '../../containers';
 import { InternForm } from '../index';
 import mock from '../../mock';
-import { useState } from 'react';
 
 const InternshipApplication = ({ data }) => {
   const { text, title, button } = data;

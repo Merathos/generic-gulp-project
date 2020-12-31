@@ -1,8 +1,7 @@
 import { useMutation } from '@apollo/client';
-import { CloseBtn, TextInput } from 'elements';
+import { CloseBtn, TextInput, Captcha } from 'elements';
 import { SET_EVENTS_SUBSCRIPTION } from 'graphql/events';
 import { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as S from './styles';
 
@@ -23,7 +22,7 @@ const SubForm = ({
       }
     },
   });
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, errors } = useForm();
 
   const handleChange = event => {
     setCheckedEls({
@@ -37,7 +36,12 @@ const SubForm = ({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
-    setSelectedEventCategories(prev => [...prev, id]);
+    setSelectedEventCategories(prev => {
+      if (prev.includes(id)) {
+        return prev.filter(item => item !== id);
+      }
+      return [...prev, id];
+    });
   };
 
   const onSubmit = values => {
@@ -55,10 +59,6 @@ const SubForm = ({
     }
   };
 
-  function onChangeRecaptcha(value) {
-    setCaptchaPassed(value);
-  }
-
   return (
     <S.Container>
       <CloseBtn onClick={closeModal} />
@@ -71,10 +71,20 @@ const SubForm = ({
               <TextInput
                 key={i}
                 name={item.name}
-                label={item.placeholder}
-                reference={register({
-                  required: 'Required',
+                label={item.label}
+                register={register({
+                  required: true,
+                  pattern:
+                    item.name === 'email'
+                      ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                      : '',
                 })}
+                error={errors[item.name]?.type === 'required'}
+                warning={errors[item.name]?.type === 'pattern'}
+                errorMsg={
+                  (errors[item.name]?.type === 'required' && item.error) ||
+                  (errors[item.name]?.type === 'pattern' && item.warning)
+                }
               />
             ))}
           </S.InputsContainer>
@@ -90,8 +100,7 @@ const SubForm = ({
                 value={item.name}
                 checked={checkedEls[item.slug]}
                 onChange={event => handleEventCategoryChange(event, item.id)}
-                color="#53B443"
-                reference={register()}
+                register={register()}
               />
             ))}
           </S.CheckboxContainer>
@@ -102,8 +111,10 @@ const SubForm = ({
             value={agreement.dataText}
             checked={checkedEls[agreement.name]}
             onChange={handleChange}
-            color="#53B443"
-            reference={register()}
+            register={register({
+              required: true,
+            })}
+            error={errors?.personal?.type === 'required'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}
@@ -114,15 +125,12 @@ const SubForm = ({
             value={mailing.value}
             checked={checkedEls[mailing.name]}
             onChange={handleChange}
-            color="#53B443"
-            reference={register()}
+            register={register()}
           />
           <S.BottomWrap>
-            <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
-              onChange={onChangeRecaptcha}
-            />
-            <S.StyledButton type="submit" disabled={!captchaPassed}>
+            <Captcha setCaptchaPassed={setCaptchaPassed} />
+            <S.StyledButton type="submit">
+              {/* disabled={!captchaPassed} */}
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>

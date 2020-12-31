@@ -24,7 +24,7 @@ export const ValuesSection = styled(SectionGroup)`
   padding-top: 70px;
 
   @media (min-width: 1023px) {
-    background-image: url('backgrounds/about-values.svg');
+    background-image: url('/backgrounds/about-values.svg');
     background-repeat: no-repeat;
     background-position: top 45px right;
   }
@@ -47,7 +47,7 @@ export const GreyContainer = styled.div`
 `;
 
 export const HeaderContainer = styled(GreyContainer)`
-  background-image: url('backgrounds/about-header.svg');
+  background-image: url('/backgrounds/about-header.svg');
   background-repeat: no-repeat;
   background-position: right 95%;
 

@@ -8,6 +8,7 @@ const Application = ({
   handleVacanciesClick,
   className,
   vacancy,
+  toggleJobModal,
 }) => {
   const english = useSelector(state => state.english);
   const language = useSelector(state => state.language);
@@ -31,7 +32,9 @@ const Application = ({
         <S.StyledButton
           type="accent"
           usage={type}
-          onClick={type === 'relocation' ? handleVacanciesClick : undefined}
+          onClick={
+            type === 'relocation' ? handleVacanciesClick : toggleJobModal
+          }
         >
           {english ? 'Send CV' : data.button}
         </S.StyledButton>

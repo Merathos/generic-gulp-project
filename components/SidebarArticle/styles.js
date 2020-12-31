@@ -147,7 +147,7 @@ export const Image = styled.img`
 
 export const Aside = styled.aside`
   padding-top: 30px;
-  background-image: url('backgrounds/i-sidebar.svg');
+  background-image: url('/backgrounds/i-sidebar.svg');
   background-repeat: no-repeat;
   background-position: top left 100px;
 

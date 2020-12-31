@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Icon, TitleH1 } from 'elements';
 
 export const Main = styled.main`
-  background-image: url('backgrounds/events-left.svg'),
-    url('backgrounds/events-right.svg');
+  background-image: url('/backgrounds/events-left.svg'),
+    url('/backgrounds/events-right.svg');
   background-position: left 520px, right 70px;
   background-repeat: no-repeat, no-repeat;
 
   @media (max-width: 1199px) {
-    background-image: url('backgrounds/events-right.svg');
+    background-image: url('/backgrounds/events-right.svg');
     background-position: right -20px top 32px;
     background-repeat: no-repeat;
   }

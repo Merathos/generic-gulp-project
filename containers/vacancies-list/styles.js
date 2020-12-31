@@ -3,7 +3,7 @@ import { TitleH1 } from 'elements';
 
 export const Main = styled.main`
   position: relative;
-  background: url('backgrounds/sidebar-bg.png') no-repeat left 514px;
+  background: url('/backgrounds/sidebar-bg.png') no-repeat left 514px;
 
   &:before {
     content: '';
@@ -12,7 +12,7 @@ export const Main = styled.main`
     right: 0;
     width: 209px;
     height: 319px;
-    background: url('backgrounds/vacancies-bg.png') no-repeat;
+    background: url('/backgrounds/vacancies-bg.png') no-repeat;
     z-index: 4;
   }
 
@@ -128,7 +128,7 @@ export const FilterTitle = styled.button.attrs(props => ({
     height: 7px;
     top: ${props => (props.active ? '14px' : '50%')};
     right: 0;
-    background-image: url('icons/dropdown.svg');
+    background-image: url('/icons/dropdown.svg');
     background-repeat: no-repeat;
     transform: ${props => props.transform};
     transition: transform 0.2s ease;

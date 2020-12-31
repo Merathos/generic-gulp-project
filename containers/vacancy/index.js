@@ -6,8 +6,11 @@ import {
   OfficesMap,
   Conditions,
   SliderVacancy,
+  JobForm,
 } from 'components';
-
+import { FormModal, SuccessModal } from 'containers';
+import { useState } from 'react';
+import mock from 'mock/index';
 import {
   Container,
   GreyContainer,
@@ -19,11 +22,35 @@ import {
 
 const Vacancy = ({ data, back }) => {
   const content = JSON.parse(back.content);
+  const [jobModalIsShown, setJobModalIsShown] = useState(false);
+  const [successModalIsShown, setSuccessIsShown] = useState(false);
+
+  function toggleJobModal() {
+    setJobModalIsShown(prev => !prev);
+  }
+
+  function toggleSuccess() {
+    setSuccessIsShown(prev => !prev);
+  }
 
   return (
     <>
+      <FormModal modalIsOpen={jobModalIsShown} closeModal={toggleJobModal}>
+        <JobForm
+          data={mock.jobForm}
+          closeModal={toggleJobModal}
+          showSuccess={toggleSuccess}
+          title={back?.name}
+          id={back?.id}
+        />
+      </FormModal>
+      <SuccessModal
+        data={mock.jobForm.confirmation}
+        successIsShown={successModalIsShown}
+        closeSuccess={toggleSuccess}
+      />
       <GreyContainer>
-        <VacancyHeader data={back} />
+        <VacancyHeader data={back} toggleJobModal={toggleJobModal} />
       </GreyContainer>
 
       {content && (
@@ -45,7 +72,12 @@ const Vacancy = ({ data, back }) => {
         </SliderContainer>
       </SliderSection>
 
-      <Application data={data.application} decor vacancy />
+      <Application
+        data={data.application}
+        decor
+        vacancy
+        toggleJobModal={toggleJobModal}
+      />
 
       <OfficesMap data={data.map} english={back.is_english_speaking_team} />
 

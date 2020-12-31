@@ -27,7 +27,7 @@ export const Container = styled.div`
     'content pic';
 
   @media (min-width: 1200px) {
-    background-image: url('backgrounds/relocation-vacancies.png');
+    background-image: url('/backgrounds/relocation-vacancies.png');
     background-repeat: no-repeat;
     background-position: 73.5% 80%;
   }

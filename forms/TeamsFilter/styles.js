@@ -23,7 +23,7 @@ export const Title = styled.h3.attrs(props => ({
       height: 7px;
       top: 50%;
       right: 0;
-      background-image: url('icons/dropdown.svg');
+      background-image: url('/icons/dropdown.svg');
       background-repeat: no-repeat;
       transform: ${props => props.transform};
       transition: transform 0.2s ease;

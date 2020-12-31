@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
-import { TitleH2, Btn } from 'elements';
-import { EventsCheckbox } from 'elements';
+import { TitleH2, Btn, EventsCheckbox } from 'elements';
 
 export const Container = styled.div`
-  background-image: url('backgrounds/mailing-form.svg');
+  background-image: url('/backgrounds/mailing-form.svg');
   background-position: right top 540px;
   background-repeat: no-repeat;
   background-color: #ffffff;
@@ -66,7 +65,7 @@ export const MainTitle = styled(TitleH2)`
     max-width: 330px;
     margin-bottom: 1px;
     font-size: 32px;
-    line-height: 42.88px;
+    line-height: 43px;
     letter-spacing: 0.01em;
   }
 `;
@@ -90,14 +89,14 @@ export const SubmitSection = styled(FormSection)`
 export const SectionTitle = styled.h3`
   margin-bottom: 33px;
   font-size: 24px;
-  line-height: 28.8px;
+  line-height: 29px;
   font-weight: 700;
   letter-spacing: normal;
 
   @media (max-width: 768px) {
     margin-bottom: 5px;
     font-size: 16px;
-    line-height: 19.2px;
+    line-height: 19px;
     letter-spacing: 0.01em;
   }
 `;
@@ -131,7 +130,7 @@ export const SelectContainer = styled.div`
   }
 `;
 
-export const CheckboxContainer = styled.div`
+export const CheckboxContainer = styled.fieldset`
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 0px;
@@ -145,6 +144,12 @@ export const CheckboxContainer = styled.div`
 export const Question = styled.p`
   margin-top: 60px;
   margin-bottom: 40px;
+
+  ${props =>
+    props.error &&
+    css`
+      color: #fb5235;
+    `}
 
   @media (max-width: 768px) {
     font-size: 14px;

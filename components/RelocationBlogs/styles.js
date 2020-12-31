@@ -5,7 +5,7 @@ export const Section = styled.section`
   margin-bottom: 160px;
 
   @media (min-width: 1300px) {
-    background: url('backgrounds/relocation-difficulties.png') no-repeat right
+    background: url('/backgrounds/relocation-difficulties.png') no-repeat right
       170px;
   }
 

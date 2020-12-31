@@ -20,7 +20,7 @@ export const Title = styled.button.attrs(props => ({
     height: 7px;
     top: 50%;
     right: 32px;
-    background-image: url('icons/dropdown.svg');
+    background-image: url('/icons/dropdown.svg');
     background-repeat: no-repeat;
     transform: ${props => props.transform};
     transition: transform 0.2s ease;

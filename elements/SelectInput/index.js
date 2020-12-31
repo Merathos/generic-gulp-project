@@ -19,6 +19,7 @@ const CustomValueContainer = ({ children, ...props }) => {
 const SelectInput = ({
   options,
   placeholder,
+  name,
   onChange,
   setOpened,
   setClosed,
@@ -28,12 +29,13 @@ const SelectInput = ({
       <Select
         options={options}
         placeholder={placeholder}
+        name={name}
         className="react-select-container"
         classNamePrefix="react-select"
         onChange={onChange}
         onMenuOpen={setOpened}
         onMenuClose={setClosed}
-        controlShouldRenderValue={true}
+        controlShouldRenderValue
         components={{
           ValueContainer: CustomValueContainer,
         }}

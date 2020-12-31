@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Label = styled.label.attrs(props => ({
-  checkbox: props.checked ? "url('icons/checked.svg')" : 'none',
+  checkbox: props.checked ? "url('/icons/checked.svg')" : 'none',
   color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)',
 }))`
   padding-left: 30px;

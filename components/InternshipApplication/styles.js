@@ -6,7 +6,7 @@ export const Section = styled.section`
   margin-bottom: 60px;
   padding: 0 120px;
   background-color: #f7f8f9;
-  background-image: url('backgrounds/i-application.svg');
+  background-image: url('/backgrounds/i-application.svg');
   background-repeat: no-repeat;
   background-position: top 48% right;
 

@@ -5,7 +5,7 @@ const TextInput = ({
   name,
   label,
   className,
-  required = true,
+  required,
   cv,
   correct,
   warning,
@@ -13,7 +13,7 @@ const TextInput = ({
   errorMsg,
   phone,
   date = false,
-  reference,
+  register,
 }) => {
   const handleDateMask = e => {
     const input = e.target;
@@ -61,7 +61,7 @@ const TextInput = ({
         required={required}
         maxLength={date ? 10 : 999}
         onKeyPress={date ? handleDateMask : phone ? handlePhoneMask : () => {}}
-        ref={reference}
+        ref={register}
       />
 
       <label htmlFor={name}>{label}</label>
