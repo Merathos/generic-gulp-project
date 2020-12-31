@@ -72,7 +72,7 @@ const EventHeader = ({
                 <p>
                   {`${dayjs(startsAt)
                     .locale('ru')
-                    .format('D MMMM')},`}
+                    .format('D MMMM')}`}
                 </p>
                 <p>{`${dayjs(startsAt).format('HH:mm')}-${dayjs(endsAt).format(
                   'HH:mm'
