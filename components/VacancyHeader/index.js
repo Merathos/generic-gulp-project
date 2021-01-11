@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Features } from 'components';
+import ArrowRight from 'public/icons/arrow-right.svg';
+import Link from 'next/link';
 import {
   Section,
   Wrapper,
@@ -63,7 +65,16 @@ const VacancyHeader = ({ data, toggleJobModal }) => {
         {team?.name && (
           <TextBlock>
             <Bold>{english && language ? 'Team:' : 'Команда:'}</Bold>
-            <StyledText>{team && team.name}</StyledText>
+            <StyledText withIcon={team.slug}>
+              {team && team.name}
+              {team.slug && (
+                <Link href={`/teams/${team.slug}`}>
+                  <a>
+                    <ArrowRight />
+                  </a>
+                </Link>
+              )}
+            </StyledText>
           </TextBlock>
         )}
         <StyledButton accent onClick={toggleJobModal}>
