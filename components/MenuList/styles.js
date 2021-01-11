@@ -64,7 +64,7 @@ export const Title = styled.a`
     css`
       color: #53b443;
 
-      &::after {
+      ${'' /* &::after {
         content: '';
         width: 6px;
         height: 6px;
@@ -74,7 +74,7 @@ export const Title = styled.a`
         bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
-      }
+      } */}
     `};
 
   @media screen and (max-width: 1024px) {
