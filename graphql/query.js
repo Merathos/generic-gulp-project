@@ -53,6 +53,7 @@ export const GET_VACANCY_CONTENT = gql`
       }
       team {
         name
+        slug
       }
       technology_stacks
       recruiters {
