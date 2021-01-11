@@ -24,7 +24,9 @@ const Footer = ({
   >
     <S.Container>
       <S.FooterText>{copyright}</S.FooterText>
-      <S.Link href={link}>{text}</S.Link>
+      <S.Link href={link} target="_blank" rel="noreferrer">
+        {text}
+      </S.Link>
     </S.Container>
     <Social grey={grey} links={social} />
     {nimax && (
@@ -33,6 +35,8 @@ const Footer = ({
         <S.ProducerLink
           href={producersLink}
           aria-label="Digital-агентство Nimax"
+          target="_blank"
+          rel="noreferrer"
         >
           <LogoNimax />
         </S.ProducerLink>

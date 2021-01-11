@@ -1584,7 +1584,7 @@ export default {
     ],
     suscribe: `Подписаться на вакансии`,
     labour: {
-      link: `https://www.dins.ru/downloads/2019.11.28-SP-SOUT.pdf?v=1592826998`,
+      link: `/sout.html`,
       text: `Оценка условий труда`,
     },
     nimaxText: 'Сделали в',

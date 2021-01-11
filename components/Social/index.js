@@ -14,6 +14,8 @@ const Social = ({ links, grey, noMargin = false }) => (
           grey={grey}
           color={el.title === 'vk' || el.title === 'linkedin' ? 'blue' : 'red'}
           aria-label={el.title}
+          target="_blank"
+          rel="noreferrer"
         >
           {
             {
