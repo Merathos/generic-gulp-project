@@ -4,7 +4,8 @@ import form from 'mock/forms';
 import { useForm } from 'react-hook-form';
 import { SET_FORM_VACANCY } from 'graphql/forms';
 import { useMutation } from '@apollo/client';
-
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as S from './styles';
 
 const JobForm = ({ closeModal, showSuccess, title, id }) => {
@@ -18,7 +19,6 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
     buttonText,
   } = form.jobForm;
   const [checkedEls, setCheckedEls] = useState({});
-  const [contactValue, setContactValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [sendVacancy] = useMutation(SET_FORM_VACANCY, {
@@ -30,17 +30,43 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
     },
   });
 
-  const { handleSubmit, register, errors, getValues } = useForm();
+  const schema = yup.object().shape({
+    name: yup.string().required('error'),
+    lastname: yup.string().required('error'),
+    email: yup
+      .string()
+      .email('warning')
+      .required('error'),
+    phone: yup
+      .string()
+      .test('empty', 'error', val => {
+        return val !== '';
+      })
+      .test('len', 'warning', val => {
+        const val_length_without_dashes = val.replace(/-|_|\s|\(|\)/g, '')
+          .length;
+        return val_length_without_dashes === 12;
+      })
+      .required('error'),
+    personal: yup
+      .boolean()
+      .required()
+      .oneOf([true], 'error'),
+    cvLink: yup.string().test('file', 'error', val => {
+      return val.length !== 0 || getValues('cvFile').length !== 0;
+    }),
+  });
+
+  const { handleSubmit, register, errors, getValues, control } = useForm({
+    defaultValues: { phone: '', contact: '' },
+    resolver: yupResolver(schema),
+  });
 
   const handleChange = event => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
-  };
-
-  const handleContactValue = event => {
-    setContactValue(event.value);
   };
 
   const onSubmit = values => {
@@ -53,11 +79,11 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
           phone: values.phone,
           is_consent_pd: values.personal,
           is_consent_newsletter: values.newsletter,
-          communication_method: contactValue,
+          communication_method: values.contact?.value,
           tg_login: values.telegram,
-          resume_file: values.cvFile[0],
+          resume_file: values.cvFile[0]?.name,
+          resume_link: values.cvLink,
           vacancy_id: id,
-          // ?: values.cvLink,
         },
       });
     }
@@ -75,36 +101,40 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
         <S.FormSection>
           <S.SectionTitle>{contact.title}</S.SectionTitle>
           <S.InputsContainer>
-            {contact.inputs.map((item, i) => (
-              <TextInput
-                key={i}
-                name={item.name}
-                label={item.label}
-                register={register({
-                  required: true,
-                  pattern:
-                    item.name === 'email'
-                      ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                      : '',
-                })}
-                error={errors[item.name]?.type === 'required'}
-                warning={errors[item.name]?.type === 'pattern'}
-                errorMsg={
-                  (errors[item.name]?.type === 'required' && item.error) ||
-                  (errors[item.name]?.type === 'pattern' && item.warning)
-                }
-              />
-            ))}
+            {contact.inputs.map((item, i) => {
+              return (
+                <TextInput
+                  key={i}
+                  name={item.name}
+                  label={item.label}
+                  register={register({
+                    // required: true,
+                    // pattern:
+                    //   item.name === 'email'
+                    //     ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    //     : '',
+                  })}
+                  error={errors[item.name]?.message === 'error'}
+                  warning={errors[item.name]?.message === 'warning'}
+                  errorMsg={
+                    (errors[item.name]?.message === 'error' && item.error) ||
+                    (errors[item.name]?.message === 'warning' && item.warning)
+                  }
+                  mask={item.mask}
+                  control={control}
+                />
+              );
+            })}
             <S.SelectContainer>
               <SelectInput
                 options={contact.select.options}
                 placeholder={contact.select.placeholder}
-                onChange={handleContactValue}
+                name={contact.select.name}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
-                register={register()}
+                control={control}
               />
-              {contactValue === 'telegram' && (
+              {getValues('contact')?.value === 'telegram' && (
                 <TextInput
                   name="telegram"
                   label={contact.telegramLabel}
@@ -128,12 +158,8 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
               name={cv.textInput.name}
               label={cv.textInput.label}
               cv
-              error={errors.cvLink?.type === 'required'}
-              register={register({
-                required:
-                  getValues('cvFile')?.length === 0 &&
-                  getValues('cvLink') === '',
-              })}
+              error={errors.cvLink?.message === 'error'}
+              register={register()}
               errorMsg={cv.textInput.error}
             />
           </S.FileWrapper>
@@ -144,10 +170,8 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
             value={agreement.dataText}
             checked={checkedEls[agreement.name]}
             onChange={handleChange}
-            register={register({
-              required: true,
-            })}
-            error={errors?.personal?.type === 'required'}
+            register={register()}
+            error={errors?.personal?.message === 'error'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}

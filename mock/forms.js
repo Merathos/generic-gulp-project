@@ -19,6 +19,8 @@ export default {
           name: `phone`,
           label: `Телефон *`,
           error: 'Поле является необходимым для заполнения',
+          warning: 'Введите номер телефона',
+          mask: '+7 (999) 999 99 99',
         },
         {
           name: 'email',
@@ -28,6 +30,7 @@ export default {
         },
       ],
       select: {
+        name: 'contact',
         placeholder: `Предпочтительный способ связи`,
         options: [
           { value: 'phone', label: 'Телефон' },
@@ -128,13 +131,18 @@ export default {
           name: `birthDate`,
           label: `Дата рождения *`,
           error: 'Поле является необходимым для заполнения',
+          warning: 'Введите полную дату рождения',
           date: true,
+          mask: '99.99.9999',
+          maskPlaceholder: 'дд.мм.гггг',
         },
         {
           name: `phone`,
           phone: true,
           label: `Телефон *`,
           error: 'Поле является необходимым для заполнения',
+          warning: 'Введите номер телефона',
+          mask: '+7 (999) 999 99 99',
         },
         {
           name: `email`,

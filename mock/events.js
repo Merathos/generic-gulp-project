@@ -172,7 +172,7 @@ export default {
           name: 'email',
           label: 'Email *',
           error: 'Поле является необходимым для заполнения',
-          warning: 'Введите настоящий email',
+          warning: 'Введите действительный email',
         },
       ],
     },

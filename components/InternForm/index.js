@@ -13,6 +13,8 @@ import { useForm } from 'react-hook-form';
 import form from 'mock/forms';
 import { SET_FORM_INTERNSHIP } from 'graphql/forms';
 import { GET_EVENT_CATEGORIES } from 'graphql/events';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import * as S from './styles';
 
@@ -28,8 +30,6 @@ const InternForm = ({ closeModal, showSuccess }) => {
     buttonText,
   } = form.internForm;
   const [checkedEls, setCheckedEls] = useState({});
-  const [contactValue, setContactValue] = useState('');
-  const [monthValue, setMonthValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [selectedEventCategories, setSelectedEventCategories] = useState([]);
@@ -44,7 +44,59 @@ const InternForm = ({ closeModal, showSuccess }) => {
     },
   });
 
-  const { handleSubmit, register, errors, getValues } = useForm();
+  const schema = yup.object().shape({
+    name: yup.string().required('error'),
+    lastname: yup.string().required('error'),
+    birthDate: yup
+      .string()
+      .test('empty', 'error', val => {
+        return val !== '';
+      })
+      .test('len', 'warning', val => {
+        const val_length_without_dashes = val.replace(/_|\./g, '').length;
+        return val_length_without_dashes === 8;
+      }),
+    email: yup
+      .string()
+      .email('warning')
+      .required('error'),
+    phone: yup
+      .string()
+      .test('empty', 'error', val => {
+        return val !== '';
+      })
+      .test('len', 'warning', val => {
+        const val_length_without_dashes = val.replace(/-|_|\s|\(|\)/g, '')
+          .length;
+        return val_length_without_dashes === 12;
+      })
+      .required('error'),
+    personal: yup
+      .boolean()
+      .required()
+      .oneOf([true], 'error'),
+    newsletter: yup.boolean(),
+    telegram: yup.string(),
+    cvLink: yup.string().test('file', 'error', val => {
+      return val.length !== 0 || getValues('cvFile').length !== 0;
+    }),
+    university: yup.string().required('error'),
+    faculty: yup.string().required('error'),
+    course: yup.string().required('error'),
+    techWish: yup.string().required('error'),
+    techExp: yup.string().required('error'),
+    month: yup
+      .mixed()
+      .test('val', 'error', val => {
+        return val.value;
+      })
+      .required('error'),
+    time: yup.string().required('error'),
+  });
+  const { handleSubmit, register, errors, getValues, control } = useForm({
+    defaultValues: { phone: '', birthDate: '', contact: '', month: '' },
+    resolver: yupResolver(schema),
+  });
   const handleChange = event => {
     setCheckedEls({
       ...checkedEls,
@@ -65,15 +117,6 @@ const InternForm = ({ closeModal, showSuccess }) => {
     });
   };
 
-  const handleSelectValue = (event, select) => {
-    if (select.name === 'contact') {
-      setContactValue(event.value);
-    }
-    if (select.name === 'month') {
-      setMonthValue(event.value);
-    }
-  };
-
   const onSubmit = values => {
     if (captchaPassed) {
       sendVacancy({
@@ -84,7 +127,7 @@ const InternForm = ({ closeModal, showSuccess }) => {
           phone: values.phone,
           is_consent_pd: values.personal,
           is_consent_newsletter: values.newsletter,
-          communication_method: contactValue,
+          communication_method: values.contact?.value,
           tg_login: values.telegram,
           dob: values.birthDate,
           university: values.university,
@@ -92,11 +135,11 @@ const InternForm = ({ closeModal, showSuccess }) => {
           course: values.course,
           technologies_like: values.techWish,
           technologies_use: values.techExp,
-          start_month: monthValue,
+          start_month: values.month.value,
           hours: values.time,
-          resume_file: values.cvFile[0],
+          resume_file: values.cvFile[0]?.name,
+          resume_link: values.cvLink,
           categories: selectedEventCategories,
-          // ?: values.cvLink,
         },
       });
     }
@@ -118,19 +161,17 @@ const InternForm = ({ closeModal, showSuccess }) => {
                 key={i}
                 name={item.name}
                 label={item.label}
-                register={register({
-                  required: true,
-                  pattern:
-                    item.name === 'email'
-                      ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                      : '',
-                })}
-                error={errors[item.name]?.type === 'required'}
-                warning={errors[item.name]?.type === 'pattern'}
+                register={register()}
+                error={errors[item.name]?.message === 'error'}
+                warning={errors[item.name]?.message === 'warning'}
                 errorMsg={
-                  (errors[item.name]?.type === 'required' && item.error) ||
-                  (errors[item.name]?.type === 'pattern' && item.warning)
+                  (errors[item.name]?.message === 'error' && item.error) ||
+                  (errors[item.name]?.message === 'warning' && item.warning)
                 }
+                mask={item.mask}
+                maskChar={item.maskChar}
+                maskPlaceholder={item.maskPlaceholder}
+                control={control}
               />
             ))}
             <S.SelectContainer>
@@ -138,11 +179,11 @@ const InternForm = ({ closeModal, showSuccess }) => {
                 options={contact.select.options}
                 placeholder={contact.select.placeholder}
                 name={contact.select.name}
-                onChange={handleSelectValue}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
+                control={control}
               />
-              {contactValue === 'telegram' && (
+              {getValues('contact')?.value === 'telegram' && (
                 <TextInput
                   name="telegram"
                   label={contact.telegramLabel}
@@ -160,11 +201,9 @@ const InternForm = ({ closeModal, showSuccess }) => {
                 key={i}
                 name={item.name}
                 label={item.label}
-                register={register({
-                  required: true,
-                })}
-                error={errors[item.name]?.type === 'required'}
-                errorMsg={errors[item.name]?.type === 'required' && item.error}
+                register={register()}
+                error={errors[item.name]?.message === 'error'}
+                errorMsg={errors[item.name]?.message === 'error' && item.error}
               />
             ))}
           </S.InputsContainer>
@@ -197,10 +236,8 @@ const InternForm = ({ closeModal, showSuccess }) => {
                 label={item.label}
                 placeholder={item.placeholder}
                 name={item.name}
-                register={register({
-                  required: true,
-                })}
-                error={errors[item.name]?.type === 'required'}
+                register={register()}
+                error={errors[item.name]?.message === 'error'}
               />
             ))}
             <S.MonthContainer>
@@ -209,9 +246,10 @@ const InternForm = ({ closeModal, showSuccess }) => {
                 options={terms.startingMonth.options}
                 placeholder={terms.startingMonth.placeholder}
                 name={terms.startingMonth.name}
-                onChange={handleSelectValue}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
+                control={control}
+                error={errors.month?.message === 'error'}
               />
             </S.MonthContainer>
             <S.TimeContainer>
@@ -224,10 +262,8 @@ const InternForm = ({ closeModal, showSuccess }) => {
                     id={item.id}
                     value={item.value}
                     name={item.name}
-                    register={register({
-                      required: true,
-                    })}
-                    error={errors[item.name]?.type === 'required'}
+                    register={register()}
+                    error={errors[item.name]?.message === 'error'}
                   />
                 ))}
               </S.RadioContainer>
@@ -248,12 +284,8 @@ const InternForm = ({ closeModal, showSuccess }) => {
               name={cv.textInput.name}
               label={cv.textInput.label}
               cv
-              error={errors.cvLink?.type === 'required'}
-              register={register({
-                required:
-                  getValues('cvFile')?.length === 0 &&
-                  getValues('cvLink') === '',
-              })}
+              error={errors.cvLink?.message === 'error'}
+              register={register()}
               errorMsg={cv.textInput.error}
             />
           </S.FileWrapper>
@@ -264,10 +296,8 @@ const InternForm = ({ closeModal, showSuccess }) => {
             value={agreement.dataText}
             checked={checkedEls[agreement.name]}
             onChange={handleChange}
-            register={register({
-              required: true,
-            })}
-            error={errors?.personal?.type === 'required'}
+            register={register()}
+            error={errors?.personal?.message === 'error'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}

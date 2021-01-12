@@ -3,6 +3,8 @@ import { CloseBtn, TextInput, Captcha } from 'elements';
 import { SET_EVENTS_SUBSCRIPTION } from 'graphql/events';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as S from './styles';
 
 const SubForm = ({
@@ -22,7 +24,22 @@ const SubForm = ({
       }
     },
   });
-  const { handleSubmit, register, errors } = useForm();
+  const schema = yup.object().shape({
+    name: yup.string().required('error'),
+    lastname: yup.string().required('error'),
+    email: yup
+      .string()
+      .email('warning')
+      .required('error'),
+    personal: yup
+      .boolean()
+      .required()
+      .oneOf([true], 'error'),
+    newsletter: yup.boolean(),
+  });
+  const { handleSubmit, register, errors } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const handleChange = event => {
     setCheckedEls({
@@ -72,19 +89,16 @@ const SubForm = ({
                 key={i}
                 name={item.name}
                 label={item.label}
-                register={register({
-                  required: true,
-                  pattern:
-                    item.name === 'email'
-                      ? /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                      : '',
-                })}
-                error={errors[item.name]?.type === 'required'}
-                warning={errors[item.name]?.type === 'pattern'}
+                register={register()}
+                error={errors[item.name]?.message === 'error'}
+                warning={errors[item.name]?.message === 'warning'}
                 errorMsg={
-                  (errors[item.name]?.type === 'required' && item.error) ||
-                  (errors[item.name]?.type === 'pattern' && item.warning)
+                  (errors[item.name]?.message === 'error' && item.error) ||
+                  (errors[item.name]?.message === 'warning' && item.warning)
                 }
+                mask={item.mask}
+                maskChar={item.maskChar}
+                maskPlaceholder={item.maskPlaceholder}
               />
             ))}
           </S.InputsContainer>
@@ -111,10 +125,8 @@ const SubForm = ({
             value={agreement.dataText}
             checked={checkedEls[agreement.name]}
             onChange={handleChange}
-            register={register({
-              required: true,
-            })}
-            error={errors?.personal?.type === 'required'}
+            register={register()}
+            error={errors?.personal?.message === 'error'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
               {agreement.dataLink}

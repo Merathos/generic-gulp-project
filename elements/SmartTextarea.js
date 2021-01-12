@@ -24,6 +24,14 @@ const Label = styled.label`
       max-width: 290px;
     }
   }
+
+  textarea {
+    ${props =>
+      props.error &&
+      css`
+        border-color: #fb5235;
+      `}
+  }
 `;
 
 const StyledTextarea = styled(TextareaAutosize)`
@@ -46,12 +54,6 @@ const StyledTextarea = styled(TextareaAutosize)`
     border-bottom: 1px solid #5faf52;
   }
 
-  ${props =>
-    props.error &&
-    css`
-      border-color: #fb5235;
-    `}
-
   &::placeholder {
     color: rgba(32, 31, 42, 0.5);
   }
@@ -73,7 +75,7 @@ const StyledTextarea = styled(TextareaAutosize)`
 
 const SmartTextarea = ({ label, placeholder, name, register, error }) => {
   return (
-    <Label>
+    <Label error={error}>
       <span>{label}</span>
       <StyledTextarea
         rows={2}
@@ -81,7 +83,6 @@ const SmartTextarea = ({ label, placeholder, name, register, error }) => {
         placeholder={placeholder}
         name={name}
         ref={register}
-        error={error}
       />
     </Label>
   );

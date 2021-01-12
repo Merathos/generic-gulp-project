@@ -1,4 +1,6 @@
 import Select, { components } from 'react-select';
+import { Controller } from 'react-hook-form';
+import React from 'react';
 import * as S from './styles';
 
 const { ValueContainer, Placeholder } = components;
@@ -23,10 +25,14 @@ const SelectInput = ({
   onChange,
   setOpened,
   setClosed,
+  error,
+  control,
 }) => {
   return (
-    <S.Wrapper>
-      <Select
+    <S.Wrapper error={error}>
+      <Controller
+        as={Select}
+        control={control}
         options={options}
         placeholder={placeholder}
         name={name}
