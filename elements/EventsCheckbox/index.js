@@ -10,7 +10,6 @@ const EventsCheckbox = ({
   register,
   error,
 }) => {
-  console.log(error);
   return (
     <Wrapper error={error} className={className}>
       <input

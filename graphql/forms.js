@@ -11,6 +11,7 @@ export const SET_FORM_VACANCY = gql`
     $communication_method: String
     $tg_login: String
     $resume_file: Upload
+    $resume_link: String
     $vacancy_id: Int
   ) {
     Vacancy(
@@ -23,6 +24,7 @@ export const SET_FORM_VACANCY = gql`
       communication_method: $communication_method
       tg_login: $tg_login
       resume_file: $resume_file
+      resume_link: $resume_link
       vacancy_id: $vacancy_id
     )
   }
@@ -65,6 +67,7 @@ export const SET_FORM_INTERNSHIP = gql`
     $start_month: String
     $hours: String
     $resume_file: Upload
+    $resume_link: String
     $categories: [Int]
   ) {
     Internship(
@@ -85,6 +88,7 @@ export const SET_FORM_INTERNSHIP = gql`
       start_month: $start_month
       hours: $hours
       resume_file: $resume_file
+      resume_link: $resume_link
       categories: $categories
     )
   }

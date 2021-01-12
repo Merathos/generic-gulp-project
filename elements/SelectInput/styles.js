@@ -21,7 +21,8 @@ export const Wrapper = styled.div`
   .react-select__control {
     border: none;
     box-shadow: none;
-    border-bottom: 1px solid rgba(32, 31, 42, 0.5);
+    border-bottom: ${props =>
+      props.error ? '1px solid #fb5235' : '1px solid rgba(32, 31, 42, 0.5)'};
     border-radius: 0;
     padding-bottom: 8px;
     cursor: pointer;
