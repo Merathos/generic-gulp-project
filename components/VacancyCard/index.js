@@ -11,18 +11,18 @@ import {
 } from './styles';
 
 const VacancyCard = ({ data }) => {
-  const { type, name, description, href } = data;
+  const { name, descr, slug } = data;
 
   return (
-    <Link href={`/vacancies/${href}`} passhref>
+    <Link href={`/vacancies/${slug}`} passhref>
       <a>
         <Section>
           <Badge>
             <IconWrapper name="graduation-cap" />
-            <Inscription>{type}</Inscription>
+            <Inscription>Стажировка</Inscription>
           </Badge>
           <H3>{name}</H3>
-          <StyledText>{description}</StyledText>
+          <StyledText>{descr}</StyledText>
           <Arrow>
             <ArrowRight />
           </Arrow>

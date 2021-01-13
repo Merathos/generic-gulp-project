@@ -3,20 +3,19 @@ import { Btn } from 'elements';
 import { VacancyCard } from 'components';
 import * as S from './styles';
 
-const InternVacancies = ({ mock }) => {
-  const { title, button, href, vacanciesList } = mock;
+const InternVacancies = ({ mock, data }) => {
+  const { title, button, href } = mock;
+
   return (
     <>
       <S.Title>{title}</S.Title>
-      {vacanciesList && (
-        <S.List>
-          {vacanciesList.map((item, index) => (
-            <S.ListItem key={index}>
-              <VacancyCard data={item} />
-            </S.ListItem>
-          ))}
-        </S.List>
-      )}
+      <S.List>
+        {data.map((item, index) => (
+          <S.ListItem key={index}>
+            <VacancyCard data={item} />
+          </S.ListItem>
+        ))}
+      </S.List>
       <Link href={href} passHref>
         <a>
           <Btn>{button}</Btn>
