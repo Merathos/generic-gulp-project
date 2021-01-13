@@ -120,6 +120,8 @@ export const GET_BLOG_CONTENT = gql`
             retina
           }
         }
+        id
+        type
         slug
         title
         created_at
