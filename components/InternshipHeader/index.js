@@ -1,9 +1,9 @@
-import * as S from './styles';
 import Router from 'next/router';
 import { useState } from 'react';
-import mock from '../../mock';
+import mock from 'mock';
+import { FormModal, SuccessModal } from 'containers';
+import * as S from './styles';
 import { InternForm } from '../index';
-import { FormModal } from '../../containers';
 
 const InternshipHeader = ({
   title,
@@ -14,6 +14,7 @@ const InternshipHeader = ({
   size,
 }) => {
   const [isModalOpened, setModalOpen] = useState(false);
+  const [successModalIsShown, setSuccessIsShown] = useState(false);
 
   const handleVacanciesClick = () => {
     Router.push({
@@ -29,12 +30,16 @@ const InternshipHeader = ({
     setModalOpen(false);
   };
 
+  function toggleSuccess() {
+    setSuccessIsShown(prev => !prev);
+  }
+
   return (
     <S.Grid>
       <S.Wrapper withPicture={!!picture}>
         <S.Title>{title}</S.Title>
         {picture && (
-          <S.Block afterTitle={true}>
+          <S.Block afterTitle>
             <S.Picture
               src={picture}
               srcSet={`${mobPicture} 420w, ${picture}`}
@@ -64,15 +69,18 @@ const InternshipHeader = ({
           />
         </S.Block>
       )}
-      {isModalOpened && (
-        <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
-          <InternForm
-            data={mock.internForm}
-            closeModal={closeModal}
-            showSuccess={() => {}}
-          />
-        </FormModal>
-      )}
+      <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
+        <InternForm
+          data={mock.internForm}
+          closeModal={closeModal}
+          showSuccess={toggleSuccess}
+        />
+      </FormModal>
+      <SuccessModal
+        data={mock.internForm.confirmation}
+        successIsShown={successModalIsShown}
+        closeSuccess={toggleSuccess}
+      />
     </S.Grid>
   );
 };

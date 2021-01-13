@@ -8,7 +8,6 @@ import * as S from './styles';
 const EventStream = ({
   data: { video },
   code,
-  domain,
   title,
   isOpenBroadCast,
   startsAt,
@@ -131,7 +130,7 @@ const EventStream = ({
               title="Youtube chat"
               allowFullScreen=""
               height="400"
-              src={`https://www.youtube.com/live_chat?v=${videoCode}&embed_domain=${domain}`}
+              src={`https://www.youtube.com/live_chat?v=${videoCode}&embed_domain=${process.env.NEXT_PUBLIC_EMBED_DOMAIN}`}
               width="1100"
             />
           </S.Chat>

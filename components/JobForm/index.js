@@ -23,7 +23,7 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [sendVacancy] = useMutation(SET_FORM_VACANCY, {
     onCompleted(data) {
-      if (data.Event) {
+      if (data.Vacancy) {
         closeModal();
         showSuccess();
       }

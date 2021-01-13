@@ -7,9 +7,9 @@ import { Search } from 'forms';
 import { getNewTags } from 'helpers';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
+import formMock from 'mock';
 import * as S from './styles';
-import { FormModal } from '../index';
-import formMock from '../../mock';
+import { FormModal, SuccessModal } from '../index';
 
 const VacanciesList = ({ data: mock, back }) => {
   const router = useRouter();
@@ -24,6 +24,7 @@ const VacanciesList = ({ data: mock, back }) => {
   const filterArray = useSelector(state => state.filter);
 
   const [isModalOpened, setModalOpen] = useState(false);
+  const [successModalIsShown, setSuccessIsShown] = useState(false);
 
   const handleSendRequestClick = () => {
     setModalOpen(true);
@@ -32,6 +33,10 @@ const VacanciesList = ({ data: mock, back }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  function toggleSuccess() {
+    setSuccessIsShown(prev => !prev);
+  }
 
   function useWindowWidth() {
     const [windowWidth, setWindowWidth] = useState(undefined);
@@ -369,15 +374,18 @@ const VacanciesList = ({ data: mock, back }) => {
           </S.CardsWrapper>
         </S.Grid>
       </S.Container>
-      {isModalOpened && (
-        <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
-          <JobForm
-            data={formMock.jobFormV2}
-            closeModal={closeModal}
-            showSuccess={() => {}}
-          />
-        </FormModal>
-      )}
+      <FormModal modalIsOpen={isModalOpened} closeModal={closeModal}>
+        <JobForm
+          data={formMock.jobFormV2}
+          closeModal={closeModal}
+          showSuccess={toggleSuccess}
+        />
+      </FormModal>
+      <SuccessModal
+        data={formMock.jobFormV2.confirmation}
+        successIsShown={successModalIsShown}
+        closeSuccess={toggleSuccess}
+      />
     </S.Main>
   );
 };
