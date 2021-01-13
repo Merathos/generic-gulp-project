@@ -37,7 +37,7 @@ const InternForm = ({ closeModal, showSuccess }) => {
   const { data: eventCategoriesData } = useQuery(GET_EVENT_CATEGORIES);
   const [sendVacancy] = useMutation(SET_FORM_INTERNSHIP, {
     onCompleted(data) {
-      if (data.Event) {
+      if (data.Internship) {
         closeModal();
         showSuccess();
       }
