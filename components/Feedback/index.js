@@ -95,12 +95,12 @@ const Feedback = props => {
     <Section>
       <picture>
         <source
-          srcSet={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
+          srcSet={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`}
           type="image/png"
           media="(min-width: 420px)"
         />
         <Img
-          src={`https://api.develop.dins.d.nimax.ru/${imageUrl}`}
+          src={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`}
           alt={title}
         />
       </picture>

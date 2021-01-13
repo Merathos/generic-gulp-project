@@ -13,7 +13,7 @@ export const Block = styled.div`
       flex-direction: row-reverse;
     }
 
-    img {
+    div {
       margin-right: 0;
       margin-left: 14px;
     }
@@ -32,8 +32,7 @@ export const Card = styled.div`
   }
 `;
 
-export const Img = styled.img`
-  width: 49px;
+export const Img = styled.div`
   margin-right: 14px;
   width: 50px;
   height: 50px;

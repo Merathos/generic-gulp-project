@@ -23,7 +23,7 @@ const Media = ({
     >
       {type === 'img' ? (
         <img
-          src={`https://api.develop.dins.d.nimax.ru/${file.url}`}
+          src={`${process.env.NEXT_PUBLIC_API_STORAGE}${file.url}`}
           alt={caption}
           width="200"
           height="100"

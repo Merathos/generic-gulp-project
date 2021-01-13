@@ -25,6 +25,19 @@ export const Img = styled.div`
   background-image: ${props => `url(${props.background})`};
   background-position: center;
   background-size: cover;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    left: -25px;
+    top: -10px;
+    background: #f7f7fa;
+    transform: rotate(-30deg);
+    z-index: -1;
+  }
 `;
 
 export const Text = styled.p`

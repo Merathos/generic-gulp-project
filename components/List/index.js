@@ -7,7 +7,7 @@ import {
   H3,
   BlueTitle,
   Element,
-  Wrapper
+  Wrapper,
 } from './styles';
 
 const List = props => {
@@ -29,7 +29,10 @@ const List = props => {
             <Element key={i}>
               {el.imageUrl && (
                 <Wrapper>
-                  <img src={`https://api.develop.dins.d.nimax.ru/${el.imageUrl}`} alt={el.title} />
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_API_STORAGE}${el.imageUrl}`}
+                    alt={el.title}
+                  />
                 </Wrapper>
               )}
               <H3 dangerouslySetInnerHTML={{ __html: el.title }} />
