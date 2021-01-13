@@ -18,7 +18,7 @@ import {
   GroupContainer,
 } from './styles';
 
-const Internship = ({ data }) => {
+const Internship = ({ data, vacanciesData }) => {
   return (
     <main>
       <GreyWrapper withPicture={!!data.intro.picture}>
@@ -57,11 +57,13 @@ const Internship = ({ data }) => {
         </Container>
       </GreyContainer>
 
-      <VacancySection>
-        <Container>
-          <InternVacancies mock={data.vacancies} />
-        </Container>
-      </VacancySection>
+      {vacanciesData?.length > 0 && (
+        <VacancySection>
+          <Container>
+            <InternVacancies mock={data.vacancies} data={vacanciesData} />
+          </Container>
+        </VacancySection>
+      )}
 
       <ApplicationSection data={data.apply} />
 

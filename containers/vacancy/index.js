@@ -68,7 +68,7 @@ const Vacancy = ({ data, back }) => {
       </ConditionsSection>
       <SliderSection>
         <SliderContainer>
-          <SliderVacancy data={data.steps} />
+          <SliderVacancy data={data.steps} isVacancyPage />
         </SliderContainer>
       </SliderSection>
 

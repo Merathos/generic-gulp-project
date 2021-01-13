@@ -6,9 +6,13 @@ import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 import * as S from './styles';
 
-const SliderVacancy = ({ data }) => {
-  const english = useSelector(state => state.english);
-  const language = useSelector(state => state.language);
+const SliderVacancy = ({ data, isVacancyPage }) => {
+  let english;
+  let language;
+  if (isVacancyPage) {
+    english = useSelector(state => state.english);
+    language = useSelector(state => state.language);
+  }
 
   const { list } = data;
   const ref = useRef(null);
