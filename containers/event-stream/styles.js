@@ -19,7 +19,9 @@ export const Container = styled.div`
 export const StreamWrapper = styled.div`
   max-width: 1200px;
   padding: 0 30px;
-  margin: 0 auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 768px) {
     padding: 0;
@@ -48,7 +50,6 @@ export const TimeWatch = styled.img`
 `;
 
 export const Msg = styled.div`
-  margin-bottom: 100px;
   font-size: ${props =>
     props.isStartingIn24Hrs && !props.status === 'streaming' ? `26px` : `20px`};
   color: ${props => (props.status === 'streaming' ? `#FB5235` : ``)};

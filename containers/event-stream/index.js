@@ -15,6 +15,7 @@ const EventStream = ({
   status,
   eventStarted,
   setEventStarted,
+  hash,
 }) => {
   const [isStartingIn24Hrs, setIsStartingIn24Hrs] = useState(false);
   const [videoCode, setVideoCode] = useState('');
@@ -116,7 +117,7 @@ const EventStream = ({
         <S.Title>{title}</S.Title>
         {message()}
       </S.Container>
-      {videoCode && (
+      {videoCode && (isOpenBroadCast || hash) && (
         <S.StreamWrapper>
           <Media
             code={videoCode}
