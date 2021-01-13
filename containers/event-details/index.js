@@ -61,7 +61,6 @@ const EventDetails = ({
           status={eventDataPolling?.status}
           regForm={regForm}
           data={data.stream}
-          domain="dins.vercel.app"
           hash={hash}
         />
       )}
