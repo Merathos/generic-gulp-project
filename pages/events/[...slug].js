@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_EVENT, GET_EVENT_POLLING } from 'graphql/events';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import dayjs from 'dayjs';
 
 import mock from 'mock/index';
 
@@ -15,7 +16,11 @@ const EventPage = () => {
   const [isActive, setIsActive] = useState(true);
 
   const { data: eventData } = useQuery(GET_EVENT, {
-    variables: { slug: query.slug[0], is_preview: query.preview === 'true' },
+    variables: {
+      slug: query.slug[0],
+      is_preview: query.preview === 'true',
+      hash: query.slug[1],
+    },
   });
 
   const { data: eventDataPolling } = useQuery(GET_EVENT_POLLING, {
@@ -35,10 +40,10 @@ const EventPage = () => {
       }
       return;
     }
-    if (
-      eventPolling?.status?.slug === 'streaming' ||
-      Date.parse(event?.ends_at) - Date.parse(new Date()) > 0
-    ) {
+    const now = dayjs();
+    const endsAt = dayjs(event?.ends_at);
+
+    if (now.isBefore(endsAt) || eventPolling?.status?.slug === 'streaming') {
       setIsActive(true);
     } else {
       setIsActive(false);
@@ -66,6 +71,7 @@ const EventPage = () => {
           eventStarted={eventStarted}
           setEventStarted={setEventStarted}
           isActive={isActive}
+          hash={query.slug[1]}
         />
       </Layout>
     </>
@@ -77,7 +83,11 @@ export async function getServerSideProps({ query }) {
 
   await apolloClient.query({
     query: GET_EVENT,
-    variables: { slug: query.slug[0], is_preview: query.preview === 'true' },
+    variables: {
+      slug: query.slug[0],
+      is_preview: query.preview === 'true',
+      hash: query.slug[1],
+    },
   });
   await apolloClient.query({
     query: GET_EVENT_POLLING,

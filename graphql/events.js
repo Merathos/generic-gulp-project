@@ -87,8 +87,8 @@ export const SET_EVENTS_SUBSCRIPTION = gql`
 `;
 
 export const GET_EVENT = gql`
-  query getEvent($slug: String, $is_preview: Boolean) {
-    events(slug: $slug, is_preview: $is_preview) {
+  query getEvent($slug: String, $is_preview: Boolean, $hash: String) {
+    events(slug: $slug, is_preview: $is_preview, hash: $hash) {
       id
       name
       slug

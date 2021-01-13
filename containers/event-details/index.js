@@ -10,6 +10,7 @@ const EventDetails = ({
   eventStarted,
   setEventStarted,
   isActive,
+  hash,
 }) => {
   const regForm = useRef(null);
   const firstVideoRef = useRef(null);
@@ -61,6 +62,7 @@ const EventDetails = ({
           regForm={regForm}
           data={data.stream}
           domain="dins.vercel.app"
+          hash={hash}
         />
       )}
       {eventData?.speakers?.length > 0 && (
