@@ -32,7 +32,7 @@ const SidebarSlider = props => {
         {data.map((el, i) => (
           <Element key={i}>
             <Img
-              src={`https://api.develop.dins.d.nimax.ru/${el.imageUrl}`}
+              src={`${process.env.NEXT_PUBLIC_API_STORAGE}${el.imageUrl}`}
               alt={el.title}
             />
             <div>

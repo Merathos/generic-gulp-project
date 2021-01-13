@@ -60,7 +60,7 @@ const AboutSlider = ({
             <Img
               src={
                 fromEditor
-                  ? `https://api.develop.dins.d.nimax.ru/${el.imageUrl}`
+                  ? `${process.env.NEXT_PUBLIC_API_STORAGE}${el.imageUrl}`
                   : el.src
               }
               alt={el.title || el.alt}

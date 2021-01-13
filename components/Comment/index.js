@@ -3,12 +3,12 @@ import { Block, Container, Img, Card, Text } from './styles';
 
 const Comment = props => {
   const {
-    data: { imageUrl, title, describe }
+    data: { imageUrl, title, describe },
   } = props;
   return (
     <Block>
       <Container>
-        <Img background={`https://api.develop.dins.d.nimax.ru/${imageUrl}`} />
+        <Img background={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`} />
         <TitleH5>{title}</TitleH5>
       </Container>
       <Card>
