@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 import { TitleH1, Btn, Text } from 'elements';
 
+export const Container = styled.div`
+  position: relative;
+`;
+
 export const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
@@ -29,6 +33,10 @@ export const Section = styled.section`
       min-width: 210px;
     }
   }
+`;
+
+export const Content = styled.div`
+  z-index: 1;
 `;
 
 export const TextBlock = styled.div`
@@ -137,8 +145,11 @@ export const StyledText = styled(Text)`
 `;
 
 export const Picture = styled.img`
-  margin-left: 50px;
-  @media screen and (max-width: 420px) {
-    margin-left: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 40vw;
+
+  @media screen and (max-width: 768px) {
   }
 `;
