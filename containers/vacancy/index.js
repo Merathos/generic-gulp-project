@@ -7,6 +7,7 @@ import {
   Conditions,
   SliderVacancy,
   JobForm,
+  Recruiters,
 } from 'components';
 import { FormModal, SuccessModal } from 'containers';
 import { useState } from 'react';
@@ -80,6 +81,12 @@ const Vacancy = ({ data, back }) => {
       />
 
       <OfficesMap data={data.map} english={back.is_english_speaking_team} />
+
+      {back.recruiters.length > 0 && (
+        <Container>
+          <Recruiters data={data.recruiters} back={back.recruiters} />
+        </Container>
+      )}
 
       {back.related && (
         <VacancySection>

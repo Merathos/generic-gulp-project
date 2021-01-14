@@ -1,11 +1,23 @@
+import Mail from 'public//icons/mail.svg';
+import Telegram from 'public/icons/telegram.svg';
 import * as S from './styles';
 
 const Recruiters = ({ data, back }) => {
   const { text, title } = data;
+
+  const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
+  let updatedText;
+  if (text) {
+    updatedText = text.replace(
+      emailRegExp,
+      email => `<a href="mailto:${email}">${email}</a>`
+    );
+  }
+
   return (
     <S.Section>
       <S.H2>{title}</S.H2>
-      <S.Text>{text}</S.Text>
+      {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
       <S.List>
         {back.map((el, i) => (
           <S.Element key={i}>
@@ -18,8 +30,20 @@ const Recruiters = ({ data, back }) => {
               />
             </S.Clip>
             <S.H3>{el.name}</S.H3>
-            <S.Subtitle>{el.email}</S.Subtitle>
-            <S.Subtitle>{el.telegram}</S.Subtitle>
+            <S.Subtitle>
+              <Mail />
+              <a href={`mailto:${el.email}`}>{el.email}</a>
+            </S.Subtitle>
+            <S.Subtitle>
+              <Telegram />
+              <a
+                href={`https://t.me/${el.telegram.replace('@', '')}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {el.telegram}
+              </a>
+            </S.Subtitle>
           </S.Element>
         ))}
       </S.List>

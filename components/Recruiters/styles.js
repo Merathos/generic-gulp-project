@@ -26,8 +26,23 @@ export const Subtitle = styled.p`
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 120%;
-  opacity: 0.5;
 
+  transition: all 0.3s ease;
+
+  a {
+    color: #8f8f94;
+    display: inline;
+
+    &:hover,
+    &:active {
+      color: #339722;
+      cursor: pointer;
+    }
+  }
+
+  svg {
+    margin-right: 10px;
+  }
 `;
 
 export const Picture = styled.img`
@@ -55,6 +70,17 @@ export const Text = styled.p`
   font-size: 20px;
   line-height: 158%;
 
+  a {
+    display: inline;
+    color: #53b443;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 158%;
@@ -72,5 +98,4 @@ export const List = styled.ul`
   }
 `;
 
-export const Element = styled.li`
-`;
+export const Element = styled.li``;
