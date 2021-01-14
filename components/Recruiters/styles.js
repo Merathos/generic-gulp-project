@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import { TitleH2, TitleH3 } from 'elements';
 
-export const Section = styled.section`
-  margin-bottom: 100px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
-  }
-`;
+export const Section = styled.section``;
 
 export const H2 = styled(TitleH2)`
   margin-bottom: 20px;
@@ -102,8 +96,16 @@ export const Element = styled.li`
   margin-right: 80px;
   margin-bottom: 60px;
 
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
   @media screen and (max-width: 420px) {
     width: 100%;
     margin-right: 0;
+
+    &:nth-child(n + 2):last-child {
+      margin-bottom: 0px;
+    }
   }
 `;
