@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { Layout, Story, Article } from 'containers';
 import { GET_BLOG_CONTENT } from 'graphql/query';
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 import mock from 'mock/index';
 
@@ -17,9 +18,13 @@ const storyPage = () => {
       is_preview: query.preview === 'true',
     },
   });
-  const blog = blogData?.blogs[0];
+  const blog = blogData?.blogs[0] || {};
 
-  if (!blog) return null;
+  useEffect(() => {
+    if (blogData && Object.keys(blog).length === 0) router.push('/404');
+  }, [blogData, blog]);
+
+  if (Object.keys(blog).length === 0) return null;
 
   return (
     <>
@@ -28,7 +33,7 @@ const storyPage = () => {
           <meta name="robots" content="noindex, nofollow" />
         )}
       </Head>
-      {blog && (
+      {Object.keys(blog).length > 0 && (
         <Layout backButton greyFooter={blog.type === 'history'}>
           {blog.type === 'history' ? (
             <Story back={blog} />

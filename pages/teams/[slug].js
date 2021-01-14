@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Project } from 'containers';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo';
-import { GET_TEAM_CONTENT, GET_TEAM_CATEGORIES } from 'graphql/query';
+import { GET_TEAM_CONTENT } from 'graphql/query';
 import Head from 'next/head';
 
 import mock from 'mock/index';
@@ -12,28 +12,19 @@ const ProjectPage = () => {
   const router = useRouter();
   const { query } = router;
 
-  const categoriesData = useQuery(GET_TEAM_CATEGORIES, {
-    variables: {
-      slug: query.slug,
-    },
-  });
-  const categories = useMemo(
-    () => (!categoriesData.loading ? categoriesData.data.teams[0] : null),
-    [categoriesData.data]
-  );
-
-  const contentData = useQuery(GET_TEAM_CONTENT, {
+  const { data: contentData } = useQuery(GET_TEAM_CONTENT, {
     variables: {
       slug: query.slug,
       is_preview: query.preview === 'true',
     },
   });
-  const content = useMemo(
-    () => (!contentData.loading ? contentData.data.teams[0] : null),
-    [contentData.data]
-  );
+  const team = contentData?.teams[0] || {};
 
-  if (!categories || !content) return null;
+  useEffect(() => {
+    if (contentData && Object.keys(team).length === 0) router.push('/404');
+  }, [contentData, team]);
+
+  if (Object.keys(team).length === 0) return null;
 
   return (
     <>
@@ -43,7 +34,7 @@ const ProjectPage = () => {
         )}
       </Head>
       <Layout backButton smallButton greyFooter plainHeader isVisible={false}>
-        <Project data={mock.project} teams={content} />
+        <Project data={mock.project} teams={team} />
       </Layout>
     </>
   );
@@ -52,10 +43,6 @@ const ProjectPage = () => {
 export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
 
-  await apolloClient.query({
-    query: GET_TEAM_CATEGORIES,
-    variables: { slug: query.slug },
-  });
   await apolloClient.query({
     query: GET_TEAM_CONTENT,
     variables: { slug: query.slug, is_preview: query.preview === 'true' },
