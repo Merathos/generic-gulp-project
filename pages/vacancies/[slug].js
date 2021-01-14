@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useDispatch } from 'react-redux';
@@ -14,22 +14,23 @@ const vacancyPage = () => {
   const { query } = router;
   const dispatch = useDispatch();
 
-  const categoriesData = useQuery(GET_VACANCY_CONTENT, {
+  const { data: vacanciesData } = useQuery(GET_VACANCY_CONTENT, {
     variables: {
       slug: query.slug,
       is_preview: query.preview === 'true',
     },
   });
-  const categories = useMemo(
-    () => (!categoriesData.loading ? categoriesData.data.vacancies[0] : null),
-    [categoriesData.data]
-  );
+  const vacancy = vacanciesData?.vacancies[0] || {};
 
-  if (!categories) return null;
+  useEffect(() => {
+    if (vacanciesData && Object.keys(vacancy).length === 0) router.push('/404');
+  }, [vacanciesData, vacancy]);
+
+  if (Object.keys(vacancy).length === 0) return null;
 
   dispatch({
     type: 'LANGUAGE',
-    payload: categories?.is_english_speaking_team,
+    payload: vacancy?.is_english_speaking_team,
   });
 
   return (
@@ -40,7 +41,7 @@ const vacancyPage = () => {
         )}
       </Head>
       <Layout backButton>
-        <Vacancy data={mock.vacancy} back={categories} />
+        <Vacancy data={mock.vacancy} back={vacancy} />
       </Layout>
     </>
   );
