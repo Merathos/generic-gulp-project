@@ -3,7 +3,7 @@ import { NoteLeft, NoteRight, Advert } from 'components';
 import { Container, Block, H2, AdvertsWrapper } from './styles';
 
 const Articles = props => {
-  const english = useSelector(state => state.english);
+  const language = useSelector(state => state.language);
   const { data, type } = props;
 
   return (
@@ -16,7 +16,7 @@ const Articles = props => {
       ) : (
         <Block>
           <H2>
-            {english
+            {language
               ? 'Vacancies in this category'
               : 'Вакансии в этой категории'}
           </H2>
