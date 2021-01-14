@@ -7,10 +7,8 @@ import ArrowNext from '../../public/icons/arrow-next.svg';
 import * as S from './styles';
 
 const SliderVacancy = ({ data, isVacancyPage }) => {
-  let english;
   let language;
   if (isVacancyPage) {
-    english = useSelector(state => state.english);
     language = useSelector(state => state.language);
   }
 
@@ -42,7 +40,7 @@ const SliderVacancy = ({ data, isVacancyPage }) => {
 
   return (
     <S.Section>
-      <S.H2>{english && language ? 'Selection Process' : 'Этапы отбора'}</S.H2>
+      <S.H2>{language ? 'Selection Process' : 'Этапы отбора'}</S.H2>
       <Swiper ref={ref} {...params}>
         {list &&
           list.map((el, i) => (

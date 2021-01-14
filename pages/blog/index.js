@@ -59,7 +59,7 @@ export async function getServerSideProps({ query }) {
   });
   await apolloClient.query({
     query: GET_BLOGS_LIST,
-    variables: { categories: query.categories, limit: 3 },
+    variables: { categories: query.categories, limit: 8 },
   });
 
   return {
