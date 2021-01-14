@@ -3,7 +3,6 @@ import { TitleH2, TitleH3 } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 100px;
-  max-width: 850px;
 
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
@@ -60,7 +59,7 @@ export const Clip = styled.div`
   margin-bottom: 30px;
 
   @media screen and (max-width: 420px) {
-    width: 325px;
+    width: 100%;
     height: 235px;
   }
 `;
@@ -88,9 +87,10 @@ export const Text = styled.p`
 `;
 
 export const List = styled.ul`
+  width: 100%;
   display: flex;
   padding-top: 100px;
-  justify-content: space-between;
+  flex-direction: row;
   flex-wrap: wrap;
 
   @media screen and (max-width: 420px) {
@@ -98,4 +98,12 @@ export const List = styled.ul`
   }
 `;
 
-export const Element = styled.li``;
+export const Element = styled.li`
+  margin-right: 80px;
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    margin-right: 0;
+  }
+`;
