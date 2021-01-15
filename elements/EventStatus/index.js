@@ -1,8 +1,28 @@
 import { getStatusImage } from 'helpers/events-helpers';
 import * as S from './styles';
 
-const EventStatus = ({ status, location, width, height }) => {
+const EventStatus = ({
+  status,
+  completed,
+  hasVideo,
+  location,
+  width,
+  height,
+}) => {
   const renderStatus = () => {
+    if (completed && hasVideo) {
+      return (
+        <>
+          <S.Icon
+            src={getStatusImage('record')}
+            alt={status.name}
+            width={width || '16'}
+            height={height || '16'}
+          />
+          Есть запись
+        </>
+      );
+    }
     if (status?.slug === 'offline' && location) {
       return null;
     }
