@@ -39,6 +39,7 @@ export const GET_BANNER = gql`
         slug
         starts_at
         ends_at
+        has_video
         category {
           slug
         }

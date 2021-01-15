@@ -1,7 +1,7 @@
 import { EventCard } from 'components';
 import { Item, List } from './styles';
 
-const EventList = ({ events, completed }) => {
+const EventList = ({ events }) => {
   return (
     <List>
       {events.map(event => (
@@ -14,7 +14,7 @@ const EventList = ({ events, completed }) => {
             status={event.status}
             programs={event.programs}
             location={event.location}
-            completed={completed}
+            hasVideo={event.has_video}
           />
         </Item>
       ))}

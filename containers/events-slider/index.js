@@ -71,6 +71,7 @@ const EventsSlider = ({ cards, regForm }) => {
                 location={card.location}
                 regForm={regForm}
                 slug={card.slug}
+                hasVideo={card.has_video}
               />
             </Element>
           ))}

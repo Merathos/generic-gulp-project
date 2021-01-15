@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import Router from 'next/router';
 import { EventStatus } from 'elements';
 import Link from 'next/link';
+import { useState } from 'react';
 import * as S from './styles';
 
 const EventCard = ({
@@ -9,12 +10,15 @@ const EventCard = ({
   startsAt,
   endsAt,
   status,
+  hasVideo,
   programs,
   location,
-  completed,
   regForm,
   slug,
 }) => {
+  const now = dayjs();
+  const [completed] = useState(now.isAfter(endsAt));
+
   const handleRegistrationClick = () => {
     if (Router.pathname === `/events/${slug}`) {
       regForm?.current.scrollIntoView({ behavior: 'smooth' });
@@ -47,7 +51,14 @@ const EventCard = ({
           <S.Time>{`Начало в ${dayjs(startsAt).format('HH.mm')}`}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
-      <EventStatus status={status} location={location} width="16" height="16" />
+      <EventStatus
+        status={status}
+        location={location}
+        width="16"
+        height="16"
+        completed={completed}
+        hasVideo={hasVideo}
+      />
       {programs &&
         programs.map(program => (
           <S.TopicContainer key={program.id}>
