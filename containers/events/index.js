@@ -1,10 +1,12 @@
-import { EventList, Mailing, SubForm } from 'components';
+import { EventList, EventsTags, Mailing, SubForm } from 'components';
 import { FormModal, SuccessModal } from 'containers';
 import { EventsFilter } from 'forms';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import * as S from './styles';
 
 const Events = ({ data, eventCategories, events, pageSlug }) => {
+  const router = useRouter();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [successIsShown, setSuccessIsShown] = useState(false);
 
@@ -30,7 +32,13 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
     <S.Main>
       <S.Container>
         <S.Grid>
-          <S.Title>{data.mainTitle}</S.Title>
+          <S.Title
+            bigMarginBottom={
+              !router.query.categories && eventsUpcoming?.length > 0
+            }
+          >
+            {data.mainTitle}
+          </S.Title>
           <S.Aside>
             {eventCategories && (
               <EventsFilter
@@ -43,13 +51,20 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
             <Mailing data={data.mailing} onClick={() => setIsOpen(true)} />
           </S.Aside>
           <S.ContentWrapper>
-            {eventsUpcoming?.length > 0 ? (
-              <EventList events={eventsUpcoming} />
-            ) : (
+            {eventCategories && (
+              <EventsTags
+                eventCategories={eventCategories}
+                pageSlug={pageSlug}
+              />
+            )}
+            {eventsUpcoming?.length === 0 && (
               <S.Announcement>
                 {data.announcement.text}
                 <S.StyledIcon name={data.announcement.emodzi} white />
               </S.Announcement>
+            )}
+            {eventsUpcoming?.length > 0 && (
+              <EventList events={eventsUpcoming} />
             )}
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
             {eventsEnded?.length > 0 && (
