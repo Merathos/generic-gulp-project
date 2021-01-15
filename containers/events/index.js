@@ -57,7 +57,7 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
                 pageSlug={pageSlug}
               />
             )}
-            {eventsUpcoming?.length === 0 && (
+            {eventsUpcoming?.length === 0 && !router.query.categories && (
               <S.Announcement>
                 {data.announcement.text}
                 <S.StyledIcon name={data.announcement.emodzi} white />
