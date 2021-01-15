@@ -27,7 +27,7 @@ export const Item = styled.li`
 `;
 
 export const ResetFilter = styled.button`
-  display: 'inline-block';
+  display: inline-block;
   opacity: 0.5;
   font-size: 16px;
   line-height: 131%;
@@ -35,6 +35,7 @@ export const ResetFilter = styled.button`
   align-self: flex-start;
   padding-right: 16px;
   transition: all 0.3s ease-in;
+  visibility: ${p => (p.show ? 'visible' : 'hidden')};
 
   &::after {
     content: '';
