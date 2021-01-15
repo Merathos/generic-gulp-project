@@ -10,7 +10,7 @@ const Userpic = props => {
     <Block>
       <Img background={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`} />
       <div>
-        <TitleH5>{title}</TitleH5>
+        <TitleH5 dangerouslySetInnerHTML={{ __html: title }} />
         <Text dangerouslySetInnerHTML={{ __html: describe }} />
       </div>
     </Block>

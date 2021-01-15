@@ -9,7 +9,10 @@ const MarkerList = props => {
           {data.map((el, i) => (
             <S.ElementEllipse inline={inline} key={i}>
               {el.image && <S.Img src={el.image} alt={el.title} />}
-              <S.Text inline={inline}>{el.text || el}</S.Text>
+              <S.Text
+                inline={inline}
+                dangerouslySetInnerHTML={{ __html: el.text || el }}
+              />
             </S.ElementEllipse>
           ))}
         </S.List>
@@ -19,7 +22,7 @@ const MarkerList = props => {
             <S.ElementNumber key={i}>
               <S.Number>{`0${i + 1}`}</S.Number>
               {el.image && <img src={el.image} alt={el.title} />}
-              <S.Text>{el.text || el}</S.Text>
+              <S.Text dangerouslySetInnerHTML={{ __html: el.text || el }} />
             </S.ElementNumber>
           ))}
         </S.List>

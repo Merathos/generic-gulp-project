@@ -55,8 +55,8 @@ const Media = ({
           )}
         </>
       )}
-      {subtitle && <Text>{subtitle}</Text>}
-      {caption && <Text>{caption}</Text>}
+      {subtitle && <Text dangerouslySetInnerHTML={{ __html: subtitle }} />}
+      {caption && <Text dangerouslySetInnerHTML={{ __html: caption }} />}
     </Section>
   );
 };

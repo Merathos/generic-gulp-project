@@ -35,16 +35,20 @@ const SidebarArticle = props => {
               {fromEditor ? (
                 <>
                   <StyledIcon name={26} />
-                  <H5>{title}</H5>
-                  <Subtitle>{text}</Subtitle>
+                  <H5 dangerouslySetInnerHTML={{ __html: title }} />
+                  <Subtitle dangerouslySetInnerHTML={{ __html: text }} />
                 </>
               ) : (
                 <>
                   <StyledIcon name={icon} isInternship={isInternship} />
-                  <H5 isInternship={isInternship}>{title}</H5>
-                  <StyledSubtitle isInternship={isInternship}>
-                    {description}
-                  </StyledSubtitle>
+                  <H5
+                    isInternship={isInternship}
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                  <StyledSubtitle
+                    isInternship={isInternship}
+                    dangerouslySetInnerHTML={{ __html: description }}
+                  />
                 </>
               )}
             </SectionIcon>
@@ -56,7 +60,9 @@ const SidebarArticle = props => {
                   <Link href={link}>
                     <Content>
                       <DefaultSubtitle>Читайте также</DefaultSubtitle>
-                      <DefaultTitle>{title}</DefaultTitle>
+                      <DefaultTitle
+                        dangerouslySetInnerHTML={{ __html: title }}
+                      />
                       <div>
                         <ArrowRight />
                       </div>
@@ -65,8 +71,8 @@ const SidebarArticle = props => {
                 </>
               ) : (
                 <>
-                  <Subtitle>{subtitle}</Subtitle>
-                  <Title>{title}</Title>
+                  <Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
+                  <Title dangerouslySetInnerHTML={{ __html: title }} />
                   <Link href={link}>
                     <a>
                       <ArrowRight />
@@ -78,7 +84,7 @@ const SidebarArticle = props => {
           ),
           button: (
             <SectionButton>
-              <Text>{text}</Text>
+              <Text dangerouslySetInnerHTML={{ __html: text }} />
               <Button type="accent" onClick={handleSendRequestClick}>
                 {button}
               </Button>
@@ -93,8 +99,14 @@ const SidebarArticle = props => {
                 width="143"
                 height="143"
               />
-              <Title isInternship={isInternship}>{title}</Title>
-              <SubtitleWrapper isInternship>{text}</SubtitleWrapper>
+              <Title
+                isInternship={isInternship}
+                dangerouslySetInnerHTML={{ __html: title }}
+              />
+              <SubtitleWrapper
+                isInternship
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
             </Aside>
           ),
         }[type]

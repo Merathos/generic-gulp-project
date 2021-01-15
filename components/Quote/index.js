@@ -16,8 +16,8 @@ const Quote = props => {
           <Container>
             <Img src={src} alt={name} />
             <div>
-              <TitleH5>{name}</TitleH5>
-              <Subtitle>{company}</Subtitle>
+              <TitleH5 dangerouslySetInnerHTML={{ __html: name }} />
+              <Subtitle dangerouslySetInnerHTML={{ __html: company }} />
             </div>
           </Container>
         )}

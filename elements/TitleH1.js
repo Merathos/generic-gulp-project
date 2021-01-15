@@ -7,6 +7,16 @@ const Styled = styled.h1`
   text-transform: uppercase;
   margin-bottom: 40px;
 
+  a {
+    color: #53b443;
+    font-weight: bold;
+    display: inline;
+
+    &:hover {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     font-size: 32px;
     line-height: 134%;

@@ -9,7 +9,7 @@ const Comment = props => {
     <Block>
       <Container>
         <Img background={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`} />
-        <TitleH5>{title}</TitleH5>
+        <TitleH5 dangerouslySetInnerHTML={{ __html: title }} />
       </Container>
       <Card>
         <Text dangerouslySetInnerHTML={{ __html: describe }} />

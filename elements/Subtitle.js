@@ -6,14 +6,33 @@ const Styled = styled.p`
   opacity: 0.5;
   transition: opacity 0.3s ease;
 
+  a {
+    color: #53b443;
+    font-weight: bold;
+    display: inline;
+
+    &:hover {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 500px) {
     font-size: 14px;
     line-height: 134%;
   }
 `;
 
-const Subtitle = ({ children, className }) => (
-  <Styled className={className}>{children}</Styled>
+const Subtitle = ({ dangerouslySetInnerHTML, children, className }) => (
+  <>
+    {dangerouslySetInnerHTML ? (
+      <Styled
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+        className={className}
+      />
+    ) : (
+      <Styled className={className}>{children}</Styled>
+    )}
+  </>
 );
 
 export default Subtitle;
