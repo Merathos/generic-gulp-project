@@ -107,7 +107,7 @@ export default {
           multi: true,
         },
         {
-          title: `Проекты`,
+          title: `Команды`,
           list: [
             `Contact Center`,
             `Platform A`,
