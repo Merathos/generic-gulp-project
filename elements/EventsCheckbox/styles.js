@@ -6,10 +6,10 @@ export const Wrapper = styled.div`
   align-items: center;
 
   input:checked ~ label {
-    color: #53b443;
+    color: ${p => (p.color ? p.color : '#53b443')};
 
     &::before {
-      border-color: #53b443;
+      border-color: ${p => (p.color ? p.color : '#53b443')};
     }
 
     &::after {
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
       transform: translateY(-50%);
       mask: url('/icons/checked.svg') no-repeat 50% 50%;
       mask-size: 11px 9px;
-      background-color: #53b443;
+      background-color: ${p => (p.color ? p.color : '#53b443')};
 
       @media (max-width: 768px) {
         top: 7px;
@@ -34,7 +34,7 @@ export const Wrapper = styled.div`
   input:hover ~ label {
     &::before {
       @media (min-width: 1000px) {
-        border-color: #53b443;
+        border-color: ${p => (p.color ? p.color : '#53b443')};
       }
     }
   }

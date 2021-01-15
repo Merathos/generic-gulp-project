@@ -5,13 +5,14 @@ const EventsCheckbox = ({
   value,
   checked = false,
   onChange,
+  color,
   className,
   children,
   register,
   error,
 }) => {
   return (
-    <Wrapper error={error} className={className}>
+    <Wrapper error={error} className={className} color={color}>
       <input
         type="checkbox"
         id={name}
