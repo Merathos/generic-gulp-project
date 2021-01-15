@@ -47,7 +47,11 @@ const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
           );
         })}
       </List>
-      <ResetFilter type="button" onClick={() => onReset()}>
+      <ResetFilter
+        type="button"
+        onClick={() => onReset()}
+        show={query.categories?.length > 0}
+      >
         {resetButtonText}
       </ResetFilter>
     </Wrapper>
