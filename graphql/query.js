@@ -82,15 +82,17 @@ export const GET_VACANCY_CONTENT = gql`
 export const GET_RELOCATION_BLOGS = gql`
   query getRelocationBlogs {
     blogs(is_relocation: true) {
+      id
+      title
+      slug
+      type
+      created_at
       preview {
-        path {
+        path(width: 210) {
           normal
           retina
         }
       }
-      slug
-      title
-      created_at
     }
   }
 `;
