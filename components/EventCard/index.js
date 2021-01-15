@@ -81,11 +81,7 @@ const EventCard = ({
             Зарегистрироваться
           </S.StyledButton>
         )}
-        <S.Location>
-          {location ||
-            `Мероприятие
-проводится онлайн`}
-        </S.Location>
+        <S.Location>{location || `Онлайн-мероприятие`}</S.Location>
       </S.BottomWrapper>
     </S.CardWrapper>
   );

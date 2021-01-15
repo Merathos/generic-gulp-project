@@ -45,7 +45,7 @@ export default {
             ],
           },
         ],
-        location: `Мероприятие проводится онлайн`,
+        location: `Онлайн-мероприятие`,
       },
       {
         type: `JS Evening`,
