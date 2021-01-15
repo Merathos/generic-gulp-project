@@ -21,22 +21,26 @@ const EventsTags = ({ eventCategories, pageSlug }) => {
   };
 
   return (
-    <S.Tags>
-      {eventCategories.map(item => {
-        const isActive = checkActiveCategories(query.categories, item.slug);
-        if (isActive) {
-          return (
-            <S.Tag key={item.id}>
-              <FilterButton
-                name={item.name}
-                onClick={() => handleClick(item.slug, isActive)}
-              />
-            </S.Tag>
-          );
-        }
-        return null;
-      })}
-    </S.Tags>
+    <>
+      {query.categories && (
+        <S.Tags>
+          {eventCategories.map(item => {
+            const isActive = checkActiveCategories(query.categories, item.slug);
+            if (isActive) {
+              return (
+                <S.Tag key={item.id}>
+                  <FilterButton
+                    name={item.name}
+                    onClick={() => handleClick(item.slug, isActive)}
+                  />
+                </S.Tag>
+              );
+            }
+            return null;
+          })}
+        </S.Tags>
+      )}
+    </>
   );
 };
 

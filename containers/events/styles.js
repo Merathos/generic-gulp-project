@@ -102,7 +102,7 @@ export const StyledIcon = styled(Icon)`
 
 export const Title = styled(TitleH1)`
   grid-area: mainTitle;
-  margin-bottom: 25px;
+  margin-bottom: ${p => (p.bigMarginBottom ? '120px' : '25px')};
 
   @media (max-width: 1199px) {
     max-width: 862px;
