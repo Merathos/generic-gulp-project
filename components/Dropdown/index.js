@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Checkbox, RadioButton } from 'elements';
-import { Title, Item, List, Wrapper, Sup } from './styles';
 import { CustomScrollbars } from 'components';
+import { Title, Item, List, Wrapper, Sup } from './styles';
 
 const Dropdown = props => {
   const {
@@ -20,7 +20,7 @@ const Dropdown = props => {
       <Title type="button" onClick={() => handleOpen()} active={opened}>
         {title}
         {title === 'Категории' && categories && <Sup>1</Sup>}
-        {(title === 'Технологии' || title === 'Проекты') &&
+        {(title === 'Технологии' || title === 'Команды') &&
           filterArray.length > 0 && (
             <Sup>
               {list.filter(item => filterArray.includes(item)).length || ''}
