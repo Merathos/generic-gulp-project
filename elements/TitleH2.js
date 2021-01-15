@@ -6,13 +6,32 @@ const Styled = styled.h2`
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
+  a {
+    color: #53b443;
+    font-weight: bold;
+    display: inline;
+
+    &:hover {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     font-size: 28px;
   }
 `;
 
-const TitleH2 = ({ children, className }) => (
-  <Styled className={className}>{children}</Styled>
+const TitleH2 = ({ dangerouslySetInnerHTML, children, className }) => (
+  <>
+    {dangerouslySetInnerHTML ? (
+      <Styled
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+        className={className}
+      />
+    ) : (
+      <Styled className={className}>{children}</Styled>
+    )}
+  </>
 );
 
 export default TitleH2;

@@ -88,4 +88,15 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 158%;
   }
+
+  a {
+    display: inline;
+    color: #53b443;
+    transition: color 0.3s;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
 `;

@@ -28,7 +28,7 @@ const Video = props => {
           height="100%"
         />
       </VideoContainer>
-      {title && <Text>{title}</Text>}
+      {title && <Text dangerouslySetInnerHTML={{ __html: title }} />}
     </Section>
   );
 };

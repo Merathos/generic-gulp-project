@@ -23,6 +23,17 @@ const StyledText = styled.p`
   font-size: 18px;
   line-height: 158%;
 
+  a {
+    display: inline;
+    color: #53b443;
+    transition: color 0.3s;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
+
   @media (max-width: 420px) {
     font-size: 14px;
     line-height: 22px;
@@ -74,6 +85,17 @@ const Section = styled.section`
 const StyledSubtitle = styled(Subtitle)`
   margin-bottom: 10px;
 
+  a {
+    display: inline;
+    color: #53b443;
+    transition: color 0.3s;
+
+    &:hover,
+    &:active {
+      color: #339722;
+    }
+  }
+
   @media screen and (max-width: 1024px) {
     margin-bottom: 7px;
   }
@@ -105,9 +127,9 @@ const Feedback = props => {
         />
       </picture>
       <Content>
-        <StyledSubtitle>{subtitle}</StyledSubtitle>
-        <H3>{title}</H3>
-        <StyledText>{describe}</StyledText>
+        <StyledSubtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <H3 dangerouslySetInnerHTML={{ __html: title }} />
+        <StyledText dangerouslySetInnerHTML={{ __html: describe }} />
       </Content>
     </Section>
   );

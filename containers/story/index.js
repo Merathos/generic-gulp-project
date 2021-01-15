@@ -21,7 +21,6 @@ const Story = ({ back }) => {
       </GreyContainer>
 
       <Container>
-        {console.log(content)}
         {Object.keys(content).length !== 0 && (
           <ArticleContent content={content} />
         )}

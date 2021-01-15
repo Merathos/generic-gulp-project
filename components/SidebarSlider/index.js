@@ -36,8 +36,8 @@ const SidebarSlider = props => {
               alt={el.title}
             />
             <div>
-              <H4>{el.title}</H4>
-              <Text>{el.describe}</Text>
+              <H4 dangerouslySetInnerHTML={{ __html: el.title }} />
+              <Text dangerouslySetInnerHTML={{ __html: el.describe }} />
             </div>
           </Element>
         ))}

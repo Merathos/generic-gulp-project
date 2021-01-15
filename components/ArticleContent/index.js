@@ -153,7 +153,7 @@ const ASIDE_BLOCKS = {
 const ArticleContent = ({ content, isRelocation, recap }) => {
   let relocationAdded;
   let recapAdded;
-
+  console.log(content);
   return (
     <>
       {content.length > 0 &&
