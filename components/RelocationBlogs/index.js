@@ -3,7 +3,8 @@ import * as S from './styles';
 
 const RelocationBlogs = props => {
   const {
-    data: { title, text, noteIcon, note, cards },
+    data: { title, text, noteIcon, note },
+    blogs,
   } = props;
 
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
@@ -19,11 +20,16 @@ const RelocationBlogs = props => {
         <S.Title>{title}</S.Title>
         <S.Text>{text}</S.Text>
         <S.List>
-          {cards.map((el, i) => (
-            <li key={i}>
-              <StoryCard data={el} />
-            </li>
-          ))}
+          {blogs.map(item => {
+            if (item.type === 'history') {
+              return (
+                <li key={item.id}>
+                  <StoryCard data={item} />
+                </li>
+              );
+            }
+            return null;
+          })}
         </S.List>
         <S.NoteWrapper>
           <S.Icon>

@@ -7,13 +7,13 @@ import {
   RelocationFooter,
 } from 'components';
 
-const Relocation = ({ data }) => {
+const Relocation = ({ data, blogs }) => {
   return (
     <main>
       <RelocationHeader data={data.intro} />
       <Benefits data={data.advantages} />
       <RelocationApply data={data.promo} />
-      <RelocationBlogs data={data.blogs} />
+      {blogs?.length > 0 && <RelocationBlogs data={data.blogs} blogs={blogs} />}
       <OfficesMap data={data.map} />
       <RelocationFooter data={data.greyFooter} />
     </main>
