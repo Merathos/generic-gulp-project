@@ -92,7 +92,7 @@ export const Grid = styled.div`
 export const FilterWrapper = styled.div`
   @media screen and (max-width: 768px) {
     position: sticky;
-    top: ${props => (props.withExtraSpace ? '265px' : '215px')};
+    top: ${props => (props.withExtraSpace ? '265px' : '214px')};
     margin-left: -45px;
     margin-right: -45px;
     padding: ${props => (props.active ? '16px 45px 50px' : '16px 45px')};
@@ -101,7 +101,7 @@ export const FilterWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    top: ${props => (props.withExtraSpace ? '232px' : '182px')};
+    top: ${props => (props.withExtraSpace ? '232px' : '181px')};
     margin-left: -30px;
     margin-right: -30px;
     padding: ${props => (props.active ? '16px 30px 50px' : '16px 30px')};
