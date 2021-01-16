@@ -92,8 +92,8 @@ export const Picture = styled.img`
   margin-top: auto;
   margin-left: auto;
   margin-right: 62px; */
-  max-height: 440px;
-  width: auto;
+  max-width: 440px;
+  height: auto;
 
   @media (max-width: 834px) {
     max-height: 240px;
