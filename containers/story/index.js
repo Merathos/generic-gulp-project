@@ -6,6 +6,8 @@ const Story = ({ back }) => {
   if (back.content) {
     content = JSON.parse(back.content);
   }
+  const relatedHistory = back.related?.filter(i => i.type === 'history');
+
   return (
     <main>
       <GreyContainer>
@@ -13,9 +15,9 @@ const Story = ({ back }) => {
           <BlogHeader
             title={back.title}
             text={back.description}
-            picture={back.detail.path.normal}
+            picture={back.detail?.path?.normal}
             audio={back.audio}
-            mobPicture={back.detail_mobile && back.detail_mobile.path.normal}
+            mobPicture={back.detail_mobile?.path?.normal}
           />
         </Container>
       </GreyContainer>
@@ -26,9 +28,11 @@ const Story = ({ back }) => {
         )}
       </Container>
 
-      <GreyContainer>
-        <GreyFooter data={back.related} type="blog" />
-      </GreyContainer>
+      {relatedHistory.length > 0 && (
+        <GreyContainer>
+          <GreyFooter data={relatedHistory} type="blog" />
+        </GreyContainer>
+      )}
     </main>
   );
 };

@@ -2,7 +2,6 @@ import ArrowRight from 'public/icons/arrow-right.svg';
 import { StoryCard } from 'components';
 import Link from 'next/link';
 import Swiper from 'react-id-swiper';
-import { Fragment } from 'react';
 import * as S from './styles';
 
 const GreyFooter = ({ data, type, background }) => {
@@ -15,15 +14,12 @@ const GreyFooter = ({ data, type, background }) => {
       {type === 'blog' ? (
         <S.ListBlog>
           <Swiper {...params}>
-            {data.map((item, i) => {
-              if (item.type === 'history') {
-                return (
-                  <S.Card key={item.id}>
-                    <StoryCard data={item} background="#fff" />
-                  </S.Card>
-                );
-              }
-              return <Fragment key={i} />;
+            {data.map(item => {
+              return (
+                <S.Card key={item.id}>
+                  <StoryCard data={item} background="#fff" />
+                </S.Card>
+              );
             })}
           </Swiper>
         </S.ListBlog>

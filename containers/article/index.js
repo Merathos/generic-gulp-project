@@ -6,6 +6,7 @@ const Article = ({ data, back }) => {
   if (back.content) {
     content = JSON.parse(back.content);
   }
+
   return (
     <Container>
       <Title
@@ -16,7 +17,9 @@ const Article = ({ data, back }) => {
       {Object.keys(content).length !== 0 && (
         <ArticleContent content={content} />
       )}
-      <Articles type="article" data={data.articles} />
+      {data.articles?.length > 0 && (
+        <Articles type="article" data={data.articles} />
+      )}
     </Container>
   );
 };

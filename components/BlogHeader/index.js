@@ -13,7 +13,7 @@ const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
             }}
           />
         )}
-        <S.Paragraph audio={audio}>{text}</S.Paragraph>
+        {text && <S.Paragraph audio={audio}>{text}</S.Paragraph>}
         {audio && <Player src={audio} withDynamic />}
       </S.Wrapper>
       {picture && (

@@ -88,9 +88,15 @@ const renderContent = (
         {
           header:
             data.level === 2 ? (
-              <H2 isFirstBlockHeader={isFirstBlockHeader}>{data.text}</H2>
+              <H2
+                isFirstBlockHeader={isFirstBlockHeader}
+                dangerouslySetInnerHTML={{ __html: data.text }}
+              />
             ) : (
-              <H3 isFirstBlockHeader={isFirstBlockHeader}>{data.text}</H3>
+              <H3
+                isFirstBlockHeader={isFirstBlockHeader}
+                dangerouslySetInnerHTML={{ __html: data.text }}
+              />
             ),
           paragraph: (
             <Paragraph data={data} nextIsParagraph={nextIsParagraph} />

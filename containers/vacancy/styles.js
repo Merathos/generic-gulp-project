@@ -5,8 +5,8 @@ export const VacancySection = styled.div`
   background-image: url('/backgrounds/vacanccy-category.svg');
   background-repeat: no-repeat;
   background-position: left center;
-  margin-top: 60px;
-  margin-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 100px;
 
   @media (max-width: 1110px) {
     background-image: none;
