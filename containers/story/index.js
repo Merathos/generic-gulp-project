@@ -15,9 +15,9 @@ const Story = ({ back }) => {
           <BlogHeader
             title={back.title}
             text={back.description}
-            picture={back.detail.path.normal}
+            picture={back.detail?.path?.normal}
             audio={back.audio}
-            mobPicture={back.detail_mobile && back.detail_mobile.path.normal}
+            mobPicture={back.detail_mobile?.path?.normal}
           />
         </Container>
       </GreyContainer>
