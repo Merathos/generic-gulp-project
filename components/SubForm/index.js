@@ -1,29 +1,19 @@
-import { useMutation } from '@apollo/client';
-import { CloseBtn, TextInput, Captcha } from 'elements';
-import { SET_EVENTS_SUBSCRIPTION } from 'graphql/events';
+import { TextInput, CloseBtn, Captcha } from 'elements';
 import { useState } from 'react';
+import form from 'mock/forms';
 import { useForm } from 'react-hook-form';
+import { SET_FORM_SUBSCRIPTION } from 'graphql/forms';
+import { useMutation } from '@apollo/client';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as S from './styles';
 
-const SubForm = ({
-  data: { mainTitle, contact, directions, agreement, mailing, buttonText },
-  closeModal,
-  showSuccess,
-  eventCategories,
-}) => {
+const SubForm = ({ closeModal, showSuccess, showError }) => {
+  const { mainTitle, contact, agreement, mailing, buttonText } = form.subForm;
   const [checkedEls, setCheckedEls] = useState({});
-  const [selectedEventCategories, setSelectedEventCategories] = useState([]);
   const [captchaPassed, setCaptchaPassed] = useState(false);
-  const [subscribe] = useMutation(SET_EVENTS_SUBSCRIPTION, {
-    onCompleted(data) {
-      if (data.Event) {
-        closeModal();
-        showSuccess();
-      }
-    },
-  });
+  const [sendSubscription] = useMutation(SET_FORM_SUBSCRIPTION);
+
   const schema = yup.object().shape({
     name: yup.string().required('error'),
     lastname: yup.string().required('error'),
@@ -35,8 +25,8 @@ const SubForm = ({
       .boolean()
       .required()
       .oneOf([true], 'error'),
-    newsletter: yup.boolean(),
   });
+
   const { handleSubmit, register, errors } = useForm({
     resolver: yupResolver(schema),
   });
@@ -48,39 +38,37 @@ const SubForm = ({
     });
   };
 
-  const handleEventCategoryChange = (event, id) => {
-    setCheckedEls({
-      ...checkedEls,
-      [event.target.id]: event.target.checked,
-    });
-    setSelectedEventCategories(prev => {
-      if (prev.includes(id)) {
-        return prev.filter(item => item !== id);
-      }
-      return [...prev, id];
-    });
-  };
-
-  const onSubmit = values => {
+  const onSubmit = async values => {
     if (captchaPassed) {
-      subscribe({
+      const { data, errors: submitErrors } = await sendSubscription({
         variables: {
           name: values.name,
           lastname: values.lastname,
           email: values.email,
           is_consent_pd: values.personal,
           is_consent_newsletter: values.newsletter,
-          categories: selectedEventCategories,
         },
       });
+
+      if (submitErrors?.message) {
+        closeModal();
+        showError();
+      }
+
+      if (data?.Subscription) {
+        closeModal();
+        showSuccess();
+      }
     }
   };
 
   return (
     <S.Container>
       <CloseBtn onClick={closeModal} />
-      <S.Form onSubmit={handleSubmit(onSubmit)}>
+      <S.TitleWrap>
         <S.MainTitle>{mainTitle}</S.MainTitle>
+      </S.TitleWrap>
+      <S.Form onSubmit={handleSubmit(onSubmit)}>
         <S.FormSection>
           <S.SectionTitle>{contact.title}</S.SectionTitle>
           <S.InputsContainer>
@@ -103,23 +91,7 @@ const SubForm = ({
             ))}
           </S.InputsContainer>
         </S.FormSection>
-        <S.MultivarSection>
-          <S.SectionTitle>{directions.title}</S.SectionTitle>
-          <S.Question>{directions.question}</S.Question>
-          <S.CheckboxContainer>
-            {eventCategories.map(item => (
-              <S.CheckBox
-                key={item.id}
-                name={item.slug}
-                value={item.name}
-                checked={checkedEls[item.slug]}
-                onChange={event => handleEventCategoryChange(event, item.id)}
-                register={register()}
-              />
-            ))}
-          </S.CheckboxContainer>
-        </S.MultivarSection>
-        <S.FormSection>
+        <S.SubmitSection>
           <S.AgreemenCheckbox
             name={agreement.name}
             value={agreement.dataText}
@@ -141,12 +113,11 @@ const SubForm = ({
           />
           <S.BottomWrap>
             <Captcha setCaptchaPassed={setCaptchaPassed} />
-            <S.StyledButton type="submit">
-              {/* disabled={!captchaPassed} */}
+            <S.StyledButton type="submit" accent>
               {buttonText}
             </S.StyledButton>
           </S.BottomWrap>
-        </S.FormSection>
+        </S.SubmitSection>
       </S.Form>
     </S.Container>
   );

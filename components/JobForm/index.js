@@ -8,7 +8,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as S from './styles';
 
-const JobForm = ({ closeModal, showSuccess, title, id }) => {
+const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
   const {
     mainTitle,
     subtitle,
@@ -21,14 +21,7 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
   const [checkedEls, setCheckedEls] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
-  const [sendVacancy] = useMutation(SET_FORM_VACANCY, {
-    onCompleted(data) {
-      if (data.Vacancy) {
-        closeModal();
-        showSuccess();
-      }
-    },
-  });
+  const [sendVacancy] = useMutation(SET_FORM_VACANCY);
 
   const schema = yup.object().shape({
     name: yup.string().required('error'),
@@ -69,9 +62,9 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
     });
   };
 
-  const onSubmit = values => {
+  const onSubmit = async values => {
     if (captchaPassed) {
-      sendVacancy({
+      const { data, errors: submitErrors } = await sendVacancy({
         variables: {
           name: values.name,
           lastname: values.lastname,
@@ -86,6 +79,15 @@ const JobForm = ({ closeModal, showSuccess, title, id }) => {
           vacancy_id: id,
         },
       });
+      if (submitErrors?.message) {
+        closeModal();
+        showError();
+      }
+
+      if (data?.Vacancy) {
+        closeModal();
+        showSuccess();
+      }
     }
   };
 

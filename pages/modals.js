@@ -1,8 +1,8 @@
-import mock from 'mock/index';
+import form from 'mock/forms';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { FormModal, SuccessModal } from 'containers';
-import { JobForm, InternForm, MailingForm } from 'components';
+import { JobForm, InternForm, SubForm } from 'components';
 
 export const Container = styled.div`
   width: 100%;
@@ -20,11 +20,6 @@ export const Container = styled.div`
 `;
 
 const ModalsPreview = () => {
-  const [successIsShown, setSuccessIsShown] = useState(false);
-  const [success2IsShown, setSuccess2IsShown] = useState(false);
-  const [success3IsShown, setSuccess3IsShown] = useState(false);
-  const [success4IsShown, setSuccess4IsShown] = useState(false);
-
   const [jobIsShown, setjobIsShown] = useState(false);
   const [jobv2IsShown, setjobv2IsShown] = useState(false);
   const [interntIsShown, setInterntIsShown] = useState(false);
@@ -46,22 +41,6 @@ const ModalsPreview = () => {
     setInterntIsShown(prev => !prev);
   }
 
-  function toggleSuccess() {
-    setSuccessIsShown(prev => !prev);
-  }
-
-  function toggleSuccess2() {
-    setSuccess2IsShown(prev => !prev);
-  }
-
-  function toggleSuccess3() {
-    setSuccess3IsShown(prev => !prev);
-  }
-
-  function toggleSuccess4() {
-    setSuccess4IsShown(prev => !prev);
-  }
-
   return (
     <main>
       <Container>
@@ -70,54 +49,34 @@ const ModalsPreview = () => {
         <a onClick={toggleJobv2Modal}>Application without a specific job</a>
         <a onClick={toggleMailingModal}>Application for mailing</a>
       </Container>
-      <FormModal modalIsOpen={jobIsShown} closeModal={toggleJobModal}>
-        <JobForm
-          data={mock.jobForm}
-          closeModal={toggleJobModal}
-          showSuccess={toggleSuccess}
-        />
+      <FormModal
+        modalIsOpen={jobIsShown}
+        closeModal={toggleJobModal}
+        successData={form.jobForm.confirmation}
+      >
+        <JobForm closeModal={toggleJobModal} />
       </FormModal>
-      <FormModal modalIsOpen={interntIsShown} closeModal={toggleInternModal}>
-        <InternForm
-          data={mock.internForm}
-          closeModal={toggleInternModal}
-          showSuccess={toggleSuccess2}
-        />
+      <FormModal
+        modalIsOpen={interntIsShown}
+        closeModal={toggleInternModal}
+        successData={form.internForm.confirmation}
+      >
+        <InternForm closeModal={toggleInternModal} />
       </FormModal>
-      <FormModal modalIsOpen={jobv2IsShown} closeModal={toggleJobv2Modal}>
-        <JobForm
-          data={mock.jobFormV2}
-          closeModal={toggleJobv2Modal}
-          showSuccess={toggleSuccess3}
-        />
+      <FormModal
+        modalIsOpen={jobv2IsShown}
+        closeModal={toggleJobv2Modal}
+        successData={form.jobFormV2.confirmation}
+      >
+        <JobForm closeModal={toggleJobv2Modal} />
       </FormModal>
-      <FormModal modalIsOpen={mailingIsShown} closeModal={toggleMailingModal}>
-        <MailingForm
-          data={mock.mailingForm}
-          closeModal={toggleMailingModal}
-          showSuccess={toggleSuccess4}
-        />
+      <FormModal
+        modalIsOpen={mailingIsShown}
+        closeModal={toggleMailingModal}
+        successData={form.subForm.confirmation}
+      >
+        <SubForm closeModal={toggleMailingModal} />
       </FormModal>
-      <SuccessModal
-        data={mock.jobForm.confirmation}
-        successIsShown={successIsShown}
-        closeSuccess={toggleSuccess}
-      />
-      <SuccessModal
-        data={mock.internForm.confirmation}
-        successIsShown={success2IsShown}
-        closeSuccess={toggleSuccess2}
-      />
-      <SuccessModal
-        data={mock.jobFormV2.confirmation}
-        successIsShown={success3IsShown}
-        closeSuccess={toggleSuccess3}
-      />
-      <SuccessModal
-        data={mock.mailingForm.confirmation}
-        successIsShown={success4IsShown}
-        closeSuccess={toggleSuccess4}
-      />
     </main>
   );
 };

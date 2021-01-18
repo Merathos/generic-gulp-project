@@ -18,7 +18,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import * as S from './styles';
 
-const InternForm = ({ closeModal, showSuccess }) => {
+const InternForm = ({ closeModal, showSuccess, showError }) => {
   const {
     mainTitle,
     contact,
@@ -35,14 +35,7 @@ const InternForm = ({ closeModal, showSuccess }) => {
   const [selectedEventCategories, setSelectedEventCategories] = useState([]);
 
   const { data: eventCategoriesData } = useQuery(GET_EVENT_CATEGORIES);
-  const [sendVacancy] = useMutation(SET_FORM_INTERNSHIP, {
-    onCompleted(data) {
-      if (data.Internship) {
-        closeModal();
-        showSuccess();
-      }
-    },
-  });
+  const [sendInternship] = useMutation(SET_FORM_INTERNSHIP);
 
   const schema = yup.object().shape({
     name: yup.string().required('error'),
@@ -117,9 +110,9 @@ const InternForm = ({ closeModal, showSuccess }) => {
     });
   };
 
-  const onSubmit = values => {
+  const onSubmit = async values => {
     if (captchaPassed) {
-      sendVacancy({
+      const { data, errors: submitErrors } = await sendInternship({
         variables: {
           name: values.name,
           lastname: values.lastname,
@@ -142,6 +135,16 @@ const InternForm = ({ closeModal, showSuccess }) => {
           categories: selectedEventCategories,
         },
       });
+
+      if (submitErrors?.message) {
+        closeModal();
+        showError();
+      }
+
+      if (data?.Internship) {
+        closeModal();
+        showSuccess();
+      }
     }
   };
 

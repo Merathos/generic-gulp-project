@@ -9,7 +9,7 @@ import {
   JobForm,
   Recruiters,
 } from 'components';
-import { FormModal, SuccessModal } from 'containers';
+import { FormModal } from 'containers';
 import { useState } from 'react';
 import form from 'mock/forms';
 import {
@@ -24,32 +24,25 @@ import {
 const Vacancy = ({ data, back }) => {
   const content = JSON.parse(back.content);
   const [jobModalIsShown, setJobModalIsShown] = useState(false);
-  const [successModalIsShown, setSuccessIsShown] = useState(false);
 
   function toggleJobModal() {
     setJobModalIsShown(prev => !prev);
   }
 
-  function toggleSuccess() {
-    setSuccessIsShown(prev => !prev);
-  }
-
   return (
     <>
-      <FormModal modalIsOpen={jobModalIsShown} closeModal={toggleJobModal}>
+      <FormModal
+        modalIsOpen={jobModalIsShown}
+        closeModal={toggleJobModal}
+        successData={form.jobForm.confirmation}
+      >
         <JobForm
           data={form.jobForm}
           closeModal={toggleJobModal}
-          showSuccess={toggleSuccess}
           title={back?.name}
           id={back?.id}
         />
       </FormModal>
-      <SuccessModal
-        data={form.jobForm.confirmation}
-        successIsShown={successModalIsShown}
-        closeSuccess={toggleSuccess}
-      />
       <GreyContainer>
         <VacancyHeader
           data={data}

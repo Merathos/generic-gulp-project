@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import { FormConfirmation } from 'components';
+import { FormError } from 'components';
 
 const customStyles = {
   overlay: {
@@ -10,7 +10,7 @@ const customStyles = {
 
 Modal.setAppElement('#__next');
 
-const SuccessModal = ({ data, isShown, close }) => {
+const ErrorModal = ({ data, isShown, close }) => {
   return (
     <Modal
       isOpen={isShown}
@@ -18,9 +18,9 @@ const SuccessModal = ({ data, isShown, close }) => {
       style={customStyles}
       className="successModal"
     >
-      <FormConfirmation data={data} close={close} />
+      <FormError data={data} close={close} />
     </Modal>
   );
 };
 
-export default SuccessModal;
+export default ErrorModal;
