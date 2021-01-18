@@ -60,7 +60,7 @@ const Layout = ({
   smallPadding = false,
   nimax = true,
   anchor = false,
-  hideHav = false,
+  hideNav = false,
   smallIndent = false,
   greyHeader = true,
   smallButton = false,
@@ -79,10 +79,10 @@ const Layout = ({
         data={mock.header}
         plain={plainHeader}
         anchor={anchor}
-        hideHav={hideHav}
+        hideNav={hideNav}
         greyHeader={greyHeader}
         mobileDecor={mobileDecor}
-        onMenuCLose={handleCloseMenu}
+        onMenuClose={handleCloseMenu}
       />
       {children}
       {isVisible && (

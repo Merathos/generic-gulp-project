@@ -133,10 +133,10 @@ const Header = ({
   data: links,
   plain,
   anchor,
-  hideHav,
+  hideNav,
   greyHeader,
   mobileDecor,
-  onMenuCLose,
+  onMenuClose,
 }) => {
   return (
     <StyledHeader
@@ -150,7 +150,7 @@ const Header = ({
           <StyledLogo />
         </a>
       </Link>
-      <Nav plain={plain} hideNav={hideHav}>
+      <Nav plain={plain} hideNav={hideNav}>
         <List>
           {links.map((el, i) => (
             <Element key={i}>
@@ -159,7 +159,7 @@ const Header = ({
           ))}
         </List>
       </Nav>
-      <Button type="button" aria-label="Menu" onClick={onMenuCLose}>
+      <Button type="button" aria-label="Menu" onClick={onMenuClose}>
         <Menu />
       </Button>
     </StyledHeader>

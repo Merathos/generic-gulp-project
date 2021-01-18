@@ -44,7 +44,7 @@ const catalogPage = () => {
   );
 
   return (
-    <Layout anchor hideHav greyHeader={false} mobileDecor isFixed>
+    <Layout anchor hideNav greyHeader={false} mobileDecor>
       <VacanciesList data={mock.catalog} back={vacancies || []} />
     </Layout>
   );
