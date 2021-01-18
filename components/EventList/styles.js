@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  margin-bottom: 80px;
+  margin-bottom: ${p => (p.noMarginBottom ? '0' : '80px')};
   display: flex;
   flex-direction: column;
 
   @media (max-width: 910px) {
-    margin-bottom: 42px;
+    margin-bottom: ${p => (p.noMarginBottom ? '0' : '42px')};
   }
 `;
 

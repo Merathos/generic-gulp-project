@@ -1,5 +1,5 @@
-import * as S from './styles';
 import Router from 'next/router';
+import * as S from './styles';
 
 const RelocationApply = ({ data }) => {
   const { title, text, button, picture } = data;
@@ -29,7 +29,7 @@ const RelocationApply = ({ data }) => {
         </S.PicWrapper>
         <S.Content>
           {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
-          <S.Button accent={true} onClick={handleVacanciesClick}>
+          <S.Button accent onClick={handleVacanciesClick}>
             {button}
           </S.Button>
         </S.Content>

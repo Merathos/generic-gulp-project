@@ -1,35 +1,35 @@
-import { Container, Square, Sector, Block } from './styles';
 import SubstructedCircle from 'public/icons/substracted-circle.svg';
 import CurvedArrow from 'public/icons/curved-arrow.svg';
 import { motion } from 'framer-motion';
+import { Container, Square, Sector, Block } from './styles';
 
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15
-    }
-  }
+      staggerChildren: 0.15,
+    },
+  },
 };
 
 const shape = {
   hidden: {
     opacity: 0,
-    scale: 0
+    scale: 0,
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.3
-    }
-  }
+      duration: 0.3,
+    },
+  },
 };
 
 const fly = {
   hidden: {
     opacity: 0,
-    y: -100
+    y: -100,
   },
   visible: {
     opacity: 1,
@@ -37,15 +37,15 @@ const fly = {
     transition: {
       delay: 0.3,
       duration: 1,
-      loop: 1
-    }
-  }
+      loop: 1,
+    },
+  },
 };
 
 const pulse = {
   hidden: {
     opacity: 0,
-    scale: 0
+    scale: 0,
   },
   visible: {
     opacity: 1,
@@ -53,9 +53,9 @@ const pulse = {
     transition: {
       delay: 0.3,
       duration: 0.5,
-      loop: 3
-    }
-  }
+      loop: 3,
+    },
+  },
 };
 
 const UploadFigure = () => {

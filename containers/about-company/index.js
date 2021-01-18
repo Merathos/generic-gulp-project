@@ -1,5 +1,5 @@
 import { BenefitsList } from 'components';
-import { Container, H2, SliderWrapper } from './styles';
+import { Container, H2 } from './styles';
 
 const title = 'О компании';
 

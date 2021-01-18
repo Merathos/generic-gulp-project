@@ -17,6 +17,6 @@ const Tabs = ({ tabs }) => {
       </S.List>
     </S.Wrapper>
   );
-}
+};
 
 export default Tabs;

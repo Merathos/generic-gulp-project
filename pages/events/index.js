@@ -14,7 +14,7 @@ const eventsPage = () => {
   });
 
   return (
-    <Layout plainHeader isVisible={false} showFooter={false} greyHeader={false}>
+    <Layout plainHeader isVisible={false} greyHeader={false}>
       <Events
         data={eventsStatic}
         eventCategories={eventCategoriesData?.event_categories}

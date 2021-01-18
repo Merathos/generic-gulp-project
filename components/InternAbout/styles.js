@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { TitleH2 } from 'elements';
-import { Text } from 'elements';
+import { TitleH2, Text } from 'elements';
 
 export const Container = styled.div`
   display: grid;
