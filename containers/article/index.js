@@ -1,5 +1,5 @@
 import { Title, Articles, ArticleContent } from 'components';
-import { Container, Wrapper, Grid, Aside } from './styles';
+import { Container } from './styles';
 
 const Article = ({ data, back }) => {
   let content = {};

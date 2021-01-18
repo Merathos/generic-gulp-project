@@ -1,6 +1,6 @@
 import { InfographicsList } from 'components';
-import * as S from './styles';
 import { useState, useEffect, useRef } from 'react';
+import * as S from './styles';
 
 const timeStep = 4000;
 
@@ -14,7 +14,7 @@ const Infographics = ({ data }) => {
     root: null,
     rootMargin: '20px',
     threshold: 1,
-  };
+  };s
 
   const handleItemHover = (isHovered, index) => {
     if (isHovered) {

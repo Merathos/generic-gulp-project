@@ -1,11 +1,8 @@
-import { Title, Wrapper } from './styles';
+import { Wrapper } from './styles';
 
 const Section = ({ children, margin }) => {
-  return (
-    <Wrapper margin={margin}>
-      {children}
-    </Wrapper>
-  );s
+  return <Wrapper margin={margin}>{children}</Wrapper>;
+  s;
 };
 
 export default Section;

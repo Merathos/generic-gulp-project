@@ -16,28 +16,3 @@ export const Container = styled.main`
     padding: 0 20px;
   }
 `;
-
-export const Wrapper = styled.article`
-  margin-right: 92px;
-  max-width: 854px;
-
-  @media screen and (max-width: 420px) {
-    margin-right: 0;
-  }
-`;
-
-export const Grid = styled.div`
-  display: flex;
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  }
-`;
-
-export const Aside = styled.aside`
-  width: 254px;
-
-  @media screen and (max-width: 420px) {
-    width: 100%;
-  }
-`;
