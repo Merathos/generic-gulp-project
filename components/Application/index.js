@@ -24,7 +24,7 @@ const Application = ({
   return (
     <S.Section className={className}>
       <S.Wrapper decor={decor} type={type} vacancy={vacancy}>
-        <S.H2 vacancy={vacancy}>{language ? 'Apply' : data.title}</S.H2>
+        <S.H2 vacancy={vacancy}>{language ? data.titleEn : data.title}</S.H2>
         {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
         <S.StyledButton
           type="accent"
@@ -33,7 +33,7 @@ const Application = ({
             type === 'relocation' ? handleVacanciesClick : toggleJobModal
           }
         >
-          {language ? 'Send CV' : data.button}
+          {language ? data.buttonEn : data.button}
         </S.StyledButton>
         {picture && <S.Picture src={picture} alt="apply" />}
       </S.Wrapper>

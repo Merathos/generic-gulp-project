@@ -11,7 +11,7 @@ import {
 } from 'components';
 import { FormModal, SuccessModal } from 'containers';
 import { useState } from 'react';
-import mock from 'mock/index';
+import form from 'mock/forms';
 import {
   Container,
   GreyContainer,
@@ -38,7 +38,7 @@ const Vacancy = ({ data, back }) => {
     <>
       <FormModal modalIsOpen={jobModalIsShown} closeModal={toggleJobModal}>
         <JobForm
-          data={mock.jobForm}
+          data={form.jobForm}
           closeModal={toggleJobModal}
           showSuccess={toggleSuccess}
           title={back?.name}
@@ -46,12 +46,16 @@ const Vacancy = ({ data, back }) => {
         />
       </FormModal>
       <SuccessModal
-        data={mock.jobForm.confirmation}
+        data={form.jobForm.confirmation}
         successIsShown={successModalIsShown}
         closeSuccess={toggleSuccess}
       />
       <GreyContainer>
-        <VacancyHeader data={back} toggleJobModal={toggleJobModal} />
+        <VacancyHeader
+          data={data}
+          back={back}
+          toggleJobModal={toggleJobModal}
+        />
       </GreyContainer>
 
       {content && (

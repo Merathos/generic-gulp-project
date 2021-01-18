@@ -7,7 +7,7 @@ import { GET_VACANCY_CONTENT } from 'graphql/query';
 import { initializeApollo } from 'lib/apollo';
 import Head from 'next/head';
 
-import mock from 'mock/index';
+import mock from 'mock/vacancy';
 
 const vacancyPage = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const vacancyPage = () => {
         )}
       </Head>
       <Layout backButton>
-        <Vacancy data={mock.vacancy} back={vacancy} />
+        <Vacancy data={mock} back={vacancy} />
       </Layout>
     </>
   );
