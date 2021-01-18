@@ -1,57 +1,57 @@
+import { Container, Square, Block, Clock, Arrow, Flare } from './styles';
 import Star from 'public/icons/star.svg';
 import { motion } from 'framer-motion';
-import { Container, Square, Block, Clock, Arrow, Flare } from './styles';
 
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
-    },
-  },
+      staggerChildren: 0.15
+    }
+  }
 };
 
 const shape = {
   hidden: {
     opacity: 0,
-    scale: 0,
+    scale: 0
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.3,
-    },
-  },
+      duration: 0.3
+    }
+  }
 };
 
 const blow = {
   hidden: {
     opacity: 0,
-    scale: 0,
+    scale: 0
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
       delay: 0.2,
-      duration: 0.4,
-    },
-  },
+      duration: 0.4
+    }
+  }
 };
 
 const fly = {
   hidden: {
     opacity: 0,
-    y: -100,
+    y: -100
   },
   visible: {
     opacity: 1,
     y: -160,
     transition: {
-      duration: 0.8,
-    },
-  },
+      duration: 0.8
+    }
+  }
 };
 
 const ClockFigure = () => {

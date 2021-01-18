@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SectionGroup } from 'containers';
 
 export const VacancySection = styled.div`
   background-image: url('/backgrounds/vacancy-category.svg');

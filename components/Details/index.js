@@ -1,5 +1,5 @@
-import Router from 'next/router';
 import * as S from './styles';
+import Router from 'next/router';
 
 const Details = ({ data: { block1, block2 } }) => {
   const handleClick = () => {

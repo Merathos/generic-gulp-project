@@ -1,35 +1,35 @@
+import { Container, Square, Block, Circle } from './styles';
 import Face from 'public/icons/face.svg';
 import { motion } from 'framer-motion';
-import { Container, Square, Block, Circle } from './styles';
 
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
-    },
-  },
+      staggerChildren: 0.15
+    }
+  }
 };
 
 const shape = {
   hidden: {
     opacity: 0,
-    scale: 0,
+    scale: 0
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.3,
-    },
-  },
+      duration: 0.3
+    }
+  }
 };
 
 const rotate = {
   hidden: {
     opacity: 0,
     scale: 0,
-    rotate: 0,
+    rotate: 0
   },
   visible: {
     opacity: 1,
@@ -37,16 +37,16 @@ const rotate = {
     rotate: 360,
     transition: {
       delay: 0.3,
-      duration: 0.6,
-    },
-  },
+      duration: 0.6
+    }
+  }
 };
 
 const appear = {
   hidden: {
     opacity: 0,
     scale: 0,
-    y: 100,
+    y: 100
   },
   visible: {
     opacity: 1,
@@ -54,9 +54,9 @@ const appear = {
     y: 0,
     transition: {
       delay: 0.3,
-      duration: 0.5,
-    },
-  },
+      duration: 0.5
+    }
+  }
 };
 
 const UsersFigure = () => {

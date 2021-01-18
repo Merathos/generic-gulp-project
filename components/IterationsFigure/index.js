@@ -1,56 +1,56 @@
-import { motion } from 'framer-motion';
 import { Block, Container, Sector, Square, Circle, Group } from './styles';
+import { motion } from 'framer-motion';
 
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
-    },
-  },
+      staggerChildren: 0.15
+    }
+  }
 };
 
 const shape = {
   hidden: {
     opacity: 0,
-    scale: 0,
+    scale: 0
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.3,
-    },
-  },
+      duration: 0.3
+    }
+  }
 };
 
 const pulse = {
   hidden: {
-    opacity: 0,
+    opacity: 0
   },
   visible: {
     opacity: 1,
     transition: {
       delay: 0.6,
       duration: 0.4,
-      loop: 2,
-    },
-  },
+      loop: 2
+    }
+  }
 };
 
 const dot = {
   hidden: {
     opacity: 0,
-    width: 0,
+    width: 0
   },
   visible: {
     opacity: 1,
     width: 1,
     transition: {
       delay: 0.3,
-      duration: 0.5,
-    },
-  },
+      duration: 0.5
+    }
+  }
 };
 
 const IterationsFigure = () => {

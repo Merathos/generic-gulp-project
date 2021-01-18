@@ -1,5 +1,5 @@
 import { TeamsHeader, GreyFooter, ArticleContent } from 'components';
-import { Container, GreyWrapper } from './styles';
+import { Container, GreyWrapper, Main } from './styles';
 
 const Project = ({ data, teams }) => {
   const content = JSON.parse(teams.content);

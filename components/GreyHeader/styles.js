@@ -100,7 +100,7 @@ export const Features = styled.ul`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
   }
 
   ${props =>
@@ -117,7 +117,7 @@ export const Features = styled.ul`
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap: 30px;
-        margin-bottom: 0;
+        margin-bottom: ${props => (props.twoColumns ? '0' : '30px')};
       }
     `};
 `;
@@ -279,30 +279,30 @@ export const Block = styled.div`
     css`
     align-self: flex-start;
     min-width: 340px;
-
+    
     @media screen and (max-width: 1250px) {
       min-width: 260px;
     }
-
+    
     @media screen and (max-width: 1024px) {
       min-width: auto;
     }
-
+    
     @media screen and (max-width: 600px) {
       width: 315px;
       align-self: center;
     }
-
+    
     @media screen and (max-width: 420px) {
       width: auto;
     }
-
+    
     &::after {
       background-repeat: no-repeat;
       bottom: -130px;
       left: -156px;
       right: auto;
-
+      
       @media screen and (max-width: 1250px) {
         left: auto;
         right: -120px;
@@ -311,7 +311,7 @@ export const Block = styled.div`
         height: 240px;
         background-size: 240px 240px;
       }
-
+    
       @media screen and (max-width: 600px) {
         width: 120px;
         height: 120px;
