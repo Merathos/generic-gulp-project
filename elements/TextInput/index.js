@@ -13,8 +13,6 @@ const TextInput = ({
   warning,
   error,
   errorMsg,
-  phone,
-  date = false,
   register,
   mask,
   maskChar,
@@ -91,8 +89,6 @@ const TextInput = ({
         id={name}
         autoComplete="off"
         required={required}
-        // maxLength={date ? 10 : 999}
-        // onKeyPress={date ? handleDateMask : phone ? handlePhoneMask : () => {}}
         ref={register}
       />
       <label htmlFor={name}>{label}</label>
