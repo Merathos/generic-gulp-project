@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import TitleH2 from '/elements/TitleH2';
 import { IconsList } from 'components';
+import { useSelector } from 'react-redux';
 
 const H2 = styled(TitleH2)`
   margin-bottom: 100px;
@@ -23,10 +24,12 @@ const Section = styled.div`
 `;
 
 const Conditions = props => {
+  const language = useSelector(state => state.language);
+
   const { data } = props;
   return (
     <Section>
-      <H2>{data.title}</H2>
+      <H2>{language ? data.titleEn : data.title}</H2>
       <IconsList data={data.list} />
     </Section>
   );

@@ -40,7 +40,7 @@ const SliderVacancy = ({ data, isVacancyPage }) => {
 
   return (
     <S.Section>
-      <S.H2>{language ? 'Selection Process' : 'Этапы отбора'}</S.H2>
+      <S.H2>{language ? data.titleEn : data.title}</S.H2>
       <Swiper ref={ref} {...params}>
         {list &&
           list.map((el, i) => (

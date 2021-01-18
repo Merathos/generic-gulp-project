@@ -10,7 +10,7 @@ const OfficesMap = ({ data, isContacts }) => {
     <S.Section isContacts={isContacts}>
       <S.Container>
         <S.Title isContacts={isContacts}>
-          {language ? 'Our offices' : data.title}
+          {language ? data.titleEn : data.title}
         </S.Title>
         {data.location && (
           <S.Wrapper>

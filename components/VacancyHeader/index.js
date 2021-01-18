@@ -15,7 +15,7 @@ import {
   Container,
 } from './styles';
 
-const VacancyHeader = ({ data, toggleJobModal }) => {
+const VacancyHeader = ({ data, back, toggleJobModal }) => {
   const language = useSelector(state => state.language);
 
   const {
@@ -25,7 +25,7 @@ const VacancyHeader = ({ data, toggleJobModal }) => {
     is_english_speaking_team,
     team,
     category,
-  } = data;
+  } = back;
 
   const features = [
     {
@@ -58,13 +58,17 @@ const VacancyHeader = ({ data, toggleJobModal }) => {
           )}
           {technology_stacks && (
             <TextBlock>
-              <Bold>{language ? 'Technology Stack:' : 'Стек технологий:'}</Bold>
+              <Bold>
+                {language ? data.header.techTitleEn : data.header.techTitle}
+              </Bold>
               <StyledText>{technology_stacks}</StyledText>
             </TextBlock>
           )}
           {team?.name && (
             <TextBlock>
-              <Bold>{language ? 'Team:' : 'Команда:'}</Bold>
+              <Bold>
+                {language ? data.header.teamTitleEn : data.header.teamTitle}
+              </Bold>
               <StyledText withIcon={team.slug}>
                 {team && team.name}
                 {team.slug && (
@@ -78,7 +82,7 @@ const VacancyHeader = ({ data, toggleJobModal }) => {
             </TextBlock>
           )}
           <StyledButton accent onClick={toggleJobModal}>
-            {language ? 'Send CV' : 'Отправить резюме'}
+            {language ? data.application.buttonEn : data.application.button}
           </StyledButton>
         </Content>
       </Section>

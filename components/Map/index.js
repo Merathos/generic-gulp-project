@@ -22,7 +22,7 @@ class Map extends Component {
     const language = useSelector(state => state.language);
     return (
       <>
-        <S.H2>{language ? 'Our offices' : 'Офисы на карте'}</S.H2>
+        <S.H2>{language ? data.titleEn : data.title}</S.H2>
         {data.location && (
           <S.Wrapper>
             <S.Place>{data.location}</S.Place>
