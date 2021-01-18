@@ -27,7 +27,6 @@ export const Container = styled.div`
 
 export const Grid = styled.div`
   padding-top: 200px;
-  padding-bottom: 100px;
 
   @media (min-width: 1200px) {
     display: grid;

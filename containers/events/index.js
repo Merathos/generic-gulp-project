@@ -67,7 +67,9 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
               <EventList events={eventsUpcoming} />
             )}
             <S.CompletedTitle>{data.completedTitle}</S.CompletedTitle>
-            {eventsEnded?.length > 0 && <EventList events={eventsEnded} />}
+            {eventsEnded?.length > 0 && (
+              <EventList events={eventsEnded} noMarginBottom />
+            )}
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>

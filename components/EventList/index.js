@@ -1,9 +1,9 @@
 import { EventCard } from 'components';
 import { Item, List } from './styles';
 
-const EventList = ({ events }) => {
+const EventList = ({ events, noMarginBottom }) => {
   return (
-    <List>
+    <List noMarginBottom={noMarginBottom}>
       {events.map(event => (
         <Item key={event.id}>
           <EventCard
