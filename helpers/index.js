@@ -1,9 +1,9 @@
 export const fromSecToDuration = duration => {
-  const min = parseInt(duration / 60, 10);
-  let sec = parseInt(duration % 60, 10);
+  const min = parseInt(duration / 60);
+  let sec = parseInt(duration % 60);
 
   if (sec < 10) {
-    sec = `0${sec}`;
+    sec = '0' + sec;
   }
 
   return `${min}:${sec}`;

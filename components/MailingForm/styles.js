@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TitleH2, Btn, EventsCheckbox } from 'elements';
 
 export const Container = styled.div`

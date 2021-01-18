@@ -1,6 +1,6 @@
 import { MarkerList, PortraitSlider } from 'components';
-import Router from 'next/router';
 import * as S from './styles';
+import Router from 'next/router';
 
 const Intro = ({ data, quotes }) => {
   const handleVacanciesClick = () => {

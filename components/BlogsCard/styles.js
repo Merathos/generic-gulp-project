@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH4 } from 'elements';
+import { TitleH4, Subtitle } from 'elements';
 
 export const Wrapper = styled.a`
   background-color: ${props => props.background || 'transparent'};

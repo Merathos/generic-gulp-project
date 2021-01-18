@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import mock from 'mock/index';
-import { useLayoutEffect } from 'react';
 import * as S from './styles';
 import { MenuList, ContactsList, Social } from '../../components';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import LogoNimax from '../../public/images/logo-nimax.svg';
 import MenuClose from '../../public/icons/cross.svg';
+import mock from 'mock/index';
+import { useLayoutEffect } from 'react';
 
 const OpenedMenu = ({ onMenuClose }) => {
   const router = useRouter();

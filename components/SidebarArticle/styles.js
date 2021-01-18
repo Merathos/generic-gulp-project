@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { TitleH4, TitleH5, Icon, Subtitle } from 'elements';
+import { TitleH4, TitleH5, Icon, Subtitle } from '/elements';
 
 export const Title = styled(TitleH4)`
   margin-bottom: ${props => (props.isInternship ? '14px' : '40px')};

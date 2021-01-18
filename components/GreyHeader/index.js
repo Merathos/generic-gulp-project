@@ -20,7 +20,7 @@ const GreyHeader = ({
       <S.Wrapper withPicture={!!picture}>
         <TitleH1>{title}</TitleH1>
         {picture && hash && (
-          <S.Block hash={hash} afterTitle>
+          <S.Block hash={hash} afterTitle={true}>
             <S.Picture
               src={picture}
               srcSet={`${mobPicture} 420w, ${picture}`}
