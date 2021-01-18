@@ -62,16 +62,7 @@ const Label = styled.label`
   }
 `;
 
-const RadioBtn = ({
-  name,
-  handleChange,
-  value,
-  id,
-  label,
-  checked,
-  register,
-  error,
-}) => {
+const RadioBtn = ({ name, value, id, label, checked, register, error }) => {
   return (
     <Label error={error}>
       <input
