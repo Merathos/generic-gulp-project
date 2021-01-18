@@ -86,13 +86,13 @@ const Vacancy = ({ data, back }) => {
 
       <OfficesMap data={data.map} english={back.is_english_speaking_team} />
 
-      {back.recruiters.length > 0 && (
+      {back.recruiters?.length > 0 && (
         <Container>
           <Recruiters data={data.recruiters} back={back.recruiters} />
         </Container>
       )}
 
-      {back.related && (
+      {back.related?.lentgh > 0 && (
         <VacancySection>
           <Container>
             <Articles type="vacancy" data={back.related} />
