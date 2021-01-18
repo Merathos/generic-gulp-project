@@ -92,7 +92,7 @@ const Vacancy = ({ data, back }) => {
         </Container>
       )}
 
-      {back.related?.lentgh > 0 && (
+      {back.related?.length > 0 && (
         <VacancySection>
           <Container>
             <Articles type="vacancy" data={back.related} />
