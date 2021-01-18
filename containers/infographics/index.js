@@ -1,6 +1,6 @@
 import { InfographicsList } from 'components';
-import * as S from './styles';
 import { useState, useEffect, useRef } from 'react';
+import * as S from './styles';
 
 const timeStep = 4000;
 
@@ -45,13 +45,11 @@ const Infographics = ({ data }) => {
   useEffect(() => {
     let timer;
     const increaseIndex = () => {
-      setActiveItemIndex(activeItemIndex => {
-        if (activeItemIndex === null) {
+      setActiveItemIndex(prev => {
+        if (prev === null) {
           return 0;
         }
-        return activeItemIndex < data.infographicsData.length - 1
-          ? activeItemIndex + 1
-          : 0;
+        return prev < data.infographicsData.length - 1 ? prev + 1 : 0;
       });
       timer = setTimeout(increaseIndex, timeStep);
     };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TitleH2 from '/elements/TitleH2';
+import TitleH2 from 'elements/TitleH2';
 import { IconsList } from 'components';
 import { useSelector } from 'react-redux';
 

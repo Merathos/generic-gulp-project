@@ -1,16 +1,33 @@
 import { Map as Mapcomp, Placemark, YMaps } from 'react-yandex-maps';
 import { useEffect, useState, useRef } from 'react';
 
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(undefined);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return windowWidth;
+}
+
 const Map = ({
   data: { center, markers, zoom, controls, behaviors, routeFrom },
 }) => {
   const initialWidth = useWindowWidth();
   const mapRef = useRef(null);
 
-  const handleApiAvaliable = function(ymaps) {
+  const handleApiAvaliable = ymaps => {
     if (routeFrom) {
       routeFrom.forEach(route => {
-        var multiRoute = new ymaps.multiRouter.MultiRoute(
+        const multiRoute = new ymaps.multiRouter.MultiRoute(
           {
             referencePoints: [
               [route.lat, route.lng],
@@ -46,7 +63,7 @@ const Map = ({
         <Mapcomp
           instanceRef={mapRef}
           onLoad={ymaps => handleApiAvaliable(ymaps)}
-          className={'map-container'}
+          className="map-container"
           state={{
             center: [center.lat, center.lng],
             zoom: initialWidth > 768 ? zoom : routeFrom ? zoom - 2 : zoom - 1,
@@ -73,22 +90,5 @@ const Map = ({
     </>
   );
 };
-
-function useWindowWidth() {
-  const [windowWidth, setWindowWidth] = useState(undefined);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return windowWidth;
-}
 
 export default Map;

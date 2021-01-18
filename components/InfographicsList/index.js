@@ -1,4 +1,3 @@
-import * as S from './styles';
 import { useState, useEffect } from 'react';
 import {
   ListFigure,
@@ -8,6 +7,7 @@ import {
   IterationsFigure,
   UploadFigure,
 } from 'components';
+import * as S from './styles';
 
 const InfographicsList = ({ data, activeItemIndex, onHover }) => {
   const [currentAnimation, changeAnimation] = useState('');

@@ -7,15 +7,18 @@ import { Metro } from 'components';
 import * as S from './styles';
 
 class Map extends Component {
-  state = {
-    viewport: {
-      width: '100%',
-      height: '100%',
-      latitude: 59.94984372479269,
-      longitude: 30.33145024042134,
-      zoom: 12.275823249249143,
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewport: {
+        width: '100%',
+        height: '100%',
+        latitude: 59.94984372479269,
+        longitude: 30.33145024042134,
+        zoom: 12.275823249249143,
+      },
+    };
+  }
 
   render() {
     const { data, twoColumns = false } = this.props;

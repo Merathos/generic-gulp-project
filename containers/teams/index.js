@@ -16,6 +16,7 @@ const Teams = ({ teams }) => {
               </ListItem>
             );
           }
+          return null;
         })}
       </List>
     </Container>
