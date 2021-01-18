@@ -2,7 +2,7 @@
   "name": "with-apollo-and-redux",
   "version": "2.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "rm -rf .next && clear && next",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

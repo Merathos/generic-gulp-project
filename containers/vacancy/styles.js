@@ -2,30 +2,35 @@ import styled from 'styled-components';
 import { SectionGroup } from 'containers';
 
 export const VacancySection = styled.div`
-  background-image: url('/backgrounds/vacanccy-category.svg');
+  background-image: url('/backgrounds/vacancy-category.svg');
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: -150px 50%;
   padding-top: 60px;
   padding-bottom: 100px;
 
   @media (max-width: 1110px) {
-    background-image: none;
+    background-size: 266px 294px;
+    background-position: calc(100% + 85px) 100%;
   }
 
   @media screen and (max-width: 420px) {
-    padding-top: 30px;
-    margin-bottom: 50px;
+    padding-top: 10px;
   }
 `;
 
 export const ConditionsSection = styled.div`
   background-image: url('/backgrounds/conditions.svg');
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: calc(100% + 110px) 0%;
   padding-top: 60px;
 
   @media (max-width: 1110px) {
-    background-image: none;
+    background-size: 270px 280px;
+  }
+
+  @media (max-width: 768px) {
+    background-size: 113px 123px;
+    background-position: calc(100% + 65px) 0%;
   }
 
   @media screen and (max-width: 420px) {
