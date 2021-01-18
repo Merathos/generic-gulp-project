@@ -22,7 +22,8 @@ const GridArticles = ({ articles }) => (
             </Link>
           )}
           {el.type === 'history' && el.is_highlight === false && (
-            <BlogsCard data={el} background="#F7F8F9" />)}
+            <BlogsCard data={el} background="#F7F8F9" />
+          )}
           {el.type !== 'history' && el.is_highlight === false && (
             <ArticleCard data={el} />
           )}

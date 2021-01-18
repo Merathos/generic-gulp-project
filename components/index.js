@@ -28,7 +28,6 @@ export { default as Cards } from './Cards';
 export { default as Dropdown } from './Dropdown';
 export { default as Details } from './Details';
 export { default as Values } from './Values';
-export { default as Animation } from './Animation';
 export { default as Gallery } from './Gallery';
 export { default as GreyHeader } from './GreyHeader';
 export { default as GreyFooter } from './GreyFooter';
