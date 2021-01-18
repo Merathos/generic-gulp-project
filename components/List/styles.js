@@ -36,7 +36,7 @@ export const NormalList = styled.ul`
   grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
 
-  @media screen and (max-width: 545px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-gap: 30px;
   }
