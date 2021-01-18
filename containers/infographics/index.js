@@ -14,7 +14,7 @@ const Infographics = ({ data }) => {
     root: null,
     rootMargin: '20px',
     threshold: 1,
-  };s
+  };
 
   const handleItemHover = (isHovered, index) => {
     if (isHovered) {

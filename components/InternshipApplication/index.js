@@ -1,21 +1,16 @@
 import { useState } from 'react';
-import { FormModal, SuccessModal } from 'containers';
-import mock from 'mock/index';
+import { FormModal } from 'containers';
+import form from 'mock/forms';
 import * as S from './styles';
 import { JobForm } from '../index';
 
 const InternshipApplication = ({ data }) => {
   const { text, title, button } = data;
   const [isModalOpened, setModalOpen] = useState(false);
-  const [successModalIsShown, setSuccessIsShown] = useState(false);
 
   const toggleModal = () => {
     setModalOpen(prev => !prev);
   };
-
-  function toggleSuccess() {
-    setSuccessIsShown(prev => !prev);
-  }
 
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
   let updatedText;
@@ -35,14 +30,13 @@ const InternshipApplication = ({ data }) => {
           {button}
         </S.StyledButton>
       </S.Wrapper>
-      <FormModal modalIsOpen={isModalOpened} closeModal={toggleModal}>
-        <JobForm closeModal={toggleModal} showSuccess={toggleSuccess} />
+      <FormModal
+        modalIsOpen={isModalOpened}
+        closeModal={toggleModal}
+        successData={form.jobFormV2.confirmation}
+      >
+        <JobForm closeModal={toggleModal} />
       </FormModal>
-      <SuccessModal
-        data={mock.jobFormV2.confirmation}
-        successIsShown={successModalIsShown}
-        closeSuccess={toggleSuccess}
-      />
     </S.Section>
   );
 };

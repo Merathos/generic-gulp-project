@@ -1,5 +1,5 @@
-import { EventList, EventsTags, Mailing, SubForm } from 'components';
-import { FormModal, SuccessModal } from 'containers';
+import { EventList, EventsTags, Mailing, EventForm } from 'components';
+import { FormModal } from 'containers';
 import { EventsFilter } from 'forms';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -8,14 +8,9 @@ import * as S from './styles';
 const Events = ({ data, eventCategories, events, pageSlug }) => {
   const router = useRouter();
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [successIsShown, setSuccessIsShown] = useState(false);
 
   function toggleModal() {
     setIsOpen(prev => !prev);
-  }
-
-  function toggleSuccess() {
-    setSuccessIsShown(prev => !prev);
   }
 
   // Filter upcoming events
@@ -73,19 +68,17 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
           </S.ContentWrapper>
         </S.Grid>
       </S.Container>
-      <FormModal modalIsOpen={modalIsOpen} closeModal={toggleModal}>
-        <SubForm
+      <FormModal
+        modalIsOpen={modalIsOpen}
+        closeModal={toggleModal}
+        successData={data.newsModal.confirmation}
+      >
+        <EventForm
           data={data.newsModal}
           closeModal={toggleModal}
-          showSuccess={toggleSuccess}
           eventCategories={eventCategories}
         />
       </FormModal>
-      <SuccessModal
-        data={data.newsModal.confirmation}
-        successIsShown={successIsShown}
-        closeSuccess={toggleSuccess}
-      />
     </S.Main>
   );
 };
