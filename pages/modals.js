@@ -1,7 +1,7 @@
 import form from 'mock/forms';
 import styled from 'styled-components';
 import { useState } from 'react';
-import { FormModal, SuccessModal } from 'containers';
+import { FormModal } from 'containers';
 import { JobForm, InternForm, SubForm } from 'components';
 
 export const Container = styled.div`

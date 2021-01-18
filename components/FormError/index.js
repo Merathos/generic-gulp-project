@@ -1,7 +1,7 @@
 import { CloseBtn } from 'elements';
 import * as S from './styles';
 
-const FromError = ({ data, close }) => {
+const FormError = ({ data, close }) => {
   return (
     <S.Container>
       <S.Wrapper>
@@ -16,4 +16,4 @@ const FromError = ({ data, close }) => {
   );
 };
 
-export default FromError;
+export default FormError;
