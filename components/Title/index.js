@@ -54,7 +54,7 @@ const Title = ({ title, date, description }) => {
       {title && (
         <ArticleTitle
           dangerouslySetInnerHTML={{
-            __html: title.replace(/\n/g, '<br>'),
+            __html: title,
           }}
         />
       )}

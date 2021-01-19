@@ -8,7 +8,7 @@ const TeamsHeader = ({ title, text, stack, picture }) => {
         {title && (
           <TitleH1
             dangerouslySetInnerHTML={{
-              __html: title.replace(/\n/g, '<br>'),
+              __html: title,
             }}
           />
         )}

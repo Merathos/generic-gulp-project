@@ -34,6 +34,7 @@ export const GET_VACANCIES = gql`
 export const GET_VACANCY_CONTENT = gql`
   query getVacancyContent($slug: String, $is_preview: Boolean) {
     vacancies(slug: $slug, is_preview: $is_preview) {
+      name_new_line @client
       id
       name
       is_english_speaking_team
@@ -118,6 +119,8 @@ export const GET_RELOCATION_BLOGS = gql`
 export const GET_BLOG_CONTENT = gql`
   query getBlogContent($slug: String, $is_preview: Boolean) {
     blogs(slug: $slug, is_preview: $is_preview) {
+      title_new_line @client
+      id
       type
       slug
       title
@@ -202,10 +205,11 @@ export const GET_TEAM_CATEGORIES = gql`
 export const GET_TEAM_CONTENT = gql`
   query getTeamContent($slug: String, $is_preview: Boolean) {
     teams(slug: $slug, is_preview: $is_preview) {
-      content
-      description
+      name_new_line @client
       id
       name
+      content
+      description
       slug
       detail_image {
         path(width: 500) {
