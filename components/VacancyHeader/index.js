@@ -20,6 +20,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
 
   const {
     name,
+    name_new_line,
     technology_stacks,
     is_internship,
     is_english_speaking_team,
@@ -50,10 +51,10 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
               <Features data={features} />
             </Wrapper>
           )}
-          {name && (
+          {name_new_line && (
             <H1
               dangerouslySetInnerHTML={{
-                __html: name.replace(/\n/g, '<br>'),
+                __html: name_new_line,
               }}
             />
           )}

@@ -14,7 +14,7 @@ const EventHeader = ({
   eventDataPolling,
 }) => {
   const {
-    name,
+    name_new_line,
     starts_at: startsAt,
     ends_at: endsAt,
     location,
@@ -66,7 +66,11 @@ const EventHeader = ({
                 {renderStatus()}
               </S.Status>
             )}
-            <S.Type>{name}</S.Type>
+            <S.Type
+              dangerouslySetInnerHTML={{
+                __html: name_new_line,
+              }}
+            />
             <S.LocationContainer>
               <S.DateWrapper>
                 <p>

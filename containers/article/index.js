@@ -10,7 +10,7 @@ const Article = ({ data, back }) => {
   return (
     <Container>
       <Title
-        title={back?.title}
+        title={back?.title_new_line}
         date={back?.created_at}
         description={back?.description}
       />

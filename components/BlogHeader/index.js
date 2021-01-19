@@ -9,7 +9,7 @@ const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
         {title && (
           <TitleH1
             dangerouslySetInnerHTML={{
-              __html: title.replace(/\n/g, '<br>'),
+              __html: title,
             }}
           />
         )}
