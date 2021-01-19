@@ -25,6 +25,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
     is_english_speaking_team,
     team,
     category,
+    is_archive: isArchive,
   } = back;
 
   const features = [
@@ -81,9 +82,11 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
               </StyledText>
             </TextBlock>
           )}
-          <StyledButton accent onClick={toggleJobModal}>
-            {language ? data.application.buttonEn : data.application.button}
-          </StyledButton>
+          {!isArchive && (
+            <StyledButton accent onClick={toggleJobModal}>
+              {language ? data.application.buttonEn : data.application.button}
+            </StyledButton>
+          )}
         </Content>
       </Section>
       {category?.image && (

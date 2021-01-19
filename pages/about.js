@@ -4,7 +4,7 @@ import mock from 'mock/index';
 
 const aboutPage = () => {
   return (
-    <Layout greyFooter isVisible={false} plainHeader={true} smallIndent>
+    <Layout greyFooter isVisible={false} plainHeader smallIndent>
       <About data={mock.about} />
     </Layout>
   );

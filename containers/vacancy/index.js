@@ -70,12 +70,14 @@ const Vacancy = ({ data, back }) => {
         </SliderContainer>
       </SliderSection>
 
-      <Application
-        data={data.application}
-        decor
-        vacancy
-        toggleJobModal={toggleJobModal}
-      />
+      {!back.is_archive && (
+        <Application
+          data={data.application}
+          decor
+          vacancy
+          toggleJobModal={toggleJobModal}
+        />
+      )}
 
       <OfficesMap data={data.map} english={back.is_english_speaking_team} />
 
