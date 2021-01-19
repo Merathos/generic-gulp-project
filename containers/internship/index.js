@@ -53,7 +53,7 @@ const Internship = ({ data, vacanciesData }) => {
 
       <GreyContainer>
         <Container>
-          <SliderVacancy data={data.steps} />
+          <SliderVacancy data={data.steps} list={data.steps.list} />
         </Container>
       </GreyContainer>
 

@@ -59,16 +59,20 @@ const Vacancy = ({ data, back }) => {
           />
         </Container>
       )}
-      <ConditionsSection>
-        <Container>
-          <Conditions data={data.conditions} />
-        </Container>
-      </ConditionsSection>
-      <SliderSection>
-        <SliderContainer>
-          <SliderVacancy data={data.steps} isVacancyPage />
-        </SliderContainer>
-      </SliderSection>
+      {back.conditions?.length > 0 && (
+        <ConditionsSection addMarginBottom={!back.stages?.length > 0}>
+          <Container>
+            <Conditions data={data.conditions} back={back.conditions} />
+          </Container>
+        </ConditionsSection>
+      )}
+      {back.stages?.length > 0 && (
+        <SliderSection>
+          <SliderContainer>
+            <SliderVacancy data={data.steps} list={back.stages} isVacancyPage />
+          </SliderContainer>
+        </SliderSection>
+      )}
 
       {!back.is_archive && (
         <Application

@@ -22,6 +22,7 @@ export const ConditionsSection = styled.div`
   background-repeat: no-repeat;
   background-position: calc(100% + 110px) 0%;
   padding-top: 60px;
+  margin-bottom: ${p => (p.addMarginBottom ? '160px' : '0')};
 
   @media (max-width: 1110px) {
     background-size: 270px 280px;

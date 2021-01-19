@@ -23,14 +23,13 @@ const Section = styled.div`
   }
 `;
 
-const Conditions = props => {
+const Conditions = ({ data, back }) => {
   const language = useSelector(state => state.language);
 
-  const { data } = props;
   return (
     <Section>
       <H2>{language ? data.titleEn : data.title}</H2>
-      <IconsList data={data.list} />
+      <IconsList data={back} />
     </Section>
   );
 };
