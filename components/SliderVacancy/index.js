@@ -6,13 +6,12 @@ import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 import * as S from './styles';
 
-const SliderVacancy = ({ data, isVacancyPage }) => {
+const SliderVacancy = ({ data, list, isVacancyPage }) => {
   let language;
   if (isVacancyPage) {
     language = useSelector(state => state.language);
   }
 
-  const { list } = data;
   const ref = useRef(null);
 
   const params = {
@@ -43,12 +42,12 @@ const SliderVacancy = ({ data, isVacancyPage }) => {
       <S.H2>{language ? data.titleEn : data.title}</S.H2>
       <Swiper ref={ref} {...params}>
         {list &&
-          list.map((el, i) => (
-            <S.Element key={i}>
+          list.map((item, i) => (
+            <S.Element key={item.id}>
               <S.Number>{`0${i + 1}`}</S.Number>
-              <S.Title>{el.title}</S.Title>
-              <S.Text>{el.text}</S.Text>
-              {el.subtitle && <Subtitle>{el.subtitle}</Subtitle>}
+              <S.Title>{item.title}</S.Title>
+              {item.description && <S.Text>{item.description}</S.Text>}
+              {item.duration && <S.Duration>{item.duration}</S.Duration>}
             </S.Element>
           ))}
       </Swiper>

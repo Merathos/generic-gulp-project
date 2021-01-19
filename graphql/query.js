@@ -42,6 +42,8 @@ export const GET_VACANCY_CONTENT = gql`
       descr
       slug
       content
+      technology_stacks
+      is_archive
       category {
         id
         image {
@@ -55,7 +57,23 @@ export const GET_VACANCY_CONTENT = gql`
         name
         slug
       }
-      technology_stacks
+      conditions {
+        id
+        text
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      stages {
+        id
+        title
+        description
+        duration
+      }
       recruiters {
         name
         email

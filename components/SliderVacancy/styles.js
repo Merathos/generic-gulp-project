@@ -1,13 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Subtitle, TitleH2 } from 'elements';
 
 export const Text = styled(Subtitle)`
-  margin-bottom: 37px;
+  margin-bottom: 35px;
   white-space: pre-wrap;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 30px;
   }
+`;
+
+export const Duration = styled(Subtitle)`
+  color: #2f8ed9;
+  opacity: 1;
 `;
 
 export const Element = styled.div`
