@@ -10,13 +10,17 @@ const EventsTags = ({ eventCategories }) => {
   const { pathname, query } = router;
 
   const handleClick = (slug, isActive) => {
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        categories: generateNewTags(query.categories, slug, isActive),
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          categories: generateNewTags(query.categories, slug, isActive),
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   return (
