@@ -28,13 +28,17 @@ const Tags = ({ categories, stacks, teams }) => {
   const { pathname, query } = router;
 
   const handleClick = (slug, isActive, category) => {
-    router.push({
-      pathname,
-      query: {
-        ...query,
-        [category]: generateNewTags(query[category], slug, isActive),
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          [category]: generateNewTags(query[category], slug, isActive),
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   const getSlugByName = (slug, obj) => {
