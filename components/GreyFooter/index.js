@@ -17,7 +17,7 @@ const GreyFooter = ({ data, type, background }) => {
             {data.map(item => {
               return (
                 <S.Card key={item.id}>
-                  <StoryCard data={item} background="#fff" />
+                  <StoryCard data={item} background="#fff" staticWidth />
                 </S.Card>
               );
             })}

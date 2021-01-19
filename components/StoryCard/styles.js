@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.a`
   position: relative;
@@ -9,6 +9,11 @@ export const Wrapper = styled.a`
   width: 100%;
   box-sizing: border-box;
   min-height: 431px;
+  ${p =>
+    p.staticWidth &&
+    css`
+      width: 349px;
+    `}
 
   &::after {
     content: '';
