@@ -12,9 +12,10 @@ export const Card = styled.div`
   background-repeat: no-repeat;
   background-position: 40px bottom;
   min-height: 240px;
+  height: 240px;
   cursor: pointer;
   transition: all 0.3s ease;
-  max-width: 580px;
+  width: 100%;
 
   @media screen and (max-width: 540px) {
     margin-bottom: 30px;
@@ -24,43 +25,37 @@ export const Card = styled.div`
     min-height: 0;
   }
 
-  svg {
-    path {
-      transition: all 0.3s ease;
-
-      :first-child {
-        fill: white;
-        stroke: #201f2a;
-      }
-
-      :last-child {
-        fill: black;
-        stroke: none;
-      }
-    }
-  }
-
   &:hover {
-    path:first-child {
-      fill: red;
-      stroke: #53b443;
-    }
+    color: #53b443;
 
-    path:last-child {
-      fill: #ffffff;
-      stroke: #ffffff;
+    svg {
+      fill: #53b443;
+
+      path:first-child {
+        stroke: #53b443;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
     }
   }
 
   &:active {
-    path:first-child {
-      fill: #339722;
-      stroke: #339722;
-    }
+    color: #339722;
 
-    path:last-child {
-      stroke: #ffffff;
-      fill: #ffffff;
+    svg {
+      fill: #339722;
+
+      path:first-child {
+        stroke: #339722;
+      }
+
+      path:last-child {
+        stroke: #ffffff;
+        fill: #ffffff;
+      }
     }
   }
 `;

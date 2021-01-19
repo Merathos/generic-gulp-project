@@ -11,9 +11,10 @@ export const Card = styled.div`
   background-repeat: no-repeat;
   background-position: 20px bottom;
   min-height: 240px;
+  height: 240px;
   cursor: pointer;
   transition: all 0.3s ease;
-  max-width: 580px;
+  width: 100%;
 
   @media screen and (max-width: 1280px) {
     margin-bottom: 40px;
@@ -60,6 +61,11 @@ export const Card = styled.div`
 
 export const H4 = styled(TitleH4)`
   min-width: 221px;
+  max-width: 244px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 export const Img = styled.img`

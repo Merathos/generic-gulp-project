@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import TitleH2 from 'elements/TitleH2';
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
   margin-bottom: 100px;
 
   @media screen and (max-width: 1280px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
     margin-bottom: 50px;
   }
 `;
