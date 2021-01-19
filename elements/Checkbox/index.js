@@ -2,6 +2,7 @@ import { Wrapper, Label, DropLabel } from './styles';
 
 const Checkbox = props => {
   const { name, handleChange, type, checked_state } = props;
+
   const id = props.id || name;
   return (
     <>

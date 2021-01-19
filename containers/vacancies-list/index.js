@@ -2,26 +2,23 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';
-import { useDispatch, useSelector } from 'react-redux';
 import { Search } from 'forms';
 import { getNewTags } from 'helpers';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
 import formMock from 'mock';
+import { queryHelpers } from 'helpers/query-helpers';
 import * as S from './styles';
 import { FormModal } from '../index';
 
-const VacanciesList = ({ data: mock, back }) => {
+const { generateNewTags } = queryHelpers;
+
+const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
   const router = useRouter();
   const { pathname, query } = router;
-  const dispatch = useDispatch();
-
-  const internship_state = useSelector(state => state.internship);
-  const english_state = useSelector(state => state.english);
 
   const [opened, setOpened] = useState('');
   const [hidden, setHidden] = useState(true);
-  const filterArray = useSelector(state => state.filter);
 
   const [isModalOpened, setModalOpen] = useState(false);
 
@@ -60,22 +57,6 @@ const VacanciesList = ({ data: mock, back }) => {
     }
   };
 
-  useEffect(() => {
-    if (english_state) {
-      router.push(
-        {
-          pathname,
-          query: {
-            ...query,
-            english: english_state,
-          },
-        },
-        undefined,
-        { shallow: true }
-      );
-    }
-  }, []);
-
   const handleCategories = e => {
     if (e === '') {
       delete query.categories;
@@ -89,7 +70,6 @@ const VacanciesList = ({ data: mock, back }) => {
         undefined,
         { shallow: true }
       );
-      dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
     } else {
       router.push(
         {
@@ -102,44 +82,21 @@ const VacanciesList = ({ data: mock, back }) => {
         undefined,
         { shallow: true }
       );
-      dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e });
     }
   };
 
-  const handleCheckbox = e => {
-    if (filterArray.indexOf(e) === -1) {
-      router.push(
-        {
-          pathname,
-          query: {
-            ...query,
-            filter: [...filterArray, e],
-          },
+  const handleFilterClick = (slug, isActive, category) => {
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          [category]: generateNewTags(query[category], slug, isActive),
         },
-        undefined,
-        { shallow: true }
-      );
-      dispatch({ type: 'CATALOG_FILTER', payload: e });
-    } else {
-      const item = filterArray.find(el => el === e);
-      const index = filterArray.indexOf(item);
-
-      router.push(
-        {
-          pathname,
-          query: {
-            ...query,
-            filter: [
-              ...filterArray.slice(0, index),
-              ...filterArray.slice(index + 1),
-            ],
-          },
-        },
-        undefined,
-        { shallow: true }
-      );
-      dispatch({ type: 'CLEAR_FILTER', payload: e });
-    }
+      },
+      undefined,
+      { shallow: true }
+    );
   };
 
   const handleInternship = () => {
@@ -161,14 +118,13 @@ const VacanciesList = ({ data: mock, back }) => {
           pathname,
           query: {
             ...query,
-            internship: !internship_state,
+            internship: !query.internship,
           },
         },
         undefined,
         { shallow: true }
       );
     }
-    dispatch({ type: 'CATALOG_INTERNSHIP' });
   };
 
   const handleEnglish = () => {
@@ -190,14 +146,13 @@ const VacanciesList = ({ data: mock, back }) => {
           pathname,
           query: {
             ...query,
-            english: !english_state,
+            english: !query.english,
           },
         },
         undefined,
         { shallow: true }
       );
     }
-    dispatch({ type: 'CATALOG_ENGLISH' });
   };
 
   const handleSearch = search => {
@@ -214,76 +169,65 @@ const VacanciesList = ({ data: mock, back }) => {
     );
   };
 
-  const handleClearTags = tag => {
-    dispatch({ type: 'CLEAR_FILTER', payload: tag });
-
-    const item = filterArray.find(el => el === tag);
-    const index = filterArray.indexOf(item);
-
-    router.push(
-      {
-        pathname,
-        query: {
-          ...query,
-          filter: [
-            ...filterArray.slice(0, index),
-            ...filterArray.slice(index + 1),
-          ],
-        },
-      },
-      undefined,
-      { shallow: true }
-    );
-  };
-
-  const handleClearCategoryTag = () => {
-    delete query.categories;
-    router.push(
-      {
-        pathname,
-        query: {
-          ...query,
-        },
-      },
-      undefined,
-      { shallow: true }
-    );
-    dispatch({ type: 'CLEAR_FILTER_CATEGORIES' });
-  };
-
   const handleOpenFilter = () => {
     setHidden(!hidden);
   };
 
   const {
-    filter: { fields, internship, english, discard },
+    filter: { internship, english, discard },
   } = mock;
+
+  const mockFilters = mock.filter?.fields;
 
   const renderAside = () => (
     <S.Aside>
       <S.Filter>
         <S.List>
-          {fields.map((el, i) => (
+          {categories.length > 0 && (
             <Dropdown
-              key={i}
-              data={el}
-              handleOpen={() => openDropdown(el.title)}
-              opened={opened === el.title}
-              handleChangeCheckbox={e => handleCheckbox(e)}
+              title={mockFilters[0]?.title}
+              list={categories}
+              handleOpen={() => openDropdown(mockFilters[0]?.title)}
+              opened={opened === mockFilters[0]?.title}
+              category="categories"
               handleChangeRadio={e => handleCategories(e)}
               withBg
             />
-          ))}
+          )}
+          {stacks.length > 0 && (
+            <Dropdown
+              title={mockFilters[1]?.title}
+              list={stacks}
+              handleOpen={() => openDropdown(mockFilters[1]?.title)}
+              opened={opened === mockFilters[1]?.title}
+              category="technologies"
+              handleChangeCheckbox={handleFilterClick}
+              withBg
+              multi
+            />
+          )}
+          {teams.length > 0 && (
+            <Dropdown
+              title={mockFilters[2]?.title}
+              list={teams}
+              handleOpen={() => openDropdown(mockFilters[2]?.title)}
+              opened={opened === mockFilters[2]?.title}
+              category="teams"
+              handleChangeCheckbox={handleFilterClick}
+              withBg
+              multi
+            />
+          )}
         </S.List>
         <S.Block>
           <Checkbox
             name={internship}
-            checked_state={internship_state}
+            checked_state={!!query.internship}
             handleChange={() => handleInternship()}
           />
           <Checkbox
             name={english}
-            checked_state={english_state}
+            checked_state={!!query.english}
             handleChange={() => handleEnglish()}
           />
         </S.Block>
@@ -292,7 +236,6 @@ const VacanciesList = ({ data: mock, back }) => {
             name={discard}
             onClick={() => {
               router.push(pathname);
-              dispatch({ type: 'CLEAR_ALL_FILTERS' });
             }}
           />
         )}
@@ -316,7 +259,7 @@ const VacanciesList = ({ data: mock, back }) => {
           ) : (
             <S.FilterWrapper
               active={!hidden}
-              withExtraSpace={!!internship_state}
+              withExtraSpace={!!query.internship}
             >
               <>
                 <S.FilterTitle
@@ -339,11 +282,8 @@ const VacanciesList = ({ data: mock, back }) => {
               initialValue={router.query.search}
               smallPadding
             />
-            <Tags
-              handleChangeFilter={el => handleClearTags(el)}
-              handleChangeCategory={handleClearCategoryTag}
-            />
-            {internship_state && (
+            <Tags categories={categories} stacks={stacks} teams={teams} />
+            {query.internship && (
               <Link href="/internship" passHrref>
                 <a>
                   <S.InternshipLink>

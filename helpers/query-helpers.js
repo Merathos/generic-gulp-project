@@ -1,21 +1,33 @@
 export const queryHelpers = {
   checkTagActive(arr, slug) {
     if (Array.isArray(arr)) {
-      return arr.includes(slug);
+      if (arr.includes(slug)) return true;
     }
-    return arr === slug;
+    if (arr === slug) return true;
+    return false;
   },
-  generateNewTags(arr, slug, alreadyHas) {
+
+  generateNewTags(arr, slug, isActive) {
     if (Array.isArray(arr)) {
-      if (alreadyHas) {
+      if (isActive) {
         return arr.filter(item => item !== slug);
       }
       return [...arr, slug].filter(i => i && i.length > 0);
     }
-    if (alreadyHas) {
+    if (isActive) {
       return [slug].filter(i => i !== slug);
     }
     return [arr, slug].filter(i => i && i.length > 0);
+  },
+
+  checkCategoryLength(arr) {
+    if (Array.isArray(arr)) {
+      return arr.length;
+    }
+    if (typeof arr === 'string') {
+      return 1;
+    }
+    return null;
   },
 
   deleteCategoryFromQuery(obj, slug) {
