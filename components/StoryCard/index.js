@@ -7,6 +7,7 @@ const StoryCard = props => {
     data: { title, slug, preview, created_at },
     background,
     isAfterHighlight,
+    staticWidth,
   } = props;
 
   return (
@@ -15,6 +16,7 @@ const StoryCard = props => {
         className="js-content"
         background={background}
         isAfterHighlight={isAfterHighlight}
+        staticWidth={staticWidth}
       >
         {created_at && (
           <S.Date>{dayjs(created_at).format('DD.MM.YYYY')}</S.Date>
