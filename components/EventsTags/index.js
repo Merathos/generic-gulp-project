@@ -1,21 +1,20 @@
 import { useRouter } from 'next/router';
 import { FilterButton } from 'elements';
-import {
-  checkActiveCategories,
-  generateCategories,
-} from 'helpers/events-helpers';
+import { queryHelpers } from 'helpers/query-helpers';
 import * as S from './styles';
 
-const EventsTags = ({ eventCategories, pageSlug }) => {
+const { checkTagActive, generateNewTags } = queryHelpers;
+
+const EventsTags = ({ eventCategories }) => {
   const router = useRouter();
-  const { query } = router;
+  const { pathname, query } = router;
 
   const handleClick = (slug, isActive) => {
     router.push({
-      pathname: pageSlug,
+      pathname,
       query: {
         ...query,
-        categories: generateCategories(query.categories, slug, isActive),
+        categories: generateNewTags(query.categories, slug, isActive),
       },
     });
   };
@@ -25,7 +24,7 @@ const EventsTags = ({ eventCategories, pageSlug }) => {
       {query.categories && (
         <S.Tags>
           {eventCategories.map(item => {
-            const isActive = checkActiveCategories(query.categories, item.slug);
+            const isActive = checkTagActive(query.categories, item.slug);
             if (isActive) {
               return (
                 <S.Tag key={item.id}>

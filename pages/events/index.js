@@ -19,7 +19,6 @@ const eventsPage = () => {
         data={eventsStatic}
         eventCategories={eventCategoriesData?.event_categories}
         events={eventsData?.events}
-        pageSlug="/events"
       />
     </Layout>
   );

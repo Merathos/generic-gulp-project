@@ -1,54 +1,72 @@
 import { Checkbox, FilterButton } from 'elements';
 import { CustomScrollbars } from 'components';
-import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { queryHelpers } from 'helpers/query-helpers';
 import * as S from './styles';
 
-const TeamsFilter = props => {
-  const {
-    data: { title, list, discard },
-    handleChange,
-  } = props;
+const { checkTagActive, generateNewTags, checkCategoryLength } = queryHelpers;
+
+const TeamsFilter = ({ data: { title, discard }, stacks }) => {
   const [hidden, setHidden] = useState(true);
-  const filterArray = useSelector(state => state.filter);
   const router = useRouter();
   const { pathname, query } = router;
-  const dispatch = useDispatch();
 
   const handleOpenFilter = () => {
     setHidden(!hidden);
+  };
+
+  const handleChange = (slug, isActive) => {
+    router.push(
+      {
+        pathname,
+        query: {
+          ...query,
+          technologies: generateNewTags(query.technologies, slug, isActive),
+        },
+      },
+      undefined,
+      { shallow: true }
+    );
   };
 
   return (
     <S.Wrapper active={!hidden}>
       <S.Title onClick={() => handleOpenFilter()} active={!hidden}>
         {title}
-        {filterArray.length > 0 && <S.Sup>{filterArray.length}</S.Sup>}
+        {query.technologies?.length > 0 && (
+          <S.Sup>{checkCategoryLength(query.technologies)}</S.Sup>
+        )}
       </S.Title>
       <S.List active={!hidden}>
         <CustomScrollbars>
-          {list.map((el, i) => (
-            <S.Item key={i}>
-              <Checkbox
-                name={el}
-                handleChange={() => handleChange(el)}
-                type="dropdown"
-                checked_state={filterArray.indexOf(el) !== -1}
-              />
-            </S.Item>
-          ))}
+          {stacks?.length > 0 &&
+            Object.keys(stacks).map(item => {
+              const isActive = checkTagActive(
+                query.technologies,
+                stacks[item].slug
+              );
+              return (
+                <S.Item key={stacks[item].id}>
+                  <Checkbox
+                    name={stacks[item].name}
+                    handleChange={() =>
+                      handleChange(stacks[item].slug, isActive)
+                    }
+                    type="dropdown"
+                    checked_state={checkTagActive(
+                      query.technologies,
+                      stacks[item].slug
+                    )}
+                  />
+                </S.Item>
+              );
+            })}
         </CustomScrollbars>
       </S.List>
       {Object.keys(query).length !== 0 && (
         <S.ResetButtonWrapper active={!hidden}>
-          <FilterButton
-            name={discard}
-            onClick={() => {
-              router.push(pathname);
-              dispatch({ type: 'CLEAR_ALL_FILTERS' });
-            }}
-          />
+          <FilterButton name={discard} onClick={() => router.push(pathname)} />
         </S.ResetButtonWrapper>
       )}
     </S.Wrapper>

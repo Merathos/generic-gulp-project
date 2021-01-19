@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import * as S from './styles';
 
-const Events = ({ data, eventCategories, events, pageSlug }) => {
+const Events = ({ data, eventCategories, events }) => {
   const router = useRouter();
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -39,7 +39,6 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
               <EventsFilter
                 data={data}
                 eventCategories={eventCategories}
-                pageSlug={pageSlug}
                 resetButtonText={data.resetButtonText}
               />
             )}
@@ -47,10 +46,7 @@ const Events = ({ data, eventCategories, events, pageSlug }) => {
           </S.Aside>
           <S.ContentWrapper>
             {eventCategories && (
-              <EventsTags
-                eventCategories={eventCategories}
-                pageSlug={pageSlug}
-              />
+              <EventsTags eventCategories={eventCategories} />
             )}
             {eventsUpcoming?.length === 0 && !router.query.categories && (
               <S.Announcement>

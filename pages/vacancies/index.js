@@ -3,7 +3,12 @@ import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { Layout, VacanciesList } from 'containers';
 import mock from 'mock/index';
-import { GET_VACANCIES } from 'graphql/query';
+import {
+  GET_VACANCIES,
+  GET_VACANCY_CATEGORIES,
+  GET_VACANCY_STACKS,
+  GET_VACANCY_TEAMS,
+} from 'graphql/vacancy';
 import { initializeApollo } from 'lib/apollo';
 
 import { useDispatch } from 'react-redux';
@@ -27,25 +32,34 @@ const catalogPage = () => {
     });
   }, []);
 
-  const categoriesData = useQuery(GET_VACANCIES, {
+  const vacanciesData = useQuery(GET_VACANCIES, {
     variables: {
       search: router.query.search,
       categories: router.query.categories,
-      teams: router.query.teams,
       stacks: router.query.stacks,
+      teams: router.query.teams,
       internship: Boolean(router.query.internship),
       english: Boolean(router.query.english),
     },
   });
+  const { data: categoriesData } = useQuery(GET_VACANCY_CATEGORIES);
+  const { data: stacksData } = useQuery(GET_VACANCY_STACKS);
+  const { data: teamsData } = useQuery(GET_VACANCY_TEAMS);
 
   const vacancies = useMemo(
-    () => (!categoriesData.loading ? categoriesData.data.vacancies : null),
-    [categoriesData.data]
+    () => (!vacanciesData.loading ? vacanciesData.data.vacancies : null),
+    [vacanciesData.data]
   );
 
   return (
-    <Layout anchor hideNav greyHeader={false} mobileDecor>
-      <VacanciesList data={mock.catalog} back={vacancies || []} />
+    <Layout anchor hideHav greyHeader={false} mobileDecor>
+      <VacanciesList
+        data={mock.catalog}
+        back={vacancies || []}
+        categories={categoriesData?.vacancy_categories}
+        stacks={stacksData?.vacancy_stacks}
+        teams={teamsData?.vacancy_teams}
+      />
     </Layout>
   );
 };
@@ -63,6 +77,15 @@ export async function getServerSideProps({ query }) {
       internship: Boolean(query.internship),
       english: Boolean(query.english),
     },
+  });
+  await apolloClient.query({
+    query: GET_VACANCY_CATEGORIES,
+  });
+  await apolloClient.query({
+    query: GET_VACANCY_STACKS,
+  });
+  await apolloClient.query({
+    query: GET_VACANCY_TEAMS,
   });
 
   return {

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useDispatch } from 'react-redux';
 import { Layout, Vacancy } from 'containers';
-import { GET_VACANCY_CONTENT } from 'graphql/query';
+import { GET_VACANCY_CONTENT } from 'graphql/vacancy';
 import { initializeApollo } from 'lib/apollo';
 import Head from 'next/head';
 

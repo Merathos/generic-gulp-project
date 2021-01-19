@@ -1,7 +1,7 @@
 import { Layout, Internship } from 'containers';
 import mock from 'mock/index';
 import { initializeApollo } from 'lib/apollo';
-import { GET_VACANCIES } from 'graphql/query';
+import { GET_VACANCIES } from 'graphql/vacancy';
 import { useQuery } from '@apollo/client';
 
 const internshipPage = () => {

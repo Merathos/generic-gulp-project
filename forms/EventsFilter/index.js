@@ -1,22 +1,21 @@
 import { EventsCheckbox } from 'elements';
-import {
-  checkActiveCategories,
-  generateCategories,
-} from 'helpers/events-helpers';
 import { useRouter } from 'next/router';
+import { queryHelpers } from 'helpers/query-helpers';
 import { Item, List, ResetFilter, Wrapper } from './styles';
 
-const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
+const { checkTagActive, generateNewTags } = queryHelpers;
+
+const EventsFilter = ({ eventCategories, resetButtonText }) => {
   const router = useRouter();
-  const { query } = router;
+  const { pathname, query } = router;
 
   const handleChange = (slug, isActive) => {
     router.push(
       {
-        pathname: pageSlug,
+        pathname,
         query: {
           ...query,
-          categories: generateCategories(query.categories, slug, isActive),
+          categories: generateNewTags(query.categories, slug, isActive),
         },
       },
       undefined,
@@ -24,15 +23,11 @@ const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
     );
   };
 
-  const onReset = () => {
-    router.push(pageSlug);
-  };
-
   return (
     <Wrapper>
       <List>
         {eventCategories.map(item => {
-          const isActive = checkActiveCategories(query.categories, item.slug);
+          const isActive = checkTagActive(query.categories, item.slug);
           return (
             <Item key={item.id}>
               <EventsCheckbox
@@ -49,7 +44,7 @@ const EventsFilter = ({ eventCategories, pageSlug, resetButtonText }) => {
       </List>
       <ResetFilter
         type="button"
-        onClick={() => onReset()}
+        onClick={() => router.push(pathname)}
         show={query.categories?.length > 0}
       >
         {resetButtonText}
