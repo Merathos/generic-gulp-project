@@ -11,6 +11,7 @@ import Head from 'next/head';
 
 const teamsPage = () => {
   const router = useRouter();
+  const { pathname, query } = router;
   const dispatch = useDispatch();
 
   const { data: teamsData } = useQuery(GET_TEAM_CATEGORIES, {
@@ -21,7 +22,7 @@ const teamsPage = () => {
   useEffect(() => {
     dispatch({
       type: 'SET_CATALOG_FILTERS',
-      payload: router.query.technologies || [],
+      payload: query.technologies || [],
     });
   }, []);
 
@@ -30,6 +31,9 @@ const teamsPage = () => {
       <Head>
         <title>Команды DINS</title>
         <meta name="description" content="SCRUM-команды компании DINS." />
+        {query.technologies && (
+          <link rel="canonical" href={`${pathname}/teams`} />
+        )}
       </Head>
       <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>
         <TeamList

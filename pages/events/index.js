@@ -8,10 +8,11 @@ import Head from 'next/head';
 
 const eventsPage = () => {
   const router = useRouter();
+  const { pathname, query } = router;
 
   const { data: eventCategoriesData } = useQuery(GET_EVENT_CATEGORIES);
   const { data: eventsData } = useQuery(GET_EVENTS, {
-    variables: { categories: router.query.categories },
+    variables: { categories: query.categories },
   });
 
   return (
@@ -22,6 +23,9 @@ const eventsPage = () => {
           name="description"
           content="Анонсы предстоящих мероприятий. Архив прошедших мероприятий."
         />
+        {query.categories && (
+          <link rel="canonical" href={`${pathname}/events`} />
+        )}
       </Head>
       <Layout plainHeader isVisible={false} greyHeader={false}>
         <Events
