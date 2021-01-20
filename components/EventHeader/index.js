@@ -56,6 +56,27 @@ const EventHeader = ({
     return null;
   };
 
+  const renderEventDate = () => {
+    const now = dayjs();
+    const year = now.year();
+
+    if (dayjs(startsAt).year() !== year) {
+      return dayjs(startsAt)
+        .locale('ru')
+        .format('D MMMM YYYY');
+    }
+
+    return dayjs(startsAt)
+      .locale('ru')
+      .format('D MMMM');
+  };
+
+  const renderEventTime = () => {
+    const startTime = dayjs(startsAt).format('HH:mm');
+    const endTime = dayjs(endsAt).format('HH:mm');
+    return `${startTime}-${endTime}`;
+  };
+
   return (
     <S.GreyHeader>
       <S.Container bgImg={getCategoryBackground(category?.slug)}>
@@ -73,14 +94,8 @@ const EventHeader = ({
             />
             <S.LocationContainer>
               <S.DateWrapper>
-                <p>
-                  {`${dayjs(startsAt)
-                    .locale('ru')
-                    .format('D MMMM')}`}
-                </p>
-                <p>{`${dayjs(startsAt).format('HH:mm')}-${dayjs(endsAt).format(
-                  'HH:mm'
-                )}`}</p>
+                <p>{renderEventDate()}</p>
+                <p>{renderEventTime()}</p>
                 <S.DateWrapperTimeZone>{timezone}</S.DateWrapperTimeZone>
               </S.DateWrapper>
               {location && <S.Location>{location}</S.Location>}
