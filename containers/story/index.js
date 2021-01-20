@@ -13,7 +13,7 @@ const Story = ({ back }) => {
       <GreyContainer>
         <Container>
           <BlogHeader
-            title={back.title_new_line}
+            title={back.title}
             text={back.description}
             picture={back.detail?.path?.normal}
             audio={back.audio}

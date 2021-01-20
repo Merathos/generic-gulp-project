@@ -14,7 +14,7 @@ const EventHeader = ({
   eventDataPolling,
 }) => {
   const {
-    name_new_line,
+    name,
     starts_at: startsAt,
     ends_at: endsAt,
     location,
@@ -68,7 +68,7 @@ const EventHeader = ({
             )}
             <S.Type
               dangerouslySetInnerHTML={{
-                __html: name_new_line,
+                __html: name,
               }}
             />
             <S.LocationContainer>

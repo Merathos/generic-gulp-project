@@ -34,7 +34,6 @@ export const GET_VACANCIES = gql`
 export const GET_VACANCY_CONTENT = gql`
   query getVacancyContent($slug: String, $is_preview: Boolean) {
     vacancies(slug: $slug, is_preview: $is_preview) {
-      name_new_line @client
       id
       name
       is_english_speaking_team

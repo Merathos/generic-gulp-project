@@ -10,7 +10,7 @@ const Project = ({ data, teams }) => {
       <GreyWrapper withBg={withBg}>
         <Container>
           <TeamsHeader
-            title={teams.name_new_line}
+            title={teams.name}
             text={teams.description}
             stack={teams.technology_stacks}
             picture={teams.detail_image}
