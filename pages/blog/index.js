@@ -36,7 +36,7 @@ const BlogList = () => {
     merge: mergeBlogs,
     offset: data?.blogs?.length,
     limit: 9,
-    resetNext: router.query.categories,
+    resetNext: router.query.category,
   });
 
   return (
