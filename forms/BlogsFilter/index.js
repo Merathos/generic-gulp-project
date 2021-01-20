@@ -5,35 +5,50 @@ import { useRouter } from 'next/router';
 import { queryHelpers } from 'helpers/query-helpers';
 import { Section, Element } from './styles';
 
-const { checkTagActive, generateNewTags } = queryHelpers;
+const { checkTagActive } = queryHelpers;
 
 const BlogsFilter = ({ categories }) => {
   const router = useRouter();
-  const { query } = router;
+  const { pathname, query } = router;
 
   const params = {
     slidesPerView: 'auto',
     loop: false,
   };
 
-  const onCategoryClick = useCallback((q, slug, alreadyHas) => {
-    router.push(
-      {
-        query: {
-          ...q,
-          categories: generateNewTags(q.categories, slug, alreadyHas),
+  const onCategoryClick = useCallback((slug, isActive) => {
+    if (isActive) {
+      delete query.category;
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+          },
         },
-      },
-      undefined,
-      { shallow: true }
-    );
+        undefined,
+        { shallow: true }
+      );
+    } else {
+      router.push(
+        {
+          pathname,
+          query: {
+            ...query,
+            category: slug,
+          },
+        },
+        undefined,
+        { shallow: true }
+      );
+    }
   }, []);
 
   return (
     <Section>
       <Swiper {...params}>
         {categories.map(item => {
-          const isActive = checkTagActive(query.categories, item.slug);
+          const isActive = checkTagActive(query.category, item.slug);
           return (
             <Element key={item.id}>
               <BlogsTag
@@ -41,7 +56,7 @@ const BlogsFilter = ({ categories }) => {
                 label={item.name}
                 id={item.id}
                 checked={isActive}
-                onClick={() => onCategoryClick(query, item.slug, isActive)}
+                onClick={() => onCategoryClick(item.slug, isActive)}
               />
             </Element>
           );
