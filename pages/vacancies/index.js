@@ -16,31 +16,32 @@ import Head from 'next/head';
 
 const catalogPage = () => {
   const router = useRouter();
+  const { pathname, query } = router;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch({
       type: 'CATALOG_FILTER_CATEGORIES',
-      payload: router.query.categories || '',
+      payload: query.categories || '',
     });
     dispatch({
       type: 'SET_CATALOG_FILTERS',
-      payload: router.query.filter || [],
+      payload: query.filter || [],
     });
     dispatch({
       type: 'SET_INTERNSHIP',
-      payload: !!router.query.internship || false,
+      payload: !!query.internship || false,
     });
   }, []);
 
   const vacanciesData = useQuery(GET_VACANCIES, {
     variables: {
-      search: router.query.search,
-      categories: router.query.categories,
-      stacks: router.query.technologies,
-      teams: router.query.teams,
-      internship: Boolean(router.query.internship),
-      english: Boolean(router.query.english),
+      search: query.search,
+      categories: query.categories,
+      stacks: query.technologies,
+      teams: query.teams,
+      internship: Boolean(query.internship),
+      english: Boolean(query.english),
     },
   });
   const { data: categoriesData } = useQuery(GET_VACANCY_CATEGORIES);
@@ -60,6 +61,14 @@ const catalogPage = () => {
           name="description"
           content="Ищем талантливых и целеустремленных специалистов для работы в Санкт-Петербургском центре разработок. Работа в компании DINS. Все открытые вакансии."
         />
+        {(query.search ||
+          query.categories ||
+          query.technologies ||
+          query.teams ||
+          query.internship ||
+          query.english) && (
+          <link rel="canonical" href={`${pathname}/vacancies`} />
+        )}
       </Head>
       <Layout anchor hideHav greyHeader={false} mobileDecor>
         <VacanciesList

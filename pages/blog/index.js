@@ -10,7 +10,7 @@ import Head from 'next/head';
 
 const BlogList = () => {
   const router = useRouter();
-  const { query } = router;
+  const { pathname, query } = router;
   const { data: blogsCategories } = useQuery(GET_BLOGS_CATEGORIES);
   const { data, fetchMore, networkStatus } = useQuery(GET_BLOGS_LIST, {
     variables: {
@@ -48,6 +48,7 @@ const BlogList = () => {
           name="description"
           content="Читай наш блог, чтобы узнать последние новости из жизни компании."
         />
+        {query.category && <link rel="canonical" href={`${pathname}/blog`} />}
       </Head>
       <Layout isVisible={false} greyHeader={false}>
         <Blogs
