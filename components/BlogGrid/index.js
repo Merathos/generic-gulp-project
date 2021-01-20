@@ -51,7 +51,7 @@ const BlogGrid = ({ cards }) => {
         window.removeEventListener(event, resizeAllMasonryItems);
       });
     };
-  }, []);
+  });
 
   return (
     <S.Grid ref={grid}>
