@@ -4,6 +4,7 @@ import { GET_EVENT_CATEGORIES, GET_EVENTS } from 'graphql/events';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const eventsPage = () => {
   const router = useRouter();
@@ -14,13 +15,22 @@ const eventsPage = () => {
   });
 
   return (
-    <Layout plainHeader isVisible={false} greyHeader={false}>
-      <Events
-        data={eventsStatic}
-        eventCategories={eventCategoriesData?.event_categories}
-        events={eventsData?.events}
-      />
-    </Layout>
+    <>
+      <Head>
+        <title>IT Evenings - мероприятия DINS</title>
+        <meta
+          name="description"
+          content="Анонсы предстоящих мероприятий. Архив прошедших мероприятий."
+        />
+      </Head>
+      <Layout plainHeader isVisible={false} greyHeader={false}>
+        <Events
+          data={eventsStatic}
+          eventCategories={eventCategoriesData?.event_categories}
+          events={eventsData?.events}
+        />
+      </Layout>
+    </>
   );
 };
 

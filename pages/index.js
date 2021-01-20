@@ -2,6 +2,7 @@ import { Layout, Main } from 'containers';
 import mock from 'mock/index';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
+import Head from 'next/head';
 
 import {
   GET_QUOTES,
@@ -23,17 +24,26 @@ const mainPage = () => {
   const { data: vacancyCatData } = useQuery(GET_VACANCY_CATEGORIES_MAIN);
 
   return (
-    <Layout greyFooter plainHeader smallPadding isVisible={false}>
-      <Main
-        data={mock.main}
-        storiesData={mock.stories}
-        quotes={quotesData?.quotes}
-        banner={bannerData?.banner}
-        blogs={blogsData?.blogs}
-        teams={teamsData?.teams}
-        vacancyCat={vacancyCatData?.vacancy_categories}
-      />
-    </Layout>
+    <>
+      <Head>
+        <title>DINS - создаем лучший в мире телекоммуникационный сервис</title>
+        <meta
+          name="description"
+          content="DINS — это центр разработки американской компании RingCentral, ведущего разработчика и провайдера облачных коммуникационных услуг для бизнеса. Мы работаем в Санкт‑Петербурге с 1998 года, сейчас штат компании составляет 1000+ сотрудников, большая часть из которых инженеры."
+        />
+      </Head>
+      <Layout greyFooter plainHeader smallPadding isVisible={false}>
+        <Main
+          data={mock.main}
+          storiesData={mock.stories}
+          quotes={quotesData?.quotes}
+          banner={bannerData?.banner}
+          blogs={blogsData?.blogs}
+          teams={teamsData?.teams}
+          vacancyCat={vacancyCatData?.vacancy_categories}
+        />
+      </Layout>
+    </>
   );
 };
 

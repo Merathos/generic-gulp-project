@@ -29,6 +29,14 @@ const ProjectPage = () => {
   return (
     <>
       <Head>
+        {team?.name ? (
+          <title>Команда {team?.name}</title>
+        ) : (
+          <title>Команда DINS</title>
+        )}
+        {team?.description && (
+          <meta name="description" content={team?.description} />
+        )}
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}
