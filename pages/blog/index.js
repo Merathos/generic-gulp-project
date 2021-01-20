@@ -9,11 +9,11 @@ import { Loader } from 'elements';
 
 const BlogList = () => {
   const router = useRouter();
-
+  const { query } = router;
   const { data: blogsCategories } = useQuery(GET_BLOGS_CATEGORIES);
   const { data, fetchMore, networkStatus } = useQuery(GET_BLOGS_LIST, {
     variables: {
-      categories: router.query.categories,
+      categories: query.category,
       limit: 8,
     },
     notifyOnNetworkStatusChange: true,
@@ -36,7 +36,7 @@ const BlogList = () => {
     merge: mergeBlogs,
     offset: data?.blogs?.length,
     limit: 9,
-    resetNext: router.query.category,
+    resetNext: query.category,
   });
 
   return (
@@ -59,7 +59,7 @@ export async function getServerSideProps({ query }) {
   });
   await apolloClient.query({
     query: GET_BLOGS_LIST,
-    variables: { categories: query.categories, limit: 8 },
+    variables: { categories: query.category, limit: 8 },
   });
 
   return {
