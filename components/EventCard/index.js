@@ -38,6 +38,21 @@ const EventCard = ({
     }).then(() => window.scrollTo(0, 0));
   };
 
+  const renderEventDate = () => {
+    const year = now.year();
+
+    if (dayjs(startsAt).year() !== year) {
+      return dayjs(startsAt).format('DD.MM.YY');
+    }
+
+    return dayjs(startsAt).format('DD.MM');
+  };
+
+  const renderEventTime = () => {
+    const startTime = dayjs(startsAt).format('HH:mm');
+    return `Начало в ${startTime}`;
+  };
+
   return (
     <S.CardWrapper>
       <S.TopWrapper>
@@ -47,8 +62,8 @@ const EventCard = ({
           </S.Link>
         </Link>
         <S.DateContainer color={category.color}>
-          <S.Date>{dayjs(startsAt).format('DD.MM')}</S.Date>
-          <S.Time>{`Начало в ${dayjs(startsAt).format('HH.mm')}`}</S.Time>
+          <S.Date>{renderEventDate()}</S.Date>
+          <S.Time>{renderEventTime()}</S.Time>
         </S.DateContainer>
       </S.TopWrapper>
       <EventStatus
