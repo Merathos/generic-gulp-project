@@ -214,7 +214,7 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <ApolloProvider client={apolloClient}>
         <Head>
-          <title>Dins</title>
+          <title>DINS</title>
         </Head>
         <Component {...pageProps} />
         <GlobalStyle />

@@ -29,6 +29,14 @@ const storyPage = () => {
   return (
     <>
       <Head>
+        {blog?.title ? (
+          <title>{blog.title} | Блог компании DINS</title>
+        ) : (
+          <title>Блог компании DINS</title>
+        )}
+        {blog?.description && (
+          <meta name="description" content={blog.description} />
+        )}
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}

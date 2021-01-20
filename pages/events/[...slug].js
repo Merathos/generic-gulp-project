@@ -9,11 +9,11 @@ import dayjs from 'dayjs';
 
 import mock from 'mock/index';
 
-const EventPage = () => {
+const EventPage = ({ active, description }) => {
   const router = useRouter();
   const { query } = router;
   const [eventStarted, setEventStarted] = useState(true);
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(active);
 
   const { data: eventData } = useQuery(GET_EVENT, {
     variables: {
@@ -59,6 +59,12 @@ const EventPage = () => {
   return (
     <>
       <Head>
+        {event?.name ? (
+          <title>Мероприятие {event.name}</title>
+        ) : (
+          <title>Мероприятие DINS</title>
+        )}
+        {description && <meta name="description" content={description} />}
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}
@@ -81,7 +87,7 @@ const EventPage = () => {
 export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
 
-  await apolloClient.query({
+  const eventData = await apolloClient.query({
     query: GET_EVENT,
     variables: {
       slug: query.slug[0],
@@ -94,9 +100,29 @@ export async function getServerSideProps({ query }) {
     variables: { slug: query.slug[0], is_preview: query.preview === 'true' },
   });
 
+  let isActive = true;
+  let description = '';
+
+  const now = dayjs();
+
+  if (eventData?.data?.events[0]?.ends_at) {
+    const endsAt = dayjs(eventData?.data?.events[0]?.ends_at);
+    isActive = now.isBefore(endsAt);
+  }
+
+  if (isActive) {
+    description = JSON.parse(eventData?.data?.events[0]?.previous_content)[0]
+      ?.data?.text;
+  } else {
+    description = JSON.parse(eventData?.data?.events[0]?.future_content)[0]
+      ?.data?.text;
+  }
+
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
+      description,
+      active: isActive,
     },
   };
 }

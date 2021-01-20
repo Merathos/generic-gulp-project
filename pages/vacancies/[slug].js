@@ -36,6 +36,24 @@ const vacancyPage = () => {
   return (
     <>
       <Head>
+        {vacancy?.name ? (
+          <>
+            <title>Вакансия {vacancy?.name} в компании DINS</title>
+            <meta
+              name="description"
+              content={`Активная вакансия в компании DINS: ${vacancy?.name}. Откликнуться на вакансию.`}
+            />
+          </>
+        ) : (
+          <>
+            <title>Вакансия в компании DINS</title>
+            <meta
+              name="description"
+              content="Активная вакансия в компании DINS. Откликнуться на вакансию."
+            />
+          </>
+        )}
+
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}

@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_VACANCY_STACKS } from 'graphql/vacancy';
+import Head from 'next/head';
 
 const teamsPage = () => {
   const router = useRouter();
@@ -25,13 +26,19 @@ const teamsPage = () => {
   }, []);
 
   return (
-    <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>
-      <TeamList
-        mock={mock.teamList}
-        back={teamsData?.teams}
-        stacks={stacksData?.vacancy_stacks}
-      />
-    </Layout>
+    <>
+      <Head>
+        <title>Команды DINS</title>
+        <meta name="description" content="SCRUM-команды компании DINS." />
+      </Head>
+      <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>
+        <TeamList
+          mock={mock.teamList}
+          back={teamsData?.teams}
+          stacks={stacksData?.vacancy_stacks}
+        />
+      </Layout>
+    </>
   );
 };
 

@@ -12,6 +12,7 @@ import {
 import { initializeApollo } from 'lib/apollo';
 
 import { useDispatch } from 'react-redux';
+import Head from 'next/head';
 
 const catalogPage = () => {
   const router = useRouter();
@@ -52,15 +53,24 @@ const catalogPage = () => {
   );
 
   return (
-    <Layout anchor hideHav greyHeader={false} mobileDecor>
-      <VacanciesList
-        data={mock.catalog}
-        back={vacancies || []}
-        categories={categoriesData?.vacancy_categories}
-        stacks={stacksData?.vacancy_stacks}
-        teams={teamsData?.vacancy_teams}
-      />
-    </Layout>
+    <>
+      <Head>
+        <title>Вакансии компании DINS</title>
+        <meta
+          name="description"
+          content="Ищем талантливых и целеустремленных специалистов для работы в Санкт-Петербургском центре разработок. Работа в компании DINS. Все открытые вакансии."
+        />
+      </Head>
+      <Layout anchor hideHav greyHeader={false} mobileDecor>
+        <VacanciesList
+          data={mock.catalog}
+          back={vacancies || []}
+          categories={categoriesData?.vacancy_categories}
+          stacks={stacksData?.vacancy_stacks}
+          teams={teamsData?.vacancy_teams}
+        />
+      </Layout>
+    </>
   );
 };
 

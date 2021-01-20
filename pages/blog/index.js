@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { initializeApollo } from 'lib/apollo';
 import useFetchMore from 'helpers/useFetchMore';
 import { Loader } from 'elements';
+import Head from 'next/head';
 
 const BlogList = () => {
   const router = useRouter();
@@ -40,14 +41,23 @@ const BlogList = () => {
   });
 
   return (
-    <Layout isVisible={false} greyHeader={false}>
-      <Blogs
-        data={mock.blogList}
-        categories={blogsCategories?.blog_categories}
-        blogs={data?.blogs}
-      />
-      {networkStatus === 3 && <Loader />}
-    </Layout>
+    <>
+      <Head>
+        <title>Блог компании DINS</title>
+        <meta
+          name="description"
+          content="Читай наш блог, чтобы узнать последние новости из жизни компании."
+        />
+      </Head>
+      <Layout isVisible={false} greyHeader={false}>
+        <Blogs
+          data={mock.blogList}
+          categories={blogsCategories?.blog_categories}
+          blogs={data?.blogs}
+        />
+        {networkStatus === 3 && <Loader />}
+      </Layout>
+    </>
   );
 };
 

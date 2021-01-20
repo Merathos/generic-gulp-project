@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Text = styled.p`
+export const Text = styled.h1`
   font-weight: 500;
   font-size: 24px;
   line-height: 150%;
