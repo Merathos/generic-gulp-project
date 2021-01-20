@@ -118,6 +118,14 @@ export const GET_TEAM_CONTENT = gql`
         }
       }
       technology_stacks
+      vacancies {
+        id
+        name
+        slug
+        descr
+        is_english_speaking_team
+        is_internship
+      }
     }
   }
 `;
