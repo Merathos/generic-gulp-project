@@ -36,7 +36,7 @@ const catalogPage = () => {
     variables: {
       search: router.query.search,
       categories: router.query.categories,
-      stacks: router.query.stacks,
+      stacks: router.query.technologies,
       teams: router.query.teams,
       internship: Boolean(router.query.internship),
       english: Boolean(router.query.english),
