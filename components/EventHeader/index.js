@@ -89,20 +89,23 @@ const EventHeader = ({
           {speakers?.length > 0 && (
             <S.SpeakersContainer>
               <S.Title>{speakersTitle}</S.Title>
-              {speakers.map(speaker => (
-                <S.Speaker key={speaker.id}>
-                  <S.Pic
-                    src={speaker.image?.path?.normal}
-                    alt={speaker.name}
-                    width="54"
-                    height="54"
-                  />
-                  <S.NameWrapper>
-                    <S.SpeakerName>{speaker.name}</S.SpeakerName>
-                    <S.SpeakerJob>{speaker.company}</S.SpeakerJob>
-                  </S.NameWrapper>
-                </S.Speaker>
-              ))}
+              {speakers.map(speaker => {
+                if (!speaker) return null;
+                return (
+                  <S.Speaker key={speaker.id}>
+                    <S.Pic
+                      src={speaker.image?.path?.normal}
+                      alt={speaker.name}
+                      width="54"
+                      height="54"
+                    />
+                    <S.NameWrapper>
+                      <S.SpeakerName>{speaker.name}</S.SpeakerName>
+                      <S.SpeakerJob>{speaker.company}</S.SpeakerJob>
+                    </S.NameWrapper>
+                  </S.Speaker>
+                );
+              })}
             </S.SpeakersContainer>
           )}
         </S.Grid>
