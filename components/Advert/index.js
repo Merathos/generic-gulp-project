@@ -28,7 +28,7 @@ const Advert = ({
       <a>
         <Section>
           {features && features.length > 0 && <Features data={features} />}
-          {name && <H3>{name}</H3>}
+          {name && <H3>{name.replace(/<br\s*\/?>/g, '')}</H3>}
           {descr && <StyledText>{descr}</StyledText>}
           <Arrow>
             <ArrowRight />

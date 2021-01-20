@@ -96,3 +96,4 @@ export { default as ColumnCard } from './ColumnCard';
 export { default as InternshipHeader } from './InternshipHeader';
 export { default as VacancyCard } from './VacancyCard';
 export { default as InternshipApplication } from './InternshipApplication';
+export { default as TeamsVacancies } from './TeamsVacancies';

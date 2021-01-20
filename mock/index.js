@@ -1267,7 +1267,7 @@ export default {
       ],
     },
     vacancies: {
-      title: `Вакансии`,
+      title: `Вакансии в команду`,
       button: `Смотреть все`,
     },
     apply: {
