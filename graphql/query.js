@@ -21,7 +21,6 @@ export const GET_RELOCATION_BLOGS = gql`
 export const GET_BLOG_CONTENT = gql`
   query getBlogContent($slug: String, $is_preview: Boolean) {
     blogs(slug: $slug, is_preview: $is_preview) {
-      title_new_line @client
       id
       type
       slug
@@ -107,7 +106,6 @@ export const GET_TEAM_CATEGORIES = gql`
 export const GET_TEAM_CONTENT = gql`
   query getTeamContent($slug: String, $is_preview: Boolean) {
     teams(slug: $slug, is_preview: $is_preview) {
-      name_new_line @client
       id
       name
       content
