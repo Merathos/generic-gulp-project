@@ -48,7 +48,7 @@ const BlogList = () => {
           name="description"
           content="Читай наш блог, чтобы узнать последние новости из жизни компании."
         />
-        {query.category && <link rel="canonical" href={`${pathname}/blog`} />}
+        {query.category && <link rel="canonical" href={pathname} />}
       </Head>
       <Layout isVisible={false} greyHeader={false}>
         <Blogs

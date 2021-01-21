@@ -66,9 +66,7 @@ const catalogPage = () => {
           query.technologies ||
           query.teams ||
           query.internship ||
-          query.english) && (
-          <link rel="canonical" href={`${pathname}/vacancies`} />
-        )}
+          query.english) && <link rel="canonical" href={pathname} />}
       </Head>
       <Layout anchor hideHav greyHeader={false} mobileDecor>
         <VacanciesList
