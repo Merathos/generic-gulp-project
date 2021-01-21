@@ -21,7 +21,9 @@ export default {
   },
   recruiters: {
     title: `Остались вопросы?`,
+    titleEn: `Contact us `,
     text: `Пиши на почту jobs@dins.ru или нашим рекрутерам`,
+    textEn: `Email us at jobs@dins.ru or send a message to our Recruitment Specialists.`,
   },
   vacancies: {
     title: `Вакансии в ЭТОЙ категории`,
