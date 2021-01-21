@@ -3,11 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: dins.vercel.app
+Host: https://dins.vercel.app
 
 # Sitemaps
-Sitemap: dins.vercel.app/sitemap.xml
-Sitemap: dins.vercel.app/sitemaps/vacancies-sitemap.xml
-Sitemap: dins.vercel.app/sitemaps/teams-sitemap.xml
-Sitemap: dins.vercel.app/sitemaps/events-sitemap.xml
-Sitemap: dins.vercel.app/sitemaps/blog-sitemap.xml
+Sitemap: https://dins.vercel.app/sitemap.xml
