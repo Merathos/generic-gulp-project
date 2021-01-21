@@ -85,11 +85,11 @@ export default class MyDocument extends Document {
             href="/fonts/TTNorms-ExtraBold.ttf"
             as="font"
             crossOrigin
-          />
+          /> */}
 
           <link rel="stylesheet" href="/styles/reset.css" />
           <link rel="stylesheet" href="/styles/fonts.css" />
-          <link rel="stylesheet" href="/styles/timepad.css" /> */}
+          {/* <link rel="stylesheet" href="/styles/timepad.css" /> */}
 
           <link
             rel="apple-touch-icon"
