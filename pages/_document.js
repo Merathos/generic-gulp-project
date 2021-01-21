@@ -30,21 +30,66 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ru">
         <Head>
-          <link rel="font" href="/fonts/TTNorms-Medium.woff" as="font" />
-          <link rel="font" href="/fonts/TTNorms-Medium.eot" as="font" />
-          <link rel="font" href="/fonts/TTNorms-Medium.ttf" as="font" />
+          {/* <link
+            rel="preload"
+            href="/fonts/TTNorms-Medium.woff"
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-Medium.eot"
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-Medium.ttf"
+            as="font"
+            crossOrigin
+          />
 
-          <link rel="font" href="/fonts/TTNorms-Bold.woff" as="font" />
-          <link rel="font" href="/fonts/TTNorms-Bold.eot" as="font" />
-          <link rel="font" href="/fonts/TTNorms-Bold.ttf" as="font" />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-Bold.woff"
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-Bold.eot"
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-Bold.ttf"
+            as="font"
+            crossOrigin
+          />
 
-          <link rel="font" href="/fonts/TTNorms-ExtraBold.woff" as="font" />
-          <link rel="font" href="/fonts/TTNorms-ExtraBold.eot" as="font" />
-          <link rel="font" href="/fonts/TTNorms-ExtraBold.ttf" as="font" />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-ExtraBold.woff"
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-ExtraBold.eot"
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/TTNorms-ExtraBold.ttf"
+            as="font"
+            crossOrigin
+          />
 
           <link rel="stylesheet" href="/styles/reset.css" />
           <link rel="stylesheet" href="/styles/fonts.css" />
-          {/* <link rel="stylesheet" href="/styles/timepad.css" /> */}
+          <link rel="stylesheet" href="/styles/timepad.css" /> */}
 
           <link
             rel="apple-touch-icon"
@@ -74,6 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
         </Head>
+
         <body>
           <noscript>
             <iframe
