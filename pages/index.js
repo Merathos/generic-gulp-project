@@ -47,8 +47,46 @@ const mainPage = () => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
+
+  let redirect;
+  if (Object.keys(query).length > 0) {
+    redirect = '/';
+  }
+  if (query.p === 'work-with-us') {
+    redirect = '/about';
+  }
+  if (query.p === 'sout') {
+    redirect = '/sout.html';
+  }
+  if (query.p === 'it-evenings') {
+    redirect = '/events';
+  }
+  if (query.p === 'vacancies') {
+    redirect = '/vacancies';
+  }
+  if (query.p === 'contacts') {
+    redirect = '/contacts';
+  }
+  if (query.p === 'internship') {
+    redirect = '/internship';
+  }
+  if (query.p === 'devops-hiring-day') {
+    redirect = '/events';
+  }
+  if (query.p === 'what-we-do') {
+    redirect = '/';
+  }
+
+  if (redirect) {
+    return {
+      redirect: {
+        statusCode: 301,
+        destination: redirect,
+      },
+    };
+  }
 
   await apolloClient.query({
     query: GET_QUOTES,
