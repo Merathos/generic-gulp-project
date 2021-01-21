@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
       url('/fonts/TTNorms-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
-    font-display: swap;
   }
 
   @font-face {
@@ -25,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
       url('/fonts/TTNorms-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
   }
 
   @font-face {
@@ -36,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
       url('/fonts/TTNorms-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
-    font-display: swap;
   }
 
   html, body, div, span, applet, object, iframe,
