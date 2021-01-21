@@ -64,8 +64,8 @@ const EventDetails = ({
           hash={hash}
         />
       )}
-      {eventData?.speakers?.length > 0 && (
-        <Speakers speakersTitle="Спикеры" speakers={eventData?.speakers} />
+      {eventData?.programs?.length > 0 && (
+        <Speakers speakersTitle="Спикеры" programs={eventData?.programs} />
       )}
       {isActive && eventData?.timepad_id && (
         <EventReg
