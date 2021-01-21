@@ -110,10 +110,10 @@ export async function getServerSideProps({ query }) {
     isActive = now.isBefore(endsAt);
   }
 
-  if (isActive) {
+  if (isActive && eventData?.data?.events[0]?.previous_content) {
     description = JSON.parse(eventData?.data?.events[0]?.previous_content)[0]
       ?.data?.text;
-  } else {
+  } else if (eventData?.data?.events[0]?.future_content) {
     description = JSON.parse(eventData?.data?.events[0]?.future_content)[0]
       ?.data?.text;
   }
