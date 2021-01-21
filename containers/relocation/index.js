@@ -4,9 +4,8 @@ import {
   Blogs,
   GreyHeader,
   GreyFooter,
-  Map,
 } from 'components';
-import { SectionGroup } from 'containers';
+import { Map, SectionGroup } from 'containers';
 import Router from 'next/router';
 import { Main, Container, GreyContainer } from './styles';
 
@@ -15,7 +14,6 @@ const handleVacanciesClick = () => {
     pathname: '/vacancies',
   }).then(() => window.scrollTo(0, 0));
 };
-
 const Relocation = ({ data, blogs }) => {
   return (
     <Main>
