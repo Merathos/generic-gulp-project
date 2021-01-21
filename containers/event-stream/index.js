@@ -130,7 +130,7 @@ const EventStream = ({
               title="Youtube chat"
               allowFullScreen=""
               height="400"
-              src={`https://www.youtube.com/live_chat?v=${videoCode}&embed_domain=${process.env.NEXT_PUBLIC_EMBED_DOMAIN}`}
+              src={`https://www.youtube.com/live_chat?v=${videoCode}&embed_domain=${process.env.NEXT_PUBLIC_DOMAIN}`}
               width="1100"
             />
           </S.Chat>
