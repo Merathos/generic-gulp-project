@@ -87,7 +87,11 @@ const Vacancy = ({ data, back }) => {
 
       {back.recruiters?.length > 0 && (
         <Container>
-          <Recruiters data={data.recruiters} back={back.recruiters} />
+          <Recruiters
+            data={data.recruiters}
+            back={back.recruiters}
+            english={back.is_english_speaking_team}
+          />
         </Container>
       )}
 
