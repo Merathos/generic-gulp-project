@@ -113,19 +113,6 @@ export const GET_EVENT = gql`
         name
         slug
       }
-      speakers {
-        id
-        name
-        company
-        description
-        image {
-          id
-          path(width: 363) {
-            normal
-            retina
-          }
-        }
-      }
       programs {
         id
         speaker {

@@ -18,7 +18,7 @@ const EventHeader = ({
     starts_at: startsAt,
     ends_at: endsAt,
     location,
-    speakers,
+    programs,
     category,
   } = eventData;
 
@@ -101,22 +101,22 @@ const EventHeader = ({
               {location && <S.Location>{location}</S.Location>}
             </S.LocationContainer>
           </S.TopWrapper>
-          {speakers?.length > 0 && (
+          {programs?.length > 0 && (
             <S.SpeakersContainer>
               <S.Title>{speakersTitle}</S.Title>
-              {speakers.map(speaker => {
-                if (!speaker) return null;
+              {programs.map(program => {
+                if (!program?.speaker) return null;
                 return (
-                  <S.Speaker key={speaker.id}>
+                  <S.Speaker key={program.speaker?.id}>
                     <S.Pic
-                      src={speaker.image?.path?.normal}
-                      alt={speaker.name}
+                      src={program.speaker?.image?.path?.normal}
+                      alt={program.speaker?.name}
                       width="54"
                       height="54"
                     />
                     <S.NameWrapper>
-                      <S.SpeakerName>{speaker.name}</S.SpeakerName>
-                      <S.SpeakerJob>{speaker.company}</S.SpeakerJob>
+                      <S.SpeakerName>{program.speaker?.name}</S.SpeakerName>
+                      <S.SpeakerJob>{program.speaker?.company}</S.SpeakerJob>
                     </S.NameWrapper>
                   </S.Speaker>
                 );
