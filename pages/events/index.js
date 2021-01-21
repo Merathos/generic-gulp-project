@@ -23,9 +23,7 @@ const eventsPage = () => {
           name="description"
           content="Анонсы предстоящих мероприятий. Архив прошедших мероприятий."
         />
-        {query.categories && (
-          <link rel="canonical" href={`${pathname}/events`} />
-        )}
+        {query.categories && <link rel="canonical" href={pathname} />}
       </Head>
       <Layout plainHeader isVisible={false} greyHeader={false}>
         <Events

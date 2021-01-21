@@ -31,9 +31,7 @@ const teamsPage = () => {
       <Head>
         <title>Команды DINS</title>
         <meta name="description" content="SCRUM-команды компании DINS." />
-        {query.technologies && (
-          <link rel="canonical" href={`${pathname}/teams`} />
-        )}
+        {query.technologies && <link rel="canonical" href={pathname} />}
       </Head>
       <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>
         <TeamList
