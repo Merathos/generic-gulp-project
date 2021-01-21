@@ -51,9 +51,6 @@ export async function getServerSideProps({ query }) {
   const apolloClient = initializeApollo();
 
   let redirect;
-  if (Object.keys(query).length > 0) {
-    redirect = '/';
-  }
   if (query.p === 'work-with-us') {
     redirect = '/about';
   }
