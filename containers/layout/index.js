@@ -1,9 +1,10 @@
 import { Header, Footer, OpenedMenu } from 'containers';
 import styled from 'styled-components';
-import { SocialSticker } from 'components';
+import { SocialSticker, CookieMessage } from 'components';
 import Router from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import mock from 'mock/index';
+import mockCookie from 'mock/cookie';
 
 const Wrapper = styled.div`
   position: relative;
@@ -68,6 +69,13 @@ const Layout = ({
   isFixed = false,
 }) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
+  const [cookieAccepted, setCookieAccepted] = useState(true);
+
+  useEffect(() => {
+    if (!localStorage.getItem('cookie_accepted')) {
+      setCookieAccepted(false);
+    }
+  }, []);
 
   const handleCloseMenu = () => {
     setMenuOpen(true);
@@ -129,6 +137,12 @@ const Layout = ({
             </svg>
           </StyledArrowLeft>
         </a>
+      )}
+      {!cookieAccepted && (
+        <CookieMessage
+          data={mockCookie.cookie}
+          setCookieAccepted={setCookieAccepted}
+        />
       )}
     </Wrapper>
   );
