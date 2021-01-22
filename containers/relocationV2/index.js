@@ -6,6 +6,7 @@ import {
   OfficesMap,
   RelocationFooter,
 } from 'components';
+import greyFooterMock from 'mock/greyFooter';
 
 const Relocation = ({ data, blogs }) => {
   return (
@@ -15,7 +16,7 @@ const Relocation = ({ data, blogs }) => {
       <RelocationApply data={data.promo} />
       {blogs?.length > 0 && <RelocationBlogs data={data.blogs} blogs={blogs} />}
       <OfficesMap data={data.map} />
-      <RelocationFooter data={data.greyFooter} />
+      <RelocationFooter data={greyFooterMock.greyFooter} />
     </main>
   );
 };

@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import { VacanciesList } from 'components';
+import { Search } from 'forms';
 import { Container, Title } from './styles';
-import { Search } from '../../forms';
 
 const title = 'Вакансии';
 const placeHolder = 'Введите название вакансии';

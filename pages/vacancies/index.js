@@ -2,7 +2,7 @@ import { useMemo, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { Layout, VacanciesList } from 'containers';
-import mock from 'mock/index';
+import mock from 'mock/vacancies';
 import {
   GET_VACANCIES,
   GET_VACANCY_CATEGORIES,

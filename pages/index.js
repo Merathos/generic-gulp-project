@@ -1,5 +1,5 @@
 import { Layout, Main } from 'containers';
-import mock from 'mock/index';
+import mock from 'mock/main';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
 import Head from 'next/head';
@@ -35,7 +35,6 @@ const mainPage = () => {
       <Layout greyFooter plainHeader smallPadding isVisible={false}>
         <Main
           data={mock.main}
-          storiesData={mock.stories}
           quotes={quotesData?.quotes}
           banner={bannerData?.banner}
           blogs={blogsData?.blogs}

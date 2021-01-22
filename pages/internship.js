@@ -1,5 +1,5 @@
 import { Layout, Internship } from 'containers';
-import mock from 'mock/index';
+import mock from 'mock/internship';
 import { initializeApollo } from 'lib/apollo';
 import { GET_VACANCIES } from 'graphql/vacancy';
 import { useQuery } from '@apollo/client';

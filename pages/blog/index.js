@@ -1,5 +1,5 @@
 import { Layout, Blogs } from 'containers';
-import mock from 'mock/index';
+import mock from 'mock/blog';
 import { GET_BLOGS_LIST, GET_BLOGS_CATEGORIES } from 'graphql/blogs';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';

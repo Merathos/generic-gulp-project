@@ -52,7 +52,6 @@ const EventDetails = ({
       )}
       {isActive && (
         <EventStream
-          title="Прямая трансляция"
           code={eventDataPolling?.broadcast_link}
           eventStarted={eventStarted}
           setEventStarted={setEventStarted}

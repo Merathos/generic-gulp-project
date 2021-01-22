@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { SocialSticker, CookieMessage } from 'components';
 import Router from 'next/router';
 import { useState, useEffect } from 'react';
-import mock from 'mock/index';
+import mock from 'mock/layout';
 import mockCookie from 'mock/cookie';
 
 const Wrapper = styled.div`
