@@ -8,14 +8,24 @@ const endOffset = 0;
 const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
-const handleSearch = searchValue => {
-  Router.push({
-    pathname: '/vacancies',
-    query: { technologies: searchValue },
-  }).then(() => window.scrollTo(0, 0));
+const handleSearch = (searchValue, stacks) => {
+  const result = stacks.filter(
+    item => item.name.toLowerCase() === searchValue.toLowerCase()
+  );
+
+  if (result[0]) {
+    Router.push({
+      pathname: '/vacancies',
+      query: { technologies: result[0].slug },
+    }).then(() => window.scrollTo(0, 0));
+  } else {
+    Router.push({
+      pathname: '/vacancies',
+    }).then(() => window.scrollTo(0, 0));
+  }
 };
 
-const RunningText = ({ data }) => {
+const RunningText = ({ data, stacks }) => {
   const [step, setStep] = useState(startOffset);
   const [isHovered, setHover] = useState(false);
   const requestRef = useRef();
@@ -53,12 +63,12 @@ const RunningText = ({ data }) => {
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
-            {[...data, ...data.slice(0, data.length / 2)].map(
+            {[...data, ...data.slice(0, data.length / 3)].map(
               (technology, index) => (
                 <Link
                   dx="10"
                   key={index}
-                  onClick={() => handleSearch(technology)}
+                  onClick={() => handleSearch(technology, stacks)}
                 >
                   {technology}
                 </Link>

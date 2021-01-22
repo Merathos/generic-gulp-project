@@ -11,6 +11,7 @@ import {
   GET_TEAMS_MAIN,
   GET_VACANCY_CATEGORIES_MAIN,
 } from 'graphql/main';
+import { GET_VACANCY_STACKS } from 'graphql/vacancy';
 
 const mainPage = () => {
   const { data: quotesData } = useQuery(GET_QUOTES);
@@ -22,6 +23,7 @@ const mainPage = () => {
     variables: { is_home: true },
   });
   const { data: vacancyCatData } = useQuery(GET_VACANCY_CATEGORIES_MAIN);
+  const { data: stacksData } = useQuery(GET_VACANCY_STACKS);
 
   return (
     <>
@@ -40,6 +42,7 @@ const mainPage = () => {
           blogs={blogsData?.blogs}
           teams={teamsData?.teams}
           vacancyCat={vacancyCatData?.vacancy_categories}
+          stacks={stacksData?.vacancy_stacks}
         />
       </Layout>
     </>
@@ -100,6 +103,9 @@ export async function getServerSideProps({ query }) {
   });
   await apolloClient.query({
     query: GET_VACANCY_CATEGORIES_MAIN,
+  });
+  await apolloClient.query({
+    query: GET_VACANCY_STACKS,
   });
 
   return {

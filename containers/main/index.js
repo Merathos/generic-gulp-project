@@ -9,7 +9,7 @@ import {
 import { RunningText, Gallery } from '../../components';
 import { Main as MainContainer, Container, GreyContainer } from './styles';
 
-const Main = ({ data, quotes, banner, blogs, teams, vacancyCat }) => {
+const Main = ({ data, quotes, banner, blogs, teams, vacancyCat, stacks }) => {
   return (
     <MainContainer>
       <GreyContainer>
@@ -20,9 +20,11 @@ const Main = ({ data, quotes, banner, blogs, teams, vacancyCat }) => {
       <Container>
         <Infographics data={data.infographics} />
       </Container>
-      <Container>
-        <RunningText data={data.technologies} />
-      </Container>
+      {stacks?.length > 0 && (
+        <Container>
+          <RunningText data={data.technologies} stacks={stacks} />
+        </Container>
+      )}
       <Container>
         <AboutCompany data={data.aboutCompany} banner={banner} />
       </Container>
