@@ -54,26 +54,29 @@ const Tags = ({ categories, stacks, teams }) => {
 
   return (
     <List>
-      {typeof query.categories === 'string' && (
-        <Element key={query.categories}>
-          <FilterButton
-            name={getSlugByName(query.categories, categories)}
-            onClick={() =>
-              handleClick(
-                query.categories,
-                checkTagActive(query.categories, query.categories),
-                'categories'
-              )
-            }
-          />
-        </Element>
-      )}
+      {typeof query.categories === 'string' &&
+        getSlugByName(query.categories, categories) && (
+          <Element key={query.categories}>
+            <FilterButton
+              name={getSlugByName(query.categories, categories)}
+              onClick={() =>
+                handleClick(
+                  query.categories,
+                  checkTagActive(query.categories, query.categories),
+                  'categories'
+                )
+              }
+            />
+          </Element>
+        )}
       {Array.isArray(query.categories) &&
         query.categories?.map(item => {
+          const name = getSlugByName(item, categories);
+          if (!name) return null;
           return (
             <Element key={item}>
               <FilterButton
-                name={getSlugByName(item, categories)}
+                name={name}
                 onClick={() =>
                   handleClick(
                     item,
@@ -86,26 +89,29 @@ const Tags = ({ categories, stacks, teams }) => {
           );
         })}
 
-      {typeof query.technologies === 'string' && (
-        <Element key={query.technologies}>
-          <FilterButton
-            name={getSlugByName(query.technologies, stacks)}
-            onClick={() =>
-              handleClick(
-                query.technologies,
-                checkTagActive(query.technologies, query.technologies),
-                'technologies'
-              )
-            }
-          />
-        </Element>
-      )}
+      {typeof query.technologies === 'string' &&
+        getSlugByName(query.technologies, stacks) && (
+          <Element key={query.technologies}>
+            <FilterButton
+              name={getSlugByName(query.technologies, stacks)}
+              onClick={() =>
+                handleClick(
+                  query.technologies,
+                  checkTagActive(query.technologies, query.technologies),
+                  'technologies'
+                )
+              }
+            />
+          </Element>
+        )}
       {Array.isArray(query.technologies) &&
         query.technologies?.map(item => {
+          const name = getSlugByName(item, stacks);
+          if (!name) return null;
           return (
             <Element key={item}>
               <FilterButton
-                name={getSlugByName(item, stacks)}
+                name={name}
                 onClick={() =>
                   handleClick(
                     item,
@@ -118,7 +124,7 @@ const Tags = ({ categories, stacks, teams }) => {
           );
         })}
 
-      {typeof query.teams === 'string' && (
+      {typeof query.teams === 'string' && getSlugByName(query.teams, teams) && (
         <Element key={query.teams}>
           <FilterButton
             name={getSlugByName(query.teams, teams)}
@@ -134,10 +140,12 @@ const Tags = ({ categories, stacks, teams }) => {
       )}
       {Array.isArray(query.teams) &&
         query.teams?.map(item => {
+          const name = getSlugByName(item, teams);
+          if (!name) return null;
           return (
             <Element key={item}>
               <FilterButton
-                name={getSlugByName(item, teams)}
+                name={name}
                 onClick={() =>
                   handleClick(item, checkTagActive(query.teams, item), 'teams')
                 }
