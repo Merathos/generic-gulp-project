@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import mock from 'mock/index';
+import mock from 'mock/layout';
 import { useLayoutEffect } from 'react';
 import * as S from './styles';
 import { MenuList, ContactsList, Social } from '../../components';

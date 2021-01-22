@@ -8,6 +8,7 @@ import {
   InternAbout,
   Gallery,
 } from 'components';
+import greyFooterMock from 'mock/greyFooter';
 import {
   Container,
   GreyContainer,
@@ -68,7 +69,7 @@ const Internship = ({ data, vacanciesData }) => {
       <ApplicationSection data={data.apply} />
 
       <GreyFooter
-        data={data.greyFooter}
+        data={greyFooterMock.greyFooter}
         background="transparent"
         type="internship"
       />

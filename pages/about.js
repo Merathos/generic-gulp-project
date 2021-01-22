@@ -1,7 +1,7 @@
 import { Layout, About } from 'containers';
 import Head from 'next/head';
 
-import mock from 'mock/index';
+import mock from 'mock/about';
 
 const aboutPage = () => {
   return (

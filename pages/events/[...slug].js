@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import dayjs from 'dayjs';
 
-import mock from 'mock/index';
+import mock from 'mock/event';
 
 const EventPage = ({ active, description }) => {
   const router = useRouter();
@@ -71,7 +71,7 @@ const EventPage = ({ active, description }) => {
       </Head>
       <Layout plainHeader backButton>
         <EventDetails
-          data={mock.events.eventDetails}
+          data={mock.event}
           eventData={event}
           eventDataPolling={eventPolling}
           eventStarted={eventStarted}

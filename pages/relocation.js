@@ -1,5 +1,5 @@
 import { Layout, RelocationV2 } from 'containers';
-import mock from 'mock/index';
+import mock from 'mock/relocation';
 import { GET_RELOCATION_BLOGS } from 'graphql/query';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo';

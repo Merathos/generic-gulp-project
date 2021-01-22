@@ -1,7 +1,7 @@
 import { Layout, Contacts } from 'containers';
 import Head from 'next/head';
 
-import mock from 'mock/index';
+import mock from 'mock/contacts';
 
 const contactsPage = () => {
   return (

@@ -6,9 +6,8 @@ import { getStatusImage } from 'helpers/events-helpers';
 import * as S from './styles';
 
 const EventStream = ({
-  data: { video },
+  data: { video, title },
   code,
-  title,
   isOpenBroadCast,
   startsAt,
   status,

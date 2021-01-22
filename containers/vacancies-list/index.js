@@ -6,7 +6,7 @@ import { Search } from 'forms';
 import { getNewTags } from 'helpers';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
-import formMock from 'mock';
+import formMock from 'mock/forms';
 import { queryHelpers } from 'helpers/query-helpers';
 import * as S from './styles';
 import { FormModal } from '../index';

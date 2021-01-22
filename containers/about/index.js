@@ -7,6 +7,7 @@ import {
   RunningText,
 } from 'components';
 
+import greyFooterMock from 'mock/greyFooter';
 import {
   Container,
   GreyContainer,
@@ -41,7 +42,7 @@ const About = ({ data }) => {
       </Container>
       <Gallery title={data.gallery.title} subtitle={data.gallery.subtitle} />
       <GreyContainer>
-        <GreyFooter data={data.greyFooter} type="about" />
+        <GreyFooter data={greyFooterMock.greyFooter} type="about" />
       </GreyContainer>
     </Main>
   );

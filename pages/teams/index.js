@@ -1,7 +1,7 @@
 import { Layout, TeamList } from 'containers';
 import { GET_TEAM_CATEGORIES } from 'graphql/query';
 import { initializeApollo } from 'lib/apollo';
-import mock from 'mock/index';
+import mock from 'mock/teams';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';

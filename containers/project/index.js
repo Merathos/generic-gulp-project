@@ -4,6 +4,7 @@ import {
   ArticleContent,
   TeamsVacancies,
 } from 'components';
+import greyFooterMock from 'mock/greyFooter';
 
 import { Container, GreyWrapper, VacancySection } from './styles';
 
@@ -42,7 +43,7 @@ const Project = ({ data, teams }) => {
         </VacancySection>
       )}
 
-      <GreyFooter data={data.greyFooter} />
+      <GreyFooter data={greyFooterMock.greyFooter} />
     </main>
   );
 };

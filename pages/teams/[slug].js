@@ -5,7 +5,7 @@ import { initializeApollo } from 'lib/apollo';
 import { GET_TEAM_CONTENT } from 'graphql/query';
 import Head from 'next/head';
 
-import mock from 'mock/index';
+import mock from 'mock/team';
 import { useRouter } from 'next/router';
 
 const ProjectPage = () => {
