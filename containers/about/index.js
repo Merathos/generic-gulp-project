@@ -16,7 +16,7 @@ import {
   ValuesSection,
 } from './styles';
 
-const About = ({ data }) => {
+const About = ({ data, stacks }) => {
   return (
     <Main>
       <HeaderContainer>
@@ -37,9 +37,11 @@ const About = ({ data }) => {
           <Values data={data.values} />
         </Container>
       </ValuesSection>
-      <Container>
-        <RunningText data={data.technologies} />
-      </Container>
+      {stacks?.length > 0 && (
+        <Container>
+          <RunningText data={data.technologies} stacks={stacks} />
+        </Container>
+      )}
       <Gallery title={data.gallery.title} subtitle={data.gallery.subtitle} />
       <GreyContainer>
         <GreyFooter data={greyFooterMock.greyFooter} type="about" />

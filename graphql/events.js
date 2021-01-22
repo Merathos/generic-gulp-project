@@ -118,6 +118,7 @@ export const GET_EVENT = gql`
         speaker {
           id
           name
+          description
           company
           image {
             id
