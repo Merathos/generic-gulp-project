@@ -15,7 +15,7 @@ export const Container = styled.div`
   transition: all 0.5s ease-in;
   opacity: ${p => (p.startTransition ? '0' : '1')};
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px), (max-height: 420px) {
     padding-top: 50px;
     padding-right: 30px;
     padding-left: 30px;
@@ -23,7 +23,13 @@ export const Container = styled.div`
     width: calc(100% - 60px);
     bottom: 0;
     opacity: 1;
+    overflow-y: scroll;
+    max-height: 100vh;
     transform: translate(-50%, ${p => (p.startTransition ? '50vh' : '0')});
+  }
+
+  @media (max-width: 320px), (max-height: 380px) {
+    top: 0;
   }
 `;
 
@@ -33,7 +39,7 @@ export const Title = styled.p`
   line-height: 31px;
   margin-bottom: 22px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 824px) {
     font-size: 18px;
     line-height: 24px;
   }
