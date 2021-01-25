@@ -19,6 +19,7 @@ export const Container = styled.section`
   @media screen and (max-width: 800px) {
     flex-direction: column;
     justify-content: flex-start;
+    min-height: auto;
   }
 
   @media screen and (max-width: 720px) {
@@ -217,8 +218,6 @@ export const PortraitBlock = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    max-height: 450px;
-
     &::before {
       width: 200px;
       height: 200px;

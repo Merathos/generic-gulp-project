@@ -16,8 +16,6 @@ export const Element = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    align-self: flex-start;
-
     ::after {
       content: '';
       position: absolute;
@@ -39,7 +37,6 @@ export const Img = styled.img`
   }
 
   @media screen and (max-width: 420px) {
-    margin-top: 30px;
     width: 315px;
   }
 `;
@@ -73,8 +70,10 @@ export const QuoteBlock = styled.div`
   }
 
   @media screen and (max-width: 420px) {
+    transform: none;
+    margin: 0 auto;
+    left: 0;
     position: relative;
-    margin-top: -10px;
     z-index: 2;
   }
 `;
