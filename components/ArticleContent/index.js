@@ -18,6 +18,7 @@ import {
 } from 'components';
 import { TitleH2, TitleH3 } from 'elements';
 import vacancyMock from 'mock/vacancy';
+import { sanitize } from 'isomorphic-dompurify';
 
 const H2 = styled(TitleH2)`
   margin-top: ${props => (props.isFirstBlockHeader ? '0' : '160px')};
@@ -90,12 +91,16 @@ const renderContent = (
             data.level === 2 ? (
               <H2
                 isFirstBlockHeader={isFirstBlockHeader}
-                dangerouslySetInnerHTML={{ __html: data.text }}
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(data.text),
+                }}
               />
             ) : (
               <H3
                 isFirstBlockHeader={isFirstBlockHeader}
-                dangerouslySetInnerHTML={{ __html: data.text }}
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(data.text),
+                }}
               />
             ),
           paragraph: (

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Subtitle from 'elements/Subtitle';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
+import { sanitize } from 'isomorphic-dompurify';
 
 const ArticleTitle = styled.h1`
   font-size: 84px;
@@ -54,7 +55,7 @@ const Title = ({ title, date, description }) => {
       {title && (
         <ArticleTitle
           dangerouslySetInnerHTML={{
-            __html: title,
+            __html: sanitize(title),
           }}
         />
       )}

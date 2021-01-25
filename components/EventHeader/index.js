@@ -1,6 +1,7 @@
 import { getStatusImage, getCategoryBackground } from 'helpers/events-helpers';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
+import { sanitize } from 'isomorphic-dompurify';
 
 import * as S from './styles';
 
@@ -89,7 +90,7 @@ const EventHeader = ({
             )}
             <S.Type
               dangerouslySetInnerHTML={{
-                __html: name,
+                __html: sanitize(name),
               }}
             />
             <S.LocationContainer>

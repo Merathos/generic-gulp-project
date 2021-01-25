@@ -1,4 +1,5 @@
 import TitleH5 from 'elements/TitleH5';
+import { sanitize } from 'isomorphic-dompurify';
 import { Block, Container, Img, Card, Text } from './styles';
 
 const Comment = props => {
@@ -9,10 +10,10 @@ const Comment = props => {
     <Block>
       <Container>
         <Img background={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`} />
-        <TitleH5 dangerouslySetInnerHTML={{ __html: title }} />
+        <TitleH5 dangerouslySetInnerHTML={{ __html: sanitize(title) }} />
       </Container>
       <Card>
-        <Text dangerouslySetInnerHTML={{ __html: describe }} />
+        <Text dangerouslySetInnerHTML={{ __html: sanitize(describe) }} />
       </Card>
     </Block>
   );

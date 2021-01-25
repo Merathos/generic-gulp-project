@@ -1,4 +1,5 @@
 import { StoryCard } from 'components';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const RelocationBlogs = props => {
@@ -35,7 +36,11 @@ const RelocationBlogs = props => {
           <S.Icon>
             <img src={noteIcon} alt="Бонус" width="24" height="24" />
           </S.Icon>
-          <S.NoteText dangerouslySetInnerHTML={{ __html: renewedNote }} />
+          <S.NoteText
+            dangerouslySetInnerHTML={{
+              __html: sanitize(renewedNote),
+            }}
+          />
         </S.NoteWrapper>
       </S.Container>
     </S.Section>

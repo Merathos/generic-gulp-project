@@ -1,4 +1,5 @@
 import { TitleH1 } from 'elements';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const TeamsHeader = ({ title, text, stack, picture }) => {
@@ -8,7 +9,7 @@ const TeamsHeader = ({ title, text, stack, picture }) => {
         {title && (
           <TitleH1
             dangerouslySetInnerHTML={{
-              __html: title,
+              __html: sanitize(title),
             }}
           />
         )}

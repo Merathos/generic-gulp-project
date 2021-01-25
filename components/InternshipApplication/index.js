@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FormModal } from 'containers';
 import form from 'mock/forms';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 import { JobForm } from '../index';
 
@@ -25,7 +26,13 @@ const InternshipApplication = ({ data }) => {
     <S.Section>
       <S.Wrapper>
         <S.H2>{title}</S.H2>
-        {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
+        {text && (
+          <S.Text
+            dangerouslySetInnerHTML={{
+              __html: sanitize(updatedText),
+            }}
+          />
+        )}
         <S.StyledButton accent="accent" onClick={toggleModal}>
           {button}
         </S.StyledButton>

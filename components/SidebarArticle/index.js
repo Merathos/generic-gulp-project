@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button, Subtitle } from 'elements';
 import ArrowRight from 'public/icons/arrow-right.svg';
+import { sanitize } from 'isomorphic-dompurify';
 import {
   Section,
   SectionIcon,
@@ -35,19 +36,31 @@ const SidebarArticle = props => {
               {fromEditor ? (
                 <>
                   <StyledIcon name={26} />
-                  <H5 dangerouslySetInnerHTML={{ __html: title }} />
-                  <Subtitle dangerouslySetInnerHTML={{ __html: text }} />
+                  <H5
+                    dangerouslySetInnerHTML={{
+                      __html: sanitize(title),
+                    }}
+                  />
+                  <Subtitle
+                    dangerouslySetInnerHTML={{
+                      __html: sanitize(text),
+                    }}
+                  />
                 </>
               ) : (
                 <>
                   <StyledIcon name={icon} isInternship={isInternship} />
                   <H5
                     isInternship={isInternship}
-                    dangerouslySetInnerHTML={{ __html: title }}
+                    dangerouslySetInnerHTML={{
+                      __html: sanitize(title),
+                    }}
                   />
                   <StyledSubtitle
                     isInternship={isInternship}
-                    dangerouslySetInnerHTML={{ __html: description }}
+                    dangerouslySetInnerHTML={{
+                      __html: sanitize(description),
+                    }}
                   />
                 </>
               )}
@@ -61,7 +74,9 @@ const SidebarArticle = props => {
                     <Content>
                       <DefaultSubtitle>Читайте также</DefaultSubtitle>
                       <DefaultTitle
-                        dangerouslySetInnerHTML={{ __html: title }}
+                        dangerouslySetInnerHTML={{
+                          __html: sanitize(title),
+                        }}
                       />
                       <div>
                         <ArrowRight />
@@ -71,8 +86,16 @@ const SidebarArticle = props => {
                 </>
               ) : (
                 <>
-                  <Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
-                  <Title dangerouslySetInnerHTML={{ __html: title }} />
+                  <Subtitle
+                    dangerouslySetInnerHTML={{
+                      __html: sanitize(subtitle),
+                    }}
+                  />
+                  <Title
+                    dangerouslySetInnerHTML={{
+                      __html: sanitize(title),
+                    }}
+                  />
                   <Link href={link}>
                     <a>
                       <ArrowRight />
@@ -84,7 +107,7 @@ const SidebarArticle = props => {
           ),
           button: (
             <SectionButton>
-              <Text dangerouslySetInnerHTML={{ __html: text }} />
+              <Text dangerouslySetInnerHTML={{ __html: sanitize(text) }} />
               <Button type="accent" onClick={handleSendRequestClick}>
                 {button}
               </Button>
@@ -101,11 +124,11 @@ const SidebarArticle = props => {
               />
               <Title
                 isInternship={isInternship}
-                dangerouslySetInnerHTML={{ __html: title }}
+                dangerouslySetInnerHTML={{ __html: sanitize(title) }}
               />
               <SubtitleWrapper
                 isInternship
-                dangerouslySetInnerHTML={{ __html: text }}
+                dangerouslySetInnerHTML={{ __html: sanitize(text) }}
               />
             </Aside>
           ),
