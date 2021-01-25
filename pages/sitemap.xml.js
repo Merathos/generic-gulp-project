@@ -23,7 +23,11 @@ export async function getServerSideProps({ res }) {
   res.setHeader('Content-Type', 'text/xml');
   res.write(createSitemap());
   res.end();
+  return {
+    props: {},
+  };
 }
 
 // add component here
-export default () => {};
+const Sitemap = () => {};
+export default Sitemap;
