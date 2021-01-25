@@ -17,6 +17,14 @@ export const Form = styled.form`
       }
     `};
 
+  @media screen and (max-width: 768px) {
+    ${props =>
+      props.smallPadding &&
+      css`
+        padding: 4px 0;
+      `};
+  }
+
   @media screen and (max-width: 420px) {
     padding: ${props =>
       props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
@@ -40,7 +48,7 @@ export const Field = styled.input`
       padding-top: 5px;
       padding-bottom: 25px;
       background-color: transparent;
-      
+
       @media screen and (max-width: 1024px) {
         padding-top: 10px;
         padding-bottom: 15px;

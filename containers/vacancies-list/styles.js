@@ -61,17 +61,17 @@ export const Article = styled.article`
     margin-right: -45px;
     padding-left: 45px;
     padding-right: 45px;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     background-color: #ffffff;
     z-index: 3;
   }
 
   @media screen and (max-width: 420px) {
-    padding-bottom: 0;
     margin-left: -30px;
     margin-right: -30px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 0;
   }
 `;
 
@@ -90,21 +90,31 @@ export const Grid = styled.div`
 `;
 
 export const FilterWrapper = styled.div`
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
     position: sticky;
-    top: ${props => (props.withExtraSpace ? '265px' : '214px')};
+    top: ${props => (props.withExtraSpace ? '265px' : '177px')};
     margin-left: -45px;
     margin-right: -45px;
-    padding: ${props => (props.active ? '16px 45px 50px' : '16px 45px')};
+    padding: ${props => (props.active ? '10px 45px 50px' : '10px 45px')};
     background-color: #f7f8f9;
     z-index: 3;
+    overflow-y: scroll;
+    max-height: calc(100vh - 214px);
   }
 
   @media screen and (max-width: 420px) {
     top: ${props => (props.withExtraSpace ? '232px' : '181px')};
     margin-left: -30px;
     margin-right: -30px;
-    padding: ${props => (props.active ? '16px 30px 50px' : '16px 30px')};
+    padding: ${props => (props.active ? '10px 30px 50px' : '10px 30px')};
+    overflow-y: scroll;
+    max-height: calc(100vh - 181px);
   }
 `;
 
@@ -134,7 +144,7 @@ export const FilterTitle = styled.button.attrs(props => ({
     transition: transform 0.2s ease;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 134%;
   }
@@ -154,6 +164,10 @@ export const Aside = styled.aside`
 
   @media screen and (max-width: 900px) {
     margin-right: 24px;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin-right: 14px;
   }
 
   @media screen and (max-width: 768px) {
@@ -251,11 +265,22 @@ export const InternshipLinkText = styled.p`
 export const Filter = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    button {
+      font-size: 16px;
+      line-height: 190%;
+    }
+  }
 `;
 
 export const Resume = styled.p`
   margin-top: 40px;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 
   @media screen and (max-width: 420px) {
     margin-bottom: 30px;
@@ -278,6 +303,10 @@ export const ResumeButton = styled.button`
     color: #339722;
   }
 
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 14px;
   }
@@ -287,6 +316,11 @@ export const Block = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-wrap: wrap;
+
+    div {
+      font-size: 14px;
+      line-height: 190%;
+    }
   }
 
   @media screen and (max-width: 420px) {

@@ -32,7 +32,7 @@ const Label = styled.label`
     display: none;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 190%;
     padding-left: 14px;
