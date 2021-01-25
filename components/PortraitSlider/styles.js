@@ -39,6 +39,7 @@ export const Img = styled.img`
   }
 
   @media screen and (max-width: 420px) {
+    margin-top: 30px;
     width: 315px;
   }
 `;
@@ -86,7 +87,7 @@ export const Quote = styled.p`
   max-height: 250px;
   overflow: hidden;
 
-  @media screen and (max-width: 864px) {
+  @media screen and (max-width: 1024px) {
     font-size: 16px;
     line-height: 158%;
     padding-bottom: 10px;
@@ -97,17 +98,23 @@ export const Author = styled.span`
   font-size: 18px;
   line-height: 120%;
   opacity: 0.5;
+  display: inline-block;
+  max-width: 75%;
 
-  @media screen and (max-width: 864px) {
+  @media screen and (max-width: 1024px) {
     font-size: 14px;
     line-height: 158%;
+  }
+
+  @media screen and (max-width: 800px) {
+    max-width: 100%;
   }
 `;
 
 export const PrevButton = styled.button`
   position: absolute;
-  bottom: 85px;
-  right: 130px;
+  bottom: 95px;
+  right: 140px;
   width: 19px;
   height: 19px;
   opacity: 0.5;
@@ -123,7 +130,7 @@ export const PrevButton = styled.button`
   }
 
   @media screen and (max-width: 1024px) {
-    left: 320px;
+    left: 330px;
     bottom: 60px;
   }
 
@@ -156,8 +163,8 @@ export const PrevButton = styled.button`
 
 export const NextButton = styled.button`
   position: absolute;
-  bottom: 85px;
-  right: 90px;
+  bottom: 95px;
+  right: 100px;
   width: 19px;
   height: 19px;
   opacity: 0.5;
@@ -173,7 +180,7 @@ export const NextButton = styled.button`
   }
 
   @media screen and (max-width: 1024px) {
-    left: 360px;
+    left: 370px;
     bottom: 60px;
   }
 
