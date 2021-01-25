@@ -2,6 +2,7 @@ import GreenArrowLeft from 'public/icons/green-arrow-left.svg';
 import GreenArrowRight from 'public/icons/green-arrow-right.svg';
 import { useRef } from 'react';
 import Swiper from 'react-id-swiper';
+import { sanitize } from 'isomorphic-dompurify';
 import { Article, Element, Img, H4, Text, Arrows, StyledLink } from './styles';
 
 const SidebarSlider = props => {
@@ -36,8 +37,16 @@ const SidebarSlider = props => {
               alt={el.title}
             />
             <div>
-              <H4 dangerouslySetInnerHTML={{ __html: el.title }} />
-              <Text dangerouslySetInnerHTML={{ __html: el.describe }} />
+              <H4
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.title),
+                }}
+              />
+              <Text
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.describe),
+                }}
+              />
             </div>
           </Element>
         ))}

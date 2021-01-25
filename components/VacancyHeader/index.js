@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Features } from 'components';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
+import { sanitize } from 'isomorphic-dompurify';
 import {
   Section,
   Wrapper,
@@ -53,7 +54,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
           {name && (
             <H1
               dangerouslySetInnerHTML={{
-                __html: name,
+                __html: sanitize(name),
               }}
             />
           )}

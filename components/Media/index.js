@@ -1,5 +1,6 @@
 import ReactPlayer from 'react-player';
 import { useState } from 'react';
+import { sanitize } from 'isomorphic-dompurify';
 import { Section, Text, VideoContainer } from './styles';
 
 const Media = ({
@@ -55,8 +56,12 @@ const Media = ({
           )}
         </>
       )}
-      {subtitle && <Text dangerouslySetInnerHTML={{ __html: subtitle }} />}
-      {caption && <Text dangerouslySetInnerHTML={{ __html: caption }} />}
+      {subtitle && (
+        <Text dangerouslySetInnerHTML={{ __html: sanitize(subtitle) }} />
+      )}
+      {caption && (
+        <Text dangerouslySetInnerHTML={{ __html: sanitize(caption) }} />
+      )}
     </Section>
   );
 };

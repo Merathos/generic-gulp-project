@@ -1,4 +1,5 @@
 import Router from 'next/router';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const RelocationApply = ({ data }) => {
@@ -28,7 +29,13 @@ const RelocationApply = ({ data }) => {
           <img src={picture} alt="promo" width="200" height="400" />
         </S.PicWrapper>
         <S.Content>
-          {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
+          {text && (
+            <S.Text
+              dangerouslySetInnerHTML={{
+                __html: sanitize(updatedText),
+              }}
+            />
+          )}
           <S.Button accent onClick={handleVacanciesClick}>
             {button}
           </S.Button>

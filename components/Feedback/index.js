@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import TitleH3 from 'elements/TitleH3';
 import Subtitle from 'elements/Subtitle';
+import { sanitize } from 'isomorphic-dompurify';
 
 const Img = styled.img`
   width: 404px;
@@ -127,9 +128,11 @@ const Feedback = props => {
         />
       </picture>
       <Content>
-        <StyledSubtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
-        <H3 dangerouslySetInnerHTML={{ __html: title }} />
-        <StyledText dangerouslySetInnerHTML={{ __html: describe }} />
+        <StyledSubtitle
+          dangerouslySetInnerHTML={{ __html: sanitize(subtitle) }}
+        />
+        <H3 dangerouslySetInnerHTML={{ __html: sanitize(title) }} />
+        <StyledText dangerouslySetInnerHTML={{ __html: sanitize(describe) }} />
       </Content>
     </Section>
   );

@@ -1,5 +1,6 @@
 import { Player } from 'components';
 import { TitleH1 } from 'elements';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
@@ -9,7 +10,7 @@ const BlogHeader = ({ title, text, picture, audio, mobPicture }) => {
         {title && (
           <TitleH1
             dangerouslySetInnerHTML={{
-              __html: title,
+              __html: sanitize(title),
             }}
           />
         )}

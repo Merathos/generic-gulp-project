@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { handleEditorLinks } from 'helpers/handle-editor-links';
+import { sanitize } from 'isomorphic-dompurify';
 
 const Description = styled.p`
   opacity: ${props => props.opacity || '1'};
@@ -40,7 +41,9 @@ const Paragraph = props => {
     <Description
       leadText={leadText}
       opacity={opacity}
-      dangerouslySetInnerHTML={{ __html: handleEditorLinks(text) }}
+      dangerouslySetInnerHTML={{
+        __html: sanitize(handleEditorLinks(text)),
+      }}
       nextIsParagraph={nextIsParagraph}
     />
   );

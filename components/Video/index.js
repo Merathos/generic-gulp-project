@@ -1,4 +1,5 @@
 import ReactPlayer from 'react-player';
+import { sanitize } from 'isomorphic-dompurify';
 import { Section, Text, VideoContainer } from './styles';
 
 const Video = props => {
@@ -28,7 +29,7 @@ const Video = props => {
           height="100%"
         />
       </VideoContainer>
-      {title && <Text dangerouslySetInnerHTML={{ __html: title }} />}
+      {title && <Text dangerouslySetInnerHTML={{ __html: sanitize(title) }} />}
     </Section>
   );
 };

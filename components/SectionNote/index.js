@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Icon from 'elements/Icon';
+import { sanitize } from 'isomorphic-dompurify';
 
 const Text = styled.p`
   font-size: 20px;
@@ -54,7 +55,7 @@ const SectionNote = ({ data }) => {
   return (
     <Section>
       <Icon name="26" />
-      <Text dangerouslySetInnerHTML={{ __html: renewedData }} />
+      <Text dangerouslySetInnerHTML={{ __html: sanitize(renewedData) }} />
     </Section>
   );
 };

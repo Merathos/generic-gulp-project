@@ -1,3 +1,4 @@
+import { sanitize } from 'isomorphic-dompurify';
 import {
   Section,
   NormalList,
@@ -18,8 +19,16 @@ const List = props => {
         <BlueList>
           {data.map((el, i) => (
             <li key={i}>
-              <BlueTitle dangerouslySetInnerHTML={{ __html: el.title }} />
-              <BlueText dangerouslySetInnerHTML={{ __html: el.describe }} />
+              <BlueTitle
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.title),
+                }}
+              />
+              <BlueText
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.describe),
+                }}
+              />
             </li>
           ))}
         </BlueList>
@@ -35,8 +44,16 @@ const List = props => {
                   />
                 </Wrapper>
               )}
-              <H3 dangerouslySetInnerHTML={{ __html: el.title }} />
-              <NormalText dangerouslySetInnerHTML={{ __html: el.describe }} />
+              <H3
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.title),
+                }}
+              />
+              <NormalText
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.describe),
+                }}
+              />
             </Element>
           ))}
         </NormalList>

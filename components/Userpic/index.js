@@ -1,4 +1,5 @@
 import TitleH5 from 'elements/TitleH5';
+import { sanitize } from 'isomorphic-dompurify';
 import { Block, Img, Text } from './styles';
 
 const Userpic = props => {
@@ -10,8 +11,8 @@ const Userpic = props => {
     <Block>
       <Img background={`${process.env.NEXT_PUBLIC_API_STORAGE}${imageUrl}`} />
       <div>
-        <TitleH5 dangerouslySetInnerHTML={{ __html: title }} />
-        <Text dangerouslySetInnerHTML={{ __html: describe }} />
+        <TitleH5 dangerouslySetInnerHTML={{ __html: sanitize(title) }} />
+        <Text dangerouslySetInnerHTML={{ __html: sanitize(describe) }} />
       </div>
     </Block>
   );

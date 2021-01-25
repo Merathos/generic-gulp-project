@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const Application = ({
@@ -25,7 +26,13 @@ const Application = ({
     <S.Section className={className}>
       <S.Wrapper decor={decor} type={type} vacancy={vacancy}>
         <S.H2 vacancy={vacancy}>{language ? data.titleEn : data.title}</S.H2>
-        {text && <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />}
+        {text && (
+          <S.Text
+            dangerouslySetInnerHTML={{
+              __html: sanitize(updatedText),
+            }}
+          />
+        )}
         <S.StyledButton
           type="accent"
           usage={type}

@@ -1,3 +1,4 @@
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const MarkerList = props => {
@@ -11,7 +12,9 @@ const MarkerList = props => {
               {el.image && <S.Img src={el.image} alt={el.title} />}
               <S.Text
                 inline={inline}
-                dangerouslySetInnerHTML={{ __html: el.text || el }}
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.text) || sanitize(el),
+                }}
               />
             </S.ElementEllipse>
           ))}
@@ -22,7 +25,11 @@ const MarkerList = props => {
             <S.ElementNumber key={i}>
               <S.Number>{`0${i + 1}`}</S.Number>
               {el.image && <img src={el.image} alt={el.title} />}
-              <S.Text dangerouslySetInnerHTML={{ __html: el.text || el }} />
+              <S.Text
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(el.text) || sanitize(el),
+                }}
+              />
             </S.ElementNumber>
           ))}
         </S.List>

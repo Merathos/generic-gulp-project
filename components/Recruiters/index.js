@@ -1,5 +1,6 @@
 import Mail from 'public//icons/mail.svg';
 import Telegram from 'public/icons/telegram.svg';
+import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
 const Recruiters = ({ data, back, english }) => {
@@ -24,7 +25,7 @@ const Recruiters = ({ data, back, english }) => {
     <S.Section>
       <S.H2>{english ? titleEn : title}</S.H2>
       {updatedText && (
-        <S.Text dangerouslySetInnerHTML={{ __html: updatedText }} />
+        <S.Text dangerouslySetInnerHTML={{ __html: sanitize(updatedText) }} />
       )}
       <S.List>
         {back.map((el, i) => (

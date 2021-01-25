@@ -1,5 +1,6 @@
 import TitleH5 from 'elements/TitleH5';
 import Subtitle from 'elements/Subtitle';
+import { sanitize } from 'isomorphic-dompurify';
 import { Section, Span, Block, Container, Img, Description } from './styles';
 
 const Quote = props => {
@@ -11,18 +12,26 @@ const Quote = props => {
     <Section noQuoteAuthor={noQuoteAuthor}>
       <Span>«</Span>
       <Block>
-        <blockquote dangerouslySetInnerHTML={{ __html: text }} />
+        <blockquote dangerouslySetInnerHTML={{ __html: sanitize(text) }} />
         {name && (
           <Container>
             <Img src={src} alt={name} />
             <div>
-              <TitleH5 dangerouslySetInnerHTML={{ __html: name }} />
-              <Subtitle dangerouslySetInnerHTML={{ __html: company }} />
+              <TitleH5 dangerouslySetInnerHTML={{ __html: sanitize(name) }} />
+              <Subtitle
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(company),
+                }}
+              />
             </div>
           </Container>
         )}
         {description && (
-          <Description dangerouslySetInnerHTML={{ __html: description }} />
+          <Description
+            dangerouslySetInnerHTML={{
+              __html: sanitize(description),
+            }}
+          />
         )}
       </Block>
     </Section>
