@@ -12,7 +12,7 @@ export async function getServerSideProps(ctx) {
     loc: `${process.env.NEXT_PUBLIC_DOMAIN}/teams/${item.slug}`,
     lastmod: new Date().toISOString(),
     priority: 0.5,
-    changefreq: 'weekly',
+    changefreq: 'always',
   }));
   const result = teams.filter(
     (v, i, a) => a.findIndex(t => JSON.stringify(t) === JSON.stringify(v)) === i

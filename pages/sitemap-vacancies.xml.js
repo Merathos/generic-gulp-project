@@ -1,20 +1,20 @@
-import { GET_BLOGS_LIST } from 'graphql/blogs';
+import { GET_VACANCIES } from 'graphql/vacancy';
 import { initializeApollo } from 'lib/apollo';
 import { getServerSideSitemap } from 'next-sitemap';
 
 export async function getServerSideProps(ctx) {
   const apolloClient = initializeApollo();
 
-  const { data: blogData } = await apolloClient.query({
-    query: GET_BLOGS_LIST,
+  const { data: vacanciesData } = await apolloClient.query({
+    query: GET_VACANCIES,
   });
-  const blogs = blogData.blogs.map(item => ({
-    loc: `${process.env.NEXT_PUBLIC_DOMAIN}/blog/${item.slug}`,
+  const vacancies = vacanciesData.vacancies.map(item => ({
+    loc: `${process.env.NEXT_PUBLIC_DOMAIN}/vacancies/${item.slug}`,
     lastmod: new Date().toISOString(),
     priority: 0.5,
-    changefreq: 'weekly',
+    changefreq: 'always',
   }));
-  const result = blogs.filter(
+  const result = vacancies.filter(
     (v, i, a) => a.findIndex(t => JSON.stringify(t) === JSON.stringify(v)) === i
   );
 
