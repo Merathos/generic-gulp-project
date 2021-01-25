@@ -26,4 +26,4 @@ export async function getServerSideProps({ res }) {
 }
 
 // add component here
-export default () => null;
+export default () => {};
