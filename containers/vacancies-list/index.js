@@ -49,7 +49,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
 
   const initialWidth = useWindowWidth();
 
-  const openDropdown = e => {
+  const openDropdown = (e) => {
     if (opened === e) {
       setOpened('');
     } else {
@@ -57,7 +57,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
     }
   };
 
-  const handleCategories = e => {
+  const handleCategories = (e) => {
     if (e === '') {
       delete query.categories;
       router.push(
@@ -155,7 +155,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
     }
   };
 
-  const handleSearch = search => {
+  const handleSearch = (search) => {
     router.push(
       {
         pathname,
@@ -171,6 +171,16 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
 
   const handleOpenFilter = () => {
     setHidden(!hidden);
+  };
+
+  const handleReset = () => {
+    router.push(
+      {
+        pathname,
+      },
+      undefined,
+      { shallow: true }
+    );
   };
 
   const {
@@ -190,7 +200,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
               handleOpen={() => openDropdown(mockFilters[0]?.title)}
               opened={opened === mockFilters[0]?.title}
               category="categories"
-              handleChangeRadio={e => handleCategories(e)}
+              handleChangeRadio={(e) => handleCategories(e)}
               withBg
             />
           )}
@@ -232,12 +242,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
           />
         </S.Block>
         {Object.keys(query).length !== 0 && (
-          <FilterButton
-            name={discard}
-            onClick={() => {
-              router.push(pathname);
-            }}
-          />
+          <FilterButton name={discard} onClick={handleReset} />
         )}
       </S.Filter>
       {initialWidth > 768 && (
@@ -278,7 +283,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
             <S.Title>{mock.mainTitle}</S.Title>
             <Search
               placeholder={mock.search}
-              handleSearch={search => handleSearch(search)}
+              handleSearch={(search) => handleSearch(search)}
               initialValue={router.query.search}
               smallPadding
             />

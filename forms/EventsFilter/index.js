@@ -23,10 +23,20 @@ const EventsFilter = ({ eventCategories, resetButtonText }) => {
     );
   };
 
+  const handleReset = () => {
+    router.push(
+      {
+        pathname,
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
+
   return (
     <Wrapper>
       <List>
-        {eventCategories.map(item => {
+        {eventCategories.map((item) => {
           const isActive = checkTagActive(query.categories, item.slug);
           return (
             <Item key={item.id}>
@@ -44,7 +54,7 @@ const EventsFilter = ({ eventCategories, resetButtonText }) => {
       </List>
       <ResetFilter
         type="button"
-        onClick={() => router.push(pathname)}
+        onClick={handleReset}
         show={query.categories?.length > 0}
       >
         {resetButtonText}

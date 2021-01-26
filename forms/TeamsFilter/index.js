@@ -30,6 +30,16 @@ const TeamsFilter = ({ data: { title, discard }, stacks }) => {
     );
   };
 
+  const handleReset = () => {
+    router.push(
+      {
+        pathname,
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
+
   return (
     <S.Wrapper active={!hidden}>
       <S.Title onClick={() => handleOpenFilter()} active={!hidden}>
@@ -41,7 +51,7 @@ const TeamsFilter = ({ data: { title, discard }, stacks }) => {
       <S.List active={!hidden}>
         <CustomScrollbars>
           {stacks?.length > 0 &&
-            Object.keys(stacks).map(item => {
+            Object.keys(stacks).map((item) => {
               const isActive = checkTagActive(
                 query.technologies,
                 stacks[item].slug
@@ -66,7 +76,7 @@ const TeamsFilter = ({ data: { title, discard }, stacks }) => {
       </S.List>
       {Object.keys(query).length !== 0 && (
         <S.ResetButtonWrapper active={!hidden}>
-          <FilterButton name={discard} onClick={() => router.push(pathname)} />
+          <FilterButton name={discard} onClick={handleReset} />
         </S.ResetButtonWrapper>
       )}
     </S.Wrapper>
