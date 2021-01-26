@@ -12,7 +12,6 @@ const EventsFilter = ({ eventCategories, resetButtonText }) => {
   const handleChange = (slug, isActive) => {
     router.push(
       {
-        pathname,
         query: {
           ...query,
           categories: generateNewTags(query.categories, slug, isActive),

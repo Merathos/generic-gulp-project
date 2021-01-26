@@ -62,7 +62,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
       delete query.categories;
       router.push(
         {
-          pathname,
           query: {
             ...query,
           },
@@ -73,7 +72,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
     } else {
       router.push(
         {
-          pathname,
           query: {
             ...query,
             categories: e,
@@ -88,7 +86,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
   const handleFilterClick = (slug, isActive, category) => {
     router.push(
       {
-        pathname,
         query: {
           ...query,
           [category]: generateNewTags(query[category], slug, isActive),
@@ -104,7 +101,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
       delete query.internship;
       router.push(
         {
-          pathname,
           query: {
             ...query,
           },
@@ -115,7 +111,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
     } else {
       router.push(
         {
-          pathname,
           query: {
             ...query,
             internship: !query.internship,
@@ -132,7 +127,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
       delete query.english;
       router.push(
         {
-          pathname,
           query: {
             ...query,
           },
@@ -143,7 +137,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
     } else {
       router.push(
         {
-          pathname,
           query: {
             ...query,
             english: !query.english,
@@ -158,7 +151,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
   const handleSearch = (search) => {
     router.push(
       {
-        pathname,
         query: {
           ...query,
           search: getNewTags(router.query.search, search),

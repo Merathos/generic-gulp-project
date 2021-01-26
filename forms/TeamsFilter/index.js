@@ -19,7 +19,6 @@ const TeamsFilter = ({ data: { title, discard }, stacks }) => {
   const handleChange = (slug, isActive) => {
     router.push(
       {
-        pathname,
         query: {
           ...query,
           technologies: generateNewTags(query.technologies, slug, isActive),

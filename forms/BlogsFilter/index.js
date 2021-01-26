@@ -9,7 +9,7 @@ const { checkTagActive } = queryHelpers;
 
 const BlogsFilter = ({ categories }) => {
   const router = useRouter();
-  const { pathname, query } = router;
+  const { query } = router;
 
   const params = {
     slidesPerView: 'auto',
@@ -21,7 +21,6 @@ const BlogsFilter = ({ categories }) => {
       delete query.category;
       router.push(
         {
-          pathname,
           query: {
             ...query,
           },
@@ -32,7 +31,6 @@ const BlogsFilter = ({ categories }) => {
     } else {
       router.push(
         {
-          pathname,
           query: {
             ...query,
             category: slug,
@@ -47,7 +45,7 @@ const BlogsFilter = ({ categories }) => {
   return (
     <Section>
       <Swiper {...params}>
-        {categories.map(item => {
+        {categories.map((item) => {
           const isActive = checkTagActive(query.category, item.slug);
           return (
             <Element key={item.id}>
