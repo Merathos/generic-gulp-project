@@ -98,10 +98,10 @@ export const FilterWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     position: sticky;
-    top: ${props => (props.withExtraSpace ? '265px' : '177px')};
+    top: ${(props) => (props.withExtraSpace ? '227px' : '177px')};
     margin-left: -45px;
     margin-right: -45px;
-    padding: ${props => (props.active ? '10px 45px 50px' : '10px 45px')};
+    padding: ${(props) => (props.active ? '10px 45px 50px' : '10px 45px')};
     background-color: #f7f8f9;
     z-index: 3;
     overflow-y: scroll;
@@ -109,21 +109,21 @@ export const FilterWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    top: ${props => (props.withExtraSpace ? '232px' : '181px')};
+    top: ${(props) => (props.withExtraSpace ? '232px' : '181px')};
     margin-left: -30px;
     margin-right: -30px;
-    padding: ${props => (props.active ? '10px 30px 50px' : '10px 30px')};
+    padding: ${(props) => (props.active ? '10px 30px 50px' : '10px 30px')};
     overflow-y: scroll;
     max-height: calc(100vh - 181px);
   }
 `;
 
-export const FilterTitle = styled.button.attrs(props => ({
+export const FilterTitle = styled.button.attrs((props) => ({
   transform: props.active
     ? 'rotate(-180deg) translateY(50%)'
     : 'translateY(-50%)',
 }))`
-  padding: ${props => (props.active ? '0 0 30px' : '0')};
+  padding: ${(props) => (props.active ? '0 0 30px' : '0')};
   position: relative;
   font-size: 20px;
   font-weight: 500;
@@ -136,11 +136,11 @@ export const FilterTitle = styled.button.attrs(props => ({
     position: absolute;
     width: 14px;
     height: 7px;
-    top: ${props => (props.active ? '14px' : '50%')};
+    top: ${(props) => (props.active ? '14px' : '50%')};
     right: 0;
     background-image: url('/icons/dropdown.svg');
     background-repeat: no-repeat;
-    transform: ${props => props.transform};
+    transform: ${(props) => props.transform};
     transition: transform 0.2s ease;
   }
 
@@ -152,7 +152,6 @@ export const FilterTitle = styled.button.attrs(props => ({
 
 export const Aside = styled.aside`
   position: sticky;
-  top: 150px;
   max-width: 254px;
   margin-right: 74px;
   float: left;
