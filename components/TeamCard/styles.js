@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { TitleH3 } from 'elements';
 
-export const Section = styled.div`
+export const Section = styled.a`
   display: flex;
   flex-direction: column;
   max-width: 350px;
+  width: 100%;
 
   svg {
     path {
@@ -47,7 +48,7 @@ export const Section = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    margin-bottom: ${props => (props.isMain ? '0' : '10px')};
+    margin-bottom: ${(props) => (props.isMain ? '0' : '10px')};
   }
 `;
 
@@ -93,6 +94,7 @@ export const Arrow = styled.span`
 
 export const Picture = styled.img`
   margin-bottom: 30px;
+  width: 100%;
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 20px;
