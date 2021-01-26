@@ -2,9 +2,9 @@ import Link from 'next/link';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import { Section, H3, StyledText, Arrow, Picture } from './styles';
 
-const TeamCard = props => {
+const TeamCard = (props) => {
   const {
-    data: { name, slug, description, image },
+    data: { name, slug, summary, image },
   } = props;
 
   return (
@@ -21,8 +21,8 @@ const TeamCard = props => {
               loading="lazy"
             />
           )}
-          <H3>{name}</H3>
-          <StyledText>{description}</StyledText>
+          {name && <H3>{name}</H3>}
+          {summary && <StyledText>{summary}</StyledText>}
           <Arrow>
             <ArrowRight />
           </Arrow>
