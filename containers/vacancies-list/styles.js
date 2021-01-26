@@ -47,7 +47,7 @@ export const Container = styled.div`
 
 export const Article = styled.article`
   width: 100%;
-  position: sticky;
+  /* position: sticky; */
   top: -30px;
   padding-bottom: 20px;
   background-color: #ffffff;

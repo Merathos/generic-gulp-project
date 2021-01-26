@@ -7,12 +7,11 @@ const { checkTagActive, generateNewTags } = queryHelpers;
 
 const EventsTags = ({ eventCategories }) => {
   const router = useRouter();
-  const { pathname, query } = router;
+  const { query } = router;
 
   const handleClick = (slug, isActive) => {
     router.push(
       {
-        pathname,
         query: {
           ...query,
           categories: generateNewTags(query.categories, slug, isActive),
@@ -27,7 +26,7 @@ const EventsTags = ({ eventCategories }) => {
     <>
       {query.categories && (
         <S.Tags>
-          {eventCategories.map(item => {
+          {eventCategories.map((item) => {
             const isActive = checkTagActive(query.categories, item.slug);
             if (isActive) {
               return (

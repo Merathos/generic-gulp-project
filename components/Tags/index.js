@@ -25,12 +25,11 @@ const Element = styled.li`
 
 const Tags = ({ categories, stacks, teams }) => {
   const router = useRouter();
-  const { pathname, query } = router;
+  const { query } = router;
 
   const handleClick = (slug, isActive, category) => {
     router.push(
       {
-        pathname,
         query: {
           ...query,
           [category]: generateNewTags(query[category], slug, isActive),
@@ -45,7 +44,7 @@ const Tags = ({ categories, stacks, teams }) => {
     let name;
 
     if (obj) {
-      const k = Object.keys(obj).filter(key => obj[key].slug === slug);
+      const k = Object.keys(obj).filter((key) => obj[key].slug === slug);
       name = obj[k]?.name;
     }
 
@@ -70,7 +69,7 @@ const Tags = ({ categories, stacks, teams }) => {
           </Element>
         )}
       {Array.isArray(query.categories) &&
-        query.categories?.map(item => {
+        query.categories?.map((item) => {
           const name = getSlugByName(item, categories);
           if (!name) return null;
           return (
@@ -105,7 +104,7 @@ const Tags = ({ categories, stacks, teams }) => {
           </Element>
         )}
       {Array.isArray(query.technologies) &&
-        query.technologies?.map(item => {
+        query.technologies?.map((item) => {
           const name = getSlugByName(item, stacks);
           if (!name) return null;
           return (
@@ -139,7 +138,7 @@ const Tags = ({ categories, stacks, teams }) => {
         </Element>
       )}
       {Array.isArray(query.teams) &&
-        query.teams?.map(item => {
+        query.teams?.map((item) => {
           const name = getSlugByName(item, teams);
           if (!name) return null;
           return (
