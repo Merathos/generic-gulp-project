@@ -10,18 +10,25 @@ import {
   H4,
 } from './styles';
 
-const NoteRight = props => {
+const NoteRight = (props) => {
   const {
-    data: { src, subtitle, title },
+    data: { preview, title, slug },
   } = props;
   return (
-    <Link href="/about">
+    <Link href={`/blog/${slug}`}>
       <Card>
         <Container>
-          <Img src={src} alt={title} />
+          {preview && (
+            <Img
+              src={preview.path?.normal}
+              srcSet={`${preview.path?.retina} 2x`}
+              alt={title}
+              loading="lazy"
+            />
+          )}
           <Wrapper>
-            <StyledSubtitle>{subtitle}</StyledSubtitle>
-            <H4>{title}</H4>
+            <StyledSubtitle>Следующая статья</StyledSubtitle>
+            {title && <H4>{title}</H4>}
           </Wrapper>
         </Container>
         <StyledLink>

@@ -39,7 +39,7 @@ export const GET_BLOG_CONTENT = gql`
       }
       related {
         preview {
-          path {
+          path(width: 240) {
             normal
             retina
           }

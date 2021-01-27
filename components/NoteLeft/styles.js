@@ -6,7 +6,7 @@ export const Card = styled.div`
   padding: 30px 100px 65px 30px;
   display: flex;
   box-sizing: border-box;
-  justify-content: ${props => props.position || 'flex-start'};
+  justify-content: ${(props) => props.position || 'flex-start'};
   background-image: url('/images/blue-rectangle.svg');
   background-repeat: no-repeat;
   background-position: 20px bottom;
@@ -20,7 +20,7 @@ export const Card = styled.div`
     margin-bottom: 40px;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 650px) {
     display: none;
   }
 
@@ -69,8 +69,18 @@ export const H4 = styled(TitleH4)`
 `;
 
 export const Img = styled.img`
-  max-width: 120px;
+  width: 120px;
+  height: 120px;
   margin-right: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media screen and (max-width: 650px) {
+    width: 74px;
+    height: 74px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Container = styled.div`

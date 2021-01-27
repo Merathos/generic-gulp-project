@@ -17,7 +17,7 @@ export const Card = styled.div`
   transition: all 0.3s ease;
   width: 100%;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 650px) {
     margin-bottom: 30px;
     background-position: left 10px;
     padding: 30px 30px 40px;
@@ -61,11 +61,15 @@ export const Card = styled.div`
 `;
 
 export const Img = styled.img`
-  max-width: 120px;
+  width: 120px;
+  height: 120px;
   margin-right: 30px;
+  border-radius: 50%;
+  object-fit: cover;
 
-  @media screen and (max-width: 540px) {
-    max-width: 74px;
+  @media screen and (max-width: 650px) {
+    width: 74px;
+    height: 74px;
     margin-right: 0;
     margin-bottom: 20px;
   }
@@ -76,7 +80,7 @@ export const Container = styled.div`
   align-items: center;
   padding-top: 25px;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 650px) {
     flex-direction: column;
     align-items: flex-start;
     padding-top: 0;
@@ -93,7 +97,7 @@ export const StyledLink = styled.a`
   margin-left: 33px;
   display: block;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 650px) {
     margin-left: auto;
   }
 `;

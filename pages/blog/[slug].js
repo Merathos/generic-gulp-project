@@ -46,7 +46,7 @@ const storyPage = () => {
           {blog.type === 'history' ? (
             <Story back={blog} />
           ) : (
-            <Article data={mock.article} back={blog} />
+            <Article back={blog} />
           )}
         </Layout>
       )}
