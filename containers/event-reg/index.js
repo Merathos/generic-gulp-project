@@ -1,30 +1,8 @@
 import InnerHTML from 'dangerously-set-html-content';
 import * as S from './styles';
 
-const EventReg = props => {
+const EventReg = (props) => {
   const { regForm, customizeID, eventID } = props;
-
-  const timepadForm = `
-  <script id="form-script" type="text/javascript" async="async" defer="defer" charset="UTF-8"
-  src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="${customizeID}"
-  data-twf2s-event--id="${eventID}" data-timepad-widget-v2="event_register">
-    (function () {
-      return {
-        "loadCSS": [
-          "/styles/timepad.css"
-        ],
-        "skipBaseCSS": false,
-        "disableBootstrap": false,
-        "overrideTemplates": {
-          "main": "#mainTplMy",
-          "_ank": "#ankTplMy",
-          "_selectTickets": "#selectTicketsTplMy",
-          "_question": "#questionTplMy"
-        }
-      };
-    })();
-  </script>
-  `;
 
   const mainTpl = `
   <script type="text/mustache" id="mainTplMy">
@@ -442,6 +420,44 @@ const EventReg = props => {
   </script>
   `;
 
+  const handler = `
+  <script type="text/javascript">
+    var handleTWFpostRepaint = function(params) {
+      var title = this.$$('.event__title');
+      if (title) {
+        title.text(function(i, text) {
+          return text.replace(/&QUOT;/g, '"').replace(/&quot;/g, '"');
+        });
+      }
+    }
+  </script>
+  `;
+
+  const timepadForm = `
+  <script id="form-script" type="text/javascript" async="async" defer="defer" charset="UTF-8"
+  src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="${customizeID}"
+  data-twf2s-event--id="${eventID}" data-timepad-widget-v2="event_register">
+    (function () {
+      return {
+        "loadCSS": [
+          "/styles/timepad.css"
+        ],
+        "skipBaseCSS": false,
+        "disableBootstrap": false,
+        "overrideTemplates": {
+          "main": "#mainTplMy",
+          "_ank": "#ankTplMy",
+          "_selectTickets": "#selectTicketsTplMy",
+          "_question": "#questionTplMy"
+        },
+        "bindEvents": {
+          "postRepaint": "handleTWFpostRepaint"
+        }
+      };
+    })();
+  </script>
+  `;
+
   return (
     <S.Section ref={regForm} id="form">
       <S.Container id="form-container">
@@ -449,6 +465,7 @@ const EventReg = props => {
         <InnerHTML html={ticketTpl} />
         <InnerHTML html={ankTpl} />
         <InnerHTML html={questionTpl} />
+        <InnerHTML html={handler} />
         <InnerHTML html={timepadForm} />
       </S.Container>
     </S.Section>
