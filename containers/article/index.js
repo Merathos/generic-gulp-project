@@ -1,7 +1,7 @@
 import { Title, Articles, ArticleContent } from 'components';
 import { Container } from './styles';
 
-const Article = ({ data, back }) => {
+const Article = ({ back }) => {
   let content = {};
   if (back.content) {
     content = JSON.parse(back.content);
@@ -17,8 +17,8 @@ const Article = ({ data, back }) => {
       {Object.keys(content).length !== 0 && (
         <ArticleContent content={content} />
       )}
-      {data.articles?.length > 0 && (
-        <Articles type="article" data={data.articles} />
+      {back.related?.length > 0 && (
+        <Articles type="article" data={back.related} />
       )}
     </Container>
   );
