@@ -7,8 +7,6 @@ export const Card = styled.div`
   padding: 30px 30px 65px 85px;
   display: flex;
   box-sizing: border-box;
-  justify-content: flex-end;
-  align-items: flex-start;
   background-image: url('/images/yellow-circle.svg');
   background-repeat: no-repeat;
   background-position: 40px bottom;
