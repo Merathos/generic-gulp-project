@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { Subtitle, TitleH4 } from 'elements';
 
 export const Card = styled.div`
+  position: relative;
   background-color: #f7f8f9;
-  padding: 30px 100px 65px 30px;
+  padding: 30px 30px 65px 84px;
   display: flex;
   box-sizing: border-box;
   justify-content: ${(props) => props.position || 'flex-start'};
@@ -20,7 +21,7 @@ export const Card = styled.div`
     margin-bottom: 40px;
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 580px) {
     display: none;
   }
 
@@ -60,7 +61,7 @@ export const Card = styled.div`
 `;
 
 export const H4 = styled(TitleH4)`
-  min-width: 221px;
+  min-width: 175px;
   max-width: 244px;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -75,7 +76,7 @@ export const Img = styled.img`
   border-radius: 50%;
   object-fit: cover;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 580px) {
     width: 74px;
     height: 74px;
     margin-right: 0;
@@ -96,8 +97,9 @@ export const Wrapper = styled.div`
 export const StyledLink = styled.a`
   width: 38px;
   height: 38px;
-  margin-right: 16px;
-  display: block;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 `;
 
 export const StyledSubtitle = styled(Subtitle)`
