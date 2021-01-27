@@ -105,7 +105,7 @@ export const StyledLink = styled.a`
 `;
 
 export const H4 = styled(TitleH4)`
-  min-width: 221px;
+  min-width: 175px;
 `;
 
 export const StyledSubtitle = styled(Subtitle)`

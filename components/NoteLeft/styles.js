@@ -61,7 +61,7 @@ export const Card = styled.div`
 `;
 
 export const H4 = styled(TitleH4)`
-  min-width: 221px;
+  min-width: 175px;
   max-width: 244px;
   display: -webkit-box;
   -webkit-line-clamp: 5;
