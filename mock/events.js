@@ -43,7 +43,7 @@ export default {
       name: 'personal',
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: 'https://dins.ru/downloads/policy.pdf',
+      dataHref: '/downloads/policy.pdf',
     },
     mailing: {
       name: 'newsletter',
