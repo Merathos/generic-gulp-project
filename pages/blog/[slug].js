@@ -18,7 +18,11 @@ const storyPage = () => {
       is_preview: query.preview === 'true',
     },
   });
-  const blog = blogData?.blogs[0] || {};
+  let blog = {};
+
+  if (blogData?.blogs && blogData?.blogs[0]) {
+    blog = blogData?.blogs[0];
+  }
 
   useEffect(() => {
     if (blogData && Object.keys(blog).length === 0) router.push('/404');
