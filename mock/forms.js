@@ -59,7 +59,7 @@ export default {
       name: 'personal',
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
     },
     mailing: {
       name: 'newsletter',
@@ -107,7 +107,7 @@ export default {
       name: 'personal',
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
     },
     mailing: {
       name: 'newsletter',
@@ -268,7 +268,7 @@ export default {
       name: 'personal',
       dataText: 'Подтверждаю свое согласие на ',
       dataLink: ' обработку персональных данных',
-      dataHref: '#',
+      dataHref: 'https://dins.ru/downloads/policy.pdf',
     },
     mailing: {
       name: 'newsletter',
