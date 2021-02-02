@@ -20,7 +20,7 @@ const Styled = styled.button`
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-right: 22px;
     margin-bottom: 0;
 

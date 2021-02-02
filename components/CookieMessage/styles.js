@@ -13,9 +13,9 @@ export const Container = styled.div`
   padding: 60px;
   color: #f7f8f9;
   transition: all 0.5s ease-in;
-  opacity: ${p => (p.startTransition ? '0' : '1')};
+  opacity: ${(p) => (p.startTransition ? '0' : '1')};
 
-  @media (max-width: 768px), (max-height: 420px) {
+  @media screen and (max-width: 768px), (max-height: 420px) {
     padding-top: 50px;
     padding-right: 30px;
     padding-left: 30px;
@@ -25,10 +25,10 @@ export const Container = styled.div`
     opacity: 1;
     overflow-y: scroll;
     max-height: 100vh;
-    transform: translate(-50%, ${p => (p.startTransition ? '50vh' : '0')});
+    transform: translate(-50%, ${(p) => (p.startTransition ? '50vh' : '0')});
   }
 
-  @media (max-width: 320px), (max-height: 380px) {
+  @media screen and (max-width: 320px), (max-height: 380px) {
     top: 0;
   }
 `;
@@ -39,7 +39,7 @@ export const Title = styled.p`
   line-height: 31px;
   margin-bottom: 22px;
 
-  @media (max-width: 824px) {
+  @media screen and (max-width: 824px) {
     font-size: 18px;
     line-height: 24px;
   }
@@ -52,7 +52,7 @@ export const Description = styled.p`
   opacity: 0.8;
   margin-bottom: 32px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 21px;
   }
@@ -63,7 +63,7 @@ export const Button = styled(Btn)`
   color: #2f8ed9;
   max-width: 243px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 191px;
   }
 

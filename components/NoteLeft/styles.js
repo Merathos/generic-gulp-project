@@ -21,7 +21,7 @@ export const Card = styled.div`
     margin-bottom: 40px;
   }
 
-  @media (max-width: 580px) {
+  @media screen and (max-width: 580px) {
     display: none;
   }
 

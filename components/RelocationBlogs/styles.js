@@ -4,12 +4,12 @@ import { TitleH2 } from 'elements';
 export const Section = styled.section`
   margin-bottom: 160px;
 
-  @media (min-width: 1300px) {
+  @media screen and (min-width: 1300px) {
     background: url('/backgrounds/relocation-difficulties.png') no-repeat right
       170px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 80px;
   }
 `;
@@ -23,7 +23,7 @@ export const Container = styled.div`
 export const Title = styled(TitleH2)`
   margin-bottom: 40px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 22px;
   }
 `;
@@ -34,7 +34,7 @@ export const Text = styled.p`
   line-height: 32px;
   max-width: 740px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 60px;
     font-size: 14px;
     line-height: 22px;
@@ -46,7 +46,7 @@ export const List = styled.ul`
   display: flex;
   flex-flow: row wrap;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 39px;
   }
 
@@ -56,11 +56,11 @@ export const List = styled.ul`
     width: 100%;
     max-width: 349px;
 
-    @media (max-width: 685px) {
+    @media screen and (max-width: 685px) {
       margin-right: 0;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       max-width: 315px;
     }
 
@@ -79,7 +79,7 @@ export const NoteWrapper = styled.div`
   grid-template-columns: 57px 1fr;
   grid-column-gap: 30px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 24px 0 21px 0;
     grid-template-columns: 1fr;
     grid-template-rows: 43px 1fr;
@@ -97,7 +97,7 @@ export const Icon = styled.div`
   border-radius: 50%;
   background-color: #f7f8f9;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 18px;
     width: 43px;
     height: 43px;
@@ -107,7 +107,7 @@ export const Icon = styled.div`
     width: 20px;
     height: auto;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 18px;
     }
   }
@@ -130,7 +130,7 @@ export const NoteText = styled.p`
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 150%;
   }

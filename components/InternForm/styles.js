@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding-top: 37px;
   padding-bottom: 90px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-top: 22px;
     padding-bottom: 70px;
     background-image: none;
@@ -23,7 +23,7 @@ export const Form = styled.form`
   box-sizing: border-box;
   max-width: 880px;
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     margin: 0 auto;
     padding: 30px;
   }
@@ -39,7 +39,7 @@ export const Fade = styled.div`
   background-color: rgba(255, 255, 255, 0.6);
   z-index: 10;
 
-  ${props =>
+  ${(props) =>
     props.isOpen &&
     css`
       display: block;
@@ -51,7 +51,7 @@ export const TitleWrap = styled.div`
   max-width: 880px;
   box-sizing: border-box;
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     margin: 0 auto;
     padding: 30px;
   }
@@ -61,7 +61,7 @@ export const MainTitle = styled(TitleH2)`
   max-width: 880px;
   margin-bottom: 21px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 330px;
     margin-bottom: 1px;
     font-size: 32px;
@@ -73,7 +73,7 @@ export const MainTitle = styled(TitleH2)`
 export const FormSection = styled.fieldset`
   margin-bottom: 90px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 50px;
   }
 `;
@@ -81,7 +81,7 @@ export const FormSection = styled.fieldset`
 export const SubmitSection = styled(FormSection)`
   margin-top: 100px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 80px;
   }
 `;
@@ -93,7 +93,7 @@ export const SectionTitle = styled.h3`
   font-weight: 700;
   letter-spacing: normal;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 5px;
     font-size: 16px;
     line-height: 19px;
@@ -107,7 +107,7 @@ export const InputsContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     flex-direction: column;
   }
 `;
@@ -120,12 +120,12 @@ export const SelectContainer = styled.div`
   max-width: 410px;
   flex-direction: column;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 10px;
   }
 `;
@@ -135,7 +135,7 @@ export const CheckboxContainer = styled.fieldset`
   flex-flow: row wrap;
   margin-bottom: 0px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 40px;
     flex-direction: column;
   }
@@ -145,13 +145,13 @@ export const Question = styled.p`
   margin-top: 60px;
   margin-bottom: 40px;
 
-  ${props =>
+  ${(props) =>
     props.error &&
     css`
       color: #fb5235;
     `}
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 22px;
     margin-top: 38px;
@@ -164,17 +164,17 @@ export const CheckBox = styled(EventsCheckbox)`
   margin-right: 27px;
   margin-bottom: 27px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 20px;
   }
 
   label {
-    @media (max-width: 910px) {
+    @media screen and (max-width: 910px) {
       font-size: 20px;
       line-height: 26.8px;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 14px;
       line-height: 22.12px;
     }
@@ -195,13 +195,13 @@ export const MonthContainer = styled.div`
   width: 100%;
   max-width: 410px;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     margin-bottom: 50px;
   }
 `;
 
 export const TimeContainer = styled(MonthContainer)`
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 10px;
   }
 `;
@@ -211,7 +211,7 @@ export const TermsQuestion = styled.p`
   font-size: 20px;
   line-height: 26px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 290px;
     font-size: 14px;
     line-height: 22px;
@@ -232,7 +232,7 @@ export const FileWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-end;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 40px;
   }
 `;
@@ -244,12 +244,12 @@ export const AgreemenCheckbox = styled(EventsCheckbox)`
     font-size: 18px;
     line-height: 21.6px;
 
-    @media (max-width: 910px) {
+    @media screen and (max-width: 910px) {
       font-size: 20px;
       line-height: 26.8px;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 14px;
       line-height: 22.12px;
     }
@@ -275,7 +275,7 @@ export const BottomWrap = styled.div`
   display: flex;
   margin-top: 40px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
 
     #rc-imageselect,
@@ -294,7 +294,7 @@ export const StyledButton = styled(Btn)`
   margin-bottom: 4px;
   align-self: flex-end;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 191px;
     margin-left: 0;
     margin-top: -10px;

@@ -31,7 +31,7 @@ export const Subtitle = styled.p`
   line-height: 21.44px;
   opacity: 0.5;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 18px;
   }

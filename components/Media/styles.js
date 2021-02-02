@@ -18,7 +18,7 @@ export const Text = styled(Subtitle)`
 
 export const Section = styled.section`
   position: relative;
-  max-width: ${props => (props.stretched ? 'none' : '850px')};
+  max-width: ${(props) => (props.stretched ? 'none' : '850px')};
 
   &::before {
     content: '';
@@ -30,7 +30,7 @@ export const Section = styled.section`
     top: -75px;
     background-color: #f7f8f9;
     z-index: -1;
-    display: ${props => (props.decoration ? 'block' : 'none')};
+    display: ${(props) => (props.decoration ? 'block' : 'none')};
   }
 
   @media screen and (max-width: 420px) {
@@ -42,10 +42,10 @@ export const Section = styled.section`
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.hasCircle &&
     css`
-      @media (min-width: 1000px) {
+      @media screen and (min-width: 1000px) {
         &::after {
           content: '';
           position: absolute;
@@ -61,20 +61,20 @@ export const Section = styled.section`
     `}
 
   img {
-    margin-bottom: ${props => (props.caption ? '0' : '100px')};
+    margin-bottom: ${(props) => (props.caption ? '0' : '100px')};
 
-    @media (max-width: 420px) {
-      margin-bottom: ${props => (props.caption ? '0' : '50px')};
+    @media screen and (max-width: 420px) {
+      margin-bottom: ${(props) => (props.caption ? '0' : '50px')};
     }
   }
 `;
 
 export const VideoContainer = styled.div`
   position: relative;
-  padding-top: ${props => (props.isAbout ? 63.7 : 49.5)}%;
+  padding-top: ${(props) => (props.isAbout ? 63.7 : 49.5)}%;
 
   @media screen and (max-width: 420px) {
-    padding-top: ${props => (props.isAbout ? 57.8 : 49.5)}%;
+    padding-top: ${(props) => (props.isAbout ? 57.8 : 49.5)}%;
   }
 
   .react-player {
@@ -102,7 +102,7 @@ export const VideoContainer = styled.div`
     background-color: #ffffff !important;
 
     @media screen and (max-width: 420px) {
-      ${props =>
+      ${(props) =>
         props.isAbout &&
         css`
           width: 40px !important;
@@ -117,7 +117,7 @@ export const VideoContainer = styled.div`
     margin-left: 4px !important;
 
     @media screen and (max-width: 420px) {
-      ${props =>
+      ${(props) =>
         props.isAbout &&
         css`
           border-width: 6px 0 6px 7px !important;

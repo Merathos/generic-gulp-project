@@ -9,7 +9,7 @@ export const CardWrapper = styled.div`
   padding: 60px;
   background-color: #f7f8f9;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     padding: 80px 30px;
     border-radius: 0;
   }
@@ -21,14 +21,14 @@ export const TopWrapper = styled.div`
 `;
 
 export const Title = styled(TitleH2)`
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   transition: filter 0.3s ease;
 
   &:hover {
     filter: brightness(82%);
   }
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 15px;
     width: 100%;
     font-size: 32px;
@@ -40,9 +40,9 @@ export const Title = styled(TitleH2)`
 export const DateContainer = styled.div`
   margin-left: auto;
   padding-top: 7px;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin: 0;
   }
 `;
@@ -53,7 +53,7 @@ export const Date = styled.p`
   font-size: 50px;
   line-height: 60px;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 0;
     text-align: left;
     font-size: 26px;
@@ -66,7 +66,7 @@ export const Time = styled.p`
   font-size: 18px;
   line-height: 24px;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     text-align: left;
     font-size: 14px;
     line-height: 21px;
@@ -79,7 +79,7 @@ export const TopicContainer = styled.div`
   padding-top: 18px;
   border-top: 2px solid rgba(32, 31, 42, 0.1);
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 50px;
     flex-direction: column;
   }
@@ -92,7 +92,7 @@ export const TopicName = styled.p`
   line-height: 34px;
   font-weight: 700;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 30px;
     font-size: 20px;
     line-height: 24px;
@@ -110,7 +110,7 @@ export const Speaker = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 21px;
   }
 
@@ -126,7 +126,7 @@ export const Pic = styled.img`
   border-radius: 50%;
   object-fit: cover;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-right: 11px;
     width: 51.22px;
     height: 51.22px;
@@ -141,7 +141,7 @@ export const NameWrapper = styled.div`
   font-size: 18px;
   line-height: 24px;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     max-width: 70%;
     padding-top: 5px;
     font-size: 14px;
@@ -164,7 +164,7 @@ export const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     flex-direction: column;
     margin-top: 25px;
     margin-bottom: 0;
@@ -172,7 +172,7 @@ export const BottomWrapper = styled.div`
 `;
 
 export const StyledButton = styled(Btn)`
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 22px;
   }
 `;
@@ -185,7 +185,7 @@ export const Location = styled.p`
   line-height: 21px;
   opacity: 0.5;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     max-width: 100%;
     text-align: left;
     align-self: flex-start;
@@ -200,7 +200,7 @@ export const Link = styled.a`
   max-width: 470px;
   padding-bottom: 30px;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     padding-bottom: 0;
     width: 100%;
     max-width: 100%;

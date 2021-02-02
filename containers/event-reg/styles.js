@@ -19,11 +19,11 @@ export const Container = styled.div`
     right: -45px;
     animation: 45s linear infinite rotation;
 
-    @media (max-width: 1370px) {
+    @media screen and (max-width: 1370px) {
       right: 0;
     }
 
-    @media (max-width: 900px) {
+    @media screen and (max-width: 900px) {
       width: 140px;
       height: 140px;
       background-size: 140px 140px;
@@ -48,7 +48,7 @@ export const Section = styled.section`
   padding-bottom: 160px;
   background-color: #f7f8f9;
 
-  @media (max-width: 900px) {
+  @media screen and (max-width: 900px) {
     padding-top: 56px;
     padding-bottom: 47px;
   }

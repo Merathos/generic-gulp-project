@@ -8,17 +8,17 @@ export const Wrapper = styled.a`
   width: 100%;
   box-sizing: border-box;
   min-height: 431px;
-  background-image: url(${props => props.bgImg});
+  background-image: url(${(props) => props.bgImg});
   background-repeat: no-repeat;
   background-position: bottom right;
   position: relative;
 
-  @media (max-width: 834px) {
-    background-image: url(${props => props.bgMob});
+  @media screen and (max-width: 834px) {
+    background-image: url(${(props) => props.bgMob});
     background-position: bottom right;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 30px 30px 0;
     max-width: 315px;
     min-height: 389px;
@@ -31,12 +31,12 @@ export const Content = styled.div`
   max-width: 348px;
   z-index: 1;
 
-  @media (max-width: 834px) {
+  @media screen and (max-width: 834px) {
     margin-bottom: 0;
     margin-top: 0;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 100%;
   }
 `;
@@ -49,7 +49,7 @@ export const Text = styled.p`
   font-size: 18px;
   line-height: 27px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 22px;
   }
@@ -71,13 +71,13 @@ export const Title = styled.b`
     height: auto;
     margin-left: 11px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 22px;
       margin-left: 8px;
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 10px;
     font-size: 22px;
     line-height: 26px;
@@ -95,7 +95,7 @@ export const Picture = styled.img`
   max-width: 440px;
   height: auto;
 
-  @media (max-width: 834px) {
+  @media screen and (max-width: 834px) {
     max-height: 240px;
   }
 `;

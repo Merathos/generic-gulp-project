@@ -6,9 +6,9 @@ export const StyledFooter = styled.footer`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  background-color: ${props => (props.grey ? '#F7F8F9' : 'transparent')};
+  background-color: ${(props) => (props.grey ? '#F7F8F9' : 'transparent')};
 
-  ${props =>
+  ${(props) =>
     props.smallPadding &&
     css`
       @media screen and (max-width: 600px) {
@@ -21,7 +21,7 @@ export const StyledFooter = styled.footer`
   }
 
   @media screen and (max-width: 1024px) {
-    padding: ${props =>
+    padding: ${(props) =>
       props.isVisible ? '26px 60px 50px 60px' : '120px 60px 50px 60px'};
     flex-direction: column-reverse;
     text-align: center;
@@ -29,11 +29,11 @@ export const StyledFooter = styled.footer`
   }
 
   @media screen and (max-width: 420px) {
-    padding: ${props =>
+    padding: ${(props) =>
       props.isVisible ? '26px 60px 50px 60px' : '124px 30px 40px 30px'};
   }
 
-  ${props =>
+  ${(props) =>
     props.smallIndent &&
     css`
       padding-top: 150px;
@@ -49,11 +49,11 @@ export const Container = styled.div`
   width: 265px;
   margin-right: 240px;
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     margin-right: 120px;
   }
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     margin-right: 0;
     margin-top: 22px;
     margin-bottom: 40px;
@@ -69,7 +69,7 @@ export const FooterText = styled.p`
   opacity: 0.5;
   margin-bottom: 20px;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 12px;
     font-size: 10px;
   }
@@ -81,7 +81,7 @@ export const Link = styled.a`
   font-size: 14px;
   line-height: 144.2%;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     font-size: 10px;
   }
 `;
@@ -92,7 +92,7 @@ export const Span = styled.span`
   opacity: 0.6;
   margin-right: 10px;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     font-size: 10px;
     line-height: 120%;
   }
@@ -111,7 +111,7 @@ export const ProducerLink = styled.a`
     opacity: 0.6;
   }
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     svg {
       width: 56px;
       height: 24px;
@@ -125,11 +125,11 @@ export const Block = styled.div`
   min-width: 175px;
   margin-bottom: 10px;
 
-  @media (max-width: 1440px) {
+  @media screen and (max-width: 1440px) {
     margin-left: auto;
   }
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     order: -1;
     width: 100%;
     justify-content: space-between;

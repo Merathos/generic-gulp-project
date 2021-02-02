@@ -15,7 +15,7 @@ const Label = styled.label`
     margin-bottom: 30px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 22px;
     letter-spacing: -0.029em;
@@ -26,7 +26,7 @@ const Label = styled.label`
   }
 
   textarea {
-    ${props =>
+    ${(props) =>
       props.error &&
       css`
         border-color: #fb5235;
@@ -62,7 +62,7 @@ const StyledTextarea = styled(TextareaAutosize)`
     color: #201f2a;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     min-height: 40px;
     font-size: 16px;
     line-height: 22px;

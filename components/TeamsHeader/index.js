@@ -16,7 +16,7 @@ const TeamsHeader = ({ title, text, stack, picture }) => {
         {text && <S.Paragraph>{text}</S.Paragraph>}
         {stack && (
           <S.TextBlock>
-            <S.Bold>Technology Stack:</S.Bold>
+            <S.Bold>Технологии:</S.Bold>
             <S.StyledText>{stack}</S.StyledText>
           </S.TextBlock>
         )}

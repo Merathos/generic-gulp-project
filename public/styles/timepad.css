@@ -400,14 +400,14 @@
   background-color: #ec381a !important;
 }
 
-@media (min-width: 769px) {
+@media screen and (min-width: 769px) {
   .row-text .b-reg-row,
   .row-phone .b-reg-row {
     position: relative !important;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
     padding: 0 30px;
   }
@@ -562,7 +562,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .b-reg-table .b-reg-table__plusminus {
     margin-top: 3px !important;
     margin-left: -4px !important;
@@ -577,7 +577,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .b-reg-table .b-reg-table__plusminus {
     margin-top: -3px !important;
     margin-left: -5px !important;
@@ -654,7 +654,7 @@
   color: rgba(32, 31, 42, 0.5);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .row-text .b-registration__question,
   .row-phone .b-registration__question {
     top: 5px;

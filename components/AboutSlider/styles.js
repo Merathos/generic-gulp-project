@@ -25,7 +25,7 @@ export const Section = styled.section`
     }
   }
 
-  ${p =>
+  ${(p) =>
     p.controlsTop &&
     css`
       margin-bottom: 144px;
@@ -92,7 +92,7 @@ export const Title = styled.p`
   max-width: 706px;
   width: 90%;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 6px;
     font-size: 14px;
     line-height: 18px;
@@ -123,14 +123,14 @@ export const PrevButton = styled.button`
   border: 2px solid #53b443;
   border-right: none;
 
-  ${props =>
+  ${(props) =>
     props.controlsTop &&
     css`
       top: 0;
       left: 115px;
     `}
 
-  ${props =>
+  ${(props) =>
     !props.controlsTop &&
     css`
       @media screen and (max-width: 1440px) {
@@ -172,14 +172,14 @@ export const NextButton = styled.button`
   border: 2px solid #53b443;
   border-left: none;
 
-  ${props =>
+  ${(props) =>
     props.controlsTop &&
     css`
       top: 0;
       left: 168px;
     `}
 
-  ${props =>
+  ${(props) =>
     !props.controlsTop &&
     css`
       @media screen and (max-width: 1440px) {

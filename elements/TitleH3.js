@@ -15,7 +15,7 @@ const Styled = styled.h3`
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 22px;
     line-height: 120%;
   }

@@ -7,21 +7,21 @@ export const Container = styled.div`
   grid-gap: 60px;
   justify-content: space-between;
 
-  @media (max-width: 1360px) {
+  @media screen and (max-width: 1360px) {
     grid-template-columns: 65% 25%;
     grid-gap: 20px;
   }
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     grid-template-columns: 65% 30%;
   }
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-gap: 60px;
   }
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     grid-gap: 30px;
   }
 `;
@@ -30,11 +30,11 @@ export const Title = styled(TitleH2)`
   margin-bottom: 40px;
   margin-top: 30px;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     margin-top: 0;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 28px;
     line-height: 130%;
     margin-bottom: 22px;
@@ -46,11 +46,11 @@ export const StyledText = styled.p`
   font-size: 18px;
   line-height: 158%;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 40px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     width: 90%;
   }
@@ -63,7 +63,7 @@ export const List = styled.ul`
   grid-row-gap: 30px;
   max-width: 550px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-row-gap: 20px;
   }

@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 410px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 0;
   }
 
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     font-size: 13px;
     line-height: 21px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 11px;
       bottom: -17px;
     }
@@ -46,7 +46,7 @@ export const Wrapper = styled.div`
     background-position: top 6px right;
     background-repeat: no-repeat;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       padding-bottom: 3px;
       font-size: 16px;
       line-height: 22px;
@@ -100,7 +100,7 @@ export const Wrapper = styled.div`
     line-height: 21px;
     color: rgba(32, 31, 42, 0.5);
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 13px;
       line-height: 22px;
     }
@@ -110,7 +110,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.cv &&
     css`
       max-width: 547px;
@@ -129,7 +129,7 @@ export const Wrapper = styled.div`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.correct &&
     css`
       input {
@@ -143,7 +143,7 @@ export const Wrapper = styled.div`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.warning &&
     css`
       input {
@@ -173,7 +173,7 @@ export const Wrapper = styled.div`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.error &&
     css`
       input {

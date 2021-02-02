@@ -25,11 +25,11 @@ export const Section = styled.section`
   margin-bottom: 100px;
   cursor: grab;
 
-  ${props =>
+  ${(props) =>
     props.fromArticle &&
     css`
       .swiper-container {
-        @media (max-width: 945px) {
+        @media screen and (max-width: 945px) {
           overflow: visible;
         }
       }
@@ -42,7 +42,7 @@ export const Section = styled.section`
   @media screen and (max-width: 420px) {
     margin-bottom: 50px;
 
-    ${props =>
+    ${(props) =>
       !props.hasControls &&
       css`
         width: 300px;
@@ -59,7 +59,7 @@ export const Img = styled.img`
     margin-right: 12px;
   }
 
-  ${props =>
+  ${(props) =>
     props.hasControls &&
     css`
       width: auto;
@@ -82,13 +82,13 @@ export const Img = styled.img`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.isSmall &&
     css`
       width: 704px;
       height: 405px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         margin-right: 12px;
         width: 315px;
         height: 232px;
@@ -106,7 +106,7 @@ export const Title = styled.p`
   opacity: 0.5;
   margin-top: 20px;
 
-  ${props =>
+  ${(props) =>
     props.isSmall &&
     css`
       width: 704px;
@@ -114,7 +114,7 @@ export const Title = styled.p`
       font-size: 16px;
       line-height: 20.96px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         margin-top: 10px;
         font-size: 14px;
         line-height: 18.34px;
@@ -126,12 +126,12 @@ export const Title = styled.p`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.fromArticle &&
     css`
       margin-top: 10px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         margin-top: 4px;
       }
     `}
@@ -140,7 +140,7 @@ export const Title = styled.p`
 export const PrevButton = styled.button`
   display: none;
 
-  ${props =>
+  ${(props) =>
     (props.hasControls || props.fromArticle) &&
     css`
       display: block;
@@ -170,7 +170,7 @@ export const PrevButton = styled.button`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.isSmall &&
     css`
       top: 114px;
@@ -181,7 +181,7 @@ export const PrevButton = styled.button`
 export const NextButton = styled.button`
   display: none;
 
-  ${props =>
+  ${(props) =>
     (props.hasControls || props.fromArticle) &&
     css`
       display: block;
@@ -211,7 +211,7 @@ export const NextButton = styled.button`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.isSmall &&
     css`
       padding-top: 7px;

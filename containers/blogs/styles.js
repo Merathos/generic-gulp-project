@@ -4,7 +4,7 @@ import { TitleH1 } from 'elements';
 export const Section = styled.section`
   padding-top: 200px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-top: 115px;
   }
 `;
@@ -19,7 +19,7 @@ export const Container = styled.div`
 export const Title = styled(TitleH1)`
   margin-bottom: 40px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 30px;
   }
 `;

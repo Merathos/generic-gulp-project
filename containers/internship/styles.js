@@ -7,7 +7,7 @@ export const GreyWrapper = styled.div`
   margin-bottom: 100px;
   padding-bottom: 215px;
 
-  ${props =>
+  ${(props) =>
     props.withPicture === false &&
     css`
       background: #f7f8f9 url('/backgrounds/internship-bg.png') no-repeat right
@@ -72,7 +72,7 @@ export const ValuesSection = styled(SectionGroup)`
     grid-gap: 88px 76px;
   }
 
-  @media (min-width: 860px) {
+  @media screen and (min-width: 860px) {
     background-image: url('/backgrounds/i-values.svg');
     background-repeat: no-repeat;
     background-position: top right;
@@ -92,7 +92,7 @@ export const ValuesSection = styled(SectionGroup)`
 export const VacancySection = styled(SectionGroup)`
   padding-bottom: 62px;
 
-  @media (min-width: 769px) {
+  @media screen and (min-width: 769px) {
     background-image: url('/backgrounds/i-vacancy.svg');
     background-repeat: no-repeat;
     background-position: top 160px right;
@@ -118,7 +118,7 @@ export const GreyContainer = styled.div`
 export const ApplicationSection = styled(InternshipApplication)`
   background-color: #f7f8f9;
 
-  @media (min-width: 769px) {
+  @media screen and (min-width: 769px) {
     background-image: url('/backgrounds/i-application.svg');
     background-repeat: no-repeat;
     background-position: center right;

@@ -13,7 +13,7 @@ export const Section = styled.section`
     background-image: none;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-top: 80px;
   }
 `;
@@ -25,7 +25,7 @@ export const Title = styled.b`
   line-height: 120%;
   margin-bottom: 10px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 22px;
     line-height: 134%;
     margin-bottom: 15px;
@@ -44,11 +44,11 @@ export const List = styled.ul`
   grid-gap: 97px;
   grid-template-columns: repeat(auto-fill, 330px);
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     grid-gap: 44px;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 330px));
   }
 `;
@@ -56,12 +56,12 @@ export const List = styled.ul`
 export const Text = styled(Subtitle)`
   margin-bottom: 27px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 152%;
   }
 
-  @media (max-width: 759px) {
+  @media screen and (max-width: 759px) {
     margin-bottom: 20px;
   }
 `;
@@ -74,11 +74,11 @@ export const Element = styled.li`
   transition: all 0.3s ease;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     min-height: 155px;
   }
 
-  @media (max-width: 759px) {
+  @media screen and (max-width: 759px) {
     min-height: auto;
   }
 
@@ -100,7 +100,7 @@ export const Element = styled.li`
       }
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 27px;
       height: 27px;
     }
@@ -142,7 +142,7 @@ export const Element = styled.li`
     opacity: 1;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     max-width: auto;
   }
 `;

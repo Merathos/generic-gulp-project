@@ -20,13 +20,13 @@ const StyledArrowLeft = styled.div`
   justify-content: center;
   border: 2px solid #201f2a;
   border-radius: 50%;
-  width: ${props => (props.smallButton ? '34px' : '38px')};
-  height: ${props => (props.smallButton ? '34px' : '38px')};
+  width: ${(props) => (props.smallButton ? '34px' : '38px')};
+  height: ${(props) => (props.smallButton ? '34px' : '38px')};
   left: 45px;
   top: 140px;
   transition: all 0.1s ease;
 
-  @media (max-width: 1280px) {
+  @media screen and (max-width: 1280px) {
     left: 30px;
   }
 

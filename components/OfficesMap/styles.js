@@ -4,11 +4,11 @@ import { TitleH2 } from 'elements';
 export const Section = styled.section`
   margin-bottom: 160px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 80px;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
       margin-bottom: 160px;
@@ -16,7 +16,7 @@ export const Section = styled.section`
       &:last-child {
         margin-bottom: 45px;
 
-        @media (max-width: 420px) {
+        @media screen and (max-width: 420px) {
           margin-bottom: 0;
         }
       }
@@ -28,7 +28,7 @@ export const Container = styled.div`
   padding: 0 30px;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 0;
   }
 `;
@@ -36,18 +36,18 @@ export const Container = styled.div`
 export const Title = styled(TitleH2)`
   margin-bottom: 30px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-left: 30px;
     margin-right: 30px;
     margin-bottom: 20px;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
       max-width: 830px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         margin-bottom: 30px;
       }
     `};
@@ -56,17 +56,17 @@ export const Title = styled(TitleH2)`
 export const MapWrapper = styled.div`
   padding-top: 50px;
   width: 100%;
-  height: ${props => (props.isContacts ? '622px' : '459px')};
+  height: ${(props) => (props.isContacts ? '622px' : '459px')};
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-top: 40px;
     height: 267px;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         padding-top: 20px;
       }
     `};
@@ -82,7 +82,7 @@ export const Wrapper = styled.p`
     line-height: 158%;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-left: 30px;
     margin-right: 30px;
   }
@@ -105,7 +105,7 @@ export const List = styled.ul`
   margin-top: 60px;
   grid-gap: 60px;
 
-  ${props =>
+  ${(props) =>
     props.twoColumns &&
     css`
       @media screen and (max-width: 1024px) {
@@ -122,7 +122,7 @@ export const List = styled.ul`
       }
     `};
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-left: 30px;
     margin-right: 30px;
   }

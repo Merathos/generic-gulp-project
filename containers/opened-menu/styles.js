@@ -89,7 +89,7 @@ export const StyledLogo = styled(Logo)`
   margin-right: 50px;
   transition: opacity 0.3s ease;
 
-  ${props =>
+  ${(props) =>
     props.guiding &&
     css`
       &:hover {
@@ -105,7 +105,7 @@ export const StyledLogo = styled(Logo)`
     margin-bottom: 64px;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     width: 54px;
     margin-bottom: 54px;
   }

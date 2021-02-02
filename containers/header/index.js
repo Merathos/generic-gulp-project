@@ -9,11 +9,11 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: ${props =>
+  background-image: ${(props) =>
     props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
   background-repeat: no-repeat;
   background-position: 40% top;
-  background-color: ${props => (props.greyHeader ? '#f7f8f9' : '#ffffff')};
+  background-color: ${(props) => (props.greyHeader ? '#f7f8f9' : '#ffffff')};
   position: fixed;
   top: 0;
   width: 100%;
@@ -24,10 +24,10 @@ const StyledHeader = styled.header`
     max-height: 25px;
   }
 
-  ${props =>
+  ${(props) =>
     props.anchor &&
     css`
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         position: sticky;
         top: 0;
         background-color: #ffffff;
@@ -35,21 +35,22 @@ const StyledHeader = styled.header`
       }
     `};
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     padding: 25px 30px 30px;
     align-items: center;
     background-size: 200px;
     background-position: 50% top;
   }
 
-  ${props =>
+  ${(props) =>
     props.mobileDecor &&
     css`
       background-image: none;
 
-      @media (max-width: 768px) {
-        background-image: ${props =>
-          props.plain ? 'none' : `url('/images/yellow-rectangle.svg')`};
+      @media screen and (max-width: 768px) {
+        background-image: ${props.plain
+          ? 'none'
+          : `url('/images/yellow-rectangle.svg')`};
         background-repeat: no-repeat;
         background-position: 40% top;
       }
@@ -69,7 +70,7 @@ const StyledLogo = styled(Logo)`
     opacity: 0.6;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     width: 54px;
   }
 `;
@@ -102,14 +103,14 @@ const Nav = styled.nav`
   margin: 0 0 0 auto;
 
   @media screen and (max-width: 720px) {
-    ${props =>
+    ${(props) =>
       props.plain && {
         display: 'none',
       }}
   }
 
   @media screen and (max-width: 600px) {
-    ${props =>
+    ${(props) =>
       props.hideNav && {
         display: 'none',
       }}

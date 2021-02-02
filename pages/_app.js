@@ -105,7 +105,7 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     background-color: #ffffff;
 
-    @media (max-width: 1199px) {
+    @media screen and (max-width: 1199px) {
       top: 0;
       bottom: 0;
       padding-top: 0;
@@ -140,7 +140,7 @@ const GlobalStyle = createGlobalStyle`
     overflow: visible;
     outline: none;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       top: 0;
       transform: translateY(0);
       bottom: 0;
@@ -214,6 +214,10 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <ApolloProvider client={apolloClient}>
         <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <title>DINS</title>
         </Head>
         <Component {...pageProps} />

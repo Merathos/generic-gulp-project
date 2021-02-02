@@ -5,11 +5,11 @@ export const Picture = styled.img`
   margin-bottom: 30px;
   max-height: 245px;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     max-height: 314px;
   }
 
-  @media (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     max-height: 363px;
   }
 
@@ -31,7 +31,7 @@ export const Text = styled.p`
   font-size: 18px;
   line-height: 28px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 22px;
   }

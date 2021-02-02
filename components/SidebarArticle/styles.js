@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 import { TitleH4, TitleH5, Icon, Subtitle } from 'elements';
 
 export const Title = styled(TitleH4)`
-  margin-bottom: ${props => (props.isInternship ? '14px' : '40px')};
+  margin-bottom: ${(props) => (props.isInternship ? '14px' : '40px')};
   font-weight: 700;
 
-  @media (max-width: 1205px) {
+  @media screen and (max-width: 1205px) {
     grid-area: b;
     margin-bottom: 0;
   }
@@ -33,7 +33,7 @@ export const H5 = styled(TitleH5)`
   font-weight: 700;
 
   @media screen and (max-width: 420px) {
-    ${props =>
+    ${(props) =>
       props.isInternship &&
       css`
         font-size: 14px;
@@ -55,7 +55,7 @@ export const SectionIcon = styled.div`
   max-width: 250px;
 
   @media screen and (max-width: 1024px) {
-    ${props =>
+    ${(props) =>
       props.isInternship &&
       css`
         max-width: none;
@@ -90,7 +90,7 @@ export const Text = styled.p`
 export const StyledIcon = styled(Icon)`
   margin-bottom: 26px;
 
-  ${props =>
+  ${(props) =>
     props.isInternship &&
     css`
       margin-top: 32px;
@@ -121,7 +121,7 @@ export const StyledSubtitle = styled(Subtitle)`
 `;
 
 export const SubtitleWrapper = styled(Subtitle)`
-  ${props =>
+  ${(props) =>
     props.isInternship &&
     css`
       @media screen and (max-width: 768px) {
@@ -132,10 +132,10 @@ export const SubtitleWrapper = styled(Subtitle)`
 
 export const Image = styled.img`
   width: 143px;
-  margin-bottom: ${props => (props.isInternship ? '20px' : '30px')};
+  margin-bottom: ${(props) => (props.isInternship ? '20px' : '30px')};
   position: relative;
 
-  @media (max-width: 1205px) {
+  @media screen and (max-width: 1205px) {
     grid-area: a;
   }
 
@@ -151,7 +151,7 @@ export const Aside = styled.aside`
   background-repeat: no-repeat;
   background-position: top left 100px;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     display: grid;
     grid-template-areas:
       'a b'

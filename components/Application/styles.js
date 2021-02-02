@@ -21,13 +21,13 @@ export const Wrapper = styled.div`
     'd b'
     '. b';
   grid-column-gap: 170px;
-  background-image: ${props =>
+  background-image: ${(props) =>
     props.decor ? "url('/backgrounds/application.png')" : 'none'};
   background-repeat: no-repeat;
   background-position: 100% center;
   padding: 160px 50px 180px;
 
-  ${props =>
+  ${(props) =>
     props.type === 'relocation' &&
     css`
       background-image: url('/backgrounds/relocation-vacancies.png');
@@ -61,10 +61,10 @@ export const Wrapper = styled.div`
     padding-right: 30px;
   }
 
-  ${props =>
+  ${(props) =>
     props.vacancy &&
     css`
-      @media (max-width: 1200px) {
+      @media screen and (max-width: 1200px) {
         background-size: 50%;
         background-position: 150% center;
       }
@@ -75,18 +75,18 @@ export const StyledButton = styled(Button)`
   margin-top: 40px;
   grid-area: d;
   margin-right: 20px;
-  max-width: ${props => (props.usage === 'relocation' ? '236px' : '230px')};
+  max-width: ${(props) => (props.usage === 'relocation' ? '236px' : '230px')};
   box-sizing: border-box;
   text-align: center;
 
   @media screen and (max-width: 724px) {
-    margin-top: ${props => (props.usage === 'relocation' ? '60px' : '40px')};
+    margin-top: ${(props) => (props.usage === 'relocation' ? '60px' : '40px')};
   }
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
     margin-top: 0;
-    margin-bottom: ${props => (props.usage === 'relocation' ? '0' : '20px')};
+    margin-bottom: ${(props) => (props.usage === 'relocation' ? '0' : '20px')};
     max-width: 180px;
   }
 `;
@@ -96,10 +96,10 @@ export const H2 = styled(TitleH2)`
   margin-bottom: 40px;
   grid-area: a;
 
-  ${props =>
+  ${(props) =>
     props.vacancy &&
     css`
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         max-width: 315px;
       }
     `};

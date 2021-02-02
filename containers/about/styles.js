@@ -23,7 +23,7 @@ export const ValuesSection = styled(SectionGroup)`
   margin-bottom: 140px;
   padding-top: 70px;
 
-  @media (min-width: 1023px) {
+  @media screen and (min-width: 1023px) {
     background-image: url('/backgrounds/about-values.svg');
     background-repeat: no-repeat;
     background-position: top 45px right;
@@ -51,16 +51,16 @@ export const HeaderContainer = styled(GreyContainer)`
   background-repeat: no-repeat;
   background-position: right 95%;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     background-position: right -100px bottom 90px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     background-size: 250px;
     background-position: right -100px bottom 90px;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     background-position: right -140px bottom 90px;
   }
 `;

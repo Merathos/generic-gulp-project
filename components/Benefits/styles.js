@@ -5,12 +5,12 @@ export const Section = styled.section`
   margin-bottom: 90px;
   padding-bottom: 160px;
 
-  @media (min-width: 1440px) {
+  @media screen and (min-width: 1440px) {
     background: url('/backgrounds/relocation-benefits.png') no-repeat right
       890px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 80px;
     padding-bottom: 0;
   }
@@ -42,7 +42,7 @@ export const List = styled.ul`
       364px
     );
 
-  @media (max-width: 1370px) {
+  @media screen and (max-width: 1370px) {
     padding-right: 0;
     margin-right: 0;
   }
@@ -51,7 +51,7 @@ export const List = styled.ul`
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     row-gap: 50px;
   }
 
