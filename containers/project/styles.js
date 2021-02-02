@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1200px;
-  padding: 0 45px 80px;
+  padding: 0 45px 100px;
   margin: 0 auto;
   position: relative;
 
@@ -21,7 +21,6 @@ export const Container = styled.div`
 export const GreyWrapper = styled.div`
   background-color: #f7f8f9;
   margin-bottom: 100px;
-  padding-bottom: 160px;
 
   ${(props) =>
     props.withBg &&

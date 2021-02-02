@@ -3,6 +3,7 @@ import { Text } from 'elements';
 
 export const Grid = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
   padding-top: 200px;
 
@@ -61,7 +62,6 @@ export const Paragraph = styled.p`
 export const Picture = styled.img`
   align-self: flex-start;
   max-width: 500px;
-  margin-top: 20px;
   width: 40%;
 
   @media screen and (max-width: 1024px) {
