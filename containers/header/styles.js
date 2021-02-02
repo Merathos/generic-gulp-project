@@ -13,7 +13,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   box-sizing: border-box;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     padding: 30px;
     align-items: center;
     background-size: 200px;
@@ -24,7 +24,7 @@ export const StyledHeader = styled.header`
 export const StyledLogo = styled(Logo)`
   width: 85px;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     width: 54px;
   }
 `;

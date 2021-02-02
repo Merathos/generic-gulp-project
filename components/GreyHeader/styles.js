@@ -17,12 +17,12 @@ export const Grid = styled.div`
     padding-bottom: 110px;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
       padding-top: 210px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         padding-top: 113px;
         padding-bottom: 80px;
       }
@@ -30,11 +30,11 @@ export const Grid = styled.div`
 `;
 
 export const Wrapper = styled.article`
-  max-width: ${props => (props.withPicture ? '744px' : '854px')};
-  padding-right: ${props => (props.withPicture ? '110px' : '0')};
+  max-width: ${(props) => (props.withPicture ? '744px' : '854px')};
+  padding-right: ${(props) => (props.withPicture ? '110px' : '0')};
 
   @media screen and (max-width: 1250px) {
-    padding-right: ${props => (props.withPicture ? '60px' : '0')};
+    padding-right: ${(props) => (props.withPicture ? '60px' : '0')};
   }
 
   @media screen and (max-width: 1024px) {
@@ -65,11 +65,11 @@ export const Paragraph = styled(Text)`
     margin-bottom: 60px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
       margin-top: 52px;
@@ -78,7 +78,7 @@ export const Paragraph = styled(Text)`
       line-height: 36px;
       max-width: 750px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         font-size: 16px;
         line-height: 25px;
         margin-top: 22px;
@@ -103,7 +103,7 @@ export const Features = styled.ul`
     margin-bottom: 30px;
   }
 
-  ${props =>
+  ${(props) =>
     props.twoColumns &&
     css`
       @media screen and (max-width: 1024px) {
@@ -137,7 +137,7 @@ export const ListTitle = styled.b`
     color: #2079bf;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 22px;
     line-height: 120%;
   }
@@ -156,7 +156,7 @@ export const Element = styled.li`
     flex-direction: column;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
       @media screen and (max-width: 420px) {
@@ -175,7 +175,7 @@ export const StyledIcon = styled(Icon)`
     margin-bottom: 0;
   }
 
-  ${props =>
+  ${(props) =>
     props.isContacts &&
     css`
       transform: scale(0.93);
@@ -204,7 +204,7 @@ export const Picture = styled.img`
     margin-top: 30px;
   }
 
-  @media (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     max-width: 315px;
     max-height: 319px;
     object-fit: cover;
@@ -251,7 +251,7 @@ export const Block = styled.div`
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.afterTitle === true &&
     css`
       display: none;
@@ -266,7 +266,7 @@ export const Block = styled.div`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.afterTitle === false &&
     css`
       @media screen and (max-width: 600px) {
@@ -274,7 +274,7 @@ export const Block = styled.div`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.hash &&
     css`
     align-self: flex-start;
@@ -321,13 +321,13 @@ export const Block = styled.div`
       }
   `}
 
-  ${props =>
+  ${(props) =>
     props.hash === 'relocation' &&
     css`
       background-image: url('/backgrounds/relocate-letters.svg');
     `}
 
-  ${props =>
+  ${(props) =>
     props.hash === 'internship' &&
     css`
       background-image: url('/backgrounds/letters-intern.svg');

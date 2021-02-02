@@ -6,7 +6,7 @@ export const Grid = styled.div`
   justify-content: space-between;
   padding-top: 200px;
 
-  ${props =>
+  ${(props) =>
     props.withPicture === false &&
     css`
       position: relative;
@@ -51,10 +51,10 @@ export const Grid = styled.div`
 
 export const Wrapper = styled.article`
   max-width: 744px;
-  padding-right: ${props => (props.withPicture ? '110px' : '0')};
+  padding-right: ${(props) => (props.withPicture ? '110px' : '0')};
 
   @media screen and (max-width: 1250px) {
-    padding-right: ${props => (props.withPicture ? '60px' : '0')};
+    padding-right: ${(props) => (props.withPicture ? '60px' : '0')};
   }
 
   @media screen and (max-width: 1024px) {
@@ -158,7 +158,7 @@ export const Block = styled.div`
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.afterTitle === true &&
     css`
       display: none;
@@ -182,7 +182,7 @@ export const Block = styled.div`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.afterTitle === false &&
     css`
       @media screen and (max-width: 1024px) {
@@ -196,7 +196,7 @@ export const Picture = styled.img`
     margin-top: 78px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 20px;
   }
 `;

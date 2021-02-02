@@ -6,7 +6,7 @@ export const List = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     flex-direction: column;
   }
 `;
@@ -14,13 +14,13 @@ export const List = styled.ul`
 export const Item = styled.li`
   margin-bottom: 80px;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     margin-bottom: 40px;
   }
 `;
 
 export const Main = styled.a`
-  background-color: ${props => props.background || 'transparent'};
+  background-color: ${(props) => props.background || 'transparent'};
   padding: 60px 40px 40px;
   box-sizing: border-box;
   display: flex;

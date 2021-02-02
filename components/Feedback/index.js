@@ -15,7 +15,7 @@ const Img = styled.img`
 const Content = styled.div`
   margin-left: 70px;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     margin-left: 0;
   }
 `;
@@ -35,7 +35,7 @@ const StyledText = styled.p`
     }
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 22px;
   }
@@ -63,7 +63,7 @@ const Section = styled.section`
       z-index: -3;
       display: block;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         width: 112px;
         height: 112px;
         right: -56px;
@@ -72,7 +72,7 @@ const Section = styled.section`
     }
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     margin-bottom: 40px;
   }
 
@@ -110,7 +110,7 @@ const H3 = styled(TitleH3)`
   }
 `;
 
-const Feedback = props => {
+const Feedback = (props) => {
   const {
     data: { imageUrl, title, describe, subtitle },
   } = props;

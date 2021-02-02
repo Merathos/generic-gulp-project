@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   margin-bottom: 10px;
   z-index: 15;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     min-height: 58px;
   }
 
@@ -21,13 +21,13 @@ export const Wrapper = styled.div`
   .react-select__control {
     border: none;
     box-shadow: none;
-    border-bottom: ${props =>
+    border-bottom: ${(props) =>
       props.error ? '1px solid #fb5235' : '1px solid rgba(32, 31, 42, 0.5)'};
     border-radius: 0;
     padding-bottom: 8px;
     cursor: pointer;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       padding-bottom: 2px;
     }
 
@@ -59,7 +59,7 @@ export const Wrapper = styled.div`
     padding-left: 0;
     font-size: 18px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 14px;
     }
   }
@@ -69,11 +69,11 @@ export const Wrapper = styled.div`
       position: relative;
       top: 11px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         top: 14px;
       }
 
-      @media (max-width: 420px) {
+      @media screen and (max-width: 420px) {
         top: 8px;
       }
     }
@@ -91,7 +91,7 @@ export const Wrapper = styled.div`
     line-height: 31px;
     top: 70%;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 16px;
     }
   }
@@ -101,7 +101,7 @@ export const Wrapper = styled.div`
     top: 9px;
     font-size: 20px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 16px;
     }
 

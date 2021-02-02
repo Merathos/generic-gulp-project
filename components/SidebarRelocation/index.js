@@ -7,7 +7,7 @@ import ArrowRight from 'public/icons/arrow-right.svg';
 const H4 = styled(TitleH4)`
   margin-bottom: 30px;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     margin-bottom: 7px;
   }
 `;
@@ -21,7 +21,7 @@ const Section = styled.section`
   margin: -50px;
   position: relative;
 
-  @media (max-width: 1240px) {
+  @media screen and (max-width: 1240px) {
     padding: 0;
     margin: 0;
     margin-top: 100px;
@@ -43,14 +43,14 @@ const RelocationBackground = styled.div`
   transform: rotate(90deg);
   animation: 45s linear infinite rotation;
 
-  @media (max-width: 1240px) {
+  @media screen and (max-width: 1240px) {
     width: 300px;
     height: 300px;
     top: -85px;
     left: -20px;
   }
 
-  @media (max-width: 500px) {
+  @media screen and (max-width: 500px) {
     width: 260px;
     height: 260px;
     top: -85px;
@@ -116,7 +116,7 @@ const StyledArrow = styled.a`
 const StyledSubtitle = styled(Subtitle)`
   margin-bottom: 60px;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     margin-bottom: 30px;
   }
 `;

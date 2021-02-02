@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
 export const Button = styled.button`
   margin-right: 20px;
-  padding: ${props => (props.isSpeaker ? '11px 11px 13px 17px' : '15px')};
+  padding: ${(props) => (props.isSpeaker ? '11px 11px 13px 17px' : '15px')};
   width: 57px;
   height: 57px;
   display: flex;
@@ -33,8 +33,8 @@ export const Button = styled.button`
     opacity: 0.6;
   }
 
-  @media (max-width: 720px) {
-    ${props =>
+  @media screen and (max-width: 720px) {
+    ${(props) =>
       props.withDynamic &&
       css`
         width: 37px;
@@ -44,8 +44,8 @@ export const Button = styled.button`
       `}
   }
 
-  @media (max-width: 420px) {
-    ${props =>
+  @media screen and (max-width: 420px) {
+    ${(props) =>
       !props.withDynamic &&
       css`
         width: 43px;
@@ -64,7 +64,7 @@ export const Label = styled.span`
   line-height: 32px;
 
   @media screen and (max-width: 720px) {
-    ${props =>
+    ${(props) =>
       props.withDynamic &&
       css`
         font-size: 14px;
@@ -83,7 +83,7 @@ export const Span = styled(Subtitle)`
   margin-top: auto;
 
   @media screen and (max-width: 720px) {
-    ${props =>
+    ${(props) =>
       props.withDynamic &&
       css`
         font-size: 14px;
@@ -94,7 +94,7 @@ export const Span = styled(Subtitle)`
 
 export const Scale = styled.div`
   padding: 14px 0;
-  display: ${props => (props.pause && props.withDynamic ? 'none' : 'block')};
+  display: ${(props) => (props.pause && props.withDynamic ? 'none' : 'block')};
 `;
 
 export const Progress = styled.div`

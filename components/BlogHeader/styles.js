@@ -7,7 +7,7 @@ export const Grid = styled.div`
   margin-bottom: 100px;
   align-items: center;
 
-  @media (max-width: 1600px) {
+  @media screen and (max-width: 1600px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -30,15 +30,15 @@ export const Wrapper = styled.article`
 `;
 
 export const Paragraph = styled(Text)`
-  margin-bottom: ${props => (props.audio ? '90px' : '0')};
+  margin-bottom: ${(props) => (props.audio ? '90px' : '0')};
   font-size: 24px;
   line-height: 36px;
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: ${props => (props.audio ? '60px' : '0')};
+    margin-bottom: ${(props) => (props.audio ? '60px' : '0')};
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 16px;
     line-height: 25px;
   }
@@ -76,16 +76,16 @@ export const Block = styled.div`
   box-sizing: border-box;
   width: 340px;
 
-  @media (max-width: 1600px) {
+  @media screen and (max-width: 1600px) {
     margin-top: 80px;
     margin-left: 0;
   }
 
-  @media (max-width: 550px) {
+  @media screen and (max-width: 550px) {
     margin-top: 0;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     margin-top: 50px;
     margin-left: 0;
   }
@@ -104,7 +104,7 @@ export const Block = styled.div`
     z-index: 2;
     animation: 45s linear infinite rotation;
 
-    @media (max-width: 550px) {
+    @media screen and (max-width: 550px) {
       width: 120px;
       height: 120px;
       background-size: 120px 120px;

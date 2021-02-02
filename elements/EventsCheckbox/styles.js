@@ -6,10 +6,10 @@ export const Wrapper = styled.div`
   align-items: center;
 
   input:checked ~ label {
-    color: ${p => (p.color ? p.color : '#53b443')};
+    color: ${(p) => (p.color ? p.color : '#53b443')};
 
     &::before {
-      border-color: ${p => (p.color ? p.color : '#53b443')};
+      border-color: ${(p) => (p.color ? p.color : '#53b443')};
     }
 
     &::after {
@@ -22,9 +22,9 @@ export const Wrapper = styled.div`
       transform: translateY(-50%);
       mask: url('/icons/checked.svg') no-repeat 50% 50%;
       mask-size: 11px 9px;
-      background-color: ${p => (p.color ? p.color : '#53b443')};
+      background-color: ${(p) => (p.color ? p.color : '#53b443')};
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         top: 7px;
         transform: translateY(0);
       }
@@ -33,13 +33,13 @@ export const Wrapper = styled.div`
 
   input:hover ~ label {
     &::before {
-      @media (min-width: 1000px) {
-        border-color: ${p => (p.color ? p.color : '#53b443')};
+      @media screen and (min-width: 1000px) {
+        border-color: ${(p) => (p.color ? p.color : '#53b443')};
       }
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.error &&
     css`
       input ~ label {
@@ -58,7 +58,7 @@ export const Label = styled.label`
   font-weight: 500;
   cursor: pointer;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     font-size: 14px;
     line-height: 18.76px;
   }
@@ -75,7 +75,7 @@ export const Label = styled.label`
     border: 2px solid rgba(31, 32, 42, 0.3);
     transition: all 0.3s;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       top: 1px;
       transform: translateY(0);
     }

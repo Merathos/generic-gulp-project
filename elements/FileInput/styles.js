@@ -36,7 +36,7 @@ export const Label = styled.label`
       color: #339722;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       margin-bottom: 2px;
       font-size: 14px;
       line-height: 22px;
@@ -51,7 +51,7 @@ export const Container = styled.div`
   max-width: 200px;
   padding-top: 5px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-top: 0;
   }
 `;
@@ -62,14 +62,14 @@ export const FileExt = styled.p`
   opacity: 0.5;
   text-transform: uppercase;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 10px;
     line-height: 16px;
   }
 `;
 
 export const ResetBtn = styled.button`
-  display: ${props => (props.hasFile ? 'flex' : 'none')};
+  display: ${(props) => (props.hasFile ? 'flex' : 'none')};
   position: absolute;
   top: 8px;
   right: -25px;
@@ -81,7 +81,7 @@ export const ResetBtn = styled.button`
   cursor: pointer;
   transition: color 0.2s ease-in;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 15px;
     height: 15px;
 
@@ -107,7 +107,7 @@ export const ImgWrapper = styled.div`
   border-radius: 50%;
   background: #f7f8f9;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-right: 14px;
     width: 40px;
     height: 40px;
@@ -117,7 +117,7 @@ export const ImgWrapper = styled.div`
     width: 22px;
     height: 22px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 18px;
       height: 18px;
     }

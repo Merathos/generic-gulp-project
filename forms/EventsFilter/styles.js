@@ -4,11 +4,11 @@ export const Wrapper = styled.div`
   margin-bottom: 112px;
   min-height: 250px;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     margin-bottom: 40px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     min-height: 215px;
   }
 `;
@@ -21,7 +21,7 @@ export const Item = styled.li`
   position: relative;
   margin-bottom: 27px;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-bottom: 28px;
   }
 `;
@@ -35,7 +35,7 @@ export const ResetFilter = styled.button`
   align-self: flex-start;
   padding-right: 16px;
   transition: all 0.3s ease-in;
-  visibility: ${p => (p.show ? 'visible' : 'hidden')};
+  visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
 
   &::after {
     content: '';
@@ -54,7 +54,7 @@ export const ResetFilter = styled.button`
     opacity: 1;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 190%;
   }

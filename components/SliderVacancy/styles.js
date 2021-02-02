@@ -36,7 +36,7 @@ export const Element = styled.div`
     top: 10px;
     right: 10px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 228px;
       right: 0;
       top: 6px;
@@ -129,11 +129,11 @@ export const PrevButton = styled.button`
     fill: #53b443;
   }
 
-  /* @media (max-width: 1200px) {
+  /* @media screen and (max-width: 1200px) {
     right: 53px;
   } */
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -161,11 +161,11 @@ export const NextButton = styled.button`
     fill: #53b443;
   }
 
-  /* @media (max-width: 1200px) {
+  /* @media screen and (max-width: 1200px) {
     right: 0;
   } */
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;

@@ -7,7 +7,7 @@ export const Main = styled.main`
   background-position: left 520px, right 70px;
   background-repeat: no-repeat, no-repeat;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     background-image: url('/backgrounds/events-right.svg');
     background-position: right -20px top 32px;
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 45px;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     margin: 0 auto;
     padding: 0;
   }
@@ -28,7 +28,7 @@ export const Container = styled.div`
 export const Grid = styled.div`
   padding-top: 200px;
 
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     display: grid;
     grid-template-columns: minmax(210px, 312px) 865px;
     grid-template-rows: max-content auto;
@@ -38,11 +38,11 @@ export const Grid = styled.div`
       'sidebar   content';
   }
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     padding-top: 140px;
   }
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     padding-top: 115px;
   }
 `;
@@ -52,18 +52,18 @@ export const Aside = styled.aside`
   align-self: start;
   padding-top: 22px;
 
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     position: sticky;
     top: 200px;
   }
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     max-width: 862px;
     margin: 0 auto;
     margin-bottom: 40px;
   }
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-left: 30px;
     margin-right: 30px;
     margin-bottom: 40px;
@@ -84,7 +84,7 @@ export const Announcement = styled.div`
     margin: 0 auto 60px;
   }
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-left: 30px;
     margin-right: 30px;
     font-size: 14px;
@@ -101,9 +101,9 @@ export const StyledIcon = styled(Icon)`
 
 export const Title = styled(TitleH1)`
   grid-area: mainTitle;
-  margin-bottom: ${p => (p.bigMarginBottom ? '120px' : '25px')};
+  margin-bottom: ${(p) => (p.bigMarginBottom ? '120px' : '25px')};
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     max-width: 862px;
     margin: 0 auto;
     font-size: 54px;
@@ -111,7 +111,7 @@ export const Title = styled(TitleH1)`
     letter-spacing: 0.03em;
   }
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-left: 30px;
     margin-right: 30px;
     margin-bottom: 7px;
@@ -128,7 +128,7 @@ export const CompletedTitle = styled.h2`
   text-transform: uppercase;
   margin-bottom: 120px;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     max-width: 862px;
     margin: 0 auto;
     margin-bottom: 50px;
@@ -137,7 +137,7 @@ export const CompletedTitle = styled.h2`
     letter-spacing: 0.03em;
   }
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-left: 30px;
     margin-right: 30px;
     margin-bottom: 50px;

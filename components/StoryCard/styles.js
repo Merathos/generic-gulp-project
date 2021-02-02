@@ -4,12 +4,12 @@ export const Wrapper = styled.a`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.background || '#f7f8f9'};
+  background-color: ${(props) => props.background || '#f7f8f9'};
   padding: 40px 40px 0;
   width: 100%;
   box-sizing: border-box;
   min-height: 431px;
-  ${p =>
+  ${(p) =>
     p.staticWidth &&
     css`
       width: 349px;
@@ -29,7 +29,7 @@ export const Wrapper = styled.a`
     z-index: 2;
     animation: 45s linear infinite rotation;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       background-size: 155px 155px;
       width: 155px;
       height: 155px;
@@ -38,7 +38,7 @@ export const Wrapper = styled.a`
       right: 144px;
     }
 
-    @media (max-width: 350px) {
+    @media screen and (max-width: 350px) {
       right: 114px;
     }
   }
@@ -52,7 +52,7 @@ export const Wrapper = styled.a`
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 315px;
     min-height: 389px;
   }
@@ -68,7 +68,7 @@ export const Title = styled.b`
   line-height: 120%;
   font-weight: 600;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 16px;
   }
 `;
@@ -79,7 +79,7 @@ export const Date = styled.p`
   opacity: 0.5;
   margin-bottom: 4px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 21px;
   }
@@ -93,7 +93,7 @@ export const Picture = styled.img`
   width: auto;
   max-width: 211px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-height: 235px;
   }
 `;

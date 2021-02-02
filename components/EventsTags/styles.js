@@ -7,7 +7,7 @@ export const Tags = styled.ul`
   margin-bottom: 63px;
   padding-left: 5px;
 
-  @media (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     display: none;
   }
 `;

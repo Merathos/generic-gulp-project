@@ -4,7 +4,7 @@ import { TitleH2 } from 'elements';
 export const Section = styled.section`
   margin-bottom: 100px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 45px;
   }
 `;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   padding: 0 30px;
   margin: 0 auto;
 
-  @media (max-width: 375px) {
+  @media screen and (max-width: 375px) {
     overflow: hidden;
   }
 `;
@@ -41,7 +41,7 @@ export const Item = styled.li`
     background-position: center;
     background-repeat: no-repeat;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 74px;
       height: 75px;
       background-position: left top;
@@ -57,7 +57,7 @@ export const Item = styled.li`
       top: 19px;
       right: -37px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         top: 10px;
         right: -23px;
       }
@@ -68,12 +68,12 @@ export const Item = styled.li`
     margin-right: 0;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-right: 45px;
     max-width: 315px;
   }
 
-  @media (max-width: 670px) {
+  @media screen and (max-width: 670px) {
     margin-right: 0;
   }
 `;
@@ -81,7 +81,7 @@ export const Item = styled.li`
 export const Title = styled(TitleH2)`
   margin-bottom: 100px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 59px;
     font-size: 28px;
   }

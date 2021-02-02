@@ -7,9 +7,9 @@ export const Status = styled.p`
   align-items: center;
   font-size: 18px;
   line-height: 24px;
-  color: ${props => (props.status === 'streaming' ? `#FB5235` : ``)};
+  color: ${(props) => (props.status === 'streaming' ? `#FB5235` : ``)};
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-top: -42px;
     margin-left: auto;
     margin-bottom: 60px;
@@ -18,7 +18,7 @@ export const Status = styled.p`
     line-height: 21px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 135px;
   }
 `;
@@ -28,7 +28,7 @@ export const Icon = styled.img`
   width: 16px;
   height: 16px;
 
-  @media (max-width: 910px) {
+  @media screen and (max-width: 910px) {
     margin-right: 6px;
   }
 `;

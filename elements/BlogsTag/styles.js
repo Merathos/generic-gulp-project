@@ -13,7 +13,7 @@ export const Label = styled.label`
     line-height: 21px;
     transition: all 0.2s ease-in;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 14px;
       line-height: 18px;
     }
@@ -21,7 +21,7 @@ export const Label = styled.label`
     &:hover {
       cursor: pointer;
 
-      @media (min-width: 1000px) {
+      @media screen and (min-width: 1000px) {
         background-color: #53b443;
         color: #ffffff;
       }

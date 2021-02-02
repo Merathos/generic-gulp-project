@@ -56,7 +56,7 @@ export const Paragraph = styled.p`
     width: 100%;
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     font-size: 16px;
     line-height: 25.28px;
   }

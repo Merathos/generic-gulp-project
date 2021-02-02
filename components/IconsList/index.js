@@ -8,7 +8,7 @@ const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
   }
@@ -23,7 +23,7 @@ const EmojiContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     width: 43px;
     height: 43px;
   }
@@ -40,7 +40,7 @@ const IconsList = ({ data }) => {
   return (
     <Section>
       <List>
-        {data.map(item => (
+        {data.map((item) => (
           <li key={item.id}>
             <EmojiContainer>
               <Emoji

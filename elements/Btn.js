@@ -16,7 +16,7 @@ const Button = styled.button`
   max-width: 408px;
   transition: all 0.3s ease-in;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 12px;
     line-height: 14px;
     padding: 20px 33px;
@@ -32,14 +32,14 @@ const Button = styled.button`
     border-color: #ec381a;
   }
 
-  ${props =>
+  ${(props) =>
     props.accent &&
     css`
       background-color: #fb5235;
       color: #ffffff;
       max-width: 243px;
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         max-width: 191px;
       }
 

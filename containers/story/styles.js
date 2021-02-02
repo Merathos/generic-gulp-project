@@ -54,7 +54,7 @@ export const GreyContainer = styled.div`
   &:first-child {
     margin-bottom: 160px;
 
-    @media (max-width: 420px) {
+    @media screen and (max-width: 420px) {
       margin-bottom: 80px;
     }
   }

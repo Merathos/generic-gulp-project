@@ -22,13 +22,13 @@ export const Section = styled.section`
     max-width: 320px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     & > div {
       min-width: 240px;
     }
   }
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     & > div {
       min-width: 210px;
     }
@@ -68,7 +68,7 @@ export const H1 = styled(TitleH1)`
 export const StyledText = styled(Text)`
   display: inline;
   position: relative;
-  ${props =>
+  ${(props) =>
     props.withIcon &&
     css`
       svg {

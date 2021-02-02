@@ -21,11 +21,11 @@ const Label = styled.label`
     border-radius: 50%;
     transition: border 0.2s ease-in;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       top: 1px;
     }
 
-    ${props =>
+    ${(props) =>
       props.error &&
       css`
         border-color: #fb5235;
@@ -50,12 +50,12 @@ const Label = styled.label`
     background-color: #53b443;
     border-radius: 50%;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       top: 7px;
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     line-height: 22px;
     margin-right: 28px;

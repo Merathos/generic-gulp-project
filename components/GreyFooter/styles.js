@@ -3,10 +3,10 @@ import { Subtitle } from 'elements';
 
 export const Section = styled.section`
   padding-top: 160px;
-  background-color: ${props => props.background || '#F7F8F9'};
+  background-color: ${(props) => props.background || '#F7F8F9'};
   overflow: hidden;
 
-  ${props =>
+  ${(props) =>
     props.type === 'relocation' &&
     css`
       background-image: url('/backgrounds/relocation-footer.png');
@@ -18,7 +18,7 @@ export const Section = styled.section`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.type === 'about' &&
     css`
       margin-top: 84px;
@@ -37,10 +37,10 @@ export const Section = styled.section`
 `;
 
 export const ListContainer = styled.div`
-  @media (min-width: 769px) {
+  @media screen and (min-width: 769px) {
     min-height: 300px;
 
-    ${props =>
+    ${(props) =>
       props.background === 'transparent' &&
       css`
         background-image: url('/backgrounds/i-footer.svg');
@@ -71,11 +71,11 @@ export const List = styled.ul`
   padding: 0 45px;
   margin: 0 auto;
 
-  @media (max-width: 1280px) {
+  @media screen and (max-width: 1280px) {
     justify-content: space-between;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 
@@ -97,11 +97,11 @@ export const ListBlog = styled.ul`
   padding: 0 45px;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 160px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 80px;
   }
 
@@ -124,7 +124,7 @@ export const Card = styled.li`
   margin-right: 80px;
   width: 349px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 315px;
   }
 
@@ -135,7 +135,7 @@ export const Card = styled.li`
   &:last-child {
     margin-right: 0;
 
-    @media (max-width: 420px) {
+    @media screen and (max-width: 420px) {
       margin-right: 0;
     }
   }
@@ -223,7 +223,7 @@ export const Element = styled.li`
     margin-right: 100px;
   }
 
-  @media (max-width: 1280px) {
+  @media screen and (max-width: 1280px) {
     max-width: 45%;
 
     &:not(:nth-child(3n)) {
@@ -231,7 +231,7 @@ export const Element = styled.li`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     max-width: 45%;
   }
 

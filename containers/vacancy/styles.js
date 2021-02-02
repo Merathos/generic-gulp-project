@@ -7,7 +7,7 @@ export const VacancySection = styled.div`
   padding-top: 60px;
   padding-bottom: 100px;
 
-  @media (max-width: 1110px) {
+  @media screen and (max-width: 1110px) {
     background-size: 266px 294px;
     background-position: calc(100% + 85px) 100%;
   }
@@ -22,13 +22,13 @@ export const ConditionsSection = styled.div`
   background-repeat: no-repeat;
   background-position: calc(100% + 110px) 0%;
   padding-top: 60px;
-  margin-bottom: ${p => (p.addMarginBottom ? '160px' : '0')};
+  margin-bottom: ${(p) => (p.addMarginBottom ? '160px' : '0')};
 
-  @media (max-width: 1110px) {
+  @media screen and (max-width: 1110px) {
     background-size: 270px 280px;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     background-size: 113px 123px;
     background-position: calc(100% + 65px) 0%;
   }
@@ -47,7 +47,7 @@ export const Container = styled.main`
   position: relative;
   /* overflow: hidden; */
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 0 30px;
   }
 

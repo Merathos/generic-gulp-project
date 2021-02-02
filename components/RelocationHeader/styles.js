@@ -6,7 +6,7 @@ export const GreyHeader = styled.section`
   background-color: #f7f8f9;
   padding-top: 210px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 80px;
     padding-top: 115px;
   }
@@ -30,13 +30,13 @@ export const Grid = styled.div`
     align-self: flex-start;
   }
 
-  @media (max-width: 1060px) {
+  @media screen and (max-width: 1060px) {
     grid-template-areas:
       'title title'
       'content pic';
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: block;
     padding-bottom: 40px;
   }
@@ -45,7 +45,7 @@ export const Grid = styled.div`
 export const Title = styled(TitleH1)`
   grid-area: title;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 30px;
   }
 `;
@@ -59,7 +59,7 @@ export const Text = styled.p`
   font-size: 24px;
   line-height: 36px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 16px;
     line-height: 25px;
   }
@@ -70,7 +70,7 @@ export const Features = styled.ul`
   display: flex;
   flex-flow: row wrap;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 60px;
   }
 `;
@@ -79,14 +79,14 @@ export const Item = styled.li`
   max-width: 220px;
   margin-bottom: 40px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 140px;
   }
 
   &:not(:last-child) {
     margin-right: 80px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       margin-right: 35px;
     }
   }
@@ -102,7 +102,7 @@ export const Icon = styled.div`
   border-radius: 50%;
   background-color: #ffffff;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 18px;
     width: 40px;
     height: 40px;
@@ -112,7 +112,7 @@ export const Icon = styled.div`
     width: 24px;
     height: auto;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       width: 18px;
     }
   }
@@ -123,7 +123,7 @@ export const PicContainer = styled.div`
   position: relative;
   max-width: 344px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin: 0 auto;
     margin-bottom: 40px;
   }
@@ -142,7 +142,7 @@ export const PicContainer = styled.div`
     z-index: 2;
     animation: 45s linear infinite rotation;
 
-    @media (max-width: 1130px) {
+    @media screen and (max-width: 1130px) {
       width: 160px;
       reloheight: 160px;
       background-size: 160px 160px;
@@ -150,7 +150,7 @@ export const PicContainer = styled.div`
       left: -80px;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       left: initial;
       bottom: -45px;
       right: -45px;
@@ -171,7 +171,7 @@ export const PicContainer = styled.div`
     max-width: 344px;
     max-height: 489px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       max-width: 315px;
       max-height: 319px;
       object-fit: cover;

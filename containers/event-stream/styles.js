@@ -5,7 +5,7 @@ export const Section = styled.section`
   margin-bottom: 155px;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 50px;
   }
 `;
@@ -23,7 +23,7 @@ export const StreamWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 0;
   }
 `;
@@ -31,7 +31,7 @@ export const StreamWrapper = styled.div`
 export const Title = styled(TitleH2)`
   margin-bottom: 40px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 20px;
     font-size: 28px;
   }
@@ -42,7 +42,7 @@ export const TimeWatch = styled.img`
   height: 26px;
   position: relative;
   top: 3px;
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 16px;
     height: 16px;
     top: 2px;
@@ -50,14 +50,14 @@ export const TimeWatch = styled.img`
 `;
 
 export const Msg = styled.div`
-  font-size: ${props =>
+  font-size: ${(props) =>
     props.isStartingIn24Hrs && !props.status === 'streaming' ? `26px` : `20px`};
-  color: ${props => (props.status === 'streaming' ? `#FB5235` : ``)};
+  color: ${(props) => (props.status === 'streaming' ? `#FB5235` : ``)};
   line-height: 32px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 40px;
-    font-size: ${props => (props.isStartingIn24Hrs ? `16px` : `14px`)};
+    font-size: ${(props) => (props.isStartingIn24Hrs ? `16px` : `14px`)};
     line-height: 22px;
   }
 `;
@@ -74,7 +74,7 @@ export const Chat = styled.div`
     border: none;
   }
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     display: none;
   }
 `;
@@ -96,7 +96,7 @@ export const Icon = styled.img`
   width: 16px;
   height: 16px;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-right: 6px;
   }
 `;

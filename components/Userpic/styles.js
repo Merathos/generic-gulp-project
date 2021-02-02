@@ -22,7 +22,7 @@ export const Img = styled.div`
   min-height: 67px;
   margin-right: 20px;
   border-radius: 50%;
-  background-image: ${props => `url(${props.background})`};
+  background-image: ${(props) => `url(${props.background})`};
   background-position: center;
   background-size: cover;
   position: relative;
@@ -47,7 +47,7 @@ export const Text = styled.p`
   opacity: 0.5;
   font-weight: 500;
 
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     margin-top: 1px;
     font-size: 14px;
     line-height: 18px;

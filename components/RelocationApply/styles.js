@@ -7,7 +7,7 @@ export const Section = styled.section`
   padding-top: 150px;
   padding-bottom: 0;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 80px;
     padding-top: 80px;
   }
@@ -26,13 +26,13 @@ export const Container = styled.div`
     'title pic'
     'content pic';
 
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     background-image: url('/backgrounds/relocation-vacancies.png');
     background-repeat: no-repeat;
     background-position: 73.5% 80%;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: block;
     padding-bottom: 80px;
   }
@@ -68,7 +68,7 @@ export const Text = styled.p`
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 60px;
     font-size: 16px;
     line-height: 25px;
@@ -80,7 +80,7 @@ export const Button = styled(Btn)`
   padding: 22px 28px;
   border: none;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 19px 34px;
   }
 `;
@@ -88,7 +88,7 @@ export const Button = styled(Btn)`
 export const PicWrapper = styled.div`
   grid-area: pic;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 15px;
   }
 
@@ -96,7 +96,7 @@ export const PicWrapper = styled.div`
     max-width: 344px;
     max-height: 489px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       max-width: 315px;
       max-height: 319px;
       object-fit: cover;

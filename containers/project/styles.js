@@ -23,7 +23,7 @@ export const GreyWrapper = styled.div`
   margin-bottom: 100px;
   padding-bottom: 160px;
 
-  ${props =>
+  ${(props) =>
     props.withBg &&
     css`
       background-image: url('/backgrounds/teams-header-bg.png');
@@ -52,7 +52,7 @@ export const VacancySection = styled.div`
   padding-top: 60px;
   padding-bottom: 100px;
 
-  @media (max-width: 1110px) {
+  @media screen and (max-width: 1110px) {
     background-size: 266px 294px;
     background-position: calc(100% + 85px) 100%;
   }
