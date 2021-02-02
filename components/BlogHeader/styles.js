@@ -4,28 +4,30 @@ import { TitleH3, Text, Icon } from 'elements';
 export const Grid = styled.div`
   display: flex;
   padding-top: 240px;
-  margin-bottom: 100px;
-  align-items: center;
+  align-items: flex-start;
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   @media screen and (max-width: 1024px) {
+    flex-direction: column;
     padding-top: 110px;
-    padding-bottom: 0;
-    margin-bottom: 50px;
   }
 `;
 
 export const Wrapper = styled.article`
+  width: 60%;
   max-width: 854px;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 
   @media screen and (max-width: 420px) {
     margin-right: 0;
-    padding-bottom: 0;
+    padding-bottom: 40px;
   }
 `;
 
@@ -68,26 +70,28 @@ export const StyledIcon = styled(Icon)`
   }
 `;
 
-export const Picture = styled.img``;
+export const Picture = styled.img`
+  display: flex;
+`;
 
 export const Block = styled.div`
-  margin-left: 50px;
+  width: 40%;
+  max-width: 500px;
   position: relative;
   box-sizing: border-box;
-  width: 340px;
+  margin-top: auto;
 
   @media screen and (max-width: 1600px) {
-    margin-top: 80px;
+    margin-right: 150px;
     margin-left: 0;
+  }
+
+  @media screen and (max-width: 1280px) {
+    width: 60%;
   }
 
   @media screen and (max-width: 550px) {
-    margin-top: 0;
-  }
-
-  @media screen and (max-width: 420px) {
-    margin-top: 50px;
-    margin-left: 0;
+    width: 75%;
   }
 
   &::after {
@@ -104,12 +108,24 @@ export const Block = styled.div`
     z-index: 2;
     animation: 45s linear infinite rotation;
 
+    @media screen and (max-width: 1200px) {
+      width: 260px;
+      height: 260px;
+      right: -130px;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 200px;
+      height: 200px;
+      right: -100px;
+    }
+
     @media screen and (max-width: 550px) {
       width: 120px;
       height: 120px;
       background-size: 120px 120px;
       bottom: 20px;
-      right: 0;
+      right: -75px;
     }
   }
 
@@ -120,9 +136,5 @@ export const Block = styled.div`
     100% {
       transform: rotate(360deg);
     }
-  }
-
-  @media screen and (max-width: 420px) {
-    width: 100%;
   }
 `;
