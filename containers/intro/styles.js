@@ -8,7 +8,7 @@ export const Container = styled.section`
   color: #000000;
   padding-top: 110px;
   padding-left: 120px;
-  min-height: 895px;
+  /* min-height: 895px; */
 
   @media screen and (max-width: 1024px) {
     padding-top: 64px;
@@ -107,9 +107,9 @@ export const ListBlock = styled.div`
   padding-bottom: 85px;
   text-transform: lowercase;
 
-  /* @media (-webkit-device-pixel-ratio: 1.5) {
+  @media (-webkit-device-pixel-ratio: 1.5) {
     padding-bottom: 50px;
-  } */
+  }
 
   @media screen and (max-width: 1024px) {
     padding-bottom: 20px;
@@ -179,9 +179,9 @@ export const Button = styled(Btn)`
   padding-right: 30px;
   margin-bottom: 223px;
 
-  /* @media (-webkit-device-pixel-ratio: 1.5) {
+  @media (-webkit-device-pixel-ratio: 1.5) {
     margin-bottom: 85px;
-  } */
+  }
 
   &:hover {
     border-color: #ec381a;
