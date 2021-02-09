@@ -9,7 +9,7 @@ import * as S from './styles';
 const SliderVacancy = ({ data, list, isVacancyPage }) => {
   let language;
   if (isVacancyPage) {
-    language = useSelector(state => state.language);
+    language = useSelector((state) => state.language);
   }
 
   const ref = useRef(null);
@@ -21,6 +21,7 @@ const SliderVacancy = ({ data, list, isVacancyPage }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    watchOverflow: true,
 
     renderPrevButton: () => {
       return (
