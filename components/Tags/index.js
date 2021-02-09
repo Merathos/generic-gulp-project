@@ -21,6 +21,7 @@ const List = styled.ul`
 
 const Element = styled.li`
   margin-right: 22px;
+  font-feature-settings: 'liga' off;
 `;
 
 const Tags = ({ categories, stacks, teams }) => {
