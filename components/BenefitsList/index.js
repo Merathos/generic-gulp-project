@@ -19,7 +19,9 @@ const BenefitsList = ({ data, banner }) => {
         ))}
         {banner && (
           <ListItem key="banner" banner>
-            {banner.type === 'event' && <EventBanner data={banner.event} />}
+            {banner.type === 'event' && banner?.event && (
+              <EventBanner data={banner.event} />
+            )}
             {banner.type === 'blog' && (
               <BlogsBanner
                 data={bannersData.blogLinksData}
