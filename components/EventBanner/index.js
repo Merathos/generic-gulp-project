@@ -9,8 +9,11 @@ const BenefitsBanner = ({ data }) => {
 
   useEffect(() => {
     const now = dayjs();
-    const endsAt = dayjs(data.ends_at);
-    setCompleted(endsAt.isBefore(now));
+    let endsAt;
+    if (data?.ends_at) {
+      endsAt = dayjs(data.ends_at);
+      setCompleted(endsAt.isBefore(now));
+    }
   }, []);
 
   const handleRegistrationClick = () => {
@@ -33,23 +36,27 @@ const BenefitsBanner = ({ data }) => {
   };
 
   return (
-    <Container>
-      <Title>{data.name}</Title>
-      <Date>{`${dayjs(data.starts_at)
-        .locale('ru')
-        .format('D MMMM')} ${dayjs(data.starts_at).format('HH:mm')}-${dayjs(
-        data.ends_at
-      ).format('HH:mm')}`}</Date>
-      {completed === true ? (
-        <EventButton onClick={handlePastEventClick}>
-          Подробнее о прошедшем мероприятии
-        </EventButton>
-      ) : (
-        <EventButton accent onClick={handleRegistrationClick}>
-          Зарегистрироваться
-        </EventButton>
+    <>
+      {data && (
+        <Container>
+          {data?.name && <Title>{data.name}</Title>}
+          <Date>{`${dayjs(data.starts_at)
+            .locale('ru')
+            .format('D MMMM')} ${dayjs(data?.starts_at).format(
+            'HH:mm'
+          )}-${dayjs(data?.ends_at).format('HH:mm')}`}</Date>
+          {completed === true ? (
+            <EventButton onClick={handlePastEventClick}>
+              Подробнее о прошедшем мероприятии
+            </EventButton>
+          ) : (
+            <EventButton accent onClick={handleRegistrationClick}>
+              Зарегистрироваться
+            </EventButton>
+          )}
+        </Container>
       )}
-    </Container>
+    </>
   );
 };
 
