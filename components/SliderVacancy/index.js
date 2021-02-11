@@ -1,6 +1,6 @@
 import Subtitle from 'elements/Subtitle';
 import Swiper from 'react-id-swiper';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
@@ -14,6 +14,10 @@ const SliderVacancy = ({ data, list, isVacancyPage }) => {
 
   const ref = useRef(null);
 
+  useEffect(() => {
+    console.log(ref?.current?.swiper);
+  }, [ref]);
+
   const params = {
     slidesPerView: 'auto',
     loop: false,
@@ -21,18 +25,23 @@ const SliderVacancy = ({ data, list, isVacancyPage }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    watchOverflow: true,
 
     renderPrevButton: () => {
       return (
-        <S.PrevButton className="swiper-button-prev">
+        <S.PrevButton
+          className="swiper-button-prev"
+          hideArrows={list.length <= 2}
+        >
           <ArrowPrev />
         </S.PrevButton>
       );
     },
 
     renderNextButton: () => (
-      <S.NextButton className="swiper-button-next">
+      <S.NextButton
+        className="swiper-button-next"
+        hideArrows={list.length <= 2}
+      >
         <ArrowNext />
       </S.NextButton>
     ),

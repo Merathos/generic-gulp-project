@@ -136,6 +136,12 @@ export const PrevButton = styled.button`
   @media screen and (max-width: 1024px) {
     display: none;
   }
+
+  ${(p) =>
+    p.hideArrows &&
+    css`
+      visibility: hidden;
+    `}
 `;
 
 export const NextButton = styled.button`
@@ -168,4 +174,10 @@ export const NextButton = styled.button`
   @media screen and (max-width: 1024px) {
     display: none;
   }
+
+  ${(p) =>
+    p.hideArrows &&
+    css`
+      visibility: hidden;
+    `}
 `;

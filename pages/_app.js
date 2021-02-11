@@ -86,10 +86,6 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 
-  .swiper-button-disabled {
-    visibility: hidden;
-  }
-
   .ReactModal__Body--open {
     overflow: hidden;
     margin-right: 17px;
