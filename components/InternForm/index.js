@@ -12,7 +12,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { useForm } from 'react-hook-form';
 import form from 'mock/forms';
 import { SET_FORM_INTERNSHIP } from 'graphql/forms';
-import { GET_EVENT_CATEGORIES } from 'graphql/events';
+import { GET_INTERNSHIP_CATEGORIES } from 'graphql/internship';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -34,7 +34,9 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [selectedEventCategories, setSelectedEventCategories] = useState([]);
 
-  const { data: eventCategoriesData } = useQuery(GET_EVENT_CATEGORIES);
+  const { data: internshipCategoriesData } = useQuery(
+    GET_INTERNSHIP_CATEGORIES
+  );
   const [sendInternship] = useMutation(SET_FORM_INTERNSHIP);
 
   const schema = yup.object().shape({
@@ -42,35 +44,29 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
     lastname: yup.string().required('error'),
     birthDate: yup
       .string()
-      .test('empty', 'error', val => {
+      .test('empty', 'error', (val) => {
         return val !== '';
       })
-      .test('len', 'warning', val => {
+      .test('len', 'warning', (val) => {
         const val_length_without_dashes = val.replace(/_|\./g, '').length;
         return val_length_without_dashes === 8;
       }),
-    email: yup
-      .string()
-      .email('warning')
-      .required('error'),
+    email: yup.string().email('warning').required('error'),
     phone: yup
       .string()
-      .test('empty', 'error', val => {
+      .test('empty', 'error', (val) => {
         return val !== '';
       })
-      .test('len', 'warning', val => {
+      .test('len', 'warning', (val) => {
         const val_length_without_dashes = val.replace(/-|_|\s|\(|\)/g, '')
           .length;
         return val_length_without_dashes === 12;
       })
       .required('error'),
-    personal: yup
-      .boolean()
-      .required()
-      .oneOf([true], 'error'),
+    personal: yup.boolean().required().oneOf([true], 'error'),
     newsletter: yup.boolean(),
     telegram: yup.string(),
-    cvLink: yup.string().test('file', 'error', val => {
+    cvLink: yup.string().test('file', 'error', (val) => {
       return val.length !== 0 || getValues('cvFile').length !== 0;
     }),
     university: yup.string().required('error'),
@@ -80,7 +76,7 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
     techExp: yup.string().required('error'),
     month: yup
       .mixed()
-      .test('val', 'error', val => {
+      .test('val', 'error', (val) => {
         return val.value;
       })
       .required('error'),
@@ -90,7 +86,7 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
     defaultValues: { phone: '', birthDate: '', contact: '', month: '' },
     resolver: yupResolver(schema),
   });
-  const handleChange = event => {
+  const handleChange = (event) => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
@@ -102,15 +98,15 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
-    setSelectedEventCategories(prev => {
+    setSelectedEventCategories((prev) => {
       if (prev.includes(id)) {
-        return prev.filter(item => item !== id);
+        return prev.filter((item) => item !== id);
       }
       return [...prev, id];
     });
   };
 
-  const onSubmit = async values => {
+  const onSubmit = async (values) => {
     if (captchaPassed) {
       const { data, errors: submitErrors } = await sendInternship({
         variables: {
@@ -215,13 +211,13 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
           <S.SectionTitle>{terms.title}</S.SectionTitle>
           <S.Question>{terms.direction.question}</S.Question>
           <S.CheckboxContainer>
-            {eventCategoriesData?.event_categories?.map(item => (
+            {internshipCategoriesData?.internship_categories?.map((item) => (
               <S.CheckBox
                 key={item.id}
                 name={item.slug}
                 value={item.name}
                 checked={checkedEls[item.slug]}
-                onChange={event => handleEventCategoryChange(event, item.id)}
+                onChange={(event) => handleEventCategoryChange(event, item.id)}
                 register={register({
                   required: selectedEventCategories.length === 0,
                 })}
