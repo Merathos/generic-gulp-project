@@ -18,6 +18,7 @@ const InternshipHeader = ({
   const handleVacanciesClick = () => {
     Router.push({
       pathname: '/vacancies',
+      query: 'internship=true',
     }).then(() => window.scrollTo(0, 0));
   };
 

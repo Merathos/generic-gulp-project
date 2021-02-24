@@ -1,10 +1,17 @@
-import Link from 'next/link';
 import { Btn } from 'elements';
 import { VacancyCard } from 'components';
+import Router from 'next/router';
 import * as S from './styles';
 
 const InternVacancies = ({ mock, data }) => {
-  const { title, button, href } = mock;
+  const { title, button } = mock;
+
+  const handleVacanciesClick = () => {
+    Router.push({
+      pathname: '/vacancies',
+      query: 'internship=true',
+    }).then(() => window.scrollTo(0, 0));
+  };
 
   return (
     <>
@@ -16,11 +23,8 @@ const InternVacancies = ({ mock, data }) => {
           </S.ListItem>
         ))}
       </S.List>
-      <Link href={href} passHref>
-        <a>
-          <Btn>{button}</Btn>
-        </a>
-      </Link>
+
+      <Btn onClick={handleVacanciesClick}>{button}</Btn>
     </>
   );
 };
