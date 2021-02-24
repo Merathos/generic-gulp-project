@@ -21,8 +21,9 @@ export const Wrapper = styled.article`
   max-width: 854px;
   padding-bottom: 90px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
+    max-width: 100%;
   }
 
   @media screen and (max-width: 420px) {
