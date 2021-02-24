@@ -45,7 +45,7 @@ const Infographics = ({ data }) => {
   useEffect(() => {
     let timer;
     const increaseIndex = () => {
-      setActiveItemIndex(prev => {
+      setActiveItemIndex((prev) => {
         if (prev === null) {
           return 0;
         }

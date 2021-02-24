@@ -28,12 +28,12 @@ export default {
         {
           name: 'subscribers',
           title: 'Абонентов',
-          value: '>1,8 млн',
+          value: '>2 млн',
         },
         {
           name: 'calls-quantity',
           title: 'Звонков \nодновременно',
-          value: '>100 тыс',
+          value: '>125 тыс',
         },
         {
           name: 'iterations-quantity',
