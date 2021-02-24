@@ -15,7 +15,7 @@ const aboutPage = () => {
         <title>O компании DINS</title>
         <meta
           name="description"
-          content="23 года со дня основания DINS. 1000+ человек работает в штате, большая часть из них — инженеры. 450+ тысяч компаний пользуются решением, в создании которого мы участвуем."
+          content="DINS — IT-компания из Петербурга. Мы участвуем в разработке UCaaS-платформы американской компании RingCentral. Присоединяйтесь к команде — вакансии на сайте."
         />
       </Head>
       <Layout greyFooter isVisible={false} plainHeader smallIndent>

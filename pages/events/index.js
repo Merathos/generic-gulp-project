@@ -18,10 +18,10 @@ const eventsPage = () => {
   return (
     <>
       <Head>
-        <title>IT Evenings - мероприятия DINS</title>
+        <title>IT EVENINGS: митапы о Java, JavaScript, QA и DevOps</title>
         <meta
           name="description"
-          content="Анонсы предстоящих мероприятий. Архив прошедших мероприятий."
+          content="Анонсы и записи митапов. Хотите выступить с докладом и рассказать о своем кейсе — пишите на itevening@dins.ru"
         />
         {query.categories && <link rel="canonical" href={pathname} />}
       </Head>
