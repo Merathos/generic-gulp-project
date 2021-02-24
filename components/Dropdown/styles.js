@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Title = styled.button.attrs(props => ({
+export const Title = styled.button.attrs((props) => ({
   transform: props.active
     ? 'rotate(-180deg) translateY(50%)'
     : 'translateY(-50%)',
@@ -22,7 +22,7 @@ export const Title = styled.button.attrs(props => ({
     right: 32px;
     background-image: url('/icons/dropdown.svg');
     background-repeat: no-repeat;
-    transform: ${props => props.transform};
+    transform: ${(props) => props.transform};
     transition: transform 0.2s ease;
   }
 
@@ -57,8 +57,12 @@ export const Item = styled.li`
     }
   }
 
+  &:first-of-type {
+    margin-top: 10px;
+  }
+
   &:last-of-type {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   @media screen and (max-width: 420px) {
@@ -85,15 +89,36 @@ export const List = styled.ul`
   @media screen and (max-width: 768px) {
     height: 200px;
   }
+
+  @media screen and (max-width: 420px) {
+    height: 220px;
+  }
 `;
 
 export const Wrapper = styled.div`
   position: relative;
 
+  &::before {
+    content: '';
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: -16px;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(
+      360deg,
+      #ffffff 49.12%,
+      rgba(255, 255, 255, 0) 121.93%
+    );
+    transform: rotate(-180deg);
+    pointer-events: none;
+  }
+
   &::after {
     content: '';
     width: 100%;
-    height: 40px;
+    height: 50px;
     position: absolute;
     bottom: 10px;
     left: 0;
@@ -103,11 +128,13 @@ export const Wrapper = styled.div`
       #ffffff 49.12%,
       rgba(255, 255, 255, 0) 121.93%
     );
+    pointer-events: none;
   }
 
   @media screen and (max-width: 768px) {
-    &::after {
-      background: ${props =>
+    &::after,
+    &::before {
+      background: ${(props) =>
         props.withBg
           ? 'linear-gradient(360deg, #f7f8f9 49.12%, rgba(247, 248, 249, 0) 121.93%)'
           : 'linear-gradient(360deg, #FFFFFF 49.12%, rgba(255, 255, 255, 0) 121.93%)'};

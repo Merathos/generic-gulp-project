@@ -38,7 +38,9 @@ const Infographics = ({ data }) => {
     observer.observe(infographics.current);
 
     return () => {
-      observer.unobserve(infographics.current);
+      if (infographics?.current) {
+        observer.unobserve(infographics.current);
+      }
     };
   }, []);
 

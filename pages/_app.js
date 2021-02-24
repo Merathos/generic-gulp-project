@@ -112,7 +112,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &::-webkit-scrollbar {
-    width: 3px;
+      width: 3px;
     }
     &::-webkit-scrollbar-track {
       background: #F7F8F9;
@@ -155,6 +155,7 @@ const GlobalStyle = createGlobalStyle`
     top: 2px;
     border-radius: 6px;
     background-color: #f7f8f9;
+    z-index: 10;
   }
 
   .thumb-vertical {

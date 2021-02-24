@@ -6,7 +6,7 @@ const CustomScrollbars = ({ children, onModal = false }) => {
   const scrollbar = useRef();
   const [scroll, setScroll] = useState(0);
 
-  const handleScroll = e => {
+  const handleScroll = (e) => {
     const scrollView = e.target;
     scrollView.classList.add('scroll-view--scrolling');
     clearTimeout(timer);
@@ -35,14 +35,13 @@ const CustomScrollbars = ({ children, onModal = false }) => {
   return (
     <Scrollbars
       universal
-      autoHide={!onModal}
-      renderTrackVertical={props => (
+      renderTrackVertical={(props) => (
         <div {...props} className="track-vertical" />
       )}
-      renderThumbVertical={props => (
+      renderThumbVertical={(props) => (
         <div {...props} className="thumb-vertical" />
       )}
-      renderView={props => (
+      renderView={(props) => (
         <div
           {...props}
           className={onModal ? 'scroll-view--scrolling' : 'scroll-view'}

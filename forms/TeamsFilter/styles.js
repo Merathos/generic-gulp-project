@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Title = styled.h3.attrs(props => ({
+export const Title = styled.h3.attrs((props) => ({
   transform: props.active
     ? 'rotate(-180deg) translateY(50%)'
     : 'translateY(-50%)',
@@ -25,7 +25,7 @@ export const Title = styled.h3.attrs(props => ({
       right: 0;
       background-image: url('/icons/dropdown.svg');
       background-repeat: no-repeat;
-      transform: ${props => props.transform};
+      transform: ${(props) => props.transform};
       transition: transform 0.2s ease;
     }
   }
@@ -66,8 +66,12 @@ export const Item = styled.li`
     }
   }
 
+  &:first-of-type {
+    margin-top: 20px;
+  }
+
   &:last-of-type {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   @media screen and (max-width: 420px) {
@@ -100,42 +104,41 @@ export const List = styled.ul`
   &::before {
     content: '';
     width: 100%;
-    height: 24px;
+    height: 40px;
     position: absolute;
     top: -16px;
     left: 0;
     z-index: 1;
     background: linear-gradient(
       360deg,
-      #ffffff 49.12%,
-      rgba(255, 255, 255, 0) 121.93%
+      #ffffff 49%,
+      rgba(255, 255, 255, 0) 122%
     );
     transform: rotate(-180deg);
+    pointer-events: none;
   }
 
   &::after {
     content: '';
     width: 100%;
-    height: 60px;
+    height: 50px;
     position: absolute;
-    bottom: -10px;
+    bottom: 10px;
     left: 0;
     z-index: 1;
     background: linear-gradient(
       360deg,
-      #ffffff 49.12%,
-      rgba(255, 255, 255, 0) 121.93%
+      #ffffff 49%,
+      rgba(255, 255, 255, 0) 122%
     );
+    pointer-events: none;
   }
 
   @media screen and (max-width: 1024px) {
-    display: ${props => (props.active ? 'block' : 'none')};
+    display: ${(props) => (props.active ? 'block' : 'none')};
 
+    &::after,
     &::before {
-      display: none;
-    }
-
-    &::after {
       background: linear-gradient(
         360deg,
         #f7f8f9 49.12%,
@@ -145,8 +148,8 @@ export const List = styled.ul`
   }
 
   @media screen and (max-width: 420px) {
-    max-height: 200px;
-    padding-top: 22px;
+    max-height: 230px;
+    margin-top: 22px;
   }
 `;
 
@@ -156,7 +159,7 @@ export const ResetButtonWrapper = styled.div`
 
   @media screen and (max-width: 1024px) {
     margin-top: 18px;
-    display: ${props => (props.active ? 'block' : 'none')};
+    display: ${(props) => (props.active ? 'block' : 'none')};
   }
 `;
 
@@ -167,7 +170,7 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 1024px) {
     margin-left: -45px;
     margin-right: -45px;
-    padding: ${props => (props.active ? '16px 45px 50px' : '16px 45px')};
+    padding: ${(props) => (props.active ? '16px 45px 50px' : '16px 45px')};
     background-color: #f7f8f9;
     z-index: 3;
   }
