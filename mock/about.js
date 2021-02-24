@@ -25,7 +25,7 @@ export default {
         },
       ],
       sidebar: {
-        subtitle: `RingCentral${'\u00A0'}– Лидер Gartner UCaaS Magic Quadrant в${'\u00A0'}течение последних 6${'\u00A0'}лет (июль, 2019)`,
+        subtitle: `RingCentral${'\u00A0'}– Лидер Gartner UCaaS Magic Quadrant в${'\u00A0'}течение последних 6${'\u00A0'}лет (ноябрь, 2020)`,
       },
     },
     details: {

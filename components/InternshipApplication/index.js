@@ -3,14 +3,14 @@ import { FormModal } from 'containers';
 import form from 'mock/forms';
 import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
-import { JobForm } from '../index';
+import { InternForm } from '../index';
 
 const InternshipApplication = ({ data }) => {
   const { text, title, button } = data;
   const [isModalOpened, setModalOpen] = useState(false);
 
   const toggleModal = () => {
-    setModalOpen(prev => !prev);
+    setModalOpen((prev) => !prev);
   };
 
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
@@ -18,7 +18,7 @@ const InternshipApplication = ({ data }) => {
   if (text) {
     updatedText = text.replace(
       emailRegExp,
-      email => `<a href="mailto:${email}">${email}</a>`
+      (email) => `<a href="mailto:${email}">${email}</a>`
     );
   }
 
@@ -40,9 +40,9 @@ const InternshipApplication = ({ data }) => {
       <FormModal
         modalIsOpen={isModalOpened}
         closeModal={toggleModal}
-        successData={form.jobFormV2.confirmation}
+        successData={form.internForm.confirmation}
       >
-        <JobForm closeModal={toggleModal} />
+        <InternForm closeModal={toggleModal} />
       </FormModal>
     </S.Section>
   );

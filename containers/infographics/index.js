@@ -38,14 +38,16 @@ const Infographics = ({ data }) => {
     observer.observe(infographics.current);
 
     return () => {
-      observer.unobserve(infographics.current);
+      if (infographics?.current) {
+        observer.unobserve(infographics.current);
+      }
     };
   }, []);
 
   useEffect(() => {
     let timer;
     const increaseIndex = () => {
-      setActiveItemIndex(prev => {
+      setActiveItemIndex((prev) => {
         if (prev === null) {
           return 0;
         }

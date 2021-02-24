@@ -10,7 +10,7 @@ const contactsPage = () => {
         <title>Контакты DINS</title>
         <meta
           name="description"
-          content="Два офисе в Петербурге в шаговой доступности от метро. Один находится в БЦ «Петергофский», другой - в БЦ «Фидель»."
+          content="IT-компания из Петербурга. Два офиса в шаговой доступности от метро. Отправить резюме."
         />
       </Head>
       <Layout nimax isVisible={false} plainHeader>

@@ -30,7 +30,10 @@ const teamsPage = () => {
     <>
       <Head>
         <title>Команды DINS</title>
-        <meta name="description" content="SCRUM-команды компании DINS." />
+        <meta
+          name="description"
+          content="Продукт, в разработке которого мы участвуем, многогранен. Наши инженеры работают над обеспечением качественного видео и аудио, развивают контактный центр, мессенджер и другие части платформы."
+        />
         {query.technologies && <link rel="canonical" href={pathname} />}
       </Head>
       <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>

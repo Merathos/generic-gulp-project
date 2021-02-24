@@ -28,7 +28,7 @@ const BlogList = () => {
     };
   };
 
-  const moreEnd = fetchMoreResult => fetchMoreResult.blogs.length === 0;
+  const moreEnd = (fetchMoreResult) => fetchMoreResult.blogs.length === 0;
 
   useFetchMore({
     data,
@@ -46,7 +46,7 @@ const BlogList = () => {
         <title>Блог компании DINS</title>
         <meta
           name="description"
-          content="Читай наш блог, чтобы узнать последние новости из жизни компании."
+          content="Читай новости IT-компании из Санкт-Петербурга, знакомьтесь с командой DINS."
         />
         {query.category && <link rel="canonical" href={pathname} />}
       </Head>

@@ -16,7 +16,7 @@ const internshipPage = () => {
         <title>Стажировка в DINS</title>
         <meta
           name="description"
-          content="Приглашаем студентов старших курсов и магистратуры, аспирантов и выпускников технических вузов на оплачиваемую стажировку."
+          content="Оплачиваемая стажировка по направлениям QA, QA Automation и DevOps для студентов старших курсов и выпускников технических вузов."
         />
       </Head>
       <Layout isVisible={false} plainHeader smallIndent>

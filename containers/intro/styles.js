@@ -93,7 +93,7 @@ export const Text = styled.p`
     width: 100%;
     font-size: 16px;
     line-height: 158%;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 
   @media screen and (max-width: 420px) {
@@ -135,6 +135,10 @@ export const ListBlock = styled.div`
 
     @media screen and (max-width: 720px) {
       max-width: 100%;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin-bottom: 20px;
     }
 
     @media screen and (max-width: 420px) {
@@ -187,8 +191,13 @@ export const Button = styled(Btn)`
     border-color: #ec381a;
   }
 
-  @media screen and (max-width: 640px) {
-    display: none;
+  @media screen and (max-width: 800px) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 `;
 

@@ -6,7 +6,7 @@ import { Title, Item, List, Wrapper, Sup } from './styles';
 
 const { checkTagActive } = queryHelpers;
 
-const Dropdown = props => {
+const Dropdown = (props) => {
   const {
     title,
     list,
@@ -42,7 +42,7 @@ const Dropdown = props => {
       <Wrapper style={{ display: opened ? 'block' : 'none' }} withBg={withBg}>
         <List>
           <CustomScrollbars>
-            {Object.keys(list).map(key => {
+            {Object.keys(list).map((key) => {
               const isActive = checkTagActive(query[category], list[key].slug);
               return (
                 <Item key={list[key].id}>
@@ -59,7 +59,7 @@ const Dropdown = props => {
                   ) : (
                     <RadioButton
                       name={title}
-                      handleChange={e => handleChangeRadio(e)}
+                      handleChange={(e) => handleChangeRadio(e)}
                       value={list[key].slug}
                       label={list[key].name}
                       checked={query[category] === list[key].slug}

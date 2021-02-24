@@ -1,7 +1,7 @@
 export default {
   main: {
     intro: {
-      title: `Работай в${'\u00A0'}DINS`,
+      title: `Работа в${'\u00A0'}DINS`,
       text: `Мы${'\u00A0'}участвуем в${'\u00A0'}разработке UCaaS-платформы для${'\u00A0'}бизнеса. Она помогает компаниям управлять всеми коммуникациями:`,
       communicationsList: [
         'Корпоративный чат',
@@ -28,12 +28,12 @@ export default {
         {
           name: 'subscribers',
           title: 'Абонентов',
-          value: '>1,8 млн',
+          value: '>2 млн',
         },
         {
           name: 'calls-quantity',
           title: 'Звонков \nодновременно',
-          value: '>100 тыс',
+          value: '>125 тыс',
         },
         {
           name: 'iterations-quantity',
