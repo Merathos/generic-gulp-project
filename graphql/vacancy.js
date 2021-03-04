@@ -108,8 +108,8 @@ export const GET_VACANCY_CATEGORIES = gql`
 `;
 
 export const GET_VACANCY_STACKS = gql`
-  query getVacancyStacks {
-    vacancy_stacks {
+  query getVacancyStacks($is_team: Boolean) {
+    vacancy_stacks(is_team: $is_team) {
       id
       name
       slug
