@@ -17,7 +17,9 @@ const teamsPage = () => {
   const { data: teamsData } = useQuery(GET_TEAM_CATEGORIES, {
     variables: { stack: router.query.technologies },
   });
-  const { data: stacksData } = useQuery(GET_VACANCY_STACKS);
+  const { data: stacksData } = useQuery(GET_VACANCY_STACKS, {
+    variables: { is_team: true },
+  });
 
   useEffect(() => {
     dispatch({
@@ -56,6 +58,7 @@ export async function getServerSideProps({ query }) {
   });
   await apolloClient.query({
     query: GET_VACANCY_STACKS,
+    variables: { is_team: true },
   });
 
   return {

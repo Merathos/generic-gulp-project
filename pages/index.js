@@ -23,9 +23,7 @@ const mainPage = () => {
     variables: { is_home: true },
   });
   const { data: vacancyCatData } = useQuery(GET_VACANCY_CATEGORIES_MAIN);
-  const { data: stacksData } = useQuery(GET_VACANCY_STACKS, {
-    variables: { is_team: true },
-  });
+  const { data: stacksData } = useQuery(GET_VACANCY_STACKS);
 
   return (
     <>
