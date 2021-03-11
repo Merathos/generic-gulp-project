@@ -13,7 +13,6 @@ export const Main = styled.main`
     width: 209px;
     height: 319px;
     background: url('/backgrounds/vacancies-bg.png') no-repeat;
-    z-index: 4;
   }
 
   @media screen and (max-width: 1360px) {

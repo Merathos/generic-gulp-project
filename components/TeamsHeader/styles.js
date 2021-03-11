@@ -39,6 +39,7 @@ export const Wrapper = styled.article`
   width: 60%;
   align-items: center;
   padding-right: 80px;
+  z-index: 1;
 
   @media screen and (max-width: 1024px) {
     max-width: none;

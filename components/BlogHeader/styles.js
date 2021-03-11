@@ -20,6 +20,7 @@ export const Wrapper = styled.article`
   width: 60%;
   max-width: 854px;
   padding-bottom: 90px;
+  z-index: 1;
 
   @media screen and (max-width: 1360px) {
     width: 100%;
