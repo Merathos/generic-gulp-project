@@ -35,6 +35,7 @@ export const ConditionsSection = styled.div`
 
   @media screen and (max-width: 420px) {
     padding-top: 30px;
+    margin-bottom: ${(p) => (p.addMarginBottom ? '80px' : '0')};
   }
 `;
 

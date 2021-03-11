@@ -26,7 +26,7 @@ const Vacancy = ({ data, back }) => {
   const [jobModalIsShown, setJobModalIsShown] = useState(false);
 
   function toggleJobModal() {
-    setJobModalIsShown(prev => !prev);
+    setJobModalIsShown((prev) => !prev);
   }
 
   return (

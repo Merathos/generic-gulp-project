@@ -15,7 +15,7 @@ const Section = styled.div`
   position: relative;
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 
     &::after {
       display: none;
@@ -24,7 +24,7 @@ const Section = styled.div`
 `;
 
 const Conditions = ({ data, back }) => {
-  const language = useSelector(state => state.language);
+  const language = useSelector((state) => state.language);
 
   return (
     <Section>

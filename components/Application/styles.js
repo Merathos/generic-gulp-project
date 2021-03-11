@@ -4,10 +4,14 @@ import Button from 'elements/Button';
 
 export const Section = styled.section`
   background-color: #f7f8f9;
-  margin-bottom: 100px;
+  margin-bottom: 160px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 120px;
+  }
 
   @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 `;
 
