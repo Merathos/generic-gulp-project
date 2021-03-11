@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
@@ -51,5 +51,18 @@ export const Section = styled.section`
   @media screen and (max-width: 900px) {
     padding-top: 56px;
     padding-bottom: 47px;
+
+    ${(p) =>
+      p.removeMarginBottom &&
+      css`
+        padding-bottom: 0;
+      `}
   }
+
+  ${(p) =>
+    p.removeMarginBottom &&
+    css`
+      margin-bottom: 0;
+      padding-bottom: 0;
+    `}
 `;

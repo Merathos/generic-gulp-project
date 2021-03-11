@@ -2,6 +2,7 @@ import { EventHeader, Schedule } from 'components';
 import { Speakers, EventsSlider, EventReg, EventStream } from 'containers';
 import { useRef, useEffect } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
+import * as S from './styles';
 
 const EventDetails = ({
   data,
@@ -21,7 +22,7 @@ const EventDetails = ({
   }, []);
 
   return (
-    <main>
+    <S.Container>
       {eventData && (
         <EventHeader
           data={data}
@@ -71,12 +72,13 @@ const EventDetails = ({
           regForm={regForm}
           customizeID="114194"
           eventID={eventData.timepad_id}
+          removeMarginBottom={!(eventData?.related?.length > 0)}
         />
       )}
       {eventData?.related?.length > 0 && (
         <EventsSlider cards={eventData.related} regForm={regForm} />
       )}
-    </main>
+    </S.Container>
   );
 };
 
