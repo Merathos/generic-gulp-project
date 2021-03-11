@@ -20,4 +20,8 @@ export const Item = styled.li`
     margin: 0 auto;
     margin-bottom: 40px;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;

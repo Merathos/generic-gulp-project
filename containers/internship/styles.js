@@ -90,12 +90,16 @@ export const ValuesSection = styled(SectionGroup)`
 `;
 
 export const VacancySection = styled(SectionGroup)`
-  padding-bottom: 62px;
+  padding-bottom: 60px;
 
   @media screen and (min-width: 769px) {
     background-image: url('/backgrounds/i-vacancy.svg');
     background-repeat: no-repeat;
     background-position: top 160px right;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 20px;
   }
 
   @media screen and (max-width: 420px) {

@@ -96,10 +96,7 @@ export const ListBlog = styled.ul`
   max-width: 1200px;
   padding: 0 45px;
   margin: 0 auto;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 160px;
-  }
+  margin-bottom: 130px;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 80px;
@@ -238,6 +235,10 @@ export const Element = styled.li`
   @media screen and (max-width: 768px) {
     max-width: none;
     margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 10px;
+    }
   }
 `;
 

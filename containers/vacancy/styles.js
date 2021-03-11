@@ -4,12 +4,17 @@ export const VacancySection = styled.div`
   background-image: url('/backgrounds/vacancy-category.svg');
   background-repeat: no-repeat;
   background-position: -150px 50%;
-  padding-top: 60px;
-  padding-bottom: 100px;
+  padding-top: 160px;
+  padding-bottom: 40px;
 
   @media screen and (max-width: 1110px) {
     background-size: 266px 294px;
     background-position: calc(100% + 85px) 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 0;
   }
 
   @media screen and (max-width: 420px) {

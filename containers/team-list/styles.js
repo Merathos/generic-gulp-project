@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { TitleH1 } from 'elements';
 
 export const Main = styled.main`
-  padding-bottom: 65px;
   background: url('/backgrounds/teams-bg.png') no-repeat right 110px,
     url('/backgrounds/sidebar-bg.png') no-repeat left 352px;
 

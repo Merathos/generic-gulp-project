@@ -83,18 +83,18 @@ export const Text = styled.p`
 export const List = styled.ul`
   width: 100%;
   display: flex;
-  padding-top: 100px;
+  padding-top: 40px;
   flex-direction: row;
   flex-wrap: wrap;
 
   @media screen and (max-width: 420px) {
-    padding-top: 60px;
+    padding-top: 0;
   }
 `;
 
 export const Element = styled.li`
   margin-right: 80px;
-  margin-bottom: 60px;
+  margin-top: 60px;
 
   &:nth-child(2n) {
     margin-right: 0;
@@ -103,9 +103,5 @@ export const Element = styled.li`
   @media screen and (max-width: 420px) {
     width: 100%;
     margin-right: 0;
-
-    &:nth-child(n + 2):last-child {
-      margin-bottom: 0px;
-    }
   }
 `;

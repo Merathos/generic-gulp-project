@@ -21,16 +21,23 @@ export const StyledFooter = styled.footer`
   }
 
   @media screen and (max-width: 1024px) {
-    padding: ${(props) =>
-      props.isVisible ? '26px 60px 50px 60px' : '120px 60px 50px 60px'};
     flex-direction: column-reverse;
     text-align: center;
     align-items: flex-start;
   }
 
+  @media screen and (max-width: 768px) {
+    padding: ${(props) =>
+      props.isVisible
+        ? `${props.grey ? '26px' : '0'} 60px 50px 60px`
+        : '120px 60px 50px 60px'};
+  }
+
   @media screen and (max-width: 420px) {
     padding: ${(props) =>
-      props.isVisible ? '26px 60px 50px 60px' : '124px 30px 40px 30px'};
+      props.isVisible
+        ? `${props.grey ? '26px' : '0'} 60px 50px 60px`
+        : '120px 30px 40px 30px'};
   }
 
   ${(props) =>
