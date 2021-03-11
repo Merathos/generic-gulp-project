@@ -23,7 +23,7 @@ export const Grid = styled.div`
       padding-top: 210px;
 
       @media screen and (max-width: 768px) {
-        padding-top: 113px;
+        padding-top: 110px;
         padding-bottom: 80px;
       }
     `};

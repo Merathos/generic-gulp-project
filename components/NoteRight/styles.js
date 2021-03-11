@@ -17,7 +17,7 @@ export const Card = styled.div`
   width: 100%;
 
   @media screen and (max-width: 580px) {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     background-position: left 10px;
     padding: 30px 30px 40px;
     background-image: url('/images/blue-rectangle-mobile.svg');

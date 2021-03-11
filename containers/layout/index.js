@@ -26,10 +26,6 @@ const StyledArrowLeft = styled.div`
   top: 140px;
   transition: all 0.1s ease;
 
-  @media screen and (max-width: 1280px) {
-    left: 30px;
-  }
-
   svg {
     transition: all 0.1s ease;
   }
@@ -45,7 +41,7 @@ const StyledArrowLeft = styled.div`
     background-color: #339722;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1360px) {
     display: none;
   }
 `;

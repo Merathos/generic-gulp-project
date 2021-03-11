@@ -8,18 +8,12 @@ export const Container = styled.div`
 export const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 200px 50px;
+  padding: 210px 50px;
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 420px) {
-    padding: 110px 30px 64px;
-    max-width: 375px;
-  }
-
-  @media screen and (max-width: 340px) {
-    padding: 110px 20px 64px;
-    max-width: 320px;
+  @media screen and (max-width: 1360px) {
+    padding: 130px 50px;
   }
 
   @media screen and (max-width: 768px) {
@@ -29,9 +23,17 @@ export const Section = styled.section`
   }
 
   @media screen and (max-width: 420px) {
+    padding: 110px 30px 64px;
+    max-width: 375px;
+
     & > div {
       min-width: 210px;
     }
+  }
+
+  @media screen and (max-width: 340px) {
+    padding: 110px 20px 64px;
+    max-width: 320px;
   }
 `;
 
@@ -50,7 +52,7 @@ export const Bold = styled.b`
 `;
 
 export const Wrapper = styled.div`
-  margin-top: 60px;
+  /* margin-top: 60px; */
 
   @media screen and (max-width: 420px) {
     display: none;
@@ -63,6 +65,12 @@ export const StyledButton = styled(Btn)`
 
 export const H1 = styled(TitleH1)`
   max-width: 870px;
+
+  ${(p) =>
+    p.addMarginTop &&
+    css`
+      margin-top: 60px;
+    `}
 `;
 
 export const StyledText = styled(Text)`

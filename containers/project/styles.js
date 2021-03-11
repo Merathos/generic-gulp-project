@@ -16,6 +16,16 @@ export const Container = styled.div`
     max-width: 320px;
     padding: 0 20px;
   }
+
+  ${(p) =>
+    p.removeBottomPadding &&
+    css`
+      padding: 0 45px 0;
+
+      @media screen and (max-width: 420px) {
+        padding: 0 30px 0;
+      }
+    `}
 `;
 
 export const GreyWrapper = styled.div`
@@ -49,14 +59,19 @@ export const VacancySection = styled.div`
   background-repeat: no-repeat;
   background-position: -150px 50%;
   padding-top: 60px;
-  padding-bottom: 100px;
+  padding-bottom: 120px;
 
   @media screen and (max-width: 1110px) {
     background-size: 266px 294px;
     background-position: calc(100% + 85px) 100%;
   }
 
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 60px;
+  }
+
   @media screen and (max-width: 420px) {
-    padding-top: 10px;
+    padding-top: 40px;
+    padding-bottom: 0;
   }
 `;

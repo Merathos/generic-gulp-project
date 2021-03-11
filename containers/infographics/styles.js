@@ -31,7 +31,14 @@ export const H2 = styled(TitleH2)`
     margin-bottom: 125px;
   }
 
+  @media screen and (max-width: 1280px) {
+    font-size: 40px;
+    width: 75%;
+  }
+
   @media screen and (max-width: 960px) {
+    width: 90%;
+
     :not(:first-of-type) {
       margin-bottom: 65px;
     }
@@ -39,13 +46,13 @@ export const H2 = styled(TitleH2)`
 
   @media screen and (max-width: 720px) {
     font-size: 28px;
-    line-height: 130%;
   }
 
   @media screen and (max-width: 420px) {
     hyphens: manual;
     margin-left: 30px;
     margin-right: 30px;
+    width: calc(100% - 60px);
 
     :not(:first-of-type) {
       margin-bottom: 60px;

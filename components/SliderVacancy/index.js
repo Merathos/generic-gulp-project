@@ -1,6 +1,4 @@
-import Subtitle from 'elements/Subtitle';
 import Swiper from 'react-id-swiper';
-import { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import ArrowNext from '../../public/icons/arrow-next.svg';
@@ -11,12 +9,6 @@ const SliderVacancy = ({ data, list, isVacancyPage }) => {
   if (isVacancyPage) {
     language = useSelector((state) => state.language);
   }
-
-  const ref = useRef(null);
-
-  useEffect(() => {
-    console.log(ref?.current?.swiper);
-  }, [ref]);
 
   const params = {
     slidesPerView: 'auto',
@@ -50,7 +42,7 @@ const SliderVacancy = ({ data, list, isVacancyPage }) => {
   return (
     <S.Section>
       <S.H2>{language ? data.titleEn : data.title}</S.H2>
-      <Swiper ref={ref} {...params}>
+      <Swiper {...params}>
         {list &&
           list.map((item, i) => (
             <S.Element key={item.id}>

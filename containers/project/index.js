@@ -25,7 +25,7 @@ const Project = ({ data, teams }) => {
         </Container>
       </GreyWrapper>
 
-      <Container>
+      <Container removeBottomPadding>
         {Object.keys(content).length !== 0 && (
           <ArticleContent content={content.blocks} />
         )}

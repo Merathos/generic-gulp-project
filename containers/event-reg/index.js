@@ -2,7 +2,7 @@ import InnerHTML from 'dangerously-set-html-content';
 import * as S from './styles';
 
 const EventReg = (props) => {
-  const { regForm, customizeID, eventID } = props;
+  const { regForm, customizeID, eventID, removeMarginBottom } = props;
 
   const mainTpl = `
   <script type="text/mustache" id="mainTplMy">
@@ -459,7 +459,7 @@ const EventReg = (props) => {
   `;
 
   return (
-    <S.Section ref={regForm} id="form">
+    <S.Section ref={regForm} id="form" removeMarginBottom={removeMarginBottom}>
       <S.Container id="form-container">
         <InnerHTML html={mainTpl} />
         <InnerHTML html={ticketTpl} />

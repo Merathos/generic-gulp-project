@@ -6,8 +6,6 @@ import { GET_BLOG_CONTENT } from 'graphql/query';
 import Head from 'next/head';
 import { useEffect } from 'react';
 
-import mock from 'mock/article';
-
 const storyPage = () => {
   const router = useRouter();
   const { query } = router;
