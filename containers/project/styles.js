@@ -16,6 +16,16 @@ export const Container = styled.div`
     max-width: 320px;
     padding: 0 20px;
   }
+
+  ${(p) =>
+    p.removeBottomPadding &&
+    css`
+      padding: 0 45px 0;
+
+      @media screen and (max-width: 420px) {
+        padding: 0 30px 0;
+      }
+    `}
 `;
 
 export const GreyWrapper = styled.div`
@@ -57,6 +67,6 @@ export const VacancySection = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    padding-top: 10px;
+    padding-top: 40px;
   }
 `;
