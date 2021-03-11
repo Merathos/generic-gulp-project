@@ -5,6 +5,7 @@ const CustomScrollbars = ({ children, onModal = false }) => {
   let timer;
   const scrollbar = useRef();
   const [scroll, setScroll] = useState(0);
+  const [showScroll, setShowScroll] = useState(false);
 
   const handleScroll = (e) => {
     const scrollView = e.target;
@@ -35,6 +36,9 @@ const CustomScrollbars = ({ children, onModal = false }) => {
   return (
     <Scrollbars
       universal
+      autoHide={!onModal && !showScroll}
+      onMouseEnter={() => setShowScroll(true)}
+      onMouseLeave={() => setShowScroll(false)}
       renderTrackVertical={(props) => (
         <div {...props} className="track-vertical" />
       )}
