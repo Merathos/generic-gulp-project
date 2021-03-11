@@ -17,7 +17,7 @@ import {
 } from './styles';
 
 const VacancyHeader = ({ data, back, toggleJobModal }) => {
-  const language = useSelector(state => state.language);
+  const language = useSelector((state) => state.language);
 
   const {
     name,
@@ -46,7 +46,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
     <Container>
       <Section>
         <Content>
-          {features && (
+          {features && (is_english_speaking_team || is_internship) && (
             <Wrapper>
               <Features data={features} />
             </Wrapper>
@@ -56,6 +56,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
               dangerouslySetInnerHTML={{
                 __html: sanitize(name),
               }}
+              addMarginTop={!(is_english_speaking_team || is_internship)}
             />
           )}
           {technology_stacks && (

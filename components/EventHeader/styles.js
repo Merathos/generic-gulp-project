@@ -6,6 +6,11 @@ export const GreyHeader = styled.section`
   background-color: #f7f8f9;
   padding-top: 210px;
 
+  @media screen and (max-width: 1360px) {
+    margin-bottom: 80px;
+    padding-top: 130px;
+  }
+
   @media screen and (max-width: 420px) {
     margin-bottom: 80px;
     padding-top: 110px;
@@ -15,15 +20,19 @@ export const GreyHeader = styled.section`
 export const Container = styled.div`
   max-width: 1200px;
   padding: 0 30px;
-  padding-bottom: 173.88px;
+  padding-bottom: 170px;
   margin: 0 auto;
   background-image: url(${(props) => props.bgImg});
   background-position: bottom right;
   background-repeat: no-repeat;
 
+  @media screen and (max-width: 1360px) {
+    padding-bottom: 120px;
+  }
+
   @media screen and (max-width: 768px) {
     background-image: none;
-    padding-bottom: 79.56px;
+    padding-bottom: 80px;
   }
 `;
 
@@ -188,6 +197,10 @@ export const SpeakerJob = styled.p`
 
 export const StyledButton = styled(Btn)`
   margin-top: 100px;
+
+  @media screen and (max-width: 1360px) {
+    margin-top: 70px;
+  }
 
   @media screen and (max-width: 768px) {
     margin-top: 35px;

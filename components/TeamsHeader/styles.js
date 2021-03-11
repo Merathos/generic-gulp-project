@@ -7,8 +7,15 @@ export const Grid = styled.div`
   width: 100%;
   padding-top: 200px;
 
+  @media screen and (max-width: 1360px) {
+    padding-top: 120px;
+  }
+
   @media screen and (max-width: 1024px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 420px) {
     padding-top: 110px;
   }
 `;

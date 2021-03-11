@@ -8,9 +8,9 @@ const ArticleTitle = styled.h1`
   font-size: 84px;
   line-height: 86px;
   margin-bottom: 50px;
-  padding-top: 200px;
+  margin-top: 200px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1360px) {
     font-size: 54px;
     line-height: 60px;
   }
@@ -18,8 +18,8 @@ const ArticleTitle = styled.h1`
   @media screen and (max-width: 420px) {
     font-size: 32px;
     line-height: 31px;
-    margin-bottom: 50px;
-    padding-top: 110px;
+    margin-bottom: 18px;
+    margin-top: 110px;
   }
 `;
 
@@ -60,9 +60,7 @@ const Title = ({ title, date, description }) => {
         />
       )}
       {date && (
-        <Date>{`${dayjs(date)
-          .locale('ru')
-          .format('D MMM YYYY')}`}</Date>
+        <Date>{`${dayjs(date).locale('ru').format('D MMM YYYY')}`}</Date>
       )}
       {description && <Description>{description}</Description>}
     </div>

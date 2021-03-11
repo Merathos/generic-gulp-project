@@ -6,12 +6,12 @@ export const Grid = styled.div`
   padding-top: 240px;
   align-items: flex-start;
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1360px) {
+    padding-top: 150px;
     flex-direction: column;
   }
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
+  @media screen and (max-width: 420px) {
     padding-top: 110px;
   }
 `;
@@ -21,7 +21,7 @@ export const Wrapper = styled.article`
   max-width: 854px;
   padding-bottom: 90px;
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1360px) {
     width: 100%;
     max-width: 100%;
   }
