@@ -1,24 +1,21 @@
-import { Layout, Internship } from 'containers';
+import { Layout, CustomHead, Internship } from 'containers';
 import mock from 'mock/internship';
 import { initializeApollo } from 'lib/apollo';
 import { GET_VACANCIES } from 'graphql/vacancy';
 import { useQuery } from '@apollo/client';
-import Head from 'next/head';
 
 const internshipPage = () => {
   const { data: vacanciesData } = useQuery(GET_VACANCIES, {
     variables: { internship: true, limit: 6 },
   });
 
+  const TITLE = 'Стажировка в DINS';
+  const DESCRIPTION =
+    'Оплачиваемая стажировка по направлениям QA, QA Automation и DevOps для студентов старших курсов и выпускников технических вузов.';
+
   return (
     <>
-      <Head>
-        <title>Стажировка в DINS</title>
-        <meta
-          name="description"
-          content="Оплачиваемая стажировка по направлениям QA, QA Automation и DevOps для студентов старших курсов и выпускников технических вузов."
-        />
-      </Head>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Layout isVisible={false} plainHeader smallIndent>
         <Internship
           data={mock.internship}

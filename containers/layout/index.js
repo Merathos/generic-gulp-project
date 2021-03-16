@@ -1,50 +1,10 @@
 import { Header, Footer, OpenedMenu } from 'containers';
-import styled from 'styled-components';
-import { SocialSticker, CookieMessage } from 'components';
+import { SocialSticker, CookieMessage, GreyFooter } from 'components';
 import Router from 'next/router';
 import { useState, useEffect } from 'react';
 import mock from 'mock/layout';
 import mockCookie from 'mock/cookie';
-
-const Wrapper = styled.div`
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledArrowLeft = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #201f2a;
-  border-radius: 50%;
-  width: ${(props) => (props.smallButton ? '34px' : '38px')};
-  height: ${(props) => (props.smallButton ? '34px' : '38px')};
-  left: 45px;
-  top: 140px;
-  transition: all 0.1s ease;
-
-  svg {
-    transition: all 0.1s ease;
-  }
-
-  &:hover {
-    border-color: #53b443;
-    background-color: #53b443;
-    color: #ffffff;
-  }
-
-  &:active {
-    border-color: #339722;
-    background-color: #339722;
-  }
-
-  @media screen and (max-width: 1360px) {
-    display: none;
-  }
-`;
+import * as S from './styles';
 
 const Layout = ({
   children,
@@ -63,9 +23,14 @@ const Layout = ({
   smallButton = false,
   mobileDecor = false,
   isFixed = false,
+  relatedHistoryData = [],
 }) => {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [cookieAccepted, setCookieAccepted] = useState(true);
+
+  const relatedHistory = relatedHistoryData?.filter(
+    (i) => i.type === 'history'
+  );
 
   useEffect(() => {
     if (!localStorage.getItem('cookie_accepted')) {
@@ -78,7 +43,7 @@ const Layout = ({
   };
 
   return (
-    <Wrapper>
+    <S.Wrapper>
       <Header
         data={mock.header}
         plain={plainHeader}
@@ -91,6 +56,11 @@ const Layout = ({
       {children}
       {isVisible && (
         <SocialSticker data={mock.socialSticker} isFixed={isFixed} />
+      )}
+      {relatedHistory?.length > 0 && (
+        <S.GreyContainer>
+          <GreyFooter data={relatedHistory} type="blog" />
+        </S.GreyContainer>
       )}
       {showFooter && (
         <Footer
@@ -113,7 +83,7 @@ const Layout = ({
       )}
       {backButton && (
         <a>
-          <StyledArrowLeft
+          <S.StyledArrowLeft
             onClick={() => Router.back()}
             smallButton={smallButton}
           >
@@ -131,7 +101,7 @@ const Layout = ({
                 fill="currentColor"
               />
             </svg>
-          </StyledArrowLeft>
+          </S.StyledArrowLeft>
         </a>
       )}
       {!cookieAccepted && (
@@ -140,7 +110,7 @@ const Layout = ({
           setCookieAccepted={setCookieAccepted}
         />
       )}
-    </Wrapper>
+    </S.Wrapper>
   );
 };
 

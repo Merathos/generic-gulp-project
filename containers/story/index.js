@@ -1,4 +1,4 @@
-import { GreyFooter, BlogHeader, ArticleContent } from 'components';
+import { BlogHeader, ArticleContent } from 'components';
 import { Container, ContentContainer, GreyContainer } from './styles';
 
 const Story = ({ back }) => {
@@ -6,7 +6,6 @@ const Story = ({ back }) => {
   if (back.content) {
     content = JSON.parse(back.content);
   }
-  const relatedHistory = back.related?.filter((i) => i.type === 'history');
 
   return (
     <main>
@@ -27,12 +26,6 @@ const Story = ({ back }) => {
           <ArticleContent content={content} />
         )}
       </ContentContainer>
-
-      {relatedHistory.length > 0 && (
-        <GreyContainer>
-          <GreyFooter data={relatedHistory} type="blog" />
-        </GreyContainer>
-      )}
     </main>
   );
 };

@@ -1,5 +1,4 @@
-import { Layout, Blogs } from 'containers';
-import mock from 'mock/blog';
+import { Layout, CustomHead, Blogs } from 'containers';
 import { GET_BLOGS_LIST, GET_BLOGS_CATEGORIES } from 'graphql/blogs';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
@@ -7,6 +6,12 @@ import { initializeApollo } from 'lib/apollo';
 import useFetchMore from 'helpers/useFetchMore';
 import { Loader } from 'elements';
 import Head from 'next/head';
+
+import mock from 'mock/blog';
+
+const TITLE = 'Блог компании DINS';
+const DESCRIPTION =
+  'Читай новости IT-компании из Санкт-Петербурга, знакомьтесь с командой DINS.';
 
 const BlogList = () => {
   const router = useRouter();
@@ -42,14 +47,8 @@ const BlogList = () => {
 
   return (
     <>
-      <Head>
-        <title>Блог компании DINS</title>
-        <meta
-          name="description"
-          content="Читай новости IT-компании из Санкт-Петербурга, знакомьтесь с командой DINS."
-        />
-        {query.category && <link rel="canonical" href={pathname} />}
-      </Head>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
+      <Head>{query.category && <link rel="canonical" href={pathname} />}</Head>
       <Layout isVisible={false} greyHeader={false}>
         <Blogs
           data={mock.blogList}

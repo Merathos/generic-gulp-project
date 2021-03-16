@@ -2,12 +2,16 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useDispatch } from 'react-redux';
-import { Layout, Vacancy } from 'containers';
+import { Layout, CustomHead, Vacancy } from 'containers';
 import { GET_VACANCY_CONTENT } from 'graphql/vacancy';
 import { initializeApollo } from 'lib/apollo';
 import Head from 'next/head';
 
 import mock from 'mock/vacancy';
+
+const TITLE = 'Вакансия в компании DINS';
+const DESCRIPTION =
+  'Активная вакансия в компании DINS. Откликнуться на вакансию.';
 
 const vacancyPage = () => {
   const router = useRouter();
@@ -35,25 +39,15 @@ const vacancyPage = () => {
 
   return (
     <>
+      {vacancy?.name ? (
+        <CustomHead
+          title={`Вакансия ${vacancy?.name} в компании DINS`}
+          description={`Активная вакансия в компании DINS: ${vacancy?.name}. Откликнуться на вакансию.`}
+        />
+      ) : (
+        <CustomHead title={TITLE} description={DESCRIPTION} />
+      )}
       <Head>
-        {vacancy?.name ? (
-          <>
-            <title>Вакансия {vacancy?.name} в компании DINS</title>
-            <meta
-              name="description"
-              content={`Активная вакансия в компании DINS: ${vacancy?.name}. Откликнуться на вакансию.`}
-            />
-          </>
-        ) : (
-          <>
-            <title>Вакансия в компании DINS</title>
-            <meta
-              name="description"
-              content="Активная вакансия в компании DINS. Откликнуться на вакансию."
-            />
-          </>
-        )}
-
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}

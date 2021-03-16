@@ -1,10 +1,14 @@
-import { Layout, Events } from 'containers';
+import { Layout, CustomHead, Events } from 'containers';
 import eventsStatic from 'mock/events';
 import { GET_EVENT_CATEGORIES, GET_EVENTS } from 'graphql/events';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+
+const TITLE = 'IT EVENINGS: митапы о Java, JavaScript, QA и DevOps';
+const DESCRIPTION =
+  'Анонсы и записи митапов. Хотите выступить с докладом и рассказать о своем кейсе — пишите на itevening@dins.ru';
 
 const eventsPage = () => {
   const router = useRouter();
@@ -17,12 +21,8 @@ const eventsPage = () => {
 
   return (
     <>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Head>
-        <title>IT EVENINGS: митапы о Java, JavaScript, QA и DevOps</title>
-        <meta
-          name="description"
-          content="Анонсы и записи митапов. Хотите выступить с докладом и рассказать о своем кейсе — пишите на itevening@dins.ru"
-        />
         {query.categories && <link rel="canonical" href={pathname} />}
       </Head>
       <Layout plainHeader isVisible={false} greyHeader={false}>

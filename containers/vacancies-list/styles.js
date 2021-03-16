@@ -96,7 +96,7 @@ export const FilterWrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    position: sticky;
+    /* position: sticky; */
     top: ${(props) => (props.withExtraSpace ? '227px' : '177px')};
     margin-left: -45px;
     margin-right: -45px;
