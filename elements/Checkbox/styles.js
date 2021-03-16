@@ -39,7 +39,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Label = styled.label.attrs(props => ({
+export const Label = styled.label.attrs((props) => ({
   checkbox: props.checked ? "url('/icons/checked.svg')" : 'none',
   color: props.checked ? '#53B443;' : 'rgba(31, 32, 42, 0.3)',
 }))`
@@ -55,11 +55,11 @@ export const Label = styled.label.attrs(props => ({
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    background-image: ${props => props.checkbox};
+    background-image: ${(props) => props.checkbox};
     background-position: center center;
     background-repeat: no-repeat;
     border: 2px solid rgba(31, 32, 42, 0.3);
-    border-color: ${props => props.color};
+    border-color: ${(props) => props.color};
     transition: border-color 0.3s ease;
   }
 
@@ -81,6 +81,7 @@ export const DropLabel = styled.label`
 
   &:hover {
     color: #53b443;
+    opacity: 1;
   }
 
   &:active {

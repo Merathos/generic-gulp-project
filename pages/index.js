@@ -1,8 +1,7 @@
-import { Layout, Main } from 'containers';
+import { Layout, Main, CustomHead } from 'containers';
 import mock from 'mock/main';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
-import Head from 'next/head';
 
 import {
   GET_QUOTES,
@@ -12,6 +11,10 @@ import {
   GET_VACANCY_CATEGORIES_MAIN,
 } from 'graphql/main';
 import { GET_VACANCY_STACKS } from 'graphql/vacancy';
+
+const TITLE = 'DINS: меняем мир бизнес-коммуникаций';
+const DESCRIPTION =
+  'Работайте с нами и развивайте платформу для облачных коммуникаций, которой пользуются более 400 тыс. бизнесов по всем миру.';
 
 const mainPage = () => {
   const { data: quotesData } = useQuery(GET_QUOTES);
@@ -27,13 +30,7 @@ const mainPage = () => {
 
   return (
     <>
-      <Head>
-        <title>DINS: меняем мир бизнес-коммуникаций</title>
-        <meta
-          name="description"
-          content="Работайте с нами и развивайте платформу для облачных коммуникаций, которой пользуются более 400 тыс. бизнесов по всем миру."
-        />
-      </Head>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Layout greyFooter plainHeader smallPadding isVisible={false}>
         <Main
           data={mock.main}
