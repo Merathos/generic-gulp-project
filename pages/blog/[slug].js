@@ -44,7 +44,11 @@ const storyPage = () => {
         )}
       </Head>
       {Object.keys(blog).length > 0 && (
-        <Layout backButton greyFooter={blog.type === 'history'}>
+        <Layout
+          backButton
+          greyFooter={blog.type === 'history'}
+          relatedHistoryData={blog.type === 'history' ? blog.related : []}
+        >
           {blog.type === 'history' ? (
             <Story back={blog} />
           ) : (

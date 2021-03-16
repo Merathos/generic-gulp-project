@@ -25,8 +25,8 @@ export const ContentContainer = styled(Container)`
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 80px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 
