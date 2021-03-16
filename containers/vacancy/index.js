@@ -60,7 +60,11 @@ const Vacancy = ({ data, back }) => {
         </Container>
       )}
       {back.conditions?.length > 0 && (
-        <ConditionsSection addMarginBottom={!back.stages?.length > 0}>
+        <ConditionsSection
+          whiteSpaceBottom={
+            back.conditions?.length > 0 && back.stages?.length > 0
+          }
+        >
           <Container>
             <Conditions data={data.conditions} back={back.conditions} />
           </Container>

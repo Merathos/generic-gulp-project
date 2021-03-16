@@ -53,16 +53,10 @@ export const Element = styled.div`
 export const Section = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 160px;
-  margin-bottom: 120px;
   background-color: #f7f8f9;
 
   .swiper-container {
     overflow: visible;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 80px 0 34px;
   }
 `;
 

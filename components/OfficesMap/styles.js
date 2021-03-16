@@ -4,7 +4,7 @@ import { TitleH2 } from 'elements';
 export const Section = styled.section`
   margin-bottom: 160px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 420px) {
     margin-bottom: 80px;
   }
 

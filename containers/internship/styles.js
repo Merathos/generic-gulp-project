@@ -112,10 +112,14 @@ export const GreyContainer = styled.div`
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: 118% 298%;
+  padding-top: 160px;
+  padding-bottom: 180px;
 
   @media screen and (max-width: 420px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 `;
 

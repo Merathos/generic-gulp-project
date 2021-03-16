@@ -16,16 +16,20 @@ export const Container = styled.div`
     max-width: 320px;
     padding: 0 20px;
   }
+`;
 
-  ${(p) =>
-    p.removeBottomPadding &&
-    css`
-      padding: 0 45px 0;
+export const ContentContainer = styled(Container)`
+  padding: 0 45px 0;
+  margin-bottom: 160px;
 
-      @media screen and (max-width: 420px) {
-        padding: 0 30px 0;
-      }
-    `}
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 0 30px 0;
+    margin-bottom: 80px;
+  }
 `;
 
 export const GreyWrapper = styled.div`
@@ -58,7 +62,6 @@ export const VacancySection = styled.div`
   background-image: url('/backgrounds/vacancy-category.svg');
   background-repeat: no-repeat;
   background-position: -150px 50%;
-  padding-top: 60px;
   padding-bottom: 120px;
 
   @media screen and (max-width: 1110px) {
