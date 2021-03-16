@@ -19,6 +19,11 @@ export const Card = styled.div`
 
   @media screen and (max-width: 1280px) {
     margin-bottom: 40px;
+    padding: 30px 15px 65px 60px;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding: 30px 30px 65px 85px;
   }
 
   @media screen and (max-width: 580px) {
@@ -75,6 +80,14 @@ export const Img = styled.img`
   margin-right: 30px;
   border-radius: 50%;
   object-fit: cover;
+
+  @media screen and (max-width: 1280px) {
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-right: 30px;
+  }
 
   @media screen and (max-width: 580px) {
     width: 74px;
