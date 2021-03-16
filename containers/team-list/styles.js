@@ -50,7 +50,7 @@ export const Aside = styled.aside`
   }
 
   @media screen and (max-width: 1024px) {
-    position: sticky;
+    /* position: sticky; */
     top: 92px;
     max-width: 100%;
     margin-right: 0;
