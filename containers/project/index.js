@@ -6,7 +6,12 @@ import {
 } from 'components';
 import greyFooterMock from 'mock/greyFooter';
 
-import { Container, GreyWrapper, VacancySection } from './styles';
+import {
+  Container,
+  ContentContainer,
+  GreyWrapper,
+  VacancySection,
+} from './styles';
 
 const Project = ({ data, teams }) => {
   const content = JSON.parse(teams.content);
@@ -25,11 +30,11 @@ const Project = ({ data, teams }) => {
         </Container>
       </GreyWrapper>
 
-      <Container removeBottomPadding>
+      <ContentContainer>
         {Object.keys(content).length !== 0 && (
           <ArticleContent content={content.blocks} />
         )}
-      </Container>
+      </ContentContainer>
 
       {teams.vacancies?.length > 0 && (
         <VacancySection>

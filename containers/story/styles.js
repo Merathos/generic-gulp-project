@@ -18,30 +18,15 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
-  margin-right: auto;
-  max-width: 854px;
-  padding-bottom: 60px;
+export const ContentContainer = styled(Container)`
+  margin-bottom: 160px;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
 
   @media screen and (max-width: 420px) {
-    margin-right: 0;
-    padding-bottom: 30px;
-  }
-`;
-
-export const Grid = styled.div`
-  display: flex;
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  }
-`;
-
-export const Aside = styled.aside`
-  width: 254px;
-
-  @media screen and (max-width: 420px) {
-    width: 100%;
+    margin-bottom: 80px;
   }
 `;
 

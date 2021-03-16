@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const VacancySection = styled.div`
   background-image: url('/backgrounds/vacancy-category.svg');
   background-repeat: no-repeat;
   background-position: -150px 50%;
-  padding-top: 160px;
   padding-bottom: 40px;
 
   @media screen and (max-width: 1110px) {
@@ -13,12 +12,7 @@ export const VacancySection = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    padding-top: 80px;
     padding-bottom: 0;
-  }
-
-  @media screen and (max-width: 420px) {
-    padding-top: 10px;
   }
 `;
 
@@ -27,7 +21,7 @@ export const ConditionsSection = styled.div`
   background-repeat: no-repeat;
   background-position: calc(100% + 110px) 0%;
   padding-top: 60px;
-  margin-bottom: ${(p) => (p.addMarginBottom ? '160px' : '0')};
+  margin-top: -60px;
 
   @media screen and (max-width: 1110px) {
     background-size: 270px 280px;
@@ -38,20 +32,29 @@ export const ConditionsSection = styled.div`
     background-position: calc(100% + 65px) 0%;
   }
 
-  @media screen and (max-width: 420px) {
-    padding-top: 30px;
-    margin-bottom: ${(p) => (p.addMarginBottom ? '80px' : '0')};
-  }
+  ${(p) =>
+    p.whiteSpaceBottom &&
+    css`
+      @media screen and (max-width: 420px) {
+        padding-bottom: 60px;
+      }
+    `}
 `;
 
 export const Container = styled.main`
   box-sizing: border-box;
   width: 100%;
   max-width: 1290px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 160px;
   padding: 0 45px;
   position: relative;
   /* overflow: hidden; */
+
+  *:last-child {
+    margin-bottom: 0;
+  }
 
   @media screen and (max-width: 768px) {
     padding: 0 30px;
@@ -60,6 +63,7 @@ export const Container = styled.main`
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
+    margin-bottom: 80px;
   }
 
   @media screen and (max-width: 340px) {
@@ -85,12 +89,15 @@ export const SliderSection = styled.div`
 export const SliderContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 160px;
   padding: 0 45px;
 
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
+    margin-bottom: 80px;
   }
 
   @media screen and (max-width: 340px) {

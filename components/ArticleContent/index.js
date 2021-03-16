@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { Fragment } from 'react';
 import {
   Paragraph,
@@ -7,7 +6,6 @@ import {
   MarkerList,
   List,
   SectionNote,
-  Slider,
   Feedback,
   Quote,
   Userpic,
@@ -16,63 +14,9 @@ import {
   SidebarArticle,
   SidebarRelocation,
 } from 'components';
-import { TitleH2, TitleH3 } from 'elements';
 import vacancyMock from 'mock/vacancy';
 import { sanitize } from 'isomorphic-dompurify';
-
-const H2 = styled(TitleH2)`
-  margin-top: ${(props) => (props.isFirstBlockHeader ? '0' : '160px')};
-  margin-bottom: 40px;
-  max-width: 854px;
-
-  @media screen and (max-width: 420px) {
-    margin-top: ${(props) => (props.isFirstBlockHeader ? '0' : '80px')};
-    margin-bottom: 20px;
-  }
-`;
-
-const H3 = styled(TitleH3)`
-  margin-top: ${(props) => (props.isFirstBlockHeader ? '0' : '130px')};
-  margin-bottom: 30px;
-  max-width: 854px;
-
-  @media screen and (max-width: 420px) {
-    margin-top: ${(props) => (props.isFirstBlockHeader ? '0' : '70px')};
-    margin-bottom: 10px;
-  }
-`;
-
-const StyledSlider = styled(Slider)`
-  max-width: 850px;
-`;
-
-const Wrapper = styled.aside`
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  @media screen and (max-width: 1240px) {
-    position: static;
-    margin-bottom: 50px;
-  }
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 0;
-  }
-`;
-
-const SliderContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  margin-right: -45px;
-  @media screen and (max-width: 768px) {
-    margin-right: -30px;
-  }
-`;
-
-const Block = styled.div`
-  position: relative;
-`;
+import * as S from './styles';
 
 const renderContent = (
   props,
@@ -89,14 +33,14 @@ const renderContent = (
         {
           header:
             data.level === 2 ? (
-              <H2
+              <S.H2
                 isFirstBlockHeader={isFirstBlockHeader}
                 dangerouslySetInnerHTML={{
                   __html: sanitize(data.text),
                 }}
               />
             ) : (
-              <H3
+              <S.H3
                 isFirstBlockHeader={isFirstBlockHeader}
                 dangerouslySetInnerHTML={{
                   __html: sanitize(data.text),
@@ -121,32 +65,32 @@ const renderContent = (
           note: <SectionNote data={data.text} />,
           person: <Feedback data={data} />,
           gallery: (
-            <SliderContainer>
-              <StyledSlider
+            <S.SliderContainer>
+              <S.StyledSlider
                 pictures={data.factoids}
                 fromEditor
                 fromArticle
                 isSmall
               />
-            </SliderContainer>
+            </S.SliderContainer>
           ),
           asideSlider: (
-            <Wrapper>
+            <S.Wrapper>
               <SidebarSlider data={data.factoids} />
-            </Wrapper>
+            </S.Wrapper>
           ),
           video: <Video data={data} recap={recap} />,
           quote: <Quote data={data} noQuoteAuthor={noQuoteAuthor} />,
           comments: <Comments data={data.factoids} />,
           asideBlock: (
-            <Wrapper>
+            <S.Wrapper>
               <SidebarArticle type="default" data={data} fromEditor />
-            </Wrapper>
+            </S.Wrapper>
           ),
           asideNote: (
-            <Wrapper>
+            <S.Wrapper>
               <SidebarArticle type="icon" data={data} fromEditor />
-            </Wrapper>
+            </S.Wrapper>
           ),
           user: <Userpic data={data} />,
         }[type]
@@ -164,7 +108,7 @@ const ASIDE_BLOCKS = {
 const ArticleContent = ({ content, isRelocation, recap }) => {
   let relocationAdded;
   let recapAdded;
-  console.log(content);
+  // console.log(content);
   return (
     <>
       {content.length > 0 &&
@@ -204,7 +148,7 @@ const ArticleContent = ({ content, isRelocation, recap }) => {
           // Check if the next block is aside to render both
           if (ASIDE_BLOCKS[content[index + 1]?.type]) {
             return (
-              <Block key={index}>
+              <S.Block key={index}>
                 {renderContent(
                   el,
                   nextIsParagraph,
@@ -212,7 +156,7 @@ const ArticleContent = ({ content, isRelocation, recap }) => {
                   isFirstBlockHeader
                 )}
                 {renderContent(content[index + 1])}
-              </Block>
+              </S.Block>
             );
           }
 
@@ -227,21 +171,21 @@ const ArticleContent = ({ content, isRelocation, recap }) => {
           ) {
             relocationAdded = true;
             return (
-              <Block key={index}>
+              <S.Block key={index}>
                 {renderContent(
                   el,
                   nextIsParagraph,
                   noQuoteAuthor,
                   isFirstBlockHeader
                 )}
-                <Wrapper>
+                <S.Wrapper>
                   <SidebarRelocation
                     title={vacancyMock.relocation.title}
                     subtitle={vacancyMock.relocation.subtitle}
                     href={vacancyMock.relocation.href}
                   />
-                </Wrapper>
-              </Block>
+                </S.Wrapper>
+              </S.Block>
             );
           }
 
