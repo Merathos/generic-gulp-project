@@ -1,17 +1,13 @@
-import { Layout, Page404 } from 'containers';
-import Head from 'next/head';
+import { Layout, CustomHead, Page404 } from 'containers';
+
+const TITLE = 'Ошибка 404';
+const DESCRIPTION =
+  'Возможно, вы ввели неправильный адрес, или страница была удалена.';
 
 const p404 = () => {
   return (
     <>
-      <Head>
-        <title>Ошибка 404</title>
-        <meta
-          name="description"
-          content="Возможно, вы ввели неправильный адрес, или страница была удалена."
-        />
-        <meta name="robots" content="noindex, nofollow" />
-      </Head>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Layout backButton plainHeader greyHeader={false} isVisible={false}>
         <Page404 />
       </Layout>

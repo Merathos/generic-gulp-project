@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { initializeApollo } from 'lib/apollo';
 import { useQuery } from '@apollo/client';
-import { Layout, Story, Article } from 'containers';
+import { Layout, CustomHead, Story, Article } from 'containers';
 import { GET_BLOG_CONTENT } from 'graphql/query';
 import Head from 'next/head';
 import { useEffect } from 'react';
@@ -30,15 +30,15 @@ const storyPage = () => {
 
   return (
     <>
+      <CustomHead
+        title={
+          blog.title
+            ? `${blog.title} | Блог компании DINS`
+            : 'Блог компании DINS'
+        }
+        description={blog?.description && blog?.description}
+      />
       <Head>
-        {blog?.title ? (
-          <title>{blog.title} | Блог компании DINS</title>
-        ) : (
-          <title>Блог компании DINS</title>
-        )}
-        {blog?.description && (
-          <meta name="description" content={blog.description} />
-        )}
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}

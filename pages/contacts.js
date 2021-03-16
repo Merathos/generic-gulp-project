@@ -1,18 +1,14 @@
-import { Layout, Contacts } from 'containers';
-import Head from 'next/head';
-
+import { Layout, CustomHead, Contacts } from 'containers';
 import mock from 'mock/contacts';
+
+const TITLE = 'Контакты DINS';
+const DESCRIPTION =
+  'IT-компания из Петербурга. Два офиса в шаговой доступности от метро. Отправить резюме.';
 
 const contactsPage = () => {
   return (
     <>
-      <Head>
-        <title>Контакты DINS</title>
-        <meta
-          name="description"
-          content="IT-компания из Петербурга. Два офиса в шаговой доступности от метро. Отправить резюме."
-        />
-      </Head>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Layout nimax isVisible={false} plainHeader>
         <Contacts data={mock.contacts} />
       </Layout>

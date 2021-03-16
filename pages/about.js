@@ -1,23 +1,19 @@
-import { Layout, About } from 'containers';
-import Head from 'next/head';
+import { Layout, CustomHead, About } from 'containers';
 import { GET_VACANCY_STACKS } from 'graphql/vacancy';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo';
-
 import mock from 'mock/about';
+
+const TITLE = 'O компании DINS';
+const DESCRIPTION =
+  'DINS — IT-компания из Петербурга. Мы участвуем в разработке UCaaS-платформы американской компании RingCentral. Присоединяйтесь к команде — вакансии на сайте.';
 
 const aboutPage = () => {
   const { data: stacksData } = useQuery(GET_VACANCY_STACKS);
 
   return (
     <>
-      <Head>
-        <title>O компании DINS</title>
-        <meta
-          name="description"
-          content="DINS — IT-компания из Петербурга. Мы участвуем в разработке UCaaS-платформы американской компании RingCentral. Присоединяйтесь к команде — вакансии на сайте."
-        />
-      </Head>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Layout greyFooter isVisible={false} plainHeader smallIndent>
         <About data={mock.about} stacks={stacksData?.vacancy_stacks} />
       </Layout>

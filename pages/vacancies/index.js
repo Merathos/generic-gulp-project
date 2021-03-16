@@ -1,8 +1,9 @@
 import { useMemo, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { useQuery } from '@apollo/client';
-import { Layout, VacanciesList } from 'containers';
-import mock from 'mock/vacancies';
+import { useDispatch } from 'react-redux';
+import { Layout, CustomHead, VacanciesList } from 'containers';
 import {
   GET_VACANCIES,
   GET_VACANCY_CATEGORIES,
@@ -11,8 +12,11 @@ import {
 } from 'graphql/vacancy';
 import { initializeApollo } from 'lib/apollo';
 
-import { useDispatch } from 'react-redux';
-import Head from 'next/head';
+import mock from 'mock/vacancies';
+
+const TITLE = 'Вакансии компании DINS';
+const DESCRIPTION =
+  'Вакансии для разработчиков, QA и DevOps-инженеров, тимлидов и архитекторов.';
 
 const catalogPage = () => {
   const router = useRouter();
@@ -55,12 +59,8 @@ const catalogPage = () => {
 
   return (
     <>
+      <CustomHead title={TITLE} description={DESCRIPTION} />
       <Head>
-        <title>Вакансии компании DINS</title>
-        <meta
-          name="description"
-          content="Вакансии для разработчиков, QA и DevOps-инженеров, тимлидов и архитекторов."
-        />
         {(query.search ||
           query.categories ||
           query.technologies ||

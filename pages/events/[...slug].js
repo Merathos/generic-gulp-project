@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { initializeApollo } from 'lib/apollo';
-import { Layout, EventDetails } from 'containers';
+import { Layout, CustomHead, EventDetails } from 'containers';
 import { useQuery } from '@apollo/client';
 import { GET_EVENT, GET_EVENT_POLLING } from 'graphql/events';
 import { useState, useEffect } from 'react';
@@ -58,13 +58,11 @@ const EventPage = ({ active, description }) => {
 
   return (
     <>
+      <CustomHead
+        title={event?.name ? `Мероприятие ${event.name}` : 'Мероприятие DINS'}
+        description={description && description}
+      />
       <Head>
-        {event?.name ? (
-          <title>Мероприятие {event.name}</title>
-        ) : (
-          <title>Мероприятие DINS</title>
-        )}
-        {description && <meta name="description" content={description} />}
         {query.preview === 'true' && (
           <meta name="robots" content="noindex, nofollow" />
         )}
