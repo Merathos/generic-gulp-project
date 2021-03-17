@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TitleH3 from '../../elements/TitleH3';
+import { TitleH3 } from 'elements';
 
 export const Container = styled.section`
   margin-bottom: 90px;
@@ -30,7 +30,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
-  width: ${props => (props.banner ? '57%' : '42%')};
+  width: ${(props) => (props.banner ? '57%' : '42%')};
 
   @media screen and (max-width: 1024px) {
     width: 100%;

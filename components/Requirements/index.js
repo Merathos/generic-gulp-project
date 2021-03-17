@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TitleH2 from 'elements/TitleH2';
+import { TitleH2 } from 'elements';
 import { MarkerList } from 'components';
 
 const H2 = styled(TitleH2)`
@@ -10,7 +10,7 @@ const H2 = styled(TitleH2)`
   }
 `;
 
-const Requirements = props => {
+const Requirements = (props) => {
   const { data, type } = props;
   return (
     <>

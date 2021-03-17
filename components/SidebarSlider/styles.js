@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import TitleH4 from 'elements/TitleH4';
-import Subtitle from 'elements/Subtitle';
+import { TitleH4, Subtitle } from 'elements';
 
 export const Article = styled.article`
   position: relative;

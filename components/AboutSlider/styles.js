@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Subtitle from 'elements/Subtitle';
+import { Subtitle } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 100px;

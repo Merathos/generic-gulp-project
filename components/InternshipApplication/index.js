@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { FormModal } from 'containers';
 import form from 'mock/forms';
 import { sanitize } from 'isomorphic-dompurify';
+import { InternForm } from 'components';
 import * as S from './styles';
-import { InternForm } from '../index';
 
 const InternshipApplication = ({ data }) => {
   const { text, title, button } = data;

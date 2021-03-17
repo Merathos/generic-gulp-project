@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import TitleH2 from 'elements/TitleH2';
-import { Btn } from '../../elements';
+import { TitleH2, Btn } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 60px;

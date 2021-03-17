@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "rm -rf .next && clear && next",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_OPTIONS=--max_old_space_size=6144 next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
     "analyze": "cross-env ANALYZE=true next build",

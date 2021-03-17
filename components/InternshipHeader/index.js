@@ -2,8 +2,8 @@ import Router from 'next/router';
 import { useState } from 'react';
 import mock from 'mock/forms';
 import { FormModal } from 'containers';
+import { InternForm } from 'components';
 import * as S from './styles';
-import { InternForm } from '../index';
 
 const InternshipHeader = ({
   title,

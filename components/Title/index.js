@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Subtitle from 'elements/Subtitle';
+import { Subtitle } from 'elements';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
 import { sanitize } from 'isomorphic-dompurify';

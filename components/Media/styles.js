@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Subtitle from 'elements/Subtitle';
+import { Subtitle } from 'elements';
 
 export const Text = styled(Subtitle)`
   margin-top: 10px;

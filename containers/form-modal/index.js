@@ -18,14 +18,14 @@ const FormModal = ({ modalIsOpen, closeModal, children, successData }) => {
   const [errorModalIsShown, setErrorIsShown] = useState(false);
 
   function toggleSuccess() {
-    setSuccessIsShown(prev => !prev);
+    setSuccessIsShown((prev) => !prev);
   }
 
   function toggleError() {
-    setErrorIsShown(prev => !prev);
+    setErrorIsShown((prev) => !prev);
   }
 
-  const childrenWithProps = Children.map(children, child =>
+  const childrenWithProps = Children.map(children, (child) =>
     cloneElement(child, {
       showSuccess: toggleSuccess,
       showError: toggleError,
