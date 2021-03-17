@@ -1,8 +1,8 @@
-export { default as TitleH1 } from './TitleH1';
-export { default as TitleH2 } from './TitleH2';
-export { default as TitleH3 } from './TitleH3';
-export { default as TitleH4 } from './TitleH4';
-export { default as TitleH5 } from './TitleH5';
+export { default as TitleH1 } from './Title/TitleH1';
+export { default as TitleH2 } from './Title/TitleH2';
+export { default as TitleH3 } from './Title/TitleH3';
+export { default as TitleH4 } from './Title/TitleH4';
+export { default as TitleH5 } from './Title/TitleH5';
 export { default as Text } from './Text';
 export { default as Button } from './Button';
 export { default as Subtitle } from './Subtitle';

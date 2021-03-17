@@ -8,8 +8,8 @@ import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
 import formMock from 'mock/forms';
 import { queryHelpers } from 'helpers/query-helpers';
+import { FormModal } from 'containers';
 import * as S from './styles';
-import { FormModal } from '../index';
 
 const { generateNewTags } = queryHelpers;
 
