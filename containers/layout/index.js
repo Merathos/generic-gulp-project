@@ -1,6 +1,6 @@
 import { Header, Footer, OpenedMenu } from 'containers';
 import { SocialSticker, CookieMessage, GreyFooter } from 'components';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import mock from 'mock/layout';
 import mockCookie from 'mock/cookie';
@@ -25,6 +25,7 @@ const Layout = ({
   isFixed = false,
   relatedHistoryData = [],
 }) => {
+  const router = useRouter();
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [cookieAccepted, setCookieAccepted] = useState(true);
 
@@ -84,7 +85,7 @@ const Layout = ({
       {backButton && (
         <a>
           <S.StyledArrowLeft
-            onClick={() => Router.back()}
+            onClick={() => router.back()}
             smallButton={smallButton}
           >
             <svg
