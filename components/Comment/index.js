@@ -1,8 +1,8 @@
-import TitleH5 from 'elements/TitleH5';
+import { TitleH5 } from 'elements';
 import { sanitize } from 'isomorphic-dompurify';
 import { Block, Container, Img, Card, Text } from './styles';
 
-const Comment = props => {
+const Comment = (props) => {
   const {
     data: { imageUrl, title, describe },
   } = props;

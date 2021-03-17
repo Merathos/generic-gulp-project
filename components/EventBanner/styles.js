@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Btn from '../../elements/Btn';
+import { Btn } from 'elements';
 
 export const Container = styled.section`
   position: relative;

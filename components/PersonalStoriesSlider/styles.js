@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TitleH2 from '../../elements/TitleH2';
+import { TitleH2 } from 'elements';
 
 export const Section = styled.section`
   position: relative;

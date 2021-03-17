@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import TitleH3 from 'elements/TitleH3';
-import Subtitle from 'elements/Subtitle';
+import { TitleH3, Subtitle } from 'elements';
 import { sanitize } from 'isomorphic-dompurify';
 
 const Img = styled.img`

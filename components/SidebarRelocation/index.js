@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import TitleH4 from 'elements/TitleH4';
-import Subtitle from 'elements/Subtitle';
+import { TitleH4, Subtitle } from 'elements';
 import ArrowRight from 'public/icons/arrow-right.svg';
 
 const H4 = styled(TitleH4)`

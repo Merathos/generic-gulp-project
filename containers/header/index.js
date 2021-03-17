@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import CustomLink from 'elements/CustomLink';
+import { CustomLink } from 'elements';
 import Logo from 'public/images/logo.svg';
 import Menu from 'public/icons/menu.svg';
 import Link from 'next/link';

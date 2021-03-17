@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Icon from 'elements/Icon';
+import { Icon } from 'elements';
 import { sanitize } from 'isomorphic-dompurify';
 
 const Text = styled.p`
@@ -49,7 +49,7 @@ const SectionNote = ({ data }) => {
 
   const renewedData = data.replace(
     emailRegExp,
-    email => `<a href="mailto:${email}">${email}</a>`
+    (email) => `<a href="mailto:${email}">${email}</a>`
   );
 
   return (

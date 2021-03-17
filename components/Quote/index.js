@@ -1,9 +1,8 @@
-import TitleH5 from 'elements/TitleH5';
-import Subtitle from 'elements/Subtitle';
+import { TitleH5, Subtitle } from 'elements';
 import { sanitize } from 'isomorphic-dompurify';
 import { Section, Span, Block, Container, Img, Description } from './styles';
 
-const Quote = props => {
+const Quote = (props) => {
   const {
     data: { src, name, company, text, description },
     noQuoteAuthor,

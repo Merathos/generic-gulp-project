@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
-import TitleH2 from 'elements/TitleH2';
-import Button from 'elements/Button';
+import { TitleH2, Button } from 'elements';
 
 export const Section = styled.section`
   background-color: #f7f8f9;
