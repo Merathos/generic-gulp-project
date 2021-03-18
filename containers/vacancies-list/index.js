@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
 import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';
 import { Search } from 'forms';
-import { getNewTags } from 'helpers';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
 import formMock from 'mock/forms';
@@ -153,7 +152,20 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
       {
         query: {
           ...query,
-          search: getNewTags(router.query.search, search),
+          search,
+        },
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
+
+  const resetSearch = () => {
+    delete query.search;
+    router.push(
+      {
+        query: {
+          ...query,
         },
       },
       undefined,
@@ -276,6 +288,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
             <Search
               placeholder={mock.search}
               handleSearch={(search) => handleSearch(search)}
+              resetSearch={resetSearch}
               initialValue={router.query.search}
               smallPadding
             />
