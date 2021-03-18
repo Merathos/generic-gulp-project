@@ -102,7 +102,7 @@ export const FilterWrapper = styled.div`
     margin-right: -45px;
     padding: ${(props) => (props.active ? '10px 45px 50px' : '10px 45px')};
     background-color: #f7f8f9;
-    /* z-index: 3; */
+    z-index: 3;
     /* overflow-y: scroll;
     max-height: calc(100vh - 214px); */
   }
