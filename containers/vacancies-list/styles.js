@@ -102,9 +102,9 @@ export const FilterWrapper = styled.div`
     margin-right: -45px;
     padding: ${(props) => (props.active ? '10px 45px 50px' : '10px 45px')};
     background-color: #f7f8f9;
-    z-index: 3;
-    overflow-y: scroll;
-    max-height: calc(100vh - 214px);
+    /* z-index: 3; */
+    /* overflow-y: scroll;
+    max-height: calc(100vh - 214px); */
   }
 
   @media screen and (max-width: 420px) {
@@ -112,8 +112,8 @@ export const FilterWrapper = styled.div`
     margin-left: -30px;
     margin-right: -30px;
     padding: ${(props) => (props.active ? '10px 30px 50px' : '10px 30px')};
-    overflow-y: scroll;
-    max-height: calc(100vh - 181px);
+    /* overflow-y: scroll; */
+    /* max-height: calc(100vh - 181px); */
   }
 `;
 
