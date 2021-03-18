@@ -17,7 +17,9 @@ const DESCRIPTION =
   'Работайте с нами и развивайте платформу для облачных коммуникаций, которой пользуются более 400 тыс. бизнесов по всем миру.';
 
 const mainPage = () => {
-  const { data: quotesData } = useQuery(GET_QUOTES);
+  const { data: quotesData } = useQuery(GET_QUOTES, {
+    fetchPolicy: 'no-cache',
+  });
   const { data: bannerData } = useQuery(GET_BANNER);
   const { data: blogsData } = useQuery(GET_BLOGS_MAIN, {
     variables: { is_home: true },
@@ -34,7 +36,7 @@ const mainPage = () => {
       <Layout greyFooter plainHeader smallPadding isVisible={false}>
         <Main
           data={mock.main}
-          quotes={quotesData?.quotes}
+          quotes={quotesData?.quotes.slice().sort(() => Math.random() - 0.5)}
           banner={bannerData?.banner}
           blogs={blogsData?.blogs}
           teams={teamsData?.teams}

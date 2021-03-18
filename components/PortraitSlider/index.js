@@ -39,7 +39,7 @@ const PortraitSlider = ({ quotes }) => {
   return (
     <S.Section>
       <Swiper ref={ref} {...params}>
-        {quotes.map(item => (
+        {quotes.map((item) => (
           <S.Element key={item.id}>
             {item.image && (
               <S.Img
