@@ -1,8 +1,8 @@
 import InnerHTML from 'dangerously-set-html-content';
 import * as S from './styles';
 
-const EventReg = (props) => {
-  const { regForm, customizeID, eventID, removeMarginBottom } = props;
+const EventReg = ({ regForm, customizeID, eventID, removeMarginBottom }) => {
+  // <h2 class="event__title">{{event.name}}</h2> // Event name from mainTpl
 
   const mainTpl = `
   <script type="text/mustache" id="mainTplMy">
@@ -17,12 +17,17 @@ const EventReg = (props) => {
   {{/event.is_recurring}}
   <div class="b-registration__section">
   {{#event.name}}
-  <h2 class="event__title">{{event.name}}</h2>
+  <h2 class="event__title">Давай с нами</h2>
   {{/event.name}}
   <div class="location">
-  {{#event.date_human}}
-  <p class="event__date">{{event.date_human}}</p>
-  {{/event.date_human}}
+  <div class="event__date">
+  {{#event.day}}
+  <p>{{event.day}} {{event.month}}</p>
+  {{/event.day}}
+  {{#event.time}}
+  <p>{{event.time}}</p>
+  {{/event.time}}
+  </div>
   {{#event.city}}
   <p class="location__place">{{event.place}}</p>
   {{/event.city}}
@@ -65,6 +70,12 @@ const EventReg = (props) => {
   </div>
   </script>
   `;
+
+  //   <div class="row-fluid b-reg-table__row b-reg-free_bg">
+  //   <div class="span12">
+  //       <div class="selectedTicketsInfo b-reg-table__text b-reg-free_reg"></div>
+  //   </div>
+  // </div>
 
   const ticketTpl = `
   <script type="text/mustache" id="selectTicketsTplMy">
@@ -254,7 +265,7 @@ const EventReg = (props) => {
   {{/event.uses_multiank}}
   </div>
 
-  <div class="b-registration__section section-submit b-registration__section_indent">
+  <div class="b-registration__section section-submit b-registration__section_indent b-registration__section_margin">
   <div class="b-registration__check">
   {{#event.uses_subscribe}}
   <div class="b-registration__check-block">
@@ -311,7 +322,7 @@ const EventReg = (props) => {
   <input type="text" name="{{formname}}" placeholder="{{{name}}} *" data-phone-verify="{{formname}}" class="js-tpphone {{#uses_phone_verify}}js-verify-phone{{/uses_phone_verify}} span12 b-input input-input" value="{{{value}}}">
   {{/phone}}
 
-  <label class="b-unit__text b-registration__question">
+  <label class="b-unit__text b-registration__question b-registration__question--inputs">
   {{{name}}} {{#mandatory}}*{{/mandatory}}
   </label>
   </div>
@@ -420,18 +431,18 @@ const EventReg = (props) => {
   </script>
   `;
 
-  const handler = `
-  <script type="text/javascript">
-    var handleTWFpostRepaint = function(params) {
-      var title = this.$$('.event__title');
-      if (title) {
-        title.text(function(i, text) {
-          return text.replace(/&QUOT;/g, '"').replace(/&quot;/g, '"');
-        });
-      }
-    }
-  </script>
-  `;
+  // const handlerTitle = `
+  // <script type="text/javascript">
+  //   var handleTWFpostRepaint = function(params) {
+  //     var title = this.$$('.event__title');
+  //     if (title) {
+  //       title.text(function(i, text) {
+  //         return text.replace(/&QUOT;/g, '"').replace(/&quot;/g, '"');
+  //       });
+  //     }
+  //   }
+  // </script>
+  // `;
 
   const timepadForm = `
   <script id="form-script" type="text/javascript" async="async" defer="defer" charset="UTF-8"
@@ -465,7 +476,7 @@ const EventReg = (props) => {
         <InnerHTML html={ticketTpl} />
         <InnerHTML html={ankTpl} />
         <InnerHTML html={questionTpl} />
-        <InnerHTML html={handler} />
+        {/* <InnerHTML html={handlerTitle} /> */}
         <InnerHTML html={timepadForm} />
       </S.Container>
     </S.Section>
