@@ -34,7 +34,7 @@
 }
 
 #eventreg_form {
-  margin-top: 115px;
+  margin-top: 100px;
   font-family: 'TT Norms', 'Arial', sans-serif !important;
 }
 
@@ -148,8 +148,13 @@
   margin-top: 7px;
 }
 
+.b-reg-descr {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
 .js-section-selectTickets {
-  margin-bottom: 95px;
+  margin-bottom: 100px;
 }
 
 .contacts__title {
@@ -338,8 +343,12 @@
   display: none;
 }
 
-.b-registration__accept {
+.b-registration__section_margin {
   margin-top: 90px;
+}
+
+.b-registration__accept {
+  /* margin-top: 90px; */
   position: relative;
   max-width: 480px;
   padding-left: 35px !important;
