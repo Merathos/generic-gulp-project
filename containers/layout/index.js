@@ -88,9 +88,10 @@ const Layout = ({
           <S.StyledArrowLeft
             onClick={() => {
               if (from404) {
+                window.history.go(-2);
+              } else {
                 router.back();
               }
-              router.back();
             }}
             smallButton={smallButton}
           >
