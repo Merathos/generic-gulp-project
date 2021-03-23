@@ -1,4 +1,4 @@
-import { Title, Articles, ArticleContent } from 'components';
+import { Title, Articles, ArticleContent, SocialShare } from 'components';
 import { Container } from './styles';
 
 const Article = ({ back }) => {
@@ -8,19 +8,22 @@ const Article = ({ back }) => {
   }
 
   return (
-    <Container>
-      <Title
-        title={back?.title}
-        date={back?.created_at}
-        description={back?.description}
-      />
-      {Object.keys(content).length !== 0 && (
-        <ArticleContent content={content} />
-      )}
-      {back.related?.length > 0 && (
-        <Articles type="article" data={back.related} />
-      )}
-    </Container>
+    <>
+      <Container>
+        <Title
+          title={back?.title}
+          date={back?.created_at}
+          description={back?.description}
+        />
+        {Object.keys(content).length !== 0 && (
+          <ArticleContent content={content} />
+        )}
+        <SocialShare />
+        {back.related?.length > 0 && (
+          <Articles type="article" data={back.related} />
+        )}
+      </Container>
+    </>
   );
 };
 

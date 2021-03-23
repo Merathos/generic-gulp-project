@@ -46,6 +46,7 @@ const storyPage = () => {
       {Object.keys(blog).length > 0 && (
         <Layout
           backButton
+          isVisible={blog.type === 'history'}
           greyFooter={blog.type === 'history'}
           relatedHistoryData={blog.type === 'history' ? blog.related : []}
         >

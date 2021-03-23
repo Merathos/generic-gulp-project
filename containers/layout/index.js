@@ -1,5 +1,5 @@
 import { Header, Footer, OpenedMenu } from 'containers';
-import { SocialSticker, CookieMessage, GreyFooter } from 'components';
+import { SocialShare, CookieMessage, GreyFooter } from 'components';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import mock from 'mock/layout';
@@ -23,7 +23,6 @@ const Layout = ({
   greyHeader = true,
   smallButton = false,
   mobileDecor = false,
-  isFixed = false,
   relatedHistoryData = [],
 }) => {
   const router = useRouter();
@@ -56,9 +55,7 @@ const Layout = ({
         onMenuClose={handleCloseMenu}
       />
       {children}
-      {isVisible && (
-        <SocialSticker data={mock.socialSticker} isFixed={isFixed} />
-      )}
+      {/* {isVisible && <SocialShare />} */}
       {relatedHistory?.length > 0 && (
         <S.GreyContainer>
           <GreyFooter data={relatedHistory} type="blog" />

@@ -48,6 +48,13 @@ export const Section = styled.section`
   padding-bottom: 160px;
   background-color: #f7f8f9;
 
+  ${(p) =>
+    p.removeMarginBottom &&
+    css`
+      margin-bottom: 0;
+      padding-bottom: 0;
+    `}
+
   @media screen and (max-width: 900px) {
     padding-top: 56px;
     padding-bottom: 47px;
@@ -59,10 +66,7 @@ export const Section = styled.section`
       `}
   }
 
-  ${(p) =>
-    p.removeMarginBottom &&
-    css`
-      margin-bottom: 0;
-      padding-bottom: 0;
-    `}
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
