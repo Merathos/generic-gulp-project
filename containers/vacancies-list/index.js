@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
 import {
@@ -15,6 +15,7 @@ import Link from 'next/link';
 import formMock from 'mock/forms';
 import { queryHelpers } from 'helpers/query-helpers';
 import { FormModal } from 'containers';
+import useWindowWidth from 'helpers/useWindowWidth';
 import * as S from './styles';
 
 const { generateNewTags } = queryHelpers;
@@ -35,23 +36,6 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
-
-  function useWindowWidth() {
-    const [windowWidth, setWindowWidth] = useState(undefined);
-
-    useEffect(() => {
-      function handleResize() {
-        setWindowWidth(window.innerWidth);
-      }
-
-      window.addEventListener('resize', handleResize);
-
-      handleResize();
-
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    return windowWidth;
-  }
 
   const initialWidth = useWindowWidth();
 

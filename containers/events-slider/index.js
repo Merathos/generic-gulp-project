@@ -1,6 +1,7 @@
 import { EventCard } from 'components';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import Swiper from 'react-id-swiper';
+import useWindowWidth from 'helpers/useWindowWidth';
 import ArrowNext from '../../public/icons/arrow-next.svg';
 import ArrowPrev from '../../public/icons/arrow-prev.svg';
 import {
@@ -11,23 +12,6 @@ import {
   Section,
   Title,
 } from './styles';
-
-function useWindowWidth() {
-  const [windowWidth, setWindowWidth] = useState(undefined);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return windowWidth;
-}
 
 const EventsSlider = ({ cards, regForm }) => {
   const ref = useRef(null);
