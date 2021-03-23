@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import { Btn } from 'elements';
 
 export const Wrapper = styled.div`
-  margin-top: 200px;
+  margin-top: 150px;
   margin-right: auto;
   margin-left: auto;
   max-width: calc(100% - 60px);
   overflow-x: hidden;
 
   svg {
-    width: 120%;
-    height: auto;
+    width: 112%;
+    height: 200px;
     position: relative;
     margin: 0 auto 60px;
   }
