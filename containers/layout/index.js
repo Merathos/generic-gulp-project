@@ -9,6 +9,7 @@ import * as S from './styles';
 const Layout = ({
   children,
   backButton,
+  from404,
   greyFooter,
   subscription,
   isVisible = true,
@@ -85,7 +86,12 @@ const Layout = ({
       {backButton && (
         <a>
           <S.StyledArrowLeft
-            onClick={() => router.back()}
+            onClick={() => {
+              if (from404) {
+                router.back();
+              }
+              router.back();
+            }}
             smallButton={smallButton}
           >
             <svg

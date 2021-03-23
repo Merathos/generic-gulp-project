@@ -4,11 +4,17 @@ const TITLE = 'Ошибка 404';
 const DESCRIPTION =
   'Возможно, вы ввели неправильный адрес, или страница была удалена.';
 
-const p404 = () => {
+const p404 = ({ routerIndex }) => {
   return (
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
-      <Layout backButton plainHeader greyHeader={false} isVisible={false}>
+      <Layout
+        backButton={routerIndex > 1}
+        from404
+        plainHeader
+        greyHeader={false}
+        isVisible={false}
+      >
         <Page404 />
       </Layout>
     </>

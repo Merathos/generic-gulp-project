@@ -21,7 +21,7 @@ export default function App({ Component, pageProps, router }) {
           />
           <title>DINS</title>
         </Head>
-        <Component {...pageProps} />
+        <Component routerIndex={router._idx} {...pageProps} />
         <GlobalStyle />
       </ApolloProvider>
     </Provider>
