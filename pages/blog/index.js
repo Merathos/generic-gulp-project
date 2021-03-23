@@ -11,7 +11,7 @@ import mock from 'mock/blog';
 
 const TITLE = 'Блог компании DINS';
 const DESCRIPTION =
-  'Читай новости IT-компании из Санкт-Петербурга, знакомьтесь с командой DINS.';
+  'Читайте новости IT-компании из Санкт-Петербурга, знакомьтесь с командой DINS.';
 
 const BlogList = () => {
   const router = useRouter();
