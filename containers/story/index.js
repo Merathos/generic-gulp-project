@@ -1,4 +1,4 @@
-import { BlogHeader, ArticleContent } from 'components';
+import { BlogHeader, ArticleContent, SocialShare } from 'components';
 import { Container, ContentContainer, GreyContainer } from './styles';
 
 const Story = ({ back }) => {
@@ -26,6 +26,7 @@ const Story = ({ back }) => {
           <ArticleContent content={content} />
         )}
       </ContentContainer>
+      <SocialShare />
     </main>
   );
 };

@@ -70,6 +70,14 @@ export const Container = styled.main`
     max-width: 320px;
     padding: 0 20px;
   }
+
+  ${(p) =>
+    p.noMarginBottom &&
+    css`
+      @media screen and (max-width: 768px) {
+        margin-bottom: 0;
+      }
+    `}
 `;
 
 export const GreyContainer = styled.div`

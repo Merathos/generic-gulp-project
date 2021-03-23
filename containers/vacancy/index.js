@@ -8,6 +8,7 @@ import {
   SliderVacancy,
   JobForm,
   Recruiters,
+  SocialShare,
 } from 'components';
 import { FormModal } from 'containers';
 import { useState } from 'react';
@@ -90,7 +91,7 @@ const Vacancy = ({ data, back }) => {
       <OfficesMap data={data.map} english={back.is_english_speaking_team} />
 
       {back.recruiters?.length > 0 && (
-        <Container>
+        <Container noMarginBottom>
           <Recruiters
             data={data.recruiters}
             back={back.recruiters}
@@ -98,6 +99,8 @@ const Vacancy = ({ data, back }) => {
           />
         </Container>
       )}
+
+      <SocialShare />
 
       {back.related?.length > 0 && (
         <VacancySection>

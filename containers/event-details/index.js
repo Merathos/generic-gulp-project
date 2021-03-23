@@ -1,4 +1,4 @@
-import { EventHeader, Schedule } from 'components';
+import { EventHeader, Schedule, SocialShare } from 'components';
 import { Speakers, EventsSlider, EventReg, EventStream } from 'containers';
 import { useRef, useEffect } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
@@ -75,6 +75,7 @@ const EventDetails = ({
           removeMarginBottom={!(eventData?.related?.length > 0)}
         />
       )}
+      <SocialShare />
       {eventData?.related?.length > 0 && (
         <EventsSlider cards={eventData.related} regForm={regForm} />
       )}

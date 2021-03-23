@@ -12,7 +12,7 @@ export { default as NoteLeft } from './NoteLeft';
 export { default as NoteRight } from './NoteRight';
 export { default as Social } from './Social';
 export { default as Slider } from './Slider';
-export { default as SocialSticker } from './SocialSticker';
+export { default as SocialShare } from './SocialShare';
 export { default as SidebarSlider } from './SidebarSlider';
 export { default as VacancyHeader } from './VacancyHeader';
 export { default as Application } from './Application';

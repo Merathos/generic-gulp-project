@@ -18,11 +18,11 @@ export const Card = styled.div`
   width: 100%;
 
   @media screen and (max-width: 1280px) {
-    margin-bottom: 40px;
     padding: 30px 15px 65px 60px;
   }
 
   @media screen and (max-width: 960px) {
+    margin-bottom: 40px;
     padding: 30px 30px 65px 85px;
   }
 
