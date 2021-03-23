@@ -87,6 +87,18 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 
+  .swiper-container-autoheight {
+    &,
+    .swiper-slide {
+      height: auto;
+    }
+
+    .swiper-wrapper {
+      align-items: flex-start;
+      transition-property: transform, height;
+    }
+  }
+
   .ReactModal__Body--open {
     overflow: hidden;
     margin-right: 17px;

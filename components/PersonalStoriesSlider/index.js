@@ -12,6 +12,7 @@ const PersonalStoriesSlider = ({ blogs }) => {
 
   const params = {
     loop: true,
+    autoHeight: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -55,14 +56,14 @@ const PersonalStoriesSlider = ({ blogs }) => {
             }
             setActiveSlide(activeIndex);
 
-            if (ref.current.swiper.isEnd) {
-              ref.current.swiper.loopDestroy();
-              ref.current.swiper.loopCreate();
-            }
-            if (ref.current.swiper.isBeginning) {
-              ref.current.swiper.loopDestroy();
-              ref.current.swiper.loopCreate();
-            }
+            // if (ref.current.swiper.isEnd) {
+            //   ref.current.swiper.loopDestroy();
+            //   ref.current.swiper.loopCreate();
+            // }
+            // if (ref.current.swiper.isBeginning) {
+            //   ref.current.swiper.loopDestroy();
+            //   ref.current.swiper.loopCreate();
+            // }
           },
         }}
       >

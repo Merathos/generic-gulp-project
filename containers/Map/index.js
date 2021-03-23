@@ -1,22 +1,6 @@
 import { Map as Mapcomp, Placemark, YMaps } from 'react-yandex-maps';
-import { useEffect, useState, useRef } from 'react';
-
-function useWindowWidth() {
-  const [windowWidth, setWindowWidth] = useState(undefined);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return windowWidth;
-}
+import { useRef } from 'react';
+import useWindowWidth from 'helpers/useWindowWidth';
 
 const Map = ({
   data: { center, markers, zoom, controls, behaviors, routeFrom },
@@ -24,9 +8,9 @@ const Map = ({
   const initialWidth = useWindowWidth();
   const mapRef = useRef(null);
 
-  const handleApiAvaliable = ymaps => {
+  const handleApiAvaliable = (ymaps) => {
     if (routeFrom) {
-      routeFrom.forEach(route => {
+      routeFrom.forEach((route) => {
         const multiRoute = new ymaps.multiRouter.MultiRoute(
           {
             referencePoints: [
@@ -62,7 +46,7 @@ const Map = ({
       >
         <Mapcomp
           instanceRef={mapRef}
-          onLoad={ymaps => handleApiAvaliable(ymaps)}
+          onLoad={(ymaps) => handleApiAvaliable(ymaps)}
           className="map-container"
           state={{
             center: [center.lat, center.lng],
@@ -73,7 +57,7 @@ const Map = ({
           options={{ suppressMapOpenBlock: true }}
         >
           {markers?.length > 0 &&
-            markers.map(marker => (
+            markers.map((marker) => (
               <Placemark
                 key={marker.id}
                 geometry={[marker.coordinates.lat, marker.coordinates.lng]}

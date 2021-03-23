@@ -23,6 +23,7 @@ export const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: 600px) {
@@ -133,14 +134,12 @@ export const ImageWrapper = styled.div`
     }
 
     @media screen and (max-width: 720px) {
-      bottom: auto;
-      top: -60px;
+      top: auto;
+      bottom: 30px;
       left: max(-100vw + 120px + 100%, -50px);
     }
 
     @media screen and (max-width: 600px) {
-      top: auto;
-      bottom: 0;
       left: -100px;
     }
 
@@ -224,13 +223,13 @@ export const PrevButton = styled.button`
   }
 
   @media screen and (max-width: 960px) {
-    top: 60px;
+    top: 59px;
     right: 30px;
     border: none;
   }
 
   @media screen and (max-width: 720px) {
-    top: -38px;
+    top: -39px;
     left: -10px;
   }
 

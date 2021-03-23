@@ -11,6 +11,7 @@ const List = styled.ul`
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 9;
 
   @media screen and (max-width: 768px) {
     box-sizing: border-box;
