@@ -26,6 +26,7 @@ const StyledScrollbar = styled(Scrollbars)`
   }
 
   .scroll-view {
+    max-width: 100%;
     ::-webkit-scrollbar {
       -webkit-appearance: none;
     }
