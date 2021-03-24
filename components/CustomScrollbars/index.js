@@ -48,6 +48,22 @@ const StyledScrollbar = styled(Scrollbars)`
   }
 
   &:hover {
+    .scroll-view {
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f7f8f9;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #53b443;
+        border-radius: 6px;
+        border: 3px solid #53b443;
+      }
+    }
+
     .track-vertical {
       opacity: 1 !important;
     }
@@ -55,18 +71,18 @@ const StyledScrollbar = styled(Scrollbars)`
 `;
 
 const CustomScrollbars = ({ children, onModal = false }) => {
-  // let timer;
+  let timer;
   const scrollbar = useRef();
   const [scroll, setScroll] = useState(0);
 
-  // const handleScroll = (e) => {
-  //   const scrollView = e.target;
-  //   scrollView.classList.add('scroll-view--scrolling');
-  //   clearTimeout(timer);
-  //   timer = setTimeout(() => {
-  //     scrollView.classList.remove('scroll-view--scrolling');
-  //   }, 1200);
-  // };
+  const handleScroll = (e) => {
+    const scrollView = e.target;
+    scrollView.classList.add('scroll-view--scrolling');
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      scrollView.classList.remove('scroll-view--scrolling');
+    }, 1200);
+  };
 
   const handleScrollStart = () => {
     if (scrollbar) {
@@ -99,7 +115,7 @@ const CustomScrollbars = ({ children, onModal = false }) => {
         <div
           {...props}
           className={onModal ? 'scroll-view--scrolling' : 'scroll-view'}
-          // onScroll={onModal ? () => {} : handleScroll}
+          onScroll={onModal ? () => {} : handleScroll}
         />
       )}
       onUpdate={handleUpdate}

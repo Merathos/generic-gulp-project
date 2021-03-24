@@ -4,14 +4,14 @@ import { Dropdown } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Wrapper, Container, List } from './styles';
 
-const Filter = props => {
+const Filter = (props) => {
   const dispatch = useDispatch();
-  const internship_state = useSelector(state => state.internship);
-  const english_state = useSelector(state => state.english);
+  const internship_state = useSelector((state) => state.internship);
+  const english_state = useSelector((state) => state.english);
   const [opened, setOpened] = useState('');
-  const filterArray = useSelector(state => state.filter);
+  const filterArray = useSelector((state) => state.filter);
 
-  const openDropdown = e => {
+  const openDropdown = (e) => {
     if (opened === e) {
       setOpened('');
     } else {
@@ -19,7 +19,7 @@ const Filter = props => {
     }
   };
 
-  const handleCheckbox = e => {
+  const handleCheckbox = (e) => {
     if (filterArray.indexOf(e) === -1) {
       dispatch({ type: 'CATALOG_FILTER', payload: e });
     } else {
@@ -39,8 +39,8 @@ const Filter = props => {
             data={el}
             handleOpen={() => openDropdown(el.title)}
             opened={opened === el.title}
-            handleChangeCheckbox={e => handleCheckbox(e)}
-            handleChangeRadio={e =>
+            handleChangeCheckbox={(e) => handleCheckbox(e)}
+            handleChangeRadio={(e) =>
               dispatch({ type: 'CATALOG_FILTER_CATEGORIES', payload: e })
             }
           />
