@@ -67,7 +67,7 @@ const EventPage = ({ active, description }) => {
           <meta name="robots" content="noindex, nofollow" />
         )}
       </Head>
-      <Layout plainHeader backButton isVisible={false}>
+      <Layout plainHeader backButton>
         <EventDetails
           data={mock.event}
           eventData={event}

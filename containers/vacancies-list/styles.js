@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { TitleH1 } from 'elements';
+import { SocialShare } from 'components';
 
 export const Main = styled.main`
   position: relative;
@@ -357,4 +358,8 @@ export const CardsWrapper = styled.div`
       margin-top: 5px;
     }
   }
+`;
+
+export const StyledSocialShare = styled(SocialShare)`
+  margin-bottom: 0;
 `;

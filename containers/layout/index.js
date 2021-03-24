@@ -1,5 +1,5 @@
 import { Header, Footer, OpenedMenu } from 'containers';
-import { SocialShare, CookieMessage, GreyFooter } from 'components';
+import { CookieMessage, GreyFooter } from 'components';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import mock from 'mock/layout';
@@ -12,14 +12,12 @@ const Layout = ({
   from404,
   greyFooter,
   subscription,
-  isVisible = true,
   showFooter = true,
   plainHeader = false,
   smallPadding = false,
   nimax = true,
   anchor = false,
   hideNav = false,
-  smallIndent = false,
   greyHeader = true,
   smallButton = false,
   mobileDecor = false,
@@ -55,7 +53,6 @@ const Layout = ({
         onMenuClose={handleCloseMenu}
       />
       {children}
-      {/* {isVisible && <SocialShare />} */}
       {relatedHistory?.length > 0 && (
         <S.GreyContainer>
           <GreyFooter data={relatedHistory} type="blog" />
@@ -68,8 +65,6 @@ const Layout = ({
           smallPadding={smallPadding}
           subscription={subscription}
           nimax={nimax}
-          isVisible={isVisible}
-          smallIndent={smallIndent}
         />
       )}
       {isMenuOpened && (

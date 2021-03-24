@@ -14,7 +14,7 @@ const aboutPage = () => {
   return (
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
-      <Layout greyFooter isVisible={false} plainHeader smallIndent>
+      <Layout greyFooter plainHeader>
         <About data={mock.about} stacks={stacksData?.vacancy_stacks} />
       </Layout>
     </>

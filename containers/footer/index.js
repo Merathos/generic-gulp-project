@@ -13,15 +13,8 @@ const Footer = ({
   grey,
   smallPadding,
   nimax,
-  isVisible,
-  smallIndent,
 }) => (
-  <S.StyledFooter
-    grey={grey}
-    smallPadding={smallPadding}
-    isVisible={isVisible}
-    smallIndent={smallIndent}
-  >
+  <S.StyledFooter grey={grey} smallPadding={smallPadding}>
     <S.Container>
       <S.FooterText>{copyright}</S.FooterText>
       <S.Link href={link} target="_blank" rel="noreferrer">

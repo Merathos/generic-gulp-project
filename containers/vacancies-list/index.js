@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { FilterButton, Checkbox } from 'elements';
-import {
-  Dropdown,
-  Cards,
-  SidebarArticle,
-  Tags,
-  JobForm,
-  SocialShare,
-} from 'components';
+import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';
 import { Search } from 'forms';
 import ArrowRight from 'public/icons/arrow-right.svg';
 import Link from 'next/link';
@@ -317,7 +310,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
       >
         <JobForm closeModal={closeModal} />
       </FormModal>
-      <SocialShare />
+      <S.StyledSocialShare />
     </S.Main>
   );
 };

@@ -25,7 +25,7 @@ const eventsPage = () => {
       <Head>
         {query.categories && <link rel="canonical" href={pathname} />}
       </Head>
-      <Layout plainHeader isVisible={false} greyHeader={false}>
+      <Layout plainHeader greyHeader={false}>
         <Events
           data={eventsStatic}
           eventCategories={eventCategoriesData?.event_categories}

@@ -16,7 +16,7 @@ const internshipPage = () => {
   return (
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
-      <Layout isVisible={false} plainHeader smallIndent>
+      <Layout plainHeader>
         <Internship
           data={mock.internship}
           vacanciesData={vacanciesData?.vacancies}

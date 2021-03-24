@@ -37,7 +37,7 @@ const ProjectPage = () => {
           <meta name="robots" content="noindex, nofollow" />
         )}
       </Head>
-      <Layout backButton smallButton greyFooter plainHeader isVisible={false}>
+      <Layout backButton smallButton greyFooter plainHeader>
         <Project data={mock.project} teams={team} />
       </Layout>
     </>

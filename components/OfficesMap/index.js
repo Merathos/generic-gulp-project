@@ -3,11 +3,11 @@ import { Metro } from 'components';
 import { useSelector } from 'react-redux';
 import * as S from './styles';
 
-const OfficesMap = ({ data, isContacts }) => {
-  const language = useSelector(state => state.language);
+const OfficesMap = ({ data, isContacts, removeMarginBottom }) => {
+  const language = useSelector((state) => state.language);
 
   return (
-    <S.Section isContacts={isContacts}>
+    <S.Section isContacts={isContacts} removeMarginBottom={removeMarginBottom}>
       <S.Container>
         <S.Title isContacts={isContacts}>
           {language ? data.titleEn : data.title}

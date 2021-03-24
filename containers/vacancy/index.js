@@ -88,7 +88,11 @@ const Vacancy = ({ data, back }) => {
         />
       )}
 
-      <OfficesMap data={data.map} english={back.is_english_speaking_team} />
+      <OfficesMap
+        data={data.map}
+        english={back.is_english_speaking_team}
+        removeMarginBottom={back.recruiters?.length < 1}
+      />
 
       {back.recruiters?.length > 0 && (
         <Container noMarginBottom>

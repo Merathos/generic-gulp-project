@@ -13,7 +13,6 @@ const p404 = ({ routerIndex }) => {
         from404
         plainHeader
         greyHeader={false}
-        isVisible={false}
       >
         <Page404 />
       </Layout>

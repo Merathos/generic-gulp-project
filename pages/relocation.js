@@ -13,7 +13,7 @@ const Relocation = () => {
   return (
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
-      <Layout greyFooter plainHeader isVisible={false}>
+      <Layout greyFooter plainHeader>
         <RelocationV2 data={mock.relocation} blogs={blogsData?.blogs} />
       </Layout>
     </>

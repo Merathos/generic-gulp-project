@@ -4,9 +4,11 @@ import {
   RelocationApply,
   RelocationBlogs,
   OfficesMap,
-  RelocationFooter,
+  // RelocationFooter,
+  GreyFooter,
 } from 'components';
 import greyFooterMock from 'mock/greyFooter';
+import * as S from './styles';
 
 const Relocation = ({ data, blogs }) => {
   return (
@@ -16,7 +18,10 @@ const Relocation = ({ data, blogs }) => {
       <RelocationApply data={data.promo} />
       {blogs?.length > 0 && <RelocationBlogs data={data.blogs} blogs={blogs} />}
       <OfficesMap data={data.map} />
-      <RelocationFooter data={greyFooterMock.greyFooter} />
+      {/* <RelocationFooter data={greyFooterMock.greyFooter} /> */}
+      <S.GreyContainer>
+        <GreyFooter data={greyFooterMock.greyFooter} type="relocation" />
+      </S.GreyContainer>
     </main>
   );
 };

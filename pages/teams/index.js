@@ -39,7 +39,7 @@ const teamsPage = () => {
       <Head>
         {query.technologies && <link rel="canonical" href={pathname} />}
       </Head>
-      <Layout anchor hideHav isVisible={false} greyHeader={false} mobileDecor>
+      <Layout anchor hideHav greyHeader={false} mobileDecor>
         <TeamList
           mock={mock.teamList}
           back={teamsData?.teams}
