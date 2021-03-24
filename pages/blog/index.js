@@ -49,7 +49,7 @@ const BlogList = () => {
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
       <Head>{query.category && <link rel="canonical" href={pathname} />}</Head>
-      <Layout isVisible={false} greyHeader={false}>
+      <Layout greyHeader={false}>
         <Blogs
           data={mock.blogList}
           categories={blogsCategories?.blog_categories}

@@ -63,7 +63,7 @@ export const Container = styled.main`
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
-    margin-bottom: 80px;
+    margin-bottom: 0px;
   }
 
   @media screen and (max-width: 340px) {

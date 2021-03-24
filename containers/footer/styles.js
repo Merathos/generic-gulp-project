@@ -27,28 +27,12 @@ export const StyledFooter = styled.footer`
   }
 
   @media screen and (max-width: 768px) {
-    padding: ${(props) =>
-      props.isVisible
-        ? `${props.grey ? '26px' : '0'} 60px 50px 60px`
-        : '120px 60px 50px 60px'};
+    padding: 120px 60px 50px 60px;
   }
 
   @media screen and (max-width: 420px) {
-    padding: ${(props) =>
-      props.isVisible
-        ? `${props.grey ? '26px' : '0'} 60px 50px 60px`
-        : '120px 30px 40px 30px'};
+    padding: 120px 30px 40px 30px;
   }
-
-  ${(props) =>
-    props.smallIndent &&
-    css`
-      padding-top: 150px;
-
-      @media screen and (max-width: 420px) {
-        padding-top: 70px;
-      }
-    `};
 `;
 
 export const Container = styled.div`

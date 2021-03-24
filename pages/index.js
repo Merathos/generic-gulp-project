@@ -33,7 +33,7 @@ const mainPage = () => {
   return (
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
-      <Layout greyFooter plainHeader smallPadding isVisible={false}>
+      <Layout greyFooter plainHeader smallPadding>
         <Main
           data={mock.main}
           quotes={quotesData?.quotes.slice().sort(() => Math.random() - 0.5)}

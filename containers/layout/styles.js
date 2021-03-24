@@ -57,6 +57,5 @@ export const GreyContainer = styled.div`
   @media screen and (max-width: 420px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
-    padding-bottom: 14px;
   }
 `;

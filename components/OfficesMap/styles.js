@@ -21,6 +21,14 @@ export const Section = styled.section`
         }
       }
     `};
+
+  ${(props) =>
+    props.removeMarginBottom &&
+    css`
+      @media screen and (max-width: 768px) {
+        margin-bottom: 0;
+      }
+    `}
 `;
 
 export const Container = styled.div`

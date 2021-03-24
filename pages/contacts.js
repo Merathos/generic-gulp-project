@@ -9,7 +9,7 @@ const contactsPage = () => {
   return (
     <>
       <CustomHead title={TITLE} description={DESCRIPTION} />
-      <Layout nimax isVisible={false} plainHeader>
+      <Layout nimax plainHeader>
         <Contacts data={mock.contacts} />
       </Layout>
     </>

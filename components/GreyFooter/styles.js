@@ -105,6 +105,7 @@ export const ListBlog = styled.ul`
   @media screen and (max-width: 420px) {
     max-width: 375px;
     padding: 0 30px;
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: 240px) {

@@ -22,6 +22,7 @@ const List = styled.ul`
     top: 0;
     transform: translateY(0);
     max-width: 84%;
+    width: 315px;
     justify-content: space-around;
   }
 `;
