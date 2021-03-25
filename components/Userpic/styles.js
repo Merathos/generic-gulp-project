@@ -47,6 +47,10 @@ export const Text = styled.p`
   opacity: 0.5;
   font-weight: 500;
 
+  b {
+    font-weight: bold;
+  }
+
   @media screen and (max-width: 420px) {
     margin-top: 1px;
     font-size: 14px;

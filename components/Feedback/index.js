@@ -19,7 +19,7 @@ const Content = styled.div`
   }
 `;
 
-const StyledText = styled.p`
+const Text = styled.p`
   font-size: 18px;
   line-height: 158%;
 
@@ -32,6 +32,10 @@ const StyledText = styled.p`
     &:active {
       color: #339722;
     }
+  }
+
+  b {
+    font-weight: bold;
   }
 
   @media screen and (max-width: 420px) {
@@ -96,6 +100,10 @@ const StyledSubtitle = styled(Subtitle)`
     }
   }
 
+  b {
+    font-weight: bold;
+  }
+
   @media screen and (max-width: 1024px) {
     margin-bottom: 7px;
   }
@@ -131,7 +139,7 @@ const Feedback = (props) => {
           dangerouslySetInnerHTML={{ __html: sanitize(subtitle) }}
         />
         <H3 dangerouslySetInnerHTML={{ __html: sanitize(title) }} />
-        <StyledText dangerouslySetInnerHTML={{ __html: sanitize(describe) }} />
+        <Text dangerouslySetInnerHTML={{ __html: sanitize(describe) }} />
       </Content>
     </Section>
   );

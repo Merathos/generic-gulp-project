@@ -3,10 +3,10 @@ import { handleEditorLinks } from 'helpers/handle-editor-links';
 import { sanitize } from 'isomorphic-dompurify';
 
 const Description = styled.p`
-  opacity: ${props => props.opacity || '1'};
-  font-size: ${props => (props.leadText ? '24px' : '20px')};
-  line-height: ${props => (props.leadText ? '150%' : '158%')};
-  margin-bottom: ${props => (props.nextIsParagraph ? '32px' : '100px')};
+  opacity: ${(props) => props.opacity || '1'};
+  font-size: ${(props) => (props.leadText ? '24px' : '20px')};
+  line-height: ${(props) => (props.leadText ? '150%' : '158%')};
+  margin-bottom: ${(props) => (props.nextIsParagraph ? '32px' : '100px')};
   max-width: 854px;
 
   mark {
@@ -23,14 +23,18 @@ const Description = styled.p`
     }
   }
 
+  b {
+    font-weight: bold;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 158%;
-    margin-bottom: ${props => (props.nextIsParagraph ? '22px' : '40px')};
+    margin-bottom: ${(props) => (props.nextIsParagraph ? '22px' : '40px')};
   }
 `;
 
-const Paragraph = props => {
+const Paragraph = (props) => {
   const {
     data: { text },
     opacity,

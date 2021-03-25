@@ -3,7 +3,7 @@ import { Text } from 'elements';
 
 export const Section = styled.section`
   display: flex;
-  margin-bottom: ${props => (props.noQuoteAuthor ? '100px' : '27px')};
+  margin-bottom: ${(props) => (props.noQuoteAuthor ? '100px' : '27px')};
   max-width: 850px;
   overflow: hidden;
 
@@ -49,4 +49,10 @@ export const Img = styled.img`
 
 export const Description = styled(Text)`
   margin-top: 35px;
+`;
+
+export const BlockQuote = styled.blockquote`
+  b {
+    font-weight: bold;
+  }
 `;

@@ -61,6 +61,10 @@ export const BlueTitle = styled.b`
   font-weight: 600;
   display: block;
 
+  b {
+    font-weight: bold;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 22px;
     line-height: 120%;
@@ -71,6 +75,10 @@ export const BlueText = styled.p`
   opacity: 0.5;
   font-size: 18px;
   line-height: 131%;
+
+  b {
+    font-weight: bold;
+  }
 
   @media screen and (max-width: 420px) {
     font-size: 14px;
@@ -108,6 +116,10 @@ export const Element = styled.li`
 export const NormalText = styled.p`
   font-size: 18px;
   line-height: 158%;
+
+  b {
+    font-weight: bold;
+  }
 
   @media screen and (max-width: 420px) {
     font-size: 14px;

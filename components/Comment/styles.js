@@ -37,7 +37,7 @@ export const Img = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-image: ${props => `url(${props.background})`};
+  background-image: ${(props) => `url(${props.background})`};
   background-position: center;
   background-size: cover;
 `;
@@ -51,6 +51,10 @@ export const Container = styled.div`
 export const Text = styled.p`
   font-size: 18px;
   line-height: 160%;
+
+  b {
+    font-weight: bold;
+  }
 
   @media screen and (max-width: 420px) {
     font-size: 14px;
