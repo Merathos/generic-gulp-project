@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { getNoun } from 'helpers/get-noun';
 import { getStatusImage } from 'helpers/events-helpers';
+import { isMobile } from 'react-device-detect';
 import * as S from './styles';
 
 const EventStream = ({
@@ -29,7 +30,7 @@ const EventStream = ({
     }
   }, [code]);
 
-  const tick = interval => {
+  const tick = (interval) => {
     const now = dayjs();
     const diff = dayjs(startsAt).diff(now, 'minutes');
     if (diff <= 0) {
@@ -124,15 +125,17 @@ const EventStream = ({
             stretched
             // autoplay={eventStarted}
           />
-          <S.Chat>
-            <iframe
-              title="Youtube chat"
-              allowFullScreen=""
-              height="400"
-              src={`https://www.youtube.com/live_chat?v=${videoCode}&embed_domain=${process.env.NEXT_PUBLIC_DOMAIN_SHORT}`}
-              width="1100"
-            />
-          </S.Chat>
+          {!isMobile && (
+            <S.Chat>
+              <iframe
+                title="Youtube chat"
+                allowFullScreen=""
+                height="416"
+                src={`https://www.youtube.com/live_chat?v=${videoCode}&embed_domain=${process.env.NEXT_PUBLIC_DOMAIN_SHORT}`}
+                width="1100"
+              />
+            </S.Chat>
+          )}
         </S.StreamWrapper>
       )}
     </S.Section>
