@@ -22,6 +22,14 @@ export const StreamWrapper = styled.div`
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 20px;
+
+  @media screen and (max-width: 1360px) {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
 
   @media screen and (max-width: 768px) {
     padding: 0;
@@ -72,10 +80,6 @@ export const Chat = styled.div`
   iframe {
     width: 100%;
     border: none;
-  }
-
-  @media screen and (max-width: 1200px) {
-    display: none;
   }
 `;
 
