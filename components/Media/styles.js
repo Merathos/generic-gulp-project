@@ -8,6 +8,10 @@ export const Text = styled(Subtitle)`
   font-size: 16px;
   line-height: 21px;
 
+  b {
+    font-weight: bold;
+  }
+
   @media screen and (max-width: 420px) {
     margin-top: 5px;
     margin-bottom: 50px;

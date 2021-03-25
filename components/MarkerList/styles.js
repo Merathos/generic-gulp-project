@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
-  margin-bottom: ${props => (props.inline ? '0' : '100px')};
+  margin-bottom: ${(props) => (props.inline ? '0' : '100px')};
   max-width: 850px;
 
   @media screen and (max-width: 420px) {
@@ -18,31 +18,31 @@ export const Img = styled.img`
 `;
 
 export const ElementEllipse = styled.li`
-  padding-left: ${props => (props.inline ? '20px' : '70px')};
+  padding-left: ${(props) => (props.inline ? '20px' : '70px')};
   position: relative;
-  margin-bottom: ${props => (props.inline ? '16px' : '30px')};
-  margin-right: ${props => (props.inline ? '40px' : '0')};
-  z-index: ${props => (props.inline ? '2' : '0')};
+  margin-bottom: ${(props) => (props.inline ? '16px' : '30px')};
+  margin-right: ${(props) => (props.inline ? '40px' : '0')};
+  z-index: ${(props) => (props.inline ? '2' : '0')};
 
   &::before {
     content: '';
     position: absolute;
     border: 2px solid #2f8ed9;
     border-radius: 50%;
-    width: ${props => (props.inline ? '6px' : '8px')};
-    height: ${props => (props.inline ? '6px' : '8px')};
-    left: ${props => (props.inline ? '0' : '30px')};
-    top: ${props => (props.inline ? '8px' : '10px')};
+    width: ${(props) => (props.inline ? '6px' : '8px')};
+    height: ${(props) => (props.inline ? '6px' : '8px')};
+    left: ${(props) => (props.inline ? '0' : '30px')};
+    top: ${(props) => (props.inline ? '8px' : '10px')};
   }
 
   @media screen and (max-width: 420px) {
-    padding-left: ${props => (props.inline ? '16px' : '25px')};
+    padding-left: ${(props) => (props.inline ? '16px' : '25px')};
     margin-bottom: 20px;
     margin-right: 0;
 
     &::before {
-      width: ${props => (props.inline ? '4px' : '8px')};
-      height: ${props => (props.inline ? '4px' : '8px')};
+      width: ${(props) => (props.inline ? '4px' : '8px')};
+      height: ${(props) => (props.inline ? '4px' : '8px')};
       left: 0;
     }
   }
@@ -72,10 +72,14 @@ export const Number = styled.span`
 `;
 
 export const Text = styled.p`
-  font-size: ${props => (props.inline ? '18px' : '20px')};
-  line-height: ${props => (props.inline ? '120%' : '158%')};
+  font-size: ${(props) => (props.inline ? '18px' : '20px')};
+  line-height: ${(props) => (props.inline ? '120%' : '158%')};
 
-  ${props =>
+  b {
+    font-weight: bold;
+  }
+
+  ${(props) =>
     props.inline &&
     css`
       @media screen and (max-width: 720px) {

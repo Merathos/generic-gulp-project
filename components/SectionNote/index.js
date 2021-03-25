@@ -19,6 +19,10 @@ const Text = styled.p`
     }
   }
 
+  b {
+    font-weight: bold;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 14px;
     line-height: 150%;

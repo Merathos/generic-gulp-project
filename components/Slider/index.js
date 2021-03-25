@@ -1,5 +1,6 @@
 import Swiper from 'react-id-swiper';
 import { useRef } from 'react';
+import { sanitize } from 'isomorphic-dompurify';
 import {
   Section,
   Element,
@@ -87,7 +88,13 @@ const Slider = ({
           </Element>
         ))}
       </Swiper>
-      {subtitle && <Text>{subtitle}</Text>}
+      {subtitle && (
+        <Text
+          dangerouslySetInnerHTML={{
+            __html: sanitize(subtitle),
+          }}
+        />
+      )}
     </Section>
   );
 };
