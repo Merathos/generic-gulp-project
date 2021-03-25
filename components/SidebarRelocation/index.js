@@ -24,7 +24,11 @@ const Section = styled.section`
     padding: 0;
     margin: 0;
     margin-top: 100px;
-    margin-bottom: 90px;
+    margin-bottom: 100px !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 50px !important;
   }
 `;
 
