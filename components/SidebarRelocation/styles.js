@@ -61,24 +61,24 @@ export const RelocationBackground = styled.div`
   ${(p) =>
     p.language &&
     css`
-      top: -60px;
-      left: -40px;
-      width: 400px;
-      height: 400px;
+      top: -50px;
+      left: -20px;
+      width: 360px;
+      height: 360px;
       background-image: url('/backgrounds/relocation-en.svg');
 
       @media screen and (max-width: 1240px) {
-        width: 350px;
-        height: 350px;
-        top: -100px;
-        left: -50px;
+        width: 330px;
+        height: 330px;
+        top: -80px;
+        left: -30px;
       }
 
       @media screen and (max-width: 500px) {
         width: 300px;
         height: 300x;
         top: -110px;
-        left: -30px;
+        left: 0;
       }
     `}
 
