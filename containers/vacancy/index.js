@@ -90,7 +90,7 @@ const Vacancy = ({ data, back }) => {
 
       <OfficesMap
         data={data.map}
-        english={back.is_english_speaking_team}
+        english={back.is_english_speaking_team && back.is_translate}
         removeMarginBottom={back.recruiters?.length < 1}
       />
 
