@@ -38,6 +38,10 @@ const Description = styled.p`
   max-width: 854px;
   margin-bottom: 160px;
 
+  b {
+    font-weight: 900;
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 120px;
   }
