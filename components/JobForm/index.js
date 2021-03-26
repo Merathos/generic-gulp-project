@@ -202,7 +202,10 @@ const JobForm = ({
             register={register()}
           />
           <S.BottomWrap>
-            <Captcha setCaptchaPassed={setCaptchaPassed} />
+            <Captcha
+              setCaptchaPassed={setCaptchaPassed}
+              language={english && 'en'}
+            />
             <S.StyledButton type="submit" accent english={english}>
               {english ? buttonTextEn : buttonText}
             </S.StyledButton>
