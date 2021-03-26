@@ -66,7 +66,13 @@ const Title = ({ title, date, description }) => {
       {date && (
         <Date>{`${dayjs(date).locale('ru').format('D MMM YYYY')}`}</Date>
       )}
-      {description && <Description>{description}</Description>}
+      {description && (
+        <Description
+          dangerouslySetInnerHTML={{
+            __html: sanitize(description),
+          }}
+        />
+      )}
     </div>
   );
 };
