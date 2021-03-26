@@ -37,6 +37,7 @@ export const GET_VACANCY_CONTENT = gql`
       id
       name
       is_english_speaking_team
+      is_translate
       is_internship
       is_relocation
       descr
@@ -76,6 +77,7 @@ export const GET_VACANCY_CONTENT = gql`
       }
       recruiters {
         name
+        en_name
         email
         telegram
         image {

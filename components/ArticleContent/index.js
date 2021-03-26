@@ -179,11 +179,7 @@ const ArticleContent = ({ content, isRelocation, recap }) => {
                   isFirstBlockHeader
                 )}
                 <S.Wrapper>
-                  <SidebarRelocation
-                    title={vacancyMock.relocation.title}
-                    subtitle={vacancyMock.relocation.subtitle}
-                    href={vacancyMock.relocation.href}
-                  />
+                  <SidebarRelocation data={vacancyMock.relocation} />
                 </S.Wrapper>
               </S.Block>
             );
