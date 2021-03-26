@@ -171,6 +171,7 @@ const InternForm = ({ closeModal, showSuccess, showError }) => {
                 maskChar={item.maskChar}
                 maskPlaceholder={item.maskPlaceholder}
                 control={control}
+                isDate={item.date}
               />
             ))}
             <S.SelectContainer>

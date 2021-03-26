@@ -1,15 +1,26 @@
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const Captcha = ({ setCaptchaPassed }) => {
+const Captcha = ({ setCaptchaPassed, language }) => {
   function onChangeRecaptcha(value) {
     setCaptchaPassed(value);
   }
 
   return (
-    <ReCAPTCHA
-      sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
-      onChange={onChangeRecaptcha}
-    />
+    <>
+      {language ? (
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
+          onChange={onChangeRecaptcha}
+          hl={language}
+        />
+      ) : (
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
+          onChange={onChangeRecaptcha}
+          hl="ru"
+        />
+      )}
+    </>
   );
 };
 

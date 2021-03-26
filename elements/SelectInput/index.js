@@ -1,6 +1,6 @@
 import Select, { components } from 'react-select';
 import { Controller } from 'react-hook-form';
-import React from 'react';
+import { Children } from 'react';
 import * as S from './styles';
 
 const { ValueContainer, Placeholder } = components;
@@ -11,7 +11,7 @@ const CustomValueContainer = ({ children, ...props }) => {
       <Placeholder {...props} isFocused={props.isFocused}>
         {props.selectProps.placeholder}
       </Placeholder>
-      {React.Children.map(children, child =>
+      {Children.map(children, (child) =>
         child && child.type !== Placeholder ? child : null
       )}
     </ValueContainer>
