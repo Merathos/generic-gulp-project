@@ -34,7 +34,7 @@ const vacancyPage = () => {
 
   dispatch({
     type: 'LANGUAGE',
-    payload: vacancy?.is_english_speaking_team, // && vacancy?.is_translate,
+    payload: vacancy?.is_english_speaking_team && vacancy?.is_translate,
   });
 
   return (
