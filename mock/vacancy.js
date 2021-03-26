@@ -57,9 +57,11 @@ export default {
     behaviors: ['default'],
   },
   relocation: {
-    title: `Релокация`,
+    title: 'Релокация',
     subtitle: `Если вы проживаете в другом городе или стране, но хотите работать у нас, то мы поможем
     с переездом.`,
+    titleEn: 'Relocation',
+    subtitleEn: `If you are willing to relocate to St. Petersburg, we will help you with that.`,
     href: '/relocation',
   },
 };
