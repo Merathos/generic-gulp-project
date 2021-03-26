@@ -219,4 +219,10 @@ export const StyledButton = styled(Btn)`
     background-color: #ec381a;
     color: #ffffff;
   }
+
+  ${(p) =>
+    p.english &&
+    css`
+      max-width: 250px;
+    `}
 `;

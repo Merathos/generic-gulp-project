@@ -8,15 +8,24 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as S from './styles';
 
-const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
+const JobForm = ({
+  closeModal,
+  showSuccess,
+  showError,
+  title,
+  id,
+  english,
+}) => {
   const {
     mainTitle,
     subtitle,
+    subtitleEn,
     contact,
     cv,
     agreement,
     mailing,
     buttonText,
+    buttonTextEn,
   } = form.jobForm;
   const [checkedEls, setCheckedEls] = useState({});
   const [isOpen, setIsOpen] = useState(false);
@@ -26,26 +35,20 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
   const schema = yup.object().shape({
     name: yup.string().required('error'),
     lastname: yup.string().required('error'),
-    email: yup
-      .string()
-      .email('warning')
-      .required('error'),
+    email: yup.string().email('warning').required('error'),
     phone: yup
       .string()
-      .test('empty', 'error', val => {
+      .test('empty', 'error', (val) => {
         return val !== '';
       })
-      .test('len', 'warning', val => {
+      .test('len', 'warning', (val) => {
         const val_length_without_dashes = val.replace(/-|_|\s|\(|\)/g, '')
           .length;
         return val_length_without_dashes === 12;
       })
       .required('error'),
-    personal: yup
-      .boolean()
-      .required()
-      .oneOf([true], 'error'),
-    cvLink: yup.string().test('file', 'error', val => {
+    personal: yup.boolean().required().oneOf([true], 'error'),
+    cvLink: yup.string().test('file', 'error', (val) => {
       return val.length !== 0 || getValues('cvFile').length !== 0;
     }),
   });
@@ -55,14 +58,14 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
     resolver: yupResolver(schema),
   });
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
   };
 
-  const onSubmit = async values => {
+  const onSubmit = async (values) => {
     if (captchaPassed) {
       const { data, errors: submitErrors } = await sendVacancy({
         variables: {
@@ -96,19 +99,23 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
       <CloseBtn onClick={closeModal} />
       <S.TitleWrap>
         <S.MainTitle>{id && title ? title : mainTitle}</S.MainTitle>
-        <S.Subtitle>{id ? subtitle : ''}</S.Subtitle>
+        {id && <S.Subtitle>{english ? subtitleEn : subtitle}</S.Subtitle>}
       </S.TitleWrap>
       <S.Form onSubmit={handleSubmit(onSubmit)}>
         <S.Fade isOpen={isOpen} />
         <S.FormSection>
-          <S.SectionTitle>{contact.title}</S.SectionTitle>
+          <S.SectionTitle>
+            {english ? contact.titleEn : contact.title}
+          </S.SectionTitle>
           <S.InputsContainer>
             {contact.inputs.map((item, i) => {
+              const errorMsg = english ? item.errorEn : item.error;
+              const warningMsg = english ? item.warningEn : item.warning;
               return (
                 <TextInput
                   key={i}
                   name={item.name}
-                  label={item.label}
+                  label={english ? item.labelEn : item.label}
                   register={register({
                     // required: true,
                     // pattern:
@@ -119,8 +126,8 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
                   error={errors[item.name]?.message === 'error'}
                   warning={errors[item.name]?.message === 'warning'}
                   errorMsg={
-                    (errors[item.name]?.message === 'error' && item.error) ||
-                    (errors[item.name]?.message === 'warning' && item.warning)
+                    (errors[item.name]?.message === 'error' && errorMsg) ||
+                    (errors[item.name]?.message === 'warning' && warningMsg)
                   }
                   mask={item.mask}
                   control={control}
@@ -129,8 +136,14 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
             })}
             <S.SelectContainer>
               <SelectInput
-                options={contact.select.options}
-                placeholder={contact.select.placeholder}
+                options={
+                  english ? contact.select.optionsEn : contact.select.options
+                }
+                placeholder={
+                  english
+                    ? contact.select.placeholderEn
+                    : contact.select.placeholder
+                }
                 name={contact.select.name}
                 setOpened={() => setIsOpen(true)}
                 setClosed={() => setIsOpen(false)}
@@ -139,7 +152,9 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
               {getValues('contact')?.value === 'telegram' && (
                 <TextInput
                   name="telegram"
-                  label={contact.telegramLabel}
+                  label={
+                    english ? contact.telegramLabelEn : contact.telegramLabel
+                  }
                   register={register()}
                 />
               )}
@@ -147,18 +162,18 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
           </S.InputsContainer>
         </S.FormSection>
         <S.FormSection>
-          <S.SectionTitle>{cv.title}</S.SectionTitle>
+          <S.SectionTitle>{english ? cv.titleEn : cv.title}</S.SectionTitle>
           <S.FileWrapper>
             <FileInput
               id={cv.fileInput.id}
               name={cv.fileInput.name}
-              label={cv.fileInput.label}
+              label={english ? cv.fileInput.labelEn : cv.fileInput.label}
               fileExt={cv.fileInput.fileExt}
               register={register()}
             />
             <TextInput
               name={cv.textInput.name}
-              label={cv.textInput.label}
+              label={english ? cv.textInput.labelEn : cv.textInput.label}
               cv
               error={errors.cvLink?.message === 'error'}
               register={register()}
@@ -169,27 +184,27 @@ const JobForm = ({ closeModal, showSuccess, showError, title, id }) => {
         <S.SubmitSection>
           <S.AgreemenCheckbox
             name={agreement.name}
-            value={agreement.dataText}
+            value={english ? agreement.dataTextEn : agreement.dataText}
             checked={checkedEls[agreement.name]}
             onChange={handleChange}
             register={register()}
             error={errors?.personal?.message === 'error'}
           >
             <S.Link href={agreement.dataHref} target="_blank">
-              {agreement.dataLink}
+              {english ? agreement.dataLinkEn : agreement.dataLink}
             </S.Link>
           </S.AgreemenCheckbox>
           <S.AgreemenCheckbox
             name={mailing.name}
-            value={mailing.value}
+            value={english ? mailing.valueEn : mailing.value}
             checked={checkedEls[mailing.name]}
             onChange={handleChange}
             register={register()}
           />
           <S.BottomWrap>
             <Captcha setCaptchaPassed={setCaptchaPassed} />
-            <S.StyledButton type="submit" accent>
-              {buttonText}
+            <S.StyledButton type="submit" accent english={english}>
+              {english ? buttonTextEn : buttonText}
             </S.StyledButton>
           </S.BottomWrap>
         </S.SubmitSection>
