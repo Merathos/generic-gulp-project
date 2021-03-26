@@ -77,7 +77,7 @@ export const RelocationBackground = styled.div`
       @media screen and (max-width: 500px) {
         width: 360px;
         height: 360x;
-        top: -140px;
+        top: -160px;
         left: -50px;
       }
     `}
