@@ -214,31 +214,4 @@ export const PortraitBlock = styled.div`
   @media screen and (max-width: 640px) {
     width: 100%;
   }
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    left: 400px;
-    top: 250px;
-    transform: rotate(30deg);
-    background-color: #ffffff;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &::before {
-      width: 300px;
-      height: 300px;
-      left: 200px;
-      top: 71px;
-    }
-  }
-
-  @media screen and (max-width: 420px) {
-    &::before {
-      width: 200px;
-      height: 200px;
-    }
-  }
 `;
