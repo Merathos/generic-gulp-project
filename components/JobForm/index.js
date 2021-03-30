@@ -177,7 +177,7 @@ const JobForm = ({
               cv
               error={errors.cvLink?.message === 'error'}
               register={register()}
-              errorMsg={cv.textInput.error}
+              errorMsg={english ? cv.textInput.errorEn : cv.textInput.error}
             />
           </S.FileWrapper>
         </S.FormSection>
