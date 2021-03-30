@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components';
 export const Form = styled.form`
   border-bottom: 1px solid #201f2a;
   display: flex;
-  padding: ${props =>
+  padding: ${(props) =>
     props.isMain ? '0' : props.smallPadding ? '25px 0 16px' : '25px 0'};
   margin-bottom: 10px;
 
-  ${props =>
+  ${(props) =>
     props.isMain &&
     css`
       width: 856px;
@@ -18,7 +18,7 @@ export const Form = styled.form`
     `};
 
   @media screen and (max-width: 768px) {
-    ${props =>
+    ${(props) =>
       props.smallPadding &&
       css`
         padding: 4px 0;
@@ -26,7 +26,7 @@ export const Form = styled.form`
   }
 
   @media screen and (max-width: 420px) {
-    padding: ${props =>
+    padding: ${(props) =>
       props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
   }
 `;
@@ -41,8 +41,9 @@ export const Field = styled.input`
   font-family: inherit;
   outline: none;
   transition: all 0.2s ease;
+  font-feature-settings: 'liga' off;
 
-  ${props =>
+  ${(props) =>
     props.isMain &&
     css`
       padding-top: 5px;
@@ -73,7 +74,7 @@ export const Field = styled.input`
     font-size: 16px;
     line-height: 134%;
 
-    ${props =>
+    ${(props) =>
       props.isMain &&
       css`
         padding-bottom: 10px;
@@ -111,7 +112,7 @@ export const Submit = styled.button`
   }
 
   @media screen and (max-width: 420px) {
-    ${props =>
+    ${(props) =>
       props.isMain &&
       css`
         width: 30px;
