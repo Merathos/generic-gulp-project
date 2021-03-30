@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { NoteLeft, NoteRight, Advert } from 'components';
-import { Container, Block, H2, AdvertsWrapper } from './styles';
+import * as S from './styles';
 
 const Articles = (props) => {
   const language = useSelector((state) => state.language);
@@ -9,22 +9,22 @@ const Articles = (props) => {
   return (
     <>
       {type === 'article' ? (
-        <Container>
+        <S.Container>
           {data[0] && <NoteLeft data={data[0]} />}
           {data[1] && <NoteRight data={data[1]} />}
-        </Container>
+        </S.Container>
       ) : (
-        <Block>
-          <H2>
+        <S.Block>
+          <S.H2>
             {language
               ? 'Vacancies in this category'
               : 'Вакансии в этой категории'}
-          </H2>
-          <AdvertsWrapper>
+          </S.H2>
+          <S.AdvertsWrapper>
             {data[0] && <Advert data={data[0]} />}
             {data[1] && <Advert data={data[1]} />}
-          </AdvertsWrapper>
-        </Block>
+          </S.AdvertsWrapper>
+        </S.Block>
       )}
     </>
   );

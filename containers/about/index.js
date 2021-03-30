@@ -20,7 +20,7 @@ const About = ({ data, stacks }) => {
   return (
     <Main>
       <HeaderContainer>
-        <Container>
+        <Container header>
           <AboutHeader
             title={data.intro.title}
             text={data.intro.text}

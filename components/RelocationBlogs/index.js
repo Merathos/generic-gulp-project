@@ -1,8 +1,10 @@
 import { StoryCard } from 'components';
+import { Container } from 'elements';
+
 import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
-const RelocationBlogs = props => {
+const RelocationBlogs = (props) => {
   const {
     data: { title, text, noteIcon, note },
     blogs,
@@ -12,16 +14,16 @@ const RelocationBlogs = props => {
 
   const renewedNote = note.replace(
     emailRegExp,
-    email => `<a href="mailto:${email}">${email}</a>`
+    (email) => `<a href="mailto:${email}">${email}</a>`
   );
 
   return (
     <S.Section>
-      <S.Container>
+      <Container>
         <S.Title>{title}</S.Title>
         <S.Text>{text}</S.Text>
         <S.List>
-          {blogs.map(item => {
+          {blogs.map((item) => {
             if (item.type === 'history') {
               return (
                 <li key={item.id}>
@@ -42,7 +44,7 @@ const RelocationBlogs = props => {
             }}
           />
         </S.NoteWrapper>
-      </S.Container>
+      </Container>
     </S.Section>
   );
 };

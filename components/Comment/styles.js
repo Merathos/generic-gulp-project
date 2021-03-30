@@ -56,7 +56,7 @@ export const Text = styled.p`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 160%;
   }

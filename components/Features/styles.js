@@ -6,7 +6,7 @@ export const Container = styled.ul`
   flex-wrap: wrap;
   margin-bottom: 14px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 7px;
   }
 `;
@@ -21,7 +21,7 @@ export const Item = styled.li`
     margin-bottom: 10px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     &:not(:last-child) {
       margin-right: 14px;
     }
@@ -31,7 +31,7 @@ export const Item = styled.li`
 export const Icon = styled.div`
   margin-right: 8px;
   font-size: 22px;
-  background-image: ${props => `url('/emodzi/${props.name}.png')`};
+  background-image: ${(props) => `url('/emodzi/${props.name}.png')`};
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 70%;

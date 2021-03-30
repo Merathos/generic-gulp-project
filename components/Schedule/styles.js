@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleH2, Btn } from 'elements';
+import { TitleH2, Btn, Container } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 160px;
@@ -7,17 +7,13 @@ export const Section = styled.section`
   background-position: right 0 top 950px;
   background-repeat: no-repeat;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 80px;
     background-image: none;
   }
 `;
 
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 30px;
-  margin: 0 auto;
-`;
+export const StyledContainer = styled(Container)``;
 
 export const Description = styled.p`
   margin-bottom: 160px;
@@ -26,7 +22,7 @@ export const Description = styled.p`
   font-size: 24px;
   line-height: 159%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 80px;
     font-size: 16px;
     line-height: 25.28px;
@@ -38,7 +34,7 @@ export const MainTitle = styled(TitleH2)`
   max-width: 500px;
   text-transform: uppercase;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
     font-size: 28px;
   }
@@ -51,7 +47,7 @@ export const Item = styled.li`
   display: flex;
   flex-flow: row wrap;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 40px;
     flex-direction: column;
   }
@@ -65,7 +61,7 @@ export const Time = styled.p`
   color: #2f8ed9;
   font-weight: 700;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 19.2px;
@@ -75,7 +71,7 @@ export const Time = styled.p`
 export const Content = styled.div`
   max-width: 62%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: 100%;
   }
 `;
@@ -85,7 +81,7 @@ export const Title = styled.b`
   line-height: 28.8px;
   font-weight: 700;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 19.2px;
   }
@@ -95,7 +91,7 @@ export const StyledButton = styled(Btn)`
   margin-top: 100px;
   margin-left: 117px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 60px;
     margin-left: 0;
   }

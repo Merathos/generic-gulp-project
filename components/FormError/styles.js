@@ -3,7 +3,7 @@ import { TitleH2 } from 'elements';
 
 export const Container = styled.div`
   background-color: #ffffff;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     top: 0;
     height: 100vh;
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   background-position: left 0 top 0px, right 100%;
   background-repeat: no-repeat, no-repeat;
 
-  @media screen and (max-width: 768px), (max-height: 550px) {
+  @media screen and (max-width: 767px), (max-height: 550px) {
     padding-top: 22px;
     min-height: 100vh;
     padding-bottom: 0;
@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  @media screen and (max-width: 768px), (max-height: 550px) {
+  @media screen and (max-width: 767px), (max-height: 550px) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,7 +42,7 @@ export const Title = styled(TitleH2)`
   max-width: 500px;
   text-align: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
     font-size: 32px;
     line-height: 42.88px;
@@ -59,7 +59,7 @@ export const Text = styled.p`
   opacity: 0.5;
   text-align: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 40px;
     max-width: 315px;
     font-size: 14px;
@@ -80,7 +80,7 @@ export const Btn = styled.button`
   align-items: center;
   transition: all 0.3s ease;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     min-height: 56px;
     font-size: 12px;
     line-height: 14.4px;

@@ -7,11 +7,11 @@ export const List = styled.dl`
   margin-left: 90px;
   margin-right: 40px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     margin-left: 60px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-left: 0;
   }
 `;
@@ -31,7 +31,7 @@ export const ListItem = styled.div`
 export const Term = styled.dt`
   margin-bottom: 12px;
   font-size: 16px;
-  line-height: 20.96px;
+  line-height: 21px;
   opacity: 50%;
 
   @media screen and (max-width: 900px) {

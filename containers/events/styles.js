@@ -7,7 +7,7 @@ export const Main = styled.main`
   background-position: left 520px, right 70px;
   background-repeat: no-repeat, no-repeat;
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     background-image: url('/backgrounds/events-right.svg');
     background-position: right -20px top 32px;
     background-repeat: no-repeat;
@@ -17,10 +17,13 @@ export const Main = styled.main`
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 45px;
+  padding: 0 120px;
 
-  @media screen and (max-width: 1199px) {
-    margin: 0 auto;
+  @media screen and (max-width: 1360px) {
+    padding: 0 60px;
+  }
+
+  @media screen and (max-width: 960px) {
     padding: 0;
   }
 `;
@@ -38,12 +41,8 @@ export const Grid = styled.div`
       'sidebar   content';
   }
 
-  @media screen and (max-width: 1199px) {
-    padding-top: 140px;
-  }
-
-  @media screen and (max-width: 910px) {
-    padding-top: 115px;
+  @media screen and (max-width: 767px) {
+    padding-top: 110px;
   }
 `;
 
@@ -52,12 +51,12 @@ export const Aside = styled.aside`
   align-self: start;
   padding-top: 22px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1201px) {
     position: sticky;
     top: 200px;
   }
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     max-width: 862px;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -79,7 +78,7 @@ export const Announcement = styled.div`
   margin-bottom: 60px;
   color: rgba(32, 31, 43, 0.5);
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     max-width: 862px;
     margin: 0 auto 60px;
   }
@@ -106,18 +105,15 @@ export const Title = styled(TitleH1)`
   @media screen and (max-width: 1199px) {
     max-width: 862px;
     margin: 0 auto;
-    font-size: 54px;
-    line-height: 130%;
-    letter-spacing: 0.03em;
   }
 
   @media screen and (max-width: 910px) {
     margin-left: 30px;
     margin-right: 30px;
+  }
+
+  @media screen and (max-width: 767px) {
     margin-bottom: 7px;
-    font-size: 32px;
-    line-height: 42.88px;
-    letter-spacing: 0.01em;
   }
 `;
 
@@ -128,7 +124,7 @@ export const CompletedTitle = styled.h2`
   text-transform: uppercase;
   margin-bottom: 120px;
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     max-width: 862px;
     margin: 0 auto;
     margin-bottom: 50px;

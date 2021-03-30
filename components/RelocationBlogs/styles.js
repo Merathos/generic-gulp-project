@@ -3,27 +3,22 @@ import { TitleH2 } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 160px;
+  background: url('/backgrounds/relocation-difficulties.png') no-repeat right
+    170px;
 
-  @media screen and (min-width: 1300px) {
-    background: url('/backgrounds/relocation-difficulties.png') no-repeat right
-      170px;
+  @media screen and (max-width: 1360px) {
+    background: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 80px;
   }
-`;
-
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 30px;
-  margin: 0 auto;
 `;
 
 export const Title = styled(TitleH2)`
   margin-bottom: 40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 22px;
   }
 `;
@@ -34,7 +29,7 @@ export const Text = styled.p`
   line-height: 32px;
   max-width: 740px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 60px;
     font-size: 14px;
     line-height: 22px;
@@ -46,7 +41,7 @@ export const List = styled.ul`
   display: flex;
   flex-flow: row wrap;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 39px;
   }
 
@@ -60,7 +55,7 @@ export const List = styled.ul`
       margin-right: 0;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       max-width: 315px;
     }
 
@@ -79,7 +74,7 @@ export const NoteWrapper = styled.div`
   grid-template-columns: 57px 1fr;
   grid-column-gap: 30px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding: 24px 0 21px 0;
     grid-template-columns: 1fr;
     grid-template-rows: 43px 1fr;
@@ -97,7 +92,7 @@ export const Icon = styled.div`
   border-radius: 50%;
   background-color: #f7f8f9;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 18px;
     width: 43px;
     height: 43px;
@@ -107,7 +102,7 @@ export const Icon = styled.div`
     width: 20px;
     height: auto;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       width: 18px;
     }
   }
@@ -130,7 +125,7 @@ export const NoteText = styled.p`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 150%;
   }

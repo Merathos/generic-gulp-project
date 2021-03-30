@@ -1,5 +1,5 @@
 import { BlogHeader, ArticleContent, SocialShare } from 'components';
-import { Container, ContentContainer, GreyContainer } from './styles';
+import { StyledContainer, ContentContainer, GreyContainer } from './styles';
 
 const Story = ({ back }) => {
   let content = {};
@@ -10,7 +10,7 @@ const Story = ({ back }) => {
   return (
     <main>
       <GreyContainer>
-        <Container>
+        <StyledContainer>
           <BlogHeader
             title={back.title}
             text={back.description}
@@ -18,7 +18,7 @@ const Story = ({ back }) => {
             audio={back.audio}
             mobPicture={back.detail_mobile?.path?.normal}
           />
-        </Container>
+        </StyledContainer>
       </GreyContainer>
 
       <ContentContainer>

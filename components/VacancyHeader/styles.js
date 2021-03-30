@@ -1,38 +1,35 @@
 import styled, { css } from 'styled-components';
-import { TitleH1, Btn, Text } from 'elements';
+import { TitleH1, Btn, Text, Container } from 'elements';
 
-export const Container = styled.div`
+export const SectionWrapper = styled.div`
   position: relative;
 `;
 
-export const Section = styled.section`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 210px 50px;
+export const Section = styled(Container)`
+  padding-top: 200px;
+  padding-bottom: 200px;
   display: flex;
   align-items: center;
 
   @media screen and (max-width: 1360px) {
-    padding: 130px 50px;
+    padding-bottom: 130px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
+    padding-top: 110px;
+    padding-bottom: 80px;
     & > div {
       min-width: 240px;
     }
   }
 
   @media screen and (max-width: 420px) {
-    padding: 110px 30px 64px;
-    max-width: 375px;
-
     & > div {
       min-width: 210px;
     }
   }
 
   @media screen and (max-width: 340px) {
-    padding: 110px 20px 64px;
     max-width: 320px;
   }
 `;
@@ -54,7 +51,7 @@ export const Bold = styled.b`
 export const Wrapper = styled.div`
   /* margin-top: 60px; */
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `;
@@ -137,7 +134,7 @@ export const StyledText = styled(Text)`
         height: 38px;
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         svg {
           width: 26px;
           height: 26px;
@@ -158,6 +155,6 @@ export const Picture = styled.img`
   bottom: 0;
   max-width: 40vw;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
   }
 `;

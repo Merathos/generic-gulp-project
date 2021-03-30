@@ -10,7 +10,7 @@ export const Title = styled(TitleH4)`
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     grid-area: b;
     margin-bottom: 0;
   }
@@ -19,7 +19,7 @@ export const Title = styled(TitleH4)`
 export const DefaultTitle = styled(TitleH4)`
   margin-bottom: 40px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 `;
@@ -32,7 +32,7 @@ export const H5 = styled(TitleH5)`
   margin-bottom: 12px;
   font-weight: 700;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.isInternship &&
       css`
@@ -46,7 +46,7 @@ export const H5 = styled(TitleH5)`
 export const Section = styled.div`
   max-width: 250px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
 `;
@@ -54,7 +54,7 @@ export const Section = styled.div`
 export const SectionIcon = styled.div`
   max-width: 250px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     ${(props) =>
       props.isInternship &&
       css`
@@ -62,7 +62,7 @@ export const SectionIcon = styled.div`
       `}
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
 `;
@@ -70,7 +70,7 @@ export const SectionIcon = styled.div`
 export const SectionButton = styled.div`
   margin: 48px 0;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin: 40px 0 60px;
   }
 `;
@@ -81,7 +81,7 @@ export const Text = styled.p`
   line-height: 120%;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 12px;
     line-height: 120%;
   }
@@ -98,7 +98,7 @@ export const StyledIcon = styled(Icon)`
       height: 57px;
       background-size: 40%;
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 767px) {
         margin-top: 0;
         margin-bottom: 12px;
         width: 33px;
@@ -114,7 +114,7 @@ export const StyledSubtitle = styled(Subtitle)`
   font-size: 16px;
   line-height: 134%;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 131%;
   }
@@ -124,7 +124,7 @@ export const SubtitleWrapper = styled(Subtitle)`
   ${(props) =>
     props.isInternship &&
     css`
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         line-height: 148%;
       }
     `}
@@ -139,7 +139,7 @@ export const Image = styled.img`
     grid-area: a;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 767px) {
     width: 74px;
     grid-area: a;
   }
@@ -151,7 +151,7 @@ export const Aside = styled.aside`
   background-repeat: no-repeat;
   background-position: top left 100px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: grid;
     grid-template-areas:
       'a b'
@@ -160,7 +160,7 @@ export const Aside = styled.aside`
     grid-row-gap: 8px;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 767px) {
     display: grid;
     grid-template-areas:
       'a b'

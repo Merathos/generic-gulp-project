@@ -1,36 +1,15 @@
-import styled from 'styled-components';
-import { TitleH2 } from 'elements';
 import { IconsList } from 'components';
 import { useSelector } from 'react-redux';
-
-const H2 = styled(TitleH2)`
-  margin-bottom: 100px;
-
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 60px;
-  }
-`;
-
-const Section = styled.div`
-  position: relative;
-
-  @media screen and (max-width: 1024px) {
-    /* margin-bottom: 50px; */
-
-    &::after {
-      display: none;
-    }
-  }
-`;
+import * as S from './styles';
 
 const Conditions = ({ data, back }) => {
   const language = useSelector((state) => state.language);
 
   return (
-    <Section>
-      <H2>{language ? data.titleEn : data.title}</H2>
+    <S.Section>
+      <S.H2>{language ? data.titleEn : data.title}</S.H2>
       <IconsList data={back} />
-    </Section>
+    </S.Section>
   );
 };
 

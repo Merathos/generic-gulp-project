@@ -46,7 +46,7 @@ export const Section = styled.div`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 `;
@@ -56,7 +56,7 @@ export const StyledText = styled.p`
   line-height: 27px;
   margin-bottom: 45px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
     font-size: 14px;
     line-height: 152%;
@@ -67,7 +67,7 @@ export const H3 = styled(TitleH3)`
   margin-bottom: 20px;
   font-weight: 700;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 14px;
   }
 `;
@@ -78,7 +78,7 @@ export const Arrow = styled.span`
   width: 38px;
   height: 38px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 26px;
     height: 26px;
   }

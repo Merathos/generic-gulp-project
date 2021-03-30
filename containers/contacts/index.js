@@ -1,11 +1,11 @@
 import { GreyHeader, OfficesMap } from 'components';
-import { Main, Container, GreyContainer } from './styles';
+import { Main, StyledContainer, GreyContainer } from './styles';
 
 const Contacts = ({ data }) => {
   return (
     <Main>
       <GreyContainer>
-        <Container>
+        <StyledContainer>
           <GreyHeader
             title={data.mainTitle.title}
             text={data.mainTitle.text}
@@ -13,7 +13,7 @@ const Contacts = ({ data }) => {
             twoColumns
             isContacts
           />
-        </Container>
+        </StyledContainer>
       </GreyContainer>
       {data.offices.map((el, i) => (
         <OfficesMap key={i} data={el} isContacts />

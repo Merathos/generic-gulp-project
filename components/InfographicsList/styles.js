@@ -14,7 +14,7 @@ export const List = styled.ul`
     width: 90%;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     margin-bottom: 45px;
   }
@@ -24,9 +24,7 @@ export const List = styled.ul`
     grid-gap: 10px;
   }
 
-  @media screen and (max-width: 420px) {
-    margin-left: 30px;
-    margin-right: 30px;
+  @media screen and (max-width: 767px) {
     grid-gap: 26px 30px;
   }
 `;
@@ -36,7 +34,7 @@ export const ListItem = styled.li`
   flex-direction: column;
   margin-bottom: 55px;
 
-  ${props =>
+  ${(props) =>
     props.isActive &&
     css`
       b {
@@ -59,7 +57,7 @@ export const ListItem = styled.li`
     }
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 
@@ -67,7 +65,7 @@ export const ListItem = styled.li`
     margin-bottom: 15px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
   }
 `;
@@ -89,7 +87,7 @@ export const ItemValue = styled.b`
     font-size: 32px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     margin-bottom: 14px;
   }

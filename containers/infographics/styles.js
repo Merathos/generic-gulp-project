@@ -2,25 +2,29 @@ import styled from 'styled-components';
 import { TitleH2 } from 'elements';
 
 export const Container = styled.section`
-  padding-top: 154px;
+  padding-top: 160px;
   padding-left: 120px;
 
-  @media screen and (max-width: 1024px) {
-    padding-top: 80px;
+  @media screen and (max-width: 1360px) {
+    padding-top: 120px;
     padding-left: 60px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 960px) {
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
     flex-direction: column;
     justify-content: flex-start;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-top: 48px;
-    padding-left: 0;
-    padding-right: 0;
   }
 `;
 
@@ -28,34 +32,32 @@ export const H2 = styled(TitleH2)`
   width: 80%;
 
   :not(:first-of-type) {
-    margin-bottom: 125px;
+    margin-bottom: 120px;
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1360px) {
     font-size: 40px;
     width: 75%;
-  }
-
-  @media screen and (max-width: 960px) {
-    width: 90%;
 
     :not(:first-of-type) {
-      margin-bottom: 65px;
+      margin-bottom: 90px;
     }
   }
 
-  @media screen and (max-width: 720px) {
-    font-size: 28px;
-  }
-
-  @media screen and (max-width: 420px) {
-    hyphens: manual;
-    margin-left: 30px;
-    margin-right: 30px;
-    width: calc(100% - 60px);
+  @media screen and (max-width: 960px) {
+    width: 82%;
 
     :not(:first-of-type) {
       margin-bottom: 60px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    hyphens: manual;
+    font-size: 28px;
+
+    :not(:first-of-type) {
+      margin-bottom: 50px;
     }
   }
 `;

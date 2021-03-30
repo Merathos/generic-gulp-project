@@ -1,10 +1,8 @@
 import styled, { css } from 'styled-components';
+import { Container } from 'elements';
 
-export const Container = styled.div`
+export const StyledContainer = styled(Container)`
   position: relative;
-  max-width: 1200px;
-  padding: 0 30px;
-  margin: 0 auto;
 
   &::after {
     content: '';
@@ -16,10 +14,10 @@ export const Container = styled.div`
     width: 340px;
     height: 340px;
     top: -275px;
-    right: -45px;
+    right: -40px;
     animation: 45s linear infinite rotation;
 
-    @media screen and (max-width: 1370px) {
+    @media screen and (max-width: 1360px) {
       right: 0;
     }
 
@@ -66,7 +64,7 @@ export const Section = styled.section`
       `}
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
   }
 `;

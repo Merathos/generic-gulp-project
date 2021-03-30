@@ -50,7 +50,7 @@ const Map = ({
           className="map-container"
           state={{
             center: [center.lat, center.lng],
-            zoom: initialWidth > 768 ? zoom : routeFrom ? zoom - 2 : zoom - 1,
+            zoom: initialWidth > 767 ? zoom : routeFrom ? zoom - 2 : zoom - 1,
             controls,
             behaviors,
           }}

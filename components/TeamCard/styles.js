@@ -47,7 +47,7 @@ export const Section = styled.a`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: ${(props) => (props.isMain ? '0' : '10px')};
   }
 `;
@@ -61,7 +61,7 @@ export const StyledText = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 15px;
     font-size: 14px;
     line-height: 158%;
@@ -74,7 +74,7 @@ export const H3 = styled(TitleH3)`
   font-weight: 700;
   line-height: 120%;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 6px;
     font-size: 16px;
   }
@@ -86,7 +86,7 @@ export const Arrow = styled.span`
   height: 38px;
   margin-top: auto;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 28px;
     height: 28px;
   }
@@ -96,7 +96,7 @@ export const Picture = styled.img`
   margin-bottom: 30px;
   width: 100%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 20px;
   }
 `;

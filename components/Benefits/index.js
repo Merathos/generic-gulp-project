@@ -1,11 +1,12 @@
 import { BenefitCard } from 'components';
+import { Container } from 'elements';
 import * as S from './styles';
 
 const Benefits = ({ data }) => {
   const { title, list } = data;
   return (
     <S.Section>
-      <S.Container>
+      <Container>
         <S.Title>{title}</S.Title>
         <S.List>
           {list.map((el, i) => (
@@ -14,7 +15,7 @@ const Benefits = ({ data }) => {
             </li>
           ))}
         </S.List>
-      </S.Container>
+      </Container>
     </S.Section>
   );
 };

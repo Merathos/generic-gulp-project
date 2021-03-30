@@ -13,7 +13,7 @@ export const Title = styled.h3.attrs((props) => ({
   width: 100%;
   font-weight: 500;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     cursor: pointer;
 
     &::after {
@@ -30,7 +30,7 @@ export const Title = styled.h3.attrs((props) => ({
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 134%;
     padding-top: 0;
@@ -45,7 +45,7 @@ export const Sup = styled.sup`
   color: #53b443;
   vertical-align: top;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 10px;
   }
 `;
@@ -74,7 +74,7 @@ export const Item = styled.li`
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 190%;
     margin-bottom: 16px;
@@ -85,7 +85,7 @@ export const Item = styled.li`
 export const List = styled.ul`
   position: relative;
   height: 450px;
-  min-width: 250px;
+  min-width: 225px;
   padding-bottom: 15px;
 
   -ms-overflow-style: none;
@@ -134,7 +134,7 @@ export const List = styled.ul`
     pointer-events: none;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: ${(props) => (props.active ? 'block' : 'none')};
 
     &::after,
@@ -147,7 +147,7 @@ export const List = styled.ul`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     max-height: 230px;
     margin-top: 22px;
   }
@@ -157,7 +157,7 @@ export const ResetButtonWrapper = styled.div`
   margin-top: 26px;
   padding-left: 20px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-top: 18px;
     display: ${(props) => (props.active ? 'block' : 'none')};
   }
@@ -167,7 +167,7 @@ export const Wrapper = styled.div`
   position: relative;
   padding-bottom: 20px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-left: -45px;
     margin-right: -45px;
     padding: ${(props) => (props.active ? '16px 45px 50px' : '16px 45px')};
@@ -175,7 +175,7 @@ export const Wrapper = styled.div`
     z-index: 3;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-left: -30px;
     margin-right: -30px;
     padding: 16px 30px;

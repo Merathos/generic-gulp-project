@@ -22,13 +22,13 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     &:not(:last-of-type) {
       margin-right: 24px;
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
     font-size: 14px;
     line-height: 134%;
@@ -63,7 +63,7 @@ export const Label = styled.label.attrs((props) => ({
     transition: border-color 0.3s ease;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 190%;
   }
@@ -101,7 +101,7 @@ export const DropLabel = styled.label`
     display: none;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 190%;
     padding-left: 14px;

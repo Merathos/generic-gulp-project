@@ -26,3 +26,4 @@ export { default as BlogsTag } from './BlogsTag';
 export { default as EventStatus } from './EventStatus';
 export { default as Loader } from './Loader';
 export { default as Captcha } from './Captcha';
+export { default as Container } from './Container';

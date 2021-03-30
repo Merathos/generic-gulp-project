@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding-top: 37px;
   padding-bottom: 90px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-top: 22px;
     padding-bottom: 70px;
     background-image: none;
@@ -21,7 +21,7 @@ export const Form = styled.form`
   box-sizing: border-box;
   max-width: 880px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     margin: 0 auto;
     padding: 30px;
   }
@@ -31,7 +31,7 @@ export const MainTitle = styled(TitleH2)`
   max-width: 880px;
   margin-bottom: 110px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 60px;
     font-size: 32px;
     line-height: 42.88px;
@@ -42,7 +42,7 @@ export const MainTitle = styled(TitleH2)`
 export const FormSection = styled.fieldset`
   margin-bottom: 90px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 60px;
   }
 `;
@@ -50,7 +50,7 @@ export const FormSection = styled.fieldset`
 export const MultivarSection = styled(FormSection)`
   margin-bottom: 70px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
   }
 `;
@@ -62,7 +62,7 @@ export const SectionTitle = styled.h3`
   font-weight: 700;
   letter-spacing: normal;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 5px;
     font-size: 16px;
     line-height: 19.2px;
@@ -75,7 +75,7 @@ export const InputsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     flex-direction: column;
   }
 `;
@@ -85,7 +85,7 @@ export const CheckboxContainer = styled.div`
   flex-flow: row wrap;
   margin-bottom: 0px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
     flex-direction: column;
   }
@@ -95,7 +95,7 @@ export const Question = styled.p`
   margin-top: 60px;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 22px;
     margin-top: 38px;
@@ -108,7 +108,7 @@ export const CheckBox = styled(EventsCheckbox)`
   margin-right: 27px;
   margin-bottom: 27px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
   }
 
@@ -118,7 +118,7 @@ export const CheckBox = styled(EventsCheckbox)`
       line-height: 26.8px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       font-size: 14px;
       line-height: 22.12px;
     }
@@ -141,7 +141,7 @@ export const AgreemenCheckbox = styled(EventsCheckbox)`
       line-height: 26.8px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       font-size: 14px;
       line-height: 22.12px;
     }
@@ -167,7 +167,7 @@ export const BottomWrap = styled.div`
   display: flex;
   margin-top: 40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
 
     #rc-imageselect,
@@ -196,7 +196,7 @@ export const StyledButton = styled.button`
   align-self: flex-end;
   transition: all 0.3s ease;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding: 21px 20px;
     min-width: 191px;
     font-size: 12px;

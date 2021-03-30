@@ -5,7 +5,7 @@ export const GreyContainer = styled.div`
   background-repeat: no-repeat;
   background-position: 118% 298%;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
   }

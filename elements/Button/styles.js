@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Accent = styled.button`
+export const Accent = styled.button`
   font-weight: bold;
   font-size: 18px;
   line-height: 70px;
@@ -17,13 +17,13 @@ const Accent = styled.button`
     color: #ffffff;
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 767px) {
     font-size: 12px;
     line-height: 56px;
   }
 `;
 
-const Default = styled.button`
+export const Default = styled.button`
   font-weight: bold;
   font-size: 18px;
   line-height: 70px;
@@ -45,25 +45,8 @@ const Default = styled.button`
     color: #ec381a;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 12px;
     line-height: 56px;
   }
 `;
-
-const Button = ({ type = 'default', children, className, onClick }) => (
-  <>
-    {
-      {
-        accent: (
-          <Accent type="button" className={className} onClick={onClick}>
-            {children}
-          </Accent>
-        ),
-        default: <Default className={className}>{children}</Default>,
-      }[type]
-    }
-  </>
-);
-
-export default Button;

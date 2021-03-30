@@ -8,7 +8,7 @@ export const Block = styled.div`
   align-items: center;
   padding: 35px 0 60px 50px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     padding: 30px 0 45px 50px;
     line-height: 120%;
@@ -51,7 +51,7 @@ export const Text = styled.p`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 1px;
     font-size: 14px;
     line-height: 18px;

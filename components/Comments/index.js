@@ -1,23 +1,14 @@
-import styled from 'styled-components';
 import Comment from 'components/Comment';
+import * as S from './styles';
 
-const Section = styled.section`
-  max-width: 850px;
-  margin-bottom: 100px;
-
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
-  }
-`;
-
-const Comments = props => {
+const Comments = (props) => {
   const { data } = props;
   return (
-    <Section>
+    <S.Section>
       {data.map((el, i) => (
         <Comment key={i} data={el} />
       ))}
-    </Section>
+    </S.Section>
   );
 };
 

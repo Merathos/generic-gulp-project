@@ -12,7 +12,7 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 80px;
     grid-template-columns: 1fr;
   }
@@ -21,7 +21,7 @@ export const List = styled.ul`
 export const Title = styled(TitleH2)`
   margin-bottom: 40px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 20px;
   }
 `;
@@ -29,11 +29,11 @@ export const Title = styled(TitleH2)`
 export const StyledText = styled(Text)`
   margin-bottom: 40px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 60px;
   }
 `;

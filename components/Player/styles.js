@@ -33,7 +33,7 @@ export const Button = styled.button`
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.withDynamic &&
       css`
@@ -44,7 +44,7 @@ export const Button = styled.button`
       `}
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       !props.withDynamic &&
       css`
@@ -63,7 +63,7 @@ export const Label = styled.span`
   font-size: 18px;
   line-height: 32px;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.withDynamic &&
       css`
@@ -82,7 +82,7 @@ export const Bar = styled.div`
 export const Span = styled(Subtitle)`
   margin-top: auto;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.withDynamic &&
       css`

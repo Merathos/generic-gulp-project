@@ -3,31 +3,31 @@ import styled, { css } from 'styled-components';
 export const Form = styled.form`
   border-bottom: 1px solid #201f2a;
   display: flex;
-  padding: ${props =>
+  padding: ${(props) =>
     props.isMain ? '0' : props.smallPadding ? '25px 0 16px' : '25px 0'};
   margin-bottom: 10px;
 
-  ${props =>
+  @media screen and (max-width: 767px) {
+    padding: ${(props) =>
+      props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
+  }
+
+  ${(props) =>
     props.isMain &&
     css`
       width: 856px;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 960px) {
         width: 100%;
       }
     `};
 
-  @media screen and (max-width: 768px) {
-    ${props =>
+  @media screen and (max-width: 767px) {
+    ${(props) =>
       props.smallPadding &&
       css`
         padding: 4px 0;
       `};
-  }
-
-  @media screen and (max-width: 420px) {
-    padding: ${props =>
-      props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
   }
 `;
 
@@ -41,15 +41,16 @@ export const Field = styled.input`
   font-family: inherit;
   outline: none;
   transition: all 0.2s ease;
+  font-feature-settings: 'liga' off;
 
-  ${props =>
+  ${(props) =>
     props.isMain &&
     css`
       padding-top: 5px;
       padding-bottom: 25px;
       background-color: transparent;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 767px) {
         padding-top: 10px;
         padding-bottom: 15px;
     `};
@@ -69,11 +70,11 @@ export const Field = styled.input`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 134%;
 
-    ${props =>
+    ${(props) =>
       props.isMain &&
       css`
         padding-bottom: 10px;
@@ -110,8 +111,8 @@ export const Submit = styled.button`
     }
   }
 
-  @media screen and (max-width: 420px) {
-    ${props =>
+  @media screen and (max-width: 767px) {
+    ${(props) =>
       props.isMain &&
       css`
         width: 30px;

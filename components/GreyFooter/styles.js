@@ -13,7 +13,7 @@ export const Section = styled.section`
       background-repeat: no-repeat;
       background-position: right 70%;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 960px) {
         background-image: none;
       }
     `};
@@ -26,12 +26,12 @@ export const Section = styled.section`
       background-repeat: no-repeat;
       background-position: right 116%;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         background-image: none;
       }
     `};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-top: 80px;
   }
 `;
@@ -57,7 +57,7 @@ export const Title = styled.b`
   line-height: 120%;
   margin-bottom: 10px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 134%;
     margin-bottom: 14px;
@@ -68,49 +68,51 @@ export const List = styled.ul`
   display: flex;
   flex-flow: row wrap;
   max-width: 1200px;
-  padding: 0 45px;
+  padding: 0 120px;
   margin: 0 auto;
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1360px) {
     justify-content: space-between;
+    padding: 0 60px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 960px) {
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: flex;
     flex-direction: column;
-  }
-
-  @media screen and (max-width: 420px) {
-    max-width: 375px;
+    grid-gap: 0;
     padding: 0 30px;
-    flex-direction: column;
-  }
-
-  @media screen and (max-width: 240px) {
-    max-width: 320px;
-    padding: 0 20px;
+    max-width: 370px;
+    margin: 0;
   }
 `;
 
 export const ListBlog = styled.ul`
   display: block;
   max-width: 1200px;
-  padding: 0 45px;
+  padding: 0 120px;
   margin: 0 auto;
   margin-bottom: 130px;
 
-  @media screen and (max-width: 768px) {
-    margin-bottom: 80px;
+  @media screen and (max-width: 1360px) {
+    padding: 0 60px;
   }
 
-  @media screen and (max-width: 420px) {
-    max-width: 375px;
+  @media screen and (max-width: 960px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 767px) {
     padding: 0 30px;
     margin-bottom: 0;
-  }
-
-  @media screen and (max-width: 240px) {
     max-width: 320px;
-    padding: 0 20px;
+    margin: 0;
   }
 
   .swiper-container {
@@ -122,18 +124,18 @@ export const Card = styled.li`
   margin-right: 80px;
   width: 349px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 315px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 10px;
   }
 
   &:last-child {
     margin-right: 0;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       margin-right: 0;
     }
   }
@@ -142,7 +144,7 @@ export const Card = styled.li`
 export const Text = styled(Subtitle)`
   margin-bottom: 25px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 152%;
     margin-bottom: 16px;
@@ -229,11 +231,12 @@ export const Element = styled.li`
     }
   }
 
-  @media screen and (max-width: 1024px) {
-    max-width: 45%;
+  @media screen and (max-width: 960px) {
+    max-width: 100%;
+    margin-bottom: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: none;
     margin-bottom: 50px;
 
@@ -246,7 +249,7 @@ export const Element = styled.li`
 export const ArrowWrapper = styled.div`
   margin-top: auto;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     width: 28px;
     height: 28px;

@@ -1,10 +1,11 @@
 import { Media, Slider } from 'components';
+import { Container } from 'elements';
 import * as S from './styles';
 
 const EventRecap = ({ data, recap }) => {
   return (
     <S.Section id="recap-content" ref={recap}>
-      <S.Container>
+      <Container>
         {data.map((topic, i) => (
           <S.TopicWrapper key={i}>
             <S.Topic>{topic.title}</S.Topic>
@@ -18,7 +19,7 @@ const EventRecap = ({ data, recap }) => {
             )}
           </S.TopicWrapper>
         ))}
-      </S.Container>
+      </Container>
     </S.Section>
   );
 };

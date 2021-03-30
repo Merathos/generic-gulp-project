@@ -10,7 +10,7 @@ export const Text = styled(Subtitle)`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 5px;
     margin-bottom: 100px;
   }
@@ -20,7 +20,7 @@ export const Element = styled.div`
   margin-bottom: 16px;
   text-align: center;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 8px;
   }
 `;
@@ -43,7 +43,7 @@ export const Section = styled.section`
     cursor: grabbing;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
 
     ${(props) =>
@@ -58,7 +58,7 @@ export const Img = styled.img`
   width: 706px;
   margin-right: 40px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 301px;
     margin-right: 12px;
   }
@@ -72,11 +72,11 @@ export const Img = styled.img`
       max-width: 90vw;
       vertical-align: bottom;
 
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: 767px) {
         height: 232px;
       }
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 767px) {
         width: 315px;
       }
 
@@ -92,7 +92,7 @@ export const Img = styled.img`
       width: 704px;
       height: 405px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         margin-right: 12px;
         width: 315px;
         height: 232px;
@@ -116,9 +116,9 @@ export const Title = styled.p`
       width: 704px;
       text-align: center;
       font-size: 16px;
-      line-height: 20.96px;
+      line-height: 21px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         margin-top: 10px;
         font-size: 14px;
         line-height: 18.34px;
@@ -135,7 +135,7 @@ export const Title = styled.p`
     css`
       margin-top: 10px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         margin-top: 4px;
       }
     `}

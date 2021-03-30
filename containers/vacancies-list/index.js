@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { FilterButton, Checkbox } from 'elements';
+import { FilterButton, Checkbox, Container } from 'elements';
 import { Dropdown, Cards, SidebarArticle, Tags, JobForm } from 'components';
 import { Search } from 'forms';
 import ArrowRight from 'public/icons/arrow-right.svg';
@@ -233,7 +233,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
           <FilterButton name={discard} onClick={handleReset} />
         )}
       </S.Filter>
-      {initialWidth > 768 && (
+      {initialWidth > 767 && (
         <SidebarArticle
           type="button"
           data={mock.article}
@@ -245,11 +245,9 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
 
   return (
     <S.Main>
-      <S.Container>
+      <Container>
         <S.Grid>
-          {initialWidth > 768 ? (
-            renderAside()
-          ) : (
+          {initialWidth < 768 ? (
             <S.FilterWrapper
               active={!hidden}
               withExtraSpace={!!query.internship}
@@ -265,6 +263,8 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
                 {!hidden && renderAside()}
               </>
             </S.FilterWrapper>
+          ) : (
+            renderAside()
           )}
 
           <S.Article>
@@ -290,7 +290,7 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
               </Link>
             )}
           </S.Article>
-          {initialWidth <= 768 && (
+          {initialWidth < 768 && (
             <S.Resume>
               <S.ResumeButton onClick={handleSendRequestClick}>
                 {mock.article.linkText}
@@ -298,11 +298,13 @@ const VacanciesList = ({ data: mock, back, categories, stacks, teams }) => {
               {mock.article.plainText}
             </S.Resume>
           )}
-          <S.CardsWrapper>
-            <Cards data={back} type="vacancies" />
-          </S.CardsWrapper>
+          {back && (
+            <S.CardsWrapper>
+              <Cards data={back} type="vacancies" />
+            </S.CardsWrapper>
+          )}
         </S.Grid>
-      </S.Container>
+      </Container>
       <FormModal
         modalIsOpen={isModalOpened}
         closeModal={closeModal}

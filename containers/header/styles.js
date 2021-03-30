@@ -13,7 +13,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   box-sizing: border-box;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding: 30px;
     align-items: center;
     background-size: 200px;
@@ -24,7 +24,7 @@ export const StyledHeader = styled.header`
 export const StyledLogo = styled(Logo)`
   width: 85px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 54px;
   }
 `;
@@ -40,7 +40,7 @@ export const Button = styled.button`
 export const Nav = styled.nav`
   margin: 0 0 0 auto;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `;

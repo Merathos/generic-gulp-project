@@ -18,7 +18,7 @@ export const Status = styled.p`
     line-height: 21px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: 135px;
   }
 `;

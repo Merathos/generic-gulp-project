@@ -13,7 +13,7 @@ export const Label = styled.label`
     line-height: 21px;
     transition: all 0.2s ease-in;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       font-size: 14px;
       line-height: 18px;
     }

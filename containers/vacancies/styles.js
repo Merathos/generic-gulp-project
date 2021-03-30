@@ -2,18 +2,25 @@ import styled from 'styled-components';
 import { TitleH2 } from 'elements';
 
 export const Container = styled.div`
-  padding: 160px 120px 30px 120px;
+  padding-top: 160px;
+  padding-bottom: 30px;
+  padding-left: 120px;
+  padding-right: 120px;
 
-  @media screen and (max-width: 1024px) {
-    padding: 100px 60px 0 60px;
+  @media screen and (max-width: 1360px) {
+    padding-top: 120px;
+    padding-bottom: 0;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
-  @media screen and (max-width: 720px) {
-    padding: 80px 60px 0;
+  @media screen and (max-width: 960px) {
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
-  @media screen and (max-width: 420px) {
-    padding-top: 85px;
+  @media screen and (max-width: 767px) {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -24,11 +31,7 @@ export const Title = styled(TitleH2)`
   font-size: 60px;
   line-height: 100px;
 
-  @media screen and (max-width: 960px) {
-    font-size: 40px;
-  }
-
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 32px;
     line-height: 134%;
     margin-bottom: 20px;

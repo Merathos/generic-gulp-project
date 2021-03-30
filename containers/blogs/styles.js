@@ -1,25 +1,22 @@
 import styled from 'styled-components';
-import { TitleH1 } from 'elements';
+import { TitleH1, Container } from 'elements';
 
 export const Section = styled.section`
   padding-top: 200px;
 
-  @media screen and (max-width: 768px) {
-    padding-top: 115px;
+  @media screen and (max-width: 767px) {
+    padding-top: 110px;
   }
 `;
 
-export const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
+export const StyledContainer = styled(Container)`
   overflow: hidden;
 `;
 
 export const Title = styled(TitleH1)`
   margin-bottom: 40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 `;

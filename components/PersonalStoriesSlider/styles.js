@@ -10,7 +10,7 @@ export const Element = styled.div`
   justify-content: space-between;
   flex: none;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
   }
 `;
@@ -19,21 +19,21 @@ export const TextWrapper = styled.div`
   width: 45%;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 720px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0;
+  @media screen and (max-width: 1360px) {
+    width: 50%;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
     padding: 0 30px;
     box-sizing: border-box;
     height: 80%;
-    margin-bottom: -15%;
+    margin-bottom: 0;
+    width: 100%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     height: 60%;
     margin-bottom: -5%;
   }
@@ -43,19 +43,16 @@ export const Title = styled(TitleH2)`
   margin-top: 172px;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     margin-top: 100px;
   }
 
   @media screen and (max-width: 960px) {
     font-size: 40px;
-  }
-
-  @media screen and (max-width: 900px) {
     margin-top: 60px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     margin-top: 70px;
     margin-bottom: 20px;
     font-size: 32px;
@@ -69,7 +66,7 @@ export const Text = styled.p`
   margin-bottom: 60px;
   max-width: 90%;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 158%;
     margin-bottom: 30px;
@@ -91,11 +88,8 @@ export const Link = styled.a`
     color: #339722;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     margin-top: 0;
-  }
-
-  @media screen and (max-width: 600px) {
     font-size: 14px;
     line-height: 160%;
   }
@@ -107,6 +101,17 @@ export const ImageWrapper = styled.div`
   margin-right: 40px;
   align-self: flex-end;
 
+  @media screen and (max-width: 767px) {
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: flex-end;
+    height: 55%;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -117,23 +122,23 @@ export const ImageWrapper = styled.div`
     width: 301px;
     height: 301px;
     bottom: 30px;
-    left: -140px;
+    left: -90px;
     z-index: 2;
     animation: 45s linear infinite rotation;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1360px) {
       width: 260px;
       height: 260px;
       bottom: 20px;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 960px) {
       width: 200px;
       height: 200px;
-      left: -100px;
+      left: max(-100vw + 120px + 100%, -50px);
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 767px) {
       top: auto;
       bottom: 30px;
       left: max(-100vw + 120px + 100%, -50px);
@@ -143,7 +148,7 @@ export const ImageWrapper = styled.div`
       left: -100px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       width: 180px;
       height: 180px;
       left: -70px;
@@ -159,35 +164,21 @@ export const ImageWrapper = styled.div`
       transform: rotate(360deg);
     }
   }
-
-  @media screen and (max-width: 1200px) {
-    margin-right: 0;
-  }
-
-  @media screen and (max-width: 720px) {
-    margin-top: 0;
-  }
-
-  @media screen and (max-width: 420px) {
-    display: flex;
-    align-items: flex-end;
-    height: 55%;
-  }
 `;
 
 export const Img = styled.img`
   max-width: 600px;
   vertical-align: bottom;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     max-width: 430px;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 960px) {
     max-width: 350px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     max-height: 400px;
     width: auto;
   }
@@ -228,12 +219,7 @@ export const PrevButton = styled.button`
     border: none;
   }
 
-  @media screen and (max-width: 720px) {
-    top: -39px;
-    left: -10px;
-  }
-
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 767px) {
     top: -28px;
     left: 10px;
     background-color: transparent;
@@ -268,12 +254,7 @@ export const NextButton = styled.button`
     border: none;
   }
 
-  @media screen and (max-width: 720px) {
-    top: -40px;
-    left: 35px;
-  }
-
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 767px) {
     top: -30px;
     left: 55px;
     background-color: transparent;

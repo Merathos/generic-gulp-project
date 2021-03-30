@@ -46,7 +46,7 @@ export const Container = styled.section`
     padding: 60px 30px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 22px;
     min-height: 286px;
 
@@ -73,12 +73,12 @@ export const Title = styled.b`
   color: #fb5235;
   text-transform: uppercase;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     font-size: 34px;
     line-height: 130%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 28px;
     margin-bottom: 10px;
   }
@@ -88,7 +88,7 @@ export const Date = styled.p`
   margin-bottom: 20px;
   color: #201f2a;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 40px;
   }
 `;

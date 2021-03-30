@@ -16,7 +16,7 @@ export const Item = styled.li`
   width: 100%;
   max-width: 862px;
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     margin: 0 auto;
     margin-bottom: 40px;
   }

@@ -14,7 +14,7 @@ import { FormModal } from 'containers';
 import { useState } from 'react';
 import form from 'mock/forms';
 import {
-  Container,
+  StyledContainer,
   GreyContainer,
   SliderContainer,
   SliderSection,
@@ -52,62 +52,64 @@ const Vacancy = ({ data, back }) => {
           toggleJobModal={toggleJobModal}
         />
       </GreyContainer>
+      <main>
+        {content && (
+          <StyledContainer>
+            <ArticleContent
+              content={content}
+              isRelocation={back?.is_relocation}
+            />
+          </StyledContainer>
+        )}
+        {back.conditions?.length > 0 && (
+          <ConditionsSection
+            whiteSpaceBottom={
+              back.conditions?.length > 0 && back.stages?.length > 0
+            }
+          >
+            <StyledContainer>
+              <Conditions data={data.conditions} back={back.conditions} />
+            </StyledContainer>
+          </ConditionsSection>
+        )}
+        {back.stages?.length > 0 && (
+          <SliderSection>
+            <SliderContainer>
+              <SliderVacancy
+                data={data.steps}
+                list={back.stages}
+                isVacancyPage
+              />
+            </SliderContainer>
+          </SliderSection>
+        )}
 
-      {content && (
-        <Container>
-          <ArticleContent
-            content={content}
-            isRelocation={back?.is_relocation}
+        {!back.is_archive && (
+          <Application
+            data={data.application}
+            decor
+            vacancy
+            toggleJobModal={toggleJobModal}
           />
-        </Container>
-      )}
-      {back.conditions?.length > 0 && (
-        <ConditionsSection
-          whiteSpaceBottom={
-            back.conditions?.length > 0 && back.stages?.length > 0
-          }
-        >
-          <Container>
-            <Conditions data={data.conditions} back={back.conditions} />
-          </Container>
-        </ConditionsSection>
-      )}
-      {back.stages?.length > 0 && (
-        <SliderSection>
-          <SliderContainer>
-            <SliderVacancy data={data.steps} list={back.stages} isVacancyPage />
-          </SliderContainer>
-        </SliderSection>
-      )}
+        )}
 
-      {!back.is_archive && (
-        <Application
-          data={data.application}
-          decor
-          vacancy
-          toggleJobModal={toggleJobModal}
+        <OfficesMap
+          data={data.map}
+          english={back.is_english_speaking_team && back.is_translate}
+          removeMarginBottom={back.recruiters?.length < 1}
         />
-      )}
-
-      <OfficesMap
-        data={data.map}
-        english={back.is_english_speaking_team && back.is_translate}
-        removeMarginBottom={back.recruiters?.length < 1}
-      />
-
-      {back.recruiters?.length > 0 && (
-        <Container noMarginBottom>
-          <Recruiters data={data.recruiters} back={back.recruiters} />
-        </Container>
-      )}
-
+        {back.recruiters?.length > 0 && (
+          <StyledContainer noMarginBottomMobile>
+            <Recruiters data={data.recruiters} back={back.recruiters} />
+          </StyledContainer>
+        )}
+      </main>
       <SocialShare />
-
       {back.related?.length > 0 && (
         <VacancySection>
-          <Container>
+          <StyledContainer noMarginBottom>
             <Articles type="vacancy" data={back.related} />
-          </Container>
+          </StyledContainer>
         </VacancySection>
       )}
     </>

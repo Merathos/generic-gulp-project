@@ -1,7 +1,7 @@
-import TextareaAutosize from 'react-autosize-textarea';
 import styled, { css } from 'styled-components';
+import TextareaAutosize from 'react-autosize-textarea';
 
-const Label = styled.label`
+export const Label = styled.label`
   margin-bottom: 60px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ const Label = styled.label`
     margin-bottom: 30px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 22px;
     letter-spacing: -0.029em;
@@ -34,7 +34,7 @@ const Label = styled.label`
   }
 `;
 
-const StyledTextarea = styled(TextareaAutosize)`
+export const StyledTextarea = styled(TextareaAutosize)`
   resize: vertical !important;
   box-sizing: border-box;
   width: 100%;
@@ -62,7 +62,7 @@ const StyledTextarea = styled(TextareaAutosize)`
     color: #201f2a;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     min-height: 40px;
     font-size: 16px;
     line-height: 22px;
@@ -72,20 +72,3 @@ const StyledTextarea = styled(TextareaAutosize)`
     }
   }
 `;
-
-const SmartTextarea = ({ label, placeholder, name, register, error }) => {
-  return (
-    <Label error={error}>
-      <span>{label}</span>
-      <StyledTextarea
-        rows={2}
-        maxRows={8}
-        placeholder={placeholder}
-        name={name}
-        ref={register}
-      />
-    </Label>
-  );
-};
-
-export default SmartTextarea;

@@ -6,7 +6,7 @@ export const Block = styled.div`
   max-width: 850px;
   position: relative;
 
-  @media screen and (max-width: 1110px) {
+  @media screen and (max-width: 1360px) {
     margin-left: 0;
   }
 `;
@@ -15,7 +15,7 @@ export const H2 = styled(TitleH2)`
   margin-bottom: 90px;
   max-width: 733px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 50px;
     padding-left: 0;
   }
@@ -27,7 +27,7 @@ export const AdvertsWrapper = styled.div`
   grid-column-gap: 90px;
   grid-row-gap: 50px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-column-gap: 30px;
   }

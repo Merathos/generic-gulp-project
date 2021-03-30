@@ -112,10 +112,10 @@ const EventStream = ({
 
   return (
     <S.Section>
-      <S.Container>
+      <S.StyledContainer>
         <S.Title>{title}</S.Title>
         {message()}
-      </S.Container>
+      </S.StyledContainer>
       {videoCode && (isOpenBroadCast || hash) && (
         <S.StreamWrapper>
           <Media

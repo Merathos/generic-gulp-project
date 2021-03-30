@@ -5,7 +5,7 @@ export const Text = styled(Subtitle)`
   margin-bottom: 35px;
   white-space: pre-wrap;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 `;
@@ -36,14 +36,14 @@ export const Element = styled.div`
     top: 10px;
     right: 10px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       width: 228px;
       right: 0;
       top: 6px;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-right: 15px;
     padding-right: 30px;
     width: 255px;
@@ -72,7 +72,7 @@ export const Number = styled.span`
   padding-right: 20px;
   width: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 12px;
     margin-bottom: 34px;
   }
@@ -84,7 +84,7 @@ export const Title = styled.p`
   line-height: 120%;
   margin-bottom: 22px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 120%;
     margin-bottom: 8px;
@@ -95,7 +95,7 @@ export const H2 = styled(TitleH2)`
   max-width: 720px;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
 `;
@@ -123,11 +123,11 @@ export const PrevButton = styled.button`
     fill: #53b443;
   }
 
-  /* @media screen and (max-width: 1200px) {
+  /* @media screen and (max-width: 1360px) {
     right: 53px;
   } */
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 
@@ -161,11 +161,11 @@ export const NextButton = styled.button`
     fill: #53b443;
   }
 
-  /* @media screen and (max-width: 1200px) {
+  /* @media screen and (max-width: 1360px) {
     right: 0;
   } */
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 

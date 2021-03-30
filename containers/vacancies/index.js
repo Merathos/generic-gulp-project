@@ -6,7 +6,7 @@ import { Container, Title } from './styles';
 const title = 'Вакансии';
 const placeHolder = 'Введите название вакансии';
 
-const handleSearch = searchValue => {
+const handleSearch = (searchValue) => {
   Router.push({
     pathname: '/vacancies',
     query: { search: searchValue },
@@ -20,7 +20,7 @@ const Vacancies = ({ vacancyCat }) => {
       <Search
         isMain
         placeholder={placeHolder}
-        handleSearch={search => handleSearch(search)}
+        handleSearch={(search) => handleSearch(search)}
       />
       {vacancyCat?.length > 0 && <VacanciesList vacancyCat={vacancyCat} />}
     </Container>

@@ -10,7 +10,7 @@ export const H2 = styled(TitleH2)`
 export const H3 = styled(TitleH3)`
   margin-bottom: 20px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 10px;
   }
 `;
@@ -52,7 +52,7 @@ export const Clip = styled.div`
   position: relative;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     height: 235px;
   }
@@ -74,7 +74,7 @@ export const Text = styled.p`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 158%;
   }
@@ -87,7 +87,7 @@ export const List = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-top: 0;
   }
 `;
@@ -100,7 +100,7 @@ export const Element = styled.li`
     margin-right: 0;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     margin-right: 0;
   }

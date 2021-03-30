@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Section = styled.section`
   margin-bottom: 105px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
 

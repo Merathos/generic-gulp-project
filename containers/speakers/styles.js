@@ -1,20 +1,16 @@
 import styled from 'styled-components';
-import { TitleH2 } from 'elements';
+import { TitleH2, Container } from 'elements';
 
 export const Section = styled.section`
   margin-bottom: 100px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 45px;
   }
 `;
 
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 30px;
-  margin: 0 auto;
-
-  @media screen and (max-width: 375px) {
+export const StyledContainer = styled(Container)`
+  @media screen and (max-width: 767px) {
     overflow: hidden;
   }
 `;
@@ -41,7 +37,7 @@ export const Item = styled.li`
     background-position: center;
     background-repeat: no-repeat;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       width: 74px;
       height: 75px;
       background-position: left top;
@@ -57,7 +53,7 @@ export const Item = styled.li`
       top: 19px;
       right: -37px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         top: 10px;
         right: -23px;
       }
@@ -68,7 +64,7 @@ export const Item = styled.li`
     margin-right: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-right: 45px;
     max-width: 315px;
   }
@@ -81,7 +77,7 @@ export const Item = styled.li`
 export const Title = styled(TitleH2)`
   margin-bottom: 100px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 59px;
     font-size: 28px;
   }

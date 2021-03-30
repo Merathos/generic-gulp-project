@@ -5,18 +5,9 @@ export const Grid = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-top: 200px;
 
-  @media screen and (max-width: 1360px) {
-    padding-top: 120px;
-  }
-
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
-  }
-
-  @media screen and (max-width: 420px) {
-    padding-top: 110px;
   }
 `;
 
@@ -41,13 +32,13 @@ export const Wrapper = styled.article`
   padding-right: 80px;
   z-index: 1;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     max-width: none;
     width: 100%;
     padding-right: 0;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 0;
   }
 `;
@@ -57,11 +48,11 @@ export const Paragraph = styled.p`
   font-size: 24px;
   line-height: 150%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 158%;
   }
@@ -72,7 +63,7 @@ export const Picture = styled.img`
   max-width: 500px;
   width: 40%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 `;

@@ -26,7 +26,7 @@ export const Title = styled.button.attrs((props) => ({
     transition: transform 0.2s ease;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding: 14px 0;
     font-size: 16px;
     line-height: 134%;
@@ -65,7 +65,7 @@ export const Item = styled.li`
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 190%;
     margin-bottom: 16px;
@@ -86,11 +86,11 @@ export const List = styled.ul`
     height: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     height: 200px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     height: 220px;
   }
 `;
@@ -131,7 +131,7 @@ export const Wrapper = styled.div`
     pointer-events: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     &::after,
     &::before {
       background: ${(props) =>

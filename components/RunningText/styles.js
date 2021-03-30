@@ -10,19 +10,15 @@ export const Container = styled.div`
     margin-left: -504%;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     height: 360px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     height: 340px;
   }
 
-  @media screen and (max-width: 800px) {
-    height: 280px;
-  }
-
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     height: 240px;
   }
 

@@ -15,7 +15,7 @@ export const Container = styled.div`
   transition: all 0.5s ease-in;
   opacity: ${(p) => (p.startTransition ? '0' : '1')};
 
-  @media screen and (max-width: 768px), (max-height: 420px) {
+  @media screen and (max-width: 767px), (max-height: 420px) {
     padding-top: 50px;
     padding-right: 30px;
     padding-left: 30px;
@@ -39,7 +39,7 @@ export const Title = styled.p`
   line-height: 31px;
   margin-bottom: 22px;
 
-  @media screen and (max-width: 824px) {
+  @media screen and (max-width: 767px) {
     font-size: 18px;
     line-height: 24px;
   }
@@ -52,7 +52,7 @@ export const Description = styled.p`
   opacity: 0.8;
   margin-bottom: 32px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 21px;
   }
@@ -63,7 +63,7 @@ export const Button = styled(Btn)`
   color: #2f8ed9;
   max-width: 243px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: 191px;
   }
 

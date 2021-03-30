@@ -62,14 +62,10 @@ const EventHeader = ({
     const year = now.year();
 
     if (dayjs(startsAt).year() !== year) {
-      return dayjs(startsAt)
-        .locale('ru')
-        .format('D MMMM YYYY');
+      return dayjs(startsAt).locale('ru').format('D MMMM YYYY');
     }
 
-    return dayjs(startsAt)
-      .locale('ru')
-      .format('D MMMM');
+    return dayjs(startsAt).locale('ru').format('D MMMM');
   };
 
   const renderEventTime = () => {
@@ -80,7 +76,7 @@ const EventHeader = ({
 
   return (
     <S.GreyHeader>
-      <S.Container bgImg={getCategoryBackground(category?.slug)}>
+      <S.StyledContainer bgImg={getCategoryBackground(category?.slug)}>
         <S.Grid>
           <S.TopWrapper>
             {eventDataPolling.status && (
@@ -105,7 +101,7 @@ const EventHeader = ({
           {programs?.length > 0 && (
             <S.SpeakersContainer>
               <S.Title>{speakersTitle}</S.Title>
-              {programs.map(program => {
+              {programs.map((program) => {
                 if (!program?.speaker) return null;
                 return (
                   <S.Speaker key={program.speaker?.id}>
@@ -144,7 +140,7 @@ const EventHeader = ({
             Смотреть запись
           </S.StyledButton>
         )}
-      </S.Container>
+      </S.StyledContainer>
     </S.GreyHeader>
   );
 };

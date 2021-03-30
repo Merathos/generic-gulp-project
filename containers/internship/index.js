@@ -10,7 +10,7 @@ import {
 } from 'components';
 import greyFooterMock from 'mock/greyFooter';
 import {
-  Container,
+  StyledContainer,
   GreyContainer,
   GreyWrapper,
   ValuesSection,
@@ -23,7 +23,7 @@ const Internship = ({ data, vacanciesData }) => {
   return (
     <main>
       <GreyWrapper withPicture={!!data.intro.picture}>
-        <Container>
+        <StyledContainer>
           <InternshipHeader
             title={data.intro.title}
             text={data.intro.text}
@@ -32,37 +32,37 @@ const Internship = ({ data, vacanciesData }) => {
             mobPicture={data.intro.mobPicture}
             size={data.intro.size}
           />
-        </Container>
+        </StyledContainer>
       </GreyWrapper>
 
-      <Container>
+      <StyledContainer>
         <GroupContainer>
           <InternInfo data={data.info} />
         </GroupContainer>
         <GroupContainer>
           <InternAbout data={data.about} />
         </GroupContainer>
-      </Container>
+      </StyledContainer>
 
       <Gallery title={data.gallery.title} subtitle={data.gallery.subtitle} />
 
       <ValuesSection>
-        <Container>
+        <StyledContainer>
           <Values data={data.values} />
-        </Container>
+        </StyledContainer>
       </ValuesSection>
 
       <GreyContainer>
-        <Container>
+        <StyledContainer>
           <SliderVacancy data={data.steps} list={data.steps.list} />
-        </Container>
+        </StyledContainer>
       </GreyContainer>
 
       {vacanciesData?.length > 0 && (
         <VacancySection>
-          <Container>
+          <StyledContainer>
             <InternVacancies mock={data.vacancies} data={vacanciesData} />
-          </Container>
+          </StyledContainer>
         </VacancySection>
       )}
 

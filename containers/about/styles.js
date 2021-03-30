@@ -6,16 +6,24 @@ export const Main = styled.main`
 `;
 
 export const Container = styled.section`
-  max-width: 1440px;
+  max-width: ${(p) => (p.header ? '1224px' : '1200px')};
   margin: 0 auto;
-  padding: 0 96px 0 120px;
+  padding-left: 120px;
+  padding-right: ${(p) => (p.header ? '96px' : '120px')};
 
-  @media screen and (max-width: 768px) {
-    padding: 0 45px;
+  @media screen and (max-width: 1360px) {
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
-  @media screen and (max-width: 420px) {
-    padding: 0 30px;
+  @media screen and (max-width: 960px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 
@@ -29,7 +37,7 @@ export const ValuesSection = styled(SectionGroup)`
     background-position: top 45px right;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 70px;
     padding-top: 34px;
   }
@@ -40,7 +48,7 @@ export const GreyContainer = styled.div`
   background-repeat: no-repeat;
   background-position: 118% 298%;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
   }
@@ -51,16 +59,12 @@ export const HeaderContainer = styled(GreyContainer)`
   background-repeat: no-repeat;
   background-position: right 95%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     background-position: right -100px bottom 90px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     background-size: 250px;
-    background-position: right -100px bottom 90px;
-  }
-
-  @media screen and (max-width: 420px) {
     background-position: right -140px bottom 90px;
   }
 `;

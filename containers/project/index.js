@@ -7,10 +7,11 @@ import {
 import greyFooterMock from 'mock/greyFooter';
 
 import {
-  Container,
+  HeaderContainer,
   ContentContainer,
   GreyWrapper,
   VacancySection,
+  VacancyContainer,
 } from './styles';
 
 const Project = ({ data, teams }) => {
@@ -20,17 +21,17 @@ const Project = ({ data, teams }) => {
   return (
     <main>
       <GreyWrapper withBg={withBg}>
-        <Container>
+        <HeaderContainer>
           <TeamsHeader
             title={teams.name}
             text={teams.description}
             stack={teams.technology_stacks}
             picture={teams.detail_image}
           />
-        </Container>
+        </HeaderContainer>
       </GreyWrapper>
 
-      <ContentContainer>
+      <ContentContainer removeBottomMargin={teams.vacancies?.length > 0}>
         {Object.keys(content).length !== 0 && (
           <ArticleContent content={content.blocks} />
         )}
@@ -38,13 +39,13 @@ const Project = ({ data, teams }) => {
 
       {teams.vacancies?.length > 0 && (
         <VacancySection>
-          <Container>
+          <VacancyContainer>
             <TeamsVacancies
               data={data.vacancies}
               title={teams.name}
               list={teams.vacancies}
             />
-          </Container>
+          </VacancyContainer>
         </VacancySection>
       )}
 

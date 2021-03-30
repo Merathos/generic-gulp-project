@@ -6,7 +6,7 @@ export const Wrapper = styled.a`
   width: 100%;
   box-sizing: border-box;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: 315px;
   }
 `;
@@ -23,7 +23,7 @@ export const Date = styled.p`
   opacity: 0.5;
   margin-bottom: 8px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 21px;
     margin-bottom: 1px;
@@ -38,7 +38,7 @@ export const Text = styled.p`
   font-size: 18px;
   line-height: 27px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 22px;
   }
@@ -54,7 +54,7 @@ export const Title = styled.b`
   line-height: 29px;
   font-weight: 700;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 7px;
@@ -68,7 +68,7 @@ export const Picture = styled.img`
   object-fit: cover;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-height: 235px;
     margin-bottom: 22px;
   }
@@ -82,7 +82,7 @@ export const Type = styled.p`
   font-size: 16px;
   line-height: 21px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 18px;
     margin-top: 21px;
@@ -100,7 +100,7 @@ export const Type = styled.p`
     background-color: #53b443;
     transform: translateY(-50%);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       width: 6px;
       height: 6px;
     }

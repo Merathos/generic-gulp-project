@@ -4,11 +4,11 @@ export const Wrapper = styled.div`
   margin-bottom: 112px;
   min-height: 250px;
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     min-height: 215px;
   }
 `;
@@ -54,7 +54,7 @@ export const ResetFilter = styled.button`
     opacity: 1;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 190%;
   }

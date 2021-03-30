@@ -18,7 +18,7 @@ export const Container = styled.div`
   min-height: 100%;
   background-color: #f7f8f9;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
   }
 `;
@@ -30,19 +30,18 @@ export const Menu = styled.div`
   padding: 34px 45px 50px;
   background-color: #f7f8f9;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
-    padding-left: 45px;
     padding-right: 30px;
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 720px) {
-    padding-top: 34px;
+  @media screen and (max-width: 767px) {
+    padding-left: 48px;
+    padding-top: 25px;
   }
 
-  @media screen and (max-width: 420px) {
-    padding-top: 25px;
+  @media screen and (max-width: 767px) {
     padding-left: 30px;
   }
 `;
@@ -76,7 +75,11 @@ export const Button = styled.button`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
+    top: 24px;
+  }
+
+  @media screen and (max-width: 767px) {
     top: 24px;
     right: 23px;
   }
@@ -101,11 +104,11 @@ export const StyledLogo = styled(Logo)`
       }
     `};
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 64px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 54px;
     margin-bottom: 54px;
   }
@@ -116,7 +119,7 @@ export const CopyrightMenuBlock = styled.div`
   margin-top: auto;
   width: 265px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 `;
@@ -126,11 +129,11 @@ export const Copyright = styled.div`
   line-height: 120%;
   opacity: 0.5;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     font-size: 10px;
   }
 `;
@@ -141,7 +144,7 @@ export const Ref = styled.a`
   line-height: 20.19px;
   transition: color 0.3s ease;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     margin-top: 12px;
     font-size: 10px;
     line-height: 14.42px;
@@ -168,14 +171,14 @@ export const Contacts = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1360px) {
       max-width: 250px;
       max-height: 250px;
       bottom: 80px;
       left: -160px;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 960px) {
       max-width: 200px;
       max-height: 200px;
       bottom: auto;
@@ -184,7 +187,7 @@ export const Contacts = styled.div`
       right: 70px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       transform: rotate(-10deg);
       max-width: 170px;
       max-height: 170px;
@@ -199,14 +202,14 @@ export const Contacts = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
     margin-top: auto;
     padding: 80px 30px 50px 60px;
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-left: 30px;
   }
 `;
@@ -216,19 +219,19 @@ export const Socials = styled.div`
   margin-left: 90px;
   margin-right: 30px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     align-self: center;
     margin-left: 40px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-top: 80px;
     margin-right: 0;
     margin-left: 0;
     align-self: flex-start;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 120px;
   }
 `;
@@ -236,12 +239,12 @@ export const Socials = styled.div`
 export const CopyrightContactsBlock = styled.div`
   display: none;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: block;
     margin-top: 30px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     margin-top: 24px;
     max-width: 255px;
   }
@@ -250,7 +253,7 @@ export const CopyrightContactsBlock = styled.div`
 export const Producer = styled.div`
   display: none;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: flex;
     margin-top: 50px;
 
@@ -260,7 +263,7 @@ export const Producer = styled.div`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     align-items: flex-end;
     justify-content: space-between;
   }

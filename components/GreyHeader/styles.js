@@ -9,20 +9,20 @@ export const StyledSmallText = styled(SmallText)`
 export const Grid = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 240px;
+  padding-top: 200px;
 
   @media screen and (max-width: 1250px) {
     flex-direction: column;
     padding-top: 110px;
-    padding-bottom: 110px;
+    padding-bottom: 100px;
   }
 
   ${(props) =>
     props.isContacts &&
     css`
-      padding-top: 210px;
+      padding-top: 200px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         padding-top: 110px;
         padding-bottom: 80px;
       }
@@ -37,11 +37,11 @@ export const Wrapper = styled.article`
     padding-right: ${(props) => (props.withPicture ? '60px' : '0')};
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     padding-right: 0;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 0;
   }
 `;
@@ -51,7 +51,7 @@ export const Aside = styled.aside`
   margin-top: 152px;
   margin-left: auto;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     margin-top: 80px;
     margin-left: 0;
@@ -61,11 +61,11 @@ export const Aside = styled.aside`
 export const Paragraph = styled(Text)`
   margin-bottom: 140px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 60px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
   }
 
@@ -78,7 +78,7 @@ export const Paragraph = styled(Text)`
       line-height: 36px;
       max-width: 750px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         font-size: 16px;
         line-height: 25px;
         margin-top: 22px;
@@ -92,11 +92,11 @@ export const Features = styled.ul`
   grid-gap: 100px;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     margin-bottom: 100px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 30px;
@@ -106,14 +106,14 @@ export const Features = styled.ul`
   ${(props) =>
     props.twoColumns &&
     css`
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 960px) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-gap: 30px;
         margin-bottom: 30px;
       }
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 767px) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap: 30px;
@@ -137,29 +137,29 @@ export const ListTitle = styled.b`
     color: #2079bf;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 120%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 7px;
   }
 `;
 
 export const Element = styled.li`
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: flex;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
   }
 
   ${(props) =>
     props.isContacts &&
     css`
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 767px) {
         flex-direction: unset;
       }
     `};
@@ -169,7 +169,7 @@ export const StyledIcon = styled(Icon)`
   margin-bottom: 30px;
   background-size: 24px 24px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-shrink: 0;
     margin-right: 20px;
     margin-bottom: 0;
@@ -185,14 +185,14 @@ export const StyledIcon = styled(Icon)`
 export const StyledButton = styled(Button)`
   margin-right: 40px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-right: 0;
     margin-bottom: 20px;
   }
 `;
 
 export const ButtonsWrapper = styled.div`
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -284,7 +284,7 @@ export const Block = styled.div`
       min-width: 260px;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 960px) {
       min-width: auto;
     }
 
@@ -293,7 +293,7 @@ export const Block = styled.div`
       align-self: center;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       width: auto;
     }
 

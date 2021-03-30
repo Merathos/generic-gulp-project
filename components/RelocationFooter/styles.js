@@ -9,11 +9,11 @@ export const Section = styled.section`
   background-repeat: no-repeat;
   background-position: right bottom;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     background-image: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-top: 80px;
   }
 `;
@@ -25,17 +25,11 @@ export const Title = styled.b`
   line-height: 120%;
   margin-bottom: 10px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 134%;
     margin-bottom: 15px;
   }
-`;
-
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 30px;
-  margin: 0 auto;
 `;
 
 export const List = styled.ul`
@@ -44,11 +38,11 @@ export const List = styled.ul`
   grid-gap: 97px;
   grid-template-columns: repeat(auto-fill, 330px);
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     grid-gap: 44px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 330px));
   }
 `;
@@ -56,7 +50,7 @@ export const List = styled.ul`
 export const Text = styled(Subtitle)`
   margin-bottom: 27px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 152%;
   }
@@ -74,7 +68,7 @@ export const Element = styled.li`
   transition: all 0.3s ease;
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     min-height: 155px;
   }
 
@@ -100,7 +94,7 @@ export const Element = styled.li`
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       width: 27px;
       height: 27px;
     }
@@ -142,7 +136,7 @@ export const Element = styled.li`
     opacity: 1;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     max-width: auto;
   }
 `;
