@@ -1,6 +1,6 @@
 import { getServerSideSitemap } from 'next-sitemap';
 
-export const getServerSideProps = async ctx => {
+export const getServerSideProps = async (ctx) => {
   const fields = [
     {
       loc: '',
@@ -31,7 +31,7 @@ export const getServerSideProps = async ctx => {
     },
   ];
 
-  const result = fields.map(item => ({
+  const result = fields.map((item) => ({
     loc: `${process.env.NEXT_PUBLIC_DOMAIN}/${item.loc}`,
     lastmod: new Date().toISOString(),
     priority: 0.5,

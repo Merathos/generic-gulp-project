@@ -14,7 +14,7 @@ const GreyFooter = ({ data, type, background }) => {
       {type === 'blog' ? (
         <S.ListBlog>
           <Swiper {...params}>
-            {data.map(item => {
+            {data.map((item) => {
               return (
                 <S.Card key={item.id}>
                   <StoryCard data={item} background="#fff" staticWidth />

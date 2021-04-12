@@ -4,10 +4,10 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 85px;
-  grid-gap: ${props => (props.type === 'teams' ? '80px 4px' : '80px')};
+  grid-gap: ${(props) => (props.type === 'teams' ? '80px 4px' : '80px')};
 
   @media screen and (max-width: 1300px) {
-    grid-gap: ${props => (props.type === 'teams' ? '80px 4px' : '80px 40px')};
+    grid-gap: ${(props) => (props.type === 'teams' ? '80px 4px' : '80px 40px')};
   }
 
   @media screen and (max-width: 1200px) {
@@ -15,10 +15,11 @@ export const List = styled.ul`
   }
 
   @media screen and (max-width: 1024px) {
-    grid-template-columns: ${props =>
+    grid-template-columns: ${(props) =>
       props.type === 'teams' ? '1fr 1fr' : '1fr'};
-    grid-gap: ${props => (props.type === 'teams' ? '80px 40px' : '70px 40px')};
-    margin-top: ${props => (props.type === 'teams' ? '35px' : '85px')};
+    grid-gap: ${(props) =>
+      props.type === 'teams' ? '80px 40px' : '70px 40px'};
+    margin-top: ${(props) => (props.type === 'teams' ? '35px' : '85px')};
   }
 
   @media screen and (max-width: 768px) {
@@ -35,7 +36,7 @@ export const ListItem = styled.li`
   display: flex;
 
   @media screen and (max-width: 1024px) {
-    justify-content: ${props =>
+    justify-content: ${(props) =>
       props.type === 'teams' ? 'center' : 'flex-start'};
   }
 

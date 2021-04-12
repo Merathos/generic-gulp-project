@@ -4,14 +4,14 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   min-width: 250px;
-  margin-right: ${props => (props.noMargin ? '0' : '240px')};
+  margin-right: ${(props) => (props.noMargin ? '0' : '240px')};
 
   @media screen and (max-width: 1300px) {
-    margin-right: ${props => (props.noMargin ? '0' : '80px')};
+    margin-right: ${(props) => (props.noMargin ? '0' : '80px')};
   }
 
   @media screen and (max-width: 1024px) {
-    margin-right: ${props => (props.noMargin ? '0' : '40px')};
+    margin-right: ${(props) => (props.noMargin ? '0' : '40px')};
   }
 
   @media screen and (max-width: 420px) {
@@ -37,12 +37,12 @@ export const SocialLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => (props.grey ? '#FFFFFF' : '#F7F8F9')};
+  background-color: ${(props) => (props.grey ? '#FFFFFF' : '#F7F8F9')};
   border-radius: 50%;
   transition: background-color 200ms ease;
 
   &:hover {
-    background-color: ${props =>
+    background-color: ${(props) =>
       props.color === 'blue' ? '#2F8ED9' : '#FB5235'};
 
     path {
@@ -51,7 +51,7 @@ export const SocialLink = styled.a`
   }
 
   &:active {
-    background-color: ${props =>
+    background-color: ${(props) =>
       props.color === 'blue' ? '#2079BF' : '#EC381A'};
 
     path {

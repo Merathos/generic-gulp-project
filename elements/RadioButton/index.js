@@ -44,7 +44,7 @@ const Label = styled.label`
   }
 `;
 
-const RadioButton = props => {
+const RadioButton = (props) => {
   const { name, handleChange, value, checked, label } = props;
 
   return (
@@ -53,8 +53,8 @@ const RadioButton = props => {
         type="radio"
         name={name}
         id={value}
-        onChange={e => handleChange(e.target.id)}
-        onClick={e => handleChange(checked ? '' : e.target.id)}
+        onChange={(e) => handleChange(e.target.id)}
+        onClick={(e) => handleChange(checked ? '' : e.target.id)}
         checked={checked}
       />
       <Label htmlFor={value}>{label || value}</Label>

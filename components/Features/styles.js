@@ -31,7 +31,7 @@ export const Item = styled.li`
 export const Icon = styled.div`
   margin-right: 8px;
   font-size: 22px;
-  background-image: ${props => `url('/emodzi/${props.name}.png')`};
+  background-image: ${(props) => `url('/emodzi/${props.name}.png')`};
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 70%;

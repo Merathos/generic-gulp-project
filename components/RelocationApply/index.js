@@ -17,7 +17,7 @@ const RelocationApply = ({ data }) => {
   if (text) {
     updatedText = text.replace(
       emailRegExp,
-      email => `<a href="mailto:${email}">${email}</a>`
+      (email) => `<a href="mailto:${email}">${email}</a>`
     );
   }
 

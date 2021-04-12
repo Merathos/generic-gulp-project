@@ -2,7 +2,7 @@ import Link from 'next/link';
 import dayjs from 'dayjs';
 import * as S from './styles';
 
-const StoryCard = props => {
+const StoryCard = (props) => {
   const {
     data: { title, slug, preview, created_at },
     background,

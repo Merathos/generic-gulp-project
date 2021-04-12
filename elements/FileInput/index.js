@@ -6,7 +6,7 @@ const FileInput = ({ id, name, label, fileExt, register }) => {
   const [hasFile, setHasFile] = useState(false);
   const fileInput = useRef(null);
 
-  const handleLabel = e => {
+  const handleLabel = (e) => {
     if (e.target.files[0]) {
       setHasFile(true);
       setMsg(e.target.files[0].name);
@@ -27,7 +27,7 @@ const FileInput = ({ id, name, label, fileExt, register }) => {
         name={name}
         accept=".doc, .docx, .pdf, .rtf, .txt"
         onChange={handleLabel}
-        ref={e => {
+        ref={(e) => {
           if (register) {
             register(e);
           }

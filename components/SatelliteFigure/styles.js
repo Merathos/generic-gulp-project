@@ -46,7 +46,7 @@ export const TopRight = styled.div`
 export const Sector = styled.div`
   width: 58px;
   height: 58px;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
   clip-path: circle(50% at 100% 100%);
   transform: rotate(45deg);
 `;

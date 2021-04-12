@@ -27,8 +27,8 @@ export const Item = styled.li`
 
 export const Label = styled.a`
   padding: 4px 8px;
-  background: ${props => (props.activeLink ? '#53B443' : '#F7F8F9')};
-  color: ${props => (props.activeLink ? '#fff' : 'inherit')};
+  background: ${(props) => (props.activeLink ? '#53B443' : '#F7F8F9')};
+  color: ${(props) => (props.activeLink ? '#fff' : 'inherit')};
   font-size: 16px;
   line-height: 21px;
   border-radius: 4px;

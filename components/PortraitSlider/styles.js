@@ -49,8 +49,8 @@ export const QuoteBlock = styled.div`
   min-width: 270px;
   padding: 40px 45px 35px 40px;
   border-radius: 0 40px 40px 40px;
-  background-color: ${props => (props.bgColor ? props.bgColor : `FB5235`)};
-  color: ${props => (props.bgColor === '#FEB251' ? '#201F2A' : '#F7F8F9')};
+  background-color: ${(props) => (props.bgColor ? props.bgColor : `FB5235`)};
+  color: ${(props) => (props.bgColor === '#FEB251' ? '#201F2A' : '#F7F8F9')};
   text-align: left;
 
   @media screen and (max-width: 1024px) {

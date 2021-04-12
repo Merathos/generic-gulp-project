@@ -59,12 +59,13 @@ export const Title = styled.a`
   line-height: 170%;
   transition: color 0.3s ease;
 
-  ${props =>
+  ${(props) =>
     props.isActive &&
     css`
       color: #53b443;
 
-      ${'' /* &::after {
+      ${
+        '' /* &::after {
         content: '';
         width: 6px;
         height: 6px;
@@ -74,7 +75,8 @@ export const Title = styled.a`
         bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
-      } */}
+      } */
+      }
     `};
 
   @media screen and (max-width: 1024px) {

@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-const Metro = props => {
+const Metro = (props) => {
   const {
     data: { title, image, subtitle },
   } = props;

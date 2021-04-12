@@ -8,13 +8,13 @@ import {
 } from './styles';
 
 const VacanciesList = ({ vacancyCat }) => {
-  const oddItems = vacancyCat.filter(item => item.id % 2 === 0);
-  const evenItems = vacancyCat.filter(item => item.id % 2 === 1);
+  const oddItems = vacancyCat.filter((item) => item.id % 2 === 0);
+  const evenItems = vacancyCat.filter((item) => item.id % 2 === 1);
 
   return (
     <List>
       <ListColumn>
-        {evenItems.map(item => (
+        {evenItems.map((item) => (
           <ListItem key={item.id}>
             <VacancyQuantity>{item.vacancy_count}</VacancyQuantity>
             <Link href={`/vacancies?categories=${item.slug}`} passHref>
@@ -24,7 +24,7 @@ const VacanciesList = ({ vacancyCat }) => {
         ))}
       </ListColumn>
       <ListColumn>
-        {oddItems.map(item => (
+        {oddItems.map((item) => (
           <ListItem key={item.id}>
             <VacancyQuantity>{item.vacancy_count}</VacancyQuantity>
             <Link href={`/vacancies?categories=${item.slug}`} passHref>

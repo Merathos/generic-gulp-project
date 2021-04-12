@@ -14,7 +14,7 @@ const OpenedMenu = ({ onMenuClose }) => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     document.body.style.overflow = 'hidden';
 
-    const handleEscPress = evt => {
+    const handleEscPress = (evt) => {
       if (evt.keyCode === 27) {
         onMenuClose();
       }

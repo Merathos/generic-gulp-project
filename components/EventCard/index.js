@@ -75,12 +75,12 @@ const EventCard = ({
         hasVideo={hasVideo}
       />
       {programs &&
-        programs.map(program => (
+        programs.map((program) => (
           <S.TopicContainer key={program.id}>
             <S.TopicName>{program.name}</S.TopicName>
             <S.SpeakerContainer>
               {program.speaker &&
-                [program.speaker].map(speaker => (
+                [program.speaker].map((speaker) => (
                   <S.Speaker key={speaker.id}>
                     <S.Pic
                       src={speaker.image.path.normal}

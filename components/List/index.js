@@ -11,7 +11,7 @@ import {
   Wrapper,
 } from './styles';
 
-const List = props => {
+const List = (props) => {
   const { data, type } = props;
   return (
     <Section>

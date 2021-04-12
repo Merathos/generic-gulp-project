@@ -36,7 +36,7 @@ export const ListItem = styled.li`
   flex-direction: column;
   margin-bottom: 55px;
 
-  ${props =>
+  ${(props) =>
     props.isActive &&
     css`
       b {

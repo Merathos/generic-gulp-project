@@ -21,21 +21,15 @@ const EventForm = ({
   const schema = yup.object().shape({
     name: yup.string().required('error'),
     lastname: yup.string().required('error'),
-    email: yup
-      .string()
-      .email('warning')
-      .required('error'),
-    personal: yup
-      .boolean()
-      .required()
-      .oneOf([true], 'error'),
+    email: yup.string().email('warning').required('error'),
+    personal: yup.boolean().required().oneOf([true], 'error'),
     newsletter: yup.boolean(),
   });
   const { handleSubmit, register, errors } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
@@ -47,15 +41,15 @@ const EventForm = ({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
-    setSelectedEventCategories(prev => {
+    setSelectedEventCategories((prev) => {
       if (prev.includes(id)) {
-        return prev.filter(item => item !== id);
+        return prev.filter((item) => item !== id);
       }
       return [...prev, id];
     });
   };
 
-  const onSubmit = async values => {
+  const onSubmit = async (values) => {
     if (captchaPassed) {
       const { data, errors: submitErrors } = await subscribe({
         variables: {
@@ -111,13 +105,13 @@ const EventForm = ({
           <S.SectionTitle>{directions.title}</S.SectionTitle>
           <S.Question>{directions.question}</S.Question>
           <S.CheckboxContainer>
-            {eventCategories.map(item => (
+            {eventCategories.map((item) => (
               <S.CheckBox
                 key={item.id}
                 name={item.slug}
                 value={item.name}
                 checked={checkedEls[item.slug]}
-                onChange={event => handleEventCategoryChange(event, item.id)}
+                onChange={(event) => handleEventCategoryChange(event, item.id)}
                 register={register()}
               />
             ))}

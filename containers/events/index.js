@@ -10,17 +10,17 @@ const Events = ({ data, eventCategories, events }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
-    setIsOpen(prev => !prev);
+    setIsOpen((prev) => !prev);
   }
 
   // Filter upcoming events
   const eventsUpcoming = events?.filter(
-    event => Date.parse(event.ends_at) - Date.parse(new Date()) > 0
+    (event) => Date.parse(event.ends_at) - Date.parse(new Date()) > 0
   );
 
   // Filter ended events
   const eventsEnded = events?.filter(
-    event => Date.parse(event.ends_at) - Date.parse(new Date()) < 0
+    (event) => Date.parse(event.ends_at) - Date.parse(new Date()) < 0
   );
 
   return (

@@ -40,14 +40,14 @@ const BlogGrid = ({ cards }) => {
     }
 
     const masonryEvents = ['load', 'resize'];
-    masonryEvents.forEach(event => {
+    masonryEvents.forEach((event) => {
       window.addEventListener(event, resizeAllMasonryItems);
     });
 
     resizeAllMasonryItems();
 
     return () => {
-      masonryEvents.forEach(event => {
+      masonryEvents.forEach((event) => {
         window.removeEventListener(event, resizeAllMasonryItems);
       });
     };
@@ -55,7 +55,7 @@ const BlogGrid = ({ cards }) => {
 
   return (
     <S.Grid ref={grid}>
-      {cards.map(item => {
+      {cards.map((item) => {
         return (
           <S.Item
             key={item.id}

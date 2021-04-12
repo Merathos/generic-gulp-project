@@ -1,7 +1,7 @@
 import { Advert, TeamCard } from 'components';
 import { List, ListItem } from './styles';
 
-const Cards = props => {
+const Cards = (props) => {
   const { data, type } = props;
 
   return (

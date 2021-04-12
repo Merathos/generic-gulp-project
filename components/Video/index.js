@@ -2,7 +2,7 @@ import ReactPlayer from 'react-player';
 import { sanitize } from 'isomorphic-dompurify';
 import { Section, Text, VideoContainer } from './styles';
 
-const Video = props => {
+const Video = (props) => {
   const {
     data: { link, title },
     recap,

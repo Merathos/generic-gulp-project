@@ -11,6 +11,7 @@
     "start": "NODE_OPTIONS=--max_old_space_size=6144 next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|md)\"",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"

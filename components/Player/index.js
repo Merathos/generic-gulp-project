@@ -16,7 +16,7 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
     setFirstClick(true);
   };
 
-  const handleUpdate = e => {
+  const handleUpdate = (e) => {
     refProgress.current.style.width = `${Math.round(152 * e.played)}px`;
     setAudioDuration(restOfDuration(audioDuration));
   };
@@ -48,8 +48,8 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
         url={src}
         width="0"
         height="0"
-        onProgress={e => play && handleUpdate(e)}
-        onDuration={e => {
+        onProgress={(e) => play && handleUpdate(e)}
+        onDuration={(e) => {
           setinitialDuration(e);
           !play && setAudioDuration(e);
         }}

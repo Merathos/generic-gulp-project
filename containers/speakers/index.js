@@ -1,7 +1,7 @@
 import { SpeakerCard } from 'components';
 import * as S from './styles';
 
-const Speakers = props => {
+const Speakers = (props) => {
   const { speakersTitle, programs } = props;
 
   return (
@@ -9,7 +9,7 @@ const Speakers = props => {
       <S.Container>
         <S.Title>{speakersTitle}</S.Title>
         <S.List>
-          {programs.map(program => {
+          {programs.map((program) => {
             if (!program?.speaker) return null;
             return (
               <S.Item key={program.id}>

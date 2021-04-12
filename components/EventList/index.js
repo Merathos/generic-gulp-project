@@ -4,7 +4,7 @@ import { Item, List } from './styles';
 const EventList = ({ events, noMarginBottom }) => {
   return (
     <List noMarginBottom={noMarginBottom}>
-      {events.map(event => (
+      {events.map((event) => (
         <Item key={event.id}>
           <EventCard
             category={event.category}

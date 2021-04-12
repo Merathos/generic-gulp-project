@@ -9,7 +9,7 @@ export const Container = styled.section`
   margin-top: 20px;
   background-color: #f7f8f9;
   padding: 40px 40px 0;
-  background-image: url(${props => props.bg});
+  background-image: url(${(props) => props.bg});
   background-repeat: no-repeat;
   background-position: right bottom;
 

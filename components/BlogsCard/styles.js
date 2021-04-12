@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { TitleH4 } from 'elements';
 
 export const Wrapper = styled.a`
-  background-color: ${props => props.background || 'transparent'};
+  background-color: ${(props) => props.background || 'transparent'};
   padding: 40px 40px 0;
   max-width: 350px;
   box-sizing: border-box;

@@ -10,7 +10,7 @@ const Section = styled.section`
   }
 `;
 
-const Comments = props => {
+const Comments = (props) => {
   const { data } = props;
   return (
     <Section>

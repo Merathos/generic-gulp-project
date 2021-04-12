@@ -19,7 +19,7 @@ import {
   Content,
 } from './styles';
 
-const SidebarArticle = props => {
+const SidebarArticle = (props) => {
   const {
     data: { title, subtitle, description, text, button, icon, picture, link },
     type,

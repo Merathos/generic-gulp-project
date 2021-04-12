@@ -17,28 +17,22 @@ const SubForm = ({ closeModal, showSuccess, showError }) => {
   const schema = yup.object().shape({
     name: yup.string().required('error'),
     lastname: yup.string().required('error'),
-    email: yup
-      .string()
-      .email('warning')
-      .required('error'),
-    personal: yup
-      .boolean()
-      .required()
-      .oneOf([true], 'error'),
+    email: yup.string().email('warning').required('error'),
+    personal: yup.boolean().required().oneOf([true], 'error'),
   });
 
   const { handleSubmit, register, errors } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setCheckedEls({
       ...checkedEls,
       [event.target.id]: event.target.checked,
     });
   };
 
-  const onSubmit = async values => {
+  const onSubmit = async (values) => {
     if (captchaPassed) {
       const { data, errors: submitErrors } = await sendSubscription({
         variables: {
