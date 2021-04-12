@@ -18,9 +18,13 @@ const CookieMessage = ({ data, setCookieAccepted }) => {
 
   return (
     <S.Container startTransition={startTransition}>
-      <S.Title>{data.title}</S.Title>
-      <S.Description>{data.description}</S.Description>
-      <S.Button onClick={handleClick}>{data.buttonText}</S.Button>
+      <S.Wrapper>
+        <S.Title>{data.title}</S.Title>
+        <S.BottomWrapper>
+          <S.Button onClick={handleClick}>{data.buttonText}</S.Button>
+          <S.Description>{data.description}</S.Description>
+        </S.BottomWrapper>
+      </S.Wrapper>
     </S.Container>
   );
 };
