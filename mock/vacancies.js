@@ -14,7 +14,7 @@ export default {
         },
       ],
       internship: `Стажировки`,
-      english: `English Speaking Team`,
+      english: `English practice`,
       discard: `Сбросить фильтр`,
     },
     search: `Введите название вакансии`,
