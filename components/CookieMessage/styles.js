@@ -25,10 +25,6 @@ export const Container = styled.div`
   @media screen and (max-height: 420px) {
     transform: translate(-50%, ${(p) => (p.startTransition ? '100vh' : '0')});
   }
-
-  @media screen and (max-width: 320px), (max-height: 380px) {
-    top: 0;
-  }
 `;
 
 export const Wrapper = styled.div`
