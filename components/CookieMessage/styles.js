@@ -22,6 +22,10 @@ export const Container = styled.div`
     transform: translate(-50%, ${(p) => (p.startTransition ? '55vh' : '0')});
   }
 
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    padding: 32px 0;
+  }
+
   @media screen and (max-height: 420px) {
     transform: translate(-50%, ${(p) => (p.startTransition ? '100vh' : '0')});
   }
@@ -32,15 +36,11 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 120px;
 
-  @media screen and (max-width: 1360px) {
+  @media screen and (max-width: 1024px) {
     padding: 0 60px;
   }
 
-  @media screen and (max-width: 960px) {
-    padding: 0 40px;
-  }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 720px) {
     padding: 0 30px;
   }
 `;
@@ -60,6 +60,12 @@ export const Title = styled.p`
   line-height: 36px;
   margin-bottom: 32px;
 
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 30px;
     font-size: 18px;
@@ -74,6 +80,12 @@ export const Description = styled.p`
   opacity: 0.7;
   margin-left: 24px;
 
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-left: 16px;
+  }
+
   @media screen and (max-width: 768px) {
     margin-left: 0;
     font-size: 14px;
@@ -85,6 +97,13 @@ export const Button = styled(Btn)`
   background-color: #f7f8f9;
   color: #2f8ed9;
   max-width: 174px;
+
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    max-width: 116px;
+    padding: 17px 24px;
+    font-size: 12px;
+    line-height: 17px;
+  }
 
   @media screen and (max-width: 768px) {
     margin-bottom: 12px;
