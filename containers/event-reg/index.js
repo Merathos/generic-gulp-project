@@ -17,7 +17,7 @@ const EventReg = ({ regForm, customizeID, eventID, removeMarginBottom }) => {
   {{/event.is_recurring}}
   <div class="b-registration__section">
   {{#event.name}}
-  <h2 class="event__title">Давай с нами</h2>
+  <h2 class="event__title">Регистрация</h2>
   {{/event.name}}
   <div class="location">
   <div class="event__date">
