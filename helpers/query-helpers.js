@@ -10,14 +10,14 @@ export const queryHelpers = {
   generateNewTags(arr, slug, isActive) {
     if (Array.isArray(arr)) {
       if (isActive) {
-        return arr.filter(item => item !== slug);
+        return arr.filter((item) => item !== slug);
       }
-      return [...arr, slug].filter(i => i && i.length > 0);
+      return [...arr, slug].filter((i) => i && i.length > 0);
     }
     if (isActive) {
-      return [slug].filter(i => i !== slug);
+      return [slug].filter((i) => i !== slug);
     }
-    return [arr, slug].filter(i => i && i.length > 0);
+    return [arr, slug].filter((i) => i && i.length > 0);
   },
 
   checkCategoryLength(arr) {

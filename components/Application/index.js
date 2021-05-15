@@ -11,7 +11,7 @@ const Application = ({
   vacancy,
   toggleJobModal,
 }) => {
-  const language = useSelector(state => state.language);
+  const language = useSelector((state) => state.language);
 
   const { text, picture } = data;
   const emailRegExp = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
@@ -19,7 +19,7 @@ const Application = ({
   if (text) {
     updatedText = text.replace(
       emailRegExp,
-      email => `<a href="mailto:${email}">${email}</a>`
+      (email) => `<a href="mailto:${email}">${email}</a>`
     );
   }
   return (

@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-const Mailing = props => {
+const Mailing = (props) => {
   const {
     data: { link, text },
     onClick,

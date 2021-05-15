@@ -10,7 +10,7 @@ const TeamsVacancies = ({ data, title, list }) => {
         <H2>{data.title}</H2>
       )}
       <AdvertsWrapper>
-        {list.map(item => (
+        {list.map((item) => (
           <Advert data={item} key={item.id} />
         ))}
       </AdvertsWrapper>

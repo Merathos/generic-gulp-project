@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import * as S from './styles';
 
-const HighlightCard = props => {
+const HighlightCard = (props) => {
   const {
     data: { title, summary, highlight_image: highlightImage, slug },
     bgImg,

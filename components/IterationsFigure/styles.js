@@ -22,13 +22,13 @@ export const Sector = styled.div`
 `;
 
 export const Circle = styled.div`
-  width: ${props => (props.size === 'small' ? '12px' : '125px')};
-  height: ${props => (props.size === 'small' ? '12px' : '125px')};
+  width: ${(props) => (props.size === 'small' ? '12px' : '125px')};
+  height: ${(props) => (props.size === 'small' ? '12px' : '125px')};
   border-radius: 50%;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.size === 'small' ? '#2F8ED9' : '#fb5235'};
 
-  ${props =>
+  ${(props) =>
     props.position === 'middle' &&
     css`
       position: absolute;
@@ -36,7 +36,7 @@ export const Circle = styled.div`
       left: 0;
     `}
 
-  ${props =>
+  ${(props) =>
     props.state === 'single' &&
     css`
       position: absolute;
@@ -50,7 +50,7 @@ export const Group = styled.div`
   justify-content: space-between;
   width: 40px;
 
-  ${props =>
+  ${(props) =>
     props.position === 'top' &&
     css`
       position: absolute;
@@ -59,7 +59,7 @@ export const Group = styled.div`
       transform: rotate(-45deg);
     `}
 
-  ${props =>
+  ${(props) =>
     props.position === 'bottom' &&
     css`
       position: absolute;
@@ -72,29 +72,29 @@ export const Group = styled.div`
 export const Square = styled.div`
   width: 50px;
   height: 50px;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
 
-  ${props =>
+  ${(props) =>
     props.color === '#5FAF52' &&
     css`
       position: absolute;
       top: -75px;
       left: -35px;
     `}
+
+  ${(props) =>
+    props.color === '#2F8ED9' &&
+    css`
+      position: absolute;
+      top: -80px;
+      left: 165px;
+    `}
     
-    ${props =>
-      props.color === '#2F8ED9' &&
-      css`
-        position: absolute;
-        top: -80px;
-        left: 165px;
-      `}
-    
-    ${props =>
-      props.color === '#FEB251' &&
-      css`
-        position: absolute;
-        top: 160px;
-        left: 155px;
-      `}
+    ${(props) =>
+    props.color === '#FEB251' &&
+    css`
+      position: absolute;
+      top: 160px;
+      left: 155px;
+    `}
 `;

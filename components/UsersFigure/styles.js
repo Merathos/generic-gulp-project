@@ -17,14 +17,14 @@ export const Square = styled.div`
 export const Block = styled.div`
   position: absolute;
 
-  ${props =>
+  ${(props) =>
     props.position === 'left' &&
     css`
       top: 30px;
       left: 25px;
     `};
 
-  ${props =>
+  ${(props) =>
     props.position === 'top' &&
     css`
       top: -45px;
@@ -32,15 +32,15 @@ export const Block = styled.div`
       transform: rotate(30deg);
     `};
 
-  ${props =>
+  ${(props) =>
     props.position === 'right' &&
     css`
       top: 25px;
       left: 280px;
       transform: scaleX(-1) rotate(-15deg);
     `}
-  
-  ${props =>
+
+  ${(props) =>
     props.position === 'middle-left' &&
     css`
       display: flex;
@@ -49,7 +49,7 @@ export const Block = styled.div`
       transform: rotate(-30deg);
     `}
   
-  ${props =>
+  ${(props) =>
     props.position === 'middle-right' &&
     css`
       display: flex;
@@ -60,12 +60,12 @@ export const Block = styled.div`
 `;
 
 export const Circle = styled.div`
-  width: ${props => (props.color === '#FB5235' ? '46px' : '9px')};
-  height: ${props => (props.color === '#FB5235' ? '46px' : '9px')};
+  width: ${(props) => (props.color === '#FB5235' ? '46px' : '9px')};
+  height: ${(props) => (props.color === '#FB5235' ? '46px' : '9px')};
   border-radius: 50%;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
 
-  ${props =>
+  ${(props) =>
     props.color === '#FB5235' &&
     css`
       position: absolute;
@@ -73,7 +73,7 @@ export const Circle = styled.div`
       left: 165px;
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === '#2F8ED9' &&
     css`
       margin-right: 25px;

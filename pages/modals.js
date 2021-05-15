@@ -28,27 +28,27 @@ const ModalsPreview = () => {
   const [errorModalIsShown, setErrorIsShown] = useState(false);
 
   function toggleJobModal() {
-    setjobIsShown(prev => !prev);
+    setjobIsShown((prev) => !prev);
   }
 
   function toggleJobv2Modal() {
-    setjobv2IsShown(prev => !prev);
+    setjobv2IsShown((prev) => !prev);
   }
 
   function toggleMailingModal() {
-    setMailingIsShown(prev => !prev);
+    setMailingIsShown((prev) => !prev);
   }
 
   function toggleInternModal() {
-    setInterntIsShown(prev => !prev);
+    setInterntIsShown((prev) => !prev);
   }
 
   function toggleSuccess() {
-    setSuccessIsShown(prev => !prev);
+    setSuccessIsShown((prev) => !prev);
   }
 
   function toggleError() {
-    setErrorIsShown(prev => !prev);
+    setErrorIsShown((prev) => !prev);
   }
 
   return (

@@ -5,7 +5,7 @@ import Swiper from 'react-id-swiper';
 import { sanitize } from 'isomorphic-dompurify';
 import { Article, Element, Img, H4, Text, Arrows, StyledLink } from './styles';
 
-const SidebarSlider = props => {
+const SidebarSlider = (props) => {
   const ref = useRef(null);
 
   const params = {

@@ -1,4 +1,4 @@
-export const fromSecToDuration = duration => {
+export const fromSecToDuration = (duration) => {
   const min = parseInt(duration / 60, 10);
   let sec = parseInt(duration % 60, 10);
 
@@ -18,9 +18,9 @@ export const getNewTags = (arr, slug) => {
   }
   if (Array.isArray(arr)) {
     if (arr.includes(slug)) {
-      return arr.filter(i => i && i.length > 0 && i !== slug);
+      return arr.filter((i) => i && i.length > 0 && i !== slug);
     }
-    return [...arr, slug].filter(i => i && i.length > 0);
+    return [...arr, slug].filter((i) => i && i.length > 0);
   }
   if (arr.length > 0) {
     return [arr, slug];
@@ -28,7 +28,7 @@ export const getNewTags = (arr, slug) => {
   return '';
 };
 
-export const restOfDuration = duration => {
+export const restOfDuration = (duration) => {
   const time = duration - 1;
   return time;
 };

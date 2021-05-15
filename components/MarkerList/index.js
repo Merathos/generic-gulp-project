@@ -1,7 +1,7 @@
 import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
-const MarkerList = props => {
+const MarkerList = (props) => {
   const { data, type, inline = false, className } = props;
   return (
     <>

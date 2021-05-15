@@ -2,7 +2,7 @@ import Link from 'next/link';
 import dayjs from 'dayjs';
 import * as S from './styles';
 
-const ColumnCard = props => {
+const ColumnCard = (props) => {
   const {
     data: { title, summary, preview, created_at, category, slug },
   } = props;

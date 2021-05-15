@@ -10,7 +10,7 @@ const useIsomorphicLayoutEffect =
 
 const handleSearch = (searchValue, stacks) => {
   const result = stacks.filter(
-    item => item.name.toLowerCase() === searchValue.toLowerCase()
+    (item) => item.name.toLowerCase() === searchValue.toLowerCase()
   );
 
   if (result[0]) {
@@ -32,9 +32,9 @@ const RunningText = ({ data, stacks }) => {
   const previousTimeRef = useRef();
 
   useIsomorphicLayoutEffect(() => {
-    const animate = time => {
+    const animate = (time) => {
       if (previousTimeRef.current !== undefined && isHovered === false) {
-        setStep(prevStep =>
+        setStep((prevStep) =>
           prevStep <= endOffset ? startOffset : prevStep - 0.01
         );
       }

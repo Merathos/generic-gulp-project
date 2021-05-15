@@ -6,7 +6,7 @@ export const Styled = styled.div`
 `;
 
 export const StyledLink = styled.a`
-  color: ${props => (props.activeLink ? '#53B443' : '#201F2A')};
+  color: ${(props) => (props.activeLink ? '#53B443' : '#201F2A')};
   position: relative;
   transition: color 0.3s ease;
 
@@ -20,6 +20,6 @@ export const StyledLink = styled.a`
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    display: ${props => (props.activeLink ? 'block' : 'none')};
+    display: ${(props) => (props.activeLink ? 'block' : 'none')};
   }
 `;

@@ -1,6 +1,6 @@
 import { Title, H4, List, StyledIcon, Text } from './styles';
 
-const Values = props => {
+const Values = (props) => {
   const {
     data: { title, items },
   } = props;

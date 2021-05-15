@@ -8,14 +8,15 @@ export async function getServerSideProps(ctx) {
   const { data: blogData } = await apolloClient.query({
     query: GET_BLOGS_LIST,
   });
-  const blogs = blogData.blogs.map(item => ({
+  const blogs = blogData.blogs.map((item) => ({
     loc: `${process.env.NEXT_PUBLIC_DOMAIN}/blog/${item.slug}`,
     lastmod: new Date().toISOString(),
     priority: 0.5,
     changefreq: 'always',
   }));
   const result = blogs.filter(
-    (v, i, a) => a.findIndex(t => JSON.stringify(t) === JSON.stringify(v)) === i
+    (v, i, a) =>
+      a.findIndex((t) => JSON.stringify(t) === JSON.stringify(v)) === i
   );
 
   return getServerSideSitemap(ctx, result);

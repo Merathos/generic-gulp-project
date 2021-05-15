@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-const SpeakerCard = props => {
+const SpeakerCard = (props) => {
   const {
     data: { image, name, company, description },
   } = props;
