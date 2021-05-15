@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icon, TitleH1 } from 'elements';
+import { Icon, TitleH1, Container } from 'elements';
 
 export const Main = styled.main`
   background-image: url('/backgrounds/events-left.svg'),
@@ -14,15 +14,7 @@ export const Main = styled.main`
   }
 `;
 
-export const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 120px;
-
-  @media screen and (max-width: 1360px) {
-    padding: 0 60px;
-  }
-
+export const StyledContainer = styled(Container)`
   @media screen and (max-width: 960px) {
     padding: 0;
   }
@@ -31,9 +23,9 @@ export const Container = styled.div`
 export const Grid = styled.div`
   padding-top: 200px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1201px) {
     display: grid;
-    grid-template-columns: minmax(210px, 312px) 865px;
+    grid-template-columns: minmax(210px, 312px) 1fr;
     grid-template-rows: max-content auto;
     grid-column-gap: 20px;
     grid-template-areas:
@@ -56,15 +48,19 @@ export const Aside = styled.aside`
     top: 200px;
   }
 
-  @media screen and (max-width: 1360px) {
+  @media screen and (max-width: 1200px) {
     max-width: 862px;
-    margin: 0 auto;
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 910px) {
-    margin-left: 30px;
-    margin-right: 30px;
+  @media screen and (max-width: 960px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
     margin-bottom: 40px;
   }
 `;
@@ -78,12 +74,12 @@ export const Announcement = styled.div`
   margin-bottom: 60px;
   color: rgba(32, 31, 43, 0.5);
 
-  @media screen and (max-width: 1360px) {
+  @media screen and (max-width: 1200px) {
     max-width: 862px;
     margin: 0 auto 60px;
   }
 
-  @media screen and (max-width: 910px) {
+  @media screen and (max-width: 767px) {
     margin-left: 30px;
     margin-right: 30px;
     font-size: 14px;
@@ -102,17 +98,19 @@ export const Title = styled(TitleH1)`
   grid-area: mainTitle;
   margin-bottom: ${(p) => (p.bigMarginBottom ? '120px' : '25px')};
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1200px) {
     max-width: 862px;
-    margin: 0 auto;
+    margin: 0;
   }
 
-  @media screen and (max-width: 910px) {
-    margin-left: 30px;
-    margin-right: 30px;
+  @media screen and (max-width: 960px) {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   @media screen and (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
     margin-bottom: 7px;
   }
 `;
@@ -124,19 +122,22 @@ export const CompletedTitle = styled.h2`
   text-transform: uppercase;
   margin-bottom: 120px;
 
-  @media screen and (max-width: 1360px) {
+  @media screen and (max-width: 1200px) {
     max-width: 862px;
-    margin: 0 auto;
     margin-bottom: 50px;
     font-size: 54px;
     line-height: 130%;
     letter-spacing: 0.03em;
   }
 
-  @media screen and (max-width: 910px) {
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 50px;
+  @media screen and (max-width: 960px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 32px;
     line-height: 42.88px;
     letter-spacing: 0.01em;

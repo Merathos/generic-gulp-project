@@ -11,8 +11,14 @@ export const Wrapper = styled.div`
 
 export const ArticleTitle = styled(TitleH1)`
   margin-bottom: 50px;
+  font-size: 84px;
+
+  @media screen and (max-width: 1360px) {
+    font-size: 54px;
+  }
 
   @media screen and (max-width: 767px) {
+    font-size: 32px;
     margin-bottom: 18px;
   }
 `;

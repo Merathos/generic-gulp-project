@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 235px;
+  max-width: 220px;
 
-  @media screen and (max-width: 1360px) {
+  @media screen and (max-width: 1200px) {
     max-width: 100%;
   }
 `;

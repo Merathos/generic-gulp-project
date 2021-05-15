@@ -1,5 +1,5 @@
 import { Title, Articles, ArticleContent, SocialShare } from 'components';
-import { StyledContainer } from './styles';
+import * as S from './styles';
 
 const Article = ({ back }) => {
   let content = {};
@@ -9,7 +9,7 @@ const Article = ({ back }) => {
 
   return (
     <main>
-      <StyledContainer>
+      <S.StyledContainer>
         <Title
           title={back?.title}
           date={back?.created_at}
@@ -22,7 +22,7 @@ const Article = ({ back }) => {
         {back.related?.length > 0 && (
           <Articles type="article" data={back.related} />
         )}
-      </StyledContainer>
+      </S.StyledContainer>
     </main>
   );
 };
