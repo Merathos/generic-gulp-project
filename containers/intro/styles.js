@@ -105,7 +105,7 @@ export const ListBlock = styled.div`
   padding-bottom: 85px;
   text-transform: lowercase;
 
-  @media (-webkit-device-pixel-ratio: 1.5) {
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
     padding-bottom: 50px;
   }
 
@@ -181,7 +181,7 @@ export const Button = styled(Btn)`
   padding-right: 30px;
   margin-bottom: 223px;
 
-  @media (-webkit-device-pixel-ratio: 1.5) {
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
     margin-bottom: 85px;
   }
 

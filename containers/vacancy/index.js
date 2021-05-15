@@ -42,7 +42,7 @@ const Vacancy = ({ data, back }) => {
           closeModal={toggleJobModal}
           title={back?.name}
           id={back?.id}
-          english={back.is_english_speaking_team && back.is_translate}
+          english={back.is_translate}
         />
       </FormModal>
       <GreyContainer>
@@ -95,7 +95,7 @@ const Vacancy = ({ data, back }) => {
 
         <OfficesMap
           data={data.map}
-          english={back.is_english_speaking_team && back.is_translate}
+          english={back.is_translate}
           removeMarginBottom={back.recruiters?.length < 1}
         />
         {back.recruiters?.length > 0 && (
@@ -104,6 +104,7 @@ const Vacancy = ({ data, back }) => {
           </StyledContainer>
         )}
       </main>
+
       <SocialShare />
       {back.related?.length > 0 && (
         <VacancySection>

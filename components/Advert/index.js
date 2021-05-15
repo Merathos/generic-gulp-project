@@ -12,7 +12,7 @@ const Advert = ({
     features = [
       {
         icon: `globe`,
-        title: `English Speaking Team`,
+        title: `English practice`,
         flag: is_english_speaking_team,
       },
       {

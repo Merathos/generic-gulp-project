@@ -76,6 +76,7 @@ export default {
         label: `Ссылка на резюме`,
         labelEn: 'Link to your CV',
         error: 'Прикрепите или добавьте ссылку на резюме',
+        errorEn: 'Attach your CV or enter its web address',
       },
     },
     agreement: {

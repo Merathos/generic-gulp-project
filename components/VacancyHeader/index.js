@@ -32,7 +32,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
   const features = [
     {
       icon: 19,
-      title: `English Speaking Team`,
+      title: `English practice`,
       flag: is_english_speaking_team,
     },
     {

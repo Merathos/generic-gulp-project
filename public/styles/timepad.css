@@ -350,7 +350,7 @@
 .b-registration__accept {
   /* margin-top: 90px; */
   position: relative;
-  max-width: 480px;
+  /* max-width: 480px; */
   padding-left: 35px !important;
 }
 
