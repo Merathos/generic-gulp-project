@@ -76,12 +76,16 @@ export const Announcement = styled.div`
 
   @media screen and (max-width: 1200px) {
     max-width: 862px;
-    margin: 0 auto 60px;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   @media screen and (max-width: 767px) {
-    margin-left: 30px;
-    margin-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 14px;
     line-height: 18.34px;
   }

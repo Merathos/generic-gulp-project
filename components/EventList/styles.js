@@ -18,11 +18,14 @@ export const Item = styled.li`
 
   @media screen and (max-width: 1200px) {
     margin-left: 0;
-    margin-bottom: 40px;
   }
 
   @media screen and (max-width: 960px) {
-    margin: 0 auto;
+    margin: 0 auto 80px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
   }
 
   &:last-child {
