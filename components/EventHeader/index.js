@@ -125,7 +125,9 @@ const EventHeader = ({
           <S.StyledButton
             accent
             onClick={() => {
-              regForm?.current.scrollIntoView({ behavior: 'smooth' });
+              if (regForm.current) {
+                regForm.current.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
           >
             Зарегистрироваться
@@ -134,7 +136,9 @@ const EventHeader = ({
         {!isActive && eventData.has_video && (
           <S.StyledButton
             onClick={() => {
-              recap.current.scrollIntoView({ behavior: 'smooth' });
+              if (recap.current) {
+                recap.current.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
           >
             Смотреть запись
