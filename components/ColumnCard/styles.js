@@ -64,13 +64,13 @@ export const Title = styled.b`
 export const Picture = styled.img`
   display: block;
   width: 100%;
-  max-height: 192px;
+  height: 192px;
   object-fit: cover;
   margin-bottom: 30px;
 
   @media screen and (max-width: 767px) {
-    max-height: 235px;
-    margin-bottom: 22px;
+    height: 174px;
+    margin-bottom: 20px;
   }
 `;
 
