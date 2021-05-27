@@ -105,6 +105,10 @@ export const DateWrapper = styled.div`
     margin-bottom: 5px;
     flex-direction: row;
   }
+
+  > p {
+    margin-right: 5px;
+  }
 `;
 
 export const DateWrapperTimeZone = styled.p`

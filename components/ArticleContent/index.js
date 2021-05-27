@@ -75,9 +75,13 @@ const renderContent = (
             </S.SliderContainer>
           ),
           asideSlider: (
-            <S.Wrapper>
-              <SidebarSlider data={data.factoids} />
-            </S.Wrapper>
+            <>
+              {data.factoids?.length > 0 && (
+                <S.Wrapper>
+                  <SidebarSlider data={data.factoids} />
+                </S.Wrapper>
+              )}
+            </>
           ),
           video: <Video data={data} recap={recap} />,
           quote: <Quote data={data} noQuoteAuthor={noQuoteAuthor} />,
