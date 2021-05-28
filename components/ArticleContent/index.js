@@ -205,6 +205,7 @@ const ArticleContent = ({ content, isRelocation, recap }) => {
             );
           }
 
+          // Render
           return (
             <Fragment key={index}>
               {renderContent(
