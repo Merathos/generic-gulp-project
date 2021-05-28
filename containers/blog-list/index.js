@@ -5,11 +5,11 @@ import * as S from './styles';
 const BlogList = ({ mock, back }) => {
   return (
     <main>
-      <S.Container>
+      <S.StyledContainer>
         <S.Title>{mock.mainTitle}</S.Title>
         <Tabs tabs={mock.filterTabs} />
         <GridArticles articles={back || []} />
-      </S.Container>
+      </S.StyledContainer>
     </main>
   );
 };

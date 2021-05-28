@@ -29,7 +29,7 @@ export const Wrapper = styled.a`
     z-index: 2;
     animation: 45s linear infinite rotation;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       background-size: 155px 155px;
       width: 155px;
       height: 155px;
@@ -52,7 +52,7 @@ export const Wrapper = styled.a`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: 315px;
     min-height: 389px;
   }
@@ -68,7 +68,7 @@ export const Title = styled.b`
   line-height: 120%;
   font-weight: 600;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
   }
 `;
@@ -79,7 +79,7 @@ export const Date = styled.p`
   opacity: 0.5;
   margin-bottom: 4px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 21px;
   }
@@ -93,7 +93,7 @@ export const Picture = styled.img`
   width: auto;
   max-width: 211px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-height: 235px;
   }
 `;

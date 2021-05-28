@@ -6,11 +6,11 @@ const Blogs = ({ data, categories, blogs }) => {
   return (
     <main>
       <S.Section>
-        <S.Container>
+        <S.StyledContainer>
           <S.Title>{data.mainTitle}</S.Title>
           {categories && <BlogsFilter categories={categories} />}
           {blogs && <BlogGrid cards={blogs} />}
-        </S.Container>
+        </S.StyledContainer>
       </S.Section>
     </main>
   );

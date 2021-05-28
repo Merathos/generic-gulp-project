@@ -49,12 +49,12 @@ export const GreyContainer = styled.div`
   &:first-child {
     margin-bottom: 160px;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       margin-bottom: 80px;
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
   }

@@ -5,18 +5,17 @@ export const Section = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 14px;
-  padding-top: 162px;
+  padding-top: 160px;
   margin-bottom: 92px;
-  margin-right: 24px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     grid-template-columns: 1fr;
     grid-gap: 80px;
     padding-top: 80px;
     margin-right: 0;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 44px;
   }
 `;
@@ -24,7 +23,7 @@ export const Section = styled.section`
 export const H3 = styled(TitleH3)`
   margin-bottom: 32px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 14px;
   }
 `;
@@ -35,11 +34,11 @@ export const Text = styled(SmallText)`
   line-height: 158%;
   white-space: pre-wrap;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 8px;
   }
 `;
@@ -48,7 +47,7 @@ export const List = styled.ul`
   margin-top: 54px;
   margin-bottom: 96px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-top: 40px;
     margin-bottom: 50px;
   }
@@ -62,7 +61,7 @@ export const Element = styled.li`
     margin-bottom: 30px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -75,7 +74,7 @@ export const StyledIcon = styled(Icon)`
   margin-right: 20px;
   background-size: 60%;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 33px;
     height: 33px;
     margin-right: 10px;
@@ -86,7 +85,7 @@ export const StyledIcon = styled(Icon)`
 export const ListText = styled.p`
   font-size: 18px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
   }
 `;
@@ -96,7 +95,7 @@ export const StyledSubtitle = styled(Subtitle)`
   line-height: 158%;
   white-space: pre-wrap;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 14px;
     font-size: 14px;
     line-height: 131%;
@@ -117,11 +116,11 @@ export const Links = styled.ul`
   margin-top: 58px;
   margin-bottom: 80px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 50px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -131,7 +130,7 @@ export const LinkElement = styled.li`
   margin-right: 40px;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 30px;
   }
 `;
@@ -148,14 +147,14 @@ export const Link = styled.a`
     color: #339722;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 158%;
   }
 `;
 
 export const Image = styled.img`
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 100vw;
     margin-right: -30px;
     margin-left: -30px;

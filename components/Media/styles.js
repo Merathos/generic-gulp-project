@@ -12,7 +12,7 @@ export const Text = styled(Subtitle)`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 5px;
     margin-bottom: 50px;
     font-size: 10px;
@@ -37,7 +37,7 @@ export const Section = styled.section`
     display: ${(props) => (props.decoration ? 'block' : 'none')};
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     &::before {
       width: 112px;
       height: 112px;
@@ -67,7 +67,7 @@ export const Section = styled.section`
   img {
     margin-bottom: ${(props) => (props.caption ? '0' : '100px')};
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       margin-bottom: ${(props) => (props.caption ? '0' : '50px')};
     }
   }
@@ -77,7 +77,7 @@ export const VideoContainer = styled.div`
   position: relative;
   padding-top: ${(props) => (props.isAbout ? 63.7 : 49.5)}%;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-top: ${(props) => (props.isAbout ? 57.8 : 49.5)}%;
   }
 
@@ -105,7 +105,7 @@ export const VideoContainer = styled.div`
     background: none !important;
     background-color: #ffffff !important;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       ${(props) =>
         props.isAbout &&
         css`
@@ -120,7 +120,7 @@ export const VideoContainer = styled.div`
     border-width: 11px 0 11px 13px !important;
     margin-left: 4px !important;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       ${(props) =>
         props.isAbout &&
         css`

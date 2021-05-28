@@ -8,7 +8,7 @@ const OfficesMap = ({ data, isContacts, removeMarginBottom }) => {
 
   return (
     <S.Section isContacts={isContacts} removeMarginBottom={removeMarginBottom}>
-      <S.Container>
+      <S.StyledContainer>
         <S.Title isContacts={isContacts}>
           {language ? data.titleEn : data.title}
         </S.Title>
@@ -30,7 +30,7 @@ const OfficesMap = ({ data, isContacts, removeMarginBottom }) => {
             ))}
           </S.List>
         )}
-      </S.Container>
+      </S.StyledContainer>
     </S.Section>
   );
 };

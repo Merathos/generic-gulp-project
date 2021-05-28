@@ -1,7 +1,7 @@
 import { Card } from 'elements';
 import * as S from './styles';
 
-const Advanteges = ({ data }) => {
+const Advantages = ({ data }) => {
   const { title, list } = data;
   return (
     <>
@@ -17,4 +17,4 @@ const Advanteges = ({ data }) => {
   );
 };
 
-export default Advanteges;
+export default Advantages;

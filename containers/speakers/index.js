@@ -6,7 +6,7 @@ const Speakers = (props) => {
 
   return (
     <S.Section>
-      <S.Container>
+      <S.StyledContainer>
         <S.Title>{speakersTitle}</S.Title>
         <S.List>
           {programs.map((program) => {
@@ -18,7 +18,7 @@ const Speakers = (props) => {
             );
           })}
         </S.List>
-      </S.Container>
+      </S.StyledContainer>
     </S.Section>
   );
 };

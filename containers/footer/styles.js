@@ -20,17 +20,17 @@ export const StyledFooter = styled.footer`
     justify-content: flex-start;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column-reverse;
     text-align: center;
     align-items: flex-start;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding: 120px 60px 50px 60px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding: 120px 30px 40px 30px;
   }
 `;
@@ -40,11 +40,11 @@ export const Container = styled.div`
   width: 265px;
   margin-right: 240px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     margin-right: 120px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-right: 0;
     margin-top: 22px;
     margin-bottom: 40px;
@@ -60,7 +60,7 @@ export const FooterText = styled.p`
   opacity: 0.5;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 12px;
     font-size: 10px;
   }
@@ -72,7 +72,7 @@ export const Link = styled.a`
   font-size: 14px;
   line-height: 144.2%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     font-size: 10px;
   }
 `;
@@ -83,7 +83,7 @@ export const Span = styled.span`
   opacity: 0.6;
   margin-right: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     font-size: 10px;
     line-height: 120%;
   }
@@ -102,7 +102,7 @@ export const ProducerLink = styled.a`
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     svg {
       width: 56px;
       height: 24px;
@@ -120,7 +120,7 @@ export const Block = styled.div`
     margin-left: auto;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     order: -1;
     width: 100%;
     justify-content: space-between;

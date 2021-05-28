@@ -1,4 +1,6 @@
 import { StoryCard } from 'components';
+import { Container } from 'elements';
+
 import { sanitize } from 'isomorphic-dompurify';
 import * as S from './styles';
 
@@ -17,7 +19,7 @@ const RelocationBlogs = (props) => {
 
   return (
     <S.Section>
-      <S.Container>
+      <Container>
         <S.Title>{title}</S.Title>
         <S.Text>{text}</S.Text>
         <S.List>
@@ -42,7 +44,7 @@ const RelocationBlogs = (props) => {
             }}
           />
         </S.NoteWrapper>
-      </S.Container>
+      </Container>
     </S.Section>
   );
 };

@@ -23,7 +23,7 @@ const RelocationApply = ({ data }) => {
 
   return (
     <S.Section>
-      <S.Container>
+      <S.StyledContainer>
         <S.Title>{title}</S.Title>
         <S.PicWrapper>
           <img src={picture} alt="promo" width="200" height="400" />
@@ -40,7 +40,7 @@ const RelocationApply = ({ data }) => {
             {button}
           </S.Button>
         </S.Content>
-      </S.Container>
+      </S.StyledContainer>
     </S.Section>
   );
 };

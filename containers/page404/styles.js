@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     margin: 0 auto 60px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 110px;
     svg {
       margin-bottom: 40px;
@@ -30,7 +30,7 @@ export const Text = styled.h1`
   text-align: center;
   margin-bottom: 10px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 20px;
     line-height: 130%;
   }
@@ -45,7 +45,7 @@ export const Description = styled.p`
   text-align: center;
   margin-bottom: 50px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 128%;
     margin-bottom: 40px;

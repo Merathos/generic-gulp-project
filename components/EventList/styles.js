@@ -5,7 +5,7 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 910px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: ${(p) => (p.noMarginBottom ? '0' : '42px')};
   }
 `;
@@ -16,8 +16,15 @@ export const Item = styled.li`
   width: 100%;
   max-width: 862px;
 
-  @media screen and (max-width: 1199px) {
-    margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin: 0 auto 80px;
+  }
+
+  @media screen and (max-width: 767px) {
     margin-bottom: 40px;
   }
 

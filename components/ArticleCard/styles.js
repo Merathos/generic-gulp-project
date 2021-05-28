@@ -9,7 +9,7 @@ export const Wrapper = styled.a`
     margin-right: 80px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 0;
   }
 `;
@@ -17,7 +17,7 @@ export const Wrapper = styled.a`
 export const Title = styled(TitleH4)`
   margin-bottom: 20px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 8px;
   }
 `;
@@ -30,7 +30,7 @@ export const StyledSubtitle = styled.p`
 export const Text = styled(SmallText)`
   margin-bottom: 50px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 20px;
   }
 `;
@@ -39,7 +39,7 @@ export const Picture = styled.img`
   max-width: 350px;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
   }
 `;
@@ -63,7 +63,7 @@ export const Span = styled.span`
     border-radius: 50%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
   }
 `;

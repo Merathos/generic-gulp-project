@@ -6,15 +6,15 @@ export const List = styled.ul`
   min-width: 250px;
   margin-right: ${(props) => (props.noMargin ? '0' : '240px')};
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1360px) {
     margin-right: ${(props) => (props.noMargin ? '0' : '80px')};
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-right: ${(props) => (props.noMargin ? '0' : '40px')};
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin: 0;
   }
 

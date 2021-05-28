@@ -6,15 +6,15 @@ export const List = styled.ul`
   align-content: flex-start;
   margin-left: 74px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-left: 15px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-left: 0;
   }
 `;
@@ -33,11 +33,11 @@ export const ListItem = styled.li`
     margin-top: 2px;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     width: 45%;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     width: 95%;
     margin-bottom: 30px;
 
@@ -79,11 +79,11 @@ export const Title = styled.a`
       }
     `};
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     font-size: 26px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 26.4px;
   }
@@ -93,7 +93,7 @@ export const SpecialMark = styled.img`
   width: 30px;
   height: 30px;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     width: 18px;
     height: 18px;
   }

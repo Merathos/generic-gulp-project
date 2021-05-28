@@ -1,36 +1,32 @@
 import styled from 'styled-components';
-import { TitleH1, Btn } from 'elements';
+import { TitleH1, Btn, Container } from 'elements';
 
 export const GreyHeader = styled.section`
-  margin-bottom: 163px;
+  margin-bottom: 160px;
   background-color: #f7f8f9;
-  padding-top: 210px;
+  padding-top: 200px;
 
-  @media screen and (max-width: 1360px) {
+  @media screen and (max-width: 767px) {
+    padding-top: 110px;
     margin-bottom: 80px;
-    padding-top: 130px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 80px;
-    padding-top: 110px;
   }
 `;
 
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 30px;
+export const StyledContainer = styled(Container)`
   padding-bottom: 170px;
-  margin: 0 auto;
   background-image: url(${(props) => props.bgImg});
   background-position: bottom right;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 1360px) {
-    padding-bottom: 120px;
+    padding-bottom: 130px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     background-image: none;
     padding-bottom: 80px;
   }
@@ -57,7 +53,7 @@ export const Status = styled.p`
   line-height: 23.58px;
   color: ${(props) => (props.status === `streaming` ? `#FB5235` : ``)};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-left: 0;
     margin-bottom: 7px;
     font-size: 14px;
@@ -70,7 +66,7 @@ export const Icon = styled.img`
   width: 18px;
   height: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 16px;
     height: 16px;
     margin-right: 6px;
@@ -80,7 +76,7 @@ export const Icon = styled.img`
 export const Type = styled(TitleH1)`
   margin-bottom: 60px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 32px;
     line-height: 134%;
     margin-bottom: 23px;
@@ -93,7 +89,7 @@ export const LocationContainer = styled.div`
   font-size: 20px;
   line-height: 26.8px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 22.12px;
   }
@@ -105,9 +101,13 @@ export const DateWrapper = styled.div`
   flex-direction: column;
   font-weight: 700;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 5px;
     flex-direction: row;
+  }
+
+  > p {
+    margin-right: 5px;
   }
 `;
 
@@ -127,7 +127,7 @@ export const SpeakersContainer = styled.div`
   flex-direction: column;
   padding-bottom: 50px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     min-width: 0;
     margin-top: 40px;
     padding-bottom: 0;
@@ -140,7 +140,7 @@ export const Title = styled.p`
   line-height: 38.4px;
   font-weight: 700;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 34px;
     font-size: 22px;
     line-height: 26.4px;
@@ -152,7 +152,7 @@ export const Speaker = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 21px;
   }
 `;
@@ -164,7 +164,7 @@ export const Pic = styled.img`
   border-radius: 50%;
   object-fit: cover;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-right: 11px;
     width: 52px;
     height: 52px;
@@ -176,10 +176,10 @@ export const NameWrapper = styled.div`
   flex-direction: column;
   padding-top: 4px;
   font-size: 16px;
-  line-height: 20.96px;
+  line-height: 21px;
   max-width: 240px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-top: 5px;
     font-size: 14px;
     line-height: 18.34px;
@@ -202,7 +202,7 @@ export const StyledButton = styled(Btn)`
     margin-top: 70px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 35px;
   }
 `;

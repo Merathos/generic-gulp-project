@@ -7,7 +7,7 @@ export const H2 = styled(TitleH2)`
   margin-bottom: 40px;
   max-width: 854px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: ${(props) => (props.isFirstBlockHeader ? '0' : '80px')};
     margin-bottom: 20px;
   }
@@ -18,7 +18,7 @@ export const H3 = styled(TitleH3)`
   margin-bottom: 30px;
   max-width: 854px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: ${(props) => (props.isFirstBlockHeader ? '0' : '70px')};
     margin-bottom: 10px;
   }
@@ -33,12 +33,12 @@ export const Wrapper = styled.aside`
   right: 0;
   top: 0;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1360px) {
     position: static;
     margin-bottom: 50px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
   }
 `;
@@ -47,7 +47,7 @@ export const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin-right: -45px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-right: -30px;
   }
 `;

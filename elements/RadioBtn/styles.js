@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Label = styled.label`
+export const Label = styled.label`
   position: relative;
   margin-right: 26px;
   padding-left: 30px;
@@ -21,7 +21,7 @@ const Label = styled.label`
     border-radius: 50%;
     transition: border 0.2s ease-in;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       top: 1px;
     }
 
@@ -50,33 +50,14 @@ const Label = styled.label`
     background-color: #53b443;
     border-radius: 50%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       top: 7px;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 22px;
     margin-right: 28px;
   }
 `;
-
-const RadioBtn = ({ name, value, id, label, checked, register, error }) => {
-  return (
-    <Label error={error}>
-      <input
-        type="radio"
-        name={name}
-        id={id}
-        value={value}
-        onChange={() => {}}
-        checked={checked}
-        ref={register}
-      />
-      <span>{label}</span>
-    </Label>
-  );
-};
-
-export default RadioBtn;

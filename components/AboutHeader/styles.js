@@ -5,26 +5,23 @@ export const Grid = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-top: 210px;
+  padding-top: 200px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
     padding-bottom: 100px;
   }
 
-  @media screen and (max-width: 768px) {
-    padding-top: 160px;
-  }
-
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-top: 110px;
+    padding-bottom: 80px;
   }
 `;
 
 export const Wrapper = styled.article`
   width: 77%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 `;
@@ -32,15 +29,7 @@ export const Wrapper = styled.article`
 export const Title = styled(TitleH1)`
   margin-bottom: 52px;
 
-  @media screen and (max-width: 1200px) {
-    font-size: 64px;
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 32px;
-  }
-
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 40px;
   }
 `;
@@ -51,12 +40,12 @@ export const Paragraph = styled.p`
   line-height: 150%;
   margin-bottom: 148px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 60px;
     width: 100%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 25.28px;
   }
@@ -67,16 +56,13 @@ export const Features = styled.ul`
   flex-wrap: wrap;
   margin-bottom: 60px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
     width: 80%;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 90%;
-  }
-
-  @media screen and (max-width: 420px) {
     margin-bottom: 50px;
   }
 `;
@@ -86,17 +72,14 @@ export const Element = styled.li`
   margin-right: 62px;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 80%;
     max-width: none;
     margin-right: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
-  }
-
-  @media screen and (max-width: 420px) {
     margin-bottom: 30px;
   }
 `;
@@ -107,7 +90,7 @@ export const ListTitle = styled(TitleH3)`
   margin-bottom: 12px;
   white-space: nowrap;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 10px;
   }
 `;
@@ -120,7 +103,11 @@ export const Aside = styled.aside`
   width: 23%;
   margin-top: 152px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1360px) {
+    margin-top: 115px;
+  }
+
+  @media screen and (max-width: 960px) {
     width: 100%;
     margin-top: 0;
   }
@@ -129,7 +116,7 @@ export const Aside = styled.aside`
 export const AsideText = styled(Subtitle)`
   line-height: 144%;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 75%;
   }
 `;

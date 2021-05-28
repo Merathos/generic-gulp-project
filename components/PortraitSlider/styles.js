@@ -21,7 +21,7 @@ export const Element = styled.div`
       position: absolute;
       bottom: -40px;
       left: 0;
-      width: 420px;
+      width: 100vw;
       height: 120px;
       background-color: #ffffff;
     }
@@ -32,7 +32,7 @@ export const Img = styled.img`
   margin-right: 40px;
   vertical-align: bottom;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 960px) {
     margin-right: 0;
   }
 
@@ -53,17 +53,13 @@ export const QuoteBlock = styled.div`
   color: ${(props) => (props.bgColor === '#FEB251' ? '#201F2A' : '#F7F8F9')};
   text-align: left;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     left: 60px;
     bottom: 30px;
     padding: 20px 25px 25px 20px;
   }
 
-  @media screen and (max-width: 864px) {
-    left: 40px;
-  }
-
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 960px) {
     left: 50%;
     transform: translateX(-50%);
     padding: 20px 25px 25px 20px;
@@ -86,7 +82,7 @@ export const Quote = styled.p`
   max-height: 250px;
   overflow: hidden;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     font-size: 16px;
     line-height: 158%;
     padding-bottom: 10px;
@@ -100,12 +96,9 @@ export const Author = styled.span`
   display: inline-block;
   max-width: 75%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     font-size: 14px;
     line-height: 158%;
-  }
-
-  @media screen and (max-width: 800px) {
     max-width: 100%;
   }
 `;
@@ -128,18 +121,13 @@ export const PrevButton = styled.button`
     opacity: 1;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     left: 330px;
     bottom: 60px;
   }
 
   @media screen and (max-width: 960px) {
     left: auto;
-    right: 38%;
-  }
-
-  @media screen and (max-width: 800px) {
-    bottom: auto;
     top: 50px;
     right: 16%;
     opacity: 1;
@@ -154,7 +142,7 @@ export const PrevButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     top: 2px;
     right: 18%;
   }
@@ -178,17 +166,13 @@ export const NextButton = styled.button`
     opacity: 1;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     left: 370px;
     bottom: 60px;
   }
 
   @media screen and (max-width: 960px) {
     left: auto;
-    right: 30%;
-  }
-
-  @media screen and (max-width: 800px) {
     bottom: auto;
     top: 50px;
     right: 8%;
@@ -204,7 +188,7 @@ export const NextButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     top: 2px;
     right: 8%;
   }

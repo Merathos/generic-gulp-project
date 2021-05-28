@@ -6,7 +6,7 @@ export const Container = styled.ul`
   flex-wrap: wrap;
   margin-bottom: 14px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 7px;
   }
 `;
@@ -21,7 +21,7 @@ export const Item = styled.li`
     margin-bottom: 10px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     &:not(:last-child) {
       margin-right: 14px;
     }

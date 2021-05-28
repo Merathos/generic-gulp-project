@@ -46,7 +46,7 @@ const SelectInput = ({
           ValueContainer: CustomValueContainer,
         }}
         styles={{
-          valueContainer: (provided, state) => ({
+          valueContainer: (provided) => ({
             ...provided,
             overflow: 'visible',
           }),

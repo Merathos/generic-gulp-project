@@ -25,7 +25,7 @@ const Events = ({ data, eventCategories, events }) => {
 
   return (
     <S.Main>
-      <S.Container>
+      <S.StyledContainer>
         <S.Grid>
           <S.Title
             bigMarginBottom={
@@ -63,7 +63,7 @@ const Events = ({ data, eventCategories, events }) => {
             )}
           </S.ContentWrapper>
         </S.Grid>
-      </S.Container>
+      </S.StyledContainer>
       <FormModal
         modalIsOpen={modalIsOpen}
         closeModal={toggleModal}

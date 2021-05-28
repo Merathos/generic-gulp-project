@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     overflow-x: hidden;
   }
 `;
@@ -10,7 +10,7 @@ export const List = styled.ul`
   display: flex;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 50px;
     width: 2000px;
     overflow-x: scroll;
@@ -20,7 +20,7 @@ export const List = styled.ul`
 export const Item = styled.li`
   margin-right: 12px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 10px;
   }
 `;
@@ -33,7 +33,7 @@ export const Label = styled.a`
   line-height: 21px;
   border-radius: 4px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 18px;
   }

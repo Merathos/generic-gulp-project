@@ -9,7 +9,7 @@ export { default as About } from './about';
 export { default as Contacts } from './contacts';
 export { default as Internship } from './internship';
 export { default as Story } from './story';
-export { default as BlogList } from './blog-list';
+// export { default as BlogList } from './blog-list';
 export { default as TeamList } from './team-list';
 export { default as VacanciesList } from './vacancies-list';
 export { default as Project } from './project';

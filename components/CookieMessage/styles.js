@@ -14,7 +14,7 @@ export const Container = styled.div`
   transition: all 0.5s ease-in;
   opacity: ${(p) => (p.startTransition ? '0' : '1')};
 
-  @media screen and (max-width: 768px), (max-height: 420px) {
+  @media screen and (max-width: 767px), (max-height: 420px) {
     padding: 40px 0;
     bottom: 0;
     opacity: 1;
@@ -36,11 +36,16 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 120px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1360px) {
+    max-width: none;
     padding: 0 60px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 960px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 767px) {
     padding: 0 30px;
   }
 `;
@@ -66,7 +71,7 @@ export const Title = styled.p`
     margin-bottom: 24px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
     font-size: 18px;
     line-height: 24px;
@@ -86,7 +91,7 @@ export const Description = styled.p`
     margin-left: 16px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-left: 0;
     font-size: 14px;
     line-height: 17px;
@@ -105,7 +110,7 @@ export const Button = styled(Btn)`
     line-height: 17px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 12px;
     max-width: 100%;
     width: 100%;

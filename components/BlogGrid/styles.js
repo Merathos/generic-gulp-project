@@ -13,17 +13,14 @@ export const Grid = styled.div`
     grid-row-gap: 26px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: repeat(auto-fill, 315px);
     grid-row-gap: 33px;
-  }
-
-  @media screen and (max-width: 725px) {
     max-width: max-content;
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 `;

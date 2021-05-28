@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import mock from 'mock/layout';
 import { useLayoutEffect } from 'react';
+import { MenuList, ContactsList, Social } from 'components';
+import LogoNimax from 'public/images/logo-nimax.svg';
+import MenuClose from 'public/icons/cross.svg';
 import * as S from './styles';
-import { MenuList, ContactsList, Social } from '../../components';
-import LogoNimax from '../../public/images/logo-nimax.svg';
-import MenuClose from '../../public/icons/cross.svg';
 
 const OpenedMenu = ({ onMenuClose }) => {
   const router = useRouter();
@@ -42,8 +42,8 @@ const OpenedMenu = ({ onMenuClose }) => {
         </S.Button>
         <S.Menu>
           <Link href="/" passHref>
-            <a aria-label="To the main page" onClick={handleLogoClick}>
-              <S.StyledLogo guiding="guiding" />
+            <a aria-label="To the main page">
+              <S.StyledLogo guiding="guiding" onClick={handleLogoClick} />
             </a>
           </Link>
           <MenuList data={mock.headerMenu.menuList} onMenuClose={onMenuClose} />

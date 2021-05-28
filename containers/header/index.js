@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
   ${(props) =>
     props.anchor &&
     css`
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         position: sticky;
         top: 0;
         background-color: #ffffff;
@@ -35,11 +35,15 @@ const StyledHeader = styled.header`
       }
     `};
 
-  @media screen and (max-width: 420px) {
-    padding: 25px 30px 30px;
+  @media screen and (max-width: 767px) {
+    padding: 25px 48px 30px;
     align-items: center;
     background-size: 200px;
     background-position: 50% top;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 25px 30px 30px;
   }
 
   ${(props) =>
@@ -47,7 +51,7 @@ const StyledHeader = styled.header`
     css`
       background-image: none;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         background-image: ${props.plain
           ? 'none'
           : `url('/images/yellow-rectangle.svg')`};
@@ -70,7 +74,7 @@ const StyledLogo = styled(Logo)`
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 54px;
   }
 `;
@@ -102,7 +106,7 @@ const Button = styled.button`
 const Nav = styled.nav`
   margin: 0 0 0 auto;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.plain && {
         display: 'none',
@@ -116,7 +120,7 @@ const Nav = styled.nav`
       }}
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `;

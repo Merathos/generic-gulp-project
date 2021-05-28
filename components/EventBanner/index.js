@@ -1,10 +1,11 @@
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
 import { useState, useEffect } from 'react';
 import { Container, Title, Date, EventButton } from './styles';
 
 const BenefitsBanner = ({ data }) => {
+  const router = useRouter();
   const [completed, setCompleted] = useState(false);
 
   useEffect(() => {
@@ -17,22 +18,22 @@ const BenefitsBanner = ({ data }) => {
   }, []);
 
   const handleRegistrationClick = () => {
-    if (Router.pathname === `/events`) {
-      regForm?.current.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      Router.push({
+    router
+      .push({
         pathname: `/events/${data.slug}`,
         hash: 'form',
-      }).then(() =>
+      })
+      .then(() =>
         document.getElementById('form').scrollIntoView({ behavior: 'smooth' })
       );
-    }
   };
 
   const handlePastEventClick = () => {
-    Router.push({
-      pathname: `/events/${data.slug}`,
-    }).then(() => window.scrollTo(0, 0));
+    router
+      .push({
+        pathname: `/events/${data.slug}`,
+      })
+      .then(() => window.scrollTo(0, 0));
   };
 
   return (

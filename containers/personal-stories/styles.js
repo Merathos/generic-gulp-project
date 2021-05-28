@@ -5,12 +5,17 @@ export const Container = styled.section`
   padding-left: 120px;
   padding-right: 120px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1360px) {
     padding-left: 60px;
-    padding-right: 30px;
+    padding-right: 60px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 960px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
     padding-left: 0;
     padding-right: 0;
     padding-top: 45px;

@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 410px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
   }
 
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     font-size: 13px;
     line-height: 21px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       font-size: 11px;
       bottom: -17px;
     }
@@ -46,7 +46,7 @@ export const Wrapper = styled.div`
     background-position: top 6px right;
     background-repeat: no-repeat;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       padding-bottom: 3px;
       font-size: 16px;
       line-height: 22px;
@@ -100,7 +100,7 @@ export const Wrapper = styled.div`
     line-height: 21px;
     color: rgba(32, 31, 42, 0.5);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       font-size: 13px;
       line-height: 22px;
     }

@@ -51,7 +51,9 @@ const Player = ({ src, isPaused, withDynamic = false }) => {
         onProgress={(e) => play && handleUpdate(e)}
         onDuration={(e) => {
           setinitialDuration(e);
-          !play && setAudioDuration(e);
+          if (!play) {
+            setAudioDuration(e);
+          }
         }}
         onEnded={() => {
           setPlay(false);

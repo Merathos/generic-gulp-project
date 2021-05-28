@@ -1,20 +1,11 @@
 import styled from 'styled-components';
+import { Container } from 'elements';
 
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 45px;
-  margin: 0 auto;
+export const StyledContainer = styled(Container)`
   position: relative;
 
-  @media screen and (max-width: 420px) {
-    max-width: 375px;
-    padding: 0 30px;
+  @media screen and (max-width: 767px) {
     overflow: hidden;
-  }
-
-  @media screen and (max-width: 240px) {
-    max-width: 320px;
-    padding: 0 20px;
   }
 `;
 
@@ -25,7 +16,7 @@ export const ContentContainer = styled(Container)`
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
   }
 `;
@@ -39,12 +30,12 @@ export const GreyContainer = styled.div`
   &:first-child {
     margin-bottom: 160px;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       margin-bottom: 80px;
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     background-size: 50% 50%;
     background-position: 150% 120%;
   }

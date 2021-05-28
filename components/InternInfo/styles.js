@@ -12,16 +12,16 @@ export const Container = styled.div`
     grid-gap: 20px;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     grid-template-columns: 65% 30%;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     grid-template-columns: 1fr;
     grid-gap: 60px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     grid-gap: 30px;
   }
 `;
@@ -30,11 +30,11 @@ export const Title = styled(TitleH2)`
   margin-bottom: 40px;
   margin-top: 30px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-top: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 28px;
     line-height: 130%;
     margin-bottom: 22px;
@@ -46,11 +46,11 @@ export const StyledText = styled.p`
   font-size: 18px;
   line-height: 158%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     width: 90%;
   }
@@ -63,7 +63,7 @@ export const List = styled.ul`
   grid-row-gap: 30px;
   max-width: 550px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-row-gap: 20px;
   }
@@ -84,7 +84,7 @@ export const Item = styled.li`
     top: 12px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-left: 26px;
 
     &:nth-of-type(even) {
@@ -100,7 +100,7 @@ export const Item = styled.li`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     &:before {
       top: 40%;
     }

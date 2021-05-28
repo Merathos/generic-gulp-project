@@ -4,7 +4,7 @@ export const List = styled.ul`
   margin-bottom: ${(props) => (props.inline ? '0' : '100px')};
   max-width: 850px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
 `;
@@ -12,7 +12,7 @@ export const List = styled.ul`
 export const Img = styled.img`
   margin-bottom: 40px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
   }
 `;
@@ -35,7 +35,7 @@ export const ElementEllipse = styled.li`
     top: ${(props) => (props.inline ? '8px' : '10px')};
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-left: ${(props) => (props.inline ? '16px' : '25px')};
     margin-bottom: 20px;
     margin-right: 0;
@@ -54,7 +54,7 @@ export const ElementNumber = styled.li`
   display: flex;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-left: 0;
     margin-bottom: 20px;
   }
@@ -66,7 +66,7 @@ export const Number = styled.span`
   font-size: 18px;
   line-height: 32px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-right: 10px;
   }
 `;
@@ -82,13 +82,13 @@ export const Text = styled.p`
   ${(props) =>
     props.inline &&
     css`
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: 767px) {
         font-size: 14px;
         line-height: 158%;
       }
     `}
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 158%;
   }

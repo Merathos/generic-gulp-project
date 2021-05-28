@@ -6,15 +6,25 @@ export const Container = styled.section`
   margin-right: 105px;
   margin-left: 120px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1360px) {
     margin-left: 60px;
     margin-right: 60px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 60px;
   }
 
-  @media screen and (max-width: 720px) {
-    margin-left: 0;
-    margin-right: 0;
+  @media screen and (max-width: 767px) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 `;
 
@@ -22,7 +32,7 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
   }
 `;
@@ -32,7 +42,7 @@ export const ListItem = styled.li`
   flex-direction: column;
   width: ${(props) => (props.banner ? '57%' : '42%')};
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 `;
@@ -44,22 +54,18 @@ export const H3 = styled(TitleH3)`
   font-weight: 700;
   margin-bottom: 4px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
     margin-bottom: 11px;
   }
 
-  @media screen and (max-width: 720px) {
-    padding-left: 60px;
-    padding-right: 60px;
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 120%;
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 420px) {
-    padding-left: 30px;
-    padding-right: 30px;
+  @media screen and (max-width: 767px) {
     margin-bottom: 14px;
   }
 `;
@@ -71,29 +77,25 @@ export const Text = styled.p`
   margin-bottom: 50px;
   white-space: pre-wrap;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
     margin-bottom: 20px;
     white-space: normal;
   }
 
-  @media screen and (max-width: 720px) {
-    padding-left: 60px;
-    padding-right: 60px;
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 158%;
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 420px) {
-    padding-left: 30px;
-    padding-right: 30px;
+  @media screen and (max-width: 767px) {
     margin-bottom: 18px;
   }
 `;
 
 export const Ref = styled.a`
-  margin-bottom: 102px;
+  margin-bottom: 100px;
   color: #53b443;
   font-size: 18px;
   line-height: 120%;
@@ -105,20 +107,13 @@ export const Ref = styled.a`
     color: #339722;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 60px;
   }
 
-  @media screen and (max-width: 720px) {
-    margin-left: 60px;
-    margin-right: 60px;
+  @media screen and (max-width: 767px) {
     margin-bottom: 40px;
     font-size: 14px;
     line-height: 160%;
-  }
-
-  @media screen and (max-width: 420px) {
-    margin-left: 30px;
-    margin-right: 30px;
   }
 `;

@@ -13,12 +13,10 @@ export const Section = styled.section`
     padding-left: 30px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 110px;
     width: 100%;
-  }
 
-  @media screen and (max-width: 420px) {
     .swiper-container {
       margin-left: 30px;
       padding-left: 0;
@@ -29,7 +27,7 @@ export const Section = styled.section`
     p.controlsTop &&
     css`
       margin-bottom: 144px;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         margin-bottom: 72px;
       }
     `}
@@ -44,12 +42,8 @@ export const Element = styled.div`
     padding-left: 30px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 8px;
-    margin-right: 30px;
-  }
-
-  @media screen and (max-width: 420px) {
     margin-right: 16px;
 
     &:first-child {
@@ -66,7 +60,7 @@ export const Img = styled.img`
     height: 360px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     height: 232px;
   }
 
@@ -92,7 +86,7 @@ export const Title = styled.p`
   max-width: 706px;
   width: 90%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 6px;
     font-size: 14px;
     line-height: 18px;
@@ -104,7 +98,7 @@ export const Text = styled(Subtitle)`
   text-align: center;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 5px;
     margin-bottom: 100px;
   }
@@ -138,7 +132,7 @@ export const PrevButton = styled.button`
         left: 866px;
       }
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 1360px) {
         left: auto;
         right: 283px;
       }
@@ -187,7 +181,7 @@ export const NextButton = styled.button`
         left: 919px;
       }
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 1360px) {
         left: auto;
         right: 230px;
       }

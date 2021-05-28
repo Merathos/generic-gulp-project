@@ -25,7 +25,7 @@ export const Grid = styled.div`
         z-index: 2;
         animation: 45s linear infinite rotation;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 960px) {
           display: none;
         }
       }
@@ -40,11 +40,11 @@ export const Grid = styled.div`
       }
     `};
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-top: 110px;
   }
 `;
@@ -57,24 +57,18 @@ export const Wrapper = styled.article`
     padding-right: ${(props) => (props.withPicture ? '60px' : '0')};
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     max-width: none;
     padding-right: 0;
   }
 `;
 
 export const Title = styled(TitleH1)`
-  @media screen and (max-width: 1200px) {
-    font-size: 64px;
-  }
-
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 768px) {
-    font-size: 32px;
-    line-height: 134%;
+  @media screen and (max-width: 767px) {
     margin-bottom: 10px;
   }
 `;
@@ -109,7 +103,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     &::after {
       width: 220px;
       height: 220px;
@@ -119,7 +113,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     min-width: auto;
 
     &::after {
@@ -129,7 +123,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     align-self: center;
   }
 
@@ -143,7 +137,7 @@ export const Block = styled.div`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     &::after {
       bottom: -30px;
       right: -30px;
@@ -163,7 +157,7 @@ export const Block = styled.div`
     css`
       display: none;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 960px) {
         display: block;
         box-sizing: border-box;
         max-width: 315px;
@@ -172,7 +166,7 @@ export const Block = styled.div`
         margin-bottom: 110px;
       }
 
-      @media screen and (max-width: 420px) {
+      @media screen and (max-width: 767px) {
         margin-bottom: 40px;
       }
 
@@ -185,18 +179,18 @@ export const Block = styled.div`
   ${(props) =>
     props.afterTitle === false &&
     css`
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 960px) {
         display: none;
       }
     `}
 `;
 
 export const Picture = styled.img`
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-top: 78px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 20px;
   }
 `;
@@ -206,17 +200,17 @@ export const Paragraph = styled.p`
   font-size: 24px;
   line-height: 150%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-top: 78px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 60px;
     font-size: 16px;
     line-height: 158%;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 0;
   }
 `;
@@ -224,12 +218,12 @@ export const Paragraph = styled.p`
 export const ButtonsWrapper = styled.div`
   display: flex;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     flex-direction: row;
   }
 
@@ -246,12 +240,12 @@ export const StyledButton = styled(Btn)`
     border-color: #ec381a;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1360px) {
     margin-right: 0;
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-right: 40px;
   }
 `;

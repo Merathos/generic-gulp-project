@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 235px;
-
-  @media screen and (max-width: 1199px) {
+  max-width: 220px;
+  @media screen and (max-width: 1200px) {
     max-width: 100%;
   }
 `;
@@ -20,7 +19,7 @@ export const Link = styled.button`
     color: #339722;
   }
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1360px) {
     display: inline-block;
   }
 

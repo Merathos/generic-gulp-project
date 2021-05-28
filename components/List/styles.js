@@ -4,7 +4,7 @@ export const Section = styled.section`
   margin-bottom: 100px;
   max-width: 850px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
 `;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
     z-index: -1;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
   }
 `;
@@ -36,7 +36,7 @@ export const NormalList = styled.ul`
   grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-gap: 30px;
   }
@@ -47,7 +47,7 @@ export const BlueList = styled.ul`
   grid-template-columns: repeat(auto-fill, 250px);
   grid-gap: 50px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: repeat(auto-fill, minmax(141px, 1fr));
     grid-gap: 30px;
   }
@@ -65,7 +65,7 @@ export const BlueTitle = styled.b`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 120%;
   }
@@ -80,7 +80,7 @@ export const BlueText = styled.p`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 131%;
   }
@@ -93,7 +93,7 @@ export const H3 = styled.b`
   line-height: 120%;
   font-weight: 600;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 120%;
     margin-bottom: 10px;
@@ -107,7 +107,7 @@ export const Element = styled.li`
     margin-right: 100px;
   } */
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     margin-right: 0;
   }
@@ -121,7 +121,7 @@ export const NormalText = styled.p`
     font-weight: bold;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 158%;
   }

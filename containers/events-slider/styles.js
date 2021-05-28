@@ -8,12 +8,12 @@ export const Section = styled.section`
 
   &:active {
     cursor: grabbing;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       cursor: default;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
     cursor: default;
   }
@@ -22,7 +22,7 @@ export const Section = styled.section`
 export const Container = styled.div`
   position: relative;
   max-width: 1200px;
-  padding: 0 30px;
+  padding: 0 120px;
   margin: 0 auto;
 
   &::before {
@@ -34,12 +34,20 @@ export const Container = styled.div`
       width: 1870px;
       height: 100%;
       background-color: #ffffff;
-      z-index: 500;
+      z-index: 1;
     }
   }
 
   .swiper-container {
     overflow: visible;
+  }
+
+  @media screen and (max-width: 1360px) {
+    padding: 0 60px;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding: 0 40px;
   }
 
   @media screen and (max-width: 910px) {
@@ -56,10 +64,10 @@ export const Title = styled(TitleH2)`
   margin-bottom: 100px;
 
   @media screen and (max-width: 910px) {
-    margin-left: 30px;
+    margin-left: 40px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-left: 30px;
     margin-bottom: 50px;
     font-size: 32px;

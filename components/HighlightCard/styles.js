@@ -18,7 +18,7 @@ export const Wrapper = styled.a`
     background-position: bottom right;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding: 30px 30px 0;
     max-width: 315px;
     min-height: 389px;
@@ -36,7 +36,7 @@ export const Content = styled.div`
     margin-top: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: 100%;
   }
 `;
@@ -49,7 +49,7 @@ export const Text = styled.p`
   font-size: 18px;
   line-height: 27px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 22px;
   }
@@ -71,13 +71,13 @@ export const Title = styled.b`
     height: auto;
     margin-left: 11px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       width: 22px;
       margin-left: 8px;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 10px;
     font-size: 22px;
     line-height: 26px;

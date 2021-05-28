@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     align-items: center;
     justify-content: space-between;

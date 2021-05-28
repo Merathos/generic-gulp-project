@@ -17,9 +17,14 @@ const Styled = styled.h1`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1360px) {
+    font-size: 54px;
+    line-height: 60px;
+  }
+
+  @media screen and (max-width: 767px) {
     font-size: 32px;
-    line-height: 134%;
+    line-height: 31px;
     margin-bottom: 20px;
   }
 `;

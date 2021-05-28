@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   padding-top: 60px;
   margin-bottom: 100px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     padding-top: 30px;
     margin-bottom: 50px;
   }

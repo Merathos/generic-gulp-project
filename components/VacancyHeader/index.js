@@ -13,7 +13,7 @@ import {
   StyledButton,
   Picture,
   Content,
-  Container,
+  SectionWrapper,
 } from './styles';
 
 const VacancyHeader = ({ data, back, toggleJobModal }) => {
@@ -43,7 +43,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
   ];
 
   return (
-    <Container>
+    <SectionWrapper>
       <Section>
         <Content>
           {features && (is_english_speaking_team || is_internship) && (
@@ -99,7 +99,7 @@ const VacancyHeader = ({ data, back, toggleJobModal }) => {
           height="180"
         />
       )}
-    </Container>
+    </SectionWrapper>
   );
 };
 

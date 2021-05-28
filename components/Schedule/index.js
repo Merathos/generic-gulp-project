@@ -17,7 +17,7 @@ const Schedule = ({
 
   return (
     <S.Section>
-      <S.Container>
+      <S.StyledContainer>
         <ArticleContent content={parsedContent} recap={recap} />
         {isActive && programs?.length > 0 && (
           <>
@@ -45,7 +45,7 @@ const Schedule = ({
             Зарегистрироваться
           </S.StyledButton>
         )}
-      </S.Container>
+      </S.StyledContainer>
     </S.Section>
   );
 };

@@ -47,7 +47,7 @@ export const Section = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     max-width: none;
   }
 `;
@@ -63,7 +63,7 @@ export const IconWrapper = styled(Icon)`
   background-size: 90%;
   margin-right: 8px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 20px;
     height: 20px;
     background-size: 80%;
@@ -77,7 +77,7 @@ export const Inscription = styled.p`
   color: #201f2a;
   opacity: 0.5;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
   }
 `;
@@ -86,7 +86,7 @@ export const H3 = styled(TitleH3)`
   margin-bottom: 20px;
   font-weight: 700;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     line-height: 130%;
     margin-bottom: 16px;
   }
@@ -101,7 +101,7 @@ export const StyledText = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 24px;
     width: 94%;
     font-size: 14px;
@@ -115,7 +115,7 @@ export const Arrow = styled.span`
   width: 38px;
   height: 38px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 28px;
     height: 28px;
   }

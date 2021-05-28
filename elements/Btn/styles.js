@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@ const Button = styled.button`
   max-width: 408px;
   transition: all 0.3s ease-in;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 12px;
     line-height: 14px;
     padding: 20px 33px;
@@ -39,7 +39,7 @@ const Button = styled.button`
       color: #ffffff;
       max-width: 243px;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         max-width: 191px;
       }
 
@@ -50,13 +50,3 @@ const Button = styled.button`
       }
     `}
 `;
-
-const Btn = ({ type = 'button', children, className, accent, onClick }) => {
-  return (
-    <Button type={type} onClick={onClick} className={className} accent={accent}>
-      {children}
-    </Button>
-  );
-};
-
-export default Btn;

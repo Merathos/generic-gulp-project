@@ -8,7 +8,7 @@ export const Wrapper = styled.a`
   box-sizing: border-box;
   min-height: 400px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     min-height: 320px;
   }
 `;
@@ -16,7 +16,7 @@ export const Wrapper = styled.a`
 export const Title = styled(TitleH4)`
   margin-bottom: 80px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-bottom: 50px;
   }
 `;
@@ -30,7 +30,7 @@ export const Picture = styled.img`
   max-width: 190px;
   margin-left: 80px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     margin-left: 0;
   }
 `;

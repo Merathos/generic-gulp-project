@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { EventStatus } from 'elements';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -17,25 +17,33 @@ const EventCard = ({
   slug,
 }) => {
   const now = dayjs();
+  const router = useRouter();
+  const { pathname } = router;
   const [completed] = useState(now.isAfter(endsAt));
 
   const handleRegistrationClick = () => {
-    if (Router.pathname === `/events/${slug}`) {
-      regForm?.current.scrollIntoView({ behavior: 'smooth' });
+    if (pathname === `/events/${slug}`) {
+      if (regForm.current) {
+        regForm.current.scrollIntoView({ behavior: 'smooth' });
+      }
     } else {
-      Router.push({
-        pathname: `/events/${slug}`,
-        hash: 'form',
-      }).then(() =>
-        document.getElementById('form').scrollIntoView({ behavior: 'smooth' })
-      );
+      router
+        .push({
+          pathname: `/events/${slug}`,
+          hash: 'form',
+        })
+        .then(() =>
+          document.getElementById('form').scrollIntoView({ behavior: 'smooth' })
+        );
     }
   };
 
   const handlePastEventClick = () => {
-    Router.push({
-      pathname: `/events/${slug}`,
-    }).then(() => window.scrollTo(0, 0));
+    router
+      .push({
+        pathname: `/events/${slug}`,
+      })
+      .then(() => window.scrollTo(0, 0));
   };
 
   const renderEventDate = () => {

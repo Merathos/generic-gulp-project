@@ -9,24 +9,28 @@ export const Section = styled.section`
   background-repeat: no-repeat;
   background-position: top 48% right;
 
-  @media screen and (max-width: 768px) {
-    background-image: none;
-    padding: 0 45px;
+  @media screen and (max-width: 1360px) {
+    padding: 0 60px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 960px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    background-image: none;
     padding: 0 30px;
     margin-bottom: 0;
   }
 `;
 
 export const Wrapper = styled.div`
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 160px;
   padding-bottom: 160px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-top: 80px;
     padding-bottom: 80px;
   }
@@ -36,7 +40,7 @@ export const H2 = styled(TitleH2)`
   max-width: 50%;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: none;
     margin-bottom: 20px;
   }
@@ -58,7 +62,7 @@ export const Text = styled.p`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     max-width: none;
     font-size: 16px;
     line-height: 158%;
@@ -76,7 +80,7 @@ export const StyledButton = styled(Btn)`
     border-color: #ec381a;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 40px;
   }
 `;

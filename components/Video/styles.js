@@ -8,7 +8,7 @@ export const Text = styled(Subtitle)`
   font-size: 16px;
   line-height: 21px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 5px;
     margin-bottom: 50px;
     font-size: 10px;
@@ -35,7 +35,7 @@ export const Section = styled.section`
     display: ${(props) => (props.decoration ? 'block' : 'none')};
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 0;
     &::before {
       width: 112px;
@@ -92,7 +92,7 @@ export const VideoContainer = styled.div`
     background: none !important;
     background-color: #ffffff !important;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       ${(props) =>
         props.isAbout &&
         css`
@@ -107,7 +107,7 @@ export const VideoContainer = styled.div`
     border-width: 11px 0 11px 13px !important;
     margin-left: 4px !important;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 767px) {
       ${(props) =>
         props.isAbout &&
         css`

@@ -9,7 +9,7 @@ const TeamList = ({ mock, back, stacks }) => {
 
   return (
     <S.Main>
-      <S.Container>
+      <S.StyledContainer>
         <S.Grid>
           <S.Aside>
             <TeamsFilter data={mock.filter} stacks={stacks} />
@@ -22,7 +22,7 @@ const TeamList = ({ mock, back, stacks }) => {
             {back && <Cards data={back} type="teams" />}
           </S.CardsWrapper>
         </S.Grid>
-      </S.Container>
+      </S.StyledContainer>
     </S.Main>
   );
 };

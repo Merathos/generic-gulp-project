@@ -7,27 +7,27 @@ export const Form = styled.form`
     props.isMain ? '0' : props.smallPadding ? '25px 0 16px' : '25px 0'};
   margin-bottom: 10px;
 
+  @media screen and (max-width: 767px) {
+    padding: ${(props) =>
+      props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
+  }
+
   ${(props) =>
     props.isMain &&
     css`
       width: 856px;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 960px) {
         width: 100%;
       }
     `};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.smallPadding &&
       css`
         padding: 4px 0;
       `};
-  }
-
-  @media screen and (max-width: 420px) {
-    padding: ${(props) =>
-      props.isMain ? '0' : props.smallPadding ? '4px 0' : '16px 0'};
   }
 `;
 
@@ -50,7 +50,7 @@ export const Field = styled.input`
       padding-bottom: 25px;
       background-color: transparent;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 767px) {
         padding-top: 10px;
         padding-bottom: 15px;
     `};
@@ -70,7 +70,7 @@ export const Field = styled.input`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 16px;
     line-height: 134%;
 
@@ -111,7 +111,7 @@ export const Submit = styled.button`
     }
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     ${(props) =>
       props.isMain &&
       css`

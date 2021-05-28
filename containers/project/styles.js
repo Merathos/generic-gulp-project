@@ -1,40 +1,32 @@
 import styled, { css } from 'styled-components';
+import { Container } from 'elements';
 
-export const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 45px 100px;
-  margin: 0 auto;
+export const HeaderContainer = styled(Container)`
+  padding-top: 200px;
+  padding-bottom: 130px;
   position: relative;
 
-  @media screen and (max-width: 420px) {
-    max-width: 375px;
-    padding: 0 30px 80px;
-    overflow: hidden;
-  }
-
-  @media screen and (max-width: 240px) {
-    max-width: 320px;
-    padding: 0 20px;
+  @media screen and (max-width: 767px) {
+    padding-top: 110px;
+    padding-bottom: 80px;
   }
 `;
 
 export const ContentContainer = styled(Container)`
-  padding: 0 45px 0;
   margin-bottom: 160px;
 
   *:last-child {
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 420px) {
-    padding: 0 30px 0;
+  @media screen and (max-width: 767px) {
     margin-bottom: 80px;
   }
 `;
 
 export const GreyWrapper = styled.div`
   background-color: #f7f8f9;
-  margin-bottom: 100px;
+  margin-bottom: 160px;
 
   ${(props) =>
     props.withBg &&
@@ -43,18 +35,18 @@ export const GreyWrapper = styled.div`
       background-repeat: no-repeat;
       background-position: right 70%;
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 1360px) {
         background-image: none;
       }
     `};
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     padding-bottom: 0;
   }
 
-  @media screen and (max-width: 420px) {
-    margin-bottom: 50px;
+  @media screen and (max-width: 767px) {
     padding-bottom: 0;
+    margin-bottom: 80px;
   }
 `;
 
@@ -63,18 +55,30 @@ export const VacancySection = styled.div`
   background-repeat: no-repeat;
   background-position: -150px 50%;
   padding-bottom: 120px;
+  margin-bottom: 100px;
 
-  @media screen and (max-width: 1110px) {
+  @media screen and (max-width: 1360px) {
     background-size: 266px 294px;
     background-position: calc(100% + 85px) 100%;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 960px) {
     padding-bottom: 60px;
   }
 
-  @media screen and (max-width: 420px) {
-    padding-top: 40px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (max-width: 767px) {
     padding-bottom: 0;
+  }
+`;
+
+export const VacancyContainer = styled(Container)`
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    overflow: hidden;
   }
 `;

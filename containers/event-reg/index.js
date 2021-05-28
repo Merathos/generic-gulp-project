@@ -471,14 +471,14 @@ const EventReg = ({ regForm, customizeID, eventID, removeMarginBottom }) => {
 
   return (
     <S.Section ref={regForm} id="form" removeMarginBottom={removeMarginBottom}>
-      <S.Container id="form-container">
+      <S.StyledContainer id="form-container">
         <InnerHTML html={mainTpl} />
         <InnerHTML html={ticketTpl} />
         <InnerHTML html={ankTpl} />
         <InnerHTML html={questionTpl} />
         {/* <InnerHTML html={handlerTitle} /> */}
         <InnerHTML html={timepadForm} />
-      </S.Container>
+      </S.StyledContainer>
     </S.Section>
   );
 };

@@ -23,12 +23,12 @@ export const Container = styled.section`
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     min-height: 286px;
     padding: 20px 20px 0 40px;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-top: 22px;
     padding-right: 0;
   }
@@ -42,7 +42,7 @@ export const Ref = styled.a`
   line-height: 140%;
   font-weight: 700;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
   }
 `;

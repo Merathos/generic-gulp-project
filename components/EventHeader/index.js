@@ -76,7 +76,7 @@ const EventHeader = ({
 
   return (
     <S.GreyHeader>
-      <S.Container bgImg={getCategoryBackground(category?.slug)}>
+      <S.StyledContainer bgImg={getCategoryBackground(category?.slug)}>
         <S.Grid>
           <S.TopWrapper>
             {eventDataPolling.status && (
@@ -125,7 +125,9 @@ const EventHeader = ({
           <S.StyledButton
             accent
             onClick={() => {
-              regForm?.current.scrollIntoView({ behavior: 'smooth' });
+              if (regForm.current) {
+                regForm.current.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
           >
             Зарегистрироваться
@@ -134,13 +136,15 @@ const EventHeader = ({
         {!isActive && eventData.has_video && (
           <S.StyledButton
             onClick={() => {
-              recap.current.scrollIntoView({ behavior: 'smooth' });
+              if (recap.current) {
+                recap.current.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
           >
             Смотреть запись
           </S.StyledButton>
         )}
-      </S.Container>
+      </S.StyledContainer>
     </S.GreyHeader>
   );
 };

@@ -4,7 +4,7 @@ import { TitleH4, Subtitle } from 'elements';
 export const H4 = styled(TitleH4)`
   margin-bottom: 30px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 7px;
   }
 `;
@@ -18,15 +18,15 @@ export const Section = styled.section`
   margin: -50px;
   position: relative;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1360px) {
     padding: 0;
     margin: 0;
     margin-top: 100px;
     margin-bottom: 100px !important;
   }
 
-  @media screen and (max-width: 768px) {
-    margin-bottom: 50px !important;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 80px !important;
   }
 `;
 
@@ -44,14 +44,14 @@ export const RelocationBackground = styled.div`
   transform: rotate(90deg);
   animation: 45s linear infinite rotation;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1360px) {
     width: 300px;
     height: 300px;
     top: -85px;
     left: -20px;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 767px) {
     width: 260px;
     height: 260px;
     top: -85px;
@@ -67,14 +67,14 @@ export const RelocationBackground = styled.div`
       height: 360px;
       background-image: url('/backgrounds/relocation-en.svg');
 
-      @media screen and (max-width: 1240px) {
+      @media screen and (max-width: 1360px) {
         width: 330px;
         height: 330px;
         top: -80px;
         left: -30px;
       }
 
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 767px) {
         width: 300px;
         height: 300x;
         top: -110px;
@@ -141,7 +141,7 @@ export const StyledArrow = styled.a`
 export const StyledSubtitle = styled(Subtitle)`
   margin-bottom: 60px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 `;
